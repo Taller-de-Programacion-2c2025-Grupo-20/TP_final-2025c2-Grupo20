@@ -3,29 +3,8 @@
 #include <iostream>
 #include <sstream>
 
-#include "../common_src/constants.h"
+#include "../common/constants.h"
 
-std::string Client::receiveMessage() {
-    ResponseDTO message = protocol.receiveMessage();
-    if (message.command == SEND_CARS_WITH_NITRO) {
-
-        if (message.nitro_state == NITRO_ACTIVATED) {
-            return "A car hit the nitro!";
-        }
-
-        if (message.nitro_state == NITRO_DEACTIVATED) {
-            return "A car is out of juice.";
-        }
-    }
-
-    return "Unknown command";
-}
-
-void Client::receiveMessages(int n) {
-    for (int i = 0; i < n; ++i) {
-        std::cout << receiveMessage() << "\n";
-    }
-}
 
 int Client::run() {
     std::string line;
@@ -34,20 +13,8 @@ int Client::run() {
         std::string command;
         line_stream >> command;
 
-        if (command == "exit") {
-            break;
-        }
+        break;
 
-        if (command == "nitro") {
-            protocol.sendNitro();
-        }
-
-        if (command == "read") {
-            int arg = 0;
-            if (line_stream >> arg) {
-                receiveMessages(arg);
-            }
-        }
     }
 
     return EXIT_SUCCESS;

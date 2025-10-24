@@ -1,6 +1,13 @@
 #ifndef CONSTANTS_H
 #define CONSTANTS_H
+#include <cstdint>
 
+//Constantes TP FINAL
+
+enum class InputAction : uint8_t { Press, Release };
+enum class InputKey    : uint8_t { Up, Down, Left, Right, Quit};
+
+//Constantes VIEJAS
 struct Instruction {
     uint8_t command;
     int client_id;

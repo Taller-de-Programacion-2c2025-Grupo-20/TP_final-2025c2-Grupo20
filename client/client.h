@@ -5,16 +5,13 @@
 #include <string>
 #include <vector>
 
-#include "../common_src/socket.h"
+#include "../common/socket.h"
 
 #include "client_protocol.h"
 
 class Client {
 private:
     ClientProtocol protocol;
-
-    std::string receiveMessage();
-    void receiveMessages(int n);
 
 public:
     int run();

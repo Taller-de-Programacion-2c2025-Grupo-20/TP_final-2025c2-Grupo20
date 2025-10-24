@@ -1,0 +1,30 @@
+#ifndef CLIENT_H
+#define CLIENT_H
+
+#include <map>
+#include <string>
+#include <vector>
+
+#include "../common_src/socket.h"
+
+#include "client_protocol.h"
+
+class Client {
+private:
+    ClientProtocol protocol;
+
+    std::string receiveMessage();
+    void receiveMessages(int n);
+
+public:
+    int run();
+
+    Client(const char* hostname, const char* port);
+
+    Client(const Client&) = delete;
+    Client& operator=(const Client&) = delete;
+
+    ~Client();
+};
+
+#endif

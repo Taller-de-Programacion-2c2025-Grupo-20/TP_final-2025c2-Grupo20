@@ -56,7 +56,7 @@ target_include_directories(taller_common PUBLIC .)
 
 # Install libSDL2 and libSDL2pp (for client or editor)
 # HEY!! TODO XXX: add more dependendies (either for client, server or editor)
-if(FALSE)
+if(TALLER_CLIENT)
     include(FetchContent)
     FetchContent_Declare(
         SDL2
@@ -116,18 +116,21 @@ if(TALLER_CLIENT)
         client/carselectscreen.h client/carselectscreen.cpp client/carselectscreen.ui)
 
     # 3. Hacemos que dependa solo de 'common'
-    add_dependencies(taller_client taller_common)
+    add_dependencies(taller_client taller_common SDL2pp::SDL2pp)
 
     # 4. Le decimos que busque código en la carpeta 'client/'
     add_subdirectory(client)
 
     set_project_warnings(taller_client ${TALLER_MAKE_WARNINGS_AS_ERRORS} FALSE)
 
+    target_include_directories(taller_client PRIVATE ${libSDL2pp_SOURCE_DIR})
+
     # 5. Enlazamos las librerías: le quitamos SDL y le ponemos Qt
     target_link_libraries(taller_client
         PRIVATE
         taller_common
         Qt6::Widgets
+        SDL2pp::SDL2pp
     )
 endif()
 

@@ -1,7 +1,11 @@
 target_sources(taller_client
     PRIVATE
-    # .cpp files
     main.cpp
-    PUBLIC
-    # .h files
-    )
+    mainwindow.h
+    mainwindow.cpp
+    mainwindow.ui
+
+    loginscreen.h
+    loginscreen.cpp
+    loginscreen.ui
+)

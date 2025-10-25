@@ -16,6 +16,10 @@ project(taller_tp
     LANGUAGES CXX
     )
 
+set(CMAKE_AUTOUIC ON)
+set(CMAKE_AUTOMOC ON)
+set(CMAKE_AUTORCC ON)
+
 option(TALLER_TESTS "Enable / disable tests." ON)
 option(TALLER_CLIENT "Enable / disable client program." ON)
 option(TALLER_SERVER "Enable / disable server program." ON)
@@ -52,7 +56,7 @@ target_include_directories(taller_common PUBLIC .)
 
 # Install libSDL2 and libSDL2pp (for client or editor)
 # HEY!! TODO XXX: add more dependendies (either for client, server or editor)
-if(TALLER_CLIENT OR TALLER_EDITOR)
+if(FALSE)
     include(FetchContent)
     FetchContent_Declare(
         SDL2
@@ -102,23 +106,29 @@ endif()
 # Program section
 # ---------------
 if(TALLER_CLIENT)
-    # HEY!! TODO XXX: Change the name of the executable to the one you like!
-    add_executable(taller_client)
+    # 1. Le decimos a CMake que busque Qt6
+    find_package(Qt6 COMPONENTS Widgets REQUIRED)
 
-    # Make them depend on taller_common lib
-    add_dependencies(taller_client taller_common SDL2pp::SDL2pp)
+    # 2. Creamos el ejecutable
+    add_executable(taller_client
+        client/loginscreen.h client/loginscreen.cpp client/loginscreen.ui
+        client/lobbyscreen.h client/lobbyscreen.cpp client/lobbyscreen.ui
+        client/carselectscreen.h client/carselectscreen.cpp client/carselectscreen.ui)
 
-    # Add source files and enable warnings
-    # HEY!! TODO XXX: add more subfolders here
+    # 3. Hacemos que dependa solo de 'common'
+    add_dependencies(taller_client taller_common)
+
+    # 4. Le decimos que busque código en la carpeta 'client/'
     add_subdirectory(client)
 
     set_project_warnings(taller_client ${TALLER_MAKE_WARNINGS_AS_ERRORS} FALSE)
 
-    # add libSDL2pp's headers
-    target_include_directories(taller_client PRIVATE ${libSDL2pp_SOURCE_DIR})
-
-    # Link the taller_common lib target
-    target_link_libraries(taller_client taller_common SDL2pp::SDL2pp)
+    # 5. Enlazamos las librerías: le quitamos SDL y le ponemos Qt
+    target_link_libraries(taller_client
+        PRIVATE
+        taller_common
+        Qt6::Widgets
+    )
 endif()
 
 if(TALLER_SERVER)
@@ -139,23 +149,26 @@ if(TALLER_SERVER)
 endif()
 
 if(TALLER_EDITOR)
-    # HEY!! TODO XXX: Change the name of the executable to the one you like!
+    # 1. Le decimos a CMake que busque Qt6
+    find_package(Qt6 COMPONENTS Widgets REQUIRED)
+
+    # 2. Creamos el ejecutable
     add_executable(taller_editor)
 
-    # Make them depend on taller_common lib
-    add_dependencies(taller_editor taller_common SDL2pp::SDL2pp)
+    # 3. Hacemos que dependa solo de 'common'
+    add_dependencies(taller_editor taller_common)
 
-    # Add source files and enable warnings
-    # HEY!! TODO XXX: add more subfolders here
+    # 4. Le decimos que busque código en la carpeta 'editor/'
     add_subdirectory(editor)
 
     set_project_warnings(taller_editor ${TALLER_MAKE_WARNINGS_AS_ERRORS} FALSE)
 
-    # add libSDL2pp's headers
-    target_include_directories(taller_editor PRIVATE ${libSDL2pp_SOURCE_DIR})
-
-    # Link the taller_common lib target
-    target_link_libraries(taller_editor taller_common SDL2pp::SDL2pp)
+    # 5. Enlazamos las librerías con Qt
+    target_link_libraries(taller_editor
+        PRIVATE
+        taller_common
+        Qt6::Widgets
+    )
 endif()
 
 

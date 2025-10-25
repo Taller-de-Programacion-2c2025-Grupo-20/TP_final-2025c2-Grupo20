@@ -5,7 +5,7 @@
 #include "loginscreen.h"
 #include "loginscreen.h"
 #include "carselectscreen.h"
-#include "Socket.h"
+#include ",,/common/socket.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui {

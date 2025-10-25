@@ -4,7 +4,7 @@
 #include <QWidget>
 #include <QFutureWatcher>
 #include <memory>
-#include "Socket.h"
+#include "../common/socket.h"
 
 namespace Ui {
 class LoginScreen;

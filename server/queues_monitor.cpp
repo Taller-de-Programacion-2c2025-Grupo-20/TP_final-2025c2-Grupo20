@@ -1,6 +1,6 @@
 #include "queues_monitor.h"
 
-Queue<ResponseDTO>& QueuesMonitor::addQueue(int client_id) {
+Queue<ServerState>& QueuesMonitor::addQueue(int client_id) {
     std::lock_guard<std::mutex> lock(mutex);
     return (queues.try_emplace(client_id).first->second).queue;
 }
@@ -10,7 +10,7 @@ void QueuesMonitor::markQueueForDeletion(int client_id) {
     queues[client_id].is_alive = false;
 }
 
-void QueuesMonitor::broadcast(const ResponseDTO& res) {
+void QueuesMonitor::broadcast(const ServerState& res) {
     std::lock_guard<std::mutex> lock(mutex);
 
     for (auto it = queues.begin(); it != queues.end();) {

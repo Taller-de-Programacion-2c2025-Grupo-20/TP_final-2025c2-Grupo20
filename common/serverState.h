@@ -5,6 +5,8 @@
 struct ServerState {
     float x;
     float y;
-    int   orientation; 
+    float angle; 
+
+    ServerState(float x, float y, float angle) : x(x), y(y), angle(angle) {}
 };
-#endif SERVERSTATE_H_
+#endif

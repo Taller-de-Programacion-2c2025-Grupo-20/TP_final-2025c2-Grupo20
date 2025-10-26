@@ -8,6 +8,8 @@ struct InputCmd {
     uint32_t player_id;
     InputKey key;
     InputAction action;
+
+    explicit InputCmd() : player_id(0), key(InputKey::Up), action(InputAction::Press) {}
 };
 
-#endif CLIENTCOMMAND_H_
+#endif

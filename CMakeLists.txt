@@ -57,81 +57,35 @@ target_include_directories(taller_common PUBLIC .)
 # Install libSDL2 and libSDL2pp (for client or editor)
 # HEY!! TODO XXX: add more dependendies (either for client, server or editor)
 if(TALLER_CLIENT)
-    include(FetchContent)
-    FetchContent_Declare(
-        SDL2
-        GIT_REPOSITORY https://github.com/libsdl-org/SDL.git
-        GIT_TAG release-2.30.8
-        GIT_SHALLOW TRUE
-        GIT_PROGRESS TRUE
-        OVERRIDE_FIND_PACKAGE
-    )
+  # SDL2/SDL2pp
+  set(SDL2PP_WITH_IMAGE ON CACHE BOOL "" FORCE)
+  set(SDL2PP_WITH_TTF   ON CACHE BOOL "" FORCE)
 
-    FetchContent_Declare(
-        SDL2_image
-        GIT_REPOSITORY https://github.com/libsdl-org/SDL_image.git
-        GIT_TAG release-2.8.2
-        GIT_SHALLOW TRUE
-        GIT_PROGRESS TRUE
-        OVERRIDE_FIND_PACKAGE
-    )
+  include(FetchContent)
+  FetchContent_Declare(SDL2         GIT_REPOSITORY https://github.com/libsdl-org/SDL.git         GIT_TAG release-2.30.8  GIT_SHALLOW TRUE GIT_PROGRESS TRUE OVERRIDE_FIND_PACKAGE)
+  FetchContent_Declare(SDL2_image   GIT_REPOSITORY https://github.com/libsdl-org/SDL_image.git   GIT_TAG release-2.8.2   GIT_SHALLOW TRUE GIT_PROGRESS TRUE OVERRIDE_FIND_PACKAGE)
+  FetchContent_Declare(SDL2_mixer   GIT_REPOSITORY https://github.com/libsdl-org/SDL_mixer.git   GIT_TAG release-2.8.0   GIT_SHALLOW TRUE GIT_PROGRESS TRUE OVERRIDE_FIND_PACKAGE)
+  FetchContent_Declare(SDL2_ttf     GIT_REPOSITORY https://github.com/libsdl-org/SDL_ttf.git     GIT_TAG release-2.22.0  GIT_SHALLOW TRUE GIT_PROGRESS TRUE OVERRIDE_FIND_PACKAGE)
+  FetchContent_Declare(libSDL2pp    URL https://github.com/libSDL2pp/libSDL2pp/archive/cc198c9a5657048bee67ece82de620b2d5661084.zip OVERRIDE_FIND_PACKAGE)
+  FetchContent_MakeAvailable(SDL2 SDL2_image SDL2_mixer SDL2_ttf libSDL2pp)
 
-    FetchContent_Declare(
-        SDL2_mixer
-        GIT_REPOSITORY https://github.com/libsdl-org/SDL_mixer.git
-        GIT_TAG release-2.8.0
-        GIT_SHALLOW TRUE
-        GIT_PROGRESS TRUE
-        OVERRIDE_FIND_PACKAGE
-    )
+  add_executable(taller_client)  # sin listar Qt
 
-    FetchContent_Declare(
-        SDL2_ttf
-        GIT_REPOSITORY https://github.com/libsdl-org/SDL_ttf.git
-        GIT_TAG release-2.22.0
-        GIT_SHALLOW TRUE
-        GIT_PROGRESS TRUE
-        OVERRIDE_FIND_PACKAGE
-    )
+  # Agrego SOLO los .cpp del cliente “puro”
+  add_subdirectory(client)
 
-    FetchContent_Declare(
-        libSDL2pp
-        OVERRIDE_FIND_PACKAGE
-        URL https://github.com/libSDL2pp/libSDL2pp/archive/cc198c9a5657048bee67ece82de620b2d5661084.zip
-    )
+  target_compile_definitions(taller_client PRIVATE DATA_PATH="${CMAKE_SOURCE_DIR}/client/data")
+  set_project_warnings(taller_client ${TALLER_MAKE_WARNINGS_AS_ERRORS} FALSE)
 
-    FetchContent_MakeAvailable(SDL2 SDL2_image SDL2_mixer SDL2_ttf libSDL2pp)
-endif()
-
-# Program section
-# ---------------
-if(TALLER_CLIENT)
-    # 1. Le decimos a CMake que busque Qt6
-    find_package(Qt6 COMPONENTS Widgets REQUIRED)
-
-    # 2. Creamos el ejecutable
-    add_executable(taller_client
-        client/loginscreen.h client/loginscreen.cpp client/loginscreen.ui
-        client/lobbyscreen.h client/lobbyscreen.cpp client/lobbyscreen.ui
-        client/carselectscreen.h client/carselectscreen.cpp client/carselectscreen.ui)
-
-    # 3. Hacemos que dependa solo de 'common'
-    add_dependencies(taller_client taller_common SDL2pp::SDL2pp)
-
-    # 4. Le decimos que busque código en la carpeta 'client/'
-    add_subdirectory(client)
-
-    set_project_warnings(taller_client ${TALLER_MAKE_WARNINGS_AS_ERRORS} FALSE)
-
-    target_include_directories(taller_client PRIVATE ${libSDL2pp_SOURCE_DIR})
-
-    # 5. Enlazamos las librerías: le quitamos SDL y le ponemos Qt
-    target_link_libraries(taller_client
-        PRIVATE
-        taller_common
-        Qt6::Widgets
-        SDL2pp::SDL2pp
-    )
+  target_link_libraries(taller_client
+    PRIVATE
+      taller_common
+      SDL2pp::SDL2pp
+      SDL2::SDL2
+      SDL2_image::SDL2_image
+      SDL2_ttf::SDL2_ttf
+      SDL2_mixer::SDL2_mixer
+  )
 endif()
 
 if(TALLER_SERVER)

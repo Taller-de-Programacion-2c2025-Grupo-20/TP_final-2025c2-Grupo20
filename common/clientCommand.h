@@ -1,7 +1,7 @@
 #ifndef CLIENTCOMMAND_H_
 #define CLIENTCOMMAND_H_
 #include <cstdint>
-#include <constants.h>
+#include "constants.h"
 
 //Struct a utilizar para enviar comandos
 struct InputCmd {

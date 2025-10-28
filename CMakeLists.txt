@@ -147,8 +147,17 @@ if(TALLER_SERVER)
 
     set_project_warnings(taller_server ${TALLER_MAKE_WARNINGS_AS_ERRORS} FALSE)
 
-    # Link the taller_common lib target
-    target_link_libraries(taller_server taller_common)
+    find_package(Box2D REQUIRED)
+
+    # Decirle al compilador dónde están los headers
+    target_include_directories(taller_server PRIVATE ${Box2D_INCLUDE_DIRS})
+
+    target_link_libraries(taller_server
+    PRIVATE
+        taller_common   # <--- esto es lo que te falta
+        Box2D
+    )
+
 endif()
 
 if(TALLER_EDITOR)

@@ -1,13 +1,13 @@
 #include "sender.h"
 
-#include "../common_src/liberror.h"
+#include "../common/liberror.h"
 
 void Sender::run() {
 
     while (should_keep_running()) {
         try {
-            ResponseDTO response = client_queue.pop();
-            protocol.sendResponse(response);
+            //ServerState response = client_queue.pop();
+            //protocol.sendResponse(response);
         } catch (const ClosedQueue&) {
             break;
         } catch (const LibError& e) {
@@ -21,5 +21,5 @@ void Sender::stop() {
     client_queue.close();
 }
 
-Sender::Sender(ServerProtocol& protocol, Queue<ResponseDTO>& client_queue):
+Sender::Sender(ServerProtocol& protocol, Queue<ServerState>& client_queue):
         protocol(protocol), client_queue(client_queue) {}

@@ -4,7 +4,9 @@
 #include <string>
 #include <utility>
 
-#include "../common_src/queue.h"
+#include "../common/queue.h"
+#include "../common/clientCommand.h"
+#include "../common/serverState.h"
 
 #include "receiver.h"
 #include "sender.h"
@@ -26,8 +28,8 @@ public:
 
     int client_id();
 
-    ClientHandler(Socket&& skt, Queue<Instruction>& gameloop_queue,
-                  Queue<ResponseDTO>& client_queue, int id);
+    ClientHandler(Socket&& skt, Queue<InputCmd>& gameloop_queue,
+                  Queue<ServerState>& client_queue, int id);
 
     ClientHandler(const ClientHandler&) = delete;
     ClientHandler& operator=(const ClientHandler&) = delete;

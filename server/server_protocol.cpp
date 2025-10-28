@@ -5,8 +5,8 @@
 
 #include <arpa/inet.h>
 
-#include "../common_src/constants.h"
-#include "../common_src/socket.h"
+#include "../common/constants.h"
+#include "../common/socket.h"
 
 uint8_t ServerProtocol::receiveCommand() {
     uint8_t command;

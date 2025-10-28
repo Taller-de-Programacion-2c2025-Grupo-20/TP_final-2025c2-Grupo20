@@ -2,8 +2,8 @@
 
 #include <iostream>
 
-#include "../common_src/constants.h"
-#include "../common_src/socket.h"
+#include "../common/constants.h"
+#include "../common/socket.h"
 
 #include "acceptor.h"
 #include "gameloop.h"

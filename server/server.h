@@ -1,8 +1,9 @@
 #ifndef SERVER_H
 #define SERVER_H
 
-#include "../common_src/queue.h"
-#include "../common_src/socket.h"
+#include "../common/queue.h"
+#include "../common/socket.h"
+#include "../common/clientCommand.h"
 
 #include "client_handler.h"
 #include "queues_monitor.h"
@@ -12,7 +13,7 @@ private:
     const char* port;
 
     QueuesMonitor clients_queues;
-    Queue<Instruction> gameloop_queue;
+    Queue<InputCmd> gameloop_queue;
 
 public:
     int run();

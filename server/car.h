@@ -3,8 +3,8 @@
 
 #include <Box2D/Box2D.h>
 
-#include "clientCommand.h"
-#include "constants.h"
+#include "../common/clientCommand.h"
+#include "../common/constants.h"
 
 #include <string>
 

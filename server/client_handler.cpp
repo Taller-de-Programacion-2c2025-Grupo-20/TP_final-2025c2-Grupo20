@@ -2,8 +2,8 @@
 
 #include <string>
 
-#include "../common_src/liberror.h"
-#include "../common_src/socket.h"
+#include "../common/liberror.h"
+#include "../common/socket.h"
 
 void ClientHandler::start() {
     receiver.start();
@@ -24,8 +24,8 @@ bool ClientHandler::is_alive() { return receiver.is_alive(); }
 
 int ClientHandler::client_id() { return id; }
 
-ClientHandler::ClientHandler(Socket&& skt, Queue<Instruction>& gameloop_queue,
-                             Queue<ResponseDTO>& client_queue, int id):
+ClientHandler::ClientHandler(Socket&& skt, Queue<InputCmd>& gameloop_queue,
+                             Queue<ServerState>& client_queue, int id):
         protocol(std::move(skt)),
         id(id),
         receiver(protocol, gameloop_queue, id),

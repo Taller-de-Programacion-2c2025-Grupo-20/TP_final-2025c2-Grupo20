@@ -1,15 +1,16 @@
 #ifndef RECEIVER_H
 #define RECEIVER_H
 
-#include "../common_src/queue.h"
-#include "../common_src/thread.h"
+#include "../common/queue.h"
+#include "../common/thread.h"
+#include "../common/clientCommand.h"
 
 #include "server_protocol.h"
 
 class Receiver: public Thread {
 private:
     ServerProtocol& protocol;
-    Queue<Instruction>& gameloop_queue;
+    Queue<InputCmd>& gameloop_queue;
 
     int id;
 
@@ -18,7 +19,7 @@ public:
 
     void stop() override;
 
-    Receiver(ServerProtocol& protocol, Queue<Instruction>& gameloop_queue, int id);
+    Receiver(ServerProtocol& protocol, Queue<InputCmd>& gameloop_queue, int id);
 };
 
 #endif

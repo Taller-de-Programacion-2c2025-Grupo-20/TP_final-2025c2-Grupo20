@@ -1,6 +1,6 @@
 #include "receiver.h"
 
-#include "../common_src/liberror.h"
+#include "../common/liberror.h"
 
 void Receiver::run() {
     while (should_keep_running()) {
@@ -9,7 +9,7 @@ void Receiver::run() {
             if (command == 0x0) {
                 break;
             }
-            gameloop_queue.push(Instruction(command, id));
+            //gameloop_queue.push(Instruction(command, id));
         } catch (const ClosedQueue&) {
             break;
         } catch (const LibError&) {
@@ -27,5 +27,5 @@ void Receiver::stop() {
     protocol.close();
 }
 
-Receiver::Receiver(ServerProtocol& protocol, Queue<Instruction>& gameloop_queue, int id):
+Receiver::Receiver(ServerProtocol& protocol, Queue<InputCmd>& gameloop_queue, int id):
         protocol(protocol), gameloop_queue(gameloop_queue), id(id) {}

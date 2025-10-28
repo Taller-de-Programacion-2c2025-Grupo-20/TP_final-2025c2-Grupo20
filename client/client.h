@@ -1,12 +1,11 @@
 #ifndef CLIENT_H
 #define CLIENT_H
-
-#include <map>
+#include <iostream>
+#include <exception>
 #include <string>
-#include <vector>
-
-#include "../common/socket.h"
-
+#include <SDL2pp/SDL2pp.hh>
+#include <cmath>
+#include <map>
 #include "client_protocol.h"
 
 class Client {
@@ -14,14 +13,14 @@ private:
     ClientProtocol protocol;
 
 public:
-    int run();
+    int runClient();
 
     Client(const char* hostname, const char* port);
 
     Client(const Client&) = delete;
     Client& operator=(const Client&) = delete;
 
-    ~Client();
+    ~Client() = default;  
 };
 
 #endif

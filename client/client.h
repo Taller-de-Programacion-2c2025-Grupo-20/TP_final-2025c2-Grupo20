@@ -7,6 +7,7 @@
 #include <cmath>
 #include <map>
 #include "client_protocol.h"
+#include <algorithm>
 
 class Client {
 private:

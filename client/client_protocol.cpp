@@ -10,8 +10,8 @@ namespace {
 
 ClientProtocol::ClientProtocol(const char* /*host*/, const char* /*port*/) {
     // Estado inicial
-    x = 0.f;
-    y = 0.f;
+    x = 2500.f;
+    y = 2500.f;
     sprite_idx = 0;
     last = {0, x, y, sprite_idx};
 }

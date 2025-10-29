@@ -2,10 +2,9 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
-#include "loginscreen.h"
-#include "loginscreen.h"
-#include "carselectscreen.h"
-#include ",,/common/socket.h"
+#include "Pantallas/loginscreen.h"
+//#include "./Pantallas/carselectscreen.h"
+//#include ",,/common/socket.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
@@ -24,7 +23,7 @@ public:
 private:
     Ui::MainWindow *ui;
     LoginScreen *pantallaLogin;
-    CarSelectScreen* seleccionAutoScreen;
+    //CarSelectScreen* seleccionAutoScreen;
 };
 
 #endif // MAINWINDOW_H

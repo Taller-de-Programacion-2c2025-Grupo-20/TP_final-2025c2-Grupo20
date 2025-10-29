@@ -27,12 +27,59 @@ float pos_x = initial_position[0];
 float pos_y = initial_position[1];
 int   actual_pos = 0; 
 
-std::map<int, Rect> carPositions = {
-    {0, Rect(0, 69, 40, 31)}, {1, Rect(40, 69, 40, 31)}, {2, Rect(80, 65, 40, 38)}, {3, Rect(120, 65, 40, 38)},
-    {4, Rect(160, 63, 40, 42)}, {5, Rect(200, 63, 40, 41)}, {6, Rect(240, 65, 40, 38)}, {7, Rect(280, 69, 40, 31)},
-    {8, Rect(0, 110, 40, 31)}, {9, Rect(40, 108, 40, 31)}, {10, Rect(80, 103, 40, 40)}, {11, Rect(120, 105, 40, 39)},
+std::map<int, Rect> carPositionsGreen = {
+    {0, Rect(0, 0, 32, 32)}, {1, Rect(32, 0, 32, 32)}, {2, Rect(64, 0, 32, 32)}, {3, Rect(96, 0, 32, 32)},
+    {4, Rect(128, 0, 32, 32)}, {5, Rect(160, 0, 32, 32)}, {6, Rect(192, 0, 32, 32)}, {7, Rect(224, 0, 32, 32)},
+    {8, Rect(0, 32, 32, 32)}, {9, Rect(32, 32, 32, 32)}, {10, Rect(64, 32, 32, 32)}, {11, Rect(96, 32, 32, 32)},
+    {12, Rect(128, 32, 32, 32)}, {13, Rect(160, 32, 32, 32)}, {14, Rect(192, 32, 32, 32)}, {15, Rect(224, 32, 32, 32)}
+};
+
+std::map<int, Rect> carPositionsRed = {
+    {0, Rect(0, 64, 40, 40)}, {1, Rect(40, 64, 40, 40)}, {2, Rect(80, 64, 40, 40)}, {3, Rect(120, 64, 40, 40)},
+    {4, Rect(160, 64, 40, 40)}, {5, Rect(200, 64, 40, 40)}, {6, Rect(240, 64, 40, 40)}, {7, Rect(280, 64, 40, 40)},
+    {8, Rect(0, 104, 40, 40)}, {9, Rect(40, 104, 40, 40)}, {10, Rect(80, 104, 40, 40)}, {11, Rect(120, 104, 40, 40)},
     {12, Rect(160, 104, 40, 40)}, {13, Rect(200, 104, 40, 40)}, {14, Rect(240, 104, 40, 40)}, {15, Rect(280, 104, 40, 40)}
 };
+
+std::map<int, Rect> carPositionsDescapotable = {
+    {0, Rect(0, 144, 40, 40)}, {1, Rect(40, 144, 40, 40)}, {2, Rect(80, 144, 40, 40)}, {3, Rect(120, 144, 40, 40)},
+    {4, Rect(160, 144, 40, 40)}, {5, Rect(200, 144, 40, 40)}, {6, Rect(240, 144, 40, 40)}, {7, Rect(280, 144, 40, 40)},
+    {8, Rect(0, 184, 40, 40)}, {9, Rect(40, 184, 40, 40)}, {10, Rect(80, 184, 40, 40)}, {11, Rect(120, 184, 40, 40)},
+    {12, Rect(160, 184, 40, 40)}, {13, Rect(200, 184, 40, 40)}, {14, Rect(240, 184, 40, 40)}, {15, Rect(280, 184, 40, 40)}
+};
+
+std::map<int, Rect> carPositionsCeleste = {
+    {0, Rect(0, 224, 40, 40)}, {1, Rect(40, 224, 40, 40)}, {2, Rect(80, 224, 40, 40)}, {3, Rect(120, 224, 40, 40)},
+    {4, Rect(160, 224, 40, 40)}, {5, Rect(200, 224, 40, 40)}, {6, Rect(240, 224, 40, 40)}, {7, Rect(280, 224, 40, 40)},
+    {8, Rect(0, 264, 40, 40)}, {9, Rect(40, 264, 40, 40)}, {10, Rect(80, 264, 40, 40)}, {11, Rect(120, 264, 40, 40)},
+    {12, Rect(160, 264, 40, 40)}, {13, Rect(200, 264, 40, 40)}, {14, Rect(240, 264, 40, 40)}, {15, Rect(280, 264, 40, 40)}
+};
+
+std::map<int, Rect> carPositionsJeep = {
+    {0, Rect(0, 304, 40, 40)}, {1, Rect(40, 304, 40, 40)}, {2, Rect(80, 304, 40, 40)}, {3, Rect(120, 304, 40, 40)},
+    {4, Rect(160, 304, 40, 40)}, {5, Rect(200, 304, 40, 40)}, {6, Rect(240, 304, 40, 40)}, {7, Rect(280, 304, 40, 40)},
+    {8, Rect(0, 344, 40, 40)}, {9, Rect(40, 344, 40, 40)}, {10, Rect(80, 344, 40, 40)}, {11, Rect(120, 344, 40, 40)},
+    {12, Rect(160, 344, 40, 40)}, {13, Rect(200, 344, 40, 40)}, {14, Rect(240, 344, 40, 40)}, {15, Rect(280, 344, 40, 40)}
+};
+
+std::map<int, Rect> carPositionsCamioneta = {
+    {0, Rect(0, 384, 40, 40)}, {1, Rect(40, 384, 40, 40)}, {2, Rect(80, 384, 40, 40)}, {3, Rect(120, 384, 40, 40)},
+    {4, Rect(160, 384, 40, 40)}, {5, Rect(200, 384, 40, 40)}, {6, Rect(240, 384, 40, 40)}, {7, Rect(280, 384, 40, 40)},
+    {8, Rect(0, 424, 40, 40)}, {9, Rect(40, 424, 40, 40)}, {10, Rect(80, 424, 40, 40)}, {11, Rect(120, 424, 40, 40)},
+    {12, Rect(160, 424, 40, 40)}, {13, Rect(200, 424, 40, 40)}, {14, Rect(240, 424, 40, 40)}, {15, Rect(280, 424, 40, 40)}
+};
+
+std::map<int, Rect> carPositionsCamion = {
+    {0, Rect(0, 464, 48, 48)}, {1, Rect(48, 464, 48, 48)}, {2, Rect(96, 464, 48, 48)}, {3, Rect(144, 464, 48, 48)},
+    {4, Rect(192, 464, 48, 48)}, {5, Rect(240, 464, 48, 48)}, {6, Rect(288, 464, 48, 48)}, {7, Rect(336, 464, 48, 48)},
+    {8, Rect(0, 512, 48, 48)}, {9, Rect(48, 512, 48, 48)}, {10, Rect(96, 512, 48, 48)}, {11, Rect(144, 512, 48, 48)},
+    {12, Rect(192, 512, 48, 48)}, {13, Rect(240, 512, 48, 48)}, {14, Rect(288, 512, 48, 48)}, {15, Rect(336, 512, 48, 48)}
+};
+
+
+int car_to_use = 1;
+
+std::array<std::map<int, Rect>,7> carsPositions = {carPositionsGreen, carPositionsRed, carPositionsDescapotable, carPositionsCeleste, carPositionsJeep,carPositionsCamioneta,carPositionsCamion};
 
 constexpr uint32_t TICK_MS = 16; 
 uint64_t t1 = SDL_GetTicks64();
@@ -88,7 +135,7 @@ while (true) {
     Rect srcRect(0, 0, 1600, 800), dstRect(0, 0, 1600, 800);
     renderer.Copy(background, srcRect, dstRect);
 
-    const Rect& spr = carPositions[actual_pos];
+    const Rect& spr = carsPositions[car_to_use][actual_pos];
     int draw_x = static_cast<int>(std::lround(pos_x));
     int draw_y = static_cast<int>(std::lround(pos_y));
     renderer.Copy(sprites, spr, Rect(draw_x, draw_y, spr.GetW(), spr.GetH()));

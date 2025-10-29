@@ -16,11 +16,18 @@ try {
 	// Create accelerated video renderer with default driver
 	Renderer renderer(window, -1, SDL_RENDERER_ACCELERATED);
 
-	Surface surface(DATA_PATH "/Mobile - Grand Theft Auto 4 - Miscellaneous - Cars.png");
+	Surface surface(DATA_PATH "/cars/Mobile - Grand Theft Auto 4 - Miscellaneous - Cars.png");
 	surface.SetColorKey(true, SDL_MapRGB(surface.Get()->format, 163, 163, 13));
 	Texture sprites(renderer, surface);
+    
+    std::array<std::string, 3> maps = {"/cities/Game Boy _ GBC - Grand Theft Auto - Backgrounds - Liberty City.png", 
+                                "/cities/Game Boy _ GBC - Grand Theft Auto - Backgrounds - San Andreas.png",
+                                "/cities/Game Boy _ GBC - Grand Theft Auto - Backgrounds - Vice City.png"
+                            };
 
-	Texture background(renderer, DATA_PATH "/Game Boy _ GBC - Grand Theft Auto - Backgrounds - Liberty City.png");
+    int map_to_play = 0;
+
+	Texture background(renderer, DATA_PATH + maps[map_to_play]);
     
 std::array<float, 2> initial_position = protocol.getInitialPos();
 float pos_x = initial_position[0];

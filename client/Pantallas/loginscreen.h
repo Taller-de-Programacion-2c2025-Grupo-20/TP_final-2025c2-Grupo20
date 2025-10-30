@@ -1,5 +1,5 @@
-// #ifndef LOGINSCREEN_H
-// #define LOGINSCREEN_H
+#ifndef LOGINSCREEN_H
+#define LOGINSCREEN_H
 
 #include <QWidget>
 #include <QFutureWatcher>
@@ -28,4 +28,4 @@ private:
     Ui::LoginScreen *ui;
 };
 
-// endif
+#endif

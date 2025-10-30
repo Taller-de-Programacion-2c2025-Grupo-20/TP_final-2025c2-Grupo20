@@ -52,8 +52,10 @@ target_include_directories(taller_common PUBLIC .)
 
 # Install libSDL2 and libSDL2pp (for client or editor)
 # HEY!! TODO XXX: add more dependendies (either for client, server or editor)
-if(TALLER_CLIENT OR TALLER_EDITOR)
+if (TALLER_CLIENT OR TALLER_EDITOR)
     include(FetchContent)
+
+    # SDL2
     FetchContent_Declare(
         SDL2
         GIT_REPOSITORY https://github.com/libsdl-org/SDL.git
@@ -63,6 +65,7 @@ if(TALLER_CLIENT OR TALLER_EDITOR)
         OVERRIDE_FIND_PACKAGE
     )
 
+    # SDL2_image
     FetchContent_Declare(
         SDL2_image
         GIT_REPOSITORY https://github.com/libsdl-org/SDL_image.git
@@ -72,6 +75,7 @@ if(TALLER_CLIENT OR TALLER_EDITOR)
         OVERRIDE_FIND_PACKAGE
     )
 
+    # SDL2_mixer
     FetchContent_Declare(
         SDL2_mixer
         GIT_REPOSITORY https://github.com/libsdl-org/SDL_mixer.git
@@ -81,6 +85,7 @@ if(TALLER_CLIENT OR TALLER_EDITOR)
         OVERRIDE_FIND_PACKAGE
     )
 
+    # SDL2_ttf
     FetchContent_Declare(
         SDL2_ttf
         GIT_REPOSITORY https://github.com/libsdl-org/SDL_ttf.git
@@ -90,56 +95,49 @@ if(TALLER_CLIENT OR TALLER_EDITOR)
         OVERRIDE_FIND_PACKAGE
     )
 
+    # libSDL2pp
     FetchContent_Declare(
         libSDL2pp
         OVERRIDE_FIND_PACKAGE
         URL https://github.com/libSDL2pp/libSDL2pp/archive/cc198c9a5657048bee67ece82de620b2d5661084.zip
     )
+    set(SDL2PP_WITH_IMAGE ON CACHE BOOL "" FORCE)
+    set(SDL2PP_WITH_TTF   ON CACHE BOOL "" FORCE)
 
+    # Descarga/prepare todas las deps anteriores
     FetchContent_MakeAvailable(SDL2 SDL2_image SDL2_mixer SDL2_ttf libSDL2pp)
-endif()
 
-
-if(TALLER_CLIENT)
-    # 1. Configurar Qt (Global-condicional, como tu compañero)
+    # Qt común para Client/Editor
     set(CMAKE_AUTOUIC ON)
     set(CMAKE_AUTOMOC ON)
     set(CMAKE_AUTORCC ON)
     find_package(Qt6 COMPONENTS Widgets Network REQUIRED)
+endif()
 
-    # 2. Crear el ejecutable
+
+
+if(TALLER_CLIENT)
     add_executable(taller_client)
-
-    # 3. Definir dependencias
     add_dependencies(taller_client taller_common SDL2pp::SDL2pp)
 
-    # 4. Enlazar TODAS las librerías (SDL y Qt)
-    #    (Esto le da a "taller_client" las rutas de inclusión (headers))
-    target_link_libraries(taller_client
-        PRIVATE
+    target_link_libraries(taller_client PRIVATE
         taller_common
         SDL2pp::SDL2pp
-        # Enlazamos las librerías de SDL que faltaban en el template
         SDL2::SDL2
         SDL2_image::SDL2_image
         SDL2_ttf::SDL2_ttf
         SDL2_mixer::SDL2_mixer
-        # Enlazamos Qt
         Qt6::Widgets
         Qt6::Network
     )
 
-    # 5. Configurar el resto
-    target_include_directories(taller_client PRIVATE
-            ${libSDL2pp_SOURCE_DIR}
-            ${Qt6Widgets_INCLUDE_DIRS}
-            ${Qt6Network_INCLUDE_DIRS}
-        )
+    target_include_directories(taller_client PRIVATE ${libSDL2pp_SOURCE_DIR})
     target_compile_definitions(taller_client PRIVATE DATA_PATH="${CMAKE_SOURCE_DIR}/client/data")
     set_project_warnings(taller_client ${TALLER_MAKE_WARNINGS_AS_ERRORS} FALSE)
 
     add_subdirectory(client)
 endif()
+
 # --- FIN DEL BLOQUE MODIFICADO ---
 
 if(TALLER_SERVER)
@@ -155,28 +153,39 @@ if(TALLER_SERVER)
 
     set_project_warnings(taller_server ${TALLER_MAKE_WARNINGS_AS_ERRORS} FALSE)
 
-    # Link the taller_common lib target
-    target_link_libraries(taller_server taller_common)
+    find_package(Box2D REQUIRED)
+
+    # Decirle al compilador dónde están los headers
+    target_include_directories(taller_server PRIVATE ${Box2D_INCLUDE_DIRS})
+
+    target_link_libraries(taller_server
+    PRIVATE
+        taller_common   # <--- esto es lo que te falta
+        Box2D
+    )
+
 endif()
 
 if(TALLER_EDITOR)
-    # HEY!! TODO XXX: Change the name of the executable to the one you like!
     add_executable(taller_editor)
-
-    # Make them depend on taller_common lib
     add_dependencies(taller_editor taller_common SDL2pp::SDL2pp)
 
-    # Add source files and enable warnings
-    # HEY!! TODO XXX: add more subfolders here
-    add_subdirectory(editor)
+    # Si tu editor usa los mismos assets de SDL que el client, enlazalos también:
+    target_link_libraries(taller_editor PRIVATE
+        taller_common
+        SDL2pp::SDL2pp
+        SDL2::SDL2
+        SDL2_image::SDL2_image
+        SDL2_ttf::SDL2_ttf
+        SDL2_mixer::SDL2_mixer
+        Qt6::Widgets
+        Qt6::Network
+    )
 
+    target_include_directories(taller_editor PRIVATE ${libSDL2pp_SOURCE_DIR})
     set_project_warnings(taller_editor ${TALLER_MAKE_WARNINGS_AS_ERRORS} FALSE)
 
-    # add libSDL2pp's headers
-    target_include_directories(taller_editor PRIVATE ${libSDL2pp_SOURCE_DIR})
-
-    # Link the taller_common lib target
-    target_link_libraries(taller_editor taller_common SDL2pp::SDL2pp)
+    add_subdirectory(editor)
 endif()
 
 

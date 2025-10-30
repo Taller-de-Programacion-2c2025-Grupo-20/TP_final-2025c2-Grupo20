@@ -28,9 +28,17 @@ struct ResponseDTO {
             command(command), cars_with_nitro(cars_with_nitro), nitro_state(nitro_state) {}
 };
 
-#define SEND_NITRO 0x04
-#define SEND_CARS_WITH_NITRO 0x10
-#define NITRO_ACTIVATED 0x07
-#define NITRO_DEACTIVATED 0x08
+
+const uint8_t CMD_LOGIN = 0x01;
+const uint8_t LOGIN_SUCCESS = 0x2;
+const uint8_t CMD_ENVIAR_INPUT = 0x03;
+
+const uint8_t EVT_GAME_STATE = 0x80;
+const uint8_t EVT_RACE_FINISHED = 0x90;
+
+const uint8_t SEND_NITRO = 0x04;
+const uint8_t SEND_CARS_WITH_NITRO = 0x10;
+const uint8_t NITRO_ACTIVATED = 0x07;
+const uint8_t NITRO_DEACTIVATED = 0x08;
 
 #endif

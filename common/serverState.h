@@ -7,6 +7,7 @@ struct ServerState {
     float y;
     float angle; 
 
+    ServerState() : x(0.0f), y(0.0f), angle(0.0f) {}
     ServerState(float x, float y, float angle) : x(x), y(y), angle(angle) {}
 };
 #endif

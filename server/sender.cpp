@@ -6,8 +6,8 @@ void Sender::run() {
 
     while (should_keep_running()) {
         try {
-            //ServerState response = client_queue.pop();
-            //protocol.sendResponse(response);
+            //ServerState response = client_queue.pop(); --> popeamos un severState actualizacion para el server
+            //protocol.sendResponse(response); --> manda la respuesta a los clientes
         } catch (const ClosedQueue&) {
             break;
         } catch (const LibError& e) {

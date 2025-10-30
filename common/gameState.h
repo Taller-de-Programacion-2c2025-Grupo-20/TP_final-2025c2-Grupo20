@@ -1,0 +1,15 @@
+#pragma once
+#include <vector>
+#include <stdint.h>
+#include "serverState.h"
+
+struct PlayerState {
+    uint8_t player_id;
+    ServerState state;
+    uint8_t health;
+};
+
+struct GameStateDTO {
+    uint8_t car_count;
+    std::vector<PlayerState> players;
+};

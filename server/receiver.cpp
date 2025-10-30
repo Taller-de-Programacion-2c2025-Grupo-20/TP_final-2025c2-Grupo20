@@ -5,11 +5,11 @@
 void Receiver::run() {
     while (should_keep_running()) {
         try {
-            uint8_t command = protocol.receiveCommand();
-            if (command == 0x0) {
+            uint8_t command = protocol.receiveCommand(); // esto sería un input cmd de sdl
+            if (command == 0x0) { // Se fue un cliente
                 break;
             }
-            //gameloop_queue.push(Instruction(command, id));
+            //gameloop_queue.push(InpuntCMD(command, id));
         } catch (const ClosedQueue&) {
             break;
         } catch (const LibError&) {

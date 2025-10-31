@@ -1,8 +1,8 @@
-#include "sender.h"
+#include "client_sender.h"
 
 #include "../common/liberror.h"
 
-void Sender::run() {
+void ClientSender::run() {
 
     while (should_keep_running()) {
         try {
@@ -16,10 +16,10 @@ void Sender::run() {
     }
 }
 
-void Sender::stop() {
+void ClientSender::stop() {
     Thread::stop();
     client_queue.close();
 }
 
-Sender::Sender(ClientProtocol& protocol, Queue<InputCmd>& client_queue):
+ClientSender::ClientSender(ClientProtocol& protocol, Queue<InputCmd>& client_queue):
         protocol(protocol), client_queue(client_queue) {}

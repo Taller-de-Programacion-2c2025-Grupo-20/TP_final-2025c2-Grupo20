@@ -1,11 +1,12 @@
+#ifndef CLIENT_PROTOCOL_H
+#define CLIENT_PROTOCOL_H
+
 #include <cstdint>
 #include <string>
 #include <vector>
 #include "../common/socket.h"
 #include "../common/gameState.h"
 #include "../common/clientCommand.h"
-
-
 
 class ClientProtocol {
 public:
@@ -29,3 +30,5 @@ private:
 
     ServerState last{};
 };
+
+#endif

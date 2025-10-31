@@ -5,11 +5,13 @@
 void Receiver::run() {
     while (should_keep_running()) {
         try {
-            uint8_t command_code = protocol.receiveCommand();
-            if (command_code == 0x0) {
-                break;
-            }
-
+            InputCmd client_command = protocol.receive_input_command();
+            gameloop_queue.push(client_command);
+            //uint8_t command_code = protocol.receiveCommand();
+            //if (command_code == 0x0) {
+            //    break;
+            //}
+/*
             switch (command_code) {
                 
                 case CMD_LOGIN: {
@@ -30,7 +32,7 @@ void Receiver::run() {
                     // Error, comando desconocido
                     break;
             }
-        
+*/        
         } catch (const ClosedQueue&) {
             break;
         } catch (const LibError&) {

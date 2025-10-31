@@ -12,17 +12,24 @@
 #include <algorithm>
 #include "../common/clientCommand.h"
 #include "../common/queue.h"
-#include "sender.h"
-#include "receiver.h"
+#include "client_sender.h"
+#include "client_receiver.h"
+#include "../common/gameState.h"
+#include <SDL2pp/SDL.hh>
+#include <SDL2pp/Window.hh>
+#include <SDL2pp/Renderer.hh>
+#include <SDL2pp/Surface.hh>
+#include <SDL2pp/Texture.hh>
 
 class Client {
 private:
     ClientProtocol protocol;
     uint8_t my_player_id;
 
-    Queue<InputCmd> sender_queue;
-    Sender sender;
-    Receiver receiver;
+    Queue<InputCmd> input_queue;
+    Queue<GameStateDTO> state_queue;
+    ClientSender sender;
+    ClientReceiver receiver;
 
     bool running = false;
     bool backwards = false;

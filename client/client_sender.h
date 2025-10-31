@@ -1,5 +1,5 @@
-#ifndef SENDER_H
-#define SENDER_H
+#ifndef CLIENT_SENDER_H
+#define CLIENT_SENDER_H
 
 #include "../common/queue.h"
 #include "../common/thread.h"
@@ -7,7 +7,7 @@
 
 #include "client_protocol.h"
 
-class Sender: public Thread {
+class ClientSender: public Thread {
 private:
     ClientProtocol& protocol;
     Queue<InputCmd>& client_queue;
@@ -17,7 +17,7 @@ public:
 
     void stop() override;
 
-    Sender(ClientProtocol& protocol, Queue<InputCmd>& client_queue);
+    ClientSender(ClientProtocol& protocol, Queue<InputCmd>& client_queue);
 };
 
 #endif

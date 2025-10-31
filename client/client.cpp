@@ -1,5 +1,7 @@
 #include "client.h"
 #include "../common/gameState.h"
+#include <iostream>
+
 
 using namespace SDL2pp;
 
@@ -29,12 +31,6 @@ try {
     };
     int map_to_play = 0;
     Texture background(renderer, DATA_PATH + maps[map_to_play]);
-
-
-    std::array<float, 2> initial_position = .getInitialPos();
-    float pos_x = initial_position[0];
-    float pos_y = initial_position[1];
-    int   actual_pos = 0;
 
 
     std::map<int, Rect> carPositionsGreen = {
@@ -86,7 +82,7 @@ try {
         {12, Rect(192, 512, 48, 48)}, {13, Rect(240, 512, 48, 48)}, {14, Rect(288, 512, 48, 48)}, {15, Rect(336, 512, 48, 48)}
     };
 
-    int car_to_use = 1;
+    //int car_to_use = 1;
 
     std::array<std::map<int, Rect>, 7> carsPositions = {
         carPositionsGreen, carPositionsRed, carPositionsDescapotable,
@@ -101,8 +97,8 @@ try {
     Rect srcRect(0, 0, 1600, 800);
     Rect dstRect(0, 0, 1600, 800);
 
-    const int viewW = dstRect.GetW();
-    const int viewH = dstRect.GetH();
+    //const int viewW = dstRect.GetW();
+    //const int viewH = dstRect.GetH();
 
     while (true) {
 
@@ -112,13 +108,11 @@ try {
                 InputCmd quit{};
                 quit.key = InputKey::Quit;
                 quit.action = InputAction::Press;
-                quit.client_ts_ms = SDL_GetTicks64();
-                protocol.sendInput(quit);
+                input_queue.try_push(quit);
                 return 0;
             }
             if (ev.type == SDL_KEYDOWN || ev.type == SDL_KEYUP) {
                 InputCmd cmd{};
-                cmd.client_ts_ms = SDL_GetTicks64();
                 cmd.action = (ev.type == SDL_KEYDOWN) ? InputAction::Press : InputAction::Release;
                 switch (ev.key.keysym.sym) {
                     case SDLK_UP:    cmd.key = InputKey::Up;    break;
@@ -127,9 +121,8 @@ try {
                     case SDLK_RIGHT: cmd.key = InputKey::Right; break;
                     case SDLK_q:
                     case SDLK_ESCAPE: cmd.key = InputKey::Quit; break;
-                    default:         cmd.key = InputKey::Unknown; break;
                 }
-                protocol.sendInput(cmd);
+                input_queue.try_push(cmd);
                 if (cmd.key == InputKey::Quit && cmd.action == InputAction::Press) return 0;
             }
         }
@@ -139,50 +132,58 @@ try {
         int64_t diff = static_cast<int64_t>(now - t1);
         int64_t ticks_to_run = diff / TICK_MS;
         for (int64_t i = 0; i < ticks_to_run; ++i) {
-            protocol.serverTick(TICK_MS);
             t1 += TICK_MS;
         }
 
+        GameStateDTO state;
+        state_queue.try_pop(state);
+        std::cout << state.players[0].state.x;
+        std::cout << state.players[0].state.y;
+        std::cout << state.players[0].state.angle;
 
-        if (GameStateDTO st = receiver.pollState()) {
-            pos_x = st->x;
-            pos_y = st->y;
-            actual_pos = st->sprite_idx;
+        
 
-            int car_cx = static_cast<int>(std::lround(pos_x));
-            int car_cy = static_cast<int>(std::lround(pos_y));
+        // if (
+        //     GameStateDTO st = receiver.pollState()
+        // ) {
+            // pos_x = st->x;
+            // pos_y = st->y;
+            // actual_pos = st->sprite_idx;
 
-            int camX = car_cx - viewW / 2;
-            int camY = car_cy - viewH / 2;
+            // int car_cx = static_cast<int>(std::lround(pos_x));
+            // int car_cy = static_cast<int>(std::lround(pos_y));
 
-            const int bgW = background.GetWidth();
-            const int bgH = background.GetHeight();
-            const int maxCamX = std::max(0, bgW - viewW);
-            const int maxCamY = std::max(0, bgH - viewH);
+            // int camX = car_cx - viewW / 2;
+            // int camY = car_cy - viewH / 2;
 
-            camX = std::max(0, std::min(camX, maxCamX));
-            camY = std::max(0, std::min(camY, maxCamY));
+            // const int bgW = background.GetWidth();
+            // const int bgH = background.GetHeight();
+            // const int maxCamX = std::max(0, bgW - viewW);
+            // const int maxCamY = std::max(0, bgH - viewH);
 
-            srcRect.SetX(camX).SetY(camY);
-        }
+            // camX = std::max(0, std::min(camX, maxCamX));
+            // camY = std::max(0, std::min(camY, maxCamY));
+
+            // srcRect.SetX(camX).SetY(camY);
+        //}
 
         renderer.SetDrawColor(0, 0, 0, 255);
         renderer.Clear();
 
         renderer.Copy(background, srcRect, dstRect);
 
-        const Rect& spr = carsPositions[car_to_use][actual_pos];
+        // const Rect& spr = carsPositions[car_to_use][actual_pos];
 
-        int draw_x = static_cast<int>(std::lround(pos_x)) - spr.GetW() / 2 - srcRect.GetX();
-        int draw_y = static_cast<int>(std::lround(pos_y)) - spr.GetH() / 2 - srcRect.GetY();
+        // int draw_x = static_cast<int>(std::lround(pos_x)) - spr.GetW() / 2 - srcRect.GetX();
+        // int draw_y = static_cast<int>(std::lround(pos_y)) - spr.GetH() / 2 - srcRect.GetY();
 
-        renderer.Copy(sprites, spr, Rect(draw_x, draw_y, spr.GetW(), spr.GetH()));
+        // renderer.Copy(sprites, spr, Rect(draw_x, draw_y, spr.GetW(), spr.GetH()));
 
         renderer.Present();
 
-        now  = SDL_GetTicks64();
-        diff = static_cast<int64_t>(t1 - now);
-        if (diff > 0) SDL_Delay(static_cast<uint32_t>(diff));
+        // now  = SDL_GetTicks64();
+        // diff = static_cast<int64_t>(t1 - now);
+        // if (diff > 0) SDL_Delay(static_cast<uint32_t>(diff));
     }
 
     return 0;
@@ -196,9 +197,10 @@ try {
 Client::Client(const char* hostname, const char* port)
     : protocol(hostname, port),        
       my_player_id(0),                
-      sender_queue(128),             
-      sender(protocol, client_queue),  
-      receiver(protocol),            
+      input_queue(128),
+      state_queue(128),             
+      sender(protocol, input_queue),  
+      receiver(protocol, state_queue),            
       running(false),
       backwards(false),
       turn_dir(0)

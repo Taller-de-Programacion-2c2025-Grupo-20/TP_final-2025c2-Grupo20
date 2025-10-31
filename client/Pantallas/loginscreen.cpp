@@ -1,15 +1,12 @@
 #include "loginscreen.h"
-#include "ui_loginscreen.h" 
-#include <QDebug> 
+#include "ui_loginscreen.h" // El archivo generado por uic
 
 LoginScreen::LoginScreen(QWidget *parent) :
         QWidget(parent),
-        ui(new Ui::LoginScreen) 
+        ui(new Ui::LoginScreen)
 {
-
     ui->setupUi(this);
-
-    connect(ui->btn_conectar, &QPushButton::clicked, this, &LoginScreen::on_btn_conectar_clicked);
+    // El slot on_btn_conectar_clicked se conecta automáticamente por la convención de nombres.
 }
 
 LoginScreen::~LoginScreen()
@@ -17,16 +14,21 @@ LoginScreen::~LoginScreen()
     delete ui;
 }
 
+void LoginScreen::displayError(const QString &message) {
+    ui->label_error->setText(message);
+}
+
 void LoginScreen::on_btn_conectar_clicked()
 {
-    qDebug() << "Botón 'Conectar' presionado.";
-
-    QString nombre = ui->edit_nombre->text();
     QString ip = ui->edit_ip_servidor->text();
+    QString name = ui->edit_nombre->text();
 
-    qDebug() << "Nombre ingresado:" << nombre;
-    qDebug() << "IP ingresada:" << ip;
+    if (ip.isEmpty() || name.isEmpty()) {
+        this->displayError("Debe ingresar una IP y un nombre de usuario.");
+        return;
+    }
 
-    ui->label_error->setText("Simulando conexión...");
+    this->displayError("");
 
+    emit connectAttempted(ip, name);
 }

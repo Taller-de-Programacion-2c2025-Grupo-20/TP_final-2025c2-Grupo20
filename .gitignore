@@ -1,2 +1,7 @@
 build/
 tags.*
+_deps/
+.qt/
+.vscode/
+.qtcreator/
+

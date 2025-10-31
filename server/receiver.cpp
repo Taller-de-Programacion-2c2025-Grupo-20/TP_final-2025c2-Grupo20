@@ -5,13 +5,11 @@
 void Receiver::run() {
     while (should_keep_running()) {
         try {
-            InputCmd client_command = protocol.receive_input_command();
-            gameloop_queue.push(client_command);
-            //uint8_t command_code = protocol.receiveCommand();
-            //if (command_code == 0x0) {
-            //    break;
-            //}
-/*
+            uint8_t command_code = protocol.receiveCommand();
+            if (command_code == 0x0) {
+                break;
+            }
+
             switch (command_code) {
                 
                 case CMD_LOGIN: {
@@ -22,9 +20,10 @@ void Receiver::run() {
                 }
                 
                 case CMD_ENVIAR_INPUT: {
-                    InputCmd cmd = protocol.receive_input_command();
-                    cmd.player_id = this->id;
-                    gameloop_queue.push(cmd);
+                    
+                    InputCmd client_command = protocol.receive_input_command();
+                    std::cout << static_cast<int>(client_command.action) << "\n";
+                    gameloop_queue.push(client_command);
                     break;
                 }
 
@@ -32,7 +31,7 @@ void Receiver::run() {
                     // Error, comando desconocido
                     break;
             }
-*/        
+        
         } catch (const ClosedQueue&) {
             break;
         } catch (const LibError&) {

@@ -15,7 +15,7 @@ void Acceptor::run() {
     while (should_keep_running()) {
         try {
             Socket client_skt = skt.accept();
-            Queue<ServerState>& sender_queue = clients_queues.addQueue(next_id);
+            Queue<GameStateDTO>& sender_queue = clients_queues.addQueue(next_id);
             auto* c =
                     new ClientHandler(std::move(client_skt), gameloop_queue, sender_queue, next_id);
             next_id++;

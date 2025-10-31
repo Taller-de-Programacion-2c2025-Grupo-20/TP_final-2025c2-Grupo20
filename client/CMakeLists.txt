@@ -5,6 +5,8 @@ target_sources(taller_client PRIVATE
     client_main.cpp
     client_protocol.cpp
     mainwindow.cpp
+    sender.cpp
+    receiver.cpp
 
     Pantallas/carselectscreen.cpp
     Pantallas/lobbyscreen.cpp
@@ -14,9 +16,9 @@ target_sources(taller_client PRIVATE
 # --- Archivos de Cabecera (SOLO los que NO usan Q_OBJECT) ---
 target_sources(taller_client PUBLIC
     client.h
-    clientReceiver.h
-    clientSender.h
     client_protocol.h
+    sender.h
+    receiver.h
 )
 
 # --- Archivos de Interfaz (.ui) ---

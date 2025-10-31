@@ -1,4 +1,5 @@
 #include "client.h"
+#include "../common/gameState.h"
 
 using namespace SDL2pp;
 
@@ -30,7 +31,7 @@ try {
     Texture background(renderer, DATA_PATH + maps[map_to_play]);
 
 
-    std::array<float, 2> initial_position = protocol.getInitialPos();
+    std::array<float, 2> initial_position = .getInitialPos();
     float pos_x = initial_position[0];
     float pos_y = initial_position[1];
     int   actual_pos = 0;
@@ -143,7 +144,7 @@ try {
         }
 
 
-        if (auto st = protocol.pollState()) {
+        if (GameStateDTO st = receiver.pollState()) {
             pos_x = st->x;
             pos_y = st->y;
             actual_pos = st->sprite_idx;
@@ -193,14 +194,42 @@ try {
 }
 
 Client::Client(const char* hostname, const char* port)
-    : protocol(ClientProtocol(hostname, port)) {}
+    : protocol(hostname, port),        
+      my_player_id(0),                
+      sender_queue(128),             
+      sender(protocol, client_queue),  
+      receiver(protocol),            
+      running(false),
+      backwards(false),
+      turn_dir(0)
+{}
 
-int main(int argc, const char* argv[]) {
-    if (argc != 3) {
-        std::cerr << "Cantidad de parametros incorrecta\n";
-        return EXIT_FAILURE;
+ClientProtocol& Client::getProtocol() {
+    return protocol;
+}    
+
+bool Client::try_login(const std::string& username) {
+    uint8_t player_id;
+    
+    protocol.send_login_attempt(username);
+
+    uint8_t response_code = protocol.receive_login_response(player_id);
+
+    if (response_code == CMD_LOGIN) {
+        // Aca se podria guardar el player_id en un futuro
+        return true;
     }
-    Client client(argv[1], argv[2]);
-    client.runClient();
-    return EXIT_SUCCESS;
+    
+    return false; 
 }
+
+
+// int main(int argc, const char* argv[]) {
+//     if (argc != 3) {
+//         std::cerr << "Cantidad de parametros incorrecta\n";
+//         return EXIT_FAILURE;
+//     }
+//     Client client(argv[1], argv[2]);
+//     client.runClient();
+//     return EXIT_SUCCESS;
+// }

@@ -6,10 +6,10 @@
 
 #include "../common/constants.h"
 #include "../common/queue.h"
-#include "../common/serverState.h"
+#include "../common/gameState.h"
 
 struct SenderQueue {
-    Queue<ServerState> queue;
+    Queue<GameStateDTO> queue;
     bool is_alive;
 
     SenderQueue(): is_alive(true) {}
@@ -21,11 +21,11 @@ private:
     std::mutex mutex;
 
 public:
-    Queue<ServerState>& addQueue(int client_id);
+    Queue<GameStateDTO>& addQueue(int client_id);
 
     void markQueueForDeletion(int client_id);
 
-    void broadcast(const ServerState& res);
+    void broadcast(const GameStateDTO& res);
 
     QueuesMonitor();
 

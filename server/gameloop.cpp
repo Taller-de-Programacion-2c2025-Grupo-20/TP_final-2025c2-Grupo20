@@ -23,7 +23,17 @@ void Gameloop::run() {
             test_car.updateCarPhysics();
             world.Step(timeStep, 6, 2);
 
-            clients_queues.broadcast(ServerState(test_car.position().x, test_car.position().y, test_car.angle()));
+            GameStateDTO current_state;
+
+            PlayerState test_player_state;
+            test_player_state.player_id = 0; 
+            test_player_state.state = ServerState(test_car.position().x, test_car.position().y, test_car.angle());
+            test_player_state.health = 100; 
+
+            current_state.players.push_back(test_player_state);
+            current_state.car_count = current_state.players.size();
+
+            clients_queues.broadcast(current_state);
 
             std::this_thread::sleep_for(std::chrono::milliseconds(250));
         } catch (const ClosedQueue&) {

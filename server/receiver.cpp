@@ -1,15 +1,36 @@
 #include "receiver.h"
-
 #include "../common/liberror.h"
+#include "../common/constants.h"
 
 void Receiver::run() {
     while (should_keep_running()) {
         try {
-            uint8_t command = protocol.receiveCommand(); // esto sería un input cmd de sdl
-            if (command == 0x0) { // Se fue un cliente
+            uint8_t command_code = protocol.receiveCommand();
+            if (command_code == 0x0) {
                 break;
             }
-            //gameloop_queue.push(InpuntCMD(command, id));
+
+            switch (command_code) {
+                
+                case CMD_LOGIN: {
+                    std::string username = protocol.receive_login_attempt();
+                    // (Aquí deberías encolar un "LoginCommand"
+                    // para que el Server/Lobby lo procese)
+                    break;
+                }
+                
+                case CMD_ENVIAR_INPUT: {
+                    InputCmd cmd = protocol.receive_input_command();
+                    cmd.player_id = this->id;
+                    gameloop_queue.push(cmd);
+                    break;
+                }
+
+                default:
+                    // Error, comando desconocido
+                    break;
+            }
+        
         } catch (const ClosedQueue&) {
             break;
         } catch (const LibError&) {
@@ -22,7 +43,6 @@ void Receiver::stop() {
     if (!is_alive()) {
         return;
     }
-
     Thread::stop();
     protocol.close();
 }

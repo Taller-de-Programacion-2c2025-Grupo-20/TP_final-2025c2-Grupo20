@@ -9,7 +9,7 @@ LoginScreen::LoginScreen(QWidget *parent) :
 
     ui->setupUi(this);
 
-    connect(ui->btn_conectar, &QPushButton::clicked, this, &LoginScreen::onConectarClicked);
+    connect(ui->btn_conectar, &QPushButton::clicked, this, &LoginScreen::on_btn_conectar_clicked);
 }
 
 LoginScreen::~LoginScreen()
@@ -17,7 +17,7 @@ LoginScreen::~LoginScreen()
     delete ui;
 }
 
-void LoginScreen::onConectarClicked()
+void LoginScreen::on_btn_conectar_clicked()
 {
     qDebug() << "Botón 'Conectar' presionado.";
 

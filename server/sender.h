@@ -10,14 +10,14 @@
 class Sender: public Thread {
 private:
     ServerProtocol& protocol;
-    Queue<ServerState>& client_queue;
+    Queue<GameStateDTO>& client_queue;
 
 public:
     void run() override;
 
     void stop() override;
 
-    Sender(ServerProtocol& protocol, Queue<ServerState>& client_queue);
+    Sender(ServerProtocol& protocol, Queue<GameStateDTO>& client_queue);
 };
 
 #endif

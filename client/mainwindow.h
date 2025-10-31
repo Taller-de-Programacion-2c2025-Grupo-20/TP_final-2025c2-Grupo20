@@ -3,8 +3,9 @@
 
 #include <QMainWindow>
 #include "Pantallas/loginscreen.h"
+#include "Pantallas/lobbyscreen.h"
+#include "client.h"
 //#include "./Pantallas/carselectscreen.h"
-//#include ",,/common/socket.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
@@ -20,10 +21,16 @@ public:
     explicit MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
+private slots:
+    // este slot maneja el intento de conexion
+    void handleLoginAttempt(const QString &ip, const QString &name);
+
 private:
     Ui::MainWindow *ui;
     LoginScreen *pantallaLogin;
-    //CarSelectScreen* seleccionAutoScreen;
+    LobbyScreen *pantallaLobby;
+
+    Client *client = nullptr;
 };
 
 #endif // MAINWINDOW_H

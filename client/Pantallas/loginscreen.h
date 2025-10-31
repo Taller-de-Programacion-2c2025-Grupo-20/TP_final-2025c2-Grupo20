@@ -15,17 +15,20 @@ class LoginScreen : public QWidget
 
 public:
     explicit LoginScreen(QWidget *parent = nullptr);
-
     ~LoginScreen();
+    void displayError(const QString &message);
 
 signals:
-    void loginExitoso();
+    // notifico a mainwindow q el usuario intento conectarse
+    void connectAttempted(const QString &ip, const QString &name);
 
 private slots:
-    void onConectarClicked();
+    // conectado a btn_conectar
+    void on_btn_conectar_clicked();
 
 private:
     Ui::LoginScreen *ui;
+
 };
 
 #endif

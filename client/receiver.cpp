@@ -1,15 +1,16 @@
-#include "clientReceiver.h"
+#include "receiver.h"
 #include "../common/constants.h"
 #include <stdexcept>
+#include "client_protocol.h"
 
-ClientReceiver::ClientReceiver(ClientProtocol& protocol) :
+Receiver::Receiver(ClientProtocol& protocol) :
     protocol(protocol),
     state_queue(1)
 {
     last_known_state.car_count = 0;
 }
 
-void ClientReceiver::run() {
+void Receiver::run() {
     try {
         while (should_keep_running()) {
             
@@ -34,7 +35,7 @@ void ClientReceiver::run() {
         }
     } catch (const std::exception& e) {
         if (should_keep_running()) {
-            std::cerr << "Error en ClientReceiver: " << e.what() << std::endl;
+            std::cerr << "Error en Receiver: " << e.what() << std::endl;
         }
     }
 }
@@ -43,7 +44,7 @@ void ClientReceiver::run() {
  * @brief Obtiene el último estado del juego (no bloqueante).
  * Llamado por el hilo principal (gráficos) en cada fotograma.
  */
-GameStateDTO ClientReceiver::pollState() {
+GameStateDTO Receiver::pollState() {
     GameStateDTO new_state;
 
     if (state_queue.try_pop(new_state)) {

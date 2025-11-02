@@ -1,4 +1,5 @@
 #include "car.h"
+#include <iostream>
 
 b2Vec2 Car::getLateralVelocity() {
     b2Vec2 rightNormal = car_body->GetWorldVector(b2Vec2(1,0));
@@ -36,40 +37,48 @@ void Car::handleInput(InputCmd cmd) {
     if (cmd.key == InputKey::Up){
         if (cmd.action == InputAction::Press){
             accelerating = true;
+            std::cout << "Apreto acelerador\n";
         }
 
         if (cmd.action == InputAction::Release){
             accelerating = false;
+            std::cout << "Suelto acelerador\n";
         }
     }
 
     if (cmd.key == InputKey::Down){
         if (cmd.action == InputAction::Press){
             braking = true;
+            std::cout << "Apreto freno\n";
         }
 
         if (cmd.action == InputAction::Release){
             braking = false;
+            std::cout << "Solto freno\n";
         }
     }
 
     if (cmd.key == InputKey::Left){
         if (cmd.action == InputAction::Press){
             turningLeft = true;
+            std::cout << "Dobla a la izquierda\n";
         }
 
         if (cmd.action == InputAction::Release){
             turningLeft = false;
+            std::cout << "Deja de doblar a la izquierda\n";
         }
     }
 
     if (cmd.key == InputKey::Right){
         if (cmd.action == InputAction::Press){
             turningRight = true;
+            std::cout << "Dobla a la derecha\n";
         }
 
         if (cmd.action == InputAction::Release){
             turningRight = false;
+            std::cout << "Deja de doblar a la derecha\n";
         }
     }
 

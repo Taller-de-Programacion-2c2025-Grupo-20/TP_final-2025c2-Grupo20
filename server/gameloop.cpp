@@ -18,9 +18,9 @@ void Gameloop::run() {
             InputCmd input;
             while (gameloop_queue.try_pop(input)) {
                 test_car.handleInput(input);
-                std::cout << "Pos del auto en x:" << test_car.position().x << "Pos del auto en y:" << test_car.position().y << "\n";
+                
             }
-
+            std::cout << "Pos del auto en x:" << test_car.position().x << "Pos del auto en y:" << test_car.position().y << "\n";
             test_car.updateCarPhysics();
             world.Step(timeStep, 6, 2);
 
@@ -36,7 +36,7 @@ void Gameloop::run() {
 
             clients_queues.broadcast(current_state);
 
-            //std::this_thread::sleep_for(std::chrono::milliseconds(250));
+            std::this_thread::sleep_for(std::chrono::milliseconds(16));
         } catch (const ClosedQueue&) {
             break;
         }

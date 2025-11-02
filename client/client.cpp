@@ -10,16 +10,9 @@ using namespace SDL2pp;
 
 int Client::runClient() {
 try {
-    /*
-    QApplication app(argc, argv);
-    MainWindow w(this);
-    w.show();
-    */
-
     receiver.start();
     sender.start();
 
-    // int result = app.exec();
     
     // Initialize SDL library
     SDL sdl(SDL_INIT_VIDEO);
@@ -150,12 +143,12 @@ try {
         }
 
         //ACA ROMPIA LEI UN STRUCT SIN INICIALIZAR
-        //GameStateDTO state;
-        //if (state_queue.try_pop(state) ) {
-        //    std::cout << "Pos en x: " << state.players[0].state.x << "\n";
-        //    std::cout << "Pos en y:" << state.players[0].state.y << "\n";
-        //    std::cout << "Angulo del auto: " << state.players[0].state.angle << "\n";
-        //}
+        GameStateDTO state;
+        if (state_queue.try_pop(state) ) {
+            std::cout << "Pos en x: " << state.players[0].state.x << "\n";
+            std::cout << "Pos en y:" << state.players[0].state.y << "\n";
+            std::cout << "Angulo del auto: " << state.players[0].state.angle << "\n";
+        }
 
         
 
@@ -197,9 +190,9 @@ try {
 
         renderer.Present();
 
-        // now  = SDL_GetTicks64();
-        // diff = static_cast<int64_t>(t1 - now);
-        // if (diff > 0) SDL_Delay(static_cast<uint32_t>(diff));
+        now  = SDL_GetTicks64();
+        diff = static_cast<int64_t>(t1 - now);
+        if (diff > 0) SDL_Delay(static_cast<uint32_t>(diff));
     }
 
     receiver.stop();

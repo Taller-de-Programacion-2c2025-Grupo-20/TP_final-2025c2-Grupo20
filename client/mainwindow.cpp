@@ -5,10 +5,11 @@
 #include <stdexcept>
 
 
-MainWindow::MainWindow(QWidget *parent) :
-        QMainWindow(parent),
-        ui(new Ui::MainWindow)
-{
+MainWindow::MainWindow(Client* clientPtr, QWidget *parent) :
+    QMainWindow(parent),
+    ui(new Ui::MainWindow),
+    client(clientPtr) {
+    
     ui->setupUi(this);
 
     pantallaLogin = new LoginScreen(this);
@@ -22,22 +23,14 @@ MainWindow::MainWindow(QWidget *parent) :
     connect(pantallaLogin, &LoginScreen::connectAttempted, this, &MainWindow::handleLoginAttempt);
 }
 
-MainWindow::~MainWindow()
-{
+MainWindow::~MainWindow() {
     delete client;
     delete ui;
 }
 
-void MainWindow::handleLoginAttempt(const QString &ip, const QString &name)
-{
-    const char* port = "9000";
-
-    // Limpia el cliente anterior
-    delete client;
-    client = nullptr;
-
+void MainWindow::handleLoginAttempt(const QString /*&ip*/, const QString &name) {
     try {
-        client = new Client(ip.toStdString().c_str(), port);
+        
 
         //bool success = client->getProtocol().sendName(name.toStdString());
         bool success = client->try_login(name.toStdString());
@@ -49,14 +42,14 @@ void MainWindow::handleLoginAttempt(const QString &ip, const QString &name)
 
         } else {
             // Fallo de protocolo: Nombre rechazado
-            pantallaLogin->displayError("Error: Nombre de usuario inválido o en uso (SIMULADO).");
+            pantallaLogin->displayError("Error: Nombre de usuario inválido o en uso");
             delete client;
             client = nullptr;
         }
 
     } catch (const std::exception& e) {
         // Fallo de conexión (captura la excepción lanzada por ClientProtocolMock
-        QString errorMsg = QString("Error de conexión (SIMULADO): ") + e.what();
+        QString errorMsg = QString("Error de conexión en el login") + e.what();
         pantallaLogin->displayError(errorMsg);
         delete client;
         client = nullptr;

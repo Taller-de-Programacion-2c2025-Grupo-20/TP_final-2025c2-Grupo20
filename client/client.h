@@ -21,6 +21,9 @@
 #include <SDL2pp/Surface.hh>
 #include <SDL2pp/Texture.hh>
 
+#include <QApplication>
+#include <QMainWindow> 
+
 class Client {
 private:
     ClientProtocol protocol;

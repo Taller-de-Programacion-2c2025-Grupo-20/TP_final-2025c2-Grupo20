@@ -29,7 +29,7 @@ void Gameloop::run() {
             PlayerState test_player_state;
             test_player_state.player_id = 0; 
             test_player_state.state = ServerState(test_car.position().x, test_car.position().y, test_car.angle());
-            test_player_state.health = 100; 
+            test_player_state.health = 100;
 
             current_state.players.push_back(test_player_state);
             current_state.car_count = current_state.players.size();

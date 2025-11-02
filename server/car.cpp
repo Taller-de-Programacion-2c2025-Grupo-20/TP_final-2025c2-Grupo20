@@ -112,8 +112,8 @@ void Car::updateCarPhysics() {
     b2Vec2 fwdVel = getForwardVelocity();
     float forwardSpeed = fwdVel.Length();
     if (forwardSpeed > 1.5f) {
-        if (turningLeft)  torque = rotation_torque;
-        if (turningRight) torque = -rotation_torque;
+        if (turningLeft)  torque = -rotation_torque;
+        if (turningRight) torque = rotation_torque;
         car_body->ApplyTorque(torque);
     }
 

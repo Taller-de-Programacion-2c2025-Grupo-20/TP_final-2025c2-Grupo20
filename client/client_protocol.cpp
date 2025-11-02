@@ -66,9 +66,9 @@ float ClientProtocol::receiveFloat() {
 GameStateDTO ClientProtocol::receive_game_state() {
     GameStateDTO state_dto;
 
-    // 1. Leer Comando (asumiendo que ya se leyó o se sabe)
-    // uint8_t cmd_code;
-    // skt.recvall(&cmd_code, 1);
+    //1. Leer Comando (asumiendo que ya se leyó o se sabe)
+    uint8_t cmd_code;
+    skt.recvall(&cmd_code, 1);
 
     uint8_t car_count;
     skt.recvall(&car_count, 1);

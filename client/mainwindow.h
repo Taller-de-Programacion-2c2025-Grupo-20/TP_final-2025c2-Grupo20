@@ -18,19 +18,20 @@ class MainWindow : public QMainWindow
     Q_OBJECT
 
 public:
-    explicit MainWindow(QWidget *parent = nullptr);
+    //explicit MainWindow(QWidget *parent = nullptr);
+    explicit MainWindow(Client* client, QWidget* parent = nullptr);
     ~MainWindow();
 
 private slots:
     // este slot maneja el intento de conexion
-    void handleLoginAttempt(const QString &ip, const QString &name);
+    void handleLoginAttempt(const QString /*&ip*/, const QString &name);
 
 private:
     Ui::MainWindow *ui;
     LoginScreen *pantallaLogin;
     LobbyScreen *pantallaLobby;
 
-    Client *client = nullptr;
+    Client *client;
 };
 
 #endif // MAINWINDOW_H

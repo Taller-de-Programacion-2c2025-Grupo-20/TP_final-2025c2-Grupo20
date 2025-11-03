@@ -12,7 +12,7 @@
 
 using namespace SDL2pp;
 
-static constexpr float PPM = 8.0f;
+static constexpr float PPM = 16.0f;
 static constexpr float PI  = 3.14159265358979323846f;
 
 

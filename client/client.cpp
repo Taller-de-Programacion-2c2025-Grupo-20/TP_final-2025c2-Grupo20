@@ -163,14 +163,17 @@ int Client::runClient() {
                 last_state = std::move(gs);
                 got = true;
             }
-            have_state |= got;
-
+            
+            if (got == true or have_state == true){
+                have_state = 1;
+            }
+            
 
             if (have_state) {
                 const auto& st = last_state.players[0].state;
                 pos_x_m = st.x;
                 pos_y_m = st.y;
-                angle   = st.angle;
+                angle = st.angle;
                 actual_pos = angle_to_frame(angle);
 
                 const int car_cx_px = static_cast<int>(std::lround(pos_x_m * PPM));
@@ -191,15 +194,29 @@ int Client::runClient() {
 
             renderer.Copy(background, srcRect, dstRect);
 
-            const Rect& spr = carsPositions[car_to_use][actual_pos];
-            const int car_px = static_cast<int>(pos_x_m * PPM + 0.5f);
-            const int car_py = static_cast<int>(pos_y_m * PPM + 0.5f);
-            const int draw_x = car_px - spr.GetW() / 2 - srcRect.GetX();
-            const int draw_y = car_py - spr.GetH() / 2 - srcRect.GetY();
+            for (size_t i = 0; i < last_state.players.size(); i++) {
+                const auto& st = last_state.players[i].state;
+                pos_x_m = st.x;
+                pos_y_m = st.y;
+                angle = st.angle;
+                actual_pos = angle_to_frame(angle);
 
-            renderer.Copy(sprites, spr, Rect(draw_x, draw_y, spr.GetW(), spr.GetH()));
+                const Rect& spr = carsPositions[car_to_use][actual_pos];
+                const int car_x_px = static_cast<int>(pos_x_m * PPM + 0.5f);
+                const int car_y_px = static_cast<int>(pos_y_m * PPM + 0.5f);
+                
+                const int draw_x = car_x_px - spr.GetW() / 2 - srcRect.GetX();
+                const int draw_y = car_y_px - spr.GetH() / 2 - srcRect.GetY();
+
+                if (draw_x + spr.GetW() < 0 || draw_x > viewW ||
+                    draw_y + spr.GetH() < 0 || draw_y > viewH) {
+                    continue;
+                }
+
+                renderer.Copy(sprites, spr, Rect(draw_x, draw_y, spr.GetW(), spr.GetH()));
+            }
+
             renderer.Present();
-
 
             uint64_t t2 = SDL_GetPerformanceCounter();
             double elapsed = static_cast<double>(t2 - t1) / perf_freq;  // s

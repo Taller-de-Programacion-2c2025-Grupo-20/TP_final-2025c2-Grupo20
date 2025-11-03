@@ -12,7 +12,7 @@ class Car {
 private:
 
     float accelaration = 50.f;
-    float rotation_torque = 5.f;
+    float rotation_torque = 10.f;
     float max_speed = 10.f;
 
     bool accelerating = false;

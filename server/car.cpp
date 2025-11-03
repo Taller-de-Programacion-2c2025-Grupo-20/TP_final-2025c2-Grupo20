@@ -22,7 +22,7 @@ void Car::limitSpeed() {
 }
 
 void Car::updateFriction() {
-    float lateralFrictionFactor = 0.2f;
+    float lateralFrictionFactor = 0.95f;
     float angularDamping = 0.05f;
 
     b2Vec2 lateralVel = getLateralVelocity();

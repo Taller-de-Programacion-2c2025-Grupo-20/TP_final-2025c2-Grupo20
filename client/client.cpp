@@ -142,9 +142,13 @@ int Client::runClient() {
                     cmd.action = (ev.type == SDL_KEYDOWN) ? InputAction::Press : InputAction::Release;
                     switch (ev.key.keysym.sym) {
                         case SDLK_UP:    cmd.key = InputKey::Up;    break;
+                        case SDLK_w:    cmd.key = InputKey::Up;    break;
                         case SDLK_DOWN:  cmd.key = InputKey::Down;  break;
+                        case SDLK_s:  cmd.key = InputKey::Down;  break;
                         case SDLK_LEFT:  cmd.key = InputKey::Left;  break;
+                        case SDLK_a:  cmd.key = InputKey::Left;  break;
                         case SDLK_RIGHT: cmd.key = InputKey::Right; break;
+                        case SDLK_d: cmd.key = InputKey::Right; break;
                         case SDLK_q:
                         case SDLK_ESCAPE: cmd.key = InputKey::Quit; break;
                     }

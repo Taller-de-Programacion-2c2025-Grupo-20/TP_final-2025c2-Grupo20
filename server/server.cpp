@@ -10,8 +10,8 @@
 
 int Server::run() {
 
-    Acceptor acceptor(port, gameloop_queue, clients_queues);
     Gameloop gameloop(gameloop_queue, clients_queues);
+    Acceptor acceptor(port, gameloop_queue, clients_queues, gameloop);
 
     acceptor.start();
     gameloop.start();

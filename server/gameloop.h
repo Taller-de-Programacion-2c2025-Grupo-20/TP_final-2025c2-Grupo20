@@ -4,6 +4,7 @@
 #include <unordered_map>
 
 #include <Box2D/Box2D.h>
+#include <mutex>
 
 #include "car.h"
 #include "../common/queue.h"
@@ -17,13 +18,17 @@ private:
     Queue<InputCmd>& gameloop_queue;
     QueuesMonitor& clients_queues;
 
-    std::unordered_map<int, Car> clients_cars;
+    std::unordered_map<uint8_t, Car> clients_cars;
 
     b2World world;
+
+    std::mutex mutex;
 
     void handleInput(const InputCmd& input);
 
 public:
+    void addCar(uint8_t client_id);
+
     void run() override;
 
     void stop() override;

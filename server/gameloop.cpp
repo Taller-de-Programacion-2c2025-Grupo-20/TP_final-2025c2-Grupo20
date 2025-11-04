@@ -22,10 +22,21 @@ void Gameloop::handleInput(const InputCmd& input) {
               << "Angulo: " << it->second.angle() << "\n";
 }
 
+void Gameloop::addCar(uint8_t client_id){
+    mutex.lock();
+    clients_cars.emplace(
+        std::piecewise_construct,
+        std::forward_as_tuple(client_id),
+        std::forward_as_tuple(world, b2Vec2(5.f, 5.f))
+    );
+    mutex.unlock();
+}
+
 void Gameloop::run() {
 
     while (should_keep_running()) {
         try {
+            mutex.lock();
             InputCmd input;
             while (gameloop_queue.try_pop(input)) {
                 handleInput(input);
@@ -55,6 +66,7 @@ void Gameloop::run() {
 
             clients_queues.broadcast(current_state);
 
+            mutex.unlock();
             std::this_thread::sleep_for(std::chrono::milliseconds(16));
         } catch (const ClosedQueue&) {
             break;
@@ -70,9 +82,9 @@ void Gameloop::stop() {
 Gameloop::Gameloop(Queue<InputCmd>& gameloop_queue, QueuesMonitor& clients_queues):
         gameloop_queue(gameloop_queue), clients_queues(clients_queues), world(b2Vec2(0,0), true) {
 
-            clients_cars.emplace(
-                std::piecewise_construct,
-                std::forward_as_tuple(0),
-                std::forward_as_tuple(world, b2Vec2(5.f, 5.f))
-            );
+            //clients_cars.emplace(
+            //    std::piecewise_construct,
+            //    std::forward_as_tuple(0),
+            //    std::forward_as_tuple(world, b2Vec2(5.f, 5.f))
+            //);
         }

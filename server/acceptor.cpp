@@ -20,6 +20,7 @@ void Acceptor::run() {
             std::cout << "asignada a client_handler id " << static_cast<int>(next_id) << "\n";
             auto* c =
                     new ClientHandler(std::move(client_skt), gameloop_queue, sender_queue, next_id);
+            gameloop.addCar(next_id);
             next_id++;
             reap();
             client_handlers_list.push_back(c);
@@ -63,5 +64,5 @@ void Acceptor::clear() {
 }
 
 Acceptor::Acceptor(const char* port, Queue<InputCmd>& gameloop_queue,
-                   QueuesMonitor& clients_queues):
-        skt(port), gameloop_queue(gameloop_queue), clients_queues(clients_queues) {}
+                   QueuesMonitor& clients_queues, Gameloop& gameloop):
+        skt(port), gameloop_queue(gameloop_queue), clients_queues(clients_queues), gameloop(gameloop) {}

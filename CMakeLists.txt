@@ -97,6 +97,15 @@ if(TALLER_CLIENT)
   )
 endif()
 
+include(FetchContent)
+
+FetchContent_Declare(
+  yaml-cpp
+  GIT_REPOSITORY https://github.com/jbeder/yaml-cpp.git
+  GIT_TAG yaml-cpp-0.7.0
+)
+FetchContent_MakeAvailable(yaml-cpp)
+
 if(TALLER_SERVER)
     # HEY!! TODO XXX: Change the name of the executable to the one you like!
     add_executable(taller_server)
@@ -119,6 +128,7 @@ if(TALLER_SERVER)
     PRIVATE
         taller_common   # <--- esto es lo que te falta
         Box2D
+        yaml-cpp::yaml-cpp
     )
 
 endif()

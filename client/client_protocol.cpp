@@ -34,7 +34,7 @@ void ClientProtocol::send_login_attempt(const std::string& username) {
     skt.sendall(buffer.data(), buffer.size());
 }
 
-uint8_t ClientProtocol::receive_login_response(uint8_t& out_player_id) {
+int ClientProtocol::receive_login_response(int& out_player_id) {
     uint8_t response_code;
     skt.recvall(&response_code, 1);
     

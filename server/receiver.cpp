@@ -14,8 +14,12 @@ void Receiver::run() {
                 
                 case CMD_LOGIN: {
                     std::string username = protocol.receive_login_attempt();
-                    // (Aquí deberías encolar un "LoginCommand"
-                    // para que el Server/Lobby lo procese)
+
+                    // TODO: acá podrías validar nombre o encolar un LoginCommand
+                    // por ahora respondemos OK siempre con el id del handler
+                    protocol.send_login_ok(static_cast<uint8_t>(id));
+
+                    // (opcional) también podrías avisar al GameLoop que cree el auto para 'id'
                     break;
                 }
                 

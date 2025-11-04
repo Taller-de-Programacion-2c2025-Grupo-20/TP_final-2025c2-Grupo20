@@ -24,6 +24,7 @@ public:
     void send_game_state(const GameStateDTO& state);
     std::string receive_login_attempt();
     InputCmd receive_input_command();
+    void send_login_ok(uint8_t player_id);
 
     void close();
 

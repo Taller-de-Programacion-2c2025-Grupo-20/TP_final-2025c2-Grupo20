@@ -87,6 +87,13 @@ InputCmd ServerProtocol::receive_input_command() {
     return cmd;
 }
 
+void ServerProtocol::send_login_ok(uint8_t player_id) {
+    std::vector<uint8_t> buffer;
+    buffer.push_back(CMD_LOGIN);   // mismo código que espera el cliente
+    buffer.push_back(player_id);   // id asignado al cliente
+    skt.sendall(buffer.data(), buffer.size());
+}
+
 ServerProtocol::ServerProtocol(Socket&& skt): skt(std::move(skt)) {}
 
 ServerProtocol::~ServerProtocol() {}

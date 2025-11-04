@@ -14,7 +14,7 @@ public:
     ~ClientProtocol();
 
     void send_login_attempt(const std::string& username);
-    uint8_t receive_login_response(uint8_t& out_player_id);
+    int receive_login_response(int& out_player_id);
     void sendInput(const InputCmd& cmd);          
 
     GameStateDTO receive_game_state();

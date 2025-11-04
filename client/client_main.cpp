@@ -1,47 +1,27 @@
-
-#include <fstream>
-#include <iostream>
-
+#include <memory>
+#include <QApplication>
+#include "mainwindow.h"
 #include "client.h"
 
-// #include "mainwindow.h"
-// #include <QApplication>
+int main(int argc, char* argv[]) {  // importante: char* (no const*)
+    QApplication app(argc, argv);
 
-// int main(int argc, char *argv[]) {
-//     QApplication a(argc, argv);
-//     MainWindow w;
-//     w.show();
-//     return a.exec();
-// }
+    std::unique_ptr<Client> client_for_game;
 
+    MainWindow w(nullptr);
+    QObject::connect(&w, &MainWindow::loginOk, [&](Client* readyClient){
+        client_for_game.reset(readyClient);  // tomamos ownership
+        app.quit();                          // cerramos Qt para lanzar SDL
+    });
+    QObject::connect(&w, &MainWindow::quitApp, [&](){
+        app.quit();
+    });
 
-// int main(int argc, char* argv[]) {
+    w.show();
+    app.exec();
 
-//     if (argc != 3) {
-//         std::cerr << "Bad program call. Expected " << argv[0] << " <servname> <servicio> \n";
-//         return EXIT_FAILURE;
-//     }
-
-//     try {
-
-//         Client client(argv[1], argv[2]);
-//         return client.run();
-
-//     } catch (const std::exception& e) {
-//         std::cerr << e.what() << '\n';
-//         return EXIT_FAILURE;
-//     } catch (...) {
-//         std::cerr << "Unknown error\n";
-//         return EXIT_FAILURE;
-//     }
-// }
-
-int main(int argc, const char* argv[]) {
-    if (argc != 3) {
-        std::cerr << "Cantidad de parametros incorrecta\n";
-        return EXIT_FAILURE;
+    if (client_for_game) {
+        return client_for_game->runClient(); // acá arranca SDL
     }
-    Client client(argv[1], argv[2]);
-    client.runClient();
     return EXIT_SUCCESS;
 }

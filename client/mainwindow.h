@@ -2,36 +2,33 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include <memory>
 #include "Pantallas/loginscreen.h"
-#include "Pantallas/lobbyscreen.h"
 #include "client.h"
-//#include "./Pantallas/carselectscreen.h"
 
 QT_BEGIN_NAMESPACE
-namespace Ui {
-class MainWindow;
-}
+namespace Ui { class MainWindow; }
 QT_END_NAMESPACE
 
-class MainWindow : public QMainWindow
-{
+class MainWindow : public QMainWindow {
     Q_OBJECT
-
 public:
-    //explicit MainWindow(QWidget *parent = nullptr);
-    explicit MainWindow(Client* client, QWidget* parent = nullptr);
+    explicit MainWindow(Client* client = nullptr, QWidget* parent = nullptr);
     ~MainWindow();
 
+signals:
+    // Entregamos el Client* listo (ownership lo toma quien recibe)
+    void loginOk(Client* client);
+    void quitApp();
+
 private slots:
-    // este slot maneja el intento de conexion
-    void handleLoginAttempt(const QString /*&ip*/, const QString &name);
+    void handleLoginAttempt(const QString& ip, const QString& port, const QString& name);
 
 private:
     Ui::MainWindow *ui;
     LoginScreen *pantallaLogin;
-    LobbyScreen *pantallaLobby;
 
-    Client *client;
+    std::unique_ptr<Client> client; // ownership mientras está en esta ventana
 };
 
 #endif // MAINWINDOW_H

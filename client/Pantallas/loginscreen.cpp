@@ -1,16 +1,13 @@
 #include "loginscreen.h"
-#include "ui_loginscreen.h" // El archivo generado por uic
+#include "ui_loginscreen.h"
 
-LoginScreen::LoginScreen(QWidget *parent) :
-        QWidget(parent),
-        ui(new Ui::LoginScreen)
-{
+LoginScreen::LoginScreen(QWidget *parent)
+    : QWidget(parent),
+      ui(new Ui::LoginScreen) {
     ui->setupUi(this);
-    // El slot on_btn_conectar_clicked se conecta automáticamente por la convención de nombres.
 }
 
-LoginScreen::~LoginScreen()
-{
+LoginScreen::~LoginScreen() {
     delete ui;
 }
 
@@ -18,17 +15,15 @@ void LoginScreen::displayError(const QString &message) {
     ui->label_error->setText(message);
 }
 
-void LoginScreen::on_btn_conectar_clicked()
-{
-    QString ip = ui->edit_ip_servidor->text();
-    QString name = ui->edit_nombre->text();
+void LoginScreen::on_btn_conectar_clicked() {
+    const QString ip    = ui->edit_ip_servidor->text().trimmed();
+    const QString puerto= ui->edit_puerto->text().trimmed();
+    const QString name  = ui->edit_nombre->text().trimmed();
 
-    if (ip.isEmpty() || name.isEmpty()) {
-        this->displayError("Debe ingresar una IP y un nombre de usuario.");
+    if (ip.isEmpty() || puerto.isEmpty() || name.isEmpty()) {
+        displayError("Completá nombre, IP y puerto.");
         return;
     }
-
-    this->displayError("");
-
-    emit connectAttempted(ip, name);
+    displayError("");
+    emit connectAttempted(ip, puerto, name);
 }

@@ -170,7 +170,7 @@ int Client::runClient() {
             
 
             if (have_state) {
-                const auto& st = last_state.players[0].state;
+                const auto& st = last_state.players[my_player_id].state;
                 pos_x_m = st.x;
                 pos_y_m = st.y;
                 angle = st.angle;
@@ -217,9 +217,10 @@ int Client::runClient() {
             }
 
             renderer.Present();
+            
 
             uint64_t t2 = SDL_GetPerformanceCounter();
-            double elapsed = static_cast<double>(t2 - t1) / perf_freq;  // s
+            double elapsed = static_cast<double>(t2 - t1) / perf_freq;
             double rest = rate - elapsed;
 
             if (rest > 0.0) {
@@ -276,11 +277,9 @@ ClientProtocol& Client::getProtocol() {
 }
 
 bool Client::try_login(const std::string& username) {
-    uint8_t player_id;
     protocol.send_login_attempt(username);
-    uint8_t response_code = protocol.receive_login_response(player_id);
+    uint8_t response_code = protocol.receive_login_response(my_player_id);
     if (response_code == CMD_LOGIN) {
-
         return true;
     }
     return false;

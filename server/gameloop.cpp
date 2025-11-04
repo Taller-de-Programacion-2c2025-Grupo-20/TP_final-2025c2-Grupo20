@@ -2,11 +2,13 @@
 
 #include <chrono>
 #include <thread>
+#include <yaml-cpp/yaml.h>
 
 #include "../common/constants.h"
 #include "../common/queue.h"
 
 const float timeStep = 1.f/60.f;
+const float PIXELS_PER_METER = 16.0f;
 
 void Gameloop::handleInput(const InputCmd& input) {
     auto it = clients_cars.find(input.player_id);
@@ -30,6 +32,34 @@ void Gameloop::addCar(uint8_t client_id){
         std::forward_as_tuple(world, b2Vec2(5.f, 5.f))
     );
     mutex.unlock();
+}
+void Gameloop::load_map(){
+    YAML::Node map = YAML::LoadFile("../liberty.yaml");
+
+    for (const auto& layer : map["layers"]) {
+        if (layer["name"].as<std::string>() == "Colisiones") {
+            for (const auto& obj : layer["objects"]) {
+                float x_pixels = obj["x"].as<float>();
+                float y_pixels = obj["y"].as<float>();
+                float width_pixels = obj["width"].as<float>();
+                float height_pixels = obj["height"].as<float>();
+
+                float x_meters = (x_pixels + width_pixels / 2) / PIXELS_PER_METER;
+                float y_meters = (y_pixels + height_pixels / 2) / PIXELS_PER_METER;
+
+                float width_meters = (width_pixels / 2) / PIXELS_PER_METER;
+                float height_meters = (height_pixels / 2) / PIXELS_PER_METER;
+
+                b2BodyDef bodyDef;
+                bodyDef.position.Set(x_meters, y_meters);
+                b2Body* body = world.CreateBody(&bodyDef);
+
+                b2PolygonShape shape;
+                shape.SetAsBox(width_meters, height_meters);
+                body->CreateFixture(&shape, 0.0f);
+            }
+        }
+    }
 }
 
 void Gameloop::run() {
@@ -82,9 +112,6 @@ void Gameloop::stop() {
 Gameloop::Gameloop(Queue<InputCmd>& gameloop_queue, QueuesMonitor& clients_queues):
         gameloop_queue(gameloop_queue), clients_queues(clients_queues), world(b2Vec2(0,0), true) {
 
-            //clients_cars.emplace(
-            //    std::piecewise_construct,
-            //    std::forward_as_tuple(0),
-            //    std::forward_as_tuple(world, b2Vec2(5.f, 5.f))
-            //);
+            load_map();
+
         }

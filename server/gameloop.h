@@ -26,6 +26,8 @@ private:
 
     void handleInput(const InputCmd& input);
 
+    void load_map();
+
 public:
     void addCar(uint8_t client_id);
 

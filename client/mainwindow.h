@@ -17,7 +17,6 @@ public:
     ~MainWindow();
 
 signals:
-    // Entregamos el Client* listo (ownership lo toma quien recibe)
     void loginOk(Client* client);
     void quitApp();
 
@@ -27,8 +26,6 @@ private slots:
 private:
     Ui::MainWindow *ui;
     LoginScreen *pantallaLogin;
-
-    std::unique_ptr<Client> client; // ownership mientras está en esta ventana
 };
 
 #endif // MAINWINDOW_H

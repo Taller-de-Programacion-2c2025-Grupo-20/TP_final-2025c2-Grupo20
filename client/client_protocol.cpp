@@ -41,7 +41,6 @@ uint8_t ClientProtocol::receive_login_response(uint8_t& out_player_id) {
     
     if (response_code == CMD_LOGIN) { 
         skt.recvall(&out_player_id, 1);
-        std::cout << "Entro con id " << static_cast<int>(out_player_id) << "\n";
     }
     return response_code;
 }
@@ -53,8 +52,6 @@ void ClientProtocol::sendInput(const InputCmd& cmd) {
     buffer.push_back(static_cast<uint8_t>(cmd.action));
     buffer.push_back(static_cast<uint8_t>(cmd.key));
     buffer.push_back(static_cast<uint8_t>(cmd.player_id));
-    
-    std::cout << "Player id en client: " << static_cast<int>(cmd.player_id) << "\n";
 
     skt.sendall(buffer.data(), buffer.size());
 }

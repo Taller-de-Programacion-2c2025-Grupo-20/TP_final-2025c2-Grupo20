@@ -2,11 +2,11 @@
 # --- Archivos de Código (.cpp) ---
 target_sources(taller_client PRIVATE
     client.cpp
-    client_main.cpp
     client_protocol.cpp
     mainwindow.cpp
     client_sender.cpp
     client_receiver.cpp
+    game_window.cpp
 
     Pantallas/carselectscreen.cpp
     Pantallas/lobbyscreen.cpp
@@ -19,6 +19,7 @@ target_sources(taller_client PUBLIC
     client_protocol.h
     client_receiver.h  
     client_sender.h
+    game_window.h
 )
 
 # --- Archivos de Interfaz (.ui) ---

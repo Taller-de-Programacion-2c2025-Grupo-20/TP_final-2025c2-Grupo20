@@ -29,6 +29,7 @@ void Gameloop::run() {
             InputCmd input;
             while (gameloop_queue.try_pop(input)) {
                 handleInput(input);
+                std::cout << "Player id: " << static_cast<int>(input.player_id) << "\n";
             }
             
             for (auto& pair : clients_cars) {

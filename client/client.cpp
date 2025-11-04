@@ -132,6 +132,7 @@ int Client::runClient() {
             while (SDL_PollEvent(&ev)) {
                 if (ev.type == SDL_QUIT) {
                     InputCmd quit{};
+                    quit.player_id = my_player_id;
                     quit.key = InputKey::Quit;
                     quit.action = InputAction::Press;
                     input_queue.try_push(quit);
@@ -139,6 +140,7 @@ int Client::runClient() {
                 }
                 if (ev.type == SDL_KEYDOWN || ev.type == SDL_KEYUP) {
                     InputCmd cmd{};
+                    cmd.player_id = my_player_id;
                     cmd.action = (ev.type == SDL_KEYDOWN) ? InputAction::Press : InputAction::Release;
                     switch (ev.key.keysym.sym) {
                         case SDLK_UP:    cmd.key = InputKey::Up;    break;
@@ -153,6 +155,7 @@ int Client::runClient() {
                         case SDLK_ESCAPE: cmd.key = InputKey::Quit; break;
                     }
                     input_queue.try_push(cmd);
+                    std::cout << "Se envia comando con player id : " << static_cast<int>(cmd.player_id)<< "\n";
                     if (cmd.key == InputKey::Quit && cmd.action == InputAction::Press) return 0;
                 }
             }
@@ -280,6 +283,7 @@ bool Client::try_login(const std::string& username) {
     protocol.send_login_attempt(username);
     uint8_t response_code = protocol.receive_login_response(my_player_id);
     if (response_code == CMD_LOGIN) {
+
         return true;
     }
     return false;

@@ -15,7 +15,7 @@
 class ClientHandler {
 private:
     ServerProtocol protocol;
-    int id;
+    uint8_t id;
 
     Receiver receiver;
     Sender sender;
@@ -26,10 +26,10 @@ public:
     void join();
     bool is_alive();
 
-    int client_id();
+    uint8_t client_id();
 
     ClientHandler(Socket&& skt, Queue<InputCmd>& gameloop_queue,
-                  Queue<GameStateDTO>& client_queue, int id);
+                  Queue<GameStateDTO>& client_queue, uint8_t id);
 
     ClientHandler(const ClientHandler&) = delete;
     ClientHandler& operator=(const ClientHandler&) = delete;

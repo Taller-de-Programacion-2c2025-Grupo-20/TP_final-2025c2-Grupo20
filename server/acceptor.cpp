@@ -11,11 +11,13 @@
 
 void Acceptor::run() {
 
-    int next_id = 0;
+    uint8_t next_id = 0;
+    
     while (should_keep_running()) {
         try {
             Socket client_skt = skt.accept();
             Queue<GameStateDTO>& sender_queue = clients_queues.addQueue(next_id);
+            std::cout << "asignada a client_handler id " << static_cast<int>(next_id) << "\n";
             auto* c =
                     new ClientHandler(std::move(client_skt), gameloop_queue, sender_queue, next_id);
             next_id++;

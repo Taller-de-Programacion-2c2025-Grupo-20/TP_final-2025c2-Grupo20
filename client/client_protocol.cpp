@@ -4,6 +4,7 @@
 #include <arpa/inet.h>
 #include "../common/constants.h"
 #include "../common/gameState.h"
+#include <iostream>
 
 
 ClientProtocol::ClientProtocol(const char* host, const char* port) : skt(host, port) {}
@@ -34,12 +35,13 @@ void ClientProtocol::send_login_attempt(const std::string& username) {
     skt.sendall(buffer.data(), buffer.size());
 }
 
-int ClientProtocol::receive_login_response(int& out_player_id) {
+uint8_t ClientProtocol::receive_login_response(uint8_t& out_player_id) {
     uint8_t response_code;
     skt.recvall(&response_code, 1);
     
     if (response_code == CMD_LOGIN) { 
         skt.recvall(&out_player_id, 1);
+        std::cout << "Entro con id " << static_cast<int>(out_player_id) << "\n";
     }
     return response_code;
 }
@@ -50,7 +52,10 @@ void ClientProtocol::sendInput(const InputCmd& cmd) {
     buffer.push_back(cmd_byte);
     buffer.push_back(static_cast<uint8_t>(cmd.action));
     buffer.push_back(static_cast<uint8_t>(cmd.key));
+    buffer.push_back(static_cast<uint8_t>(cmd.player_id));
     
+    std::cout << "Player id en client: " << static_cast<int>(cmd.player_id) << "\n";
+
     skt.sendall(buffer.data(), buffer.size());
 }
 

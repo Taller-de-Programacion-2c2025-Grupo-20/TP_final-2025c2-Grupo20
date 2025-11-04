@@ -8,6 +8,7 @@
 #include "../common/constants.h"
 #include "../common/socket.h"
 #include "../common/gameState.h"
+#include <iostream>
 
 uint8_t ServerProtocol::receiveCommand() {
     uint8_t command;
@@ -77,13 +78,16 @@ std::string ServerProtocol::receive_login_attempt() {
 
 InputCmd ServerProtocol::receive_input_command() {
     InputCmd cmd;
-    uint8_t action, key;
+    uint8_t action, key, id;
     
     skt.recvall(&action, 1);
     skt.recvall(&key, 1);
+    skt.recvall(&id, 1);
     
     cmd.action = static_cast<InputAction>(action);
     cmd.key = static_cast<InputKey>(key);
+    cmd.player_id = static_cast<u_int8_t>(id);
+
     return cmd;
 }
 
@@ -91,6 +95,7 @@ void ServerProtocol::send_login_ok(uint8_t player_id) {
     std::vector<uint8_t> buffer;
     buffer.push_back(CMD_LOGIN);   // mismo código que espera el cliente
     buffer.push_back(player_id);   // id asignado al cliente
+    std::cout << "mando con id " << static_cast<int>(player_id) << "\n";
     skt.sendall(buffer.data(), buffer.size());
 }
 

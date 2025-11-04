@@ -23,10 +23,10 @@ void ClientHandler::join() {
 
 bool ClientHandler::is_alive() { return receiver.is_alive(); }
 
-int ClientHandler::client_id() { return id; }
+uint8_t ClientHandler::client_id() { return id; }
 
 ClientHandler::ClientHandler(Socket&& skt, Queue<InputCmd>& gameloop_queue,
-                             Queue<GameStateDTO>& client_queue, int id):
+                             Queue<GameStateDTO>& client_queue, uint8_t id):
         protocol(std::move(skt)),
         id(id),
         receiver(protocol, gameloop_queue, id),

@@ -27,7 +27,7 @@
 class Client {
 private:
     ClientProtocol protocol;
-    int my_player_id;
+    uint8_t my_player_id;
 
     Queue<InputCmd> input_queue;
     Queue<GameStateDTO> state_queue;

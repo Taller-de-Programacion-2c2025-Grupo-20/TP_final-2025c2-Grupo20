@@ -9,15 +9,15 @@ void Receiver::run() {
             if (command_code == 0x0) {
                 break;
             }
-
+            
             switch (command_code) {
                 
                 case CMD_LOGIN: {
                     std::string username = protocol.receive_login_attempt();
-
+                    std::cout << "creada id " << static_cast<int>(id) << "\n";
                     // TODO: acá podrías validar nombre o encolar un LoginCommand
                     // por ahora respondemos OK siempre con el id del handler
-                    protocol.send_login_ok(static_cast<uint8_t>(id));
+                    protocol.send_login_ok(id);
 
                     // (opcional) también podrías avisar al GameLoop que cree el auto para 'id'
                     break;
@@ -26,7 +26,6 @@ void Receiver::run() {
                 case CMD_ENVIAR_INPUT: {
                     
                     InputCmd client_command = protocol.receive_input_command();
-                    std::cout << static_cast<int>(client_command.action) << "\n";
                     gameloop_queue.push(client_command);
                     break;
                 }
@@ -52,5 +51,5 @@ void Receiver::stop() {
     protocol.close();
 }
 
-Receiver::Receiver(ServerProtocol& protocol, Queue<InputCmd>& gameloop_queue, int id):
+Receiver::Receiver(ServerProtocol& protocol, Queue<InputCmd>& gameloop_queue, uint8_t id):
         protocol(protocol), gameloop_queue(gameloop_queue), id(id) {}

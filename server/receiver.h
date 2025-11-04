@@ -12,14 +12,14 @@ private:
     ServerProtocol& protocol;
     Queue<InputCmd>& gameloop_queue;
 
-    int id;
+    uint8_t id;
 
 public:
     void run() override;
 
     void stop() override;
 
-    Receiver(ServerProtocol& protocol, Queue<InputCmd>& gameloop_queue, int id);
+    Receiver(ServerProtocol& protocol, Queue<InputCmd>& gameloop_queue, uint8_t id);
 };
 
 #endif

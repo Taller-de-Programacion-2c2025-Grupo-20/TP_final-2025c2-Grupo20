@@ -5,6 +5,7 @@
 
 #include <Box2D/Box2D.h>
 
+#include "car.h"
 #include "../common/queue.h"
 #include "../common/thread.h"
 #include "../common/clientCommand.h"
@@ -16,7 +17,11 @@ private:
     Queue<InputCmd>& gameloop_queue;
     QueuesMonitor& clients_queues;
 
+    std::unordered_map<int, Car> clients_cars;
+
     b2World world;
+
+    void handleInput(const InputCmd& input);
 
 public:
     void run() override;

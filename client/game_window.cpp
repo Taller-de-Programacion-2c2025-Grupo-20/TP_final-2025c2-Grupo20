@@ -52,6 +52,9 @@ int GameWindow::runGame() {
         surface.SetColorKey(true, SDL_MapRGB(surface.Get()->format, 163, 163, 13));
         Texture sprites(renderer, surface);
 
+        Surface life_bar_surface(DATA_PATH "/assets/life_bar.png");
+        Texture healthsprite(renderer, life_bar_surface);
+
         std::array<std::string, 3> maps = {
             "/cities/Game Boy _ GBC - Grand Theft Auto - Backgrounds - Liberty City.png",
             "/cities/Game Boy _ GBC - Grand Theft Auto - Backgrounds - San Andreas.png",
@@ -61,6 +64,16 @@ int GameWindow::runGame() {
         Texture background(renderer, DATA_PATH + maps[map_to_play]);
         const int bgW = background.GetWidth();
         const int bgH = background.GetHeight();
+
+
+        std::map<int, Rect> healthBarStates = {
+            {0, Rect(44, 56, 225, 55)},
+            {1, Rect(44, 189, 225, 55)},
+            {2, Rect(44, 324, 225, 55)},
+            {3, Rect(308, 56, 225, 55)},
+            {4, Rect(308, 189, 225, 55)},
+            {5, Rect(308, 324, 225, 55)}
+        };
 
         std::map<int, Rect> carPositionsGreen = {
             {0, Rect(0, 0, 32, 32)}, {1, Rect(32, 0, 32, 32)}, {2, Rect(64, 0, 32, 32)}, {3, Rect(96, 0, 32, 32)},
@@ -105,7 +118,7 @@ int GameWindow::runGame() {
             {12, Rect(192, 512, 48, 48)}, {13, Rect(240, 512, 48, 48)}, {14, Rect(288, 512, 48, 48)}, {15, Rect(336, 512, 48, 48)}
         };
 
-        int car_to_use = 1;
+        int car_to_use = 2;
         std::array<std::map<int, Rect>, 7> carsPositions = {
             carPositionsGreen, carPositionsRed, carPositionsDescapotable,
             carPositionsCeleste, carPositionsJeep, carPositionsCamioneta, carPositionsCamion
@@ -126,6 +139,7 @@ int GameWindow::runGame() {
         bool exit = false;
         int   actual_pos = 0;
         float pos_x_m = 0.f, pos_y_m = 0.f, angle = 0.f;
+        Rect& health_bar = healthBarStates[0];
 
         while (true) {
 
@@ -145,7 +159,7 @@ int GameWindow::runGame() {
                     cmd.player_id = client.getMyPlayerId();
                     cmd.action = (ev.type == SDL_KEYDOWN) ? InputAction::Press : InputAction::Release;
                     switch (ev.key.keysym.sym) {
-                        case SDLK_UP:    cmd.key = InputKey::Up;    break;
+                        case SDLK_UP:    cmd.key = InputKey::Up; ;break;
                         case SDLK_w:    cmd.key = InputKey::Up;    break;
                         case SDLK_DOWN:  cmd.key = InputKey::Down;  break;
                         case SDLK_s:  cmd.key = InputKey::Down;  break;
@@ -187,6 +201,11 @@ int GameWindow::runGame() {
                 angle = st.angle;
                 actual_pos = angle_to_frame(angle);
 
+                int health_amount = (last_state.players[client.getMyPlayerId()].health) % (20);
+
+                health_bar = healthBarStates[health_amount];
+                
+
                 const int car_cx_px = static_cast<int>(std::lround(pos_x_m * PPM));
                 const int car_cy_px = static_cast<int>(std::lround(pos_y_m * PPM));
 
@@ -226,6 +245,8 @@ int GameWindow::runGame() {
 
                 renderer.Copy(sprites, spr, Rect(draw_x, draw_y, spr.GetW(), spr.GetH()));
             }
+            
+            renderer.Copy(healthsprite, health_bar, Rect(5, 5, 0.65*(health_bar.GetW()), 0.65*(health_bar.GetH())));
 
             renderer.Present();
             

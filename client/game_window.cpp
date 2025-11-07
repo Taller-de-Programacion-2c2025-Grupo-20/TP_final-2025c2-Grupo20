@@ -192,31 +192,7 @@ int GameWindow::runGame() {
             if (got == true or have_state == true){
                 have_state = 1;
             }
-            
-
-            if (have_state) {
-                const auto& st = last_state.players[client.getMyPlayerId()].state;
-                pos_x_m = st.x;
-                pos_y_m = st.y;
-                angle = st.angle;
-                actual_pos = angle_to_frame(angle);
-
-                int health_amount = (last_state.players[client.getMyPlayerId()].health) % (20);
-
-                health_bar = healthBarStates[health_amount];
-                
-
-                const int car_cx_px = static_cast<int>(std::lround(pos_x_m * PPM));
-                const int car_cy_px = static_cast<int>(std::lround(pos_y_m * PPM));
-
-                int camX = car_cx_px - viewW / 2;
-                int camY = car_cy_px - viewH / 2;
-
-                camX = std::clamp(camX, 0, std::max(0, bgW - viewW));
-                camY = std::clamp(camY, 0, std::max(0, bgH - viewH));
-
-                srcRect.SetX(camX).SetY(camY);
-            }
+            std::cout << "Mi player id es: " << static_cast<int>(client.getMyPlayerId()) << "\n";
 
 
             renderer.SetDrawColor(0, 0, 0, 255);
@@ -225,6 +201,31 @@ int GameWindow::runGame() {
             renderer.Copy(background, srcRect, dstRect);
 
             for (size_t i = 0; i < last_state.players.size(); i++) {
+
+                if (have_state && last_state.players[i].player_id == client.getMyPlayerId()) {
+                    const auto& st = last_state.players[i].state;
+                    pos_x_m = st.x;
+                    pos_y_m = st.y;
+                    angle = st.angle;
+                    actual_pos = angle_to_frame(angle);
+
+                int health_amount = (last_state.players[client.getMyPlayerId()].health) % (20);
+
+                health_bar = healthBarStates[health_amount];
+                
+
+                    const int car_cx_px = static_cast<int>(std::lround(pos_x_m * PPM));
+                    const int car_cy_px = static_cast<int>(std::lround(pos_y_m * PPM));
+
+                    int camX = car_cx_px - viewW / 2;
+                    int camY = car_cy_px - viewH / 2;
+
+                    camX = std::clamp(camX, 0, std::max(0, bgW - viewW));
+                    camY = std::clamp(camY, 0, std::max(0, bgH - viewH));
+
+                    srcRect.SetX(camX).SetY(camY);
+                }
+
                 const auto& st = last_state.players[i].state;
                 pos_x_m = st.x;
                 pos_y_m = st.y;

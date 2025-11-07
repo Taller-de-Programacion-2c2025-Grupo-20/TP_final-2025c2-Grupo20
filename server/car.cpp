@@ -108,12 +108,14 @@ void Car::updateCarPhysics() {
 
     car_body->ApplyForce(force, car_body->GetWorldCenter());
 
+    float dir = b2Dot(forward, car_body->GetLinearVelocity()) >= 0.f ? 1.f : -1.f;
+
     // Gira solo si hay velocidad longitudinal
     b2Vec2 fwdVel = getForwardVelocity();
     float forwardSpeed = fwdVel.Length();
     if (forwardSpeed > 1.5f) {
-        if (turningLeft)  torque = -rotation_torque;
-        if (turningRight) torque = rotation_torque;
+        if (turningLeft)  torque -= rotation_torque * dir;
+        if (turningRight) torque += rotation_torque * dir;
         car_body->ApplyTorque(torque);
     }
 

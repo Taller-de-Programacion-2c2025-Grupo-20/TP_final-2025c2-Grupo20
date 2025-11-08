@@ -209,11 +209,10 @@ int GameWindow::runGame() {
                     angle = st.angle;
                     actual_pos = angle_to_frame(angle);
 
-                int health_amount = (last_state.players[client.getMyPlayerId()].health) % (20);
+                    int health_amount = (last_state.players[i].health) % (20);
 
-                health_bar = healthBarStates[health_amount];
+                    health_bar = healthBarStates[health_amount];
                 
-
                     const int car_cx_px = static_cast<int>(std::lround(pos_x_m * PPM));
                     const int car_cy_px = static_cast<int>(std::lround(pos_y_m * PPM));
 

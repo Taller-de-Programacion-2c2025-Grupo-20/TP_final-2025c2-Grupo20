@@ -154,7 +154,6 @@ Car::Car(b2World& world, const b2Vec2& initial_position) {
     carDef.linearDamping = 0.1f;
     
     car_body = world.CreateBody(&carDef);
-    
     car_body->SetUserData( this );
 
     b2PolygonShape car_shape; 

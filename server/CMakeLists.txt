@@ -4,6 +4,7 @@ target_sources(taller_server
     server_main.cpp
     acceptor.cpp
     car.cpp
+    collisions_listener.cpp
     client_handler.cpp
     gameloop.cpp
     queues_monitor.cpp
@@ -15,7 +16,9 @@ target_sources(taller_server
     PUBLIC
     
     acceptor.h
+    entity.h
     car.h
+    collisions_listener.h
     client_handler.h
     gameloop.h
     queues_monitor.h

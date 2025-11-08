@@ -16,17 +16,16 @@ void Gameloop::handleInput(const InputCmd& input) {
         return;
     }
 
-    it->second.handleInput(input);
+    it->second->handleInput(input);
 
-    std::cout << "Pos del auto en x: " << it->second.position().x
-              << " Pos del auto en y: " << it->second.position().y << "\n"
-              << "Angulo: " << it->second.angle() << "\n";
+    std::cout << "Pos del auto en x: " << it->second->position().x
+              << " Pos del auto en y: " << it->second->position().y << "\n"
+              << "Angulo: " << it->second->angle() << "\n";
 }
 
 void Gameloop::addCar(uint8_t client_id) {
     mutex.lock();
-    clients_cars.emplace(std::piecewise_construct, std::forward_as_tuple(client_id),
-                         std::forward_as_tuple(world, b2Vec2(5.f, 5.f)));
+    clients_cars.emplace(client_id, std::make_unique<Car>(world, b2Vec2(5.f, 5.f)));
     mutex.unlock();
 }
 
@@ -45,13 +44,9 @@ void Gameloop::loadWalls(const YAML::Node& map_data) {
                 float width_meters = (width_pixels / 2) / PIXELS_PER_METER;
                 float height_meters = (height_pixels / 2) / PIXELS_PER_METER;
 
-                b2BodyDef bodyDef;
-                bodyDef.position.Set(x_meters, y_meters);
-                b2Body* body = world.CreateBody(&bodyDef);
-
-                b2PolygonShape shape;
-                shape.SetAsBox(width_meters, height_meters);
-                body->CreateFixture(&shape, 0.0f);
+                world_walls.push_back(std::make_unique<Wall>(
+                    world, b2Vec2(x_meters, y_meters), width_meters, height_meters
+                ));
             }
         }
     }
@@ -81,9 +76,9 @@ GameStateDTO Gameloop::getCurrentGameState() {
         PlayerState current_player_state;
         current_player_state.player_id = pair.first;
         current_player_state.state =
-                ServerState(current_client_car.position().x, current_client_car.position().y,
-                            current_client_car.angle());
-        current_player_state.health = current_client_car.health();
+                ServerState(current_client_car->position().x, current_client_car->position().y,
+                            current_client_car->angle());
+        current_player_state.health = current_client_car->health();
         current_state.players.push_back(current_player_state);
     }
 
@@ -103,7 +98,7 @@ void Gameloop::run() {
 
             for (auto& pair: clients_cars) {
                 auto& client_car = pair.second;
-                client_car.updateCarPhysics();
+                client_car->updateCarPhysics();
             }
 
             world.Step(timeStep, 6, 2);

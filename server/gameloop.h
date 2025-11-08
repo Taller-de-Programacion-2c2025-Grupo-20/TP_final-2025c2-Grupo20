@@ -12,6 +12,7 @@
 #include "../common/thread.h"
 
 #include "car.h"
+#include "wall.h"
 #include "collisions_listener.h"
 #include "queues_monitor.h"
 
@@ -20,7 +21,8 @@ private:
     Queue<InputCmd>& gameloop_queue;
     QueuesMonitor& clients_queues;
 
-    std::unordered_map<uint8_t, Car> clients_cars;
+    std::unordered_map<uint8_t, std::unique_ptr<Car>> clients_cars;
+    std::vector<std::unique_ptr<Wall>> world_walls;
 
     b2World world;
     CollisionsListener collision_listener;

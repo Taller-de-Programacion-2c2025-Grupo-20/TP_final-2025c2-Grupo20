@@ -159,18 +159,18 @@ int GameWindow::runGame() {
                     cmd.player_id = client.getMyPlayerId();
                     cmd.action = (ev.type == SDL_KEYDOWN) ? InputAction::Press : InputAction::Release;
                     switch (ev.key.keysym.sym) {
-                        case SDLK_UP:    cmd.key = InputKey::Up; ;break;
-                        case SDLK_w:    cmd.key = InputKey::Up;    break;
-                        case SDLK_DOWN:  cmd.key = InputKey::Down;  break;
-                        case SDLK_s:  cmd.key = InputKey::Down;  break;
-                        case SDLK_LEFT:  cmd.key = InputKey::Left;  break;
-                        case SDLK_a:  cmd.key = InputKey::Left;  break;
-                        case SDLK_RIGHT: cmd.key = InputKey::Right; break;
-                        case SDLK_d: cmd.key = InputKey::Right; break;
+                        case SDLK_UP:    cmd.key = InputKey::Up; input_queue.try_push(cmd);break;
+                        case SDLK_w:    cmd.key = InputKey::Up; input_queue.try_push(cmd); break;
+                        case SDLK_DOWN:  cmd.key = InputKey::Down; input_queue.try_push(cmd); break;
+                        case SDLK_s:  cmd.key = InputKey::Down; input_queue.try_push(cmd); break;
+                        case SDLK_LEFT:  cmd.key = InputKey::Left; input_queue.try_push(cmd); break;
+                        case SDLK_a:  cmd.key = InputKey::Left; input_queue.try_push(cmd); break;
+                        case SDLK_RIGHT: cmd.key = InputKey::Right; input_queue.try_push(cmd); break;
+                        case SDLK_d: cmd.key = InputKey::Right; input_queue.try_push(cmd); break;
                         case SDLK_q:
-                        case SDLK_ESCAPE: cmd.key = InputKey::Quit; break;
+                        case SDLK_ESCAPE: cmd.key = InputKey::Quit; input_queue.try_push(cmd); break;
                     }
-                    input_queue.try_push(cmd);
+                    
                     if (cmd.key == InputKey::Quit && cmd.action == InputAction::Press) {
                         exit = true;
                         break;

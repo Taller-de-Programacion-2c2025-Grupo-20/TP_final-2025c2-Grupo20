@@ -44,6 +44,8 @@ public:
 
     float angle();
 
+    void recieveDamage(uint8_t damage);
+
     uint8_t health();
 
     EntityType getType() const override { return EntityType::CAR; }

@@ -132,6 +132,15 @@ float Car::angle() {
     return car_body->GetAngle();
 }
 
+void Car::recieveDamage(uint8_t damage) {
+    if ( (car_health - damage) <= 0) {
+        car_health = 0;
+        return;
+    }
+
+    car_health -= damage;
+}
+
 uint8_t Car::health(){
     return car_health;
 }

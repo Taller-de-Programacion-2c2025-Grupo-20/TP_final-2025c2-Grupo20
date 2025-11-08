@@ -3,12 +3,14 @@
 
 #include <Box2D/Box2D.h>
 
+#include "entity.h"
+
 #include "../common/clientCommand.h"
 #include "../common/constants.h"
 
 #include <string>
 
-class Car {
+class Car : public Entity {
 private:
 
     float accelaration = 50.f;
@@ -21,6 +23,8 @@ private:
     bool turningRight = false;
 
     b2Body* car_body = nullptr;
+
+    uint8_t car_health = 100;
 
     b2Vec2 getLateralVelocity();
 
@@ -39,6 +43,10 @@ public:
     const b2Vec2& position();
 
     float angle();
+
+    uint8_t health();
+
+    EntityType getType() const override { return EntityType::CAR; }
 
     Car(b2World& world, const b2Vec2& initial_position);
 };

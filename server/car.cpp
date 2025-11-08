@@ -132,6 +132,10 @@ float Car::angle() {
     return car_body->GetAngle();
 }
 
+uint8_t Car::health(){
+    return car_health;
+}
+
 Car::Car(b2World& world, const b2Vec2& initial_position) {
     b2BodyDef carDef;
     carDef.type = b2_dynamicBody;
@@ -142,6 +146,8 @@ Car::Car(b2World& world, const b2Vec2& initial_position) {
     
     car_body = world.CreateBody(&carDef);
     
+    car_body->SetUserData( this );
+
     b2PolygonShape car_shape; 
     car_shape.SetAsBox(0.5f, 1.f);
     car_body->CreateFixture(&car_shape,1.f);

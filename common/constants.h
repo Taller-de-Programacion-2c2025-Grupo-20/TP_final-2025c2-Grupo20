@@ -6,6 +6,7 @@
 
 enum class InputAction : uint8_t { Press, Release };
 enum class InputKey    : uint8_t { Up, Down, Left, Right, Quit};
+enum class EntityType  : uint8_t { CAR, WALL, CHECKPOINT };
 
 //Constantes VIEJAS
 struct Instruction {

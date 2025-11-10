@@ -67,12 +67,12 @@ int GameWindow::runGame() {
 
 
         std::map<int, Rect> healthBarStates = {
-            {0, Rect(44, 56, 225, 55)},
-            {1, Rect(44, 189, 225, 55)},
-            {2, Rect(44, 324, 225, 55)},
-            {3, Rect(308, 56, 225, 55)},
-            {4, Rect(308, 189, 225, 55)},
-            {5, Rect(308, 324, 225, 55)}
+            {5, Rect(44, 56, 225, 55)},
+            {4, Rect(44, 189, 225, 55)},
+            {3, Rect(44, 324, 225, 55)},
+            {2, Rect(308, 56, 225, 55)},
+            {1, Rect(308, 189, 225, 55)},
+            {0, Rect(308, 324, 225, 55)}
         };
 
         std::map<int, Rect> carPositionsGreen = {
@@ -139,7 +139,7 @@ int GameWindow::runGame() {
         bool exit = false;
         int   actual_pos = 0;
         float pos_x_m = 0.f, pos_y_m = 0.f, angle = 0.f;
-        Rect& health_bar = healthBarStates[0];
+        int health_amount_current = 0;
 
         while (true) {
 
@@ -209,10 +209,13 @@ int GameWindow::runGame() {
                     angle = st.angle;
                     actual_pos = angle_to_frame(angle);
 
-                    int health_amount = (last_state.players[i].health) % (20);
+                    int health_amount = last_state.players[i].health / 20;
+                    if (health_amount > 5) health_amount = 5;
+                    health_amount_current = health_amount;
+                    
+                    std::cout << "Vida restante recibida: " << static_cast<int>(last_state.players[i].health) << "\n";
+                    std::cout << "Vida restante final: " << static_cast<int>(health_amount_current) << "\n";
 
-                    health_bar = healthBarStates[health_amount];
-                
                     const int car_cx_px = static_cast<int>(std::lround(pos_x_m * PPM));
                     const int car_cy_px = static_cast<int>(std::lround(pos_y_m * PPM));
 
@@ -245,8 +248,8 @@ int GameWindow::runGame() {
 
                 renderer.Copy(sprites, spr, Rect(draw_x, draw_y, spr.GetW(), spr.GetH()));
             }
-            
-            renderer.Copy(healthsprite, health_bar, Rect(5, 5, 0.65*(health_bar.GetW()), 0.65*(health_bar.GetH())));
+            const Rect& health_src = healthBarStates.at(health_amount_current);
+            renderer.Copy(healthsprite, health_src, Rect(5, 5, 0.65*(health_src.GetW()), 0.65*(health_src.GetH())));
 
             renderer.Present();
             

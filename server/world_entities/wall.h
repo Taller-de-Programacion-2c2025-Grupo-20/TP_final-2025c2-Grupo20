@@ -4,7 +4,7 @@
 #include <Box2D/Box2D.h>
 
 #include "entity.h"
-#include "../common/constants.h"
+#include "../../common/constants.h"
 
 class Wall : public Entity {
 private:

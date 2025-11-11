@@ -3,8 +3,9 @@
 
 #include <Box2D/Box2D.h>
 
-#include "car.h"
-#include "wall.h"
+#include "world_entities/car.h"
+#include "world_entities/wall.h"
+#include "world_entities/checkpoint.h"
 
 class CollisionsListener: public b2ContactListener {
 private:
@@ -15,8 +16,10 @@ private:
 
     void handlerCollisionCarAndWall(Car* car, const b2ContactImpulse* impulse);
 
+    void handlerCollisionCarAndCheckpoint(Car* car, Checkpoint* checkpoint);
+
 public:
-    // void BeginContact(b2Contact* contact) override;
+    void BeginContact(b2Contact* contact) override;
 
     void PostSolve(b2Contact* contact, const b2ContactImpulse* impulse) override;
 };

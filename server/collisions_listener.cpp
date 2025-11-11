@@ -3,7 +3,7 @@
 #include <iostream>
 
 #include <Box2D/Box2D.h>
-#include "entity.h"
+#include "world_entities/entity.h"
 
 #include "../common/constants.h"
 
@@ -48,6 +48,38 @@ void CollisionsListener::handlerCollisionCarAndWall(Car* car, const b2ContactImp
     std::cout << "Daño recibido: " << (total_impulse * 0.5) << "\n";
     std::cout << "Vida restante auto: " << static_cast<int>(car->health()) << "\n";
 
+}
+
+void CollisionsListener::handlerCollisionCarAndCheckpoint(Car* car, Checkpoint* checkpoint){
+    std::cout << "Auto colisiono con un checkpoint\n";
+    if (car){
+
+    }
+
+    if(checkpoint){
+
+    }
+}
+
+void CollisionsListener::BeginContact(b2Contact* contact){
+    Entity* objectA = reinterpret_cast<Entity*>(contact->GetFixtureA()->GetBody()->GetUserData());
+    Entity* objectB = reinterpret_cast<Entity*>(contact->GetFixtureB()->GetBody()->GetUserData());
+
+    if (!objectA || !objectB){
+        return;
+    }
+
+    if (objectA->getType() == EntityType::CAR && objectB->getType() == EntityType::CHECKPOINT){
+        Car* car = static_cast<Car*>(objectA);
+        Checkpoint* checkpoint = static_cast<Checkpoint*>(objectB);
+        handlerCollisionCarAndCheckpoint(car, checkpoint);
+    }
+
+    if (objectA->getType() == EntityType::CHECKPOINT && objectB->getType() == EntityType::CAR){
+        Car* car = static_cast<Car*>(objectB);
+        Checkpoint* checkpoint = static_cast<Checkpoint*>(objectA);
+        handlerCollisionCarAndCheckpoint(car, checkpoint);
+    }
 }
 
 void CollisionsListener::PostSolve(b2Contact* contact, const b2ContactImpulse* impulse) {

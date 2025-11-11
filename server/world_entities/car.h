@@ -5,8 +5,8 @@
 
 #include "entity.h"
 
-#include "../common/clientCommand.h"
-#include "../common/constants.h"
+#include "../../common/clientCommand.h"
+#include "../../common/constants.h"
 
 #include <string>
 

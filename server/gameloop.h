@@ -11,8 +11,9 @@
 #include "../common/queue.h"
 #include "../common/thread.h"
 
-#include "car.h"
-#include "wall.h"
+#include "world_entities/car.h"
+#include "world_entities/wall.h"
+#include "world_entities/checkpoint.h"
 #include "collisions_listener.h"
 #include "queues_monitor.h"
 
@@ -23,6 +24,7 @@ private:
 
     std::unordered_map<uint8_t, std::unique_ptr<Car>> clients_cars;
     std::vector<std::unique_ptr<Wall>> world_walls;
+    std::vector<std::unique_ptr<Checkpoint>> world_checkpoints;
 
     b2World world;
     CollisionsListener collision_listener;

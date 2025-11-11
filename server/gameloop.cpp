@@ -138,7 +138,10 @@ void Gameloop::stop() {
 }
 
 Gameloop::Gameloop(Queue<InputCmd>& gameloop_queue, QueuesMonitor& clients_queues):
-        gameloop_queue(gameloop_queue), clients_queues(clients_queues), world(b2Vec2(0, 0), true), start_time(std::chrono::steady_clock::now()) {
+        gameloop_queue(gameloop_queue), clients_queues(clients_queues), world(b2Vec2(0, 0), true) {
+    world_checkpoints.push_back(std::make_unique<Checkpoint>(
+                    world, b2Vec2(5.f, 10.f), 2, 2, 0
+                ));
     world.SetContactListener(&collision_listener);
     loadMapData();
 }

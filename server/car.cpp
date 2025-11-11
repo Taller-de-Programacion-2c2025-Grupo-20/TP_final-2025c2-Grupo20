@@ -145,6 +145,10 @@ uint8_t Car::health(){
     return car_health;
 }
 
+float Car::getSpeed() const {
+    return car_body->GetLinearVelocity().Length(); // m/s
+}
+
 Car::Car(b2World& world, const b2Vec2& initial_position) {
     b2BodyDef carDef;
     carDef.type = b2_dynamicBody;

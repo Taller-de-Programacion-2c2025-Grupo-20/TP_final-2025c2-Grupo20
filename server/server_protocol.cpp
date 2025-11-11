@@ -53,16 +53,19 @@ void ServerProtocol::send_game_state(const GameStateDTO& state) {
     buffer.push_back(EVT_GAME_STATE); 
     buffer.push_back(state.car_count);
     
+    addFloatToBuffer(buffer, state.elapsed_time);
+
     for (const auto& player : state.players) {
         buffer.push_back(player.player_id);
         
         addFloatToBuffer(buffer, player.state.x);
         addFloatToBuffer(buffer, player.state.y);
         addFloatToBuffer(buffer, player.state.angle);
+        addFloatToBuffer(buffer, player.state.speed);
         
         buffer.push_back(player.health);
     }
-    
+
     skt.sendall(buffer.data(), buffer.size());
 }
 

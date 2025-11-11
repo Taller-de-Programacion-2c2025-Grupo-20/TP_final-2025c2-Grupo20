@@ -76,6 +76,8 @@ GameStateDTO ClientProtocol::receive_game_state() {
     skt.recvall(&car_count, 1);
     state_dto.car_count = car_count;
 
+    state_dto.elapsed_time = receiveFloat();
+
     for (int i = 0; i < car_count; ++i) {
         PlayerState player;
         
@@ -84,6 +86,7 @@ GameStateDTO ClientProtocol::receive_game_state() {
         player.state.x = receiveFloat();
         player.state.y = receiveFloat();
         player.state.angle = receiveFloat();
+        player.state.speed = receiveFloat();
         
         skt.recvall(&player.health, 1);
         

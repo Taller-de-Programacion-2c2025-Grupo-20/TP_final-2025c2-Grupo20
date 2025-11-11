@@ -27,6 +27,8 @@ private:
     b2World world;
     CollisionsListener collision_listener;
 
+    std::chrono::steady_clock::time_point start_time;
+
     std::mutex mutex;
 
     void handleInput(const InputCmd& input);

@@ -11,5 +11,6 @@ struct PlayerState {
 
 struct GameStateDTO {
     uint8_t car_count;
+    float elapsed_time;
     std::vector<PlayerState> players;
 };

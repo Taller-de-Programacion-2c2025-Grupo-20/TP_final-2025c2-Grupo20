@@ -77,7 +77,7 @@ GameStateDTO Gameloop::getCurrentGameState() {
         current_player_state.player_id = pair.first;
         current_player_state.state =
                 ServerState(current_client_car->position().x, current_client_car->position().y,
-                            current_client_car->angle());
+                            current_client_car->angle(), current_client_car->getSpeed());
         current_player_state.health = current_client_car->health();
         current_state.players.push_back(current_player_state);
     }
@@ -104,6 +104,9 @@ void Gameloop::run() {
             world.Step(timeStep, 6, 2);
 
             GameStateDTO current_state = getCurrentGameState();
+            
+            current_state.elapsed_time = std::chrono::duration<float>(std::chrono::steady_clock::now() - start_time).count();
+
             clients_queues.broadcast(current_state);
 
             mutex.unlock();
@@ -135,7 +138,7 @@ void Gameloop::stop() {
 }
 
 Gameloop::Gameloop(Queue<InputCmd>& gameloop_queue, QueuesMonitor& clients_queues):
-        gameloop_queue(gameloop_queue), clients_queues(clients_queues), world(b2Vec2(0, 0), true) {
+        gameloop_queue(gameloop_queue), clients_queues(clients_queues), world(b2Vec2(0, 0), true), start_time(std::chrono::steady_clock::now()) {
     world.SetContactListener(&collision_listener);
     loadMapData();
 }

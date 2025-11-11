@@ -48,6 +48,8 @@ public:
 
     uint8_t health();
 
+    float getSpeed() const;
+
     EntityType getType() const override { return EntityType::CAR; }
 
     Car(b2World& world, const b2Vec2& initial_position);

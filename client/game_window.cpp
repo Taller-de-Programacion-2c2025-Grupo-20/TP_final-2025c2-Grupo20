@@ -52,9 +52,12 @@ int GameWindow::runGame() {
         surface.SetColorKey(true, SDL_MapRGB(surface.Get()->format, 163, 163, 13));
         Texture sprites(renderer, surface);
 
-        Surface life_bar_surface(DATA_PATH "/assets/life_bar.png");
-        Texture healthsprite(renderer, life_bar_surface);
+        Surface hud_surface(DATA_PATH "/assets/hud.png");
+        hud_surface.SetColorKey(true, SDL_MapRGB(hud_surface.Get()->format, 255, 201, 14));
+        Texture hud(renderer, hud_surface);
 
+        renderer.SetLogicalSize(1600, 800);
+            
         std::array<std::string, 3> maps = {
             "/cities/Game Boy _ GBC - Grand Theft Auto - Backgrounds - Liberty City.png",
             "/cities/Game Boy _ GBC - Grand Theft Auto - Backgrounds - San Andreas.png",
@@ -64,16 +67,6 @@ int GameWindow::runGame() {
         Texture background(renderer, DATA_PATH + maps[map_to_play]);
         const int bgW = background.GetWidth();
         const int bgH = background.GetHeight();
-
-
-        std::map<int, Rect> healthBarStates = {
-            {5, Rect(44, 56, 225, 55)},
-            {4, Rect(44, 189, 225, 55)},
-            {3, Rect(44, 324, 225, 55)},
-            {2, Rect(308, 56, 225, 55)},
-            {1, Rect(308, 189, 225, 55)},
-            {0, Rect(308, 324, 225, 55)}
-        };
 
         std::map<int, Rect> carPositionsGreen = {
             {0, Rect(0, 0, 32, 32)}, {1, Rect(32, 0, 32, 32)}, {2, Rect(64, 0, 32, 32)}, {3, Rect(96, 0, 32, 32)},
@@ -139,7 +132,70 @@ int GameWindow::runGame() {
         bool exit = false;
         int   actual_pos = 0;
         float pos_x_m = 0.f, pos_y_m = 0.f, angle = 0.f;
-        int health_amount_current = 0;
+
+        int hp = 0;
+
+        Rect zero(973,358,82,100);
+        Rect one(1053,358,82,100);
+        Rect two(1134,358,82,100);
+        Rect three(1219,358,82,100);
+        Rect four(1304,358,82,100);
+        Rect five(1385,358,82,100);
+        Rect six(1466,358,82,100);
+        Rect seven(1548,358,82,100);
+        Rect eight(1630,358,82,100);
+        Rect nine(1712,358,82,100);
+
+
+        int variacionVel = 35;
+        int variacionTiempo = 25;
+
+        Rect healthRect(23, 18, 847, 239);
+
+        Rect healthUnitRect(569, 85, 82, 100);
+        Rect healthDecimalRect(478, 85, 82, 100);
+        Rect healthCentecimalRect(387, 85, 82, 100);
+
+        Rect heartZero(60, 58, 80, 74);
+        Rect heartOne(154, 58, 80, 74);
+        Rect heartTwo(248, 58, 80, 74);
+        Rect heartThree(109, 148, 80, 74);
+        Rect heartFour(200, 148, 80, 74);
+
+        Rect emptyHeart(972, 260, 80, 74);
+        Rect fullHeart(1085, 260, 80, 74);        
+
+        Rect timeRect(23, 295, 847, 239);
+
+        Rect timeSecondsUnitRect(742, 333 + variacionTiempo, 82, 100);
+        Rect timeSecondsDecimalRect(651, 333 + variacionTiempo, 82, 100);
+
+        Rect timeMinutesUnitRect(527, 333 + variacionTiempo, 82, 100);
+        Rect timeMinutesDecimalRect(432, 333 + variacionTiempo, 82, 100);
+
+
+        Rect speedRect(23, 555, 847, 239);
+
+        Rect speedUnitRect(525, 584 + variacionVel, 82, 100);
+        Rect speedDecimalRect(434, 584 + variacionVel, 82, 100);
+        Rect speedCentecimalRect(342, 584 + variacionVel, 82, 100);
+
+
+        std::array<Rect,10> DIGITS = { zero, one, two, three, four, five, six, seven, eight, nine };
+        // Íconos:
+        // const Rect HEART_EMPTY = emptyHeart;
+        // const Rect HEART_FULL  = fullHeart;
+        // Marcos/paneles:
+        const Rect PANEL_HP    = healthRect;
+        const Rect PANEL_TIME  = timeRect;
+        const Rect PANEL_SPEED = speedRect;
+        // Casilleros de HP / TIME / SPEED (dígitos):
+        // const Rect HP_CEN = healthCentecimalRect, HP_DEC = healthDecimalRect, HP_UNI = healthUnitRect;
+        // const Rect T_MM_D = timeMinutesDecimalRect, T_MM_U = timeMinutesUnitRect,
+        //         T_SS_D = timeSecondsDecimalRect, T_SS_U = timeSecondsUnitRect;
+        // const Rect V_KM_C = speedCentecimalRect,    V_KM_D = speedDecimalRect, V_KM_U = speedUnitRect;
+
+        int my_player_index = 0;
 
         while (true) {
 
@@ -203,18 +259,14 @@ int GameWindow::runGame() {
             for (size_t i = 0; i < last_state.players.size(); i++) {
 
                 if (have_state && last_state.players[i].player_id == client.getMyPlayerId()) {
+                    my_player_index = i;
                     const auto& st = last_state.players[i].state;
                     pos_x_m = st.x;
                     pos_y_m = st.y;
                     angle = st.angle;
                     actual_pos = angle_to_frame(angle);
 
-                    int health_amount = last_state.players[i].health / 20;
-                    if (health_amount > 5) health_amount = 5;
-                    health_amount_current = health_amount;
-                    
-                    std::cout << "Vida restante recibida: " << static_cast<int>(last_state.players[i].health) << "\n";
-                    std::cout << "Vida restante final: " << static_cast<int>(health_amount_current) << "\n";
+                    hp = std::clamp<int>(static_cast<int>(last_state.players[i].health), 0, 100);
 
                     const int car_cx_px = static_cast<int>(std::lround(pos_x_m * PPM));
                     const int car_cy_px = static_cast<int>(std::lround(pos_y_m * PPM));
@@ -248,8 +300,155 @@ int GameWindow::runGame() {
 
                 renderer.Copy(sprites, spr, Rect(draw_x, draw_y, spr.GetW(), spr.GetH()));
             }
-            const Rect& health_src = healthBarStates.at(health_amount_current);
-            renderer.Copy(healthsprite, health_src, Rect(5, 5, 0.65*(health_src.GetW()), 0.65*(health_src.GetH())));
+
+           
+            
+            const int BOX_W = 240;
+            const int BOX_H = 60;
+
+
+            const int HUD_PAD      = 2;
+            const int HUD_MARGIN_X = 8;
+            const int HUD_MARGIN_Y = 8;
+
+            int hudX = HUD_MARGIN_X, hudY = HUD_MARGIN_Y;
+            
+            auto iround = [](float v){ return (int)std::lround(v); };
+
+            struct BoxMap {
+                float s;
+                int   ox, oy;
+                Rect  panel;
+            };
+
+
+            auto makeBoxMap = [&](const Rect& panelSrc, int px, int py) -> BoxMap {
+
+                float aspect_src = (float)panelSrc.GetW() / (float)panelSrc.GetH();
+                float aspect_box = (float)BOX_W / (float)BOX_H;
+
+
+                float scale;
+                if (aspect_src > aspect_box)
+                    scale = (float)BOX_W / (float)panelSrc.GetW();
+                else
+                    scale = (float)BOX_H / (float)panelSrc.GetH();
+
+                int w = iround(panelSrc.GetW() * scale);
+                int h = iround(panelSrc.GetH() * scale);
+
+                int ox = px + (BOX_W - w) / 2;
+                int oy = py + (BOX_H - h) / 2;
+
+                renderer.Copy(hud, panelSrc, Rect(ox, oy, w, h));
+
+                return {scale, ox, oy, panelSrc};
+            };
+
+
+            auto atlasToFit = [&](const BoxMap& m, const Rect& slotAtlas) -> Rect {
+                int dx = slotAtlas.GetX() - m.panel.GetX();
+                int dy = slotAtlas.GetY() - m.panel.GetY();
+                return Rect(
+                    m.ox + iround(dx * m.s),
+                    m.oy + iround(dy * m.s),
+                    iround(slotAtlas.GetW() * m.s),
+                    iround(slotAtlas.GetH() * m.s)
+                );
+            };
+
+            auto drawDigitDst = [&](int d, const Rect& dst) {
+                renderer.Copy(hud, DIGITS[d % 10], dst);
+            };
+
+            BoxMap hpMap = makeBoxMap(PANEL_HP, hudX, hudY);
+
+            int hp_clamped = std::clamp(hp, 0, 999);
+            drawDigitDst((hp_clamped/100)%10, atlasToFit(hpMap, healthCentecimalRect));
+            drawDigitDst((hp_clamped/10 )%10, atlasToFit(hpMap, healthDecimalRect));
+            drawDigitDst( hp_clamped%10,      atlasToFit(hpMap, healthUnitRect));
+
+            std::array<Rect,5> HEART_SLOTS = { heartZero, heartOne, heartTwo, heartThree, heartFour };
+            int hearts = std::clamp(hp/20, 0, 5);
+            for (int k = 0; k < 5; ++k) {
+                const Rect& src = (k < hearts) ? fullHeart : emptyHeart;
+                renderer.Copy(hud, src, atlasToFit(hpMap, HEART_SLOTS[k]));
+            }
+
+            hudX += BOX_W + HUD_PAD;
+
+            BoxMap timeMap = makeBoxMap(PANEL_TIME, hudX, hudY);
+
+            int total = static_cast<int>(last_state.elapsed_time);
+            
+            int mm = (total / 60) % 100;
+            int ss = total % 60;
+
+            drawDigitDst((mm/10)%10, atlasToFit(timeMap, timeMinutesDecimalRect));
+            drawDigitDst( mm%10,     atlasToFit(timeMap, timeMinutesUnitRect));
+            drawDigitDst((ss/10)%10, atlasToFit(timeMap, timeSecondsDecimalRect));
+            drawDigitDst( ss%10,     atlasToFit(timeMap, timeSecondsUnitRect));
+
+            hudX += BOX_W + HUD_PAD;
+
+
+            float speed_kmh = last_state.players[my_player_index].state.speed*10;
+
+            BoxMap spdMap = makeBoxMap(PANEL_SPEED, hudX, hudY);
+
+            int v = std::clamp((int)std::round(speed_kmh), 0, 999);
+            drawDigitDst((v/100)%10, atlasToFit(spdMap, speedCentecimalRect));
+            drawDigitDst((v/10 )%10, atlasToFit(spdMap, speedDecimalRect));
+            drawDigitDst( v%10,      atlasToFit(spdMap, speedUnitRect));
+
+
+            const int MINIMAP_MARGIN = 12;
+            const int MINIMAP_W = 280;
+            const float miniScale = (float)MINIMAP_W / (float)bgW;
+            const int MINIMAP_H = (int)std::lround(bgH * miniScale);
+
+            const int miniX = viewW - MINIMAP_MARGIN - MINIMAP_W;
+            const int miniY = MINIMAP_MARGIN;
+
+            renderer.SetDrawColor(0, 0, 0, 160);
+            renderer.FillRect(Rect(miniX - 4, miniY - 4, MINIMAP_W + 8, MINIMAP_H + 8));
+
+            renderer.Copy(
+                background,
+                Rect(0, 0, bgW, bgH),
+                Rect(miniX, miniY, MINIMAP_W, MINIMAP_H)
+            );
+
+            struct RGB { Uint8 r,g,b; };
+            static const RGB PALETTE[] = {
+                {255,  64,  64},
+                { 64, 200, 255},
+                { 64, 255,  64},
+                {255, 220,  64},
+                {200,  64, 255},
+                {255, 128,   0},
+                { 64, 255, 200},
+                {255,  64, 180}
+            };
+            const int DOT_R = 3;
+
+            for (const auto& p : last_state.players) {
+                const float world_px = p.state.x * PPM;
+                const float world_py = p.state.y * PPM;
+                const int mini_px = miniX + (int)std::lround(world_px * miniScale);
+                const int mini_py = miniY + (int)std::lround(world_py * miniScale);
+
+                int colorIdx = (int)p.player_id % (int)(sizeof(PALETTE)/sizeof(PALETTE[0]));
+                renderer.SetDrawColor(PALETTE[colorIdx].r, PALETTE[colorIdx].g, PALETTE[colorIdx].b, 255);
+
+                renderer.FillRect(Rect(mini_px - DOT_R, mini_py - DOT_R, 2*DOT_R, 2*DOT_R));
+
+                if (p.player_id == client.getMyPlayerId()) {
+                    renderer.SetDrawColor(255, 255, 255, 230);
+                    renderer.DrawRect(Rect(mini_px - (DOT_R+2), mini_py - (DOT_R+2), 2*(DOT_R+2), 2*(DOT_R+2)));
+                }
+            }
+
 
             renderer.Present();
             

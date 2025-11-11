@@ -52,10 +52,37 @@ void Gameloop::loadWalls(const YAML::Node& map_data) {
     }
 }
 
+void Gameloop::loadCheckpoints(const YAML::Node& map_data) {
+    for (const auto& layer : map_data["layers"]) {
+        if (layer["name"].as<std::string>() == "Checkpoints") {
+            for (const auto& obj : layer["objects"]) {
+                float x_pixels = obj["x"].as<float>();
+                float y_pixels = obj["y"].as<float>();
+                float width_pixels = obj["width"].as<float>();
+                float height_pixels = obj["height"].as<float>();
+
+                float x_meters = (x_pixels + width_pixels / 2) / PIXELS_PER_METER;
+                float y_meters = (y_pixels + height_pixels / 2) / PIXELS_PER_METER;
+                float width_meters = (width_pixels / 2) / PIXELS_PER_METER;
+                float height_meters = (height_pixels / 2) / PIXELS_PER_METER;
+
+                int id = obj["id"].as<int>();
+
+                world_checkpoints.push_back(std::make_unique<Checkpoint>(
+                    world, b2Vec2(x_meters, y_meters),
+                    width_meters, height_meters, id
+                ));
+            }
+        }
+    }
+}
+
+
 void Gameloop::loadMapData() {
-    YAML::Node map_data = YAML::LoadFile("../liberty_city.yaml");
+    YAML::Node map_data = YAML::LoadFile("../liberty_city_con_checkpoints.yaml");
 
     loadWalls(map_data);
+    loadCheckpoints(map_data);
 }
 
 void Gameloop::readUsersInput() {
@@ -122,10 +149,10 @@ void Gameloop::run() {
                         (rate - std::chrono::duration<double>(fmod(behind.count(), rate.count())));
                 t1 += std::chrono::duration_cast<std::chrono::steady_clock::duration>(
                         std::chrono::duration<double>(lost.count()));
+            } else {
+                std::this_thread::sleep_for(rest);
+                t1 += std::chrono::duration_cast<std::chrono::steady_clock::duration>(rate);
             }
-
-            std::this_thread::sleep_for(rest);
-            t1 += std::chrono::duration_cast<std::chrono::steady_clock::duration>(rate);
 
         } catch (const ClosedQueue&) {
             break;
@@ -140,9 +167,6 @@ void Gameloop::stop() {
 
 Gameloop::Gameloop(Queue<InputCmd>& gameloop_queue, QueuesMonitor& clients_queues):
         gameloop_queue(gameloop_queue), clients_queues(clients_queues), world(b2Vec2(0, 0), true) {
-    world_checkpoints.push_back(std::make_unique<Checkpoint>(
-                    world, b2Vec2(5.f, 10.f), 2, 2, 0
-                ));
     world.SetContactListener(&collision_listener);
     loadMapData();
 }

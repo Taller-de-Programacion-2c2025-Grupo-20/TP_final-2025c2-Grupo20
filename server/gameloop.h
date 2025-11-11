@@ -36,6 +36,7 @@ private:
     void handleInput(const InputCmd& input);
 
     void loadWalls(const YAML::Node& map_data);
+    void loadCheckpoints(const YAML::Node& map_data);
 
     void loadMapData();
 

@@ -145,6 +145,14 @@ uint8_t Car::health(){
     return car_health;
 }
 
+int Car::nextCheckpointId(){
+    return next_checkpoint_id;
+}
+
+void Car::incrementNextCheckpointId(){
+    next_checkpoint_id++;
+}
+
 float Car::getSpeed() const {
     return car_body->GetLinearVelocity().Length(); // m/s
 }

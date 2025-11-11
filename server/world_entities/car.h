@@ -26,6 +26,8 @@ private:
 
     uint8_t car_health = 100;
 
+    int next_checkpoint_id = 0;
+
     b2Vec2 getLateralVelocity();
 
     b2Vec2 getForwardVelocity();
@@ -47,6 +49,10 @@ public:
     void recieveDamage(uint8_t damage);
 
     uint8_t health();
+
+    int nextCheckpointId();
+
+    void incrementNextCheckpointId();
 
     float getSpeed() const;
 

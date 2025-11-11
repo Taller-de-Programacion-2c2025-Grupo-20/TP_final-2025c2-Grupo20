@@ -31,7 +31,7 @@ void Gameloop::addCar(uint8_t client_id) {
 
 void Gameloop::loadWalls(const YAML::Node& map_data) {
     for (const auto& layer: map_data["layers"]) {
-        if (layer["name"].as<std::string>() == "Colisiones") {
+        if (layer["name"].as<std::string>() == "Paredes") {
             for (const auto& obj: layer["objects"]) {
                 float x_pixels = obj["x"].as<float>();
                 float y_pixels = obj["y"].as<float>();
@@ -53,7 +53,7 @@ void Gameloop::loadWalls(const YAML::Node& map_data) {
 }
 
 void Gameloop::loadMapData() {
-    YAML::Node map_data = YAML::LoadFile("../liberty.yaml");
+    YAML::Node map_data = YAML::LoadFile("../liberty_city.yaml");
 
     loadWalls(map_data);
 }

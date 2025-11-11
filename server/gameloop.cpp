@@ -90,6 +90,7 @@ void Gameloop::run() {
     using clock = std::chrono::steady_clock;
     const std::chrono::duration<double> rate(1.0 / 60.0);
     auto t1 = clock::now();
+    start_time = clock::now();
 
     while (should_keep_running()) {
         try {

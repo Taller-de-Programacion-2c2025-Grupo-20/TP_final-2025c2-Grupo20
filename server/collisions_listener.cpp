@@ -51,13 +51,10 @@ void CollisionsListener::handlerCollisionCarAndWall(Car* car, const b2ContactImp
 }
 
 void CollisionsListener::handlerCollisionCarAndCheckpoint(Car* car, Checkpoint* checkpoint){
-    std::cout << "Auto colisiono con un checkpoint\n";
-    if (car){
+    if (car->nextCheckpointId() == checkpoint->getId()) {
+        car->incrementNextCheckpointId();
 
-    }
-
-    if(checkpoint){
-
+        std::cout << "ALERTA: Auto colisiono con el checkpoint de id: " << checkpoint->getId() << "\n";
     }
 }
 

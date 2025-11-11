@@ -3,8 +3,11 @@ target_sources(taller_server
     
     server_main.cpp
     acceptor.cpp
-    car.cpp
-    wall.cpp
+    
+    world_entities/car.cpp
+    world_entities/wall.cpp
+    world_entities/checkpoint.cpp
+    
     collisions_listener.cpp
     client_handler.cpp
     gameloop.cpp
@@ -17,9 +20,12 @@ target_sources(taller_server
     PUBLIC
     
     acceptor.h
-    entity.h
-    car.h
-    wall.h
+    
+    world_entities/entity.h
+    world_entities/car.h
+    world_entities/wall.h
+    world_entities/checkpoint.h
+    
     collisions_listener.h
     client_handler.h
     gameloop.h

@@ -1,15 +1,15 @@
 _deps/sdl2-build/CMakeFiles/SDL2.dir/src/render/direct3d/SDL_shaders_d3d.c.o: \
- /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-src/src/render/direct3d/SDL_shaders_d3d.c \
+ /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-src/src/render/direct3d/SDL_shaders_d3d.c \
  /usr/include/stdc-predef.h \
- /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-src/src/render/direct3d/../../SDL_internal.h \
- /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-src/src/render/direct3d/../../dynapi/SDL_dynapi.h \
- /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-src/src/render/direct3d/../../dynapi/SDL_dynapi_overrides.h \
- /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-build/include-config-/SDL2/SDL_config.h \
- /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_platform.h \
- /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/begin_code.h \
- /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/close_code.h \
- /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_assert.h \
- /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_stdinc.h \
+ /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-src/src/render/direct3d/../../SDL_internal.h \
+ /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-src/src/render/direct3d/../../dynapi/SDL_dynapi.h \
+ /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-src/src/render/direct3d/../../dynapi/SDL_dynapi_overrides.h \
+ /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build/include-config-/SDL2/SDL_config.h \
+ /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_platform.h \
+ /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/begin_code.h \
+ /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/close_code.h \
+ /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_assert.h \
+ /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_stdinc.h \
  /usr/include/x86_64-linux-gnu/sys/types.h /usr/include/features.h \
  /usr/include/features-time64.h \
  /usr/include/x86_64-linux-gnu/bits/wordsize.h \
@@ -77,18 +77,18 @@ _deps/sdl2-build/CMakeFiles/SDL2.dir/src/render/direct3d/SDL_shaders_d3d.c.o: \
  /usr/include/x86_64-linux-gnu/bits/mathcalls-narrow.h \
  /usr/include/x86_64-linux-gnu/bits/iscanonical.h \
  /usr/lib/gcc/x86_64-linux-gnu/13/include/float.h \
- /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_log.h \
- /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_render.h \
- /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_rect.h \
- /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_error.h \
- /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_pixels.h \
- /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_endian.h \
- /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_rwops.h \
- /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_video.h \
- /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_surface.h \
- /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_blendmode.h \
- /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_system.h \
- /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_keyboard.h \
- /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_keycode.h \
- /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_scancode.h \
- /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_render.h
+ /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_log.h \
+ /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_render.h \
+ /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_rect.h \
+ /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_error.h \
+ /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_pixels.h \
+ /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_endian.h \
+ /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_rwops.h \
+ /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_video.h \
+ /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_surface.h \
+ /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_blendmode.h \
+ /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_system.h \
+ /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_keyboard.h \
+ /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_keycode.h \
+ /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_scancode.h \
+ /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_render.h

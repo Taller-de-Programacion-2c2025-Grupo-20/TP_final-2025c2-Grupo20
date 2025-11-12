@@ -1,8 +1,8 @@
-if (NOT EXISTS "/home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/install_manifest.txt")
-    message(FATAL_ERROR "Cannot find install manifest: \"/home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/install_manifest.txt\"")
-endif(NOT EXISTS "/home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/install_manifest.txt")
+if (NOT EXISTS "/home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/install_manifest.txt")
+    message(FATAL_ERROR "Cannot find install manifest: \"/home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/install_manifest.txt\"")
+endif(NOT EXISTS "/home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/install_manifest.txt")
 
-file(READ "/home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/install_manifest.txt" files)
+file(READ "/home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/install_manifest.txt" files)
 string(REGEX REPLACE "\n" ";" files "${files}")
 foreach (file ${files})
     message(STATUS "Uninstalling \"$ENV{DESTDIR}${file}\"")

@@ -1,4 +1,4 @@
-# Install script for directory: /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/libsdl2pp-subbuild
+# Install script for directory: /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/libsdl2pp-subbuild
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -45,5 +45,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/libsdl2pp-subbuild/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/libsdl2pp-subbuild/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

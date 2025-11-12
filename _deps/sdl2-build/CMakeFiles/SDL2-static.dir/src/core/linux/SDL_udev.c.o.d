@@ -1,15 +1,15 @@
 _deps/sdl2-build/CMakeFiles/SDL2-static.dir/src/core/linux/SDL_udev.c.o: \
- /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-src/src/core/linux/SDL_udev.c \
+ /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-src/src/core/linux/SDL_udev.c \
  /usr/include/stdc-predef.h \
- /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-src/src/core/linux/../../SDL_internal.h \
- /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-src/src/core/linux/../../dynapi/SDL_dynapi.h \
- /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-src/src/core/linux/../../dynapi/SDL_dynapi_overrides.h \
- /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-build/include-config-/SDL2/SDL_config.h \
- /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_platform.h \
- /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/begin_code.h \
- /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/close_code.h \
- /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_assert.h \
- /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_stdinc.h \
+ /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-src/src/core/linux/../../SDL_internal.h \
+ /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-src/src/core/linux/../../dynapi/SDL_dynapi.h \
+ /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-src/src/core/linux/../../dynapi/SDL_dynapi_overrides.h \
+ /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build/include-config-/SDL2/SDL_config.h \
+ /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_platform.h \
+ /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/begin_code.h \
+ /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/close_code.h \
+ /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_assert.h \
+ /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_stdinc.h \
  /usr/include/x86_64-linux-gnu/sys/types.h /usr/include/features.h \
  /usr/include/features-time64.h \
  /usr/include/x86_64-linux-gnu/bits/wordsize.h \
@@ -77,30 +77,30 @@ _deps/sdl2-build/CMakeFiles/SDL2-static.dir/src/core/linux/SDL_udev.c.o: \
  /usr/include/x86_64-linux-gnu/bits/mathcalls-narrow.h \
  /usr/include/x86_64-linux-gnu/bits/iscanonical.h \
  /usr/lib/gcc/x86_64-linux-gnu/13/include/float.h \
- /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_log.h \
- /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-src/src/core/linux/SDL_udev.h \
- /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_loadso.h \
- /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_error.h \
- /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_events.h \
- /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_video.h \
- /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_pixels.h \
- /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_endian.h \
- /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_rect.h \
- /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_rwops.h \
- /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_surface.h \
- /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_blendmode.h \
- /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_keyboard.h \
- /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_keycode.h \
- /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_scancode.h \
- /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_mouse.h \
- /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_joystick.h \
- /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_guid.h \
- /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_mutex.h \
- /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_gamecontroller.h \
- /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_sensor.h \
- /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_quit.h \
- /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_gesture.h \
- /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_touch.h \
+ /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_log.h \
+ /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-src/src/core/linux/SDL_udev.h \
+ /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_loadso.h \
+ /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_error.h \
+ /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_events.h \
+ /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_video.h \
+ /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_pixels.h \
+ /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_endian.h \
+ /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_rect.h \
+ /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_rwops.h \
+ /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_surface.h \
+ /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_blendmode.h \
+ /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_keyboard.h \
+ /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_keycode.h \
+ /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_scancode.h \
+ /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_mouse.h \
+ /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_joystick.h \
+ /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_guid.h \
+ /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_mutex.h \
+ /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_gamecontroller.h \
+ /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_sensor.h \
+ /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_quit.h \
+ /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_gesture.h \
+ /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_touch.h \
  /usr/include/libudev.h /usr/include/x86_64-linux-gnu/sys/sysmacros.h \
  /usr/include/x86_64-linux-gnu/bits/sysmacros.h \
  /usr/include/x86_64-linux-gnu/sys/time.h /usr/include/linux/input.h \
@@ -128,9 +128,9 @@ _deps/sdl2-build/CMakeFiles/SDL2-static.dir/src/core/linux/SDL_udev.c.o: \
  /usr/include/x86_64-linux-gnu/bits/statx-generic.h \
  /usr/include/x86_64-linux-gnu/bits/types/struct_statx_timestamp.h \
  /usr/include/x86_64-linux-gnu/bits/types/struct_statx.h \
- /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-src/src/core/linux/SDL_evdev_capabilities.h \
- /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_timer.h \
- /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_hints.h \
- /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-src/src/core/linux/../unix/SDL_poll.h \
- /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-src/src/core/linux/../unix/../../SDL_internal.h \
- /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_stdinc.h
+ /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-src/src/core/linux/SDL_evdev_capabilities.h \
+ /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_timer.h \
+ /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_hints.h \
+ /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-src/src/core/linux/../unix/SDL_poll.h \
+ /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-src/src/core/linux/../unix/../../SDL_internal.h \
+ /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_stdinc.h

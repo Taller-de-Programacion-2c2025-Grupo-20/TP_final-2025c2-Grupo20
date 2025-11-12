@@ -2,7 +2,9 @@
 #include <iostream>
 #include <utility> 
 #include <chrono>
+#include <sys/socket.h>
 #include "../common/constants.h"
+
 
 Server::Server(const char* port) :
     listener(port), 
@@ -25,6 +27,15 @@ Server::~Server() {
 int Server::run() {
     acceptor.start(); 
     std::cout << "Servidor (Lobby) corriendo. Presione 'q' para salir." << std::endl;
+    input_listener_thread = std::thread([this]() {
+        char c;
+        while (std::cin.get(c)) { 
+            if (c == 'q') {
+                this->is_running = false; 
+                break;
+            }
+        }
+    });
 
     while (is_running) {
         try {
@@ -38,8 +49,11 @@ int Server::run() {
             std::cerr << "Error en el bucle del Lobby: " << e.what() << std::endl;
         }
     }
-    
+    std::cout << "Señal de 'q' recibida, iniciando apagado..." << std::endl;    
     stop(); 
+    if (input_listener_thread.joinable()) {
+        input_listener_thread.join();
+    }
     return 0;
 }
 
@@ -47,9 +61,13 @@ void Server::stop() {
     if (!is_running.exchange(false)) return;
 
     std::cout << "Deteniendo el servidor..." << std::endl;
-
-    listener.shutdown(SHUT_RDWR);
-    listener.close();
+    try {
+        listener.shutdown(SHUT_RDWR);
+        listener.close();
+    } catch (const std::exception& e) {
+        // ...
+    }
+    
     acceptor.stop();
     acceptor.join();
 
@@ -168,7 +186,7 @@ void Server::handle_create_match(const LobbyCommand& cmd) {
     std::string match_name = "Partida " + std::to_string(new_id);
     auto new_match = std::make_unique<Match>(new_id, match_name);
     new_match->add_player(std::move(client));
-    new_match->start(); 
+    new_match->run(); 
     
     active_matches[new_id] = std::move(new_match);
     std::cout << "Partida " << (int)new_id << " creada por cliente " << (int)cmd.client_id << std::endl;
@@ -210,12 +228,21 @@ void Server::handle_toggle_ready(const LobbyCommand& cmd) {
 
 void Server::reap_dead_lobby_clients() {
     std::lock_guard<std::mutex> lock(mtx);
+    
     clients_in_lobby.remove_if([](const std::unique_ptr<ClientHandler>& client) {
-        if (!client->is_alive()) {
-            std::cout << "Limpiando cliente " << (int)client->get_id() << " del lobby." << std::endl;
-            return true;
+        if (client->is_alive()) {
+            return false;
         }
-        return false;
+
+        std::cout << "Limpiando cliente " << (int)client->get_id() << " del lobby." << std::endl;
+        try {
+            client->stop(); 
+            client->join(); 
+        } catch (const std::exception& e) {
+            std::cerr << "Error (ignorable) al limpiar cliente " 
+                      << (int)client->get_id() << ": " << e.what() << std::endl;
+        }
+        return true; 
     });
 }
 

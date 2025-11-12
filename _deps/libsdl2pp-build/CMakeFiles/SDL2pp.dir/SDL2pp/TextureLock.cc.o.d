@@ -1,12 +1,12 @@
 _deps/libsdl2pp-build/CMakeFiles/SDL2pp.dir/SDL2pp/TextureLock.cc.o: \
- /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/libsdl2pp-src/SDL2pp/TextureLock.cc \
+ /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/libsdl2pp-src/SDL2pp/TextureLock.cc \
  /usr/include/stdc-predef.h \
- /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_render.h \
- /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_stdinc.h \
- /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-build/include-config-/SDL2/SDL_config.h \
- /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_platform.h \
- /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/begin_code.h \
- /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/close_code.h \
+ /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_render.h \
+ /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_stdinc.h \
+ /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build/include-config-/SDL2/SDL_config.h \
+ /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_platform.h \
+ /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/begin_code.h \
+ /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/close_code.h \
  /usr/include/x86_64-linux-gnu/sys/types.h /usr/include/features.h \
  /usr/include/features-time64.h \
  /usr/include/x86_64-linux-gnu/bits/wordsize.h \
@@ -111,15 +111,15 @@ _deps/libsdl2pp-build/CMakeFiles/SDL2pp.dir/SDL2pp/TextureLock.cc.o: \
  /usr/include/c++/13/tr1/poly_laguerre.tcc \
  /usr/include/c++/13/tr1/riemann_zeta.tcc \
  /usr/lib/gcc/x86_64-linux-gnu/13/include/float.h \
- /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_rect.h \
- /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_error.h \
- /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_pixels.h \
- /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_endian.h \
- /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_rwops.h \
- /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_video.h \
- /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_surface.h \
- /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_blendmode.h \
- /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/libsdl2pp-src/SDL2pp/Exception.hh \
+ /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_rect.h \
+ /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_error.h \
+ /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_pixels.h \
+ /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_endian.h \
+ /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_rwops.h \
+ /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_video.h \
+ /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_surface.h \
+ /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_blendmode.h \
+ /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/libsdl2pp-src/SDL2pp/Exception.hh \
  /usr/include/c++/13/string /usr/include/c++/13/bits/stringfwd.h \
  /usr/include/c++/13/bits/memoryfwd.h \
  /usr/include/c++/13/bits/char_traits.h \
@@ -161,8 +161,8 @@ _deps/libsdl2pp-build/CMakeFiles/SDL2pp.dir/SDL2pp/TextureLock.cc.o: \
  /usr/include/c++/13/bits/exception_ptr.h \
  /usr/include/c++/13/bits/cxxabi_init_exception.h \
  /usr/include/c++/13/typeinfo /usr/include/c++/13/bits/nested_exception.h \
- /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/libsdl2pp-build/SDL2pp/Export.hh \
- /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/libsdl2pp-src/SDL2pp/Rect.hh \
+ /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/libsdl2pp-build/SDL2pp/Export.hh \
+ /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/libsdl2pp-src/SDL2pp/Rect.hh \
  /usr/include/c++/13/functional /usr/include/c++/13/bits/std_function.h \
  /usr/include/c++/13/unordered_map \
  /usr/include/c++/13/bits/unordered_map.h \
@@ -181,11 +181,11 @@ _deps/libsdl2pp-build/CMakeFiles/SDL2pp.dir/SDL2pp/TextureLock.cc.o: \
  /usr/include/c++/13/bits/stl_heap.h \
  /usr/include/c++/13/bits/uniform_int_dist.h \
  /usr/include/c++/13/bits/stl_tempbuf.h \
- /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_rect.h \
- /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/libsdl2pp-src/SDL2pp/Optional.hh \
- /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/libsdl2pp-build/SDL2pp/Config.hh \
+ /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_rect.h \
+ /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/libsdl2pp-src/SDL2pp/Optional.hh \
+ /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/libsdl2pp-build/SDL2pp/Config.hh \
  /usr/include/c++/13/optional \
- /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/libsdl2pp-src/SDL2pp/Point.hh \
+ /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/libsdl2pp-src/SDL2pp/Point.hh \
  /usr/include/c++/13/iostream /usr/include/c++/13/ostream \
  /usr/include/c++/13/ios /usr/include/c++/13/bits/ios_base.h \
  /usr/include/c++/13/ext/atomicity.h \
@@ -219,8 +219,8 @@ _deps/libsdl2pp-build/CMakeFiles/SDL2pp.dir/SDL2pp/TextureLock.cc.o: \
  /usr/include/c++/13/bits/basic_ios.tcc \
  /usr/include/c++/13/bits/ostream.tcc /usr/include/c++/13/istream \
  /usr/include/c++/13/bits/istream.tcc \
- /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/libsdl2pp-src/SDL2pp/Texture.hh \
- /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_stdinc.h \
- /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_blendmode.h \
- /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/libsdl2pp-src/SDL2pp/Color.hh \
- /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_pixels.h
+ /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/libsdl2pp-src/SDL2pp/Texture.hh \
+ /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_stdinc.h \
+ /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_blendmode.h \
+ /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/libsdl2pp-src/SDL2pp/Color.hh \
+ /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_pixels.h

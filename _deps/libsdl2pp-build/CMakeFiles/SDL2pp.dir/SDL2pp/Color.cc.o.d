@@ -1,7 +1,7 @@
 _deps/libsdl2pp-build/CMakeFiles/SDL2pp.dir/SDL2pp/Color.cc.o: \
- /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/libsdl2pp-src/SDL2pp/Color.cc \
+ /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/libsdl2pp-src/SDL2pp/Color.cc \
  /usr/include/stdc-predef.h \
- /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/libsdl2pp-src/SDL2pp/Color.hh \
+ /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/libsdl2pp-src/SDL2pp/Color.hh \
  /usr/include/c++/13/ostream /usr/include/c++/13/bits/requires_hosted.h \
  /usr/include/x86_64-linux-gnu/c++/13/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/13/bits/os_defines.h \
@@ -149,12 +149,12 @@ _deps/libsdl2pp-build/CMakeFiles/SDL2pp.dir/SDL2pp/Color.cc.o: \
  /usr/include/c++/13/bits/locale_facets.tcc \
  /usr/include/c++/13/bits/basic_ios.tcc \
  /usr/include/c++/13/bits/ostream.tcc \
- /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_pixels.h \
- /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_stdinc.h \
- /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-build/include-config-/SDL2/SDL_config.h \
- /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_platform.h \
- /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/begin_code.h \
- /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/close_code.h \
+ /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_pixels.h \
+ /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_stdinc.h \
+ /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build/include-config-/SDL2/SDL_config.h \
+ /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_platform.h \
+ /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/begin_code.h \
+ /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/close_code.h \
  /usr/include/c++/13/stdlib.h /usr/include/string.h \
  /usr/include/strings.h /usr/include/inttypes.h \
  /usr/lib/gcc/x86_64-linux-gnu/13/include/stdint.h /usr/include/stdint.h \
@@ -184,5 +184,5 @@ _deps/libsdl2pp-build/CMakeFiles/SDL2pp.dir/SDL2pp/Color.cc.o: \
  /usr/include/c++/13/tr1/poly_laguerre.tcc \
  /usr/include/c++/13/tr1/riemann_zeta.tcc \
  /usr/lib/gcc/x86_64-linux-gnu/13/include/float.h \
- /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_endian.h \
- /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/libsdl2pp-build/SDL2pp/Export.hh
+ /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_endian.h \
+ /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/libsdl2pp-build/SDL2pp/Export.hh

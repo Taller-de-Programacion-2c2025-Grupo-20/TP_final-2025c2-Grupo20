@@ -1,15 +1,15 @@
 _deps/sdl2-build/CMakeFiles/SDL2.dir/src/timer/SDL_timer.c.o: \
- /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-src/src/timer/SDL_timer.c \
+ /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-src/src/timer/SDL_timer.c \
  /usr/include/stdc-predef.h \
- /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-src/src/timer/../SDL_internal.h \
- /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-src/src/timer/../dynapi/SDL_dynapi.h \
- /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-src/src/timer/../dynapi/SDL_dynapi_overrides.h \
- /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-build/include-config-/SDL2/SDL_config.h \
- /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_platform.h \
- /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/begin_code.h \
- /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/close_code.h \
- /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_assert.h \
- /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_stdinc.h \
+ /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-src/src/timer/../SDL_internal.h \
+ /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-src/src/timer/../dynapi/SDL_dynapi.h \
+ /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-src/src/timer/../dynapi/SDL_dynapi_overrides.h \
+ /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build/include-config-/SDL2/SDL_config.h \
+ /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_platform.h \
+ /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/begin_code.h \
+ /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/close_code.h \
+ /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_assert.h \
+ /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_stdinc.h \
  /usr/include/x86_64-linux-gnu/sys/types.h /usr/include/features.h \
  /usr/include/features-time64.h \
  /usr/include/x86_64-linux-gnu/bits/wordsize.h \
@@ -77,13 +77,13 @@ _deps/sdl2-build/CMakeFiles/SDL2.dir/src/timer/SDL_timer.c.o: \
  /usr/include/x86_64-linux-gnu/bits/mathcalls-narrow.h \
  /usr/include/x86_64-linux-gnu/bits/iscanonical.h \
  /usr/lib/gcc/x86_64-linux-gnu/13/include/float.h \
- /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_log.h \
- /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_timer.h \
- /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_error.h \
- /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-src/src/timer/SDL_timer_c.h \
- /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_atomic.h \
- /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_platform.h \
- /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_cpuinfo.h \
+ /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_log.h \
+ /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_timer.h \
+ /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_error.h \
+ /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-src/src/timer/SDL_timer_c.h \
+ /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_atomic.h \
+ /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_platform.h \
+ /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_cpuinfo.h \
  /usr/lib/gcc/x86_64-linux-gnu/13/include/mm3dnow.h \
  /usr/lib/gcc/x86_64-linux-gnu/13/include/mmintrin.h \
  /usr/lib/gcc/x86_64-linux-gnu/13/include/prfchwintrin.h \
@@ -179,14 +179,14 @@ _deps/sdl2-build/CMakeFiles/SDL2.dir/src/timer/SDL_timer.c.o: \
  /usr/lib/gcc/x86_64-linux-gnu/13/include/amxcomplexintrin.h \
  /usr/lib/gcc/x86_64-linux-gnu/13/include/keylockerintrin.h \
  /usr/lib/gcc/x86_64-linux-gnu/13/include/amxfp16intrin.h \
- /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-src/src/timer/../thread/SDL_systhread.h \
- /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-src/src/timer/../thread/../SDL_internal.h \
- /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_thread.h \
- /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_atomic.h \
- /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_mutex.h \
- /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-src/src/timer/../thread/SDL_thread_c.h \
- /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-src/src/timer/../thread/pthread/SDL_systhread_c.h \
- /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-src/src/timer/../thread/pthread/../../SDL_internal.h \
+ /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-src/src/timer/../thread/SDL_systhread.h \
+ /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-src/src/timer/../thread/../SDL_internal.h \
+ /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_thread.h \
+ /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_atomic.h \
+ /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_mutex.h \
+ /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-src/src/timer/../thread/SDL_thread_c.h \
+ /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-src/src/timer/../thread/pthread/SDL_systhread_c.h \
+ /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-src/src/timer/../thread/pthread/../../SDL_internal.h \
  /usr/include/pthread.h /usr/include/sched.h \
  /usr/include/x86_64-linux-gnu/bits/sched.h \
  /usr/include/x86_64-linux-gnu/bits/types/struct_sched_param.h \
@@ -198,5 +198,5 @@ _deps/sdl2-build/CMakeFiles/SDL2.dir/src/timer/SDL_timer.c.o: \
  /usr/include/x86_64-linux-gnu/bits/setjmp.h \
  /usr/include/x86_64-linux-gnu/bits/types/struct___jmp_buf_tag.h \
  /usr/include/x86_64-linux-gnu/bits/pthread_stack_min-dynamic.h \
- /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-src/src/timer/../thread/../SDL_error_c.h \
- /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-src/src/timer/../thread/.././SDL_internal.h
+ /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-src/src/timer/../thread/../SDL_error_c.h \
+ /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-src/src/timer/../thread/.././SDL_internal.h

@@ -108,6 +108,26 @@ void ServerProtocol::send_login_ok(uint8_t player_id) {
     skt.sendall(buffer.data(), buffer.size());
 }
 
+void ServerProtocol::send_lobby_state(const LobbyStateDTO& state) {
+    std::vector<uint8_t> buffer;
+    
+    buffer.push_back(RSP_LOBBY_STATE);
+    buffer.push_back(static_cast<uint8_t>(state.players.size()));
+    buffer.push_back(state.host_id);
+    buffer.push_back(state.map_id);
+
+    for (const auto& player : state.players) {
+        buffer.push_back(player.player_id);
+        buffer.push_back(player.is_ready ? 1 : 0);
+        
+        uint16_t name_len = player.name.length();
+        addUint16_tToBuffer(buffer, name_len); 
+        buffer.insert(buffer.end(), player.name.begin(), player.name.end());
+    }
+    
+    skt.sendall(buffer.data(), buffer.size());
+}
+
 ServerProtocol::ServerProtocol(Socket&& skt): skt(std::move(skt)) {}
 
 ServerProtocol::~ServerProtocol() {}

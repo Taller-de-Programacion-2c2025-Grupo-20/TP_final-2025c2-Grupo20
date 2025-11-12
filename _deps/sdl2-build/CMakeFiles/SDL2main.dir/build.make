@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20
+CMAKE_SOURCE_DIR = /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20
+CMAKE_BINARY_DIR = /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20
 
 # Include any dependencies generated for this target.
 include _deps/sdl2-build/CMakeFiles/SDL2main.dir/depend.make
@@ -69,43 +69,66 @@ include _deps/sdl2-build/CMakeFiles/SDL2main.dir/progress.make
 # Include the compile flags for this target's objects.
 include _deps/sdl2-build/CMakeFiles/SDL2main.dir/flags.make
 
+_deps/sdl2-build/SDL2main_autogen/timestamp: /usr/lib/qt6/libexec/moc
+_deps/sdl2-build/SDL2main_autogen/timestamp: /usr/lib/qt6/libexec/uic
+_deps/sdl2-build/SDL2main_autogen/timestamp: _deps/sdl2-build/CMakeFiles/SDL2main.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Automatic MOC and UIC for target SDL2main"
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build && /usr/bin/cmake -E cmake_autogen /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build/CMakeFiles/SDL2main_autogen.dir/AutogenInfo.json ""
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build && /usr/bin/cmake -E touch /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build/SDL2main_autogen/timestamp
+
+_deps/sdl2-build/CMakeFiles/SDL2main.dir/SDL2main_autogen/mocs_compilation.cpp.o: _deps/sdl2-build/CMakeFiles/SDL2main.dir/flags.make
+_deps/sdl2-build/CMakeFiles/SDL2main.dir/SDL2main_autogen/mocs_compilation.cpp.o: _deps/sdl2-build/SDL2main_autogen/mocs_compilation.cpp
+_deps/sdl2-build/CMakeFiles/SDL2main.dir/SDL2main_autogen/mocs_compilation.cpp.o: _deps/sdl2-build/CMakeFiles/SDL2main.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object _deps/sdl2-build/CMakeFiles/SDL2main.dir/SDL2main_autogen/mocs_compilation.cpp.o"
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT _deps/sdl2-build/CMakeFiles/SDL2main.dir/SDL2main_autogen/mocs_compilation.cpp.o -MF CMakeFiles/SDL2main.dir/SDL2main_autogen/mocs_compilation.cpp.o.d -o CMakeFiles/SDL2main.dir/SDL2main_autogen/mocs_compilation.cpp.o -c /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build/SDL2main_autogen/mocs_compilation.cpp
+
+_deps/sdl2-build/CMakeFiles/SDL2main.dir/SDL2main_autogen/mocs_compilation.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/SDL2main.dir/SDL2main_autogen/mocs_compilation.cpp.i"
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build/SDL2main_autogen/mocs_compilation.cpp > CMakeFiles/SDL2main.dir/SDL2main_autogen/mocs_compilation.cpp.i
+
+_deps/sdl2-build/CMakeFiles/SDL2main.dir/SDL2main_autogen/mocs_compilation.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/SDL2main.dir/SDL2main_autogen/mocs_compilation.cpp.s"
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build/SDL2main_autogen/mocs_compilation.cpp -o CMakeFiles/SDL2main.dir/SDL2main_autogen/mocs_compilation.cpp.s
+
 _deps/sdl2-build/CMakeFiles/SDL2main.dir/src/main/dummy/SDL_dummy_main.c.o: _deps/sdl2-build/CMakeFiles/SDL2main.dir/flags.make
 _deps/sdl2-build/CMakeFiles/SDL2main.dir/src/main/dummy/SDL_dummy_main.c.o: _deps/sdl2-src/src/main/dummy/SDL_dummy_main.c
 _deps/sdl2-build/CMakeFiles/SDL2main.dir/src/main/dummy/SDL_dummy_main.c.o: _deps/sdl2-build/CMakeFiles/SDL2main.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object _deps/sdl2-build/CMakeFiles/SDL2main.dir/src/main/dummy/SDL_dummy_main.c.o"
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-build && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT _deps/sdl2-build/CMakeFiles/SDL2main.dir/src/main/dummy/SDL_dummy_main.c.o -MF CMakeFiles/SDL2main.dir/src/main/dummy/SDL_dummy_main.c.o.d -o CMakeFiles/SDL2main.dir/src/main/dummy/SDL_dummy_main.c.o -c /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-src/src/main/dummy/SDL_dummy_main.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object _deps/sdl2-build/CMakeFiles/SDL2main.dir/src/main/dummy/SDL_dummy_main.c.o"
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT _deps/sdl2-build/CMakeFiles/SDL2main.dir/src/main/dummy/SDL_dummy_main.c.o -MF CMakeFiles/SDL2main.dir/src/main/dummy/SDL_dummy_main.c.o.d -o CMakeFiles/SDL2main.dir/src/main/dummy/SDL_dummy_main.c.o -c /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-src/src/main/dummy/SDL_dummy_main.c
 
 _deps/sdl2-build/CMakeFiles/SDL2main.dir/src/main/dummy/SDL_dummy_main.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/SDL2main.dir/src/main/dummy/SDL_dummy_main.c.i"
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-build && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-src/src/main/dummy/SDL_dummy_main.c > CMakeFiles/SDL2main.dir/src/main/dummy/SDL_dummy_main.c.i
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-src/src/main/dummy/SDL_dummy_main.c > CMakeFiles/SDL2main.dir/src/main/dummy/SDL_dummy_main.c.i
 
 _deps/sdl2-build/CMakeFiles/SDL2main.dir/src/main/dummy/SDL_dummy_main.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/SDL2main.dir/src/main/dummy/SDL_dummy_main.c.s"
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-build && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-src/src/main/dummy/SDL_dummy_main.c -o CMakeFiles/SDL2main.dir/src/main/dummy/SDL_dummy_main.c.s
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-src/src/main/dummy/SDL_dummy_main.c -o CMakeFiles/SDL2main.dir/src/main/dummy/SDL_dummy_main.c.s
 
 # Object files for target SDL2main
 SDL2main_OBJECTS = \
+"CMakeFiles/SDL2main.dir/SDL2main_autogen/mocs_compilation.cpp.o" \
 "CMakeFiles/SDL2main.dir/src/main/dummy/SDL_dummy_main.c.o"
 
 # External object files for target SDL2main
 SDL2main_EXTERNAL_OBJECTS =
 
+_deps/sdl2-build/libSDL2main.a: _deps/sdl2-build/CMakeFiles/SDL2main.dir/SDL2main_autogen/mocs_compilation.cpp.o
 _deps/sdl2-build/libSDL2main.a: _deps/sdl2-build/CMakeFiles/SDL2main.dir/src/main/dummy/SDL_dummy_main.c.o
 _deps/sdl2-build/libSDL2main.a: _deps/sdl2-build/CMakeFiles/SDL2main.dir/build.make
 _deps/sdl2-build/libSDL2main.a: _deps/sdl2-build/CMakeFiles/SDL2main.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking C static library libSDL2main.a"
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-build && $(CMAKE_COMMAND) -P CMakeFiles/SDL2main.dir/cmake_clean_target.cmake
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-build && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/SDL2main.dir/link.txt --verbose=$(VERBOSE)
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX static library libSDL2main.a"
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build && $(CMAKE_COMMAND) -P CMakeFiles/SDL2main.dir/cmake_clean_target.cmake
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/SDL2main.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
 _deps/sdl2-build/CMakeFiles/SDL2main.dir/build: _deps/sdl2-build/libSDL2main.a
 .PHONY : _deps/sdl2-build/CMakeFiles/SDL2main.dir/build
 
 _deps/sdl2-build/CMakeFiles/SDL2main.dir/clean:
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-build && $(CMAKE_COMMAND) -P CMakeFiles/SDL2main.dir/cmake_clean.cmake
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build && $(CMAKE_COMMAND) -P CMakeFiles/SDL2main.dir/cmake_clean.cmake
 .PHONY : _deps/sdl2-build/CMakeFiles/SDL2main.dir/clean
 
-_deps/sdl2-build/CMakeFiles/SDL2main.dir/depend:
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20 && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20 /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-src /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20 /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-build /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-build/CMakeFiles/SDL2main.dir/DependInfo.cmake "--color=$(COLOR)"
+_deps/sdl2-build/CMakeFiles/SDL2main.dir/depend: _deps/sdl2-build/SDL2main_autogen/timestamp
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20 && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20 /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-src /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20 /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build/CMakeFiles/SDL2main.dir/DependInfo.cmake "--color=$(COLOR)"
 .PHONY : _deps/sdl2-build/CMakeFiles/SDL2main.dir/depend
 

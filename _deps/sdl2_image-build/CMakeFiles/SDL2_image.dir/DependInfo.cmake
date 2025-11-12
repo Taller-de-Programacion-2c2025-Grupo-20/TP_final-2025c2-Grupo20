@@ -8,32 +8,34 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2_image-src/src/IMG.c" "_deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/src/IMG.c.o" "gcc" "_deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/src/IMG.c.o.d"
-  "/home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2_image-src/src/IMG_WIC.c" "_deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/src/IMG_WIC.c.o" "gcc" "_deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/src/IMG_WIC.c.o.d"
-  "/home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2_image-src/src/IMG_avif.c" "_deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/src/IMG_avif.c.o" "gcc" "_deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/src/IMG_avif.c.o.d"
-  "/home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2_image-src/src/IMG_bmp.c" "_deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/src/IMG_bmp.c.o" "gcc" "_deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/src/IMG_bmp.c.o.d"
-  "/home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2_image-src/src/IMG_gif.c" "_deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/src/IMG_gif.c.o" "gcc" "_deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/src/IMG_gif.c.o.d"
-  "/home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2_image-src/src/IMG_jpg.c" "_deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/src/IMG_jpg.c.o" "gcc" "_deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/src/IMG_jpg.c.o.d"
-  "/home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2_image-src/src/IMG_jxl.c" "_deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/src/IMG_jxl.c.o" "gcc" "_deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/src/IMG_jxl.c.o.d"
-  "/home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2_image-src/src/IMG_lbm.c" "_deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/src/IMG_lbm.c.o" "gcc" "_deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/src/IMG_lbm.c.o.d"
-  "/home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2_image-src/src/IMG_pcx.c" "_deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/src/IMG_pcx.c.o" "gcc" "_deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/src/IMG_pcx.c.o.d"
-  "/home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2_image-src/src/IMG_png.c" "_deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/src/IMG_png.c.o" "gcc" "_deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/src/IMG_png.c.o.d"
-  "/home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2_image-src/src/IMG_pnm.c" "_deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/src/IMG_pnm.c.o" "gcc" "_deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/src/IMG_pnm.c.o.d"
-  "/home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2_image-src/src/IMG_qoi.c" "_deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/src/IMG_qoi.c.o" "gcc" "_deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/src/IMG_qoi.c.o.d"
-  "/home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2_image-src/src/IMG_stb.c" "_deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/src/IMG_stb.c.o" "gcc" "_deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/src/IMG_stb.c.o.d"
-  "/home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2_image-src/src/IMG_svg.c" "_deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/src/IMG_svg.c.o" "gcc" "_deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/src/IMG_svg.c.o.d"
-  "/home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2_image-src/src/IMG_tga.c" "_deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/src/IMG_tga.c.o" "gcc" "_deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/src/IMG_tga.c.o.d"
-  "/home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2_image-src/src/IMG_tif.c" "_deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/src/IMG_tif.c.o" "gcc" "_deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/src/IMG_tif.c.o.d"
-  "/home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2_image-src/src/IMG_webp.c" "_deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/src/IMG_webp.c.o" "gcc" "_deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/src/IMG_webp.c.o.d"
-  "/home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2_image-src/src/IMG_xcf.c" "_deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/src/IMG_xcf.c.o" "gcc" "_deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/src/IMG_xcf.c.o.d"
-  "/home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2_image-src/src/IMG_xpm.c" "_deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/src/IMG_xpm.c.o" "gcc" "_deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/src/IMG_xpm.c.o.d"
-  "/home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2_image-src/src/IMG_xv.c" "_deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/src/IMG_xv.c.o" "gcc" "_deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/src/IMG_xv.c.o.d"
+  "/home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2_image-src/src/IMG.c" "_deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/src/IMG.c.o" "gcc" "_deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/src/IMG.c.o.d"
+  "/home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2_image-src/src/IMG_WIC.c" "_deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/src/IMG_WIC.c.o" "gcc" "_deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/src/IMG_WIC.c.o.d"
+  "/home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2_image-src/src/IMG_avif.c" "_deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/src/IMG_avif.c.o" "gcc" "_deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/src/IMG_avif.c.o.d"
+  "/home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2_image-src/src/IMG_bmp.c" "_deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/src/IMG_bmp.c.o" "gcc" "_deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/src/IMG_bmp.c.o.d"
+  "/home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2_image-src/src/IMG_gif.c" "_deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/src/IMG_gif.c.o" "gcc" "_deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/src/IMG_gif.c.o.d"
+  "/home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2_image-src/src/IMG_jpg.c" "_deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/src/IMG_jpg.c.o" "gcc" "_deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/src/IMG_jpg.c.o.d"
+  "/home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2_image-src/src/IMG_jxl.c" "_deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/src/IMG_jxl.c.o" "gcc" "_deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/src/IMG_jxl.c.o.d"
+  "/home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2_image-src/src/IMG_lbm.c" "_deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/src/IMG_lbm.c.o" "gcc" "_deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/src/IMG_lbm.c.o.d"
+  "/home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2_image-src/src/IMG_pcx.c" "_deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/src/IMG_pcx.c.o" "gcc" "_deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/src/IMG_pcx.c.o.d"
+  "/home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2_image-src/src/IMG_png.c" "_deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/src/IMG_png.c.o" "gcc" "_deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/src/IMG_png.c.o.d"
+  "/home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2_image-src/src/IMG_pnm.c" "_deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/src/IMG_pnm.c.o" "gcc" "_deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/src/IMG_pnm.c.o.d"
+  "/home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2_image-src/src/IMG_qoi.c" "_deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/src/IMG_qoi.c.o" "gcc" "_deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/src/IMG_qoi.c.o.d"
+  "/home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2_image-src/src/IMG_stb.c" "_deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/src/IMG_stb.c.o" "gcc" "_deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/src/IMG_stb.c.o.d"
+  "/home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2_image-src/src/IMG_svg.c" "_deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/src/IMG_svg.c.o" "gcc" "_deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/src/IMG_svg.c.o.d"
+  "/home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2_image-src/src/IMG_tga.c" "_deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/src/IMG_tga.c.o" "gcc" "_deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/src/IMG_tga.c.o.d"
+  "/home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2_image-src/src/IMG_tif.c" "_deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/src/IMG_tif.c.o" "gcc" "_deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/src/IMG_tif.c.o.d"
+  "/home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2_image-src/src/IMG_webp.c" "_deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/src/IMG_webp.c.o" "gcc" "_deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/src/IMG_webp.c.o.d"
+  "/home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2_image-src/src/IMG_xcf.c" "_deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/src/IMG_xcf.c.o" "gcc" "_deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/src/IMG_xcf.c.o.d"
+  "/home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2_image-src/src/IMG_xpm.c" "_deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/src/IMG_xpm.c.o" "gcc" "_deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/src/IMG_xpm.c.o.d"
+  "/home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2_image-src/src/IMG_xv.c" "_deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/src/IMG_xv.c.o" "gcc" "_deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/src/IMG_xv.c.o.d"
+  "" "_deps/sdl2_image-build/SDL2_image_autogen/timestamp" "custom" "_deps/sdl2_image-build/SDL2_image_autogen/deps"
+  "/home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2_image-build/SDL2_image_autogen/mocs_compilation.cpp" "_deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/SDL2_image_autogen/mocs_compilation.cpp.o" "gcc" "_deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/SDL2_image_autogen/mocs_compilation.cpp.o.d"
   )
 
 # Pairs of files generated by the same build rule.
 set(CMAKE_MULTIPLE_OUTPUT_PAIRS
-  "/home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2_image-build/libSDL2_image-2.0.so" "/home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2_image-build/libSDL2_image-2.0.so.0.800.2"
-  "/home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2_image-build/libSDL2_image-2.0.so.0" "/home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2_image-build/libSDL2_image-2.0.so.0.800.2"
+  "/home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2_image-build/libSDL2_image-2.0.so" "/home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2_image-build/libSDL2_image-2.0.so.0.800.2"
+  "/home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2_image-build/libSDL2_image-2.0.so.0" "/home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2_image-build/libSDL2_image-2.0.so.0.800.2"
   )
 
 

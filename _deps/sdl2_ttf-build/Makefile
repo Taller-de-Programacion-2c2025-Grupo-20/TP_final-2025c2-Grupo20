@@ -57,10 +57,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20
+CMAKE_SOURCE_DIR = /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20
+CMAKE_BINARY_DIR = /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -87,14 +87,14 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20 && $(CMAKE_COMMAND) -E cmake_progress_start /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/CMakeFiles /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2_ttf-build//CMakeFiles/progress.marks
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 _deps/sdl2_ttf-build/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/CMakeFiles 0
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20 && $(CMAKE_COMMAND) -E cmake_progress_start /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/CMakeFiles /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2_ttf-build//CMakeFiles/progress.marks
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 _deps/sdl2_ttf-build/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 _deps/sdl2_ttf-build/clean
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 _deps/sdl2_ttf-build/clean
 .PHONY : clean
 
 # The main clean target
@@ -103,22 +103,23 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 _deps/sdl2_ttf-build/preinstall
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 _deps/sdl2_ttf-build/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 _deps/sdl2_ttf-build/preinstall
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 _deps/sdl2_ttf-build/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20 && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20 && $(CMAKE_COMMAND) -P /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/CMakeFiles/VerifyGlobs.cmake
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20 && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 _deps/sdl2_ttf-build/CMakeFiles/SDL2_ttf.dir/rule:
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 _deps/sdl2_ttf-build/CMakeFiles/SDL2_ttf.dir/rule
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 _deps/sdl2_ttf-build/CMakeFiles/SDL2_ttf.dir/rule
 .PHONY : _deps/sdl2_ttf-build/CMakeFiles/SDL2_ttf.dir/rule
 
 # Convenience name for target.
@@ -127,15 +128,67 @@ SDL2_ttf: _deps/sdl2_ttf-build/CMakeFiles/SDL2_ttf.dir/rule
 
 # fast build rule for target.
 SDL2_ttf/fast:
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_ttf-build/CMakeFiles/SDL2_ttf.dir/build.make _deps/sdl2_ttf-build/CMakeFiles/SDL2_ttf.dir/build
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_ttf-build/CMakeFiles/SDL2_ttf.dir/build.make _deps/sdl2_ttf-build/CMakeFiles/SDL2_ttf.dir/build
 .PHONY : SDL2_ttf/fast
+
+# Convenience name for target.
+_deps/sdl2_ttf-build/CMakeFiles/SDL2_ttf_autogen_timestamp_deps.dir/rule:
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 _deps/sdl2_ttf-build/CMakeFiles/SDL2_ttf_autogen_timestamp_deps.dir/rule
+.PHONY : _deps/sdl2_ttf-build/CMakeFiles/SDL2_ttf_autogen_timestamp_deps.dir/rule
+
+# Convenience name for target.
+SDL2_ttf_autogen_timestamp_deps: _deps/sdl2_ttf-build/CMakeFiles/SDL2_ttf_autogen_timestamp_deps.dir/rule
+.PHONY : SDL2_ttf_autogen_timestamp_deps
+
+# fast build rule for target.
+SDL2_ttf_autogen_timestamp_deps/fast:
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_ttf-build/CMakeFiles/SDL2_ttf_autogen_timestamp_deps.dir/build.make _deps/sdl2_ttf-build/CMakeFiles/SDL2_ttf_autogen_timestamp_deps.dir/build
+.PHONY : SDL2_ttf_autogen_timestamp_deps/fast
+
+# Convenience name for target.
+_deps/sdl2_ttf-build/CMakeFiles/SDL2_ttf_autogen.dir/rule:
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 _deps/sdl2_ttf-build/CMakeFiles/SDL2_ttf_autogen.dir/rule
+.PHONY : _deps/sdl2_ttf-build/CMakeFiles/SDL2_ttf_autogen.dir/rule
+
+# Convenience name for target.
+SDL2_ttf_autogen: _deps/sdl2_ttf-build/CMakeFiles/SDL2_ttf_autogen.dir/rule
+.PHONY : SDL2_ttf_autogen
+
+# fast build rule for target.
+SDL2_ttf_autogen/fast:
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_ttf-build/CMakeFiles/SDL2_ttf_autogen.dir/build.make _deps/sdl2_ttf-build/CMakeFiles/SDL2_ttf_autogen.dir/build
+.PHONY : SDL2_ttf_autogen/fast
+
+SDL2_ttf_autogen/mocs_compilation.o: SDL2_ttf_autogen/mocs_compilation.cpp.o
+.PHONY : SDL2_ttf_autogen/mocs_compilation.o
+
+# target to build an object file
+SDL2_ttf_autogen/mocs_compilation.cpp.o:
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_ttf-build/CMakeFiles/SDL2_ttf.dir/build.make _deps/sdl2_ttf-build/CMakeFiles/SDL2_ttf.dir/SDL2_ttf_autogen/mocs_compilation.cpp.o
+.PHONY : SDL2_ttf_autogen/mocs_compilation.cpp.o
+
+SDL2_ttf_autogen/mocs_compilation.i: SDL2_ttf_autogen/mocs_compilation.cpp.i
+.PHONY : SDL2_ttf_autogen/mocs_compilation.i
+
+# target to preprocess a source file
+SDL2_ttf_autogen/mocs_compilation.cpp.i:
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_ttf-build/CMakeFiles/SDL2_ttf.dir/build.make _deps/sdl2_ttf-build/CMakeFiles/SDL2_ttf.dir/SDL2_ttf_autogen/mocs_compilation.cpp.i
+.PHONY : SDL2_ttf_autogen/mocs_compilation.cpp.i
+
+SDL2_ttf_autogen/mocs_compilation.s: SDL2_ttf_autogen/mocs_compilation.cpp.s
+.PHONY : SDL2_ttf_autogen/mocs_compilation.s
+
+# target to generate assembly for a file
+SDL2_ttf_autogen/mocs_compilation.cpp.s:
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_ttf-build/CMakeFiles/SDL2_ttf.dir/build.make _deps/sdl2_ttf-build/CMakeFiles/SDL2_ttf.dir/SDL2_ttf_autogen/mocs_compilation.cpp.s
+.PHONY : SDL2_ttf_autogen/mocs_compilation.cpp.s
 
 SDL_ttf.o: SDL_ttf.c.o
 .PHONY : SDL_ttf.o
 
 # target to build an object file
 SDL_ttf.c.o:
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_ttf-build/CMakeFiles/SDL2_ttf.dir/build.make _deps/sdl2_ttf-build/CMakeFiles/SDL2_ttf.dir/SDL_ttf.c.o
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_ttf-build/CMakeFiles/SDL2_ttf.dir/build.make _deps/sdl2_ttf-build/CMakeFiles/SDL2_ttf.dir/SDL_ttf.c.o
 .PHONY : SDL_ttf.c.o
 
 SDL_ttf.i: SDL_ttf.c.i
@@ -143,7 +196,7 @@ SDL_ttf.i: SDL_ttf.c.i
 
 # target to preprocess a source file
 SDL_ttf.c.i:
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_ttf-build/CMakeFiles/SDL2_ttf.dir/build.make _deps/sdl2_ttf-build/CMakeFiles/SDL2_ttf.dir/SDL_ttf.c.i
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_ttf-build/CMakeFiles/SDL2_ttf.dir/build.make _deps/sdl2_ttf-build/CMakeFiles/SDL2_ttf.dir/SDL_ttf.c.i
 .PHONY : SDL_ttf.c.i
 
 SDL_ttf.s: SDL_ttf.c.s
@@ -151,7 +204,7 @@ SDL_ttf.s: SDL_ttf.c.s
 
 # target to generate assembly for a file
 SDL_ttf.c.s:
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_ttf-build/CMakeFiles/SDL2_ttf.dir/build.make _deps/sdl2_ttf-build/CMakeFiles/SDL2_ttf.dir/SDL_ttf.c.s
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_ttf-build/CMakeFiles/SDL2_ttf.dir/build.make _deps/sdl2_ttf-build/CMakeFiles/SDL2_ttf.dir/SDL_ttf.c.s
 .PHONY : SDL_ttf.c.s
 
 # Help Target
@@ -162,7 +215,12 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
+	@echo "... SDL2_ttf_autogen"
+	@echo "... SDL2_ttf_autogen_timestamp_deps"
 	@echo "... SDL2_ttf"
+	@echo "... SDL2_ttf_autogen/mocs_compilation.o"
+	@echo "... SDL2_ttf_autogen/mocs_compilation.i"
+	@echo "... SDL2_ttf_autogen/mocs_compilation.s"
 	@echo "... SDL_ttf.o"
 	@echo "... SDL_ttf.i"
 	@echo "... SDL_ttf.s"
@@ -177,6 +235,7 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20 && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20 && $(CMAKE_COMMAND) -P /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/CMakeFiles/VerifyGlobs.cmake
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20 && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

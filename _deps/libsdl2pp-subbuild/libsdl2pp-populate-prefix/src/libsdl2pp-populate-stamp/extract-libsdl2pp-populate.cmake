@@ -5,8 +5,8 @@ cmake_minimum_required(VERSION 3.5)
 
 # Make file names absolute:
 #
-get_filename_component(filename "/home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/libsdl2pp-subbuild/libsdl2pp-populate-prefix/src/cc198c9a5657048bee67ece82de620b2d5661084.zip" ABSOLUTE)
-get_filename_component(directory "/home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/libsdl2pp-src" ABSOLUTE)
+get_filename_component(filename "/home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/libsdl2pp-subbuild/libsdl2pp-populate-prefix/src/cc198c9a5657048bee67ece82de620b2d5661084.zip" ABSOLUTE)
+get_filename_component(directory "/home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/libsdl2pp-src" ABSOLUTE)
 
 message(STATUS "extracting...
      src='${filename}'

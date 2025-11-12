@@ -302,7 +302,7 @@ taller_server: CMakeFiles/taller_server.dir/server/match.cpp.o
 taller_server: CMakeFiles/taller_server.dir/build.make
 taller_server: libtaller_common.a
 taller_server: /usr/local/lib/libBox2D.a
-taller_server: _deps/yaml-cpp-build/libyaml-cpp.a
+taller_server: _deps/yaml-cpp-build/libyaml-cpp.so.0.7.0
 taller_server: CMakeFiles/taller_server.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Linking CXX executable taller_server"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/taller_server.dir/link.txt --verbose=$(VERBOSE)

@@ -1,14 +1,14 @@
 # Target labels
  libsdl2pp-populate
 # Source files and their labels
-/home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/libsdl2pp-subbuild/CMakeFiles/libsdl2pp-populate
-/home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/libsdl2pp-subbuild/CMakeFiles/libsdl2pp-populate.rule
-/home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/libsdl2pp-subbuild/CMakeFiles/libsdl2pp-populate-complete.rule
-/home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/libsdl2pp-subbuild/libsdl2pp-populate-prefix/src/libsdl2pp-populate-stamp/libsdl2pp-populate-build.rule
-/home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/libsdl2pp-subbuild/libsdl2pp-populate-prefix/src/libsdl2pp-populate-stamp/libsdl2pp-populate-configure.rule
-/home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/libsdl2pp-subbuild/libsdl2pp-populate-prefix/src/libsdl2pp-populate-stamp/libsdl2pp-populate-download.rule
-/home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/libsdl2pp-subbuild/libsdl2pp-populate-prefix/src/libsdl2pp-populate-stamp/libsdl2pp-populate-install.rule
-/home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/libsdl2pp-subbuild/libsdl2pp-populate-prefix/src/libsdl2pp-populate-stamp/libsdl2pp-populate-mkdir.rule
-/home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/libsdl2pp-subbuild/libsdl2pp-populate-prefix/src/libsdl2pp-populate-stamp/libsdl2pp-populate-patch.rule
-/home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/libsdl2pp-subbuild/libsdl2pp-populate-prefix/src/libsdl2pp-populate-stamp/libsdl2pp-populate-test.rule
-/home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/libsdl2pp-subbuild/libsdl2pp-populate-prefix/src/libsdl2pp-populate-stamp/libsdl2pp-populate-update.rule
+/home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/libsdl2pp-subbuild/CMakeFiles/libsdl2pp-populate
+/home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/libsdl2pp-subbuild/CMakeFiles/libsdl2pp-populate.rule
+/home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/libsdl2pp-subbuild/CMakeFiles/libsdl2pp-populate-complete.rule
+/home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/libsdl2pp-subbuild/libsdl2pp-populate-prefix/src/libsdl2pp-populate-stamp/libsdl2pp-populate-build.rule
+/home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/libsdl2pp-subbuild/libsdl2pp-populate-prefix/src/libsdl2pp-populate-stamp/libsdl2pp-populate-configure.rule
+/home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/libsdl2pp-subbuild/libsdl2pp-populate-prefix/src/libsdl2pp-populate-stamp/libsdl2pp-populate-download.rule
+/home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/libsdl2pp-subbuild/libsdl2pp-populate-prefix/src/libsdl2pp-populate-stamp/libsdl2pp-populate-install.rule
+/home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/libsdl2pp-subbuild/libsdl2pp-populate-prefix/src/libsdl2pp-populate-stamp/libsdl2pp-populate-mkdir.rule
+/home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/libsdl2pp-subbuild/libsdl2pp-populate-prefix/src/libsdl2pp-populate-stamp/libsdl2pp-populate-patch.rule
+/home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/libsdl2pp-subbuild/libsdl2pp-populate-prefix/src/libsdl2pp-populate-stamp/libsdl2pp-populate-test.rule
+/home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/libsdl2pp-subbuild/libsdl2pp-populate-prefix/src/libsdl2pp-populate-stamp/libsdl2pp-populate-update.rule

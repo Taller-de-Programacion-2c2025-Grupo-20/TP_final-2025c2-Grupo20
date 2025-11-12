@@ -1,0 +1,224 @@
+/****************************************************************************
+** Meta object code from reading C++ file 'mainwindow.h'
+**
+** Created by: The Qt Meta Object Compiler version 68 (Qt 6.4.2)
+**
+** WARNING! All changes made in this file will be lost!
+*****************************************************************************/
+
+#include <memory>
+#include "../../client/mainwindow.h"
+#include <QtCore/qmetatype.h>
+#if !defined(Q_MOC_OUTPUT_REVISION)
+#error "The header file 'mainwindow.h' doesn't include <QObject>."
+#elif Q_MOC_OUTPUT_REVISION != 68
+#error "This file was generated using the moc from 6.4.2. It"
+#error "cannot be used with the include files from this version of Qt."
+#error "(The moc has changed too much.)"
+#endif
+
+#ifndef Q_CONSTINIT
+#define Q_CONSTINIT
+#endif
+
+QT_BEGIN_MOC_NAMESPACE
+QT_WARNING_PUSH
+QT_WARNING_DISABLE_DEPRECATED
+namespace {
+struct qt_meta_stringdata_MainWindow_t {
+    uint offsetsAndSizes[30];
+    char stringdata0[11];
+    char stringdata1[15];
+    char stringdata2[1];
+    char stringdata3[12];
+    char stringdata4[5];
+    char stringdata5[5];
+    char stringdata6[9];
+    char stringdata7[10];
+    char stringdata8[19];
+    char stringdata9[8];
+    char stringdata10[10];
+    char stringdata11[18];
+    char stringdata12[15];
+    char stringdata13[3];
+    char stringdata14[5];
+};
+#define QT_MOC_LITERAL(ofs, len) \
+    uint(sizeof(qt_meta_stringdata_MainWindow_t::offsetsAndSizes) + ofs), len 
+Q_CONSTINIT static const qt_meta_stringdata_MainWindow_t qt_meta_stringdata_MainWindow = {
+    {
+        QT_MOC_LITERAL(0, 10),  // "MainWindow"
+        QT_MOC_LITERAL(11, 14),  // "loginRequested"
+        QT_MOC_LITERAL(26, 0),  // ""
+        QT_MOC_LITERAL(27, 11),  // "std::string"
+        QT_MOC_LITERAL(39, 4),  // "host"
+        QT_MOC_LITERAL(44, 4),  // "port"
+        QT_MOC_LITERAL(49, 8),  // "username"
+        QT_MOC_LITERAL(58, 9),  // "startGame"
+        QT_MOC_LITERAL(68, 18),  // "handleLoginSuccess"
+        QT_MOC_LITERAL(87, 7),  // "uint8_t"
+        QT_MOC_LITERAL(95, 9),  // "player_id"
+        QT_MOC_LITERAL(105, 17),  // "handleLoginFailed"
+        QT_MOC_LITERAL(123, 14),  // "onLoginAttempt"
+        QT_MOC_LITERAL(138, 2),  // "ip"
+        QT_MOC_LITERAL(141, 4)   // "name"
+    },
+    "MainWindow",
+    "loginRequested",
+    "",
+    "std::string",
+    "host",
+    "port",
+    "username",
+    "startGame",
+    "handleLoginSuccess",
+    "uint8_t",
+    "player_id",
+    "handleLoginFailed",
+    "onLoginAttempt",
+    "ip",
+    "name"
+};
+#undef QT_MOC_LITERAL
+} // unnamed namespace
+
+Q_CONSTINIT static const uint qt_meta_data_MainWindow[] = {
+
+ // content:
+      10,       // revision
+       0,       // classname
+       0,    0, // classinfo
+       5,   14, // methods
+       0,    0, // properties
+       0,    0, // enums/sets
+       0,    0, // constructors
+       0,       // flags
+       2,       // signalCount
+
+ // signals: name, argc, parameters, tag, flags, initial metatype offsets
+       1,    3,   44,    2, 0x06,    1 /* Public */,
+       7,    0,   51,    2, 0x06,    5 /* Public */,
+
+ // slots: name, argc, parameters, tag, flags, initial metatype offsets
+       8,    1,   52,    2, 0x0a,    6 /* Public */,
+      11,    0,   55,    2, 0x0a,    8 /* Public */,
+      12,    3,   56,    2, 0x08,    9 /* Private */,
+
+ // signals: parameters
+    QMetaType::Void, 0x80000000 | 3, 0x80000000 | 3, 0x80000000 | 3,    4,    5,    6,
+    QMetaType::Void,
+
+ // slots: parameters
+    QMetaType::Void, 0x80000000 | 9,   10,
+    QMetaType::Void,
+    QMetaType::Void, QMetaType::QString, QMetaType::QString, QMetaType::QString,   13,    5,   14,
+
+       0        // eod
+};
+
+Q_CONSTINIT const QMetaObject MainWindow::staticMetaObject = { {
+    QMetaObject::SuperData::link<QMainWindow::staticMetaObject>(),
+    qt_meta_stringdata_MainWindow.offsetsAndSizes,
+    qt_meta_data_MainWindow,
+    qt_static_metacall,
+    nullptr,
+    qt_incomplete_metaTypeArray<qt_meta_stringdata_MainWindow_t,
+        // Q_OBJECT / Q_GADGET
+        QtPrivate::TypeAndForceComplete<MainWindow, std::true_type>,
+        // method 'loginRequested'
+        QtPrivate::TypeAndForceComplete<void, std::false_type>,
+        QtPrivate::TypeAndForceComplete<const std::string &, std::false_type>,
+        QtPrivate::TypeAndForceComplete<const std::string &, std::false_type>,
+        QtPrivate::TypeAndForceComplete<const std::string &, std::false_type>,
+        // method 'startGame'
+        QtPrivate::TypeAndForceComplete<void, std::false_type>,
+        // method 'handleLoginSuccess'
+        QtPrivate::TypeAndForceComplete<void, std::false_type>,
+        QtPrivate::TypeAndForceComplete<uint8_t, std::false_type>,
+        // method 'handleLoginFailed'
+        QtPrivate::TypeAndForceComplete<void, std::false_type>,
+        // method 'onLoginAttempt'
+        QtPrivate::TypeAndForceComplete<void, std::false_type>,
+        QtPrivate::TypeAndForceComplete<const QString &, std::false_type>,
+        QtPrivate::TypeAndForceComplete<const QString &, std::false_type>,
+        QtPrivate::TypeAndForceComplete<const QString &, std::false_type>
+    >,
+    nullptr
+} };
+
+void MainWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
+{
+    if (_c == QMetaObject::InvokeMetaMethod) {
+        auto *_t = static_cast<MainWindow *>(_o);
+        (void)_t;
+        switch (_id) {
+        case 0: _t->loginRequested((*reinterpret_cast< std::add_pointer_t<std::string>>(_a[1])),(*reinterpret_cast< std::add_pointer_t<std::string>>(_a[2])),(*reinterpret_cast< std::add_pointer_t<std::string>>(_a[3]))); break;
+        case 1: _t->startGame(); break;
+        case 2: _t->handleLoginSuccess((*reinterpret_cast< std::add_pointer_t<uint8_t>>(_a[1]))); break;
+        case 3: _t->handleLoginFailed(); break;
+        case 4: _t->onLoginAttempt((*reinterpret_cast< std::add_pointer_t<QString>>(_a[1])),(*reinterpret_cast< std::add_pointer_t<QString>>(_a[2])),(*reinterpret_cast< std::add_pointer_t<QString>>(_a[3]))); break;
+        default: ;
+        }
+    } else if (_c == QMetaObject::IndexOfMethod) {
+        int *result = reinterpret_cast<int *>(_a[0]);
+        {
+            using _t = void (MainWindow::*)(const std::string & , const std::string & , const std::string & );
+            if (_t _q_method = &MainWindow::loginRequested; *reinterpret_cast<_t *>(_a[1]) == _q_method) {
+                *result = 0;
+                return;
+            }
+        }
+        {
+            using _t = void (MainWindow::*)();
+            if (_t _q_method = &MainWindow::startGame; *reinterpret_cast<_t *>(_a[1]) == _q_method) {
+                *result = 1;
+                return;
+            }
+        }
+    }
+}
+
+const QMetaObject *MainWindow::metaObject() const
+{
+    return QObject::d_ptr->metaObject ? QObject::d_ptr->dynamicMetaObject() : &staticMetaObject;
+}
+
+void *MainWindow::qt_metacast(const char *_clname)
+{
+    if (!_clname) return nullptr;
+    if (!strcmp(_clname, qt_meta_stringdata_MainWindow.stringdata0))
+        return static_cast<void*>(this);
+    return QMainWindow::qt_metacast(_clname);
+}
+
+int MainWindow::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
+{
+    _id = QMainWindow::qt_metacall(_c, _id, _a);
+    if (_id < 0)
+        return _id;
+    if (_c == QMetaObject::InvokeMetaMethod) {
+        if (_id < 5)
+            qt_static_metacall(this, _c, _id, _a);
+        _id -= 5;
+    } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
+        if (_id < 5)
+            *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType();
+        _id -= 5;
+    }
+    return _id;
+}
+
+// SIGNAL 0
+void MainWindow::loginRequested(const std::string & _t1, const std::string & _t2, const std::string & _t3)
+{
+    void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t1))), const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t2))), const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t3))) };
+    QMetaObject::activate(this, &staticMetaObject, 0, _a);
+}
+
+// SIGNAL 1
+void MainWindow::startGame()
+{
+    QMetaObject::activate(this, &staticMetaObject, 1, nullptr);
+}
+QT_WARNING_POP
+QT_END_MOC_NAMESPACE

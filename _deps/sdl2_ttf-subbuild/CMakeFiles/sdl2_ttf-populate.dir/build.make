@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2_ttf-subbuild
+CMAKE_SOURCE_DIR = /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2_ttf-subbuild
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2_ttf-subbuild
+CMAKE_BINARY_DIR = /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2_ttf-subbuild
 
 # Utility rule file for sdl2_ttf-populate.
 
@@ -77,60 +77,60 @@ CMakeFiles/sdl2_ttf-populate-complete: sdl2_ttf-populate-prefix/src/sdl2_ttf-pop
 CMakeFiles/sdl2_ttf-populate-complete: sdl2_ttf-populate-prefix/src/sdl2_ttf-populate-stamp/sdl2_ttf-populate-build
 CMakeFiles/sdl2_ttf-populate-complete: sdl2_ttf-populate-prefix/src/sdl2_ttf-populate-stamp/sdl2_ttf-populate-install
 CMakeFiles/sdl2_ttf-populate-complete: sdl2_ttf-populate-prefix/src/sdl2_ttf-populate-stamp/sdl2_ttf-populate-test
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2_ttf-subbuild/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Completed 'sdl2_ttf-populate'"
-	/usr/bin/cmake -E make_directory /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2_ttf-subbuild/CMakeFiles
-	/usr/bin/cmake -E touch /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2_ttf-subbuild/CMakeFiles/sdl2_ttf-populate-complete
-	/usr/bin/cmake -E touch /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2_ttf-subbuild/sdl2_ttf-populate-prefix/src/sdl2_ttf-populate-stamp/sdl2_ttf-populate-done
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2_ttf-subbuild/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Completed 'sdl2_ttf-populate'"
+	/usr/bin/cmake -E make_directory /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2_ttf-subbuild/CMakeFiles
+	/usr/bin/cmake -E touch /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2_ttf-subbuild/CMakeFiles/sdl2_ttf-populate-complete
+	/usr/bin/cmake -E touch /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2_ttf-subbuild/sdl2_ttf-populate-prefix/src/sdl2_ttf-populate-stamp/sdl2_ttf-populate-done
 
 sdl2_ttf-populate-prefix/src/sdl2_ttf-populate-stamp/sdl2_ttf-populate-update:
 .PHONY : sdl2_ttf-populate-prefix/src/sdl2_ttf-populate-stamp/sdl2_ttf-populate-update
 
 sdl2_ttf-populate-prefix/src/sdl2_ttf-populate-stamp/sdl2_ttf-populate-build: sdl2_ttf-populate-prefix/src/sdl2_ttf-populate-stamp/sdl2_ttf-populate-configure
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2_ttf-subbuild/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "No build step for 'sdl2_ttf-populate'"
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2_ttf-build && /usr/bin/cmake -E echo_append
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2_ttf-build && /usr/bin/cmake -E touch /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2_ttf-subbuild/sdl2_ttf-populate-prefix/src/sdl2_ttf-populate-stamp/sdl2_ttf-populate-build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2_ttf-subbuild/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "No build step for 'sdl2_ttf-populate'"
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2_ttf-build && /usr/bin/cmake -E echo_append
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2_ttf-build && /usr/bin/cmake -E touch /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2_ttf-subbuild/sdl2_ttf-populate-prefix/src/sdl2_ttf-populate-stamp/sdl2_ttf-populate-build
 
 sdl2_ttf-populate-prefix/src/sdl2_ttf-populate-stamp/sdl2_ttf-populate-configure: sdl2_ttf-populate-prefix/tmp/sdl2_ttf-populate-cfgcmd.txt
 sdl2_ttf-populate-prefix/src/sdl2_ttf-populate-stamp/sdl2_ttf-populate-configure: sdl2_ttf-populate-prefix/src/sdl2_ttf-populate-stamp/sdl2_ttf-populate-patch
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2_ttf-subbuild/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "No configure step for 'sdl2_ttf-populate'"
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2_ttf-build && /usr/bin/cmake -E echo_append
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2_ttf-build && /usr/bin/cmake -E touch /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2_ttf-subbuild/sdl2_ttf-populate-prefix/src/sdl2_ttf-populate-stamp/sdl2_ttf-populate-configure
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2_ttf-subbuild/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "No configure step for 'sdl2_ttf-populate'"
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2_ttf-build && /usr/bin/cmake -E echo_append
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2_ttf-build && /usr/bin/cmake -E touch /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2_ttf-subbuild/sdl2_ttf-populate-prefix/src/sdl2_ttf-populate-stamp/sdl2_ttf-populate-configure
 
 sdl2_ttf-populate-prefix/src/sdl2_ttf-populate-stamp/sdl2_ttf-populate-download: sdl2_ttf-populate-prefix/src/sdl2_ttf-populate-stamp/sdl2_ttf-populate-gitinfo.txt
 sdl2_ttf-populate-prefix/src/sdl2_ttf-populate-stamp/sdl2_ttf-populate-download: sdl2_ttf-populate-prefix/src/sdl2_ttf-populate-stamp/sdl2_ttf-populate-mkdir
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2_ttf-subbuild/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Performing download step (git clone) for 'sdl2_ttf-populate'"
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps && /usr/bin/cmake -P /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2_ttf-subbuild/sdl2_ttf-populate-prefix/tmp/sdl2_ttf-populate-gitclone.cmake
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps && /usr/bin/cmake -E touch /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2_ttf-subbuild/sdl2_ttf-populate-prefix/src/sdl2_ttf-populate-stamp/sdl2_ttf-populate-download
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2_ttf-subbuild/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Performing download step (git clone) for 'sdl2_ttf-populate'"
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps && /usr/bin/cmake -P /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2_ttf-subbuild/sdl2_ttf-populate-prefix/tmp/sdl2_ttf-populate-gitclone.cmake
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps && /usr/bin/cmake -E touch /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2_ttf-subbuild/sdl2_ttf-populate-prefix/src/sdl2_ttf-populate-stamp/sdl2_ttf-populate-download
 
 sdl2_ttf-populate-prefix/src/sdl2_ttf-populate-stamp/sdl2_ttf-populate-install: sdl2_ttf-populate-prefix/src/sdl2_ttf-populate-stamp/sdl2_ttf-populate-build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2_ttf-subbuild/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "No install step for 'sdl2_ttf-populate'"
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2_ttf-build && /usr/bin/cmake -E echo_append
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2_ttf-build && /usr/bin/cmake -E touch /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2_ttf-subbuild/sdl2_ttf-populate-prefix/src/sdl2_ttf-populate-stamp/sdl2_ttf-populate-install
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2_ttf-subbuild/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "No install step for 'sdl2_ttf-populate'"
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2_ttf-build && /usr/bin/cmake -E echo_append
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2_ttf-build && /usr/bin/cmake -E touch /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2_ttf-subbuild/sdl2_ttf-populate-prefix/src/sdl2_ttf-populate-stamp/sdl2_ttf-populate-install
 
 sdl2_ttf-populate-prefix/src/sdl2_ttf-populate-stamp/sdl2_ttf-populate-mkdir:
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2_ttf-subbuild/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Creating directories for 'sdl2_ttf-populate'"
-	/usr/bin/cmake -Dcfgdir= -P /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2_ttf-subbuild/sdl2_ttf-populate-prefix/tmp/sdl2_ttf-populate-mkdirs.cmake
-	/usr/bin/cmake -E touch /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2_ttf-subbuild/sdl2_ttf-populate-prefix/src/sdl2_ttf-populate-stamp/sdl2_ttf-populate-mkdir
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2_ttf-subbuild/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Creating directories for 'sdl2_ttf-populate'"
+	/usr/bin/cmake -Dcfgdir= -P /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2_ttf-subbuild/sdl2_ttf-populate-prefix/tmp/sdl2_ttf-populate-mkdirs.cmake
+	/usr/bin/cmake -E touch /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2_ttf-subbuild/sdl2_ttf-populate-prefix/src/sdl2_ttf-populate-stamp/sdl2_ttf-populate-mkdir
 
 sdl2_ttf-populate-prefix/src/sdl2_ttf-populate-stamp/sdl2_ttf-populate-patch: sdl2_ttf-populate-prefix/src/sdl2_ttf-populate-stamp/sdl2_ttf-populate-patch-info.txt
 sdl2_ttf-populate-prefix/src/sdl2_ttf-populate-stamp/sdl2_ttf-populate-patch: sdl2_ttf-populate-prefix/src/sdl2_ttf-populate-stamp/sdl2_ttf-populate-update
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2_ttf-subbuild/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "No patch step for 'sdl2_ttf-populate'"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2_ttf-subbuild/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "No patch step for 'sdl2_ttf-populate'"
 	/usr/bin/cmake -E echo_append
-	/usr/bin/cmake -E touch /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2_ttf-subbuild/sdl2_ttf-populate-prefix/src/sdl2_ttf-populate-stamp/sdl2_ttf-populate-patch
+	/usr/bin/cmake -E touch /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2_ttf-subbuild/sdl2_ttf-populate-prefix/src/sdl2_ttf-populate-stamp/sdl2_ttf-populate-patch
 
 sdl2_ttf-populate-prefix/src/sdl2_ttf-populate-stamp/sdl2_ttf-populate-update:
 .PHONY : sdl2_ttf-populate-prefix/src/sdl2_ttf-populate-stamp/sdl2_ttf-populate-update
 
 sdl2_ttf-populate-prefix/src/sdl2_ttf-populate-stamp/sdl2_ttf-populate-test: sdl2_ttf-populate-prefix/src/sdl2_ttf-populate-stamp/sdl2_ttf-populate-install
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2_ttf-subbuild/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "No test step for 'sdl2_ttf-populate'"
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2_ttf-build && /usr/bin/cmake -E echo_append
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2_ttf-build && /usr/bin/cmake -E touch /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2_ttf-subbuild/sdl2_ttf-populate-prefix/src/sdl2_ttf-populate-stamp/sdl2_ttf-populate-test
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2_ttf-subbuild/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "No test step for 'sdl2_ttf-populate'"
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2_ttf-build && /usr/bin/cmake -E echo_append
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2_ttf-build && /usr/bin/cmake -E touch /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2_ttf-subbuild/sdl2_ttf-populate-prefix/src/sdl2_ttf-populate-stamp/sdl2_ttf-populate-test
 
 sdl2_ttf-populate-prefix/src/sdl2_ttf-populate-stamp/sdl2_ttf-populate-update: sdl2_ttf-populate-prefix/tmp/sdl2_ttf-populate-gitupdate.cmake
 sdl2_ttf-populate-prefix/src/sdl2_ttf-populate-stamp/sdl2_ttf-populate-update: sdl2_ttf-populate-prefix/src/sdl2_ttf-populate-stamp/sdl2_ttf-populate-update-info.txt
 sdl2_ttf-populate-prefix/src/sdl2_ttf-populate-stamp/sdl2_ttf-populate-update: sdl2_ttf-populate-prefix/src/sdl2_ttf-populate-stamp/sdl2_ttf-populate-download
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2_ttf-subbuild/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Performing update step for 'sdl2_ttf-populate'"
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2_ttf-src && /usr/bin/cmake -Dcan_fetch=YES -P /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2_ttf-subbuild/sdl2_ttf-populate-prefix/tmp/sdl2_ttf-populate-gitupdate.cmake
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2_ttf-subbuild/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Performing update step for 'sdl2_ttf-populate'"
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2_ttf-src && /usr/bin/cmake -Dcan_fetch=YES -P /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2_ttf-subbuild/sdl2_ttf-populate-prefix/tmp/sdl2_ttf-populate-gitupdate.cmake
 
 sdl2_ttf-populate: CMakeFiles/sdl2_ttf-populate
 sdl2_ttf-populate: CMakeFiles/sdl2_ttf-populate-complete
@@ -154,6 +154,6 @@ CMakeFiles/sdl2_ttf-populate.dir/clean:
 .PHONY : CMakeFiles/sdl2_ttf-populate.dir/clean
 
 CMakeFiles/sdl2_ttf-populate.dir/depend:
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2_ttf-subbuild && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2_ttf-subbuild /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2_ttf-subbuild /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2_ttf-subbuild /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2_ttf-subbuild /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2_ttf-subbuild/CMakeFiles/sdl2_ttf-populate.dir/DependInfo.cmake "--color=$(COLOR)"
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2_ttf-subbuild && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2_ttf-subbuild /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2_ttf-subbuild /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2_ttf-subbuild /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2_ttf-subbuild /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2_ttf-subbuild/CMakeFiles/sdl2_ttf-populate.dir/DependInfo.cmake "--color=$(COLOR)"
 .PHONY : CMakeFiles/sdl2_ttf-populate.dir/depend
 

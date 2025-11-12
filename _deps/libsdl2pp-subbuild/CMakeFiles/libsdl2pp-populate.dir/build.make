@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/libsdl2pp-subbuild
+CMAKE_SOURCE_DIR = /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/libsdl2pp-subbuild
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/libsdl2pp-subbuild
+CMAKE_BINARY_DIR = /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/libsdl2pp-subbuild
 
 # Utility rule file for libsdl2pp-populate.
 
@@ -77,57 +77,57 @@ CMakeFiles/libsdl2pp-populate-complete: libsdl2pp-populate-prefix/src/libsdl2pp-
 CMakeFiles/libsdl2pp-populate-complete: libsdl2pp-populate-prefix/src/libsdl2pp-populate-stamp/libsdl2pp-populate-build
 CMakeFiles/libsdl2pp-populate-complete: libsdl2pp-populate-prefix/src/libsdl2pp-populate-stamp/libsdl2pp-populate-install
 CMakeFiles/libsdl2pp-populate-complete: libsdl2pp-populate-prefix/src/libsdl2pp-populate-stamp/libsdl2pp-populate-test
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/libsdl2pp-subbuild/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Completed 'libsdl2pp-populate'"
-	/usr/bin/cmake -E make_directory /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/libsdl2pp-subbuild/CMakeFiles
-	/usr/bin/cmake -E touch /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/libsdl2pp-subbuild/CMakeFiles/libsdl2pp-populate-complete
-	/usr/bin/cmake -E touch /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/libsdl2pp-subbuild/libsdl2pp-populate-prefix/src/libsdl2pp-populate-stamp/libsdl2pp-populate-done
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/libsdl2pp-subbuild/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Completed 'libsdl2pp-populate'"
+	/usr/bin/cmake -E make_directory /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/libsdl2pp-subbuild/CMakeFiles
+	/usr/bin/cmake -E touch /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/libsdl2pp-subbuild/CMakeFiles/libsdl2pp-populate-complete
+	/usr/bin/cmake -E touch /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/libsdl2pp-subbuild/libsdl2pp-populate-prefix/src/libsdl2pp-populate-stamp/libsdl2pp-populate-done
 
 libsdl2pp-populate-prefix/src/libsdl2pp-populate-stamp/libsdl2pp-populate-build: libsdl2pp-populate-prefix/src/libsdl2pp-populate-stamp/libsdl2pp-populate-configure
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/libsdl2pp-subbuild/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "No build step for 'libsdl2pp-populate'"
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/libsdl2pp-build && /usr/bin/cmake -E echo_append
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/libsdl2pp-build && /usr/bin/cmake -E touch /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/libsdl2pp-subbuild/libsdl2pp-populate-prefix/src/libsdl2pp-populate-stamp/libsdl2pp-populate-build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/libsdl2pp-subbuild/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "No build step for 'libsdl2pp-populate'"
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/libsdl2pp-build && /usr/bin/cmake -E echo_append
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/libsdl2pp-build && /usr/bin/cmake -E touch /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/libsdl2pp-subbuild/libsdl2pp-populate-prefix/src/libsdl2pp-populate-stamp/libsdl2pp-populate-build
 
 libsdl2pp-populate-prefix/src/libsdl2pp-populate-stamp/libsdl2pp-populate-configure: libsdl2pp-populate-prefix/tmp/libsdl2pp-populate-cfgcmd.txt
 libsdl2pp-populate-prefix/src/libsdl2pp-populate-stamp/libsdl2pp-populate-configure: libsdl2pp-populate-prefix/src/libsdl2pp-populate-stamp/libsdl2pp-populate-patch
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/libsdl2pp-subbuild/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "No configure step for 'libsdl2pp-populate'"
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/libsdl2pp-build && /usr/bin/cmake -E echo_append
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/libsdl2pp-build && /usr/bin/cmake -E touch /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/libsdl2pp-subbuild/libsdl2pp-populate-prefix/src/libsdl2pp-populate-stamp/libsdl2pp-populate-configure
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/libsdl2pp-subbuild/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "No configure step for 'libsdl2pp-populate'"
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/libsdl2pp-build && /usr/bin/cmake -E echo_append
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/libsdl2pp-build && /usr/bin/cmake -E touch /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/libsdl2pp-subbuild/libsdl2pp-populate-prefix/src/libsdl2pp-populate-stamp/libsdl2pp-populate-configure
 
 libsdl2pp-populate-prefix/src/libsdl2pp-populate-stamp/libsdl2pp-populate-download: libsdl2pp-populate-prefix/src/libsdl2pp-populate-stamp/download-libsdl2pp-populate.cmake
 libsdl2pp-populate-prefix/src/libsdl2pp-populate-stamp/libsdl2pp-populate-download: libsdl2pp-populate-prefix/src/libsdl2pp-populate-stamp/libsdl2pp-populate-urlinfo.txt
 libsdl2pp-populate-prefix/src/libsdl2pp-populate-stamp/libsdl2pp-populate-download: libsdl2pp-populate-prefix/src/libsdl2pp-populate-stamp/libsdl2pp-populate-mkdir
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/libsdl2pp-subbuild/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Performing download step (download, verify and extract) for 'libsdl2pp-populate'"
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps && /usr/bin/cmake -P /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/libsdl2pp-subbuild/libsdl2pp-populate-prefix/src/libsdl2pp-populate-stamp/download-libsdl2pp-populate.cmake
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps && /usr/bin/cmake -P /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/libsdl2pp-subbuild/libsdl2pp-populate-prefix/src/libsdl2pp-populate-stamp/verify-libsdl2pp-populate.cmake
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps && /usr/bin/cmake -P /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/libsdl2pp-subbuild/libsdl2pp-populate-prefix/src/libsdl2pp-populate-stamp/extract-libsdl2pp-populate.cmake
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps && /usr/bin/cmake -E touch /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/libsdl2pp-subbuild/libsdl2pp-populate-prefix/src/libsdl2pp-populate-stamp/libsdl2pp-populate-download
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/libsdl2pp-subbuild/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Performing download step (download, verify and extract) for 'libsdl2pp-populate'"
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps && /usr/bin/cmake -P /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/libsdl2pp-subbuild/libsdl2pp-populate-prefix/src/libsdl2pp-populate-stamp/download-libsdl2pp-populate.cmake
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps && /usr/bin/cmake -P /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/libsdl2pp-subbuild/libsdl2pp-populate-prefix/src/libsdl2pp-populate-stamp/verify-libsdl2pp-populate.cmake
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps && /usr/bin/cmake -P /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/libsdl2pp-subbuild/libsdl2pp-populate-prefix/src/libsdl2pp-populate-stamp/extract-libsdl2pp-populate.cmake
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps && /usr/bin/cmake -E touch /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/libsdl2pp-subbuild/libsdl2pp-populate-prefix/src/libsdl2pp-populate-stamp/libsdl2pp-populate-download
 
 libsdl2pp-populate-prefix/src/libsdl2pp-populate-stamp/libsdl2pp-populate-install: libsdl2pp-populate-prefix/src/libsdl2pp-populate-stamp/libsdl2pp-populate-build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/libsdl2pp-subbuild/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "No install step for 'libsdl2pp-populate'"
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/libsdl2pp-build && /usr/bin/cmake -E echo_append
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/libsdl2pp-build && /usr/bin/cmake -E touch /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/libsdl2pp-subbuild/libsdl2pp-populate-prefix/src/libsdl2pp-populate-stamp/libsdl2pp-populate-install
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/libsdl2pp-subbuild/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "No install step for 'libsdl2pp-populate'"
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/libsdl2pp-build && /usr/bin/cmake -E echo_append
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/libsdl2pp-build && /usr/bin/cmake -E touch /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/libsdl2pp-subbuild/libsdl2pp-populate-prefix/src/libsdl2pp-populate-stamp/libsdl2pp-populate-install
 
 libsdl2pp-populate-prefix/src/libsdl2pp-populate-stamp/libsdl2pp-populate-mkdir:
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/libsdl2pp-subbuild/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Creating directories for 'libsdl2pp-populate'"
-	/usr/bin/cmake -Dcfgdir= -P /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/libsdl2pp-subbuild/libsdl2pp-populate-prefix/tmp/libsdl2pp-populate-mkdirs.cmake
-	/usr/bin/cmake -E touch /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/libsdl2pp-subbuild/libsdl2pp-populate-prefix/src/libsdl2pp-populate-stamp/libsdl2pp-populate-mkdir
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/libsdl2pp-subbuild/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Creating directories for 'libsdl2pp-populate'"
+	/usr/bin/cmake -Dcfgdir= -P /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/libsdl2pp-subbuild/libsdl2pp-populate-prefix/tmp/libsdl2pp-populate-mkdirs.cmake
+	/usr/bin/cmake -E touch /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/libsdl2pp-subbuild/libsdl2pp-populate-prefix/src/libsdl2pp-populate-stamp/libsdl2pp-populate-mkdir
 
 libsdl2pp-populate-prefix/src/libsdl2pp-populate-stamp/libsdl2pp-populate-patch: libsdl2pp-populate-prefix/src/libsdl2pp-populate-stamp/libsdl2pp-populate-patch-info.txt
 libsdl2pp-populate-prefix/src/libsdl2pp-populate-stamp/libsdl2pp-populate-patch: libsdl2pp-populate-prefix/src/libsdl2pp-populate-stamp/libsdl2pp-populate-update
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/libsdl2pp-subbuild/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "No patch step for 'libsdl2pp-populate'"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/libsdl2pp-subbuild/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "No patch step for 'libsdl2pp-populate'"
 	/usr/bin/cmake -E echo_append
-	/usr/bin/cmake -E touch /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/libsdl2pp-subbuild/libsdl2pp-populate-prefix/src/libsdl2pp-populate-stamp/libsdl2pp-populate-patch
+	/usr/bin/cmake -E touch /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/libsdl2pp-subbuild/libsdl2pp-populate-prefix/src/libsdl2pp-populate-stamp/libsdl2pp-populate-patch
 
 libsdl2pp-populate-prefix/src/libsdl2pp-populate-stamp/libsdl2pp-populate-test: libsdl2pp-populate-prefix/src/libsdl2pp-populate-stamp/libsdl2pp-populate-install
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/libsdl2pp-subbuild/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "No test step for 'libsdl2pp-populate'"
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/libsdl2pp-build && /usr/bin/cmake -E echo_append
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/libsdl2pp-build && /usr/bin/cmake -E touch /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/libsdl2pp-subbuild/libsdl2pp-populate-prefix/src/libsdl2pp-populate-stamp/libsdl2pp-populate-test
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/libsdl2pp-subbuild/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "No test step for 'libsdl2pp-populate'"
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/libsdl2pp-build && /usr/bin/cmake -E echo_append
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/libsdl2pp-build && /usr/bin/cmake -E touch /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/libsdl2pp-subbuild/libsdl2pp-populate-prefix/src/libsdl2pp-populate-stamp/libsdl2pp-populate-test
 
 libsdl2pp-populate-prefix/src/libsdl2pp-populate-stamp/libsdl2pp-populate-update: libsdl2pp-populate-prefix/src/libsdl2pp-populate-stamp/libsdl2pp-populate-update-info.txt
 libsdl2pp-populate-prefix/src/libsdl2pp-populate-stamp/libsdl2pp-populate-update: libsdl2pp-populate-prefix/src/libsdl2pp-populate-stamp/libsdl2pp-populate-download
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/libsdl2pp-subbuild/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "No update step for 'libsdl2pp-populate'"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/libsdl2pp-subbuild/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "No update step for 'libsdl2pp-populate'"
 	/usr/bin/cmake -E echo_append
-	/usr/bin/cmake -E touch /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/libsdl2pp-subbuild/libsdl2pp-populate-prefix/src/libsdl2pp-populate-stamp/libsdl2pp-populate-update
+	/usr/bin/cmake -E touch /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/libsdl2pp-subbuild/libsdl2pp-populate-prefix/src/libsdl2pp-populate-stamp/libsdl2pp-populate-update
 
 libsdl2pp-populate: CMakeFiles/libsdl2pp-populate
 libsdl2pp-populate: CMakeFiles/libsdl2pp-populate-complete
@@ -151,6 +151,6 @@ CMakeFiles/libsdl2pp-populate.dir/clean:
 .PHONY : CMakeFiles/libsdl2pp-populate.dir/clean
 
 CMakeFiles/libsdl2pp-populate.dir/depend:
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/libsdl2pp-subbuild && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/libsdl2pp-subbuild /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/libsdl2pp-subbuild /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/libsdl2pp-subbuild /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/libsdl2pp-subbuild /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/libsdl2pp-subbuild/CMakeFiles/libsdl2pp-populate.dir/DependInfo.cmake "--color=$(COLOR)"
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/libsdl2pp-subbuild && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/libsdl2pp-subbuild /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/libsdl2pp-subbuild /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/libsdl2pp-subbuild /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/libsdl2pp-subbuild /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/libsdl2pp-subbuild/CMakeFiles/libsdl2pp-populate.dir/DependInfo.cmake "--color=$(COLOR)"
 .PHONY : CMakeFiles/libsdl2pp-populate.dir/depend
 

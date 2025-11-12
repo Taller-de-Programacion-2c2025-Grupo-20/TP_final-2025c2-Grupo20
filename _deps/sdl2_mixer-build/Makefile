@@ -57,10 +57,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20
+CMAKE_SOURCE_DIR = /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20
+CMAKE_BINARY_DIR = /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -87,14 +87,14 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20 && $(CMAKE_COMMAND) -E cmake_progress_start /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/CMakeFiles /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2_mixer-build//CMakeFiles/progress.marks
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 _deps/sdl2_mixer-build/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/CMakeFiles 0
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20 && $(CMAKE_COMMAND) -E cmake_progress_start /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/CMakeFiles /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2_mixer-build//CMakeFiles/progress.marks
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 _deps/sdl2_mixer-build/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 _deps/sdl2_mixer-build/clean
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 _deps/sdl2_mixer-build/clean
 .PHONY : clean
 
 # The main clean target
@@ -103,22 +103,23 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 _deps/sdl2_mixer-build/preinstall
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 _deps/sdl2_mixer-build/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 _deps/sdl2_mixer-build/preinstall
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 _deps/sdl2_mixer-build/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20 && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20 && $(CMAKE_COMMAND) -P /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/CMakeFiles/VerifyGlobs.cmake
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20 && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/rule:
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/rule
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/rule
 .PHONY : _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/rule
 
 # Convenience name for target.
@@ -127,15 +128,67 @@ SDL2_mixer: _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/rule
 
 # fast build rule for target.
 SDL2_mixer/fast:
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/build.make _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/build
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/build.make _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/build
 .PHONY : SDL2_mixer/fast
+
+# Convenience name for target.
+_deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer_autogen_timestamp_deps.dir/rule:
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer_autogen_timestamp_deps.dir/rule
+.PHONY : _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer_autogen_timestamp_deps.dir/rule
+
+# Convenience name for target.
+SDL2_mixer_autogen_timestamp_deps: _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer_autogen_timestamp_deps.dir/rule
+.PHONY : SDL2_mixer_autogen_timestamp_deps
+
+# fast build rule for target.
+SDL2_mixer_autogen_timestamp_deps/fast:
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer_autogen_timestamp_deps.dir/build.make _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer_autogen_timestamp_deps.dir/build
+.PHONY : SDL2_mixer_autogen_timestamp_deps/fast
+
+# Convenience name for target.
+_deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer_autogen.dir/rule:
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer_autogen.dir/rule
+.PHONY : _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer_autogen.dir/rule
+
+# Convenience name for target.
+SDL2_mixer_autogen: _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer_autogen.dir/rule
+.PHONY : SDL2_mixer_autogen
+
+# fast build rule for target.
+SDL2_mixer_autogen/fast:
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer_autogen.dir/build.make _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer_autogen.dir/build
+.PHONY : SDL2_mixer_autogen/fast
+
+SDL2_mixer_autogen/mocs_compilation.o: SDL2_mixer_autogen/mocs_compilation.cpp.o
+.PHONY : SDL2_mixer_autogen/mocs_compilation.o
+
+# target to build an object file
+SDL2_mixer_autogen/mocs_compilation.cpp.o:
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/build.make _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/SDL2_mixer_autogen/mocs_compilation.cpp.o
+.PHONY : SDL2_mixer_autogen/mocs_compilation.cpp.o
+
+SDL2_mixer_autogen/mocs_compilation.i: SDL2_mixer_autogen/mocs_compilation.cpp.i
+.PHONY : SDL2_mixer_autogen/mocs_compilation.i
+
+# target to preprocess a source file
+SDL2_mixer_autogen/mocs_compilation.cpp.i:
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/build.make _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/SDL2_mixer_autogen/mocs_compilation.cpp.i
+.PHONY : SDL2_mixer_autogen/mocs_compilation.cpp.i
+
+SDL2_mixer_autogen/mocs_compilation.s: SDL2_mixer_autogen/mocs_compilation.cpp.s
+.PHONY : SDL2_mixer_autogen/mocs_compilation.s
+
+# target to generate assembly for a file
+SDL2_mixer_autogen/mocs_compilation.cpp.s:
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/build.make _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/SDL2_mixer_autogen/mocs_compilation.cpp.s
+.PHONY : SDL2_mixer_autogen/mocs_compilation.cpp.s
 
 src/codecs/load_aiff.o: src/codecs/load_aiff.c.o
 .PHONY : src/codecs/load_aiff.o
 
 # target to build an object file
 src/codecs/load_aiff.c.o:
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/build.make _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/src/codecs/load_aiff.c.o
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/build.make _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/src/codecs/load_aiff.c.o
 .PHONY : src/codecs/load_aiff.c.o
 
 src/codecs/load_aiff.i: src/codecs/load_aiff.c.i
@@ -143,7 +196,7 @@ src/codecs/load_aiff.i: src/codecs/load_aiff.c.i
 
 # target to preprocess a source file
 src/codecs/load_aiff.c.i:
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/build.make _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/src/codecs/load_aiff.c.i
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/build.make _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/src/codecs/load_aiff.c.i
 .PHONY : src/codecs/load_aiff.c.i
 
 src/codecs/load_aiff.s: src/codecs/load_aiff.c.s
@@ -151,7 +204,7 @@ src/codecs/load_aiff.s: src/codecs/load_aiff.c.s
 
 # target to generate assembly for a file
 src/codecs/load_aiff.c.s:
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/build.make _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/src/codecs/load_aiff.c.s
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/build.make _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/src/codecs/load_aiff.c.s
 .PHONY : src/codecs/load_aiff.c.s
 
 src/codecs/load_voc.o: src/codecs/load_voc.c.o
@@ -159,7 +212,7 @@ src/codecs/load_voc.o: src/codecs/load_voc.c.o
 
 # target to build an object file
 src/codecs/load_voc.c.o:
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/build.make _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/src/codecs/load_voc.c.o
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/build.make _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/src/codecs/load_voc.c.o
 .PHONY : src/codecs/load_voc.c.o
 
 src/codecs/load_voc.i: src/codecs/load_voc.c.i
@@ -167,7 +220,7 @@ src/codecs/load_voc.i: src/codecs/load_voc.c.i
 
 # target to preprocess a source file
 src/codecs/load_voc.c.i:
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/build.make _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/src/codecs/load_voc.c.i
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/build.make _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/src/codecs/load_voc.c.i
 .PHONY : src/codecs/load_voc.c.i
 
 src/codecs/load_voc.s: src/codecs/load_voc.c.s
@@ -175,7 +228,7 @@ src/codecs/load_voc.s: src/codecs/load_voc.c.s
 
 # target to generate assembly for a file
 src/codecs/load_voc.c.s:
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/build.make _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/src/codecs/load_voc.c.s
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/build.make _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/src/codecs/load_voc.c.s
 .PHONY : src/codecs/load_voc.c.s
 
 src/codecs/mp3utils.o: src/codecs/mp3utils.c.o
@@ -183,7 +236,7 @@ src/codecs/mp3utils.o: src/codecs/mp3utils.c.o
 
 # target to build an object file
 src/codecs/mp3utils.c.o:
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/build.make _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/src/codecs/mp3utils.c.o
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/build.make _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/src/codecs/mp3utils.c.o
 .PHONY : src/codecs/mp3utils.c.o
 
 src/codecs/mp3utils.i: src/codecs/mp3utils.c.i
@@ -191,7 +244,7 @@ src/codecs/mp3utils.i: src/codecs/mp3utils.c.i
 
 # target to preprocess a source file
 src/codecs/mp3utils.c.i:
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/build.make _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/src/codecs/mp3utils.c.i
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/build.make _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/src/codecs/mp3utils.c.i
 .PHONY : src/codecs/mp3utils.c.i
 
 src/codecs/mp3utils.s: src/codecs/mp3utils.c.s
@@ -199,7 +252,7 @@ src/codecs/mp3utils.s: src/codecs/mp3utils.c.s
 
 # target to generate assembly for a file
 src/codecs/mp3utils.c.s:
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/build.make _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/src/codecs/mp3utils.c.s
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/build.make _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/src/codecs/mp3utils.c.s
 .PHONY : src/codecs/mp3utils.c.s
 
 src/codecs/music_cmd.o: src/codecs/music_cmd.c.o
@@ -207,7 +260,7 @@ src/codecs/music_cmd.o: src/codecs/music_cmd.c.o
 
 # target to build an object file
 src/codecs/music_cmd.c.o:
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/build.make _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/src/codecs/music_cmd.c.o
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/build.make _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/src/codecs/music_cmd.c.o
 .PHONY : src/codecs/music_cmd.c.o
 
 src/codecs/music_cmd.i: src/codecs/music_cmd.c.i
@@ -215,7 +268,7 @@ src/codecs/music_cmd.i: src/codecs/music_cmd.c.i
 
 # target to preprocess a source file
 src/codecs/music_cmd.c.i:
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/build.make _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/src/codecs/music_cmd.c.i
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/build.make _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/src/codecs/music_cmd.c.i
 .PHONY : src/codecs/music_cmd.c.i
 
 src/codecs/music_cmd.s: src/codecs/music_cmd.c.s
@@ -223,7 +276,7 @@ src/codecs/music_cmd.s: src/codecs/music_cmd.c.s
 
 # target to generate assembly for a file
 src/codecs/music_cmd.c.s:
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/build.make _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/src/codecs/music_cmd.c.s
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/build.make _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/src/codecs/music_cmd.c.s
 .PHONY : src/codecs/music_cmd.c.s
 
 src/codecs/music_drflac.o: src/codecs/music_drflac.c.o
@@ -231,7 +284,7 @@ src/codecs/music_drflac.o: src/codecs/music_drflac.c.o
 
 # target to build an object file
 src/codecs/music_drflac.c.o:
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/build.make _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/src/codecs/music_drflac.c.o
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/build.make _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/src/codecs/music_drflac.c.o
 .PHONY : src/codecs/music_drflac.c.o
 
 src/codecs/music_drflac.i: src/codecs/music_drflac.c.i
@@ -239,7 +292,7 @@ src/codecs/music_drflac.i: src/codecs/music_drflac.c.i
 
 # target to preprocess a source file
 src/codecs/music_drflac.c.i:
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/build.make _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/src/codecs/music_drflac.c.i
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/build.make _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/src/codecs/music_drflac.c.i
 .PHONY : src/codecs/music_drflac.c.i
 
 src/codecs/music_drflac.s: src/codecs/music_drflac.c.s
@@ -247,7 +300,7 @@ src/codecs/music_drflac.s: src/codecs/music_drflac.c.s
 
 # target to generate assembly for a file
 src/codecs/music_drflac.c.s:
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/build.make _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/src/codecs/music_drflac.c.s
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/build.make _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/src/codecs/music_drflac.c.s
 .PHONY : src/codecs/music_drflac.c.s
 
 src/codecs/music_flac.o: src/codecs/music_flac.c.o
@@ -255,7 +308,7 @@ src/codecs/music_flac.o: src/codecs/music_flac.c.o
 
 # target to build an object file
 src/codecs/music_flac.c.o:
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/build.make _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/src/codecs/music_flac.c.o
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/build.make _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/src/codecs/music_flac.c.o
 .PHONY : src/codecs/music_flac.c.o
 
 src/codecs/music_flac.i: src/codecs/music_flac.c.i
@@ -263,7 +316,7 @@ src/codecs/music_flac.i: src/codecs/music_flac.c.i
 
 # target to preprocess a source file
 src/codecs/music_flac.c.i:
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/build.make _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/src/codecs/music_flac.c.i
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/build.make _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/src/codecs/music_flac.c.i
 .PHONY : src/codecs/music_flac.c.i
 
 src/codecs/music_flac.s: src/codecs/music_flac.c.s
@@ -271,7 +324,7 @@ src/codecs/music_flac.s: src/codecs/music_flac.c.s
 
 # target to generate assembly for a file
 src/codecs/music_flac.c.s:
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/build.make _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/src/codecs/music_flac.c.s
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/build.make _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/src/codecs/music_flac.c.s
 .PHONY : src/codecs/music_flac.c.s
 
 src/codecs/music_fluidsynth.o: src/codecs/music_fluidsynth.c.o
@@ -279,7 +332,7 @@ src/codecs/music_fluidsynth.o: src/codecs/music_fluidsynth.c.o
 
 # target to build an object file
 src/codecs/music_fluidsynth.c.o:
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/build.make _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/src/codecs/music_fluidsynth.c.o
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/build.make _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/src/codecs/music_fluidsynth.c.o
 .PHONY : src/codecs/music_fluidsynth.c.o
 
 src/codecs/music_fluidsynth.i: src/codecs/music_fluidsynth.c.i
@@ -287,7 +340,7 @@ src/codecs/music_fluidsynth.i: src/codecs/music_fluidsynth.c.i
 
 # target to preprocess a source file
 src/codecs/music_fluidsynth.c.i:
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/build.make _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/src/codecs/music_fluidsynth.c.i
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/build.make _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/src/codecs/music_fluidsynth.c.i
 .PHONY : src/codecs/music_fluidsynth.c.i
 
 src/codecs/music_fluidsynth.s: src/codecs/music_fluidsynth.c.s
@@ -295,7 +348,7 @@ src/codecs/music_fluidsynth.s: src/codecs/music_fluidsynth.c.s
 
 # target to generate assembly for a file
 src/codecs/music_fluidsynth.c.s:
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/build.make _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/src/codecs/music_fluidsynth.c.s
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/build.make _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/src/codecs/music_fluidsynth.c.s
 .PHONY : src/codecs/music_fluidsynth.c.s
 
 src/codecs/music_gme.o: src/codecs/music_gme.c.o
@@ -303,7 +356,7 @@ src/codecs/music_gme.o: src/codecs/music_gme.c.o
 
 # target to build an object file
 src/codecs/music_gme.c.o:
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/build.make _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/src/codecs/music_gme.c.o
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/build.make _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/src/codecs/music_gme.c.o
 .PHONY : src/codecs/music_gme.c.o
 
 src/codecs/music_gme.i: src/codecs/music_gme.c.i
@@ -311,7 +364,7 @@ src/codecs/music_gme.i: src/codecs/music_gme.c.i
 
 # target to preprocess a source file
 src/codecs/music_gme.c.i:
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/build.make _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/src/codecs/music_gme.c.i
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/build.make _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/src/codecs/music_gme.c.i
 .PHONY : src/codecs/music_gme.c.i
 
 src/codecs/music_gme.s: src/codecs/music_gme.c.s
@@ -319,7 +372,7 @@ src/codecs/music_gme.s: src/codecs/music_gme.c.s
 
 # target to generate assembly for a file
 src/codecs/music_gme.c.s:
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/build.make _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/src/codecs/music_gme.c.s
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/build.make _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/src/codecs/music_gme.c.s
 .PHONY : src/codecs/music_gme.c.s
 
 src/codecs/music_minimp3.o: src/codecs/music_minimp3.c.o
@@ -327,7 +380,7 @@ src/codecs/music_minimp3.o: src/codecs/music_minimp3.c.o
 
 # target to build an object file
 src/codecs/music_minimp3.c.o:
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/build.make _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/src/codecs/music_minimp3.c.o
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/build.make _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/src/codecs/music_minimp3.c.o
 .PHONY : src/codecs/music_minimp3.c.o
 
 src/codecs/music_minimp3.i: src/codecs/music_minimp3.c.i
@@ -335,7 +388,7 @@ src/codecs/music_minimp3.i: src/codecs/music_minimp3.c.i
 
 # target to preprocess a source file
 src/codecs/music_minimp3.c.i:
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/build.make _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/src/codecs/music_minimp3.c.i
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/build.make _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/src/codecs/music_minimp3.c.i
 .PHONY : src/codecs/music_minimp3.c.i
 
 src/codecs/music_minimp3.s: src/codecs/music_minimp3.c.s
@@ -343,7 +396,7 @@ src/codecs/music_minimp3.s: src/codecs/music_minimp3.c.s
 
 # target to generate assembly for a file
 src/codecs/music_minimp3.c.s:
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/build.make _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/src/codecs/music_minimp3.c.s
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/build.make _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/src/codecs/music_minimp3.c.s
 .PHONY : src/codecs/music_minimp3.c.s
 
 src/codecs/music_modplug.o: src/codecs/music_modplug.c.o
@@ -351,7 +404,7 @@ src/codecs/music_modplug.o: src/codecs/music_modplug.c.o
 
 # target to build an object file
 src/codecs/music_modplug.c.o:
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/build.make _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/src/codecs/music_modplug.c.o
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/build.make _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/src/codecs/music_modplug.c.o
 .PHONY : src/codecs/music_modplug.c.o
 
 src/codecs/music_modplug.i: src/codecs/music_modplug.c.i
@@ -359,7 +412,7 @@ src/codecs/music_modplug.i: src/codecs/music_modplug.c.i
 
 # target to preprocess a source file
 src/codecs/music_modplug.c.i:
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/build.make _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/src/codecs/music_modplug.c.i
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/build.make _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/src/codecs/music_modplug.c.i
 .PHONY : src/codecs/music_modplug.c.i
 
 src/codecs/music_modplug.s: src/codecs/music_modplug.c.s
@@ -367,7 +420,7 @@ src/codecs/music_modplug.s: src/codecs/music_modplug.c.s
 
 # target to generate assembly for a file
 src/codecs/music_modplug.c.s:
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/build.make _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/src/codecs/music_modplug.c.s
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/build.make _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/src/codecs/music_modplug.c.s
 .PHONY : src/codecs/music_modplug.c.s
 
 src/codecs/music_mpg123.o: src/codecs/music_mpg123.c.o
@@ -375,7 +428,7 @@ src/codecs/music_mpg123.o: src/codecs/music_mpg123.c.o
 
 # target to build an object file
 src/codecs/music_mpg123.c.o:
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/build.make _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/src/codecs/music_mpg123.c.o
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/build.make _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/src/codecs/music_mpg123.c.o
 .PHONY : src/codecs/music_mpg123.c.o
 
 src/codecs/music_mpg123.i: src/codecs/music_mpg123.c.i
@@ -383,7 +436,7 @@ src/codecs/music_mpg123.i: src/codecs/music_mpg123.c.i
 
 # target to preprocess a source file
 src/codecs/music_mpg123.c.i:
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/build.make _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/src/codecs/music_mpg123.c.i
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/build.make _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/src/codecs/music_mpg123.c.i
 .PHONY : src/codecs/music_mpg123.c.i
 
 src/codecs/music_mpg123.s: src/codecs/music_mpg123.c.s
@@ -391,7 +444,7 @@ src/codecs/music_mpg123.s: src/codecs/music_mpg123.c.s
 
 # target to generate assembly for a file
 src/codecs/music_mpg123.c.s:
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/build.make _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/src/codecs/music_mpg123.c.s
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/build.make _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/src/codecs/music_mpg123.c.s
 .PHONY : src/codecs/music_mpg123.c.s
 
 src/codecs/music_nativemidi.o: src/codecs/music_nativemidi.c.o
@@ -399,7 +452,7 @@ src/codecs/music_nativemidi.o: src/codecs/music_nativemidi.c.o
 
 # target to build an object file
 src/codecs/music_nativemidi.c.o:
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/build.make _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/src/codecs/music_nativemidi.c.o
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/build.make _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/src/codecs/music_nativemidi.c.o
 .PHONY : src/codecs/music_nativemidi.c.o
 
 src/codecs/music_nativemidi.i: src/codecs/music_nativemidi.c.i
@@ -407,7 +460,7 @@ src/codecs/music_nativemidi.i: src/codecs/music_nativemidi.c.i
 
 # target to preprocess a source file
 src/codecs/music_nativemidi.c.i:
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/build.make _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/src/codecs/music_nativemidi.c.i
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/build.make _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/src/codecs/music_nativemidi.c.i
 .PHONY : src/codecs/music_nativemidi.c.i
 
 src/codecs/music_nativemidi.s: src/codecs/music_nativemidi.c.s
@@ -415,7 +468,7 @@ src/codecs/music_nativemidi.s: src/codecs/music_nativemidi.c.s
 
 # target to generate assembly for a file
 src/codecs/music_nativemidi.c.s:
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/build.make _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/src/codecs/music_nativemidi.c.s
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/build.make _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/src/codecs/music_nativemidi.c.s
 .PHONY : src/codecs/music_nativemidi.c.s
 
 src/codecs/music_ogg.o: src/codecs/music_ogg.c.o
@@ -423,7 +476,7 @@ src/codecs/music_ogg.o: src/codecs/music_ogg.c.o
 
 # target to build an object file
 src/codecs/music_ogg.c.o:
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/build.make _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/src/codecs/music_ogg.c.o
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/build.make _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/src/codecs/music_ogg.c.o
 .PHONY : src/codecs/music_ogg.c.o
 
 src/codecs/music_ogg.i: src/codecs/music_ogg.c.i
@@ -431,7 +484,7 @@ src/codecs/music_ogg.i: src/codecs/music_ogg.c.i
 
 # target to preprocess a source file
 src/codecs/music_ogg.c.i:
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/build.make _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/src/codecs/music_ogg.c.i
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/build.make _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/src/codecs/music_ogg.c.i
 .PHONY : src/codecs/music_ogg.c.i
 
 src/codecs/music_ogg.s: src/codecs/music_ogg.c.s
@@ -439,7 +492,7 @@ src/codecs/music_ogg.s: src/codecs/music_ogg.c.s
 
 # target to generate assembly for a file
 src/codecs/music_ogg.c.s:
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/build.make _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/src/codecs/music_ogg.c.s
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/build.make _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/src/codecs/music_ogg.c.s
 .PHONY : src/codecs/music_ogg.c.s
 
 src/codecs/music_ogg_stb.o: src/codecs/music_ogg_stb.c.o
@@ -447,7 +500,7 @@ src/codecs/music_ogg_stb.o: src/codecs/music_ogg_stb.c.o
 
 # target to build an object file
 src/codecs/music_ogg_stb.c.o:
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/build.make _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/src/codecs/music_ogg_stb.c.o
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/build.make _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/src/codecs/music_ogg_stb.c.o
 .PHONY : src/codecs/music_ogg_stb.c.o
 
 src/codecs/music_ogg_stb.i: src/codecs/music_ogg_stb.c.i
@@ -455,7 +508,7 @@ src/codecs/music_ogg_stb.i: src/codecs/music_ogg_stb.c.i
 
 # target to preprocess a source file
 src/codecs/music_ogg_stb.c.i:
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/build.make _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/src/codecs/music_ogg_stb.c.i
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/build.make _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/src/codecs/music_ogg_stb.c.i
 .PHONY : src/codecs/music_ogg_stb.c.i
 
 src/codecs/music_ogg_stb.s: src/codecs/music_ogg_stb.c.s
@@ -463,7 +516,7 @@ src/codecs/music_ogg_stb.s: src/codecs/music_ogg_stb.c.s
 
 # target to generate assembly for a file
 src/codecs/music_ogg_stb.c.s:
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/build.make _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/src/codecs/music_ogg_stb.c.s
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/build.make _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/src/codecs/music_ogg_stb.c.s
 .PHONY : src/codecs/music_ogg_stb.c.s
 
 src/codecs/music_opus.o: src/codecs/music_opus.c.o
@@ -471,7 +524,7 @@ src/codecs/music_opus.o: src/codecs/music_opus.c.o
 
 # target to build an object file
 src/codecs/music_opus.c.o:
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/build.make _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/src/codecs/music_opus.c.o
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/build.make _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/src/codecs/music_opus.c.o
 .PHONY : src/codecs/music_opus.c.o
 
 src/codecs/music_opus.i: src/codecs/music_opus.c.i
@@ -479,7 +532,7 @@ src/codecs/music_opus.i: src/codecs/music_opus.c.i
 
 # target to preprocess a source file
 src/codecs/music_opus.c.i:
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/build.make _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/src/codecs/music_opus.c.i
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/build.make _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/src/codecs/music_opus.c.i
 .PHONY : src/codecs/music_opus.c.i
 
 src/codecs/music_opus.s: src/codecs/music_opus.c.s
@@ -487,7 +540,7 @@ src/codecs/music_opus.s: src/codecs/music_opus.c.s
 
 # target to generate assembly for a file
 src/codecs/music_opus.c.s:
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/build.make _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/src/codecs/music_opus.c.s
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/build.make _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/src/codecs/music_opus.c.s
 .PHONY : src/codecs/music_opus.c.s
 
 src/codecs/music_timidity.o: src/codecs/music_timidity.c.o
@@ -495,7 +548,7 @@ src/codecs/music_timidity.o: src/codecs/music_timidity.c.o
 
 # target to build an object file
 src/codecs/music_timidity.c.o:
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/build.make _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/src/codecs/music_timidity.c.o
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/build.make _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/src/codecs/music_timidity.c.o
 .PHONY : src/codecs/music_timidity.c.o
 
 src/codecs/music_timidity.i: src/codecs/music_timidity.c.i
@@ -503,7 +556,7 @@ src/codecs/music_timidity.i: src/codecs/music_timidity.c.i
 
 # target to preprocess a source file
 src/codecs/music_timidity.c.i:
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/build.make _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/src/codecs/music_timidity.c.i
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/build.make _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/src/codecs/music_timidity.c.i
 .PHONY : src/codecs/music_timidity.c.i
 
 src/codecs/music_timidity.s: src/codecs/music_timidity.c.s
@@ -511,7 +564,7 @@ src/codecs/music_timidity.s: src/codecs/music_timidity.c.s
 
 # target to generate assembly for a file
 src/codecs/music_timidity.c.s:
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/build.make _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/src/codecs/music_timidity.c.s
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/build.make _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/src/codecs/music_timidity.c.s
 .PHONY : src/codecs/music_timidity.c.s
 
 src/codecs/music_wav.o: src/codecs/music_wav.c.o
@@ -519,7 +572,7 @@ src/codecs/music_wav.o: src/codecs/music_wav.c.o
 
 # target to build an object file
 src/codecs/music_wav.c.o:
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/build.make _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/src/codecs/music_wav.c.o
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/build.make _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/src/codecs/music_wav.c.o
 .PHONY : src/codecs/music_wav.c.o
 
 src/codecs/music_wav.i: src/codecs/music_wav.c.i
@@ -527,7 +580,7 @@ src/codecs/music_wav.i: src/codecs/music_wav.c.i
 
 # target to preprocess a source file
 src/codecs/music_wav.c.i:
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/build.make _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/src/codecs/music_wav.c.i
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/build.make _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/src/codecs/music_wav.c.i
 .PHONY : src/codecs/music_wav.c.i
 
 src/codecs/music_wav.s: src/codecs/music_wav.c.s
@@ -535,7 +588,7 @@ src/codecs/music_wav.s: src/codecs/music_wav.c.s
 
 # target to generate assembly for a file
 src/codecs/music_wav.c.s:
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/build.make _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/src/codecs/music_wav.c.s
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/build.make _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/src/codecs/music_wav.c.s
 .PHONY : src/codecs/music_wav.c.s
 
 src/codecs/music_wavpack.o: src/codecs/music_wavpack.c.o
@@ -543,7 +596,7 @@ src/codecs/music_wavpack.o: src/codecs/music_wavpack.c.o
 
 # target to build an object file
 src/codecs/music_wavpack.c.o:
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/build.make _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/src/codecs/music_wavpack.c.o
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/build.make _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/src/codecs/music_wavpack.c.o
 .PHONY : src/codecs/music_wavpack.c.o
 
 src/codecs/music_wavpack.i: src/codecs/music_wavpack.c.i
@@ -551,7 +604,7 @@ src/codecs/music_wavpack.i: src/codecs/music_wavpack.c.i
 
 # target to preprocess a source file
 src/codecs/music_wavpack.c.i:
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/build.make _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/src/codecs/music_wavpack.c.i
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/build.make _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/src/codecs/music_wavpack.c.i
 .PHONY : src/codecs/music_wavpack.c.i
 
 src/codecs/music_wavpack.s: src/codecs/music_wavpack.c.s
@@ -559,7 +612,7 @@ src/codecs/music_wavpack.s: src/codecs/music_wavpack.c.s
 
 # target to generate assembly for a file
 src/codecs/music_wavpack.c.s:
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/build.make _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/src/codecs/music_wavpack.c.s
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/build.make _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/src/codecs/music_wavpack.c.s
 .PHONY : src/codecs/music_wavpack.c.s
 
 src/codecs/music_xmp.o: src/codecs/music_xmp.c.o
@@ -567,7 +620,7 @@ src/codecs/music_xmp.o: src/codecs/music_xmp.c.o
 
 # target to build an object file
 src/codecs/music_xmp.c.o:
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/build.make _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/src/codecs/music_xmp.c.o
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/build.make _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/src/codecs/music_xmp.c.o
 .PHONY : src/codecs/music_xmp.c.o
 
 src/codecs/music_xmp.i: src/codecs/music_xmp.c.i
@@ -575,7 +628,7 @@ src/codecs/music_xmp.i: src/codecs/music_xmp.c.i
 
 # target to preprocess a source file
 src/codecs/music_xmp.c.i:
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/build.make _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/src/codecs/music_xmp.c.i
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/build.make _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/src/codecs/music_xmp.c.i
 .PHONY : src/codecs/music_xmp.c.i
 
 src/codecs/music_xmp.s: src/codecs/music_xmp.c.s
@@ -583,7 +636,7 @@ src/codecs/music_xmp.s: src/codecs/music_xmp.c.s
 
 # target to generate assembly for a file
 src/codecs/music_xmp.c.s:
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/build.make _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/src/codecs/music_xmp.c.s
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/build.make _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/src/codecs/music_xmp.c.s
 .PHONY : src/codecs/music_xmp.c.s
 
 src/codecs/timidity/common.o: src/codecs/timidity/common.c.o
@@ -591,7 +644,7 @@ src/codecs/timidity/common.o: src/codecs/timidity/common.c.o
 
 # target to build an object file
 src/codecs/timidity/common.c.o:
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/build.make _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/src/codecs/timidity/common.c.o
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/build.make _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/src/codecs/timidity/common.c.o
 .PHONY : src/codecs/timidity/common.c.o
 
 src/codecs/timidity/common.i: src/codecs/timidity/common.c.i
@@ -599,7 +652,7 @@ src/codecs/timidity/common.i: src/codecs/timidity/common.c.i
 
 # target to preprocess a source file
 src/codecs/timidity/common.c.i:
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/build.make _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/src/codecs/timidity/common.c.i
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/build.make _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/src/codecs/timidity/common.c.i
 .PHONY : src/codecs/timidity/common.c.i
 
 src/codecs/timidity/common.s: src/codecs/timidity/common.c.s
@@ -607,7 +660,7 @@ src/codecs/timidity/common.s: src/codecs/timidity/common.c.s
 
 # target to generate assembly for a file
 src/codecs/timidity/common.c.s:
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/build.make _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/src/codecs/timidity/common.c.s
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/build.make _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/src/codecs/timidity/common.c.s
 .PHONY : src/codecs/timidity/common.c.s
 
 src/codecs/timidity/instrum.o: src/codecs/timidity/instrum.c.o
@@ -615,7 +668,7 @@ src/codecs/timidity/instrum.o: src/codecs/timidity/instrum.c.o
 
 # target to build an object file
 src/codecs/timidity/instrum.c.o:
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/build.make _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/src/codecs/timidity/instrum.c.o
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/build.make _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/src/codecs/timidity/instrum.c.o
 .PHONY : src/codecs/timidity/instrum.c.o
 
 src/codecs/timidity/instrum.i: src/codecs/timidity/instrum.c.i
@@ -623,7 +676,7 @@ src/codecs/timidity/instrum.i: src/codecs/timidity/instrum.c.i
 
 # target to preprocess a source file
 src/codecs/timidity/instrum.c.i:
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/build.make _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/src/codecs/timidity/instrum.c.i
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/build.make _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/src/codecs/timidity/instrum.c.i
 .PHONY : src/codecs/timidity/instrum.c.i
 
 src/codecs/timidity/instrum.s: src/codecs/timidity/instrum.c.s
@@ -631,7 +684,7 @@ src/codecs/timidity/instrum.s: src/codecs/timidity/instrum.c.s
 
 # target to generate assembly for a file
 src/codecs/timidity/instrum.c.s:
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/build.make _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/src/codecs/timidity/instrum.c.s
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/build.make _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/src/codecs/timidity/instrum.c.s
 .PHONY : src/codecs/timidity/instrum.c.s
 
 src/codecs/timidity/mix.o: src/codecs/timidity/mix.c.o
@@ -639,7 +692,7 @@ src/codecs/timidity/mix.o: src/codecs/timidity/mix.c.o
 
 # target to build an object file
 src/codecs/timidity/mix.c.o:
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/build.make _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/src/codecs/timidity/mix.c.o
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/build.make _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/src/codecs/timidity/mix.c.o
 .PHONY : src/codecs/timidity/mix.c.o
 
 src/codecs/timidity/mix.i: src/codecs/timidity/mix.c.i
@@ -647,7 +700,7 @@ src/codecs/timidity/mix.i: src/codecs/timidity/mix.c.i
 
 # target to preprocess a source file
 src/codecs/timidity/mix.c.i:
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/build.make _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/src/codecs/timidity/mix.c.i
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/build.make _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/src/codecs/timidity/mix.c.i
 .PHONY : src/codecs/timidity/mix.c.i
 
 src/codecs/timidity/mix.s: src/codecs/timidity/mix.c.s
@@ -655,7 +708,7 @@ src/codecs/timidity/mix.s: src/codecs/timidity/mix.c.s
 
 # target to generate assembly for a file
 src/codecs/timidity/mix.c.s:
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/build.make _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/src/codecs/timidity/mix.c.s
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/build.make _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/src/codecs/timidity/mix.c.s
 .PHONY : src/codecs/timidity/mix.c.s
 
 src/codecs/timidity/output.o: src/codecs/timidity/output.c.o
@@ -663,7 +716,7 @@ src/codecs/timidity/output.o: src/codecs/timidity/output.c.o
 
 # target to build an object file
 src/codecs/timidity/output.c.o:
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/build.make _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/src/codecs/timidity/output.c.o
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/build.make _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/src/codecs/timidity/output.c.o
 .PHONY : src/codecs/timidity/output.c.o
 
 src/codecs/timidity/output.i: src/codecs/timidity/output.c.i
@@ -671,7 +724,7 @@ src/codecs/timidity/output.i: src/codecs/timidity/output.c.i
 
 # target to preprocess a source file
 src/codecs/timidity/output.c.i:
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/build.make _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/src/codecs/timidity/output.c.i
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/build.make _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/src/codecs/timidity/output.c.i
 .PHONY : src/codecs/timidity/output.c.i
 
 src/codecs/timidity/output.s: src/codecs/timidity/output.c.s
@@ -679,7 +732,7 @@ src/codecs/timidity/output.s: src/codecs/timidity/output.c.s
 
 # target to generate assembly for a file
 src/codecs/timidity/output.c.s:
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/build.make _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/src/codecs/timidity/output.c.s
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/build.make _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/src/codecs/timidity/output.c.s
 .PHONY : src/codecs/timidity/output.c.s
 
 src/codecs/timidity/playmidi.o: src/codecs/timidity/playmidi.c.o
@@ -687,7 +740,7 @@ src/codecs/timidity/playmidi.o: src/codecs/timidity/playmidi.c.o
 
 # target to build an object file
 src/codecs/timidity/playmidi.c.o:
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/build.make _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/src/codecs/timidity/playmidi.c.o
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/build.make _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/src/codecs/timidity/playmidi.c.o
 .PHONY : src/codecs/timidity/playmidi.c.o
 
 src/codecs/timidity/playmidi.i: src/codecs/timidity/playmidi.c.i
@@ -695,7 +748,7 @@ src/codecs/timidity/playmidi.i: src/codecs/timidity/playmidi.c.i
 
 # target to preprocess a source file
 src/codecs/timidity/playmidi.c.i:
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/build.make _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/src/codecs/timidity/playmidi.c.i
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/build.make _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/src/codecs/timidity/playmidi.c.i
 .PHONY : src/codecs/timidity/playmidi.c.i
 
 src/codecs/timidity/playmidi.s: src/codecs/timidity/playmidi.c.s
@@ -703,7 +756,7 @@ src/codecs/timidity/playmidi.s: src/codecs/timidity/playmidi.c.s
 
 # target to generate assembly for a file
 src/codecs/timidity/playmidi.c.s:
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/build.make _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/src/codecs/timidity/playmidi.c.s
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/build.make _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/src/codecs/timidity/playmidi.c.s
 .PHONY : src/codecs/timidity/playmidi.c.s
 
 src/codecs/timidity/readmidi.o: src/codecs/timidity/readmidi.c.o
@@ -711,7 +764,7 @@ src/codecs/timidity/readmidi.o: src/codecs/timidity/readmidi.c.o
 
 # target to build an object file
 src/codecs/timidity/readmidi.c.o:
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/build.make _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/src/codecs/timidity/readmidi.c.o
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/build.make _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/src/codecs/timidity/readmidi.c.o
 .PHONY : src/codecs/timidity/readmidi.c.o
 
 src/codecs/timidity/readmidi.i: src/codecs/timidity/readmidi.c.i
@@ -719,7 +772,7 @@ src/codecs/timidity/readmidi.i: src/codecs/timidity/readmidi.c.i
 
 # target to preprocess a source file
 src/codecs/timidity/readmidi.c.i:
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/build.make _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/src/codecs/timidity/readmidi.c.i
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/build.make _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/src/codecs/timidity/readmidi.c.i
 .PHONY : src/codecs/timidity/readmidi.c.i
 
 src/codecs/timidity/readmidi.s: src/codecs/timidity/readmidi.c.s
@@ -727,7 +780,7 @@ src/codecs/timidity/readmidi.s: src/codecs/timidity/readmidi.c.s
 
 # target to generate assembly for a file
 src/codecs/timidity/readmidi.c.s:
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/build.make _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/src/codecs/timidity/readmidi.c.s
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/build.make _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/src/codecs/timidity/readmidi.c.s
 .PHONY : src/codecs/timidity/readmidi.c.s
 
 src/codecs/timidity/resample.o: src/codecs/timidity/resample.c.o
@@ -735,7 +788,7 @@ src/codecs/timidity/resample.o: src/codecs/timidity/resample.c.o
 
 # target to build an object file
 src/codecs/timidity/resample.c.o:
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/build.make _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/src/codecs/timidity/resample.c.o
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/build.make _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/src/codecs/timidity/resample.c.o
 .PHONY : src/codecs/timidity/resample.c.o
 
 src/codecs/timidity/resample.i: src/codecs/timidity/resample.c.i
@@ -743,7 +796,7 @@ src/codecs/timidity/resample.i: src/codecs/timidity/resample.c.i
 
 # target to preprocess a source file
 src/codecs/timidity/resample.c.i:
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/build.make _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/src/codecs/timidity/resample.c.i
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/build.make _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/src/codecs/timidity/resample.c.i
 .PHONY : src/codecs/timidity/resample.c.i
 
 src/codecs/timidity/resample.s: src/codecs/timidity/resample.c.s
@@ -751,7 +804,7 @@ src/codecs/timidity/resample.s: src/codecs/timidity/resample.c.s
 
 # target to generate assembly for a file
 src/codecs/timidity/resample.c.s:
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/build.make _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/src/codecs/timidity/resample.c.s
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/build.make _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/src/codecs/timidity/resample.c.s
 .PHONY : src/codecs/timidity/resample.c.s
 
 src/codecs/timidity/tables.o: src/codecs/timidity/tables.c.o
@@ -759,7 +812,7 @@ src/codecs/timidity/tables.o: src/codecs/timidity/tables.c.o
 
 # target to build an object file
 src/codecs/timidity/tables.c.o:
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/build.make _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/src/codecs/timidity/tables.c.o
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/build.make _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/src/codecs/timidity/tables.c.o
 .PHONY : src/codecs/timidity/tables.c.o
 
 src/codecs/timidity/tables.i: src/codecs/timidity/tables.c.i
@@ -767,7 +820,7 @@ src/codecs/timidity/tables.i: src/codecs/timidity/tables.c.i
 
 # target to preprocess a source file
 src/codecs/timidity/tables.c.i:
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/build.make _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/src/codecs/timidity/tables.c.i
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/build.make _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/src/codecs/timidity/tables.c.i
 .PHONY : src/codecs/timidity/tables.c.i
 
 src/codecs/timidity/tables.s: src/codecs/timidity/tables.c.s
@@ -775,7 +828,7 @@ src/codecs/timidity/tables.s: src/codecs/timidity/tables.c.s
 
 # target to generate assembly for a file
 src/codecs/timidity/tables.c.s:
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/build.make _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/src/codecs/timidity/tables.c.s
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/build.make _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/src/codecs/timidity/tables.c.s
 .PHONY : src/codecs/timidity/tables.c.s
 
 src/codecs/timidity/timidity.o: src/codecs/timidity/timidity.c.o
@@ -783,7 +836,7 @@ src/codecs/timidity/timidity.o: src/codecs/timidity/timidity.c.o
 
 # target to build an object file
 src/codecs/timidity/timidity.c.o:
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/build.make _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/src/codecs/timidity/timidity.c.o
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/build.make _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/src/codecs/timidity/timidity.c.o
 .PHONY : src/codecs/timidity/timidity.c.o
 
 src/codecs/timidity/timidity.i: src/codecs/timidity/timidity.c.i
@@ -791,7 +844,7 @@ src/codecs/timidity/timidity.i: src/codecs/timidity/timidity.c.i
 
 # target to preprocess a source file
 src/codecs/timidity/timidity.c.i:
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/build.make _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/src/codecs/timidity/timidity.c.i
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/build.make _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/src/codecs/timidity/timidity.c.i
 .PHONY : src/codecs/timidity/timidity.c.i
 
 src/codecs/timidity/timidity.s: src/codecs/timidity/timidity.c.s
@@ -799,7 +852,7 @@ src/codecs/timidity/timidity.s: src/codecs/timidity/timidity.c.s
 
 # target to generate assembly for a file
 src/codecs/timidity/timidity.c.s:
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/build.make _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/src/codecs/timidity/timidity.c.s
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/build.make _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/src/codecs/timidity/timidity.c.s
 .PHONY : src/codecs/timidity/timidity.c.s
 
 src/effect_position.o: src/effect_position.c.o
@@ -807,7 +860,7 @@ src/effect_position.o: src/effect_position.c.o
 
 # target to build an object file
 src/effect_position.c.o:
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/build.make _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/src/effect_position.c.o
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/build.make _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/src/effect_position.c.o
 .PHONY : src/effect_position.c.o
 
 src/effect_position.i: src/effect_position.c.i
@@ -815,7 +868,7 @@ src/effect_position.i: src/effect_position.c.i
 
 # target to preprocess a source file
 src/effect_position.c.i:
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/build.make _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/src/effect_position.c.i
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/build.make _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/src/effect_position.c.i
 .PHONY : src/effect_position.c.i
 
 src/effect_position.s: src/effect_position.c.s
@@ -823,7 +876,7 @@ src/effect_position.s: src/effect_position.c.s
 
 # target to generate assembly for a file
 src/effect_position.c.s:
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/build.make _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/src/effect_position.c.s
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/build.make _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/src/effect_position.c.s
 .PHONY : src/effect_position.c.s
 
 src/effect_stereoreverse.o: src/effect_stereoreverse.c.o
@@ -831,7 +884,7 @@ src/effect_stereoreverse.o: src/effect_stereoreverse.c.o
 
 # target to build an object file
 src/effect_stereoreverse.c.o:
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/build.make _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/src/effect_stereoreverse.c.o
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/build.make _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/src/effect_stereoreverse.c.o
 .PHONY : src/effect_stereoreverse.c.o
 
 src/effect_stereoreverse.i: src/effect_stereoreverse.c.i
@@ -839,7 +892,7 @@ src/effect_stereoreverse.i: src/effect_stereoreverse.c.i
 
 # target to preprocess a source file
 src/effect_stereoreverse.c.i:
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/build.make _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/src/effect_stereoreverse.c.i
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/build.make _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/src/effect_stereoreverse.c.i
 .PHONY : src/effect_stereoreverse.c.i
 
 src/effect_stereoreverse.s: src/effect_stereoreverse.c.s
@@ -847,7 +900,7 @@ src/effect_stereoreverse.s: src/effect_stereoreverse.c.s
 
 # target to generate assembly for a file
 src/effect_stereoreverse.c.s:
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/build.make _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/src/effect_stereoreverse.c.s
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/build.make _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/src/effect_stereoreverse.c.s
 .PHONY : src/effect_stereoreverse.c.s
 
 src/effects_internal.o: src/effects_internal.c.o
@@ -855,7 +908,7 @@ src/effects_internal.o: src/effects_internal.c.o
 
 # target to build an object file
 src/effects_internal.c.o:
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/build.make _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/src/effects_internal.c.o
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/build.make _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/src/effects_internal.c.o
 .PHONY : src/effects_internal.c.o
 
 src/effects_internal.i: src/effects_internal.c.i
@@ -863,7 +916,7 @@ src/effects_internal.i: src/effects_internal.c.i
 
 # target to preprocess a source file
 src/effects_internal.c.i:
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/build.make _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/src/effects_internal.c.i
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/build.make _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/src/effects_internal.c.i
 .PHONY : src/effects_internal.c.i
 
 src/effects_internal.s: src/effects_internal.c.s
@@ -871,7 +924,7 @@ src/effects_internal.s: src/effects_internal.c.s
 
 # target to generate assembly for a file
 src/effects_internal.c.s:
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/build.make _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/src/effects_internal.c.s
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/build.make _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/src/effects_internal.c.s
 .PHONY : src/effects_internal.c.s
 
 src/mixer.o: src/mixer.c.o
@@ -879,7 +932,7 @@ src/mixer.o: src/mixer.c.o
 
 # target to build an object file
 src/mixer.c.o:
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/build.make _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/src/mixer.c.o
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/build.make _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/src/mixer.c.o
 .PHONY : src/mixer.c.o
 
 src/mixer.i: src/mixer.c.i
@@ -887,7 +940,7 @@ src/mixer.i: src/mixer.c.i
 
 # target to preprocess a source file
 src/mixer.c.i:
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/build.make _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/src/mixer.c.i
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/build.make _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/src/mixer.c.i
 .PHONY : src/mixer.c.i
 
 src/mixer.s: src/mixer.c.s
@@ -895,7 +948,7 @@ src/mixer.s: src/mixer.c.s
 
 # target to generate assembly for a file
 src/mixer.c.s:
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/build.make _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/src/mixer.c.s
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/build.make _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/src/mixer.c.s
 .PHONY : src/mixer.c.s
 
 src/music.o: src/music.c.o
@@ -903,7 +956,7 @@ src/music.o: src/music.c.o
 
 # target to build an object file
 src/music.c.o:
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/build.make _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/src/music.c.o
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/build.make _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/src/music.c.o
 .PHONY : src/music.c.o
 
 src/music.i: src/music.c.i
@@ -911,7 +964,7 @@ src/music.i: src/music.c.i
 
 # target to preprocess a source file
 src/music.c.i:
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/build.make _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/src/music.c.i
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/build.make _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/src/music.c.i
 .PHONY : src/music.c.i
 
 src/music.s: src/music.c.s
@@ -919,7 +972,7 @@ src/music.s: src/music.c.s
 
 # target to generate assembly for a file
 src/music.c.s:
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/build.make _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/src/music.c.s
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/build.make _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/src/music.c.s
 .PHONY : src/music.c.s
 
 src/utils.o: src/utils.c.o
@@ -927,7 +980,7 @@ src/utils.o: src/utils.c.o
 
 # target to build an object file
 src/utils.c.o:
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/build.make _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/src/utils.c.o
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/build.make _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/src/utils.c.o
 .PHONY : src/utils.c.o
 
 src/utils.i: src/utils.c.i
@@ -935,7 +988,7 @@ src/utils.i: src/utils.c.i
 
 # target to preprocess a source file
 src/utils.c.i:
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/build.make _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/src/utils.c.i
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/build.make _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/src/utils.c.i
 .PHONY : src/utils.c.i
 
 src/utils.s: src/utils.c.s
@@ -943,7 +996,7 @@ src/utils.s: src/utils.c.s
 
 # target to generate assembly for a file
 src/utils.c.s:
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/build.make _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/src/utils.c.s
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/build.make _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/src/utils.c.s
 .PHONY : src/utils.c.s
 
 # Help Target
@@ -954,7 +1007,12 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
+	@echo "... SDL2_mixer_autogen"
+	@echo "... SDL2_mixer_autogen_timestamp_deps"
 	@echo "... SDL2_mixer"
+	@echo "... SDL2_mixer_autogen/mocs_compilation.o"
+	@echo "... SDL2_mixer_autogen/mocs_compilation.i"
+	@echo "... SDL2_mixer_autogen/mocs_compilation.s"
 	@echo "... src/codecs/load_aiff.o"
 	@echo "... src/codecs/load_aiff.i"
 	@echo "... src/codecs/load_aiff.s"
@@ -1068,6 +1126,7 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20 && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20 && $(CMAKE_COMMAND) -P /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/CMakeFiles/VerifyGlobs.cmake
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20 && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

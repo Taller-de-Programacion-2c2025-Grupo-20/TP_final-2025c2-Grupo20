@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-subbuild
+CMAKE_SOURCE_DIR = /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-subbuild
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-subbuild
+CMAKE_BINARY_DIR = /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-subbuild
 
 # Utility rule file for sdl2-populate.
 
@@ -77,60 +77,60 @@ CMakeFiles/sdl2-populate-complete: sdl2-populate-prefix/src/sdl2-populate-stamp/
 CMakeFiles/sdl2-populate-complete: sdl2-populate-prefix/src/sdl2-populate-stamp/sdl2-populate-build
 CMakeFiles/sdl2-populate-complete: sdl2-populate-prefix/src/sdl2-populate-stamp/sdl2-populate-install
 CMakeFiles/sdl2-populate-complete: sdl2-populate-prefix/src/sdl2-populate-stamp/sdl2-populate-test
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-subbuild/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Completed 'sdl2-populate'"
-	/usr/bin/cmake -E make_directory /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-subbuild/CMakeFiles
-	/usr/bin/cmake -E touch /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-subbuild/CMakeFiles/sdl2-populate-complete
-	/usr/bin/cmake -E touch /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-subbuild/sdl2-populate-prefix/src/sdl2-populate-stamp/sdl2-populate-done
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-subbuild/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Completed 'sdl2-populate'"
+	/usr/bin/cmake -E make_directory /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-subbuild/CMakeFiles
+	/usr/bin/cmake -E touch /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-subbuild/CMakeFiles/sdl2-populate-complete
+	/usr/bin/cmake -E touch /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-subbuild/sdl2-populate-prefix/src/sdl2-populate-stamp/sdl2-populate-done
 
 sdl2-populate-prefix/src/sdl2-populate-stamp/sdl2-populate-update:
 .PHONY : sdl2-populate-prefix/src/sdl2-populate-stamp/sdl2-populate-update
 
 sdl2-populate-prefix/src/sdl2-populate-stamp/sdl2-populate-build: sdl2-populate-prefix/src/sdl2-populate-stamp/sdl2-populate-configure
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-subbuild/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "No build step for 'sdl2-populate'"
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-build && /usr/bin/cmake -E echo_append
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-build && /usr/bin/cmake -E touch /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-subbuild/sdl2-populate-prefix/src/sdl2-populate-stamp/sdl2-populate-build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-subbuild/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "No build step for 'sdl2-populate'"
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build && /usr/bin/cmake -E echo_append
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build && /usr/bin/cmake -E touch /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-subbuild/sdl2-populate-prefix/src/sdl2-populate-stamp/sdl2-populate-build
 
 sdl2-populate-prefix/src/sdl2-populate-stamp/sdl2-populate-configure: sdl2-populate-prefix/tmp/sdl2-populate-cfgcmd.txt
 sdl2-populate-prefix/src/sdl2-populate-stamp/sdl2-populate-configure: sdl2-populate-prefix/src/sdl2-populate-stamp/sdl2-populate-patch
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-subbuild/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "No configure step for 'sdl2-populate'"
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-build && /usr/bin/cmake -E echo_append
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-build && /usr/bin/cmake -E touch /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-subbuild/sdl2-populate-prefix/src/sdl2-populate-stamp/sdl2-populate-configure
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-subbuild/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "No configure step for 'sdl2-populate'"
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build && /usr/bin/cmake -E echo_append
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build && /usr/bin/cmake -E touch /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-subbuild/sdl2-populate-prefix/src/sdl2-populate-stamp/sdl2-populate-configure
 
 sdl2-populate-prefix/src/sdl2-populate-stamp/sdl2-populate-download: sdl2-populate-prefix/src/sdl2-populate-stamp/sdl2-populate-gitinfo.txt
 sdl2-populate-prefix/src/sdl2-populate-stamp/sdl2-populate-download: sdl2-populate-prefix/src/sdl2-populate-stamp/sdl2-populate-mkdir
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-subbuild/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Performing download step (git clone) for 'sdl2-populate'"
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps && /usr/bin/cmake -P /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-subbuild/sdl2-populate-prefix/tmp/sdl2-populate-gitclone.cmake
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps && /usr/bin/cmake -E touch /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-subbuild/sdl2-populate-prefix/src/sdl2-populate-stamp/sdl2-populate-download
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-subbuild/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Performing download step (git clone) for 'sdl2-populate'"
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps && /usr/bin/cmake -P /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-subbuild/sdl2-populate-prefix/tmp/sdl2-populate-gitclone.cmake
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps && /usr/bin/cmake -E touch /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-subbuild/sdl2-populate-prefix/src/sdl2-populate-stamp/sdl2-populate-download
 
 sdl2-populate-prefix/src/sdl2-populate-stamp/sdl2-populate-install: sdl2-populate-prefix/src/sdl2-populate-stamp/sdl2-populate-build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-subbuild/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "No install step for 'sdl2-populate'"
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-build && /usr/bin/cmake -E echo_append
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-build && /usr/bin/cmake -E touch /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-subbuild/sdl2-populate-prefix/src/sdl2-populate-stamp/sdl2-populate-install
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-subbuild/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "No install step for 'sdl2-populate'"
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build && /usr/bin/cmake -E echo_append
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build && /usr/bin/cmake -E touch /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-subbuild/sdl2-populate-prefix/src/sdl2-populate-stamp/sdl2-populate-install
 
 sdl2-populate-prefix/src/sdl2-populate-stamp/sdl2-populate-mkdir:
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-subbuild/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Creating directories for 'sdl2-populate'"
-	/usr/bin/cmake -Dcfgdir= -P /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-subbuild/sdl2-populate-prefix/tmp/sdl2-populate-mkdirs.cmake
-	/usr/bin/cmake -E touch /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-subbuild/sdl2-populate-prefix/src/sdl2-populate-stamp/sdl2-populate-mkdir
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-subbuild/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Creating directories for 'sdl2-populate'"
+	/usr/bin/cmake -Dcfgdir= -P /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-subbuild/sdl2-populate-prefix/tmp/sdl2-populate-mkdirs.cmake
+	/usr/bin/cmake -E touch /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-subbuild/sdl2-populate-prefix/src/sdl2-populate-stamp/sdl2-populate-mkdir
 
 sdl2-populate-prefix/src/sdl2-populate-stamp/sdl2-populate-patch: sdl2-populate-prefix/src/sdl2-populate-stamp/sdl2-populate-patch-info.txt
 sdl2-populate-prefix/src/sdl2-populate-stamp/sdl2-populate-patch: sdl2-populate-prefix/src/sdl2-populate-stamp/sdl2-populate-update
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-subbuild/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "No patch step for 'sdl2-populate'"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-subbuild/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "No patch step for 'sdl2-populate'"
 	/usr/bin/cmake -E echo_append
-	/usr/bin/cmake -E touch /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-subbuild/sdl2-populate-prefix/src/sdl2-populate-stamp/sdl2-populate-patch
+	/usr/bin/cmake -E touch /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-subbuild/sdl2-populate-prefix/src/sdl2-populate-stamp/sdl2-populate-patch
 
 sdl2-populate-prefix/src/sdl2-populate-stamp/sdl2-populate-update:
 .PHONY : sdl2-populate-prefix/src/sdl2-populate-stamp/sdl2-populate-update
 
 sdl2-populate-prefix/src/sdl2-populate-stamp/sdl2-populate-test: sdl2-populate-prefix/src/sdl2-populate-stamp/sdl2-populate-install
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-subbuild/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "No test step for 'sdl2-populate'"
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-build && /usr/bin/cmake -E echo_append
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-build && /usr/bin/cmake -E touch /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-subbuild/sdl2-populate-prefix/src/sdl2-populate-stamp/sdl2-populate-test
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-subbuild/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "No test step for 'sdl2-populate'"
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build && /usr/bin/cmake -E echo_append
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build && /usr/bin/cmake -E touch /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-subbuild/sdl2-populate-prefix/src/sdl2-populate-stamp/sdl2-populate-test
 
 sdl2-populate-prefix/src/sdl2-populate-stamp/sdl2-populate-update: sdl2-populate-prefix/tmp/sdl2-populate-gitupdate.cmake
 sdl2-populate-prefix/src/sdl2-populate-stamp/sdl2-populate-update: sdl2-populate-prefix/src/sdl2-populate-stamp/sdl2-populate-update-info.txt
 sdl2-populate-prefix/src/sdl2-populate-stamp/sdl2-populate-update: sdl2-populate-prefix/src/sdl2-populate-stamp/sdl2-populate-download
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-subbuild/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Performing update step for 'sdl2-populate'"
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-src && /usr/bin/cmake -Dcan_fetch=YES -P /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-subbuild/sdl2-populate-prefix/tmp/sdl2-populate-gitupdate.cmake
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-subbuild/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Performing update step for 'sdl2-populate'"
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-src && /usr/bin/cmake -Dcan_fetch=YES -P /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-subbuild/sdl2-populate-prefix/tmp/sdl2-populate-gitupdate.cmake
 
 sdl2-populate: CMakeFiles/sdl2-populate
 sdl2-populate: CMakeFiles/sdl2-populate-complete
@@ -154,6 +154,6 @@ CMakeFiles/sdl2-populate.dir/clean:
 .PHONY : CMakeFiles/sdl2-populate.dir/clean
 
 CMakeFiles/sdl2-populate.dir/depend:
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-subbuild && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-subbuild /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-subbuild /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-subbuild /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-subbuild /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-subbuild/CMakeFiles/sdl2-populate.dir/DependInfo.cmake "--color=$(COLOR)"
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-subbuild && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-subbuild /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-subbuild /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-subbuild /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-subbuild /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-subbuild/CMakeFiles/sdl2-populate.dir/DependInfo.cmake "--color=$(COLOR)"
 .PHONY : CMakeFiles/sdl2-populate.dir/depend
 

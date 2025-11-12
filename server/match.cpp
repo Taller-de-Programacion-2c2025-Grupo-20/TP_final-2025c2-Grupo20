@@ -1,8 +1,9 @@
 #include "match.h"
 #include <iostream>
 
-Match::Match(uint8_t id) :
+Match::Match(uint8_t id, const std::string& name) :
     match_id(id),
+    name(name),
     running(false),
     world(b2Vec2(0,0), true), 
     clients_queues(),
@@ -41,7 +42,7 @@ bool Match::is_full() const {
 }
 
 bool Match::is_running() const {
-    return is_running;
+    return running;
 }
 
 bool Match::add_player(std::unique_ptr<ClientHandler> new_player) {
@@ -50,7 +51,7 @@ bool Match::add_player(std::unique_ptr<ClientHandler> new_player) {
     }
 
     std::lock_guard<std::mutex> lock(clients_mtx);
-    uint8_t player_id = new_player->client_id();
+    uint8_t player_id = new_player->get_id();
 
     Queue<GameStateDTO>& sender_queue = clients_queues.addQueue(player_id);
 
@@ -65,11 +66,20 @@ void Match::reap_dead_clients() {
     if (!is_running()) return;
     
     std::lock_guard<std::mutex> lock(clients_mtx);
+    
     clients.remove_if([this](const std::unique_ptr<ClientHandler>& client) {
-        bool is_dead = !client->is_alive();
-        if (is_dead) {
-            clients_queues.markQueueForDeletion(client->client_id());
+        if (client->is_alive()) {
+            return false;
         }
-        return is_dead;
+        std::cout << "Limpiando jugador " << (int)client->get_id() << std::endl;
+        try {
+            clients_queues.markQueueForDeletion(client->get_id());
+            client->stop();
+            client->join();
+        } catch (const std::exception& e) {
+            std::cerr << "Error (ignorable) al limpiar cliente " 
+                      << (int)client->get_id() << ": " << e.what() << std::endl;
+        }
+        return true; 
     });
 }

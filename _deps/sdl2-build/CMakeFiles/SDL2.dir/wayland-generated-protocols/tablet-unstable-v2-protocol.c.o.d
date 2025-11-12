@@ -1,5 +1,5 @@
 _deps/sdl2-build/CMakeFiles/SDL2.dir/wayland-generated-protocols/tablet-unstable-v2-protocol.c.o: \
- /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-build/wayland-generated-protocols/tablet-unstable-v2-protocol.c \
+ /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build/wayland-generated-protocols/tablet-unstable-v2-protocol.c \
  /usr/include/stdc-predef.h /usr/include/stdlib.h \
  /usr/include/x86_64-linux-gnu/bits/libc-header-start.h \
  /usr/include/features.h /usr/include/features-time64.h \

@@ -18,7 +18,7 @@ Gameloop::Gameloop(Queue<InputCmd>& gameloop_queue, QueuesMonitor& clients_queue
     world_checkpoints.push_back(std::make_unique<Checkpoint>(
                     world, b2Vec2(5.f, 10.f), 2, 2, 0
                 ));
-    world.SetContactListener(&collision_listener);
+    world.SetContactListener(&collisions_listener);
     loadMapData();
 }
 
@@ -34,11 +34,8 @@ void Gameloop::handleInput(const InputCmd& input) {
 void Gameloop::add_player(uint8_t player_id) {
     
     b2Vec2 spawn_position(5.f + player_id, 5.f); 
-    clients_cars.emplace(
-        std::piecewise_construct,
-        std::forward_as_tuple(player_id),
-        std::forward_as_tuple(world, spawn_position) 
-    );
+    auto new_car = std::make_unique<Car>(world, spawn_position);
+    clients_cars.insert(std::make_pair(player_id, std::move(new_car)));
     
     std::cout << "Auto para jugador " << (int)player_id << " creado en la simulación." << std::endl;
 }

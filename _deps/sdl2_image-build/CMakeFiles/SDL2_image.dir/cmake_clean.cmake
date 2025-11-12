@@ -1,5 +1,10 @@
 file(REMOVE_RECURSE
   ".0"
+  "CMakeFiles/SDL2_image_autogen.dir/AutogenUsed.txt"
+  "CMakeFiles/SDL2_image_autogen.dir/ParseCache.txt"
+  "SDL2_image_autogen"
+  "CMakeFiles/SDL2_image.dir/SDL2_image_autogen/mocs_compilation.cpp.o"
+  "CMakeFiles/SDL2_image.dir/SDL2_image_autogen/mocs_compilation.cpp.o.d"
   "CMakeFiles/SDL2_image.dir/src/IMG.c.o"
   "CMakeFiles/SDL2_image.dir/src/IMG.c.o.d"
   "CMakeFiles/SDL2_image.dir/src/IMG_WIC.c.o"
@@ -40,6 +45,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/SDL2_image.dir/src/IMG_xpm.c.o.d"
   "CMakeFiles/SDL2_image.dir/src/IMG_xv.c.o"
   "CMakeFiles/SDL2_image.dir/src/IMG_xv.c.o.d"
+  "SDL2_image_autogen/mocs_compilation.cpp"
+  "SDL2_image_autogen/timestamp"
   "libSDL2_image-2.0.pdb"
   "libSDL2_image-2.0.so"
   "libSDL2_image-2.0.so.0"
@@ -47,6 +54,6 @@ file(REMOVE_RECURSE
 )
 
 # Per-language clean rules from dependency scanning.
-foreach(lang C)
+foreach(lang C CXX)
   include(CMakeFiles/SDL2_image.dir/cmake_clean_${lang}.cmake OPTIONAL)
 endforeach()

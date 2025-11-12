@@ -3,9 +3,9 @@
 # No other meaning or use of this file is supported.
 
 method=git
-command=/usr/bin/cmake;-P;/home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2_image-subbuild/sdl2_image-populate-prefix/tmp/sdl2_image-populate-gitclone.cmake
-source_dir=/home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2_image-src
-work_dir=/home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps
+command=/usr/bin/cmake;-P;/home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2_image-subbuild/sdl2_image-populate-prefix/tmp/sdl2_image-populate-gitclone.cmake
+source_dir=/home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2_image-src
+work_dir=/home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps
 repository=https://github.com/libsdl-org/SDL_image.git
 remote=origin
 init_submodules=TRUE

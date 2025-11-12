@@ -9,6 +9,7 @@
 #include "../common/clientCommand.h"
 #include "../common/lobbyCommand.h"
 #include "../common/gameState.h"
+#include "../common/lobbyState.h"
 #include "server_protocol.h"
 #include "sender.h"
 #include "receiver.h"
@@ -29,7 +30,7 @@ public:
 
     void stop();
     void join();
-    bool is_alive();
+    bool is_alive() const;
     uint8_t get_id() const;
     void set_username(const std::string& name);
     std::string get_username() const;
@@ -37,6 +38,7 @@ public:
     void send_login_ok(uint8_t player_id);
     void start_in_lobby(Queue<LobbyCommand>& lobby_queue);
     void connect_to_match(Queue<InputCmd>& game_queue, Queue<GameStateDTO>& sender_queue);
+    void send_lobby_update(const LobbyStateDTO& state);
 };
 
 #endif

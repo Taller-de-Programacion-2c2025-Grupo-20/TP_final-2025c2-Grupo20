@@ -1,5 +1,10 @@
 file(REMOVE_RECURSE
   ".0"
+  "CMakeFiles/SDL2_autogen.dir/AutogenUsed.txt"
+  "CMakeFiles/SDL2_autogen.dir/ParseCache.txt"
+  "SDL2_autogen"
+  "CMakeFiles/SDL2.dir/SDL2_autogen/mocs_compilation.cpp.o"
+  "CMakeFiles/SDL2.dir/SDL2_autogen/mocs_compilation.cpp.o.d"
   "CMakeFiles/SDL2.dir/src/SDL.c.o"
   "CMakeFiles/SDL2.dir/src/SDL.c.o.d"
   "CMakeFiles/SDL2.dir/src/SDL_assert.c.o"
@@ -472,6 +477,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/SDL2.dir/wayland-generated-protocols/xdg-output-unstable-v1-protocol.c.o.d"
   "CMakeFiles/SDL2.dir/wayland-generated-protocols/xdg-shell-protocol.c.o"
   "CMakeFiles/SDL2.dir/wayland-generated-protocols/xdg-shell-protocol.c.o.d"
+  "SDL2_autogen/mocs_compilation.cpp"
+  "SDL2_autogen/timestamp"
   "libSDL2-2.0.pdb"
   "libSDL2-2.0.so"
   "libSDL2-2.0.so.0"
@@ -507,6 +514,6 @@ file(REMOVE_RECURSE
 )
 
 # Per-language clean rules from dependency scanning.
-foreach(lang C)
+foreach(lang C CXX)
   include(CMakeFiles/SDL2.dir/cmake_clean_${lang}.cmake OPTIONAL)
 endforeach()

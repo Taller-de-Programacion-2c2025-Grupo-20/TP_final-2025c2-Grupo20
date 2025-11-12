@@ -222,6 +222,7 @@ CMakeFiles/taller_server.dir/server/sender.cpp.o: \
  /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/server/../common/socket.h \
  /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/server/../common/clientCommand.h \
  /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/server/../common/constants.h \
+ /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/server/../common/lobbyState.h \
  /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/server/../common/liberror.h \
  /usr/include/c++/13/chrono /usr/include/c++/13/sstream \
  /usr/include/c++/13/bits/sstream.tcc /usr/include/c++/13/bits/stl_algo.h \

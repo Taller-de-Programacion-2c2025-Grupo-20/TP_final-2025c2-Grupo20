@@ -1,4 +1,9 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/SDL2_test_autogen.dir/AutogenUsed.txt"
+  "CMakeFiles/SDL2_test_autogen.dir/ParseCache.txt"
+  "SDL2_test_autogen"
+  "CMakeFiles/SDL2_test.dir/SDL2_test_autogen/mocs_compilation.cpp.o"
+  "CMakeFiles/SDL2_test.dir/SDL2_test_autogen/mocs_compilation.cpp.o.d"
   "CMakeFiles/SDL2_test.dir/src/test/SDL_test_assert.c.o"
   "CMakeFiles/SDL2_test.dir/src/test/SDL_test_assert.c.o.d"
   "CMakeFiles/SDL2_test.dir/src/test/SDL_test_common.c.o"
@@ -31,11 +36,13 @@ file(REMOVE_RECURSE
   "CMakeFiles/SDL2_test.dir/src/test/SDL_test_memory.c.o.d"
   "CMakeFiles/SDL2_test.dir/src/test/SDL_test_random.c.o"
   "CMakeFiles/SDL2_test.dir/src/test/SDL_test_random.c.o.d"
+  "SDL2_test_autogen/mocs_compilation.cpp"
+  "SDL2_test_autogen/timestamp"
   "libSDL2_test.a"
   "libSDL2_test.pdb"
 )
 
 # Per-language clean rules from dependency scanning.
-foreach(lang C)
+foreach(lang C CXX)
   include(CMakeFiles/SDL2_test.dir/cmake_clean_${lang}.cmake OPTIONAL)
 endforeach()

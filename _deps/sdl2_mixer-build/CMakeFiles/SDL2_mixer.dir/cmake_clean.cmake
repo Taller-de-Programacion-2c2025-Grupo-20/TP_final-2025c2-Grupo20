@@ -1,5 +1,10 @@
 file(REMOVE_RECURSE
   ".0"
+  "CMakeFiles/SDL2_mixer_autogen.dir/AutogenUsed.txt"
+  "CMakeFiles/SDL2_mixer_autogen.dir/ParseCache.txt"
+  "SDL2_mixer_autogen"
+  "CMakeFiles/SDL2_mixer.dir/SDL2_mixer_autogen/mocs_compilation.cpp.o"
+  "CMakeFiles/SDL2_mixer.dir/SDL2_mixer_autogen/mocs_compilation.cpp.o.d"
   "CMakeFiles/SDL2_mixer.dir/src/codecs/load_aiff.c.o"
   "CMakeFiles/SDL2_mixer.dir/src/codecs/load_aiff.c.o.d"
   "CMakeFiles/SDL2_mixer.dir/src/codecs/load_voc.c.o"
@@ -68,6 +73,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/SDL2_mixer.dir/src/music.c.o.d"
   "CMakeFiles/SDL2_mixer.dir/src/utils.c.o"
   "CMakeFiles/SDL2_mixer.dir/src/utils.c.o.d"
+  "SDL2_mixer_autogen/mocs_compilation.cpp"
+  "SDL2_mixer_autogen/timestamp"
   "libSDL2_mixer-2.0.pdb"
   "libSDL2_mixer-2.0.so"
   "libSDL2_mixer-2.0.so.0"
@@ -75,6 +82,6 @@ file(REMOVE_RECURSE
 )
 
 # Per-language clean rules from dependency scanning.
-foreach(lang C)
+foreach(lang C CXX)
   include(CMakeFiles/SDL2_mixer.dir/cmake_clean_${lang}.cmake OPTIONAL)
 endforeach()

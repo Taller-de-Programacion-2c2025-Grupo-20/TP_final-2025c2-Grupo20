@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20
+CMAKE_SOURCE_DIR = /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20
+CMAKE_BINARY_DIR = /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20
 
 # Utility rule file for uninstall.
 
@@ -67,7 +67,7 @@ include _deps/sdl2-build/CMakeFiles/uninstall.dir/compiler_depend.make
 include _deps/sdl2-build/CMakeFiles/uninstall.dir/progress.make
 
 _deps/sdl2-build/CMakeFiles/uninstall:
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-build && /usr/bin/cmake -P /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-build/cmake_uninstall.cmake
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build && /usr/bin/cmake -P /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build/cmake_uninstall.cmake
 
 uninstall: _deps/sdl2-build/CMakeFiles/uninstall
 uninstall: _deps/sdl2-build/CMakeFiles/uninstall.dir/build.make
@@ -78,10 +78,10 @@ _deps/sdl2-build/CMakeFiles/uninstall.dir/build: uninstall
 .PHONY : _deps/sdl2-build/CMakeFiles/uninstall.dir/build
 
 _deps/sdl2-build/CMakeFiles/uninstall.dir/clean:
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-build && $(CMAKE_COMMAND) -P CMakeFiles/uninstall.dir/cmake_clean.cmake
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build && $(CMAKE_COMMAND) -P CMakeFiles/uninstall.dir/cmake_clean.cmake
 .PHONY : _deps/sdl2-build/CMakeFiles/uninstall.dir/clean
 
 _deps/sdl2-build/CMakeFiles/uninstall.dir/depend:
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20 && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20 /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-src /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20 /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-build /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-build/CMakeFiles/uninstall.dir/DependInfo.cmake "--color=$(COLOR)"
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20 && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20 /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-src /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20 /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build/CMakeFiles/uninstall.dir/DependInfo.cmake "--color=$(COLOR)"
 .PHONY : _deps/sdl2-build/CMakeFiles/uninstall.dir/depend
 

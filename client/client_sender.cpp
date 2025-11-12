@@ -7,7 +7,7 @@ void ClientSender::run() {
     while (should_keep_running()) {
         try {
             InputCmd response = client_queue.pop();
-            protocol.sendInput(response);
+            protocol.send_input(response);
         } catch (const ClosedQueue&) {
             break;
         } catch (const LibError& e) {

@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2_mixer-subbuild
+CMAKE_SOURCE_DIR = /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2_mixer-subbuild
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2_mixer-subbuild
+CMAKE_BINARY_DIR = /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2_mixer-subbuild
 
 # Utility rule file for sdl2_mixer-populate.
 
@@ -77,60 +77,60 @@ CMakeFiles/sdl2_mixer-populate-complete: sdl2_mixer-populate-prefix/src/sdl2_mix
 CMakeFiles/sdl2_mixer-populate-complete: sdl2_mixer-populate-prefix/src/sdl2_mixer-populate-stamp/sdl2_mixer-populate-build
 CMakeFiles/sdl2_mixer-populate-complete: sdl2_mixer-populate-prefix/src/sdl2_mixer-populate-stamp/sdl2_mixer-populate-install
 CMakeFiles/sdl2_mixer-populate-complete: sdl2_mixer-populate-prefix/src/sdl2_mixer-populate-stamp/sdl2_mixer-populate-test
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2_mixer-subbuild/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Completed 'sdl2_mixer-populate'"
-	/usr/bin/cmake -E make_directory /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2_mixer-subbuild/CMakeFiles
-	/usr/bin/cmake -E touch /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2_mixer-subbuild/CMakeFiles/sdl2_mixer-populate-complete
-	/usr/bin/cmake -E touch /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2_mixer-subbuild/sdl2_mixer-populate-prefix/src/sdl2_mixer-populate-stamp/sdl2_mixer-populate-done
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2_mixer-subbuild/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Completed 'sdl2_mixer-populate'"
+	/usr/bin/cmake -E make_directory /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2_mixer-subbuild/CMakeFiles
+	/usr/bin/cmake -E touch /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2_mixer-subbuild/CMakeFiles/sdl2_mixer-populate-complete
+	/usr/bin/cmake -E touch /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2_mixer-subbuild/sdl2_mixer-populate-prefix/src/sdl2_mixer-populate-stamp/sdl2_mixer-populate-done
 
 sdl2_mixer-populate-prefix/src/sdl2_mixer-populate-stamp/sdl2_mixer-populate-update:
 .PHONY : sdl2_mixer-populate-prefix/src/sdl2_mixer-populate-stamp/sdl2_mixer-populate-update
 
 sdl2_mixer-populate-prefix/src/sdl2_mixer-populate-stamp/sdl2_mixer-populate-build: sdl2_mixer-populate-prefix/src/sdl2_mixer-populate-stamp/sdl2_mixer-populate-configure
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2_mixer-subbuild/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "No build step for 'sdl2_mixer-populate'"
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2_mixer-build && /usr/bin/cmake -E echo_append
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2_mixer-build && /usr/bin/cmake -E touch /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2_mixer-subbuild/sdl2_mixer-populate-prefix/src/sdl2_mixer-populate-stamp/sdl2_mixer-populate-build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2_mixer-subbuild/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "No build step for 'sdl2_mixer-populate'"
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2_mixer-build && /usr/bin/cmake -E echo_append
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2_mixer-build && /usr/bin/cmake -E touch /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2_mixer-subbuild/sdl2_mixer-populate-prefix/src/sdl2_mixer-populate-stamp/sdl2_mixer-populate-build
 
 sdl2_mixer-populate-prefix/src/sdl2_mixer-populate-stamp/sdl2_mixer-populate-configure: sdl2_mixer-populate-prefix/tmp/sdl2_mixer-populate-cfgcmd.txt
 sdl2_mixer-populate-prefix/src/sdl2_mixer-populate-stamp/sdl2_mixer-populate-configure: sdl2_mixer-populate-prefix/src/sdl2_mixer-populate-stamp/sdl2_mixer-populate-patch
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2_mixer-subbuild/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "No configure step for 'sdl2_mixer-populate'"
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2_mixer-build && /usr/bin/cmake -E echo_append
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2_mixer-build && /usr/bin/cmake -E touch /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2_mixer-subbuild/sdl2_mixer-populate-prefix/src/sdl2_mixer-populate-stamp/sdl2_mixer-populate-configure
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2_mixer-subbuild/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "No configure step for 'sdl2_mixer-populate'"
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2_mixer-build && /usr/bin/cmake -E echo_append
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2_mixer-build && /usr/bin/cmake -E touch /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2_mixer-subbuild/sdl2_mixer-populate-prefix/src/sdl2_mixer-populate-stamp/sdl2_mixer-populate-configure
 
 sdl2_mixer-populate-prefix/src/sdl2_mixer-populate-stamp/sdl2_mixer-populate-download: sdl2_mixer-populate-prefix/src/sdl2_mixer-populate-stamp/sdl2_mixer-populate-gitinfo.txt
 sdl2_mixer-populate-prefix/src/sdl2_mixer-populate-stamp/sdl2_mixer-populate-download: sdl2_mixer-populate-prefix/src/sdl2_mixer-populate-stamp/sdl2_mixer-populate-mkdir
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2_mixer-subbuild/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Performing download step (git clone) for 'sdl2_mixer-populate'"
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps && /usr/bin/cmake -P /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2_mixer-subbuild/sdl2_mixer-populate-prefix/tmp/sdl2_mixer-populate-gitclone.cmake
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps && /usr/bin/cmake -E touch /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2_mixer-subbuild/sdl2_mixer-populate-prefix/src/sdl2_mixer-populate-stamp/sdl2_mixer-populate-download
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2_mixer-subbuild/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Performing download step (git clone) for 'sdl2_mixer-populate'"
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps && /usr/bin/cmake -P /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2_mixer-subbuild/sdl2_mixer-populate-prefix/tmp/sdl2_mixer-populate-gitclone.cmake
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps && /usr/bin/cmake -E touch /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2_mixer-subbuild/sdl2_mixer-populate-prefix/src/sdl2_mixer-populate-stamp/sdl2_mixer-populate-download
 
 sdl2_mixer-populate-prefix/src/sdl2_mixer-populate-stamp/sdl2_mixer-populate-install: sdl2_mixer-populate-prefix/src/sdl2_mixer-populate-stamp/sdl2_mixer-populate-build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2_mixer-subbuild/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "No install step for 'sdl2_mixer-populate'"
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2_mixer-build && /usr/bin/cmake -E echo_append
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2_mixer-build && /usr/bin/cmake -E touch /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2_mixer-subbuild/sdl2_mixer-populate-prefix/src/sdl2_mixer-populate-stamp/sdl2_mixer-populate-install
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2_mixer-subbuild/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "No install step for 'sdl2_mixer-populate'"
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2_mixer-build && /usr/bin/cmake -E echo_append
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2_mixer-build && /usr/bin/cmake -E touch /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2_mixer-subbuild/sdl2_mixer-populate-prefix/src/sdl2_mixer-populate-stamp/sdl2_mixer-populate-install
 
 sdl2_mixer-populate-prefix/src/sdl2_mixer-populate-stamp/sdl2_mixer-populate-mkdir:
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2_mixer-subbuild/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Creating directories for 'sdl2_mixer-populate'"
-	/usr/bin/cmake -Dcfgdir= -P /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2_mixer-subbuild/sdl2_mixer-populate-prefix/tmp/sdl2_mixer-populate-mkdirs.cmake
-	/usr/bin/cmake -E touch /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2_mixer-subbuild/sdl2_mixer-populate-prefix/src/sdl2_mixer-populate-stamp/sdl2_mixer-populate-mkdir
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2_mixer-subbuild/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Creating directories for 'sdl2_mixer-populate'"
+	/usr/bin/cmake -Dcfgdir= -P /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2_mixer-subbuild/sdl2_mixer-populate-prefix/tmp/sdl2_mixer-populate-mkdirs.cmake
+	/usr/bin/cmake -E touch /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2_mixer-subbuild/sdl2_mixer-populate-prefix/src/sdl2_mixer-populate-stamp/sdl2_mixer-populate-mkdir
 
 sdl2_mixer-populate-prefix/src/sdl2_mixer-populate-stamp/sdl2_mixer-populate-patch: sdl2_mixer-populate-prefix/src/sdl2_mixer-populate-stamp/sdl2_mixer-populate-patch-info.txt
 sdl2_mixer-populate-prefix/src/sdl2_mixer-populate-stamp/sdl2_mixer-populate-patch: sdl2_mixer-populate-prefix/src/sdl2_mixer-populate-stamp/sdl2_mixer-populate-update
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2_mixer-subbuild/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "No patch step for 'sdl2_mixer-populate'"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2_mixer-subbuild/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "No patch step for 'sdl2_mixer-populate'"
 	/usr/bin/cmake -E echo_append
-	/usr/bin/cmake -E touch /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2_mixer-subbuild/sdl2_mixer-populate-prefix/src/sdl2_mixer-populate-stamp/sdl2_mixer-populate-patch
+	/usr/bin/cmake -E touch /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2_mixer-subbuild/sdl2_mixer-populate-prefix/src/sdl2_mixer-populate-stamp/sdl2_mixer-populate-patch
 
 sdl2_mixer-populate-prefix/src/sdl2_mixer-populate-stamp/sdl2_mixer-populate-update:
 .PHONY : sdl2_mixer-populate-prefix/src/sdl2_mixer-populate-stamp/sdl2_mixer-populate-update
 
 sdl2_mixer-populate-prefix/src/sdl2_mixer-populate-stamp/sdl2_mixer-populate-test: sdl2_mixer-populate-prefix/src/sdl2_mixer-populate-stamp/sdl2_mixer-populate-install
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2_mixer-subbuild/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "No test step for 'sdl2_mixer-populate'"
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2_mixer-build && /usr/bin/cmake -E echo_append
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2_mixer-build && /usr/bin/cmake -E touch /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2_mixer-subbuild/sdl2_mixer-populate-prefix/src/sdl2_mixer-populate-stamp/sdl2_mixer-populate-test
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2_mixer-subbuild/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "No test step for 'sdl2_mixer-populate'"
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2_mixer-build && /usr/bin/cmake -E echo_append
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2_mixer-build && /usr/bin/cmake -E touch /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2_mixer-subbuild/sdl2_mixer-populate-prefix/src/sdl2_mixer-populate-stamp/sdl2_mixer-populate-test
 
 sdl2_mixer-populate-prefix/src/sdl2_mixer-populate-stamp/sdl2_mixer-populate-update: sdl2_mixer-populate-prefix/tmp/sdl2_mixer-populate-gitupdate.cmake
 sdl2_mixer-populate-prefix/src/sdl2_mixer-populate-stamp/sdl2_mixer-populate-update: sdl2_mixer-populate-prefix/src/sdl2_mixer-populate-stamp/sdl2_mixer-populate-update-info.txt
 sdl2_mixer-populate-prefix/src/sdl2_mixer-populate-stamp/sdl2_mixer-populate-update: sdl2_mixer-populate-prefix/src/sdl2_mixer-populate-stamp/sdl2_mixer-populate-download
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2_mixer-subbuild/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Performing update step for 'sdl2_mixer-populate'"
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2_mixer-src && /usr/bin/cmake -Dcan_fetch=YES -P /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2_mixer-subbuild/sdl2_mixer-populate-prefix/tmp/sdl2_mixer-populate-gitupdate.cmake
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2_mixer-subbuild/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Performing update step for 'sdl2_mixer-populate'"
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2_mixer-src && /usr/bin/cmake -Dcan_fetch=YES -P /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2_mixer-subbuild/sdl2_mixer-populate-prefix/tmp/sdl2_mixer-populate-gitupdate.cmake
 
 sdl2_mixer-populate: CMakeFiles/sdl2_mixer-populate
 sdl2_mixer-populate: CMakeFiles/sdl2_mixer-populate-complete
@@ -154,6 +154,6 @@ CMakeFiles/sdl2_mixer-populate.dir/clean:
 .PHONY : CMakeFiles/sdl2_mixer-populate.dir/clean
 
 CMakeFiles/sdl2_mixer-populate.dir/depend:
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2_mixer-subbuild && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2_mixer-subbuild /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2_mixer-subbuild /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2_mixer-subbuild /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2_mixer-subbuild /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2_mixer-subbuild/CMakeFiles/sdl2_mixer-populate.dir/DependInfo.cmake "--color=$(COLOR)"
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2_mixer-subbuild && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2_mixer-subbuild /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2_mixer-subbuild /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2_mixer-subbuild /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2_mixer-subbuild /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2_mixer-subbuild/CMakeFiles/sdl2_mixer-populate.dir/DependInfo.cmake "--color=$(COLOR)"
 .PHONY : CMakeFiles/sdl2_mixer-populate.dir/depend
 

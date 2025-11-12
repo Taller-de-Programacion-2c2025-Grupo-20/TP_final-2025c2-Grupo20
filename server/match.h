@@ -5,6 +5,7 @@
 #include <memory>
 #include <mutex>
 #include <atomic>
+#include <string>
 #include "../common/thread.h"
 #include "../common/queue.h"
 #include "../common/clientCommand.h"
@@ -17,21 +18,23 @@
 class Match {
 private:
     uint8_t match_id;
+    const std::string name;
     std::atomic<bool> running;
 
     b2World world;
-    Gameloop gameloop;
     
     QueuesMonitor clients_queues;
     Queue<InputCmd> gameloop_queue;
-
+    
+    Gameloop gameloop; 
+    
     std::list<std::unique_ptr<ClientHandler>> clients;
     std::mutex clients_mtx;
 
     void reap_dead_clients();
 
 public:
-    Match(uint8_t id);
+    Match(uint8_t id, const std::string& name);
     ~Match();
 
     void run();

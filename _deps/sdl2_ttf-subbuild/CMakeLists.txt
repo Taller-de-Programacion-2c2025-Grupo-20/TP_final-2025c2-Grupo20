@@ -28,8 +28,8 @@ set_property(GLOBAL PROPERTY _CMAKE_FindGit_GIT_EXECUTABLE_VERSION
 include(ExternalProject)
 ExternalProject_Add(sdl2_ttf-populate
                      "UPDATE_DISCONNECTED" "False" "GIT_REPOSITORY" "https://github.com/libsdl-org/SDL_ttf.git" "EXTERNALPROJECT_INTERNAL_ARGUMENT_SEPARATOR" "GIT_TAG" "release-2.22.0" "GIT_SHALLOW" "TRUE" "GIT_PROGRESS" "TRUE"
-                    SOURCE_DIR          "/home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2_ttf-src"
-                    BINARY_DIR          "/home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2_ttf-build"
+                    SOURCE_DIR          "/home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2_ttf-src"
+                    BINARY_DIR          "/home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2_ttf-build"
                     CONFIGURE_COMMAND   ""
                     BUILD_COMMAND       ""
                     INSTALL_COMMAND     ""

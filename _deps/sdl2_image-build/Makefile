@@ -57,10 +57,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20
+CMAKE_SOURCE_DIR = /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20
+CMAKE_BINARY_DIR = /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -87,14 +87,14 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20 && $(CMAKE_COMMAND) -E cmake_progress_start /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/CMakeFiles /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2_image-build//CMakeFiles/progress.marks
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 _deps/sdl2_image-build/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/CMakeFiles 0
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20 && $(CMAKE_COMMAND) -E cmake_progress_start /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/CMakeFiles /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2_image-build//CMakeFiles/progress.marks
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 _deps/sdl2_image-build/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 _deps/sdl2_image-build/clean
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 _deps/sdl2_image-build/clean
 .PHONY : clean
 
 # The main clean target
@@ -103,22 +103,23 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 _deps/sdl2_image-build/preinstall
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 _deps/sdl2_image-build/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 _deps/sdl2_image-build/preinstall
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 _deps/sdl2_image-build/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20 && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20 && $(CMAKE_COMMAND) -P /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/CMakeFiles/VerifyGlobs.cmake
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20 && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 _deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/rule:
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 _deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/rule
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 _deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/rule
 .PHONY : _deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/rule
 
 # Convenience name for target.
@@ -127,15 +128,67 @@ SDL2_image: _deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/rule
 
 # fast build rule for target.
 SDL2_image/fast:
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/build.make _deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/build
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/build.make _deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/build
 .PHONY : SDL2_image/fast
+
+# Convenience name for target.
+_deps/sdl2_image-build/CMakeFiles/SDL2_image_autogen_timestamp_deps.dir/rule:
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 _deps/sdl2_image-build/CMakeFiles/SDL2_image_autogen_timestamp_deps.dir/rule
+.PHONY : _deps/sdl2_image-build/CMakeFiles/SDL2_image_autogen_timestamp_deps.dir/rule
+
+# Convenience name for target.
+SDL2_image_autogen_timestamp_deps: _deps/sdl2_image-build/CMakeFiles/SDL2_image_autogen_timestamp_deps.dir/rule
+.PHONY : SDL2_image_autogen_timestamp_deps
+
+# fast build rule for target.
+SDL2_image_autogen_timestamp_deps/fast:
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_image-build/CMakeFiles/SDL2_image_autogen_timestamp_deps.dir/build.make _deps/sdl2_image-build/CMakeFiles/SDL2_image_autogen_timestamp_deps.dir/build
+.PHONY : SDL2_image_autogen_timestamp_deps/fast
+
+# Convenience name for target.
+_deps/sdl2_image-build/CMakeFiles/SDL2_image_autogen.dir/rule:
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 _deps/sdl2_image-build/CMakeFiles/SDL2_image_autogen.dir/rule
+.PHONY : _deps/sdl2_image-build/CMakeFiles/SDL2_image_autogen.dir/rule
+
+# Convenience name for target.
+SDL2_image_autogen: _deps/sdl2_image-build/CMakeFiles/SDL2_image_autogen.dir/rule
+.PHONY : SDL2_image_autogen
+
+# fast build rule for target.
+SDL2_image_autogen/fast:
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_image-build/CMakeFiles/SDL2_image_autogen.dir/build.make _deps/sdl2_image-build/CMakeFiles/SDL2_image_autogen.dir/build
+.PHONY : SDL2_image_autogen/fast
+
+SDL2_image_autogen/mocs_compilation.o: SDL2_image_autogen/mocs_compilation.cpp.o
+.PHONY : SDL2_image_autogen/mocs_compilation.o
+
+# target to build an object file
+SDL2_image_autogen/mocs_compilation.cpp.o:
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/build.make _deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/SDL2_image_autogen/mocs_compilation.cpp.o
+.PHONY : SDL2_image_autogen/mocs_compilation.cpp.o
+
+SDL2_image_autogen/mocs_compilation.i: SDL2_image_autogen/mocs_compilation.cpp.i
+.PHONY : SDL2_image_autogen/mocs_compilation.i
+
+# target to preprocess a source file
+SDL2_image_autogen/mocs_compilation.cpp.i:
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/build.make _deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/SDL2_image_autogen/mocs_compilation.cpp.i
+.PHONY : SDL2_image_autogen/mocs_compilation.cpp.i
+
+SDL2_image_autogen/mocs_compilation.s: SDL2_image_autogen/mocs_compilation.cpp.s
+.PHONY : SDL2_image_autogen/mocs_compilation.s
+
+# target to generate assembly for a file
+SDL2_image_autogen/mocs_compilation.cpp.s:
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/build.make _deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/SDL2_image_autogen/mocs_compilation.cpp.s
+.PHONY : SDL2_image_autogen/mocs_compilation.cpp.s
 
 src/IMG.o: src/IMG.c.o
 .PHONY : src/IMG.o
 
 # target to build an object file
 src/IMG.c.o:
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/build.make _deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/src/IMG.c.o
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/build.make _deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/src/IMG.c.o
 .PHONY : src/IMG.c.o
 
 src/IMG.i: src/IMG.c.i
@@ -143,7 +196,7 @@ src/IMG.i: src/IMG.c.i
 
 # target to preprocess a source file
 src/IMG.c.i:
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/build.make _deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/src/IMG.c.i
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/build.make _deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/src/IMG.c.i
 .PHONY : src/IMG.c.i
 
 src/IMG.s: src/IMG.c.s
@@ -151,7 +204,7 @@ src/IMG.s: src/IMG.c.s
 
 # target to generate assembly for a file
 src/IMG.c.s:
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/build.make _deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/src/IMG.c.s
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/build.make _deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/src/IMG.c.s
 .PHONY : src/IMG.c.s
 
 src/IMG_WIC.o: src/IMG_WIC.c.o
@@ -159,7 +212,7 @@ src/IMG_WIC.o: src/IMG_WIC.c.o
 
 # target to build an object file
 src/IMG_WIC.c.o:
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/build.make _deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/src/IMG_WIC.c.o
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/build.make _deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/src/IMG_WIC.c.o
 .PHONY : src/IMG_WIC.c.o
 
 src/IMG_WIC.i: src/IMG_WIC.c.i
@@ -167,7 +220,7 @@ src/IMG_WIC.i: src/IMG_WIC.c.i
 
 # target to preprocess a source file
 src/IMG_WIC.c.i:
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/build.make _deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/src/IMG_WIC.c.i
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/build.make _deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/src/IMG_WIC.c.i
 .PHONY : src/IMG_WIC.c.i
 
 src/IMG_WIC.s: src/IMG_WIC.c.s
@@ -175,7 +228,7 @@ src/IMG_WIC.s: src/IMG_WIC.c.s
 
 # target to generate assembly for a file
 src/IMG_WIC.c.s:
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/build.make _deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/src/IMG_WIC.c.s
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/build.make _deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/src/IMG_WIC.c.s
 .PHONY : src/IMG_WIC.c.s
 
 src/IMG_avif.o: src/IMG_avif.c.o
@@ -183,7 +236,7 @@ src/IMG_avif.o: src/IMG_avif.c.o
 
 # target to build an object file
 src/IMG_avif.c.o:
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/build.make _deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/src/IMG_avif.c.o
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/build.make _deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/src/IMG_avif.c.o
 .PHONY : src/IMG_avif.c.o
 
 src/IMG_avif.i: src/IMG_avif.c.i
@@ -191,7 +244,7 @@ src/IMG_avif.i: src/IMG_avif.c.i
 
 # target to preprocess a source file
 src/IMG_avif.c.i:
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/build.make _deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/src/IMG_avif.c.i
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/build.make _deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/src/IMG_avif.c.i
 .PHONY : src/IMG_avif.c.i
 
 src/IMG_avif.s: src/IMG_avif.c.s
@@ -199,7 +252,7 @@ src/IMG_avif.s: src/IMG_avif.c.s
 
 # target to generate assembly for a file
 src/IMG_avif.c.s:
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/build.make _deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/src/IMG_avif.c.s
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/build.make _deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/src/IMG_avif.c.s
 .PHONY : src/IMG_avif.c.s
 
 src/IMG_bmp.o: src/IMG_bmp.c.o
@@ -207,7 +260,7 @@ src/IMG_bmp.o: src/IMG_bmp.c.o
 
 # target to build an object file
 src/IMG_bmp.c.o:
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/build.make _deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/src/IMG_bmp.c.o
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/build.make _deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/src/IMG_bmp.c.o
 .PHONY : src/IMG_bmp.c.o
 
 src/IMG_bmp.i: src/IMG_bmp.c.i
@@ -215,7 +268,7 @@ src/IMG_bmp.i: src/IMG_bmp.c.i
 
 # target to preprocess a source file
 src/IMG_bmp.c.i:
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/build.make _deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/src/IMG_bmp.c.i
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/build.make _deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/src/IMG_bmp.c.i
 .PHONY : src/IMG_bmp.c.i
 
 src/IMG_bmp.s: src/IMG_bmp.c.s
@@ -223,7 +276,7 @@ src/IMG_bmp.s: src/IMG_bmp.c.s
 
 # target to generate assembly for a file
 src/IMG_bmp.c.s:
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/build.make _deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/src/IMG_bmp.c.s
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/build.make _deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/src/IMG_bmp.c.s
 .PHONY : src/IMG_bmp.c.s
 
 src/IMG_gif.o: src/IMG_gif.c.o
@@ -231,7 +284,7 @@ src/IMG_gif.o: src/IMG_gif.c.o
 
 # target to build an object file
 src/IMG_gif.c.o:
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/build.make _deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/src/IMG_gif.c.o
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/build.make _deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/src/IMG_gif.c.o
 .PHONY : src/IMG_gif.c.o
 
 src/IMG_gif.i: src/IMG_gif.c.i
@@ -239,7 +292,7 @@ src/IMG_gif.i: src/IMG_gif.c.i
 
 # target to preprocess a source file
 src/IMG_gif.c.i:
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/build.make _deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/src/IMG_gif.c.i
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/build.make _deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/src/IMG_gif.c.i
 .PHONY : src/IMG_gif.c.i
 
 src/IMG_gif.s: src/IMG_gif.c.s
@@ -247,7 +300,7 @@ src/IMG_gif.s: src/IMG_gif.c.s
 
 # target to generate assembly for a file
 src/IMG_gif.c.s:
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/build.make _deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/src/IMG_gif.c.s
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/build.make _deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/src/IMG_gif.c.s
 .PHONY : src/IMG_gif.c.s
 
 src/IMG_jpg.o: src/IMG_jpg.c.o
@@ -255,7 +308,7 @@ src/IMG_jpg.o: src/IMG_jpg.c.o
 
 # target to build an object file
 src/IMG_jpg.c.o:
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/build.make _deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/src/IMG_jpg.c.o
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/build.make _deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/src/IMG_jpg.c.o
 .PHONY : src/IMG_jpg.c.o
 
 src/IMG_jpg.i: src/IMG_jpg.c.i
@@ -263,7 +316,7 @@ src/IMG_jpg.i: src/IMG_jpg.c.i
 
 # target to preprocess a source file
 src/IMG_jpg.c.i:
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/build.make _deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/src/IMG_jpg.c.i
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/build.make _deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/src/IMG_jpg.c.i
 .PHONY : src/IMG_jpg.c.i
 
 src/IMG_jpg.s: src/IMG_jpg.c.s
@@ -271,7 +324,7 @@ src/IMG_jpg.s: src/IMG_jpg.c.s
 
 # target to generate assembly for a file
 src/IMG_jpg.c.s:
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/build.make _deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/src/IMG_jpg.c.s
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/build.make _deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/src/IMG_jpg.c.s
 .PHONY : src/IMG_jpg.c.s
 
 src/IMG_jxl.o: src/IMG_jxl.c.o
@@ -279,7 +332,7 @@ src/IMG_jxl.o: src/IMG_jxl.c.o
 
 # target to build an object file
 src/IMG_jxl.c.o:
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/build.make _deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/src/IMG_jxl.c.o
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/build.make _deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/src/IMG_jxl.c.o
 .PHONY : src/IMG_jxl.c.o
 
 src/IMG_jxl.i: src/IMG_jxl.c.i
@@ -287,7 +340,7 @@ src/IMG_jxl.i: src/IMG_jxl.c.i
 
 # target to preprocess a source file
 src/IMG_jxl.c.i:
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/build.make _deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/src/IMG_jxl.c.i
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/build.make _deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/src/IMG_jxl.c.i
 .PHONY : src/IMG_jxl.c.i
 
 src/IMG_jxl.s: src/IMG_jxl.c.s
@@ -295,7 +348,7 @@ src/IMG_jxl.s: src/IMG_jxl.c.s
 
 # target to generate assembly for a file
 src/IMG_jxl.c.s:
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/build.make _deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/src/IMG_jxl.c.s
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/build.make _deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/src/IMG_jxl.c.s
 .PHONY : src/IMG_jxl.c.s
 
 src/IMG_lbm.o: src/IMG_lbm.c.o
@@ -303,7 +356,7 @@ src/IMG_lbm.o: src/IMG_lbm.c.o
 
 # target to build an object file
 src/IMG_lbm.c.o:
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/build.make _deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/src/IMG_lbm.c.o
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/build.make _deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/src/IMG_lbm.c.o
 .PHONY : src/IMG_lbm.c.o
 
 src/IMG_lbm.i: src/IMG_lbm.c.i
@@ -311,7 +364,7 @@ src/IMG_lbm.i: src/IMG_lbm.c.i
 
 # target to preprocess a source file
 src/IMG_lbm.c.i:
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/build.make _deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/src/IMG_lbm.c.i
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/build.make _deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/src/IMG_lbm.c.i
 .PHONY : src/IMG_lbm.c.i
 
 src/IMG_lbm.s: src/IMG_lbm.c.s
@@ -319,7 +372,7 @@ src/IMG_lbm.s: src/IMG_lbm.c.s
 
 # target to generate assembly for a file
 src/IMG_lbm.c.s:
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/build.make _deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/src/IMG_lbm.c.s
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/build.make _deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/src/IMG_lbm.c.s
 .PHONY : src/IMG_lbm.c.s
 
 src/IMG_pcx.o: src/IMG_pcx.c.o
@@ -327,7 +380,7 @@ src/IMG_pcx.o: src/IMG_pcx.c.o
 
 # target to build an object file
 src/IMG_pcx.c.o:
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/build.make _deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/src/IMG_pcx.c.o
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/build.make _deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/src/IMG_pcx.c.o
 .PHONY : src/IMG_pcx.c.o
 
 src/IMG_pcx.i: src/IMG_pcx.c.i
@@ -335,7 +388,7 @@ src/IMG_pcx.i: src/IMG_pcx.c.i
 
 # target to preprocess a source file
 src/IMG_pcx.c.i:
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/build.make _deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/src/IMG_pcx.c.i
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/build.make _deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/src/IMG_pcx.c.i
 .PHONY : src/IMG_pcx.c.i
 
 src/IMG_pcx.s: src/IMG_pcx.c.s
@@ -343,7 +396,7 @@ src/IMG_pcx.s: src/IMG_pcx.c.s
 
 # target to generate assembly for a file
 src/IMG_pcx.c.s:
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/build.make _deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/src/IMG_pcx.c.s
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/build.make _deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/src/IMG_pcx.c.s
 .PHONY : src/IMG_pcx.c.s
 
 src/IMG_png.o: src/IMG_png.c.o
@@ -351,7 +404,7 @@ src/IMG_png.o: src/IMG_png.c.o
 
 # target to build an object file
 src/IMG_png.c.o:
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/build.make _deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/src/IMG_png.c.o
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/build.make _deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/src/IMG_png.c.o
 .PHONY : src/IMG_png.c.o
 
 src/IMG_png.i: src/IMG_png.c.i
@@ -359,7 +412,7 @@ src/IMG_png.i: src/IMG_png.c.i
 
 # target to preprocess a source file
 src/IMG_png.c.i:
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/build.make _deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/src/IMG_png.c.i
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/build.make _deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/src/IMG_png.c.i
 .PHONY : src/IMG_png.c.i
 
 src/IMG_png.s: src/IMG_png.c.s
@@ -367,7 +420,7 @@ src/IMG_png.s: src/IMG_png.c.s
 
 # target to generate assembly for a file
 src/IMG_png.c.s:
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/build.make _deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/src/IMG_png.c.s
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/build.make _deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/src/IMG_png.c.s
 .PHONY : src/IMG_png.c.s
 
 src/IMG_pnm.o: src/IMG_pnm.c.o
@@ -375,7 +428,7 @@ src/IMG_pnm.o: src/IMG_pnm.c.o
 
 # target to build an object file
 src/IMG_pnm.c.o:
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/build.make _deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/src/IMG_pnm.c.o
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/build.make _deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/src/IMG_pnm.c.o
 .PHONY : src/IMG_pnm.c.o
 
 src/IMG_pnm.i: src/IMG_pnm.c.i
@@ -383,7 +436,7 @@ src/IMG_pnm.i: src/IMG_pnm.c.i
 
 # target to preprocess a source file
 src/IMG_pnm.c.i:
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/build.make _deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/src/IMG_pnm.c.i
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/build.make _deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/src/IMG_pnm.c.i
 .PHONY : src/IMG_pnm.c.i
 
 src/IMG_pnm.s: src/IMG_pnm.c.s
@@ -391,7 +444,7 @@ src/IMG_pnm.s: src/IMG_pnm.c.s
 
 # target to generate assembly for a file
 src/IMG_pnm.c.s:
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/build.make _deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/src/IMG_pnm.c.s
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/build.make _deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/src/IMG_pnm.c.s
 .PHONY : src/IMG_pnm.c.s
 
 src/IMG_qoi.o: src/IMG_qoi.c.o
@@ -399,7 +452,7 @@ src/IMG_qoi.o: src/IMG_qoi.c.o
 
 # target to build an object file
 src/IMG_qoi.c.o:
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/build.make _deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/src/IMG_qoi.c.o
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/build.make _deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/src/IMG_qoi.c.o
 .PHONY : src/IMG_qoi.c.o
 
 src/IMG_qoi.i: src/IMG_qoi.c.i
@@ -407,7 +460,7 @@ src/IMG_qoi.i: src/IMG_qoi.c.i
 
 # target to preprocess a source file
 src/IMG_qoi.c.i:
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/build.make _deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/src/IMG_qoi.c.i
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/build.make _deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/src/IMG_qoi.c.i
 .PHONY : src/IMG_qoi.c.i
 
 src/IMG_qoi.s: src/IMG_qoi.c.s
@@ -415,7 +468,7 @@ src/IMG_qoi.s: src/IMG_qoi.c.s
 
 # target to generate assembly for a file
 src/IMG_qoi.c.s:
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/build.make _deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/src/IMG_qoi.c.s
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/build.make _deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/src/IMG_qoi.c.s
 .PHONY : src/IMG_qoi.c.s
 
 src/IMG_stb.o: src/IMG_stb.c.o
@@ -423,7 +476,7 @@ src/IMG_stb.o: src/IMG_stb.c.o
 
 # target to build an object file
 src/IMG_stb.c.o:
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/build.make _deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/src/IMG_stb.c.o
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/build.make _deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/src/IMG_stb.c.o
 .PHONY : src/IMG_stb.c.o
 
 src/IMG_stb.i: src/IMG_stb.c.i
@@ -431,7 +484,7 @@ src/IMG_stb.i: src/IMG_stb.c.i
 
 # target to preprocess a source file
 src/IMG_stb.c.i:
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/build.make _deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/src/IMG_stb.c.i
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/build.make _deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/src/IMG_stb.c.i
 .PHONY : src/IMG_stb.c.i
 
 src/IMG_stb.s: src/IMG_stb.c.s
@@ -439,7 +492,7 @@ src/IMG_stb.s: src/IMG_stb.c.s
 
 # target to generate assembly for a file
 src/IMG_stb.c.s:
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/build.make _deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/src/IMG_stb.c.s
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/build.make _deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/src/IMG_stb.c.s
 .PHONY : src/IMG_stb.c.s
 
 src/IMG_svg.o: src/IMG_svg.c.o
@@ -447,7 +500,7 @@ src/IMG_svg.o: src/IMG_svg.c.o
 
 # target to build an object file
 src/IMG_svg.c.o:
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/build.make _deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/src/IMG_svg.c.o
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/build.make _deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/src/IMG_svg.c.o
 .PHONY : src/IMG_svg.c.o
 
 src/IMG_svg.i: src/IMG_svg.c.i
@@ -455,7 +508,7 @@ src/IMG_svg.i: src/IMG_svg.c.i
 
 # target to preprocess a source file
 src/IMG_svg.c.i:
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/build.make _deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/src/IMG_svg.c.i
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/build.make _deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/src/IMG_svg.c.i
 .PHONY : src/IMG_svg.c.i
 
 src/IMG_svg.s: src/IMG_svg.c.s
@@ -463,7 +516,7 @@ src/IMG_svg.s: src/IMG_svg.c.s
 
 # target to generate assembly for a file
 src/IMG_svg.c.s:
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/build.make _deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/src/IMG_svg.c.s
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/build.make _deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/src/IMG_svg.c.s
 .PHONY : src/IMG_svg.c.s
 
 src/IMG_tga.o: src/IMG_tga.c.o
@@ -471,7 +524,7 @@ src/IMG_tga.o: src/IMG_tga.c.o
 
 # target to build an object file
 src/IMG_tga.c.o:
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/build.make _deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/src/IMG_tga.c.o
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/build.make _deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/src/IMG_tga.c.o
 .PHONY : src/IMG_tga.c.o
 
 src/IMG_tga.i: src/IMG_tga.c.i
@@ -479,7 +532,7 @@ src/IMG_tga.i: src/IMG_tga.c.i
 
 # target to preprocess a source file
 src/IMG_tga.c.i:
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/build.make _deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/src/IMG_tga.c.i
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/build.make _deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/src/IMG_tga.c.i
 .PHONY : src/IMG_tga.c.i
 
 src/IMG_tga.s: src/IMG_tga.c.s
@@ -487,7 +540,7 @@ src/IMG_tga.s: src/IMG_tga.c.s
 
 # target to generate assembly for a file
 src/IMG_tga.c.s:
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/build.make _deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/src/IMG_tga.c.s
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/build.make _deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/src/IMG_tga.c.s
 .PHONY : src/IMG_tga.c.s
 
 src/IMG_tif.o: src/IMG_tif.c.o
@@ -495,7 +548,7 @@ src/IMG_tif.o: src/IMG_tif.c.o
 
 # target to build an object file
 src/IMG_tif.c.o:
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/build.make _deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/src/IMG_tif.c.o
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/build.make _deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/src/IMG_tif.c.o
 .PHONY : src/IMG_tif.c.o
 
 src/IMG_tif.i: src/IMG_tif.c.i
@@ -503,7 +556,7 @@ src/IMG_tif.i: src/IMG_tif.c.i
 
 # target to preprocess a source file
 src/IMG_tif.c.i:
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/build.make _deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/src/IMG_tif.c.i
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/build.make _deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/src/IMG_tif.c.i
 .PHONY : src/IMG_tif.c.i
 
 src/IMG_tif.s: src/IMG_tif.c.s
@@ -511,7 +564,7 @@ src/IMG_tif.s: src/IMG_tif.c.s
 
 # target to generate assembly for a file
 src/IMG_tif.c.s:
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/build.make _deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/src/IMG_tif.c.s
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/build.make _deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/src/IMG_tif.c.s
 .PHONY : src/IMG_tif.c.s
 
 src/IMG_webp.o: src/IMG_webp.c.o
@@ -519,7 +572,7 @@ src/IMG_webp.o: src/IMG_webp.c.o
 
 # target to build an object file
 src/IMG_webp.c.o:
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/build.make _deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/src/IMG_webp.c.o
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/build.make _deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/src/IMG_webp.c.o
 .PHONY : src/IMG_webp.c.o
 
 src/IMG_webp.i: src/IMG_webp.c.i
@@ -527,7 +580,7 @@ src/IMG_webp.i: src/IMG_webp.c.i
 
 # target to preprocess a source file
 src/IMG_webp.c.i:
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/build.make _deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/src/IMG_webp.c.i
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/build.make _deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/src/IMG_webp.c.i
 .PHONY : src/IMG_webp.c.i
 
 src/IMG_webp.s: src/IMG_webp.c.s
@@ -535,7 +588,7 @@ src/IMG_webp.s: src/IMG_webp.c.s
 
 # target to generate assembly for a file
 src/IMG_webp.c.s:
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/build.make _deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/src/IMG_webp.c.s
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/build.make _deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/src/IMG_webp.c.s
 .PHONY : src/IMG_webp.c.s
 
 src/IMG_xcf.o: src/IMG_xcf.c.o
@@ -543,7 +596,7 @@ src/IMG_xcf.o: src/IMG_xcf.c.o
 
 # target to build an object file
 src/IMG_xcf.c.o:
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/build.make _deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/src/IMG_xcf.c.o
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/build.make _deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/src/IMG_xcf.c.o
 .PHONY : src/IMG_xcf.c.o
 
 src/IMG_xcf.i: src/IMG_xcf.c.i
@@ -551,7 +604,7 @@ src/IMG_xcf.i: src/IMG_xcf.c.i
 
 # target to preprocess a source file
 src/IMG_xcf.c.i:
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/build.make _deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/src/IMG_xcf.c.i
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/build.make _deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/src/IMG_xcf.c.i
 .PHONY : src/IMG_xcf.c.i
 
 src/IMG_xcf.s: src/IMG_xcf.c.s
@@ -559,7 +612,7 @@ src/IMG_xcf.s: src/IMG_xcf.c.s
 
 # target to generate assembly for a file
 src/IMG_xcf.c.s:
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/build.make _deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/src/IMG_xcf.c.s
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/build.make _deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/src/IMG_xcf.c.s
 .PHONY : src/IMG_xcf.c.s
 
 src/IMG_xpm.o: src/IMG_xpm.c.o
@@ -567,7 +620,7 @@ src/IMG_xpm.o: src/IMG_xpm.c.o
 
 # target to build an object file
 src/IMG_xpm.c.o:
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/build.make _deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/src/IMG_xpm.c.o
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/build.make _deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/src/IMG_xpm.c.o
 .PHONY : src/IMG_xpm.c.o
 
 src/IMG_xpm.i: src/IMG_xpm.c.i
@@ -575,7 +628,7 @@ src/IMG_xpm.i: src/IMG_xpm.c.i
 
 # target to preprocess a source file
 src/IMG_xpm.c.i:
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/build.make _deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/src/IMG_xpm.c.i
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/build.make _deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/src/IMG_xpm.c.i
 .PHONY : src/IMG_xpm.c.i
 
 src/IMG_xpm.s: src/IMG_xpm.c.s
@@ -583,7 +636,7 @@ src/IMG_xpm.s: src/IMG_xpm.c.s
 
 # target to generate assembly for a file
 src/IMG_xpm.c.s:
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/build.make _deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/src/IMG_xpm.c.s
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/build.make _deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/src/IMG_xpm.c.s
 .PHONY : src/IMG_xpm.c.s
 
 src/IMG_xv.o: src/IMG_xv.c.o
@@ -591,7 +644,7 @@ src/IMG_xv.o: src/IMG_xv.c.o
 
 # target to build an object file
 src/IMG_xv.c.o:
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/build.make _deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/src/IMG_xv.c.o
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/build.make _deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/src/IMG_xv.c.o
 .PHONY : src/IMG_xv.c.o
 
 src/IMG_xv.i: src/IMG_xv.c.i
@@ -599,7 +652,7 @@ src/IMG_xv.i: src/IMG_xv.c.i
 
 # target to preprocess a source file
 src/IMG_xv.c.i:
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/build.make _deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/src/IMG_xv.c.i
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/build.make _deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/src/IMG_xv.c.i
 .PHONY : src/IMG_xv.c.i
 
 src/IMG_xv.s: src/IMG_xv.c.s
@@ -607,7 +660,7 @@ src/IMG_xv.s: src/IMG_xv.c.s
 
 # target to generate assembly for a file
 src/IMG_xv.c.s:
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/build.make _deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/src/IMG_xv.c.s
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20 && $(MAKE) $(MAKESILENT) -f _deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/build.make _deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/src/IMG_xv.c.s
 .PHONY : src/IMG_xv.c.s
 
 # Help Target
@@ -618,7 +671,12 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
+	@echo "... SDL2_image_autogen"
+	@echo "... SDL2_image_autogen_timestamp_deps"
 	@echo "... SDL2_image"
+	@echo "... SDL2_image_autogen/mocs_compilation.o"
+	@echo "... SDL2_image_autogen/mocs_compilation.i"
+	@echo "... SDL2_image_autogen/mocs_compilation.s"
 	@echo "... src/IMG.o"
 	@echo "... src/IMG.i"
 	@echo "... src/IMG.s"
@@ -690,6 +748,7 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20 && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20 && $(CMAKE_COMMAND) -P /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/CMakeFiles/VerifyGlobs.cmake
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20 && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

@@ -7,10 +7,12 @@
 #include <mutex>
 #include <atomic>
 #include <string>
+#include <thread>
 
 #include "../common/socket.h"
 #include "../common/queue.h"
 #include "../common/lobbyCommand.h"
+#include "../common/lobbyState.h"
 #include "acceptor.h"
 #include "client_handler.h"
 #include "match.h"
@@ -20,9 +22,11 @@ private:
     Socket listener; 
     Acceptor acceptor;
     std::atomic<bool> is_running;
+    std::thread input_listener_thread;
 
     Queue<std::unique_ptr<ClientHandler>> new_clients_queue;    
     Queue<LobbyCommand> lobby_queue;
+    LobbyStateDTO current_lobby_state;
 
     std::mutex mtx; 
     std::list<std::unique_ptr<ClientHandler>> clients_in_lobby;
@@ -38,6 +42,7 @@ private:
     void handle_create_match(const LobbyCommand& cmd);
     void handle_join_match(const LobbyCommand& cmd);
     void broadcast_lobby_state();
+    void handle_toggle_ready(const LobbyCommand& cmd);
 
 public:
     Server(const char* port);

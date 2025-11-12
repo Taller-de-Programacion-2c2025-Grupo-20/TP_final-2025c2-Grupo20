@@ -3,9 +3,9 @@
 # No other meaning or use of this file is supported.
 
 method=git
-command=/usr/bin/cmake;-P;/home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2_mixer-subbuild/sdl2_mixer-populate-prefix/tmp/sdl2_mixer-populate-gitclone.cmake
-source_dir=/home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2_mixer-src
-work_dir=/home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps
+command=/usr/bin/cmake;-P;/home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2_mixer-subbuild/sdl2_mixer-populate-prefix/tmp/sdl2_mixer-populate-gitclone.cmake
+source_dir=/home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2_mixer-src
+work_dir=/home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps
 repository=https://github.com/libsdl-org/SDL_mixer.git
 remote=origin
 init_submodules=TRUE

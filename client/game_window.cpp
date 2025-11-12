@@ -29,8 +29,8 @@ static inline int angle_to_frame(float rad) {
 
 int GameWindow::runGame() {
     try {
-        receiver.start();
-        sender.start();
+        //receiver.start();
+        //sender.start();
 
         // Init SDL
         SDL sdl(SDL_INIT_VIDEO);
@@ -206,7 +206,7 @@ int GameWindow::runGame() {
                     quit.player_id = client.getMyPlayerId();
                     quit.key = InputKey::Quit;
                     quit.action = InputAction::Press;
-                    input_queue.try_push(quit);
+                    client.push_input(quit);
                     exit = true;
                     break;
                 }
@@ -215,18 +215,22 @@ int GameWindow::runGame() {
                     cmd.player_id = client.getMyPlayerId();
                     cmd.action = (ev.type == SDL_KEYDOWN) ? InputAction::Press : InputAction::Release;
                     switch (ev.key.keysym.sym) {
-                        case SDLK_UP:    cmd.key = InputKey::Up; input_queue.try_push(cmd);break;
-                        case SDLK_w:    cmd.key = InputKey::Up; input_queue.try_push(cmd); break;
-                        case SDLK_DOWN:  cmd.key = InputKey::Down; input_queue.try_push(cmd); break;
-                        case SDLK_s:  cmd.key = InputKey::Down; input_queue.try_push(cmd); break;
-                        case SDLK_LEFT:  cmd.key = InputKey::Left; input_queue.try_push(cmd); break;
-                        case SDLK_a:  cmd.key = InputKey::Left; input_queue.try_push(cmd); break;
-                        case SDLK_RIGHT: cmd.key = InputKey::Right; input_queue.try_push(cmd); break;
-                        case SDLK_d: cmd.key = InputKey::Right; input_queue.try_push(cmd); break;
+                        case SDLK_UP:    cmd.key = InputKey::Up; /*input_queue.try_push(cmd)*/break;
+                        case SDLK_w:    cmd.key = InputKey::Up; /*input_queue.try_push(cmd)*/ break;
+                        case SDLK_DOWN:  cmd.key = InputKey::Down; /*input_queue.try_push(cmd)*/ break;
+                        case SDLK_s:  cmd.key = InputKey::Down; /*input_queue.try_push(cmd)*/ break;
+                        case SDLK_LEFT:  cmd.key = InputKey::Left; /*input_queue.try_push(cmd)*/ break;
+                        case SDLK_a:  cmd.key = InputKey::Left; /*input_queue.try_push(cmd)*/ break;
+                        case SDLK_RIGHT: cmd.key = InputKey::Right; /*input_queue.try_push(cmd)*/ break;
+                        case SDLK_d: cmd.key = InputKey::Right; /*input_queue.try_push(cmd)*/ break;
                         case SDLK_q:
-                        case SDLK_ESCAPE: cmd.key = InputKey::Quit; input_queue.try_push(cmd); break;
+                        case SDLK_ESCAPE: cmd.key = InputKey::Quit; /*input_queue.try_push(cmd)*/ break;
                     }
-                    
+
+                    if (cmd.key != InputKey::Unknown) {
+                        client.push_input(cmd);
+                    }
+
                     if (cmd.key == InputKey::Quit && cmd.action == InputAction::Press) {
                         exit = true;
                         break;
@@ -237,10 +241,10 @@ int GameWindow::runGame() {
             if (exit){
                 break;
             }
-
+            /*
             GameStateDTO gs;
             bool got = false;
-            while (state_queue.try_pop(gs)) {
+            while (receiver.pollGameState(gs)) { 
                 last_state = std::move(gs);
                 got = true;
             }
@@ -248,6 +252,8 @@ int GameWindow::runGame() {
             if (got == true or have_state == true){
                 have_state = 1;
             }
+            */
+            last_state = receiver.pollGameState();
             std::cout << "Mi player id es: " << static_cast<int>(client.getMyPlayerId()) << "\n";
 
 
@@ -482,10 +488,10 @@ int GameWindow::runGame() {
         }
 
 
-        receiver.stop();
-        sender.stop();
-        receiver.join();
-        sender.join();
+        //receiver.stop();
+        //sender.stop();
+        //receiver.join();
+        //sender.join();
         return 0;
 
     } catch (std::exception& e) {
@@ -496,5 +502,4 @@ int GameWindow::runGame() {
 
 GameWindow::GameWindow(Client& c)
     : client(c),
-      sender(c.getProtocol(), input_queue),
-      receiver(c.getProtocol(), state_queue) {}
+      receiver(c.getReceiver()) {}

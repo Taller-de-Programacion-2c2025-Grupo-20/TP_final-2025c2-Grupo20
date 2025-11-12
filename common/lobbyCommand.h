@@ -16,7 +16,9 @@ struct LobbyCommand {
     
     std::string username; 
     uint8_t match_id;   
-    
+
+    LobbyCommand() {}
+
     LobbyCommand(LobbyCommandType type, uint8_t id, const std::string& user) :
         type(type), client_id(id), username(user), match_id(0) {}
     
@@ -27,8 +29,3 @@ struct LobbyCommand {
         type(type), client_id(id), username(""), match_id(0) {}
 };
 
-struct LobbyPlayerInfo {
-    uint8_t player_id; 
-    std::string name;    
-    bool is_ready;      
-};

@@ -10,6 +10,7 @@
 #include "../common/socket.h"
 #include "../common/gameState.h"
 #include "../common/clientCommand.h"
+#include "../common/lobbyState.h"
 
 class ServerProtocol {
 private:
@@ -26,6 +27,7 @@ public:
     std::string receive_login_attempt();
     InputCmd receive_input_command();
     void send_login_ok(uint8_t player_id);
+    void send_lobby_state(const LobbyStateDTO& state);
 
     void close();
 

@@ -162,8 +162,26 @@ CMakeFiles/taller_server.dir/server/server_main.cpp.o: \
  /usr/include/x86_64-linux-gnu/bits/stdint-least.h \
  /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/server/../common/socket.h \
  /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/server/server.h \
- /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/server/../common/queue.h \
- /usr/include/c++/13/climits \
+ /usr/include/c++/13/map /usr/include/c++/13/bits/stl_tree.h \
+ /usr/include/c++/13/ext/aligned_buffer.h \
+ /usr/include/c++/13/bits/node_handle.h \
+ /usr/include/c++/13/bits/stl_map.h \
+ /usr/include/c++/13/bits/stl_multimap.h \
+ /usr/include/c++/13/bits/erase_if.h /usr/include/c++/13/list \
+ /usr/include/c++/13/bits/stl_list.h \
+ /usr/include/c++/13/bits/allocated_ptr.h \
+ /usr/include/c++/13/bits/list.tcc /usr/include/c++/13/memory \
+ /usr/include/c++/13/bits/stl_tempbuf.h \
+ /usr/include/c++/13/bits/stl_uninitialized.h \
+ /usr/include/c++/13/bits/stl_raw_storage_iter.h \
+ /usr/include/c++/13/bits/align.h /usr/include/c++/13/bits/unique_ptr.h \
+ /usr/include/c++/13/bits/shared_ptr.h \
+ /usr/include/c++/13/bits/shared_ptr_base.h \
+ /usr/include/c++/13/ext/concurrence.h \
+ /usr/include/c++/13/bits/shared_ptr_atomic.h \
+ /usr/include/c++/13/bits/atomic_base.h \
+ /usr/include/c++/13/bits/atomic_lockfree_defines.h \
+ /usr/include/c++/13/bits/atomic_wait.h /usr/include/c++/13/climits \
  /usr/lib/gcc/x86_64-linux-gnu/13/include/limits.h \
  /usr/lib/gcc/x86_64-linux-gnu/13/include/syslimits.h \
  /usr/include/limits.h /usr/include/x86_64-linux-gnu/bits/posix1_lim.h \
@@ -171,23 +189,7 @@ CMakeFiles/taller_server.dir/server/server_main.cpp.o: \
  /usr/include/linux/limits.h \
  /usr/include/x86_64-linux-gnu/bits/posix2_lim.h \
  /usr/include/x86_64-linux-gnu/bits/xopen_lim.h \
- /usr/include/x86_64-linux-gnu/bits/uio_lim.h \
- /usr/include/c++/13/condition_variable /usr/include/c++/13/bits/chrono.h \
- /usr/include/c++/13/ratio /usr/include/c++/13/limits \
- /usr/include/c++/13/ctime /usr/include/c++/13/bits/parse_numbers.h \
- /usr/include/c++/13/bits/std_mutex.h \
- /usr/include/c++/13/bits/unique_lock.h \
- /usr/include/c++/13/bits/shared_ptr.h \
- /usr/include/c++/13/bits/shared_ptr_base.h \
- /usr/include/c++/13/bits/allocated_ptr.h \
- /usr/include/c++/13/bits/unique_ptr.h \
- /usr/include/c++/13/ext/aligned_buffer.h \
- /usr/include/c++/13/ext/concurrence.h /usr/include/c++/13/bits/align.h \
- /usr/include/c++/13/bits/stl_uninitialized.h \
- /usr/include/c++/13/stop_token /usr/include/c++/13/atomic \
- /usr/include/c++/13/bits/atomic_base.h \
- /usr/include/c++/13/bits/atomic_lockfree_defines.h \
- /usr/include/c++/13/bits/atomic_wait.h /usr/include/unistd.h \
+ /usr/include/x86_64-linux-gnu/bits/uio_lim.h /usr/include/unistd.h \
  /usr/include/x86_64-linux-gnu/bits/posix_opt.h \
  /usr/include/x86_64-linux-gnu/bits/environments.h \
  /usr/include/x86_64-linux-gnu/bits/confname.h \
@@ -199,38 +201,150 @@ CMakeFiles/taller_server.dir/server/server_main.cpp.o: \
  /usr/include/x86_64-linux-gnu/asm/unistd.h \
  /usr/include/x86_64-linux-gnu/asm/unistd_64.h \
  /usr/include/x86_64-linux-gnu/bits/syscall.h \
+ /usr/include/c++/13/bits/std_mutex.h \
+ /usr/include/c++/13/backward/auto_ptr.h \
+ /usr/include/c++/13/bits/ranges_uninitialized.h \
+ /usr/include/c++/13/bits/ranges_algobase.h \
+ /usr/include/c++/13/pstl/glue_memory_defs.h \
+ /usr/include/c++/13/pstl/execution_defs.h /usr/include/c++/13/mutex \
+ /usr/include/c++/13/bits/chrono.h /usr/include/c++/13/ratio \
+ /usr/include/c++/13/limits /usr/include/c++/13/ctime \
+ /usr/include/c++/13/bits/parse_numbers.h \
+ /usr/include/c++/13/bits/unique_lock.h /usr/include/c++/13/atomic \
+ /usr/include/c++/13/thread /usr/include/c++/13/stop_token \
  /usr/include/c++/13/bits/std_thread.h /usr/include/c++/13/semaphore \
  /usr/include/c++/13/bits/semaphore_base.h \
  /usr/include/c++/13/bits/atomic_timed_wait.h \
  /usr/include/c++/13/bits/this_thread_sleep.h \
  /usr/include/x86_64-linux-gnu/sys/time.h /usr/include/semaphore.h \
- /usr/include/x86_64-linux-gnu/bits/semaphore.h /usr/include/c++/13/deque \
+ /usr/include/x86_64-linux-gnu/bits/semaphore.h \
+ /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/server/../common/queue.h \
+ /usr/include/c++/13/condition_variable /usr/include/c++/13/deque \
  /usr/include/c++/13/bits/stl_deque.h /usr/include/c++/13/bits/deque.tcc \
- /usr/include/c++/13/mutex /usr/include/c++/13/queue \
- /usr/include/c++/13/vector /usr/include/c++/13/bits/stl_vector.h \
+ /usr/include/c++/13/queue /usr/include/c++/13/vector \
+ /usr/include/c++/13/bits/stl_vector.h \
  /usr/include/c++/13/bits/stl_bvector.h \
  /usr/include/c++/13/bits/vector.tcc /usr/include/c++/13/bits/stl_heap.h \
- /usr/include/c++/13/bits/stl_queue.h \
+ /usr/include/c++/13/bits/stl_queue.h /usr/include/c++/13/utility \
+ /usr/include/c++/13/bits/stl_relops.h \
+ /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/server/../common/lobbyCommand.h \
+ /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/server/../common/lobbyState.h \
+ /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/server/acceptor.h \
+ /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/server/../common/thread.h \
+ /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/server/client_handler.h \
  /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/server/../common/clientCommand.h \
  /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/server/../common/constants.h \
- /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/server/client_handler.h \
- /usr/include/c++/13/utility /usr/include/c++/13/bits/stl_relops.h \
  /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/server/../common/gameState.h \
  /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/server/../common/serverState.h \
- /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/server/receiver.h \
- /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/server/../common/thread.h \
- /usr/include/c++/13/thread \
  /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/server/server_protocol.h \
- /usr/include/c++/13/map /usr/include/c++/13/bits/stl_tree.h \
- /usr/include/c++/13/bits/node_handle.h \
- /usr/include/c++/13/bits/stl_map.h \
- /usr/include/c++/13/bits/stl_multimap.h \
- /usr/include/c++/13/bits/erase_if.h \
  /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/server/sender.h \
- /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/server/../common/serverState.h \
+ /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/server/receiver.h \
+ /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/server/match.h \
+ /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/server/gameloop.h \
+ /usr/local/include/Box2D/Box2D.h \
+ /usr/local/include/Box2D/Common/b2Settings.h /usr/include/c++/13/cassert \
+ /usr/include/assert.h /usr/include/c++/13/cmath /usr/include/math.h \
+ /usr/include/x86_64-linux-gnu/bits/math-vector.h \
+ /usr/include/x86_64-linux-gnu/bits/libm-simd-decl-stubs.h \
+ /usr/include/x86_64-linux-gnu/bits/flt-eval-method.h \
+ /usr/include/x86_64-linux-gnu/bits/fp-logb.h \
+ /usr/include/x86_64-linux-gnu/bits/fp-fast.h \
+ /usr/include/x86_64-linux-gnu/bits/mathcalls-helper-functions.h \
+ /usr/include/x86_64-linux-gnu/bits/mathcalls.h \
+ /usr/include/x86_64-linux-gnu/bits/mathcalls-narrow.h \
+ /usr/include/x86_64-linux-gnu/bits/iscanonical.h \
+ /usr/include/c++/13/bits/specfun.h /usr/include/c++/13/tr1/gamma.tcc \
+ /usr/include/c++/13/tr1/special_function_util.h \
+ /usr/include/c++/13/tr1/bessel_function.tcc \
+ /usr/include/c++/13/tr1/beta_function.tcc \
+ /usr/include/c++/13/tr1/ell_integral.tcc \
+ /usr/include/c++/13/tr1/exp_integral.tcc \
+ /usr/include/c++/13/tr1/hypergeometric.tcc \
+ /usr/include/c++/13/tr1/legendre_function.tcc \
+ /usr/include/c++/13/tr1/modified_bessel_func.tcc \
+ /usr/include/c++/13/tr1/poly_hermite.tcc \
+ /usr/include/c++/13/tr1/poly_laguerre.tcc \
+ /usr/include/c++/13/tr1/riemann_zeta.tcc \
+ /usr/local/include/Box2D/Collision/Shapes/b2CircleShape.h \
+ /usr/local/include/Box2D/Collision/Shapes/b2Shape.h \
+ /usr/local/include/Box2D/Common/b2BlockAllocator.h \
+ /usr/local/include/Box2D/Common/b2Math.h /usr/include/c++/13/cfloat \
+ /usr/lib/gcc/x86_64-linux-gnu/13/include/float.h \
+ /usr/local/include/Box2D/Collision/b2Collision.h \
+ /usr/local/include/Box2D/Collision/Shapes/b2PolygonShape.h \
+ /usr/local/include/Box2D/Collision/b2BroadPhase.h \
+ /usr/local/include/Box2D/Collision/b2DynamicTree.h \
+ /usr/include/c++/13/algorithm /usr/include/c++/13/bits/stl_algo.h \
+ /usr/include/c++/13/bits/algorithmfwd.h \
+ /usr/include/c++/13/bits/uniform_int_dist.h \
+ /usr/include/c++/13/bits/ranges_algo.h \
+ /usr/include/c++/13/pstl/glue_algorithm_defs.h \
+ /usr/local/include/Box2D/Collision/b2Distance.h \
+ /usr/local/include/Box2D/Collision/b2TimeOfImpact.h \
+ /usr/local/include/Box2D/Dynamics/b2Body.h \
+ /usr/local/include/Box2D/Dynamics/b2Fixture.h \
+ /usr/local/include/Box2D/Dynamics/b2WorldCallbacks.h \
+ /usr/local/include/Box2D/Dynamics/b2TimeStep.h \
+ /usr/local/include/Box2D/Dynamics/b2World.h \
+ /usr/local/include/Box2D/Common/b2StackAllocator.h \
+ /usr/local/include/Box2D/Dynamics/b2ContactManager.h \
+ /usr/local/include/Box2D/Dynamics/Contacts/b2Contact.h \
+ /usr/local/include/Box2D/Dynamics/Joints/b2DistanceJoint.h \
+ /usr/local/include/Box2D/Dynamics/Joints/b2Joint.h \
+ /usr/local/include/Box2D/Dynamics/Joints/b2FrictionJoint.h \
+ /usr/local/include/Box2D/Dynamics/Joints/b2GearJoint.h \
+ /usr/local/include/Box2D/Dynamics/Joints/b2LineJoint.h \
+ /usr/local/include/Box2D/Dynamics/Joints/b2MouseJoint.h \
+ /usr/local/include/Box2D/Dynamics/Joints/b2PrismaticJoint.h \
+ /usr/local/include/Box2D/Dynamics/Joints/b2PulleyJoint.h \
+ /usr/local/include/Box2D/Dynamics/Joints/b2RevoluteJoint.h \
+ /usr/local/include/Box2D/Dynamics/Joints/b2WeldJoint.h \
+ /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/yaml-cpp-src/include/yaml-cpp/yaml.h \
+ /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/yaml-cpp-src/include/yaml-cpp/parser.h \
+ /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/yaml-cpp-src/include/yaml-cpp/dll.h \
+ /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/yaml-cpp-src/include/yaml-cpp/emitter.h \
+ /usr/include/c++/13/sstream /usr/include/c++/13/bits/sstream.tcc \
+ /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/yaml-cpp-src/include/yaml-cpp/binary.h \
+ /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/yaml-cpp-src/include/yaml-cpp/emitterdef.h \
+ /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/yaml-cpp-src/include/yaml-cpp/emittermanip.h \
+ /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/yaml-cpp-src/include/yaml-cpp/null.h \
+ /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/yaml-cpp-src/include/yaml-cpp/ostream_wrapper.h \
+ /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/yaml-cpp-src/include/yaml-cpp/emitterstyle.h \
+ /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/yaml-cpp-src/include/yaml-cpp/stlemitter.h \
+ /usr/include/c++/13/set /usr/include/c++/13/bits/stl_set.h \
+ /usr/include/c++/13/bits/stl_multiset.h \
+ /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/yaml-cpp-src/include/yaml-cpp/exceptions.h \
+ /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/yaml-cpp-src/include/yaml-cpp/mark.h \
+ /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/yaml-cpp-src/include/yaml-cpp/noexcept.h \
+ /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/yaml-cpp-src/include/yaml-cpp/traits.h \
+ /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/yaml-cpp-src/include/yaml-cpp/node/node.h \
+ /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/yaml-cpp-src/include/yaml-cpp/node/detail/iterator_fwd.h \
+ /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/yaml-cpp-src/include/yaml-cpp/node/ptr.h \
+ /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/yaml-cpp-src/include/yaml-cpp/node/type.h \
+ /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/yaml-cpp-src/include/yaml-cpp/node/impl.h \
+ /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/yaml-cpp-src/include/yaml-cpp/node/detail/memory.h \
+ /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/yaml-cpp-src/include/yaml-cpp/node/detail/node.h \
+ /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/yaml-cpp-src/include/yaml-cpp/node/detail/node_ref.h \
+ /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/yaml-cpp-src/include/yaml-cpp/node/detail/node_data.h \
+ /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/yaml-cpp-src/include/yaml-cpp/node/detail/node_iterator.h \
+ /usr/include/c++/13/iterator /usr/include/c++/13/bits/stream_iterator.h \
+ /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/yaml-cpp-src/include/yaml-cpp/node/iterator.h \
+ /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/yaml-cpp-src/include/yaml-cpp/node/detail/iterator.h \
+ /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/yaml-cpp-src/include/yaml-cpp/node/convert.h \
+ /usr/include/c++/13/array \
+ /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/yaml-cpp-src/include/yaml-cpp/node/detail/impl.h \
+ /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/yaml-cpp-src/include/yaml-cpp/node/parse.h \
+ /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/yaml-cpp-src/include/yaml-cpp/node/emit.h \
  /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/server/queues_monitor.h \
  /usr/include/c++/13/unordered_map \
  /usr/include/c++/13/bits/unordered_map.h \
  /usr/include/c++/13/bits/hashtable.h \
  /usr/include/c++/13/bits/hashtable_policy.h \
- /usr/include/c++/13/bits/enable_special_members.h
+ /usr/include/c++/13/bits/enable_special_members.h \
+ /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/server/world_entities/car.h \
+ /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/server/world_entities/entity.h \
+ /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/server/world_entities/../../common/constants.h \
+ /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/server/world_entities/../../common/clientCommand.h \
+ /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/server/world_entities/wall.h \
+ /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/server/world_entities/checkpoint.h \
+ /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/server/collisions_listener.h

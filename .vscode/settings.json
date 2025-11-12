@@ -70,6 +70,7 @@
         "unordered_set": "cpp",
         "source_location": "cpp",
         "future": "cpp",
-        "cfenv": "cpp"
+        "cfenv": "cpp",
+        "csignal": "cpp"
     }
 }

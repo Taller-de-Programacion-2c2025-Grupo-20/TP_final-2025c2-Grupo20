@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20
+CMAKE_SOURCE_DIR = /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20
+CMAKE_BINARY_DIR = /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20
 
 # Utility rule file for sdl_headers_copy.
 
@@ -159,368 +159,368 @@ _deps/sdl2-build/CMakeFiles/sdl_headers_copy: _deps/sdl2-build/include/SDL2/begi
 _deps/sdl2-build/CMakeFiles/sdl_headers_copy: _deps/sdl2-build/include/SDL2/close_code.h
 
 _deps/sdl2-build/include/SDL2/SDL.h: _deps/sdl2-src/include/SDL.h
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating include/SDL2/SDL.h"
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-build && /usr/bin/cmake -E copy_if_different /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-src/include/SDL.h /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL.h
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating include/SDL2/SDL.h"
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build && /usr/bin/cmake -E copy_if_different /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-src/include/SDL.h /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL.h
 
 _deps/sdl2-build/include/SDL2/SDL_assert.h: _deps/sdl2-src/include/SDL_assert.h
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating include/SDL2/SDL_assert.h"
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-build && /usr/bin/cmake -E copy_if_different /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-src/include/SDL_assert.h /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_assert.h
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating include/SDL2/SDL_assert.h"
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build && /usr/bin/cmake -E copy_if_different /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-src/include/SDL_assert.h /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_assert.h
 
 _deps/sdl2-build/include/SDL2/SDL_atomic.h: _deps/sdl2-src/include/SDL_atomic.h
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Generating include/SDL2/SDL_atomic.h"
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-build && /usr/bin/cmake -E copy_if_different /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-src/include/SDL_atomic.h /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_atomic.h
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Generating include/SDL2/SDL_atomic.h"
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build && /usr/bin/cmake -E copy_if_different /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-src/include/SDL_atomic.h /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_atomic.h
 
 _deps/sdl2-build/include/SDL2/SDL_audio.h: _deps/sdl2-src/include/SDL_audio.h
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Generating include/SDL2/SDL_audio.h"
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-build && /usr/bin/cmake -E copy_if_different /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-src/include/SDL_audio.h /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_audio.h
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Generating include/SDL2/SDL_audio.h"
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build && /usr/bin/cmake -E copy_if_different /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-src/include/SDL_audio.h /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_audio.h
 
 _deps/sdl2-build/include/SDL2/SDL_bits.h: _deps/sdl2-src/include/SDL_bits.h
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Generating include/SDL2/SDL_bits.h"
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-build && /usr/bin/cmake -E copy_if_different /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-src/include/SDL_bits.h /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_bits.h
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Generating include/SDL2/SDL_bits.h"
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build && /usr/bin/cmake -E copy_if_different /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-src/include/SDL_bits.h /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_bits.h
 
 _deps/sdl2-build/include/SDL2/SDL_blendmode.h: _deps/sdl2-src/include/SDL_blendmode.h
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Generating include/SDL2/SDL_blendmode.h"
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-build && /usr/bin/cmake -E copy_if_different /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-src/include/SDL_blendmode.h /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_blendmode.h
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Generating include/SDL2/SDL_blendmode.h"
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build && /usr/bin/cmake -E copy_if_different /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-src/include/SDL_blendmode.h /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_blendmode.h
 
 _deps/sdl2-build/include/SDL2/SDL_clipboard.h: _deps/sdl2-src/include/SDL_clipboard.h
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Generating include/SDL2/SDL_clipboard.h"
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-build && /usr/bin/cmake -E copy_if_different /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-src/include/SDL_clipboard.h /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_clipboard.h
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Generating include/SDL2/SDL_clipboard.h"
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build && /usr/bin/cmake -E copy_if_different /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-src/include/SDL_clipboard.h /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_clipboard.h
 
 _deps/sdl2-build/include/SDL2/SDL_copying.h: _deps/sdl2-src/include/SDL_copying.h
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Generating include/SDL2/SDL_copying.h"
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-build && /usr/bin/cmake -E copy_if_different /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-src/include/SDL_copying.h /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_copying.h
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Generating include/SDL2/SDL_copying.h"
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build && /usr/bin/cmake -E copy_if_different /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-src/include/SDL_copying.h /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_copying.h
 
 _deps/sdl2-build/include/SDL2/SDL_cpuinfo.h: _deps/sdl2-src/include/SDL_cpuinfo.h
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Generating include/SDL2/SDL_cpuinfo.h"
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-build && /usr/bin/cmake -E copy_if_different /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-src/include/SDL_cpuinfo.h /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_cpuinfo.h
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Generating include/SDL2/SDL_cpuinfo.h"
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build && /usr/bin/cmake -E copy_if_different /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-src/include/SDL_cpuinfo.h /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_cpuinfo.h
 
 _deps/sdl2-build/include/SDL2/SDL_egl.h: _deps/sdl2-src/include/SDL_egl.h
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Generating include/SDL2/SDL_egl.h"
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-build && /usr/bin/cmake -E copy_if_different /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-src/include/SDL_egl.h /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_egl.h
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Generating include/SDL2/SDL_egl.h"
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build && /usr/bin/cmake -E copy_if_different /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-src/include/SDL_egl.h /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_egl.h
 
 _deps/sdl2-build/include/SDL2/SDL_endian.h: _deps/sdl2-src/include/SDL_endian.h
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Generating include/SDL2/SDL_endian.h"
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-build && /usr/bin/cmake -E copy_if_different /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-src/include/SDL_endian.h /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_endian.h
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Generating include/SDL2/SDL_endian.h"
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build && /usr/bin/cmake -E copy_if_different /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-src/include/SDL_endian.h /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_endian.h
 
 _deps/sdl2-build/include/SDL2/SDL_error.h: _deps/sdl2-src/include/SDL_error.h
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Generating include/SDL2/SDL_error.h"
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-build && /usr/bin/cmake -E copy_if_different /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-src/include/SDL_error.h /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_error.h
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Generating include/SDL2/SDL_error.h"
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build && /usr/bin/cmake -E copy_if_different /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-src/include/SDL_error.h /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_error.h
 
 _deps/sdl2-build/include/SDL2/SDL_events.h: _deps/sdl2-src/include/SDL_events.h
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Generating include/SDL2/SDL_events.h"
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-build && /usr/bin/cmake -E copy_if_different /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-src/include/SDL_events.h /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_events.h
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Generating include/SDL2/SDL_events.h"
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build && /usr/bin/cmake -E copy_if_different /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-src/include/SDL_events.h /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_events.h
 
 _deps/sdl2-build/include/SDL2/SDL_filesystem.h: _deps/sdl2-src/include/SDL_filesystem.h
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Generating include/SDL2/SDL_filesystem.h"
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-build && /usr/bin/cmake -E copy_if_different /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-src/include/SDL_filesystem.h /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_filesystem.h
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Generating include/SDL2/SDL_filesystem.h"
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build && /usr/bin/cmake -E copy_if_different /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-src/include/SDL_filesystem.h /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_filesystem.h
 
 _deps/sdl2-build/include/SDL2/SDL_gamecontroller.h: _deps/sdl2-src/include/SDL_gamecontroller.h
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Generating include/SDL2/SDL_gamecontroller.h"
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-build && /usr/bin/cmake -E copy_if_different /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-src/include/SDL_gamecontroller.h /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_gamecontroller.h
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Generating include/SDL2/SDL_gamecontroller.h"
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build && /usr/bin/cmake -E copy_if_different /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-src/include/SDL_gamecontroller.h /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_gamecontroller.h
 
 _deps/sdl2-build/include/SDL2/SDL_gesture.h: _deps/sdl2-src/include/SDL_gesture.h
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Generating include/SDL2/SDL_gesture.h"
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-build && /usr/bin/cmake -E copy_if_different /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-src/include/SDL_gesture.h /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_gesture.h
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Generating include/SDL2/SDL_gesture.h"
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build && /usr/bin/cmake -E copy_if_different /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-src/include/SDL_gesture.h /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_gesture.h
 
 _deps/sdl2-build/include/SDL2/SDL_guid.h: _deps/sdl2-src/include/SDL_guid.h
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Generating include/SDL2/SDL_guid.h"
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-build && /usr/bin/cmake -E copy_if_different /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-src/include/SDL_guid.h /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_guid.h
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Generating include/SDL2/SDL_guid.h"
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build && /usr/bin/cmake -E copy_if_different /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-src/include/SDL_guid.h /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_guid.h
 
 _deps/sdl2-build/include/SDL2/SDL_haptic.h: _deps/sdl2-src/include/SDL_haptic.h
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Generating include/SDL2/SDL_haptic.h"
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-build && /usr/bin/cmake -E copy_if_different /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-src/include/SDL_haptic.h /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_haptic.h
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Generating include/SDL2/SDL_haptic.h"
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build && /usr/bin/cmake -E copy_if_different /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-src/include/SDL_haptic.h /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_haptic.h
 
 _deps/sdl2-build/include/SDL2/SDL_hidapi.h: _deps/sdl2-src/include/SDL_hidapi.h
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Generating include/SDL2/SDL_hidapi.h"
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-build && /usr/bin/cmake -E copy_if_different /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-src/include/SDL_hidapi.h /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_hidapi.h
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Generating include/SDL2/SDL_hidapi.h"
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build && /usr/bin/cmake -E copy_if_different /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-src/include/SDL_hidapi.h /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_hidapi.h
 
 _deps/sdl2-build/include/SDL2/SDL_hints.h: _deps/sdl2-src/include/SDL_hints.h
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Generating include/SDL2/SDL_hints.h"
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-build && /usr/bin/cmake -E copy_if_different /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-src/include/SDL_hints.h /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_hints.h
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Generating include/SDL2/SDL_hints.h"
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build && /usr/bin/cmake -E copy_if_different /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-src/include/SDL_hints.h /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_hints.h
 
 _deps/sdl2-build/include/SDL2/SDL_joystick.h: _deps/sdl2-src/include/SDL_joystick.h
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Generating include/SDL2/SDL_joystick.h"
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-build && /usr/bin/cmake -E copy_if_different /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-src/include/SDL_joystick.h /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_joystick.h
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Generating include/SDL2/SDL_joystick.h"
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build && /usr/bin/cmake -E copy_if_different /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-src/include/SDL_joystick.h /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_joystick.h
 
 _deps/sdl2-build/include/SDL2/SDL_keyboard.h: _deps/sdl2-src/include/SDL_keyboard.h
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Generating include/SDL2/SDL_keyboard.h"
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-build && /usr/bin/cmake -E copy_if_different /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-src/include/SDL_keyboard.h /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_keyboard.h
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Generating include/SDL2/SDL_keyboard.h"
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build && /usr/bin/cmake -E copy_if_different /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-src/include/SDL_keyboard.h /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_keyboard.h
 
 _deps/sdl2-build/include/SDL2/SDL_keycode.h: _deps/sdl2-src/include/SDL_keycode.h
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Generating include/SDL2/SDL_keycode.h"
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-build && /usr/bin/cmake -E copy_if_different /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-src/include/SDL_keycode.h /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_keycode.h
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Generating include/SDL2/SDL_keycode.h"
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build && /usr/bin/cmake -E copy_if_different /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-src/include/SDL_keycode.h /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_keycode.h
 
 _deps/sdl2-build/include/SDL2/SDL_loadso.h: _deps/sdl2-src/include/SDL_loadso.h
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/CMakeFiles --progress-num=$(CMAKE_PROGRESS_24) "Generating include/SDL2/SDL_loadso.h"
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-build && /usr/bin/cmake -E copy_if_different /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-src/include/SDL_loadso.h /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_loadso.h
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/CMakeFiles --progress-num=$(CMAKE_PROGRESS_24) "Generating include/SDL2/SDL_loadso.h"
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build && /usr/bin/cmake -E copy_if_different /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-src/include/SDL_loadso.h /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_loadso.h
 
 _deps/sdl2-build/include/SDL2/SDL_locale.h: _deps/sdl2-src/include/SDL_locale.h
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/CMakeFiles --progress-num=$(CMAKE_PROGRESS_25) "Generating include/SDL2/SDL_locale.h"
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-build && /usr/bin/cmake -E copy_if_different /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-src/include/SDL_locale.h /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_locale.h
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/CMakeFiles --progress-num=$(CMAKE_PROGRESS_25) "Generating include/SDL2/SDL_locale.h"
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build && /usr/bin/cmake -E copy_if_different /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-src/include/SDL_locale.h /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_locale.h
 
 _deps/sdl2-build/include/SDL2/SDL_log.h: _deps/sdl2-src/include/SDL_log.h
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/CMakeFiles --progress-num=$(CMAKE_PROGRESS_26) "Generating include/SDL2/SDL_log.h"
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-build && /usr/bin/cmake -E copy_if_different /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-src/include/SDL_log.h /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_log.h
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/CMakeFiles --progress-num=$(CMAKE_PROGRESS_26) "Generating include/SDL2/SDL_log.h"
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build && /usr/bin/cmake -E copy_if_different /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-src/include/SDL_log.h /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_log.h
 
 _deps/sdl2-build/include/SDL2/SDL_main.h: _deps/sdl2-src/include/SDL_main.h
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/CMakeFiles --progress-num=$(CMAKE_PROGRESS_27) "Generating include/SDL2/SDL_main.h"
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-build && /usr/bin/cmake -E copy_if_different /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-src/include/SDL_main.h /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_main.h
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/CMakeFiles --progress-num=$(CMAKE_PROGRESS_27) "Generating include/SDL2/SDL_main.h"
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build && /usr/bin/cmake -E copy_if_different /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-src/include/SDL_main.h /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_main.h
 
 _deps/sdl2-build/include/SDL2/SDL_messagebox.h: _deps/sdl2-src/include/SDL_messagebox.h
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/CMakeFiles --progress-num=$(CMAKE_PROGRESS_28) "Generating include/SDL2/SDL_messagebox.h"
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-build && /usr/bin/cmake -E copy_if_different /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-src/include/SDL_messagebox.h /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_messagebox.h
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/CMakeFiles --progress-num=$(CMAKE_PROGRESS_28) "Generating include/SDL2/SDL_messagebox.h"
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build && /usr/bin/cmake -E copy_if_different /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-src/include/SDL_messagebox.h /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_messagebox.h
 
 _deps/sdl2-build/include/SDL2/SDL_metal.h: _deps/sdl2-src/include/SDL_metal.h
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/CMakeFiles --progress-num=$(CMAKE_PROGRESS_29) "Generating include/SDL2/SDL_metal.h"
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-build && /usr/bin/cmake -E copy_if_different /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-src/include/SDL_metal.h /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_metal.h
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/CMakeFiles --progress-num=$(CMAKE_PROGRESS_29) "Generating include/SDL2/SDL_metal.h"
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build && /usr/bin/cmake -E copy_if_different /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-src/include/SDL_metal.h /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_metal.h
 
 _deps/sdl2-build/include/SDL2/SDL_misc.h: _deps/sdl2-src/include/SDL_misc.h
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/CMakeFiles --progress-num=$(CMAKE_PROGRESS_30) "Generating include/SDL2/SDL_misc.h"
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-build && /usr/bin/cmake -E copy_if_different /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-src/include/SDL_misc.h /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_misc.h
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/CMakeFiles --progress-num=$(CMAKE_PROGRESS_30) "Generating include/SDL2/SDL_misc.h"
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build && /usr/bin/cmake -E copy_if_different /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-src/include/SDL_misc.h /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_misc.h
 
 _deps/sdl2-build/include/SDL2/SDL_mouse.h: _deps/sdl2-src/include/SDL_mouse.h
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/CMakeFiles --progress-num=$(CMAKE_PROGRESS_31) "Generating include/SDL2/SDL_mouse.h"
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-build && /usr/bin/cmake -E copy_if_different /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-src/include/SDL_mouse.h /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_mouse.h
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/CMakeFiles --progress-num=$(CMAKE_PROGRESS_31) "Generating include/SDL2/SDL_mouse.h"
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build && /usr/bin/cmake -E copy_if_different /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-src/include/SDL_mouse.h /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_mouse.h
 
 _deps/sdl2-build/include/SDL2/SDL_mutex.h: _deps/sdl2-src/include/SDL_mutex.h
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/CMakeFiles --progress-num=$(CMAKE_PROGRESS_32) "Generating include/SDL2/SDL_mutex.h"
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-build && /usr/bin/cmake -E copy_if_different /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-src/include/SDL_mutex.h /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_mutex.h
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/CMakeFiles --progress-num=$(CMAKE_PROGRESS_32) "Generating include/SDL2/SDL_mutex.h"
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build && /usr/bin/cmake -E copy_if_different /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-src/include/SDL_mutex.h /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_mutex.h
 
 _deps/sdl2-build/include/SDL2/SDL_name.h: _deps/sdl2-src/include/SDL_name.h
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/CMakeFiles --progress-num=$(CMAKE_PROGRESS_33) "Generating include/SDL2/SDL_name.h"
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-build && /usr/bin/cmake -E copy_if_different /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-src/include/SDL_name.h /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_name.h
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/CMakeFiles --progress-num=$(CMAKE_PROGRESS_33) "Generating include/SDL2/SDL_name.h"
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build && /usr/bin/cmake -E copy_if_different /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-src/include/SDL_name.h /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_name.h
 
 _deps/sdl2-build/include/SDL2/SDL_opengl.h: _deps/sdl2-src/include/SDL_opengl.h
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/CMakeFiles --progress-num=$(CMAKE_PROGRESS_34) "Generating include/SDL2/SDL_opengl.h"
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-build && /usr/bin/cmake -E copy_if_different /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-src/include/SDL_opengl.h /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_opengl.h
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/CMakeFiles --progress-num=$(CMAKE_PROGRESS_34) "Generating include/SDL2/SDL_opengl.h"
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build && /usr/bin/cmake -E copy_if_different /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-src/include/SDL_opengl.h /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_opengl.h
 
 _deps/sdl2-build/include/SDL2/SDL_opengl_glext.h: _deps/sdl2-src/include/SDL_opengl_glext.h
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/CMakeFiles --progress-num=$(CMAKE_PROGRESS_35) "Generating include/SDL2/SDL_opengl_glext.h"
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-build && /usr/bin/cmake -E copy_if_different /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-src/include/SDL_opengl_glext.h /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_opengl_glext.h
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/CMakeFiles --progress-num=$(CMAKE_PROGRESS_35) "Generating include/SDL2/SDL_opengl_glext.h"
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build && /usr/bin/cmake -E copy_if_different /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-src/include/SDL_opengl_glext.h /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_opengl_glext.h
 
 _deps/sdl2-build/include/SDL2/SDL_opengles.h: _deps/sdl2-src/include/SDL_opengles.h
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/CMakeFiles --progress-num=$(CMAKE_PROGRESS_36) "Generating include/SDL2/SDL_opengles.h"
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-build && /usr/bin/cmake -E copy_if_different /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-src/include/SDL_opengles.h /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_opengles.h
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/CMakeFiles --progress-num=$(CMAKE_PROGRESS_36) "Generating include/SDL2/SDL_opengles.h"
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build && /usr/bin/cmake -E copy_if_different /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-src/include/SDL_opengles.h /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_opengles.h
 
 _deps/sdl2-build/include/SDL2/SDL_opengles2.h: _deps/sdl2-src/include/SDL_opengles2.h
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/CMakeFiles --progress-num=$(CMAKE_PROGRESS_37) "Generating include/SDL2/SDL_opengles2.h"
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-build && /usr/bin/cmake -E copy_if_different /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-src/include/SDL_opengles2.h /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_opengles2.h
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/CMakeFiles --progress-num=$(CMAKE_PROGRESS_37) "Generating include/SDL2/SDL_opengles2.h"
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build && /usr/bin/cmake -E copy_if_different /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-src/include/SDL_opengles2.h /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_opengles2.h
 
 _deps/sdl2-build/include/SDL2/SDL_opengles2_gl2.h: _deps/sdl2-src/include/SDL_opengles2_gl2.h
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/CMakeFiles --progress-num=$(CMAKE_PROGRESS_38) "Generating include/SDL2/SDL_opengles2_gl2.h"
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-build && /usr/bin/cmake -E copy_if_different /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-src/include/SDL_opengles2_gl2.h /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_opengles2_gl2.h
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/CMakeFiles --progress-num=$(CMAKE_PROGRESS_38) "Generating include/SDL2/SDL_opengles2_gl2.h"
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build && /usr/bin/cmake -E copy_if_different /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-src/include/SDL_opengles2_gl2.h /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_opengles2_gl2.h
 
 _deps/sdl2-build/include/SDL2/SDL_opengles2_gl2ext.h: _deps/sdl2-src/include/SDL_opengles2_gl2ext.h
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/CMakeFiles --progress-num=$(CMAKE_PROGRESS_39) "Generating include/SDL2/SDL_opengles2_gl2ext.h"
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-build && /usr/bin/cmake -E copy_if_different /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-src/include/SDL_opengles2_gl2ext.h /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_opengles2_gl2ext.h
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/CMakeFiles --progress-num=$(CMAKE_PROGRESS_39) "Generating include/SDL2/SDL_opengles2_gl2ext.h"
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build && /usr/bin/cmake -E copy_if_different /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-src/include/SDL_opengles2_gl2ext.h /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_opengles2_gl2ext.h
 
 _deps/sdl2-build/include/SDL2/SDL_opengles2_gl2platform.h: _deps/sdl2-src/include/SDL_opengles2_gl2platform.h
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/CMakeFiles --progress-num=$(CMAKE_PROGRESS_40) "Generating include/SDL2/SDL_opengles2_gl2platform.h"
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-build && /usr/bin/cmake -E copy_if_different /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-src/include/SDL_opengles2_gl2platform.h /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_opengles2_gl2platform.h
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/CMakeFiles --progress-num=$(CMAKE_PROGRESS_40) "Generating include/SDL2/SDL_opengles2_gl2platform.h"
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build && /usr/bin/cmake -E copy_if_different /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-src/include/SDL_opengles2_gl2platform.h /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_opengles2_gl2platform.h
 
 _deps/sdl2-build/include/SDL2/SDL_opengles2_khrplatform.h: _deps/sdl2-src/include/SDL_opengles2_khrplatform.h
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/CMakeFiles --progress-num=$(CMAKE_PROGRESS_41) "Generating include/SDL2/SDL_opengles2_khrplatform.h"
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-build && /usr/bin/cmake -E copy_if_different /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-src/include/SDL_opengles2_khrplatform.h /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_opengles2_khrplatform.h
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/CMakeFiles --progress-num=$(CMAKE_PROGRESS_41) "Generating include/SDL2/SDL_opengles2_khrplatform.h"
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build && /usr/bin/cmake -E copy_if_different /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-src/include/SDL_opengles2_khrplatform.h /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_opengles2_khrplatform.h
 
 _deps/sdl2-build/include/SDL2/SDL_pixels.h: _deps/sdl2-src/include/SDL_pixels.h
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/CMakeFiles --progress-num=$(CMAKE_PROGRESS_42) "Generating include/SDL2/SDL_pixels.h"
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-build && /usr/bin/cmake -E copy_if_different /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-src/include/SDL_pixels.h /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_pixels.h
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/CMakeFiles --progress-num=$(CMAKE_PROGRESS_42) "Generating include/SDL2/SDL_pixels.h"
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build && /usr/bin/cmake -E copy_if_different /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-src/include/SDL_pixels.h /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_pixels.h
 
 _deps/sdl2-build/include/SDL2/SDL_platform.h: _deps/sdl2-src/include/SDL_platform.h
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/CMakeFiles --progress-num=$(CMAKE_PROGRESS_43) "Generating include/SDL2/SDL_platform.h"
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-build && /usr/bin/cmake -E copy_if_different /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-src/include/SDL_platform.h /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_platform.h
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/CMakeFiles --progress-num=$(CMAKE_PROGRESS_43) "Generating include/SDL2/SDL_platform.h"
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build && /usr/bin/cmake -E copy_if_different /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-src/include/SDL_platform.h /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_platform.h
 
 _deps/sdl2-build/include/SDL2/SDL_power.h: _deps/sdl2-src/include/SDL_power.h
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/CMakeFiles --progress-num=$(CMAKE_PROGRESS_44) "Generating include/SDL2/SDL_power.h"
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-build && /usr/bin/cmake -E copy_if_different /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-src/include/SDL_power.h /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_power.h
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/CMakeFiles --progress-num=$(CMAKE_PROGRESS_44) "Generating include/SDL2/SDL_power.h"
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build && /usr/bin/cmake -E copy_if_different /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-src/include/SDL_power.h /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_power.h
 
 _deps/sdl2-build/include/SDL2/SDL_quit.h: _deps/sdl2-src/include/SDL_quit.h
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/CMakeFiles --progress-num=$(CMAKE_PROGRESS_45) "Generating include/SDL2/SDL_quit.h"
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-build && /usr/bin/cmake -E copy_if_different /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-src/include/SDL_quit.h /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_quit.h
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/CMakeFiles --progress-num=$(CMAKE_PROGRESS_45) "Generating include/SDL2/SDL_quit.h"
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build && /usr/bin/cmake -E copy_if_different /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-src/include/SDL_quit.h /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_quit.h
 
 _deps/sdl2-build/include/SDL2/SDL_rect.h: _deps/sdl2-src/include/SDL_rect.h
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/CMakeFiles --progress-num=$(CMAKE_PROGRESS_46) "Generating include/SDL2/SDL_rect.h"
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-build && /usr/bin/cmake -E copy_if_different /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-src/include/SDL_rect.h /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_rect.h
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/CMakeFiles --progress-num=$(CMAKE_PROGRESS_46) "Generating include/SDL2/SDL_rect.h"
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build && /usr/bin/cmake -E copy_if_different /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-src/include/SDL_rect.h /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_rect.h
 
 _deps/sdl2-build/include/SDL2/SDL_render.h: _deps/sdl2-src/include/SDL_render.h
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/CMakeFiles --progress-num=$(CMAKE_PROGRESS_47) "Generating include/SDL2/SDL_render.h"
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-build && /usr/bin/cmake -E copy_if_different /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-src/include/SDL_render.h /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_render.h
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/CMakeFiles --progress-num=$(CMAKE_PROGRESS_47) "Generating include/SDL2/SDL_render.h"
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build && /usr/bin/cmake -E copy_if_different /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-src/include/SDL_render.h /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_render.h
 
 _deps/sdl2-build/include/SDL2/SDL_rwops.h: _deps/sdl2-src/include/SDL_rwops.h
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/CMakeFiles --progress-num=$(CMAKE_PROGRESS_48) "Generating include/SDL2/SDL_rwops.h"
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-build && /usr/bin/cmake -E copy_if_different /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-src/include/SDL_rwops.h /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_rwops.h
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/CMakeFiles --progress-num=$(CMAKE_PROGRESS_48) "Generating include/SDL2/SDL_rwops.h"
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build && /usr/bin/cmake -E copy_if_different /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-src/include/SDL_rwops.h /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_rwops.h
 
 _deps/sdl2-build/include/SDL2/SDL_scancode.h: _deps/sdl2-src/include/SDL_scancode.h
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/CMakeFiles --progress-num=$(CMAKE_PROGRESS_49) "Generating include/SDL2/SDL_scancode.h"
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-build && /usr/bin/cmake -E copy_if_different /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-src/include/SDL_scancode.h /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_scancode.h
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/CMakeFiles --progress-num=$(CMAKE_PROGRESS_49) "Generating include/SDL2/SDL_scancode.h"
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build && /usr/bin/cmake -E copy_if_different /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-src/include/SDL_scancode.h /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_scancode.h
 
 _deps/sdl2-build/include/SDL2/SDL_sensor.h: _deps/sdl2-src/include/SDL_sensor.h
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/CMakeFiles --progress-num=$(CMAKE_PROGRESS_50) "Generating include/SDL2/SDL_sensor.h"
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-build && /usr/bin/cmake -E copy_if_different /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-src/include/SDL_sensor.h /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_sensor.h
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/CMakeFiles --progress-num=$(CMAKE_PROGRESS_50) "Generating include/SDL2/SDL_sensor.h"
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build && /usr/bin/cmake -E copy_if_different /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-src/include/SDL_sensor.h /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_sensor.h
 
 _deps/sdl2-build/include/SDL2/SDL_shape.h: _deps/sdl2-src/include/SDL_shape.h
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/CMakeFiles --progress-num=$(CMAKE_PROGRESS_51) "Generating include/SDL2/SDL_shape.h"
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-build && /usr/bin/cmake -E copy_if_different /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-src/include/SDL_shape.h /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_shape.h
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/CMakeFiles --progress-num=$(CMAKE_PROGRESS_51) "Generating include/SDL2/SDL_shape.h"
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build && /usr/bin/cmake -E copy_if_different /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-src/include/SDL_shape.h /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_shape.h
 
 _deps/sdl2-build/include/SDL2/SDL_stdinc.h: _deps/sdl2-src/include/SDL_stdinc.h
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/CMakeFiles --progress-num=$(CMAKE_PROGRESS_52) "Generating include/SDL2/SDL_stdinc.h"
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-build && /usr/bin/cmake -E copy_if_different /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-src/include/SDL_stdinc.h /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_stdinc.h
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/CMakeFiles --progress-num=$(CMAKE_PROGRESS_52) "Generating include/SDL2/SDL_stdinc.h"
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build && /usr/bin/cmake -E copy_if_different /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-src/include/SDL_stdinc.h /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_stdinc.h
 
 _deps/sdl2-build/include/SDL2/SDL_surface.h: _deps/sdl2-src/include/SDL_surface.h
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/CMakeFiles --progress-num=$(CMAKE_PROGRESS_53) "Generating include/SDL2/SDL_surface.h"
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-build && /usr/bin/cmake -E copy_if_different /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-src/include/SDL_surface.h /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_surface.h
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/CMakeFiles --progress-num=$(CMAKE_PROGRESS_53) "Generating include/SDL2/SDL_surface.h"
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build && /usr/bin/cmake -E copy_if_different /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-src/include/SDL_surface.h /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_surface.h
 
 _deps/sdl2-build/include/SDL2/SDL_system.h: _deps/sdl2-src/include/SDL_system.h
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/CMakeFiles --progress-num=$(CMAKE_PROGRESS_54) "Generating include/SDL2/SDL_system.h"
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-build && /usr/bin/cmake -E copy_if_different /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-src/include/SDL_system.h /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_system.h
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/CMakeFiles --progress-num=$(CMAKE_PROGRESS_54) "Generating include/SDL2/SDL_system.h"
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build && /usr/bin/cmake -E copy_if_different /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-src/include/SDL_system.h /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_system.h
 
 _deps/sdl2-build/include/SDL2/SDL_syswm.h: _deps/sdl2-src/include/SDL_syswm.h
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/CMakeFiles --progress-num=$(CMAKE_PROGRESS_55) "Generating include/SDL2/SDL_syswm.h"
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-build && /usr/bin/cmake -E copy_if_different /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-src/include/SDL_syswm.h /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_syswm.h
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/CMakeFiles --progress-num=$(CMAKE_PROGRESS_55) "Generating include/SDL2/SDL_syswm.h"
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build && /usr/bin/cmake -E copy_if_different /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-src/include/SDL_syswm.h /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_syswm.h
 
 _deps/sdl2-build/include/SDL2/SDL_test.h: _deps/sdl2-src/include/SDL_test.h
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/CMakeFiles --progress-num=$(CMAKE_PROGRESS_56) "Generating include/SDL2/SDL_test.h"
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-build && /usr/bin/cmake -E copy_if_different /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-src/include/SDL_test.h /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_test.h
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/CMakeFiles --progress-num=$(CMAKE_PROGRESS_56) "Generating include/SDL2/SDL_test.h"
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build && /usr/bin/cmake -E copy_if_different /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-src/include/SDL_test.h /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_test.h
 
 _deps/sdl2-build/include/SDL2/SDL_test_assert.h: _deps/sdl2-src/include/SDL_test_assert.h
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/CMakeFiles --progress-num=$(CMAKE_PROGRESS_57) "Generating include/SDL2/SDL_test_assert.h"
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-build && /usr/bin/cmake -E copy_if_different /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-src/include/SDL_test_assert.h /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_test_assert.h
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/CMakeFiles --progress-num=$(CMAKE_PROGRESS_57) "Generating include/SDL2/SDL_test_assert.h"
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build && /usr/bin/cmake -E copy_if_different /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-src/include/SDL_test_assert.h /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_test_assert.h
 
 _deps/sdl2-build/include/SDL2/SDL_test_common.h: _deps/sdl2-src/include/SDL_test_common.h
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/CMakeFiles --progress-num=$(CMAKE_PROGRESS_58) "Generating include/SDL2/SDL_test_common.h"
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-build && /usr/bin/cmake -E copy_if_different /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-src/include/SDL_test_common.h /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_test_common.h
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/CMakeFiles --progress-num=$(CMAKE_PROGRESS_58) "Generating include/SDL2/SDL_test_common.h"
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build && /usr/bin/cmake -E copy_if_different /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-src/include/SDL_test_common.h /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_test_common.h
 
 _deps/sdl2-build/include/SDL2/SDL_test_compare.h: _deps/sdl2-src/include/SDL_test_compare.h
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/CMakeFiles --progress-num=$(CMAKE_PROGRESS_59) "Generating include/SDL2/SDL_test_compare.h"
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-build && /usr/bin/cmake -E copy_if_different /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-src/include/SDL_test_compare.h /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_test_compare.h
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/CMakeFiles --progress-num=$(CMAKE_PROGRESS_59) "Generating include/SDL2/SDL_test_compare.h"
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build && /usr/bin/cmake -E copy_if_different /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-src/include/SDL_test_compare.h /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_test_compare.h
 
 _deps/sdl2-build/include/SDL2/SDL_test_crc32.h: _deps/sdl2-src/include/SDL_test_crc32.h
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/CMakeFiles --progress-num=$(CMAKE_PROGRESS_60) "Generating include/SDL2/SDL_test_crc32.h"
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-build && /usr/bin/cmake -E copy_if_different /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-src/include/SDL_test_crc32.h /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_test_crc32.h
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/CMakeFiles --progress-num=$(CMAKE_PROGRESS_60) "Generating include/SDL2/SDL_test_crc32.h"
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build && /usr/bin/cmake -E copy_if_different /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-src/include/SDL_test_crc32.h /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_test_crc32.h
 
 _deps/sdl2-build/include/SDL2/SDL_test_font.h: _deps/sdl2-src/include/SDL_test_font.h
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/CMakeFiles --progress-num=$(CMAKE_PROGRESS_61) "Generating include/SDL2/SDL_test_font.h"
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-build && /usr/bin/cmake -E copy_if_different /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-src/include/SDL_test_font.h /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_test_font.h
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/CMakeFiles --progress-num=$(CMAKE_PROGRESS_61) "Generating include/SDL2/SDL_test_font.h"
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build && /usr/bin/cmake -E copy_if_different /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-src/include/SDL_test_font.h /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_test_font.h
 
 _deps/sdl2-build/include/SDL2/SDL_test_fuzzer.h: _deps/sdl2-src/include/SDL_test_fuzzer.h
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/CMakeFiles --progress-num=$(CMAKE_PROGRESS_62) "Generating include/SDL2/SDL_test_fuzzer.h"
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-build && /usr/bin/cmake -E copy_if_different /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-src/include/SDL_test_fuzzer.h /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_test_fuzzer.h
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/CMakeFiles --progress-num=$(CMAKE_PROGRESS_62) "Generating include/SDL2/SDL_test_fuzzer.h"
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build && /usr/bin/cmake -E copy_if_different /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-src/include/SDL_test_fuzzer.h /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_test_fuzzer.h
 
 _deps/sdl2-build/include/SDL2/SDL_test_harness.h: _deps/sdl2-src/include/SDL_test_harness.h
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/CMakeFiles --progress-num=$(CMAKE_PROGRESS_63) "Generating include/SDL2/SDL_test_harness.h"
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-build && /usr/bin/cmake -E copy_if_different /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-src/include/SDL_test_harness.h /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_test_harness.h
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/CMakeFiles --progress-num=$(CMAKE_PROGRESS_63) "Generating include/SDL2/SDL_test_harness.h"
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build && /usr/bin/cmake -E copy_if_different /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-src/include/SDL_test_harness.h /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_test_harness.h
 
 _deps/sdl2-build/include/SDL2/SDL_test_images.h: _deps/sdl2-src/include/SDL_test_images.h
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/CMakeFiles --progress-num=$(CMAKE_PROGRESS_64) "Generating include/SDL2/SDL_test_images.h"
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-build && /usr/bin/cmake -E copy_if_different /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-src/include/SDL_test_images.h /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_test_images.h
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/CMakeFiles --progress-num=$(CMAKE_PROGRESS_64) "Generating include/SDL2/SDL_test_images.h"
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build && /usr/bin/cmake -E copy_if_different /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-src/include/SDL_test_images.h /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_test_images.h
 
 _deps/sdl2-build/include/SDL2/SDL_test_log.h: _deps/sdl2-src/include/SDL_test_log.h
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/CMakeFiles --progress-num=$(CMAKE_PROGRESS_65) "Generating include/SDL2/SDL_test_log.h"
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-build && /usr/bin/cmake -E copy_if_different /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-src/include/SDL_test_log.h /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_test_log.h
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/CMakeFiles --progress-num=$(CMAKE_PROGRESS_65) "Generating include/SDL2/SDL_test_log.h"
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build && /usr/bin/cmake -E copy_if_different /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-src/include/SDL_test_log.h /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_test_log.h
 
 _deps/sdl2-build/include/SDL2/SDL_test_md5.h: _deps/sdl2-src/include/SDL_test_md5.h
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/CMakeFiles --progress-num=$(CMAKE_PROGRESS_66) "Generating include/SDL2/SDL_test_md5.h"
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-build && /usr/bin/cmake -E copy_if_different /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-src/include/SDL_test_md5.h /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_test_md5.h
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/CMakeFiles --progress-num=$(CMAKE_PROGRESS_66) "Generating include/SDL2/SDL_test_md5.h"
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build && /usr/bin/cmake -E copy_if_different /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-src/include/SDL_test_md5.h /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_test_md5.h
 
 _deps/sdl2-build/include/SDL2/SDL_test_memory.h: _deps/sdl2-src/include/SDL_test_memory.h
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/CMakeFiles --progress-num=$(CMAKE_PROGRESS_67) "Generating include/SDL2/SDL_test_memory.h"
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-build && /usr/bin/cmake -E copy_if_different /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-src/include/SDL_test_memory.h /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_test_memory.h
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/CMakeFiles --progress-num=$(CMAKE_PROGRESS_67) "Generating include/SDL2/SDL_test_memory.h"
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build && /usr/bin/cmake -E copy_if_different /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-src/include/SDL_test_memory.h /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_test_memory.h
 
 _deps/sdl2-build/include/SDL2/SDL_test_random.h: _deps/sdl2-src/include/SDL_test_random.h
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/CMakeFiles --progress-num=$(CMAKE_PROGRESS_68) "Generating include/SDL2/SDL_test_random.h"
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-build && /usr/bin/cmake -E copy_if_different /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-src/include/SDL_test_random.h /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_test_random.h
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/CMakeFiles --progress-num=$(CMAKE_PROGRESS_68) "Generating include/SDL2/SDL_test_random.h"
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build && /usr/bin/cmake -E copy_if_different /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-src/include/SDL_test_random.h /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_test_random.h
 
 _deps/sdl2-build/include/SDL2/SDL_thread.h: _deps/sdl2-src/include/SDL_thread.h
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/CMakeFiles --progress-num=$(CMAKE_PROGRESS_69) "Generating include/SDL2/SDL_thread.h"
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-build && /usr/bin/cmake -E copy_if_different /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-src/include/SDL_thread.h /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_thread.h
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/CMakeFiles --progress-num=$(CMAKE_PROGRESS_69) "Generating include/SDL2/SDL_thread.h"
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build && /usr/bin/cmake -E copy_if_different /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-src/include/SDL_thread.h /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_thread.h
 
 _deps/sdl2-build/include/SDL2/SDL_timer.h: _deps/sdl2-src/include/SDL_timer.h
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/CMakeFiles --progress-num=$(CMAKE_PROGRESS_70) "Generating include/SDL2/SDL_timer.h"
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-build && /usr/bin/cmake -E copy_if_different /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-src/include/SDL_timer.h /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_timer.h
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/CMakeFiles --progress-num=$(CMAKE_PROGRESS_70) "Generating include/SDL2/SDL_timer.h"
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build && /usr/bin/cmake -E copy_if_different /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-src/include/SDL_timer.h /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_timer.h
 
 _deps/sdl2-build/include/SDL2/SDL_touch.h: _deps/sdl2-src/include/SDL_touch.h
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/CMakeFiles --progress-num=$(CMAKE_PROGRESS_71) "Generating include/SDL2/SDL_touch.h"
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-build && /usr/bin/cmake -E copy_if_different /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-src/include/SDL_touch.h /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_touch.h
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/CMakeFiles --progress-num=$(CMAKE_PROGRESS_71) "Generating include/SDL2/SDL_touch.h"
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build && /usr/bin/cmake -E copy_if_different /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-src/include/SDL_touch.h /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_touch.h
 
 _deps/sdl2-build/include/SDL2/SDL_types.h: _deps/sdl2-src/include/SDL_types.h
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/CMakeFiles --progress-num=$(CMAKE_PROGRESS_72) "Generating include/SDL2/SDL_types.h"
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-build && /usr/bin/cmake -E copy_if_different /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-src/include/SDL_types.h /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_types.h
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/CMakeFiles --progress-num=$(CMAKE_PROGRESS_72) "Generating include/SDL2/SDL_types.h"
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build && /usr/bin/cmake -E copy_if_different /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-src/include/SDL_types.h /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_types.h
 
 _deps/sdl2-build/include/SDL2/SDL_version.h: _deps/sdl2-src/include/SDL_version.h
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/CMakeFiles --progress-num=$(CMAKE_PROGRESS_73) "Generating include/SDL2/SDL_version.h"
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-build && /usr/bin/cmake -E copy_if_different /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-src/include/SDL_version.h /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_version.h
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/CMakeFiles --progress-num=$(CMAKE_PROGRESS_73) "Generating include/SDL2/SDL_version.h"
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build && /usr/bin/cmake -E copy_if_different /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-src/include/SDL_version.h /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_version.h
 
 _deps/sdl2-build/include/SDL2/SDL_video.h: _deps/sdl2-src/include/SDL_video.h
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/CMakeFiles --progress-num=$(CMAKE_PROGRESS_74) "Generating include/SDL2/SDL_video.h"
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-build && /usr/bin/cmake -E copy_if_different /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-src/include/SDL_video.h /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_video.h
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/CMakeFiles --progress-num=$(CMAKE_PROGRESS_74) "Generating include/SDL2/SDL_video.h"
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build && /usr/bin/cmake -E copy_if_different /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-src/include/SDL_video.h /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_video.h
 
 _deps/sdl2-build/include/SDL2/SDL_vulkan.h: _deps/sdl2-src/include/SDL_vulkan.h
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/CMakeFiles --progress-num=$(CMAKE_PROGRESS_75) "Generating include/SDL2/SDL_vulkan.h"
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-build && /usr/bin/cmake -E copy_if_different /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-src/include/SDL_vulkan.h /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_vulkan.h
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/CMakeFiles --progress-num=$(CMAKE_PROGRESS_75) "Generating include/SDL2/SDL_vulkan.h"
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build && /usr/bin/cmake -E copy_if_different /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-src/include/SDL_vulkan.h /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_vulkan.h
 
 _deps/sdl2-build/include/SDL2/begin_code.h: _deps/sdl2-src/include/begin_code.h
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/CMakeFiles --progress-num=$(CMAKE_PROGRESS_76) "Generating include/SDL2/begin_code.h"
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-build && /usr/bin/cmake -E copy_if_different /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-src/include/begin_code.h /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/begin_code.h
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/CMakeFiles --progress-num=$(CMAKE_PROGRESS_76) "Generating include/SDL2/begin_code.h"
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build && /usr/bin/cmake -E copy_if_different /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-src/include/begin_code.h /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/begin_code.h
 
 _deps/sdl2-build/include/SDL2/close_code.h: _deps/sdl2-src/include/close_code.h
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/CMakeFiles --progress-num=$(CMAKE_PROGRESS_77) "Generating include/SDL2/close_code.h"
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-build && /usr/bin/cmake -E copy_if_different /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-src/include/close_code.h /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/close_code.h
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/CMakeFiles --progress-num=$(CMAKE_PROGRESS_77) "Generating include/SDL2/close_code.h"
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build && /usr/bin/cmake -E copy_if_different /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-src/include/close_code.h /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/close_code.h
 
 _deps/sdl2-build/wayland-generated-protocols/fractional-scale-v1-client-protocol.h: _deps/sdl2-src/wayland-protocols/fractional-scale-v1.xml
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/CMakeFiles --progress-num=$(CMAKE_PROGRESS_78) "Generating wayland-generated-protocols/fractional-scale-v1-client-protocol.h"
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-build && /usr/bin/wayland-scanner client-header /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-src/wayland-protocols/fractional-scale-v1.xml /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-build/wayland-generated-protocols/fractional-scale-v1-client-protocol.h
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/CMakeFiles --progress-num=$(CMAKE_PROGRESS_78) "Generating wayland-generated-protocols/fractional-scale-v1-client-protocol.h"
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build && /usr/bin/wayland-scanner client-header /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-src/wayland-protocols/fractional-scale-v1.xml /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build/wayland-generated-protocols/fractional-scale-v1-client-protocol.h
 
 _deps/sdl2-build/wayland-generated-protocols/idle-inhibit-unstable-v1-client-protocol.h: _deps/sdl2-src/wayland-protocols/idle-inhibit-unstable-v1.xml
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/CMakeFiles --progress-num=$(CMAKE_PROGRESS_79) "Generating wayland-generated-protocols/idle-inhibit-unstable-v1-client-protocol.h"
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-build && /usr/bin/wayland-scanner client-header /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-src/wayland-protocols/idle-inhibit-unstable-v1.xml /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-build/wayland-generated-protocols/idle-inhibit-unstable-v1-client-protocol.h
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/CMakeFiles --progress-num=$(CMAKE_PROGRESS_79) "Generating wayland-generated-protocols/idle-inhibit-unstable-v1-client-protocol.h"
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build && /usr/bin/wayland-scanner client-header /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-src/wayland-protocols/idle-inhibit-unstable-v1.xml /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build/wayland-generated-protocols/idle-inhibit-unstable-v1-client-protocol.h
 
 _deps/sdl2-build/wayland-generated-protocols/keyboard-shortcuts-inhibit-unstable-v1-client-protocol.h: _deps/sdl2-src/wayland-protocols/keyboard-shortcuts-inhibit-unstable-v1.xml
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/CMakeFiles --progress-num=$(CMAKE_PROGRESS_80) "Generating wayland-generated-protocols/keyboard-shortcuts-inhibit-unstable-v1-client-protocol.h"
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-build && /usr/bin/wayland-scanner client-header /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-src/wayland-protocols/keyboard-shortcuts-inhibit-unstable-v1.xml /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-build/wayland-generated-protocols/keyboard-shortcuts-inhibit-unstable-v1-client-protocol.h
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/CMakeFiles --progress-num=$(CMAKE_PROGRESS_80) "Generating wayland-generated-protocols/keyboard-shortcuts-inhibit-unstable-v1-client-protocol.h"
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build && /usr/bin/wayland-scanner client-header /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-src/wayland-protocols/keyboard-shortcuts-inhibit-unstable-v1.xml /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build/wayland-generated-protocols/keyboard-shortcuts-inhibit-unstable-v1-client-protocol.h
 
 _deps/sdl2-build/wayland-generated-protocols/pointer-constraints-unstable-v1-client-protocol.h: _deps/sdl2-src/wayland-protocols/pointer-constraints-unstable-v1.xml
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/CMakeFiles --progress-num=$(CMAKE_PROGRESS_81) "Generating wayland-generated-protocols/pointer-constraints-unstable-v1-client-protocol.h"
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-build && /usr/bin/wayland-scanner client-header /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-src/wayland-protocols/pointer-constraints-unstable-v1.xml /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-build/wayland-generated-protocols/pointer-constraints-unstable-v1-client-protocol.h
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/CMakeFiles --progress-num=$(CMAKE_PROGRESS_81) "Generating wayland-generated-protocols/pointer-constraints-unstable-v1-client-protocol.h"
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build && /usr/bin/wayland-scanner client-header /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-src/wayland-protocols/pointer-constraints-unstable-v1.xml /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build/wayland-generated-protocols/pointer-constraints-unstable-v1-client-protocol.h
 
 _deps/sdl2-build/wayland-generated-protocols/primary-selection-unstable-v1-client-protocol.h: _deps/sdl2-src/wayland-protocols/primary-selection-unstable-v1.xml
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/CMakeFiles --progress-num=$(CMAKE_PROGRESS_82) "Generating wayland-generated-protocols/primary-selection-unstable-v1-client-protocol.h"
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-build && /usr/bin/wayland-scanner client-header /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-src/wayland-protocols/primary-selection-unstable-v1.xml /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-build/wayland-generated-protocols/primary-selection-unstable-v1-client-protocol.h
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/CMakeFiles --progress-num=$(CMAKE_PROGRESS_82) "Generating wayland-generated-protocols/primary-selection-unstable-v1-client-protocol.h"
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build && /usr/bin/wayland-scanner client-header /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-src/wayland-protocols/primary-selection-unstable-v1.xml /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build/wayland-generated-protocols/primary-selection-unstable-v1-client-protocol.h
 
 _deps/sdl2-build/wayland-generated-protocols/relative-pointer-unstable-v1-client-protocol.h: _deps/sdl2-src/wayland-protocols/relative-pointer-unstable-v1.xml
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/CMakeFiles --progress-num=$(CMAKE_PROGRESS_83) "Generating wayland-generated-protocols/relative-pointer-unstable-v1-client-protocol.h"
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-build && /usr/bin/wayland-scanner client-header /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-src/wayland-protocols/relative-pointer-unstable-v1.xml /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-build/wayland-generated-protocols/relative-pointer-unstable-v1-client-protocol.h
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/CMakeFiles --progress-num=$(CMAKE_PROGRESS_83) "Generating wayland-generated-protocols/relative-pointer-unstable-v1-client-protocol.h"
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build && /usr/bin/wayland-scanner client-header /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-src/wayland-protocols/relative-pointer-unstable-v1.xml /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build/wayland-generated-protocols/relative-pointer-unstable-v1-client-protocol.h
 
 _deps/sdl2-build/wayland-generated-protocols/tablet-unstable-v2-client-protocol.h: _deps/sdl2-src/wayland-protocols/tablet-unstable-v2.xml
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/CMakeFiles --progress-num=$(CMAKE_PROGRESS_84) "Generating wayland-generated-protocols/tablet-unstable-v2-client-protocol.h"
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-build && /usr/bin/wayland-scanner client-header /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-src/wayland-protocols/tablet-unstable-v2.xml /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-build/wayland-generated-protocols/tablet-unstable-v2-client-protocol.h
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/CMakeFiles --progress-num=$(CMAKE_PROGRESS_84) "Generating wayland-generated-protocols/tablet-unstable-v2-client-protocol.h"
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build && /usr/bin/wayland-scanner client-header /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-src/wayland-protocols/tablet-unstable-v2.xml /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build/wayland-generated-protocols/tablet-unstable-v2-client-protocol.h
 
 _deps/sdl2-build/wayland-generated-protocols/text-input-unstable-v3-client-protocol.h: _deps/sdl2-src/wayland-protocols/text-input-unstable-v3.xml
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/CMakeFiles --progress-num=$(CMAKE_PROGRESS_85) "Generating wayland-generated-protocols/text-input-unstable-v3-client-protocol.h"
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-build && /usr/bin/wayland-scanner client-header /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-src/wayland-protocols/text-input-unstable-v3.xml /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-build/wayland-generated-protocols/text-input-unstable-v3-client-protocol.h
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/CMakeFiles --progress-num=$(CMAKE_PROGRESS_85) "Generating wayland-generated-protocols/text-input-unstable-v3-client-protocol.h"
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build && /usr/bin/wayland-scanner client-header /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-src/wayland-protocols/text-input-unstable-v3.xml /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build/wayland-generated-protocols/text-input-unstable-v3-client-protocol.h
 
 _deps/sdl2-build/wayland-generated-protocols/viewporter-client-protocol.h: _deps/sdl2-src/wayland-protocols/viewporter.xml
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/CMakeFiles --progress-num=$(CMAKE_PROGRESS_86) "Generating wayland-generated-protocols/viewporter-client-protocol.h"
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-build && /usr/bin/wayland-scanner client-header /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-src/wayland-protocols/viewporter.xml /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-build/wayland-generated-protocols/viewporter-client-protocol.h
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/CMakeFiles --progress-num=$(CMAKE_PROGRESS_86) "Generating wayland-generated-protocols/viewporter-client-protocol.h"
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build && /usr/bin/wayland-scanner client-header /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-src/wayland-protocols/viewporter.xml /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build/wayland-generated-protocols/viewporter-client-protocol.h
 
 _deps/sdl2-build/wayland-generated-protocols/wayland-client-protocol.h: _deps/sdl2-src/wayland-protocols/wayland.xml
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/CMakeFiles --progress-num=$(CMAKE_PROGRESS_87) "Generating wayland-generated-protocols/wayland-client-protocol.h"
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-build && /usr/bin/wayland-scanner client-header /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-src/wayland-protocols/wayland.xml /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-build/wayland-generated-protocols/wayland-client-protocol.h
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/CMakeFiles --progress-num=$(CMAKE_PROGRESS_87) "Generating wayland-generated-protocols/wayland-client-protocol.h"
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build && /usr/bin/wayland-scanner client-header /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-src/wayland-protocols/wayland.xml /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build/wayland-generated-protocols/wayland-client-protocol.h
 
 _deps/sdl2-build/wayland-generated-protocols/xdg-activation-v1-client-protocol.h: _deps/sdl2-src/wayland-protocols/xdg-activation-v1.xml
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/CMakeFiles --progress-num=$(CMAKE_PROGRESS_88) "Generating wayland-generated-protocols/xdg-activation-v1-client-protocol.h"
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-build && /usr/bin/wayland-scanner client-header /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-src/wayland-protocols/xdg-activation-v1.xml /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-build/wayland-generated-protocols/xdg-activation-v1-client-protocol.h
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/CMakeFiles --progress-num=$(CMAKE_PROGRESS_88) "Generating wayland-generated-protocols/xdg-activation-v1-client-protocol.h"
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build && /usr/bin/wayland-scanner client-header /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-src/wayland-protocols/xdg-activation-v1.xml /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build/wayland-generated-protocols/xdg-activation-v1-client-protocol.h
 
 _deps/sdl2-build/wayland-generated-protocols/xdg-decoration-unstable-v1-client-protocol.h: _deps/sdl2-src/wayland-protocols/xdg-decoration-unstable-v1.xml
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/CMakeFiles --progress-num=$(CMAKE_PROGRESS_89) "Generating wayland-generated-protocols/xdg-decoration-unstable-v1-client-protocol.h"
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-build && /usr/bin/wayland-scanner client-header /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-src/wayland-protocols/xdg-decoration-unstable-v1.xml /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-build/wayland-generated-protocols/xdg-decoration-unstable-v1-client-protocol.h
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/CMakeFiles --progress-num=$(CMAKE_PROGRESS_89) "Generating wayland-generated-protocols/xdg-decoration-unstable-v1-client-protocol.h"
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build && /usr/bin/wayland-scanner client-header /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-src/wayland-protocols/xdg-decoration-unstable-v1.xml /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build/wayland-generated-protocols/xdg-decoration-unstable-v1-client-protocol.h
 
 _deps/sdl2-build/wayland-generated-protocols/xdg-output-unstable-v1-client-protocol.h: _deps/sdl2-src/wayland-protocols/xdg-output-unstable-v1.xml
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/CMakeFiles --progress-num=$(CMAKE_PROGRESS_90) "Generating wayland-generated-protocols/xdg-output-unstable-v1-client-protocol.h"
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-build && /usr/bin/wayland-scanner client-header /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-src/wayland-protocols/xdg-output-unstable-v1.xml /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-build/wayland-generated-protocols/xdg-output-unstable-v1-client-protocol.h
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/CMakeFiles --progress-num=$(CMAKE_PROGRESS_90) "Generating wayland-generated-protocols/xdg-output-unstable-v1-client-protocol.h"
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build && /usr/bin/wayland-scanner client-header /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-src/wayland-protocols/xdg-output-unstable-v1.xml /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build/wayland-generated-protocols/xdg-output-unstable-v1-client-protocol.h
 
 _deps/sdl2-build/wayland-generated-protocols/xdg-shell-client-protocol.h: _deps/sdl2-src/wayland-protocols/xdg-shell.xml
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/CMakeFiles --progress-num=$(CMAKE_PROGRESS_91) "Generating wayland-generated-protocols/xdg-shell-client-protocol.h"
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-build && /usr/bin/wayland-scanner client-header /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-src/wayland-protocols/xdg-shell.xml /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-build/wayland-generated-protocols/xdg-shell-client-protocol.h
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/CMakeFiles --progress-num=$(CMAKE_PROGRESS_91) "Generating wayland-generated-protocols/xdg-shell-client-protocol.h"
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build && /usr/bin/wayland-scanner client-header /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-src/wayland-protocols/xdg-shell.xml /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build/wayland-generated-protocols/xdg-shell-client-protocol.h
 
 sdl_headers_copy: _deps/sdl2-build/CMakeFiles/sdl_headers_copy
 sdl_headers_copy: _deps/sdl2-build/include/SDL2/SDL.h
@@ -622,10 +622,10 @@ _deps/sdl2-build/CMakeFiles/sdl_headers_copy.dir/build: sdl_headers_copy
 .PHONY : _deps/sdl2-build/CMakeFiles/sdl_headers_copy.dir/build
 
 _deps/sdl2-build/CMakeFiles/sdl_headers_copy.dir/clean:
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-build && $(CMAKE_COMMAND) -P CMakeFiles/sdl_headers_copy.dir/cmake_clean.cmake
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build && $(CMAKE_COMMAND) -P CMakeFiles/sdl_headers_copy.dir/cmake_clean.cmake
 .PHONY : _deps/sdl2-build/CMakeFiles/sdl_headers_copy.dir/clean
 
 _deps/sdl2-build/CMakeFiles/sdl_headers_copy.dir/depend:
-	cd /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20 && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20 /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-src /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20 /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-build /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-build/CMakeFiles/sdl_headers_copy.dir/DependInfo.cmake "--color=$(COLOR)"
+	cd /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20 && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20 /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-src /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20 /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build/CMakeFiles/sdl_headers_copy.dir/DependInfo.cmake "--color=$(COLOR)"
 .PHONY : _deps/sdl2-build/CMakeFiles/sdl_headers_copy.dir/depend
 

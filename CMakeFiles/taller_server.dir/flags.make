@@ -6,5 +6,5 @@ CXX_DEFINES =
 
 CXX_INCLUDES = -I/home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/. -I/home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/yaml-cpp-src/include
 
-CXX_FLAGS = -std=gnu++20 -Wall -Wextra -Wmisleading-indentation -Wzero-as-null-pointer-constant -Wnon-virtual-dtor -Wunused -Woverloaded-virtual -Wpedantic -Wnull-dereference -Wformat=2 -Wimplicit-fallthrough -Wduplicated-cond -Wduplicated-branches -Wlogical-op -Wsuggest-override -Werror
+CXX_FLAGS = -std=gnu++20 -fPIE -Wall -Wextra -Wmisleading-indentation -Wzero-as-null-pointer-constant -Wnon-virtual-dtor -Wunused -Woverloaded-virtual -Wpedantic -Wnull-dereference -Wformat=2 -Wimplicit-fallthrough -Wduplicated-cond -Wduplicated-branches -Wlogical-op -Wsuggest-override
 

@@ -14,6 +14,7 @@
 #include "../common/queue.h"
 #include "client_sender.h"
 #include "client_receiver.h"
+#include "client.h"
 #include "../common/gameState.h"
 #include <SDL2pp/SDL.hh>
 #include <SDL2pp/Window.hh>
@@ -28,11 +29,7 @@ class GameWindow {
 private:
 
     Client &client;
-
-    Queue<InputCmd> input_queue;
-    Queue<GameStateDTO> state_queue;
-    ClientSender sender;
-    ClientReceiver receiver;
+    ClientReceiver& receiver;
 
     bool running = false;
     bool backwards = false;

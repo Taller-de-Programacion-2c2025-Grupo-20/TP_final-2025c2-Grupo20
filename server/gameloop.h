@@ -6,7 +6,7 @@
 #include <memory>
 #include <vector>
 #include <stdint.h>
-#include <box2d/box2d.h>
+#include <Box2D/Box2D.h>
 #include <yaml-cpp/yaml.h> 
 
 #include "../common/thread.h"
@@ -30,7 +30,7 @@ private:
 
     std::vector<std::unique_ptr<Wall>> world_walls;
     std::vector<std::unique_ptr<Checkpoint>> world_checkpoints;
-    CollisionListener collision_listener;
+    CollisionsListener collisions_listener;
     
     std::chrono::steady_clock::time_point start_time;
 
@@ -44,7 +44,7 @@ public:
     Gameloop(Queue<InputCmd>& gameloop_queue, QueuesMonitor& clients_queues, b2World& world);
 
     void run() override;
-    void stop();
+    void stop() override;
 
     void add_player(uint8_t player_id);
 };

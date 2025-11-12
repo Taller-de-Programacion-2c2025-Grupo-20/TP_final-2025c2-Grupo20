@@ -35,11 +35,8 @@ void ClientHandler::join() {
     sender.join();
 }
 
-bool ClientHandler::is_alive() {
-    if (!receiver.is_alive() || !sender.is_alive()) {
-        is_alive_flag = false;
-    }
-    return is_alive_flag;
+bool ClientHandler::is_alive() const {
+    return receiver.is_alive() || sender.is_alive();
 }
 
 uint8_t ClientHandler::get_id() const { return id; }
@@ -57,5 +54,13 @@ void ClientHandler::send_login_ok(uint8_t player_id) {
         protocol.send_login_ok(player_id);
     } catch (const std::exception& e) {
         is_alive_flag = false;
+    }
+}
+
+void ClientHandler::send_lobby_update(const LobbyStateDTO& state) {
+    try {
+        protocol.send_lobby_state(state);
+    } catch (const std::exception& e) {
+        is_alive_flag = false; 
     }
 }

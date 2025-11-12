@@ -140,6 +140,7 @@ CMakeFiles/taller_server.dir/server/server_protocol.cpp.o: \
  /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/server/../common/serverState.h \
  /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/server/../common/clientCommand.h \
  /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/server/../common/constants.h \
+ /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/server/../common/lobbyState.h \
  /usr/include/c++/13/cstring /usr/include/string.h /usr/include/strings.h \
  /usr/include/c++/13/utility /usr/include/c++/13/bits/stl_relops.h \
  /usr/include/arpa/inet.h /usr/include/netinet/in.h \

@@ -1,4 +1,4 @@
-# Install script for directory: /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-src
+# Install script for directory: /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-src
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

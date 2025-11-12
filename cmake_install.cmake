@@ -1,4 +1,4 @@
-# Install script for directory: /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20
+# Install script for directory: /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -44,37 +44,17 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/common/cmake_install.cmake")
+  include("/home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/common/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2-build/cmake_install.cmake")
+  include("/home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/yaml-cpp-build/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2_image-build/cmake_install.cmake")
-endif()
-
-if(NOT CMAKE_INSTALL_LOCAL_ONLY)
-  # Include the install script for the subdirectory.
-  include("/home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2_mixer-build/cmake_install.cmake")
-endif()
-
-if(NOT CMAKE_INSTALL_LOCAL_ONLY)
-  # Include the install script for the subdirectory.
-  include("/home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/sdl2_ttf-build/cmake_install.cmake")
-endif()
-
-if(NOT CMAKE_INSTALL_LOCAL_ONLY)
-  # Include the install script for the subdirectory.
-  include("/home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/_deps/libsdl2pp-build/cmake_install.cmake")
-endif()
-
-if(NOT CMAKE_INSTALL_LOCAL_ONLY)
-  # Include the install script for the subdirectory.
-  include("/home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/client/cmake_install.cmake")
+  include("/home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/server/cmake_install.cmake")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT)
@@ -85,5 +65,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

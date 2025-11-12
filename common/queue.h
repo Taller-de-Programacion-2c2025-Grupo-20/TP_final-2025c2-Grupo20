@@ -7,6 +7,7 @@
 #include <mutex>
 #include <queue>
 #include <stdexcept>
+#include <utility>
 
 struct ClosedQueue: public std::runtime_error {
     ClosedQueue(): std::runtime_error("The queue is closed") {}
@@ -95,6 +96,12 @@ public:
         }
 
         q.push(val);
+    }
+
+    void push(T&& val) {
+        std::unique_lock<std::mutex> lock(mtx);
+        q.push(std::move(val));
+        is_not_empty.notify_one();
     }
 
 

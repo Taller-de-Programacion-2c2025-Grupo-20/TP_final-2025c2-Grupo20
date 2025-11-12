@@ -1,37 +1,25 @@
 #ifndef ACCEPTOR_H
 #define ACCEPTOR_H
 
-#include <list>
-
+#include <memory>
+#include <atomic>
 #include "../common/queue.h"
 #include "../common/socket.h"
 #include "../common/thread.h"
-#include "../common/clientCommand.h"
-
 #include "client_handler.h"
-#include "queues_monitor.h"
 
-#include "gameloop.h"
-
-class Acceptor: public Thread {
+class Acceptor : public Thread {
 private:
-    Socket skt;
-    Queue<InputCmd>& gameloop_queue;
-    QueuesMonitor& clients_queues;
-    std::list<ClientHandler*> client_handlers_list;
-
-    Gameloop& gameloop;
-
-    void reap();
-    void clear();
+    Socket& listener; 
+    
+    Queue<std::unique_ptr<ClientHandler>>& new_clients_queue;
 
 public:
     void run() override;
-
     void stop() override;
 
-    explicit Acceptor(const char* port, Queue<InputCmd>& gameloop_queue,
-                      QueuesMonitor& clients_queues, Gameloop& gameloop);
+    explicit Acceptor(Socket& listener,
+                      Queue<std::unique_ptr<ClientHandler>>& new_clients_queue);
 };
 
 #endif

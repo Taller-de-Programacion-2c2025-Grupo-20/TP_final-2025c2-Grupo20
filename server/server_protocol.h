@@ -21,6 +21,7 @@ private:
 
 public:
     uint8_t receiveCommand();
+    uint8_t receiveUint8_t();
     void send_game_state(const GameStateDTO& state);
     std::string receive_login_attempt();
     InputCmd receive_input_command();

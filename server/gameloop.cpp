@@ -1,32 +1,46 @@
 #include "gameloop.h"
-
 #include <chrono>
 #include <thread>
+#include <yaml-cpp/yaml.h>
+#include <iostream>
 
 #include "../common/constants.h"
 #include "../common/queue.h"
 
-const float timeStep = 1.f / 60.f;
+const float timeStep = 1.f/60.f;
 const float PIXELS_PER_METER = 16.0f;
+
+Gameloop::Gameloop(Queue<InputCmd>& gameloop_queue, QueuesMonitor& clients_queues, b2World& world):
+        gameloop_queue(gameloop_queue), 
+        clients_queues(clients_queues), 
+        world(world)
+{
+    world_checkpoints.push_back(std::make_unique<Checkpoint>(
+                    world, b2Vec2(5.f, 10.f), 2, 2, 0
+                ));
+    world.SetContactListener(&collision_listener);
+    loadMapData();
+}
+
 
 void Gameloop::handleInput(const InputCmd& input) {
     auto it = clients_cars.find(input.player_id);
-
     if (it == clients_cars.end()) {
         return;
     }
-
     it->second->handleInput(input);
-
-    std::cout << "Pos del auto en x: " << it->second->position().x
-              << " Pos del auto en y: " << it->second->position().y << "\n"
-              << "Angulo: " << it->second->angle() << "\n";
 }
 
-void Gameloop::addCar(uint8_t client_id) {
-    mutex.lock();
-    clients_cars.emplace(client_id, std::make_unique<Car>(world, b2Vec2(5.f, 5.f)));
-    mutex.unlock();
+void Gameloop::add_player(uint8_t player_id) {
+    
+    b2Vec2 spawn_position(5.f + player_id, 5.f); 
+    clients_cars.emplace(
+        std::piecewise_construct,
+        std::forward_as_tuple(player_id),
+        std::forward_as_tuple(world, spawn_position) 
+    );
+    
+    std::cout << "Auto para jugador " << (int)player_id << " creado en la simulación." << std::endl;
 }
 
 void Gameloop::loadWalls(const YAML::Node& map_data) {
@@ -37,10 +51,8 @@ void Gameloop::loadWalls(const YAML::Node& map_data) {
                 float y_pixels = obj["y"].as<float>();
                 float width_pixels = obj["width"].as<float>();
                 float height_pixels = obj["height"].as<float>();
-
                 float x_meters = (x_pixels + width_pixels / 2) / PIXELS_PER_METER;
                 float y_meters = (y_pixels + height_pixels / 2) / PIXELS_PER_METER;
-
                 float width_meters = (width_pixels / 2) / PIXELS_PER_METER;
                 float height_meters = (height_pixels / 2) / PIXELS_PER_METER;
 
@@ -54,7 +66,6 @@ void Gameloop::loadWalls(const YAML::Node& map_data) {
 
 void Gameloop::loadMapData() {
     YAML::Node map_data = YAML::LoadFile("../liberty.yaml");
-
     loadWalls(map_data);
 }
 
@@ -62,7 +73,6 @@ void Gameloop::readUsersInput() {
     InputCmd input;
     while (gameloop_queue.try_pop(input)) {
         handleInput(input);
-        std::cout << "Player id: " << static_cast<int>(input.player_id) << "\n";
     }
 }
 
@@ -72,7 +82,6 @@ GameStateDTO Gameloop::getCurrentGameState() {
 
     for (auto& pair: clients_cars) {
         auto& current_client_car = pair.second;
-
         PlayerState current_player_state;
         current_player_state.player_id = pair.first;
         current_player_state.state =
@@ -81,35 +90,37 @@ GameStateDTO Gameloop::getCurrentGameState() {
         current_player_state.health = current_client_car->health();
         current_state.players.push_back(current_player_state);
     }
-
     return current_state;
 }
 
 void Gameloop::run() {
-
     using clock = std::chrono::steady_clock;
     const std::chrono::duration<double> rate(1.0 / 60.0);
-    auto t1 = clock::now();
+    start_time = clock::now();
+    auto t1 = start_time;
 
     while (should_keep_running()) {
         try {
-            mutex.lock();
-            readUsersInput();
-
-            for (auto& pair: clients_cars) {
-                auto& client_car = pair.second;
-                client_car->updateCarPhysics();
+            {
+                std::lock_guard<std::mutex> lock(mutex);
+                readUsersInput(); 
+                for (auto& pair: clients_cars) {
+                    pair.second->updateCarPhysics();
+                }
             }
 
             world.Step(timeStep, 6, 2);
 
-            GameStateDTO current_state = getCurrentGameState();
-            
-            current_state.elapsed_time = std::chrono::duration<float>(std::chrono::steady_clock::now() - start_time).count();
+            GameStateDTO current_state;
+            {
+                std::lock_guard<std::mutex> lock(mutex);
+                
+                current_state = getCurrentGameState();
+            }
 
+            current_state.elapsed_time = std::chrono::duration<float>(clock::now() - start_time).count();
             clients_queues.broadcast(current_state);
 
-            mutex.unlock();
 
             auto t2 = clock::now();
             auto rest = rate - (t2 - t1);
@@ -127,7 +138,7 @@ void Gameloop::run() {
             t1 += std::chrono::duration_cast<std::chrono::steady_clock::duration>(rate);
 
         } catch (const ClosedQueue&) {
-            break;
+            break; 
         }
     }
 }
@@ -135,13 +146,4 @@ void Gameloop::run() {
 void Gameloop::stop() {
     Thread::stop();
     gameloop_queue.close();
-}
-
-Gameloop::Gameloop(Queue<InputCmd>& gameloop_queue, QueuesMonitor& clients_queues):
-        gameloop_queue(gameloop_queue), clients_queues(clients_queues), world(b2Vec2(0, 0), true) {
-    world_checkpoints.push_back(std::make_unique<Checkpoint>(
-                    world, b2Vec2(5.f, 10.f), 2, 2, 0
-                ));
-    world.SetContactListener(&collision_listener);
-    loadMapData();
 }

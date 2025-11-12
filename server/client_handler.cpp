@@ -1,35 +1,61 @@
 #include "client_handler.h"
+#include <utility>
 
-#include <string>
+ClientHandler::ClientHandler(Socket&& skt, uint8_t id):
+        id(id),
+        protocol(std::move(skt)),
+        is_alive_flag(true),
+        receiver(protocol, id),
+        sender(protocol)
+{}
 
-#include "../common/liberror.h"
-#include "../common/socket.h"
-#include "../common/gameState.h"
+ClientHandler::~ClientHandler() {}
 
-void ClientHandler::start() {
+void ClientHandler::start_in_lobby(Queue<LobbyCommand>& lobby_queue) {
+    receiver.set_lobby_queue(lobby_queue);
     receiver.start();
     sender.start();
 }
 
+void ClientHandler::connect_to_match(Queue<InputCmd>& game_queue, 
+                                     Queue<GameStateDTO>& sender_queue) {
+    receiver.set_game_queue(game_queue);
+    sender.set_state_queue(sender_queue);
+}
+
 void ClientHandler::stop() {
+    is_alive_flag = false;
+    protocol.close();
     receiver.stop();
     sender.stop();
 }
 
 void ClientHandler::join() {
-    sender.join();
     receiver.join();
+    sender.join();
 }
 
-bool ClientHandler::is_alive() { return receiver.is_alive(); }
+bool ClientHandler::is_alive() {
+    if (!receiver.is_alive() || !sender.is_alive()) {
+        is_alive_flag = false;
+    }
+    return is_alive_flag;
+}
 
-uint8_t ClientHandler::client_id() { return id; }
+uint8_t ClientHandler::get_id() const { return id; }
 
-ClientHandler::ClientHandler(Socket&& skt, Queue<InputCmd>& gameloop_queue,
-                             Queue<GameStateDTO>& client_queue, uint8_t id):
-        protocol(std::move(skt)),
-        id(id),
-        receiver(protocol, gameloop_queue, id),
-        sender(protocol, client_queue) {}
+void ClientHandler::set_username(const std::string& name) {
+    this->username = name;
+}
 
-ClientHandler::~ClientHandler() {}
+std::string ClientHandler::get_username() const {
+    return this->username;
+}
+
+void ClientHandler::send_login_ok(uint8_t player_id) {
+    try {
+        protocol.send_login_ok(player_id);
+    } catch (const std::exception& e) {
+        is_alive_flag = false;
+    }
+}

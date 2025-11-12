@@ -18,5 +18,5 @@ target_sources(taller_common
     socket.h
     thread.h
     gameState.h
-
+    lobbyCommand.h
     )

@@ -57,10 +57,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20
+CMAKE_SOURCE_DIR = /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20
+CMAKE_BINARY_DIR = /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -87,9 +87,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/CMakeFiles /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20//CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/CMakeFiles /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20//CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/gero/Documents/Taller/TP3/TP_final-2025c2-Grupo20/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -113,6 +113,7 @@ preinstall/fast:
 
 # clear depends
 depend:
+	$(CMAKE_COMMAND) -P /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/CMakeFiles/VerifyGlobs.cmake
 	$(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
@@ -130,389 +131,446 @@ taller_common/fast:
 .PHONY : taller_common/fast
 
 #=============================================================================
-# Target rules for targets named taller_client
+# Target rules for targets named taller_server
 
 # Build rule for target.
-taller_client: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 taller_client
-.PHONY : taller_client
+taller_server: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 taller_server
+.PHONY : taller_server
 
 # fast build rule for target.
-taller_client/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/taller_client.dir/build.make CMakeFiles/taller_client.dir/build
-.PHONY : taller_client/fast
+taller_server/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/taller_server.dir/build.make CMakeFiles/taller_server.dir/build
+.PHONY : taller_server/fast
 
 #=============================================================================
-# Target rules for targets named taller_client_autogen_timestamp_deps
+# Target rules for targets named Experimental
 
 # Build rule for target.
-taller_client_autogen_timestamp_deps: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 taller_client_autogen_timestamp_deps
-.PHONY : taller_client_autogen_timestamp_deps
+Experimental: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Experimental
+.PHONY : Experimental
 
 # fast build rule for target.
-taller_client_autogen_timestamp_deps/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/taller_client_autogen_timestamp_deps.dir/build.make CMakeFiles/taller_client_autogen_timestamp_deps.dir/build
-.PHONY : taller_client_autogen_timestamp_deps/fast
+Experimental/fast:
+	$(MAKE) $(MAKESILENT) -f _deps/yaml-cpp-build/CMakeFiles/Experimental.dir/build.make _deps/yaml-cpp-build/CMakeFiles/Experimental.dir/build
+.PHONY : Experimental/fast
 
 #=============================================================================
-# Target rules for targets named taller_client_autogen
+# Target rules for targets named Nightly
 
 # Build rule for target.
-taller_client_autogen: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 taller_client_autogen
-.PHONY : taller_client_autogen
+Nightly: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Nightly
+.PHONY : Nightly
 
 # fast build rule for target.
-taller_client_autogen/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/taller_client_autogen.dir/build.make CMakeFiles/taller_client_autogen.dir/build
-.PHONY : taller_client_autogen/fast
+Nightly/fast:
+	$(MAKE) $(MAKESILENT) -f _deps/yaml-cpp-build/CMakeFiles/Nightly.dir/build.make _deps/yaml-cpp-build/CMakeFiles/Nightly.dir/build
+.PHONY : Nightly/fast
 
 #=============================================================================
-# Target rules for targets named sdl_headers_copy
+# Target rules for targets named Continuous
 
 # Build rule for target.
-sdl_headers_copy: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 sdl_headers_copy
-.PHONY : sdl_headers_copy
+Continuous: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Continuous
+.PHONY : Continuous
 
 # fast build rule for target.
-sdl_headers_copy/fast:
-	$(MAKE) $(MAKESILENT) -f _deps/sdl2-build/CMakeFiles/sdl_headers_copy.dir/build.make _deps/sdl2-build/CMakeFiles/sdl_headers_copy.dir/build
-.PHONY : sdl_headers_copy/fast
+Continuous/fast:
+	$(MAKE) $(MAKESILENT) -f _deps/yaml-cpp-build/CMakeFiles/Continuous.dir/build.make _deps/yaml-cpp-build/CMakeFiles/Continuous.dir/build
+.PHONY : Continuous/fast
 
 #=============================================================================
-# Target rules for targets named SDL2main
+# Target rules for targets named NightlyMemoryCheck
 
 # Build rule for target.
-SDL2main: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 SDL2main
-.PHONY : SDL2main
+NightlyMemoryCheck: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 NightlyMemoryCheck
+.PHONY : NightlyMemoryCheck
 
 # fast build rule for target.
-SDL2main/fast:
-	$(MAKE) $(MAKESILENT) -f _deps/sdl2-build/CMakeFiles/SDL2main.dir/build.make _deps/sdl2-build/CMakeFiles/SDL2main.dir/build
-.PHONY : SDL2main/fast
+NightlyMemoryCheck/fast:
+	$(MAKE) $(MAKESILENT) -f _deps/yaml-cpp-build/CMakeFiles/NightlyMemoryCheck.dir/build.make _deps/yaml-cpp-build/CMakeFiles/NightlyMemoryCheck.dir/build
+.PHONY : NightlyMemoryCheck/fast
 
 #=============================================================================
-# Target rules for targets named SDL2
+# Target rules for targets named NightlyStart
 
 # Build rule for target.
-SDL2: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 SDL2
-.PHONY : SDL2
+NightlyStart: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 NightlyStart
+.PHONY : NightlyStart
 
 # fast build rule for target.
-SDL2/fast:
-	$(MAKE) $(MAKESILENT) -f _deps/sdl2-build/CMakeFiles/SDL2.dir/build.make _deps/sdl2-build/CMakeFiles/SDL2.dir/build
-.PHONY : SDL2/fast
+NightlyStart/fast:
+	$(MAKE) $(MAKESILENT) -f _deps/yaml-cpp-build/CMakeFiles/NightlyStart.dir/build.make _deps/yaml-cpp-build/CMakeFiles/NightlyStart.dir/build
+.PHONY : NightlyStart/fast
 
 #=============================================================================
-# Target rules for targets named SDL2-static
+# Target rules for targets named NightlyUpdate
 
 # Build rule for target.
-SDL2-static: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 SDL2-static
-.PHONY : SDL2-static
+NightlyUpdate: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 NightlyUpdate
+.PHONY : NightlyUpdate
 
 # fast build rule for target.
-SDL2-static/fast:
-	$(MAKE) $(MAKESILENT) -f _deps/sdl2-build/CMakeFiles/SDL2-static.dir/build.make _deps/sdl2-build/CMakeFiles/SDL2-static.dir/build
-.PHONY : SDL2-static/fast
+NightlyUpdate/fast:
+	$(MAKE) $(MAKESILENT) -f _deps/yaml-cpp-build/CMakeFiles/NightlyUpdate.dir/build.make _deps/yaml-cpp-build/CMakeFiles/NightlyUpdate.dir/build
+.PHONY : NightlyUpdate/fast
 
 #=============================================================================
-# Target rules for targets named SDL2_test
+# Target rules for targets named NightlyConfigure
 
 # Build rule for target.
-SDL2_test: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 SDL2_test
-.PHONY : SDL2_test
+NightlyConfigure: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 NightlyConfigure
+.PHONY : NightlyConfigure
 
 # fast build rule for target.
-SDL2_test/fast:
-	$(MAKE) $(MAKESILENT) -f _deps/sdl2-build/CMakeFiles/SDL2_test.dir/build.make _deps/sdl2-build/CMakeFiles/SDL2_test.dir/build
-.PHONY : SDL2_test/fast
+NightlyConfigure/fast:
+	$(MAKE) $(MAKESILENT) -f _deps/yaml-cpp-build/CMakeFiles/NightlyConfigure.dir/build.make _deps/yaml-cpp-build/CMakeFiles/NightlyConfigure.dir/build
+.PHONY : NightlyConfigure/fast
 
 #=============================================================================
-# Target rules for targets named uninstall
+# Target rules for targets named NightlyBuild
 
 # Build rule for target.
-uninstall: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 uninstall
-.PHONY : uninstall
+NightlyBuild: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 NightlyBuild
+.PHONY : NightlyBuild
 
 # fast build rule for target.
-uninstall/fast:
-	$(MAKE) $(MAKESILENT) -f _deps/sdl2-build/CMakeFiles/uninstall.dir/build.make _deps/sdl2-build/CMakeFiles/uninstall.dir/build
-.PHONY : uninstall/fast
+NightlyBuild/fast:
+	$(MAKE) $(MAKESILENT) -f _deps/yaml-cpp-build/CMakeFiles/NightlyBuild.dir/build.make _deps/yaml-cpp-build/CMakeFiles/NightlyBuild.dir/build
+.PHONY : NightlyBuild/fast
 
 #=============================================================================
-# Target rules for targets named SDL2_image
+# Target rules for targets named NightlyTest
 
 # Build rule for target.
-SDL2_image: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 SDL2_image
-.PHONY : SDL2_image
+NightlyTest: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 NightlyTest
+.PHONY : NightlyTest
 
 # fast build rule for target.
-SDL2_image/fast:
-	$(MAKE) $(MAKESILENT) -f _deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/build.make _deps/sdl2_image-build/CMakeFiles/SDL2_image.dir/build
-.PHONY : SDL2_image/fast
+NightlyTest/fast:
+	$(MAKE) $(MAKESILENT) -f _deps/yaml-cpp-build/CMakeFiles/NightlyTest.dir/build.make _deps/yaml-cpp-build/CMakeFiles/NightlyTest.dir/build
+.PHONY : NightlyTest/fast
 
 #=============================================================================
-# Target rules for targets named SDL2_mixer
+# Target rules for targets named NightlyCoverage
 
 # Build rule for target.
-SDL2_mixer: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 SDL2_mixer
-.PHONY : SDL2_mixer
+NightlyCoverage: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 NightlyCoverage
+.PHONY : NightlyCoverage
 
 # fast build rule for target.
-SDL2_mixer/fast:
-	$(MAKE) $(MAKESILENT) -f _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/build.make _deps/sdl2_mixer-build/CMakeFiles/SDL2_mixer.dir/build
-.PHONY : SDL2_mixer/fast
+NightlyCoverage/fast:
+	$(MAKE) $(MAKESILENT) -f _deps/yaml-cpp-build/CMakeFiles/NightlyCoverage.dir/build.make _deps/yaml-cpp-build/CMakeFiles/NightlyCoverage.dir/build
+.PHONY : NightlyCoverage/fast
 
 #=============================================================================
-# Target rules for targets named SDL2_ttf
+# Target rules for targets named NightlyMemCheck
 
 # Build rule for target.
-SDL2_ttf: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 SDL2_ttf
-.PHONY : SDL2_ttf
+NightlyMemCheck: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 NightlyMemCheck
+.PHONY : NightlyMemCheck
 
 # fast build rule for target.
-SDL2_ttf/fast:
-	$(MAKE) $(MAKESILENT) -f _deps/sdl2_ttf-build/CMakeFiles/SDL2_ttf.dir/build.make _deps/sdl2_ttf-build/CMakeFiles/SDL2_ttf.dir/build
-.PHONY : SDL2_ttf/fast
+NightlyMemCheck/fast:
+	$(MAKE) $(MAKESILENT) -f _deps/yaml-cpp-build/CMakeFiles/NightlyMemCheck.dir/build.make _deps/yaml-cpp-build/CMakeFiles/NightlyMemCheck.dir/build
+.PHONY : NightlyMemCheck/fast
 
 #=============================================================================
-# Target rules for targets named SDL2pp
+# Target rules for targets named NightlySubmit
 
 # Build rule for target.
-SDL2pp: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 SDL2pp
-.PHONY : SDL2pp
+NightlySubmit: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 NightlySubmit
+.PHONY : NightlySubmit
 
 # fast build rule for target.
-SDL2pp/fast:
-	$(MAKE) $(MAKESILENT) -f _deps/libsdl2pp-build/CMakeFiles/SDL2pp.dir/build.make _deps/libsdl2pp-build/CMakeFiles/SDL2pp.dir/build
-.PHONY : SDL2pp/fast
+NightlySubmit/fast:
+	$(MAKE) $(MAKESILENT) -f _deps/yaml-cpp-build/CMakeFiles/NightlySubmit.dir/build.make _deps/yaml-cpp-build/CMakeFiles/NightlySubmit.dir/build
+.PHONY : NightlySubmit/fast
 
-client/Pantallas/carselectscreen.o: client/Pantallas/carselectscreen.cpp.o
-.PHONY : client/Pantallas/carselectscreen.o
+#=============================================================================
+# Target rules for targets named ExperimentalStart
 
-# target to build an object file
-client/Pantallas/carselectscreen.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/taller_client.dir/build.make CMakeFiles/taller_client.dir/client/Pantallas/carselectscreen.cpp.o
-.PHONY : client/Pantallas/carselectscreen.cpp.o
+# Build rule for target.
+ExperimentalStart: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 ExperimentalStart
+.PHONY : ExperimentalStart
 
-client/Pantallas/carselectscreen.i: client/Pantallas/carselectscreen.cpp.i
-.PHONY : client/Pantallas/carselectscreen.i
+# fast build rule for target.
+ExperimentalStart/fast:
+	$(MAKE) $(MAKESILENT) -f _deps/yaml-cpp-build/CMakeFiles/ExperimentalStart.dir/build.make _deps/yaml-cpp-build/CMakeFiles/ExperimentalStart.dir/build
+.PHONY : ExperimentalStart/fast
 
-# target to preprocess a source file
-client/Pantallas/carselectscreen.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/taller_client.dir/build.make CMakeFiles/taller_client.dir/client/Pantallas/carselectscreen.cpp.i
-.PHONY : client/Pantallas/carselectscreen.cpp.i
+#=============================================================================
+# Target rules for targets named ExperimentalUpdate
 
-client/Pantallas/carselectscreen.s: client/Pantallas/carselectscreen.cpp.s
-.PHONY : client/Pantallas/carselectscreen.s
+# Build rule for target.
+ExperimentalUpdate: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 ExperimentalUpdate
+.PHONY : ExperimentalUpdate
 
-# target to generate assembly for a file
-client/Pantallas/carselectscreen.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/taller_client.dir/build.make CMakeFiles/taller_client.dir/client/Pantallas/carselectscreen.cpp.s
-.PHONY : client/Pantallas/carselectscreen.cpp.s
+# fast build rule for target.
+ExperimentalUpdate/fast:
+	$(MAKE) $(MAKESILENT) -f _deps/yaml-cpp-build/CMakeFiles/ExperimentalUpdate.dir/build.make _deps/yaml-cpp-build/CMakeFiles/ExperimentalUpdate.dir/build
+.PHONY : ExperimentalUpdate/fast
 
-client/Pantallas/lobbyscreen.o: client/Pantallas/lobbyscreen.cpp.o
-.PHONY : client/Pantallas/lobbyscreen.o
+#=============================================================================
+# Target rules for targets named ExperimentalConfigure
 
-# target to build an object file
-client/Pantallas/lobbyscreen.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/taller_client.dir/build.make CMakeFiles/taller_client.dir/client/Pantallas/lobbyscreen.cpp.o
-.PHONY : client/Pantallas/lobbyscreen.cpp.o
+# Build rule for target.
+ExperimentalConfigure: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 ExperimentalConfigure
+.PHONY : ExperimentalConfigure
 
-client/Pantallas/lobbyscreen.i: client/Pantallas/lobbyscreen.cpp.i
-.PHONY : client/Pantallas/lobbyscreen.i
+# fast build rule for target.
+ExperimentalConfigure/fast:
+	$(MAKE) $(MAKESILENT) -f _deps/yaml-cpp-build/CMakeFiles/ExperimentalConfigure.dir/build.make _deps/yaml-cpp-build/CMakeFiles/ExperimentalConfigure.dir/build
+.PHONY : ExperimentalConfigure/fast
 
-# target to preprocess a source file
-client/Pantallas/lobbyscreen.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/taller_client.dir/build.make CMakeFiles/taller_client.dir/client/Pantallas/lobbyscreen.cpp.i
-.PHONY : client/Pantallas/lobbyscreen.cpp.i
+#=============================================================================
+# Target rules for targets named ExperimentalBuild
 
-client/Pantallas/lobbyscreen.s: client/Pantallas/lobbyscreen.cpp.s
-.PHONY : client/Pantallas/lobbyscreen.s
+# Build rule for target.
+ExperimentalBuild: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 ExperimentalBuild
+.PHONY : ExperimentalBuild
 
-# target to generate assembly for a file
-client/Pantallas/lobbyscreen.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/taller_client.dir/build.make CMakeFiles/taller_client.dir/client/Pantallas/lobbyscreen.cpp.s
-.PHONY : client/Pantallas/lobbyscreen.cpp.s
+# fast build rule for target.
+ExperimentalBuild/fast:
+	$(MAKE) $(MAKESILENT) -f _deps/yaml-cpp-build/CMakeFiles/ExperimentalBuild.dir/build.make _deps/yaml-cpp-build/CMakeFiles/ExperimentalBuild.dir/build
+.PHONY : ExperimentalBuild/fast
 
-client/Pantallas/loginscreen.o: client/Pantallas/loginscreen.cpp.o
-.PHONY : client/Pantallas/loginscreen.o
+#=============================================================================
+# Target rules for targets named ExperimentalTest
 
-# target to build an object file
-client/Pantallas/loginscreen.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/taller_client.dir/build.make CMakeFiles/taller_client.dir/client/Pantallas/loginscreen.cpp.o
-.PHONY : client/Pantallas/loginscreen.cpp.o
+# Build rule for target.
+ExperimentalTest: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 ExperimentalTest
+.PHONY : ExperimentalTest
 
-client/Pantallas/loginscreen.i: client/Pantallas/loginscreen.cpp.i
-.PHONY : client/Pantallas/loginscreen.i
+# fast build rule for target.
+ExperimentalTest/fast:
+	$(MAKE) $(MAKESILENT) -f _deps/yaml-cpp-build/CMakeFiles/ExperimentalTest.dir/build.make _deps/yaml-cpp-build/CMakeFiles/ExperimentalTest.dir/build
+.PHONY : ExperimentalTest/fast
 
-# target to preprocess a source file
-client/Pantallas/loginscreen.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/taller_client.dir/build.make CMakeFiles/taller_client.dir/client/Pantallas/loginscreen.cpp.i
-.PHONY : client/Pantallas/loginscreen.cpp.i
+#=============================================================================
+# Target rules for targets named ExperimentalCoverage
 
-client/Pantallas/loginscreen.s: client/Pantallas/loginscreen.cpp.s
-.PHONY : client/Pantallas/loginscreen.s
+# Build rule for target.
+ExperimentalCoverage: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 ExperimentalCoverage
+.PHONY : ExperimentalCoverage
 
-# target to generate assembly for a file
-client/Pantallas/loginscreen.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/taller_client.dir/build.make CMakeFiles/taller_client.dir/client/Pantallas/loginscreen.cpp.s
-.PHONY : client/Pantallas/loginscreen.cpp.s
+# fast build rule for target.
+ExperimentalCoverage/fast:
+	$(MAKE) $(MAKESILENT) -f _deps/yaml-cpp-build/CMakeFiles/ExperimentalCoverage.dir/build.make _deps/yaml-cpp-build/CMakeFiles/ExperimentalCoverage.dir/build
+.PHONY : ExperimentalCoverage/fast
 
-client/client.o: client/client.cpp.o
-.PHONY : client/client.o
+#=============================================================================
+# Target rules for targets named ExperimentalMemCheck
 
-# target to build an object file
-client/client.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/taller_client.dir/build.make CMakeFiles/taller_client.dir/client/client.cpp.o
-.PHONY : client/client.cpp.o
+# Build rule for target.
+ExperimentalMemCheck: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 ExperimentalMemCheck
+.PHONY : ExperimentalMemCheck
 
-client/client.i: client/client.cpp.i
-.PHONY : client/client.i
+# fast build rule for target.
+ExperimentalMemCheck/fast:
+	$(MAKE) $(MAKESILENT) -f _deps/yaml-cpp-build/CMakeFiles/ExperimentalMemCheck.dir/build.make _deps/yaml-cpp-build/CMakeFiles/ExperimentalMemCheck.dir/build
+.PHONY : ExperimentalMemCheck/fast
 
-# target to preprocess a source file
-client/client.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/taller_client.dir/build.make CMakeFiles/taller_client.dir/client/client.cpp.i
-.PHONY : client/client.cpp.i
+#=============================================================================
+# Target rules for targets named ExperimentalSubmit
 
-client/client.s: client/client.cpp.s
-.PHONY : client/client.s
+# Build rule for target.
+ExperimentalSubmit: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 ExperimentalSubmit
+.PHONY : ExperimentalSubmit
 
-# target to generate assembly for a file
-client/client.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/taller_client.dir/build.make CMakeFiles/taller_client.dir/client/client.cpp.s
-.PHONY : client/client.cpp.s
+# fast build rule for target.
+ExperimentalSubmit/fast:
+	$(MAKE) $(MAKESILENT) -f _deps/yaml-cpp-build/CMakeFiles/ExperimentalSubmit.dir/build.make _deps/yaml-cpp-build/CMakeFiles/ExperimentalSubmit.dir/build
+.PHONY : ExperimentalSubmit/fast
 
-client/client_main.o: client/client_main.cpp.o
-.PHONY : client/client_main.o
+#=============================================================================
+# Target rules for targets named ContinuousStart
 
-# target to build an object file
-client/client_main.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/taller_client.dir/build.make CMakeFiles/taller_client.dir/client/client_main.cpp.o
-.PHONY : client/client_main.cpp.o
+# Build rule for target.
+ContinuousStart: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 ContinuousStart
+.PHONY : ContinuousStart
 
-client/client_main.i: client/client_main.cpp.i
-.PHONY : client/client_main.i
+# fast build rule for target.
+ContinuousStart/fast:
+	$(MAKE) $(MAKESILENT) -f _deps/yaml-cpp-build/CMakeFiles/ContinuousStart.dir/build.make _deps/yaml-cpp-build/CMakeFiles/ContinuousStart.dir/build
+.PHONY : ContinuousStart/fast
 
-# target to preprocess a source file
-client/client_main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/taller_client.dir/build.make CMakeFiles/taller_client.dir/client/client_main.cpp.i
-.PHONY : client/client_main.cpp.i
+#=============================================================================
+# Target rules for targets named ContinuousUpdate
 
-client/client_main.s: client/client_main.cpp.s
-.PHONY : client/client_main.s
+# Build rule for target.
+ContinuousUpdate: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 ContinuousUpdate
+.PHONY : ContinuousUpdate
 
-# target to generate assembly for a file
-client/client_main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/taller_client.dir/build.make CMakeFiles/taller_client.dir/client/client_main.cpp.s
-.PHONY : client/client_main.cpp.s
+# fast build rule for target.
+ContinuousUpdate/fast:
+	$(MAKE) $(MAKESILENT) -f _deps/yaml-cpp-build/CMakeFiles/ContinuousUpdate.dir/build.make _deps/yaml-cpp-build/CMakeFiles/ContinuousUpdate.dir/build
+.PHONY : ContinuousUpdate/fast
 
-client/client_protocol.o: client/client_protocol.cpp.o
-.PHONY : client/client_protocol.o
+#=============================================================================
+# Target rules for targets named ContinuousConfigure
 
-# target to build an object file
-client/client_protocol.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/taller_client.dir/build.make CMakeFiles/taller_client.dir/client/client_protocol.cpp.o
-.PHONY : client/client_protocol.cpp.o
+# Build rule for target.
+ContinuousConfigure: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 ContinuousConfigure
+.PHONY : ContinuousConfigure
 
-client/client_protocol.i: client/client_protocol.cpp.i
-.PHONY : client/client_protocol.i
+# fast build rule for target.
+ContinuousConfigure/fast:
+	$(MAKE) $(MAKESILENT) -f _deps/yaml-cpp-build/CMakeFiles/ContinuousConfigure.dir/build.make _deps/yaml-cpp-build/CMakeFiles/ContinuousConfigure.dir/build
+.PHONY : ContinuousConfigure/fast
 
-# target to preprocess a source file
-client/client_protocol.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/taller_client.dir/build.make CMakeFiles/taller_client.dir/client/client_protocol.cpp.i
-.PHONY : client/client_protocol.cpp.i
+#=============================================================================
+# Target rules for targets named ContinuousBuild
 
-client/client_protocol.s: client/client_protocol.cpp.s
-.PHONY : client/client_protocol.s
+# Build rule for target.
+ContinuousBuild: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 ContinuousBuild
+.PHONY : ContinuousBuild
 
-# target to generate assembly for a file
-client/client_protocol.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/taller_client.dir/build.make CMakeFiles/taller_client.dir/client/client_protocol.cpp.s
-.PHONY : client/client_protocol.cpp.s
+# fast build rule for target.
+ContinuousBuild/fast:
+	$(MAKE) $(MAKESILENT) -f _deps/yaml-cpp-build/CMakeFiles/ContinuousBuild.dir/build.make _deps/yaml-cpp-build/CMakeFiles/ContinuousBuild.dir/build
+.PHONY : ContinuousBuild/fast
 
-client/mainwindow.o: client/mainwindow.cpp.o
-.PHONY : client/mainwindow.o
+#=============================================================================
+# Target rules for targets named ContinuousTest
 
-# target to build an object file
-client/mainwindow.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/taller_client.dir/build.make CMakeFiles/taller_client.dir/client/mainwindow.cpp.o
-.PHONY : client/mainwindow.cpp.o
+# Build rule for target.
+ContinuousTest: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 ContinuousTest
+.PHONY : ContinuousTest
 
-client/mainwindow.i: client/mainwindow.cpp.i
-.PHONY : client/mainwindow.i
+# fast build rule for target.
+ContinuousTest/fast:
+	$(MAKE) $(MAKESILENT) -f _deps/yaml-cpp-build/CMakeFiles/ContinuousTest.dir/build.make _deps/yaml-cpp-build/CMakeFiles/ContinuousTest.dir/build
+.PHONY : ContinuousTest/fast
 
-# target to preprocess a source file
-client/mainwindow.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/taller_client.dir/build.make CMakeFiles/taller_client.dir/client/mainwindow.cpp.i
-.PHONY : client/mainwindow.cpp.i
+#=============================================================================
+# Target rules for targets named ContinuousCoverage
 
-client/mainwindow.s: client/mainwindow.cpp.s
-.PHONY : client/mainwindow.s
+# Build rule for target.
+ContinuousCoverage: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 ContinuousCoverage
+.PHONY : ContinuousCoverage
 
-# target to generate assembly for a file
-client/mainwindow.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/taller_client.dir/build.make CMakeFiles/taller_client.dir/client/mainwindow.cpp.s
-.PHONY : client/mainwindow.cpp.s
+# fast build rule for target.
+ContinuousCoverage/fast:
+	$(MAKE) $(MAKESILENT) -f _deps/yaml-cpp-build/CMakeFiles/ContinuousCoverage.dir/build.make _deps/yaml-cpp-build/CMakeFiles/ContinuousCoverage.dir/build
+.PHONY : ContinuousCoverage/fast
 
-client/receiver.o: client/receiver.cpp.o
-.PHONY : client/receiver.o
+#=============================================================================
+# Target rules for targets named ContinuousMemCheck
 
-# target to build an object file
-client/receiver.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/taller_client.dir/build.make CMakeFiles/taller_client.dir/client/receiver.cpp.o
-.PHONY : client/receiver.cpp.o
+# Build rule for target.
+ContinuousMemCheck: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 ContinuousMemCheck
+.PHONY : ContinuousMemCheck
 
-client/receiver.i: client/receiver.cpp.i
-.PHONY : client/receiver.i
+# fast build rule for target.
+ContinuousMemCheck/fast:
+	$(MAKE) $(MAKESILENT) -f _deps/yaml-cpp-build/CMakeFiles/ContinuousMemCheck.dir/build.make _deps/yaml-cpp-build/CMakeFiles/ContinuousMemCheck.dir/build
+.PHONY : ContinuousMemCheck/fast
 
-# target to preprocess a source file
-client/receiver.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/taller_client.dir/build.make CMakeFiles/taller_client.dir/client/receiver.cpp.i
-.PHONY : client/receiver.cpp.i
+#=============================================================================
+# Target rules for targets named ContinuousSubmit
 
-client/receiver.s: client/receiver.cpp.s
-.PHONY : client/receiver.s
+# Build rule for target.
+ContinuousSubmit: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 ContinuousSubmit
+.PHONY : ContinuousSubmit
 
-# target to generate assembly for a file
-client/receiver.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/taller_client.dir/build.make CMakeFiles/taller_client.dir/client/receiver.cpp.s
-.PHONY : client/receiver.cpp.s
+# fast build rule for target.
+ContinuousSubmit/fast:
+	$(MAKE) $(MAKESILENT) -f _deps/yaml-cpp-build/CMakeFiles/ContinuousSubmit.dir/build.make _deps/yaml-cpp-build/CMakeFiles/ContinuousSubmit.dir/build
+.PHONY : ContinuousSubmit/fast
 
-client/sender.o: client/sender.cpp.o
-.PHONY : client/sender.o
+#=============================================================================
+# Target rules for targets named yaml-cpp
 
-# target to build an object file
-client/sender.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/taller_client.dir/build.make CMakeFiles/taller_client.dir/client/sender.cpp.o
-.PHONY : client/sender.cpp.o
+# Build rule for target.
+yaml-cpp: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 yaml-cpp
+.PHONY : yaml-cpp
 
-client/sender.i: client/sender.cpp.i
-.PHONY : client/sender.i
+# fast build rule for target.
+yaml-cpp/fast:
+	$(MAKE) $(MAKESILENT) -f _deps/yaml-cpp-build/CMakeFiles/yaml-cpp.dir/build.make _deps/yaml-cpp-build/CMakeFiles/yaml-cpp.dir/build
+.PHONY : yaml-cpp/fast
 
-# target to preprocess a source file
-client/sender.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/taller_client.dir/build.make CMakeFiles/taller_client.dir/client/sender.cpp.i
-.PHONY : client/sender.cpp.i
+#=============================================================================
+# Target rules for targets named format
 
-client/sender.s: client/sender.cpp.s
-.PHONY : client/sender.s
+# Build rule for target.
+format: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 format
+.PHONY : format
 
-# target to generate assembly for a file
-client/sender.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/taller_client.dir/build.make CMakeFiles/taller_client.dir/client/sender.cpp.s
-.PHONY : client/sender.cpp.s
+# fast build rule for target.
+format/fast:
+	$(MAKE) $(MAKESILENT) -f _deps/yaml-cpp-build/CMakeFiles/format.dir/build.make _deps/yaml-cpp-build/CMakeFiles/format.dir/build
+.PHONY : format/fast
+
+#=============================================================================
+# Target rules for targets named yaml-cpp-sandbox
+
+# Build rule for target.
+yaml-cpp-sandbox: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 yaml-cpp-sandbox
+.PHONY : yaml-cpp-sandbox
+
+# fast build rule for target.
+yaml-cpp-sandbox/fast:
+	$(MAKE) $(MAKESILENT) -f _deps/yaml-cpp-build/util/CMakeFiles/yaml-cpp-sandbox.dir/build.make _deps/yaml-cpp-build/util/CMakeFiles/yaml-cpp-sandbox.dir/build
+.PHONY : yaml-cpp-sandbox/fast
+
+#=============================================================================
+# Target rules for targets named yaml-cpp-parse
+
+# Build rule for target.
+yaml-cpp-parse: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 yaml-cpp-parse
+.PHONY : yaml-cpp-parse
+
+# fast build rule for target.
+yaml-cpp-parse/fast:
+	$(MAKE) $(MAKESILENT) -f _deps/yaml-cpp-build/util/CMakeFiles/yaml-cpp-parse.dir/build.make _deps/yaml-cpp-build/util/CMakeFiles/yaml-cpp-parse.dir/build
+.PHONY : yaml-cpp-parse/fast
+
+#=============================================================================
+# Target rules for targets named yaml-cpp-read
+
+# Build rule for target.
+yaml-cpp-read: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 yaml-cpp-read
+.PHONY : yaml-cpp-read
+
+# fast build rule for target.
+yaml-cpp-read/fast:
+	$(MAKE) $(MAKESILENT) -f _deps/yaml-cpp-build/util/CMakeFiles/yaml-cpp-read.dir/build.make _deps/yaml-cpp-build/util/CMakeFiles/yaml-cpp-read.dir/build
+.PHONY : yaml-cpp-read/fast
 
 common/liberror.o: common/liberror.cpp.o
 .PHONY : common/liberror.o
@@ -610,29 +668,341 @@ common/socket.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/taller_common.dir/build.make CMakeFiles/taller_common.dir/common/socket.cpp.s
 .PHONY : common/socket.cpp.s
 
-taller_client_autogen/mocs_compilation.o: taller_client_autogen/mocs_compilation.cpp.o
-.PHONY : taller_client_autogen/mocs_compilation.o
+server/acceptor.o: server/acceptor.cpp.o
+.PHONY : server/acceptor.o
 
 # target to build an object file
-taller_client_autogen/mocs_compilation.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/taller_client.dir/build.make CMakeFiles/taller_client.dir/taller_client_autogen/mocs_compilation.cpp.o
-.PHONY : taller_client_autogen/mocs_compilation.cpp.o
+server/acceptor.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/taller_server.dir/build.make CMakeFiles/taller_server.dir/server/acceptor.cpp.o
+.PHONY : server/acceptor.cpp.o
 
-taller_client_autogen/mocs_compilation.i: taller_client_autogen/mocs_compilation.cpp.i
-.PHONY : taller_client_autogen/mocs_compilation.i
+server/acceptor.i: server/acceptor.cpp.i
+.PHONY : server/acceptor.i
 
 # target to preprocess a source file
-taller_client_autogen/mocs_compilation.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/taller_client.dir/build.make CMakeFiles/taller_client.dir/taller_client_autogen/mocs_compilation.cpp.i
-.PHONY : taller_client_autogen/mocs_compilation.cpp.i
+server/acceptor.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/taller_server.dir/build.make CMakeFiles/taller_server.dir/server/acceptor.cpp.i
+.PHONY : server/acceptor.cpp.i
 
-taller_client_autogen/mocs_compilation.s: taller_client_autogen/mocs_compilation.cpp.s
-.PHONY : taller_client_autogen/mocs_compilation.s
+server/acceptor.s: server/acceptor.cpp.s
+.PHONY : server/acceptor.s
 
 # target to generate assembly for a file
-taller_client_autogen/mocs_compilation.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/taller_client.dir/build.make CMakeFiles/taller_client.dir/taller_client_autogen/mocs_compilation.cpp.s
-.PHONY : taller_client_autogen/mocs_compilation.cpp.s
+server/acceptor.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/taller_server.dir/build.make CMakeFiles/taller_server.dir/server/acceptor.cpp.s
+.PHONY : server/acceptor.cpp.s
+
+server/client_handler.o: server/client_handler.cpp.o
+.PHONY : server/client_handler.o
+
+# target to build an object file
+server/client_handler.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/taller_server.dir/build.make CMakeFiles/taller_server.dir/server/client_handler.cpp.o
+.PHONY : server/client_handler.cpp.o
+
+server/client_handler.i: server/client_handler.cpp.i
+.PHONY : server/client_handler.i
+
+# target to preprocess a source file
+server/client_handler.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/taller_server.dir/build.make CMakeFiles/taller_server.dir/server/client_handler.cpp.i
+.PHONY : server/client_handler.cpp.i
+
+server/client_handler.s: server/client_handler.cpp.s
+.PHONY : server/client_handler.s
+
+# target to generate assembly for a file
+server/client_handler.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/taller_server.dir/build.make CMakeFiles/taller_server.dir/server/client_handler.cpp.s
+.PHONY : server/client_handler.cpp.s
+
+server/collisions_listener.o: server/collisions_listener.cpp.o
+.PHONY : server/collisions_listener.o
+
+# target to build an object file
+server/collisions_listener.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/taller_server.dir/build.make CMakeFiles/taller_server.dir/server/collisions_listener.cpp.o
+.PHONY : server/collisions_listener.cpp.o
+
+server/collisions_listener.i: server/collisions_listener.cpp.i
+.PHONY : server/collisions_listener.i
+
+# target to preprocess a source file
+server/collisions_listener.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/taller_server.dir/build.make CMakeFiles/taller_server.dir/server/collisions_listener.cpp.i
+.PHONY : server/collisions_listener.cpp.i
+
+server/collisions_listener.s: server/collisions_listener.cpp.s
+.PHONY : server/collisions_listener.s
+
+# target to generate assembly for a file
+server/collisions_listener.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/taller_server.dir/build.make CMakeFiles/taller_server.dir/server/collisions_listener.cpp.s
+.PHONY : server/collisions_listener.cpp.s
+
+server/gameloop.o: server/gameloop.cpp.o
+.PHONY : server/gameloop.o
+
+# target to build an object file
+server/gameloop.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/taller_server.dir/build.make CMakeFiles/taller_server.dir/server/gameloop.cpp.o
+.PHONY : server/gameloop.cpp.o
+
+server/gameloop.i: server/gameloop.cpp.i
+.PHONY : server/gameloop.i
+
+# target to preprocess a source file
+server/gameloop.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/taller_server.dir/build.make CMakeFiles/taller_server.dir/server/gameloop.cpp.i
+.PHONY : server/gameloop.cpp.i
+
+server/gameloop.s: server/gameloop.cpp.s
+.PHONY : server/gameloop.s
+
+# target to generate assembly for a file
+server/gameloop.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/taller_server.dir/build.make CMakeFiles/taller_server.dir/server/gameloop.cpp.s
+.PHONY : server/gameloop.cpp.s
+
+server/match.o: server/match.cpp.o
+.PHONY : server/match.o
+
+# target to build an object file
+server/match.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/taller_server.dir/build.make CMakeFiles/taller_server.dir/server/match.cpp.o
+.PHONY : server/match.cpp.o
+
+server/match.i: server/match.cpp.i
+.PHONY : server/match.i
+
+# target to preprocess a source file
+server/match.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/taller_server.dir/build.make CMakeFiles/taller_server.dir/server/match.cpp.i
+.PHONY : server/match.cpp.i
+
+server/match.s: server/match.cpp.s
+.PHONY : server/match.s
+
+# target to generate assembly for a file
+server/match.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/taller_server.dir/build.make CMakeFiles/taller_server.dir/server/match.cpp.s
+.PHONY : server/match.cpp.s
+
+server/queues_monitor.o: server/queues_monitor.cpp.o
+.PHONY : server/queues_monitor.o
+
+# target to build an object file
+server/queues_monitor.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/taller_server.dir/build.make CMakeFiles/taller_server.dir/server/queues_monitor.cpp.o
+.PHONY : server/queues_monitor.cpp.o
+
+server/queues_monitor.i: server/queues_monitor.cpp.i
+.PHONY : server/queues_monitor.i
+
+# target to preprocess a source file
+server/queues_monitor.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/taller_server.dir/build.make CMakeFiles/taller_server.dir/server/queues_monitor.cpp.i
+.PHONY : server/queues_monitor.cpp.i
+
+server/queues_monitor.s: server/queues_monitor.cpp.s
+.PHONY : server/queues_monitor.s
+
+# target to generate assembly for a file
+server/queues_monitor.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/taller_server.dir/build.make CMakeFiles/taller_server.dir/server/queues_monitor.cpp.s
+.PHONY : server/queues_monitor.cpp.s
+
+server/receiver.o: server/receiver.cpp.o
+.PHONY : server/receiver.o
+
+# target to build an object file
+server/receiver.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/taller_server.dir/build.make CMakeFiles/taller_server.dir/server/receiver.cpp.o
+.PHONY : server/receiver.cpp.o
+
+server/receiver.i: server/receiver.cpp.i
+.PHONY : server/receiver.i
+
+# target to preprocess a source file
+server/receiver.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/taller_server.dir/build.make CMakeFiles/taller_server.dir/server/receiver.cpp.i
+.PHONY : server/receiver.cpp.i
+
+server/receiver.s: server/receiver.cpp.s
+.PHONY : server/receiver.s
+
+# target to generate assembly for a file
+server/receiver.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/taller_server.dir/build.make CMakeFiles/taller_server.dir/server/receiver.cpp.s
+.PHONY : server/receiver.cpp.s
+
+server/sender.o: server/sender.cpp.o
+.PHONY : server/sender.o
+
+# target to build an object file
+server/sender.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/taller_server.dir/build.make CMakeFiles/taller_server.dir/server/sender.cpp.o
+.PHONY : server/sender.cpp.o
+
+server/sender.i: server/sender.cpp.i
+.PHONY : server/sender.i
+
+# target to preprocess a source file
+server/sender.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/taller_server.dir/build.make CMakeFiles/taller_server.dir/server/sender.cpp.i
+.PHONY : server/sender.cpp.i
+
+server/sender.s: server/sender.cpp.s
+.PHONY : server/sender.s
+
+# target to generate assembly for a file
+server/sender.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/taller_server.dir/build.make CMakeFiles/taller_server.dir/server/sender.cpp.s
+.PHONY : server/sender.cpp.s
+
+server/server.o: server/server.cpp.o
+.PHONY : server/server.o
+
+# target to build an object file
+server/server.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/taller_server.dir/build.make CMakeFiles/taller_server.dir/server/server.cpp.o
+.PHONY : server/server.cpp.o
+
+server/server.i: server/server.cpp.i
+.PHONY : server/server.i
+
+# target to preprocess a source file
+server/server.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/taller_server.dir/build.make CMakeFiles/taller_server.dir/server/server.cpp.i
+.PHONY : server/server.cpp.i
+
+server/server.s: server/server.cpp.s
+.PHONY : server/server.s
+
+# target to generate assembly for a file
+server/server.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/taller_server.dir/build.make CMakeFiles/taller_server.dir/server/server.cpp.s
+.PHONY : server/server.cpp.s
+
+server/server_main.o: server/server_main.cpp.o
+.PHONY : server/server_main.o
+
+# target to build an object file
+server/server_main.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/taller_server.dir/build.make CMakeFiles/taller_server.dir/server/server_main.cpp.o
+.PHONY : server/server_main.cpp.o
+
+server/server_main.i: server/server_main.cpp.i
+.PHONY : server/server_main.i
+
+# target to preprocess a source file
+server/server_main.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/taller_server.dir/build.make CMakeFiles/taller_server.dir/server/server_main.cpp.i
+.PHONY : server/server_main.cpp.i
+
+server/server_main.s: server/server_main.cpp.s
+.PHONY : server/server_main.s
+
+# target to generate assembly for a file
+server/server_main.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/taller_server.dir/build.make CMakeFiles/taller_server.dir/server/server_main.cpp.s
+.PHONY : server/server_main.cpp.s
+
+server/server_protocol.o: server/server_protocol.cpp.o
+.PHONY : server/server_protocol.o
+
+# target to build an object file
+server/server_protocol.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/taller_server.dir/build.make CMakeFiles/taller_server.dir/server/server_protocol.cpp.o
+.PHONY : server/server_protocol.cpp.o
+
+server/server_protocol.i: server/server_protocol.cpp.i
+.PHONY : server/server_protocol.i
+
+# target to preprocess a source file
+server/server_protocol.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/taller_server.dir/build.make CMakeFiles/taller_server.dir/server/server_protocol.cpp.i
+.PHONY : server/server_protocol.cpp.i
+
+server/server_protocol.s: server/server_protocol.cpp.s
+.PHONY : server/server_protocol.s
+
+# target to generate assembly for a file
+server/server_protocol.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/taller_server.dir/build.make CMakeFiles/taller_server.dir/server/server_protocol.cpp.s
+.PHONY : server/server_protocol.cpp.s
+
+server/world_entities/car.o: server/world_entities/car.cpp.o
+.PHONY : server/world_entities/car.o
+
+# target to build an object file
+server/world_entities/car.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/taller_server.dir/build.make CMakeFiles/taller_server.dir/server/world_entities/car.cpp.o
+.PHONY : server/world_entities/car.cpp.o
+
+server/world_entities/car.i: server/world_entities/car.cpp.i
+.PHONY : server/world_entities/car.i
+
+# target to preprocess a source file
+server/world_entities/car.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/taller_server.dir/build.make CMakeFiles/taller_server.dir/server/world_entities/car.cpp.i
+.PHONY : server/world_entities/car.cpp.i
+
+server/world_entities/car.s: server/world_entities/car.cpp.s
+.PHONY : server/world_entities/car.s
+
+# target to generate assembly for a file
+server/world_entities/car.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/taller_server.dir/build.make CMakeFiles/taller_server.dir/server/world_entities/car.cpp.s
+.PHONY : server/world_entities/car.cpp.s
+
+server/world_entities/checkpoint.o: server/world_entities/checkpoint.cpp.o
+.PHONY : server/world_entities/checkpoint.o
+
+# target to build an object file
+server/world_entities/checkpoint.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/taller_server.dir/build.make CMakeFiles/taller_server.dir/server/world_entities/checkpoint.cpp.o
+.PHONY : server/world_entities/checkpoint.cpp.o
+
+server/world_entities/checkpoint.i: server/world_entities/checkpoint.cpp.i
+.PHONY : server/world_entities/checkpoint.i
+
+# target to preprocess a source file
+server/world_entities/checkpoint.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/taller_server.dir/build.make CMakeFiles/taller_server.dir/server/world_entities/checkpoint.cpp.i
+.PHONY : server/world_entities/checkpoint.cpp.i
+
+server/world_entities/checkpoint.s: server/world_entities/checkpoint.cpp.s
+.PHONY : server/world_entities/checkpoint.s
+
+# target to generate assembly for a file
+server/world_entities/checkpoint.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/taller_server.dir/build.make CMakeFiles/taller_server.dir/server/world_entities/checkpoint.cpp.s
+.PHONY : server/world_entities/checkpoint.cpp.s
+
+server/world_entities/wall.o: server/world_entities/wall.cpp.o
+.PHONY : server/world_entities/wall.o
+
+# target to build an object file
+server/world_entities/wall.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/taller_server.dir/build.make CMakeFiles/taller_server.dir/server/world_entities/wall.cpp.o
+.PHONY : server/world_entities/wall.cpp.o
+
+server/world_entities/wall.i: server/world_entities/wall.cpp.i
+.PHONY : server/world_entities/wall.i
+
+# target to preprocess a source file
+server/world_entities/wall.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/taller_server.dir/build.make CMakeFiles/taller_server.dir/server/world_entities/wall.cpp.i
+.PHONY : server/world_entities/wall.cpp.i
+
+server/world_entities/wall.s: server/world_entities/wall.cpp.s
+.PHONY : server/world_entities/wall.s
+
+# target to generate assembly for a file
+server/world_entities/wall.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/taller_server.dir/build.make CMakeFiles/taller_server.dir/server/world_entities/wall.cpp.s
+.PHONY : server/world_entities/wall.cpp.s
 
 # Help Target
 help:
@@ -642,47 +1012,41 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... sdl_headers_copy"
-	@echo "... taller_client_autogen"
-	@echo "... taller_client_autogen_timestamp_deps"
-	@echo "... uninstall"
-	@echo "... SDL2"
-	@echo "... SDL2-static"
-	@echo "... SDL2_image"
-	@echo "... SDL2_mixer"
-	@echo "... SDL2_test"
-	@echo "... SDL2_ttf"
-	@echo "... SDL2main"
-	@echo "... SDL2pp"
-	@echo "... taller_client"
+	@echo "... Continuous"
+	@echo "... ContinuousBuild"
+	@echo "... ContinuousConfigure"
+	@echo "... ContinuousCoverage"
+	@echo "... ContinuousMemCheck"
+	@echo "... ContinuousStart"
+	@echo "... ContinuousSubmit"
+	@echo "... ContinuousTest"
+	@echo "... ContinuousUpdate"
+	@echo "... Experimental"
+	@echo "... ExperimentalBuild"
+	@echo "... ExperimentalConfigure"
+	@echo "... ExperimentalCoverage"
+	@echo "... ExperimentalMemCheck"
+	@echo "... ExperimentalStart"
+	@echo "... ExperimentalSubmit"
+	@echo "... ExperimentalTest"
+	@echo "... ExperimentalUpdate"
+	@echo "... Nightly"
+	@echo "... NightlyBuild"
+	@echo "... NightlyConfigure"
+	@echo "... NightlyCoverage"
+	@echo "... NightlyMemCheck"
+	@echo "... NightlyMemoryCheck"
+	@echo "... NightlyStart"
+	@echo "... NightlySubmit"
+	@echo "... NightlyTest"
+	@echo "... NightlyUpdate"
+	@echo "... format"
 	@echo "... taller_common"
-	@echo "... client/Pantallas/carselectscreen.o"
-	@echo "... client/Pantallas/carselectscreen.i"
-	@echo "... client/Pantallas/carselectscreen.s"
-	@echo "... client/Pantallas/lobbyscreen.o"
-	@echo "... client/Pantallas/lobbyscreen.i"
-	@echo "... client/Pantallas/lobbyscreen.s"
-	@echo "... client/Pantallas/loginscreen.o"
-	@echo "... client/Pantallas/loginscreen.i"
-	@echo "... client/Pantallas/loginscreen.s"
-	@echo "... client/client.o"
-	@echo "... client/client.i"
-	@echo "... client/client.s"
-	@echo "... client/client_main.o"
-	@echo "... client/client_main.i"
-	@echo "... client/client_main.s"
-	@echo "... client/client_protocol.o"
-	@echo "... client/client_protocol.i"
-	@echo "... client/client_protocol.s"
-	@echo "... client/mainwindow.o"
-	@echo "... client/mainwindow.i"
-	@echo "... client/mainwindow.s"
-	@echo "... client/receiver.o"
-	@echo "... client/receiver.i"
-	@echo "... client/receiver.s"
-	@echo "... client/sender.o"
-	@echo "... client/sender.i"
-	@echo "... client/sender.s"
+	@echo "... taller_server"
+	@echo "... yaml-cpp"
+	@echo "... yaml-cpp-parse"
+	@echo "... yaml-cpp-read"
+	@echo "... yaml-cpp-sandbox"
 	@echo "... common/liberror.o"
 	@echo "... common/liberror.i"
 	@echo "... common/liberror.s"
@@ -695,9 +1059,48 @@ help:
 	@echo "... common/socket.o"
 	@echo "... common/socket.i"
 	@echo "... common/socket.s"
-	@echo "... taller_client_autogen/mocs_compilation.o"
-	@echo "... taller_client_autogen/mocs_compilation.i"
-	@echo "... taller_client_autogen/mocs_compilation.s"
+	@echo "... server/acceptor.o"
+	@echo "... server/acceptor.i"
+	@echo "... server/acceptor.s"
+	@echo "... server/client_handler.o"
+	@echo "... server/client_handler.i"
+	@echo "... server/client_handler.s"
+	@echo "... server/collisions_listener.o"
+	@echo "... server/collisions_listener.i"
+	@echo "... server/collisions_listener.s"
+	@echo "... server/gameloop.o"
+	@echo "... server/gameloop.i"
+	@echo "... server/gameloop.s"
+	@echo "... server/match.o"
+	@echo "... server/match.i"
+	@echo "... server/match.s"
+	@echo "... server/queues_monitor.o"
+	@echo "... server/queues_monitor.i"
+	@echo "... server/queues_monitor.s"
+	@echo "... server/receiver.o"
+	@echo "... server/receiver.i"
+	@echo "... server/receiver.s"
+	@echo "... server/sender.o"
+	@echo "... server/sender.i"
+	@echo "... server/sender.s"
+	@echo "... server/server.o"
+	@echo "... server/server.i"
+	@echo "... server/server.s"
+	@echo "... server/server_main.o"
+	@echo "... server/server_main.i"
+	@echo "... server/server_main.s"
+	@echo "... server/server_protocol.o"
+	@echo "... server/server_protocol.i"
+	@echo "... server/server_protocol.s"
+	@echo "... server/world_entities/car.o"
+	@echo "... server/world_entities/car.i"
+	@echo "... server/world_entities/car.s"
+	@echo "... server/world_entities/checkpoint.o"
+	@echo "... server/world_entities/checkpoint.i"
+	@echo "... server/world_entities/checkpoint.s"
+	@echo "... server/world_entities/wall.o"
+	@echo "... server/world_entities/wall.i"
+	@echo "... server/world_entities/wall.s"
 .PHONY : help
 
 
@@ -709,6 +1112,7 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
+	$(CMAKE_COMMAND) -P /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/CMakeFiles/VerifyGlobs.cmake
 	$(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

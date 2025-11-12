@@ -33,6 +33,12 @@ uint16_t ServerProtocol::receiveUint16_t() {
     return ntohs(value_big_endian);
 }
 
+uint8_t ServerProtocol::receiveUint8_t() {
+    uint8_t byte;
+    skt.recvall(&byte, sizeof(uint8_t));
+    return byte;
+}
+
 void ServerProtocol::close() {
     skt.shutdown(SHUT_RDWR);
     skt.close();

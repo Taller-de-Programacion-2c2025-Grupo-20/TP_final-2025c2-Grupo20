@@ -68,7 +68,7 @@ void Gameloop::loadCheckpoints(const YAML::Node& map_data) {
 
                 int id = obj["id"].as<int>();
 
-                world_checkpoints.push_back(std::make_unique<Checkpoint>(
+                world_checkpoints.emplace(id, std::make_unique<Checkpoint>(
                     world, b2Vec2(x_meters, y_meters),
                     width_meters, height_meters, id
                 ));
@@ -93,6 +93,22 @@ void Gameloop::readUsersInput() {
     }
 }
 
+float Gameloop::getCurrentCheckpointHintAngle(const b2Vec2& car_pos, float car_angle, const b2Vec2& checkpoint_pos){
+    b2Vec2 hint_dir = checkpoint_pos - car_pos;
+    float checkpoint_angle = std::atan2(hint_dir.y, hint_dir.x);
+
+    float direction = checkpoint_angle - car_angle;
+
+    while (direction >  M_PI){
+        direction -= 2 * M_PI;
+    }
+    while (direction < -M_PI){
+        direction += 2 * M_PI;
+    }
+
+    return direction;
+}
+
 GameStateDTO Gameloop::getCurrentGameState() {
     GameStateDTO current_state;
     current_state.car_count = clients_cars.size();
@@ -106,6 +122,18 @@ GameStateDTO Gameloop::getCurrentGameState() {
                 ServerState(current_client_car->position().x, current_client_car->position().y,
                             current_client_car->angle(), current_client_car->getSpeed());
         current_player_state.health = current_client_car->health();
+
+        if ((size_t)current_client_car->nextCheckpointId() < world_checkpoints.size()){
+            int next_checkpoint_id = current_client_car->nextCheckpointId();
+            current_player_state.next_checkpoint_position_x = world_checkpoints[next_checkpoint_id]->position().x;
+            current_player_state.next_checkpoint_position_y = world_checkpoints[next_checkpoint_id]->position().y;
+            current_player_state.next_checkpoint_hint = getCurrentCheckpointHintAngle(current_client_car->position(), current_client_car->angle(), world_checkpoints[next_checkpoint_id]->position());
+        } else {
+            current_player_state.next_checkpoint_position_x = 0;
+            current_player_state.next_checkpoint_position_y = 0;
+            current_player_state.next_checkpoint_hint = 0;
+        }
+
         current_state.players.push_back(current_player_state);
     }
 

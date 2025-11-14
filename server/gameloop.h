@@ -24,7 +24,7 @@ private:
 
     std::unordered_map<uint8_t, std::unique_ptr<Car>> clients_cars;
     std::vector<std::unique_ptr<Wall>> world_walls;
-    std::vector<std::unique_ptr<Checkpoint>> world_checkpoints;
+    std::unordered_map<int, std::unique_ptr<Checkpoint>> world_checkpoints;
 
     b2World world;
     CollisionsListener collision_listener;
@@ -41,6 +41,8 @@ private:
     void loadMapData();
 
     void readUsersInput();
+
+    float getCurrentCheckpointHintAngle(const b2Vec2& car_pos, float car_angle, const b2Vec2& checkpoint_pos);
 
     GameStateDTO getCurrentGameState();
 

@@ -444,6 +444,33 @@ int GameWindow::runGame() {
                 renderer.FillRect(Rect(mini_px - DOT_R, mini_py - DOT_R, 2*DOT_R, 2*DOT_R));
 
                 if (p.player_id == client.getMyPlayerId()) {
+
+                    if(p.next_checkpoint_position_x != 0 && p.next_checkpoint_position_y) {
+                        
+                        float rw_m = 20;
+                        float rh_m = 10;
+
+                        float rw_px = rw_m * PPM;
+                        float rh_px = rh_m * PPM;
+
+                        int rw_mini = (int)std::round(rw_px * miniScale);
+                        int rh_mini = (int)std::round(rh_px * miniScale);
+
+                        float cx_px = p.next_checkpoint_position_x * PPM;
+                        float cy_px = p.next_checkpoint_position_y * PPM;
+
+                        int cx_mini = miniX + (int)std::round(cx_px * miniScale);
+                        int cy_mini = miniY + (int)std::round(cy_px * miniScale);
+
+                        int rx_mini = cx_mini - rw_mini / 2;
+                        int ry_mini = cy_mini - rh_mini / 2;
+
+                        renderer.SetDrawColor(255, 0, 255, 180);
+                        renderer.DrawRect(Rect(rx_mini, ry_mini, rw_mini, rh_mini));
+
+                    }
+
+
                     renderer.SetDrawColor(255, 255, 255, 230);
                     renderer.DrawRect(Rect(mini_px - (DOT_R+2), mini_py - (DOT_R+2), 2*(DOT_R+2), 2*(DOT_R+2)));
                 }

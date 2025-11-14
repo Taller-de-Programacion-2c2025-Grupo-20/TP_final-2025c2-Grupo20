@@ -18,6 +18,10 @@ Checkpoint::Checkpoint(b2World& world, const b2Vec2& position, float width, floa
     checkpoint_body->CreateFixture(&fixtureDef);
 }
 
+const b2Vec2& Checkpoint::position(){
+    return checkpoint_body->GetPosition();
+}
+
 int Checkpoint::getId(){
     return id;
 }

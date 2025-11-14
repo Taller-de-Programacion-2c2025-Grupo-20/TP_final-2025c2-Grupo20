@@ -89,6 +89,10 @@ GameStateDTO ClientProtocol::receive_game_state() {
         player.state.speed = receiveFloat();
         
         skt.recvall(&player.health, 1);
+
+        player.next_checkpoint_position_x = receiveFloat();
+        player.next_checkpoint_position_y = receiveFloat();
+        player.next_checkpoint_hint = receiveFloat();
         
         state_dto.players.push_back(player);
     }

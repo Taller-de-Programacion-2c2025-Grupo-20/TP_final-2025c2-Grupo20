@@ -7,6 +7,10 @@ struct PlayerState {
     uint8_t player_id;
     ServerState state;
     uint8_t health;
+
+    float next_checkpoint_position_x;
+    float next_checkpoint_position_y;
+    float next_checkpoint_hint;
 };
 
 struct GameStateDTO {

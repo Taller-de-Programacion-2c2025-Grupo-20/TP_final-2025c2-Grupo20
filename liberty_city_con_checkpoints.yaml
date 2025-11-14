@@ -4303,15 +4303,6 @@ layers:
     id: 5
     name: Checkpoints
     objects:
-      - height: 0
-        id: 0
-        name: ''
-        rotation: 0
-        type: ''
-        visible: true
-        width: 0
-        x: 8656
-        'y': -256
       - height: 64
         id: 0
         name: ''

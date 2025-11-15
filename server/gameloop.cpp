@@ -25,7 +25,10 @@ void Gameloop::handleInput(const InputCmd& input) {
 
 void Gameloop::addCar(uint8_t client_id) {
     mutex.lock();
-    clients_cars.emplace(client_id, std::make_unique<Car>(world, b2Vec2(5.f, 5.f)));
+    PlayerPos car_initial_pos = cars_inital_pos.front();
+    cars_inital_pos.erase(cars_inital_pos.begin());
+
+    clients_cars.emplace(client_id, std::make_unique<Car>(world, b2Vec2(car_initial_pos.x, car_initial_pos.y)));
     mutex.unlock();
 }
 
@@ -81,12 +84,32 @@ void Gameloop::loadCheckpoints(const YAML::Node& map_data) {
     std::cout << "Termino carga de checkpoints\n";
 }
 
+void Gameloop::loadInitialPos(const YAML::Node& map_data) {
+    for (const auto& layer : map_data["layers"]) {
+        if (layer["name"].as<std::string>() == "PosIniciales") {
+            for (const auto& obj : layer["objects"]) {
+                float x_pixels = obj["x"].as<float>();
+                float y_pixels = obj["y"].as<float>();
+                float width_pixels = obj["width"].as<float>();
+                float height_pixels = obj["height"].as<float>();
+
+                float x_meters = (x_pixels + width_pixels / 2) / PIXELS_PER_METER;
+                float y_meters = (y_pixels + height_pixels / 2) / PIXELS_PER_METER;
+
+                cars_inital_pos.push_back(PlayerPos(x_meters, y_meters));
+            }
+        }
+    }
+
+    std::cout << "Termino carga de posiciones iniciales\n";
+}
 
 void Gameloop::loadMapData() {
-    YAML::Node map_data = YAML::LoadFile("../liberty_city_con_checkpoints.yaml");
+    YAML::Node map_data = YAML::LoadFile("../liberty_city_original_con_checkpoints_y_posinciales.yaml");
 
     loadWalls(map_data);
     loadCheckpoints(map_data);
+    loadInitialPos(map_data);
 
     std::cout << "Termino carga de datos del mapa\n";
 }

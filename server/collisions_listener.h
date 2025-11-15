@@ -12,9 +12,9 @@ private:
 
     const float damage_minimum = 0.4f;
 
-    void handlerCollisionCarAndCar(Car* carA, Car* carB, const b2ContactImpulse* impulse);
+    void handlerCollisionCarAndCar(Car* carA, Car* carB, const b2ContactImpulse* impulse, b2Contact* contact);
 
-    void handlerCollisionCarAndWall(Car* car, const b2ContactImpulse* impulse);
+    void handlerCollisionCarAndWall(Car* car, const b2ContactImpulse* impulse, b2Contact* contact);
 
     void handlerCollisionCarAndCheckpoint(Car* car, Checkpoint* checkpoint);
 

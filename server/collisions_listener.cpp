@@ -7,14 +7,12 @@
 
 #include "../common/constants.h"
 
-void CollisionsListener::handlerCollisionCarAndCar(Car* carA, Car* carB, const b2ContactImpulse* impulse){
-    //std::cout << "2 Autos colisionaron\n";
+void CollisionsListener::handlerCollisionCarAndCar(Car* carA, Car* carB, const b2ContactImpulse* impulse, b2Contact* contact){
 
     float total_impulse = 0;
-    total_impulse += impulse->normalImpulses[0];
-    total_impulse += impulse->normalImpulses[1];
-
-    //std::cout << "TotalImpulse: " << total_impulse << "\n";
+    for (int i = 0; i < contact->GetManifold()->pointCount; ++i) {
+        total_impulse += impulse->normalImpulses[i];
+    }
 
     if (total_impulse < damage_minimum)
         return;
@@ -29,14 +27,12 @@ void CollisionsListener::handlerCollisionCarAndCar(Car* carA, Car* carB, const b
 
 }
 
-void CollisionsListener::handlerCollisionCarAndWall(Car* car, const b2ContactImpulse* impulse){
-    //std::cout << "Auto colisiono con una pared\n";
+void CollisionsListener::handlerCollisionCarAndWall(Car* car, const b2ContactImpulse* impulse, b2Contact* contact){
 
     float total_impulse = 0;
-    total_impulse += impulse->normalImpulses[0];
-    total_impulse += impulse->normalImpulses[1];
-
-    //std::cout << "TotalImpulse: " << total_impulse << "\n";
+    for (int i = 0; i < contact->GetManifold()->pointCount; ++i) {
+        total_impulse += impulse->normalImpulses[i];
+    }
 
     if (total_impulse < damage_minimum)
         return;
@@ -90,16 +86,16 @@ void CollisionsListener::PostSolve(b2Contact* contact, const b2ContactImpulse* i
     if (objectA->getType() == EntityType::CAR && objectB->getType() == EntityType::CAR){
         Car* carA = static_cast<Car*>(objectA);
         Car* carB = static_cast<Car*>(objectB);
-        handlerCollisionCarAndCar(carA, carB, impulse);
+        handlerCollisionCarAndCar(carA, carB, impulse, contact);
     }
 
     if (objectA->getType() == EntityType::CAR && objectB->getType() == EntityType::WALL){
         Car* car = static_cast<Car*>(objectA);
-        handlerCollisionCarAndWall(car, impulse);
+        handlerCollisionCarAndWall(car, impulse, contact);
     }
 
     if (objectA->getType() == EntityType::WALL && objectB->getType() == EntityType::CAR){
         Car* car = static_cast<Car*>(objectB);
-        handlerCollisionCarAndWall(car, impulse);
+        handlerCollisionCarAndWall(car, impulse, contact);
     }
 }

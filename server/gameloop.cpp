@@ -50,6 +50,8 @@ void Gameloop::loadWalls(const YAML::Node& map_data) {
             }
         }
     }
+
+    std::cout << "Termino carga de paredes\n";
 }
 
 void Gameloop::loadCheckpoints(const YAML::Node& map_data) {
@@ -75,6 +77,8 @@ void Gameloop::loadCheckpoints(const YAML::Node& map_data) {
             }
         }
     }
+
+    std::cout << "Termino carga de checkpoints\n";
 }
 
 
@@ -83,6 +87,8 @@ void Gameloop::loadMapData() {
 
     loadWalls(map_data);
     loadCheckpoints(map_data);
+
+    std::cout << "Termino carga de datos del mapa\n";
 }
 
 void Gameloop::readUsersInput() {
@@ -143,49 +149,60 @@ GameStateDTO Gameloop::getCurrentGameState() {
 void Gameloop::run() {
 
     using clock = std::chrono::steady_clock;
-    const std::chrono::duration<double> rate(1.0 / 60.0);
+    const double rate = 1.0 / 60.0;
     auto t1 = clock::now();
-    start_time = clock::now();
+
+    start_time = t1;
 
     while (should_keep_running()) {
+
         try {
-            mutex.lock();
             readUsersInput();
-
-            for (auto& pair: clients_cars) {
-                auto& client_car = pair.second;
-                client_car->updateCarPhysics();
-            }
-
-            world.Step(timeStep, 6, 2);
-
-            GameStateDTO current_state = getCurrentGameState();
-            
-            current_state.elapsed_time = std::chrono::duration<float>(std::chrono::steady_clock::now() - start_time).count();
-
-            clients_queues.broadcast(current_state);
-
-            mutex.unlock();
-
-            auto t2 = clock::now();
-            auto rest = rate - (t2 - t1);
-
-            if (rest < std::chrono::duration<double>(0)) {
-                auto behind = -rest;
-                auto lost =
-                        behind +
-                        (rate - std::chrono::duration<double>(fmod(behind.count(), rate.count())));
-                t1 += std::chrono::duration_cast<std::chrono::steady_clock::duration>(
-                        std::chrono::duration<double>(lost.count()));
-            } else {
-                std::this_thread::sleep_for(rest);
-                t1 += std::chrono::duration_cast<std::chrono::steady_clock::duration>(rate);
-            }
-
         } catch (const ClosedQueue&) {
+            std::cout << "Gameloop: cola cerrada, saliendo.\n";
             break;
         }
+
+        for (auto &pair : clients_cars) {
+            pair.second->updateCarPhysics();
+        }
+        world.Step(rate, 6, 2);
+
+        auto t2 = clock::now();
+        double elapsed = std::chrono::duration<double>(t2 - t1).count();
+
+        double rest = rate - elapsed;
+
+        if (rest < 0) {
+            double behind = -rest;
+
+            double adjust = rate - fmod(behind, rate);
+            double lost = behind + adjust;
+
+            auto lost_dur = std::chrono::duration_cast<clock::duration>(
+                std::chrono::duration<double>(lost)
+            );
+
+            t1 += lost_dur;
+
+        } else {
+
+            std::this_thread::sleep_for(std::chrono::duration<double>(rest));
+
+            auto rate_dur = std::chrono::duration_cast<clock::duration>(
+                std::chrono::duration<double>(rate)
+            );
+
+            t1 += rate_dur;
+        }
+
+        GameStateDTO state = getCurrentGameState();
+        state.elapsed_time =
+            std::chrono::duration<float>(clock::now() - start_time).count();
+        clients_queues.broadcast(state);
     }
+
+    std::cout << "Gameloop terminado.\n";
 }
 
 void Gameloop::stop() {

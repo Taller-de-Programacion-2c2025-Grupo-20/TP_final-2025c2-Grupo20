@@ -84,6 +84,11 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
+  include("/home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/server/cmake_install.cmake")
+endif()
+
+if(NOT CMAKE_INSTALL_LOCAL_ONLY)
+  # Include the install script for the subdirectory.
   include("/home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/editor/cmake_install.cmake")
 endif()
 

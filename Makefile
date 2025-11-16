@@ -144,6 +144,19 @@ taller_client/fast:
 .PHONY : taller_client/fast
 
 #=============================================================================
+# Target rules for targets named taller_server
+
+# Build rule for target.
+taller_server: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 taller_server
+.PHONY : taller_server
+
+# fast build rule for target.
+taller_server/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/taller_server.dir/build.make CMakeFiles/taller_server.dir/build
+.PHONY : taller_server/fast
+
+#=============================================================================
 # Target rules for targets named taller_editor
 
 # Build rule for target.
@@ -181,6 +194,32 @@ taller_client_autogen: cmake_check_build_system
 taller_client_autogen/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/taller_client_autogen.dir/build.make CMakeFiles/taller_client_autogen.dir/build
 .PHONY : taller_client_autogen/fast
+
+#=============================================================================
+# Target rules for targets named taller_server_autogen_timestamp_deps
+
+# Build rule for target.
+taller_server_autogen_timestamp_deps: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 taller_server_autogen_timestamp_deps
+.PHONY : taller_server_autogen_timestamp_deps
+
+# fast build rule for target.
+taller_server_autogen_timestamp_deps/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/taller_server_autogen_timestamp_deps.dir/build.make CMakeFiles/taller_server_autogen_timestamp_deps.dir/build
+.PHONY : taller_server_autogen_timestamp_deps/fast
+
+#=============================================================================
+# Target rules for targets named taller_server_autogen
+
+# Build rule for target.
+taller_server_autogen: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 taller_server_autogen
+.PHONY : taller_server_autogen
+
+# fast build rule for target.
+taller_server_autogen/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/taller_server_autogen.dir/build.make CMakeFiles/taller_server_autogen.dir/build
+.PHONY : taller_server_autogen/fast
 
 #=============================================================================
 # Target rules for targets named taller_editor_autogen_timestamp_deps
@@ -1463,6 +1502,342 @@ editor/mainwindow.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/taller_editor.dir/build.make CMakeFiles/taller_editor.dir/editor/mainwindow.cpp.s
 .PHONY : editor/mainwindow.cpp.s
 
+server/acceptor.o: server/acceptor.cpp.o
+.PHONY : server/acceptor.o
+
+# target to build an object file
+server/acceptor.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/taller_server.dir/build.make CMakeFiles/taller_server.dir/server/acceptor.cpp.o
+.PHONY : server/acceptor.cpp.o
+
+server/acceptor.i: server/acceptor.cpp.i
+.PHONY : server/acceptor.i
+
+# target to preprocess a source file
+server/acceptor.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/taller_server.dir/build.make CMakeFiles/taller_server.dir/server/acceptor.cpp.i
+.PHONY : server/acceptor.cpp.i
+
+server/acceptor.s: server/acceptor.cpp.s
+.PHONY : server/acceptor.s
+
+# target to generate assembly for a file
+server/acceptor.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/taller_server.dir/build.make CMakeFiles/taller_server.dir/server/acceptor.cpp.s
+.PHONY : server/acceptor.cpp.s
+
+server/client_handler.o: server/client_handler.cpp.o
+.PHONY : server/client_handler.o
+
+# target to build an object file
+server/client_handler.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/taller_server.dir/build.make CMakeFiles/taller_server.dir/server/client_handler.cpp.o
+.PHONY : server/client_handler.cpp.o
+
+server/client_handler.i: server/client_handler.cpp.i
+.PHONY : server/client_handler.i
+
+# target to preprocess a source file
+server/client_handler.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/taller_server.dir/build.make CMakeFiles/taller_server.dir/server/client_handler.cpp.i
+.PHONY : server/client_handler.cpp.i
+
+server/client_handler.s: server/client_handler.cpp.s
+.PHONY : server/client_handler.s
+
+# target to generate assembly for a file
+server/client_handler.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/taller_server.dir/build.make CMakeFiles/taller_server.dir/server/client_handler.cpp.s
+.PHONY : server/client_handler.cpp.s
+
+server/collisions_listener.o: server/collisions_listener.cpp.o
+.PHONY : server/collisions_listener.o
+
+# target to build an object file
+server/collisions_listener.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/taller_server.dir/build.make CMakeFiles/taller_server.dir/server/collisions_listener.cpp.o
+.PHONY : server/collisions_listener.cpp.o
+
+server/collisions_listener.i: server/collisions_listener.cpp.i
+.PHONY : server/collisions_listener.i
+
+# target to preprocess a source file
+server/collisions_listener.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/taller_server.dir/build.make CMakeFiles/taller_server.dir/server/collisions_listener.cpp.i
+.PHONY : server/collisions_listener.cpp.i
+
+server/collisions_listener.s: server/collisions_listener.cpp.s
+.PHONY : server/collisions_listener.s
+
+# target to generate assembly for a file
+server/collisions_listener.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/taller_server.dir/build.make CMakeFiles/taller_server.dir/server/collisions_listener.cpp.s
+.PHONY : server/collisions_listener.cpp.s
+
+server/gameloop.o: server/gameloop.cpp.o
+.PHONY : server/gameloop.o
+
+# target to build an object file
+server/gameloop.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/taller_server.dir/build.make CMakeFiles/taller_server.dir/server/gameloop.cpp.o
+.PHONY : server/gameloop.cpp.o
+
+server/gameloop.i: server/gameloop.cpp.i
+.PHONY : server/gameloop.i
+
+# target to preprocess a source file
+server/gameloop.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/taller_server.dir/build.make CMakeFiles/taller_server.dir/server/gameloop.cpp.i
+.PHONY : server/gameloop.cpp.i
+
+server/gameloop.s: server/gameloop.cpp.s
+.PHONY : server/gameloop.s
+
+# target to generate assembly for a file
+server/gameloop.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/taller_server.dir/build.make CMakeFiles/taller_server.dir/server/gameloop.cpp.s
+.PHONY : server/gameloop.cpp.s
+
+server/match.o: server/match.cpp.o
+.PHONY : server/match.o
+
+# target to build an object file
+server/match.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/taller_server.dir/build.make CMakeFiles/taller_server.dir/server/match.cpp.o
+.PHONY : server/match.cpp.o
+
+server/match.i: server/match.cpp.i
+.PHONY : server/match.i
+
+# target to preprocess a source file
+server/match.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/taller_server.dir/build.make CMakeFiles/taller_server.dir/server/match.cpp.i
+.PHONY : server/match.cpp.i
+
+server/match.s: server/match.cpp.s
+.PHONY : server/match.s
+
+# target to generate assembly for a file
+server/match.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/taller_server.dir/build.make CMakeFiles/taller_server.dir/server/match.cpp.s
+.PHONY : server/match.cpp.s
+
+server/queues_monitor.o: server/queues_monitor.cpp.o
+.PHONY : server/queues_monitor.o
+
+# target to build an object file
+server/queues_monitor.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/taller_server.dir/build.make CMakeFiles/taller_server.dir/server/queues_monitor.cpp.o
+.PHONY : server/queues_monitor.cpp.o
+
+server/queues_monitor.i: server/queues_monitor.cpp.i
+.PHONY : server/queues_monitor.i
+
+# target to preprocess a source file
+server/queues_monitor.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/taller_server.dir/build.make CMakeFiles/taller_server.dir/server/queues_monitor.cpp.i
+.PHONY : server/queues_monitor.cpp.i
+
+server/queues_monitor.s: server/queues_monitor.cpp.s
+.PHONY : server/queues_monitor.s
+
+# target to generate assembly for a file
+server/queues_monitor.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/taller_server.dir/build.make CMakeFiles/taller_server.dir/server/queues_monitor.cpp.s
+.PHONY : server/queues_monitor.cpp.s
+
+server/receiver.o: server/receiver.cpp.o
+.PHONY : server/receiver.o
+
+# target to build an object file
+server/receiver.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/taller_server.dir/build.make CMakeFiles/taller_server.dir/server/receiver.cpp.o
+.PHONY : server/receiver.cpp.o
+
+server/receiver.i: server/receiver.cpp.i
+.PHONY : server/receiver.i
+
+# target to preprocess a source file
+server/receiver.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/taller_server.dir/build.make CMakeFiles/taller_server.dir/server/receiver.cpp.i
+.PHONY : server/receiver.cpp.i
+
+server/receiver.s: server/receiver.cpp.s
+.PHONY : server/receiver.s
+
+# target to generate assembly for a file
+server/receiver.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/taller_server.dir/build.make CMakeFiles/taller_server.dir/server/receiver.cpp.s
+.PHONY : server/receiver.cpp.s
+
+server/sender.o: server/sender.cpp.o
+.PHONY : server/sender.o
+
+# target to build an object file
+server/sender.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/taller_server.dir/build.make CMakeFiles/taller_server.dir/server/sender.cpp.o
+.PHONY : server/sender.cpp.o
+
+server/sender.i: server/sender.cpp.i
+.PHONY : server/sender.i
+
+# target to preprocess a source file
+server/sender.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/taller_server.dir/build.make CMakeFiles/taller_server.dir/server/sender.cpp.i
+.PHONY : server/sender.cpp.i
+
+server/sender.s: server/sender.cpp.s
+.PHONY : server/sender.s
+
+# target to generate assembly for a file
+server/sender.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/taller_server.dir/build.make CMakeFiles/taller_server.dir/server/sender.cpp.s
+.PHONY : server/sender.cpp.s
+
+server/server.o: server/server.cpp.o
+.PHONY : server/server.o
+
+# target to build an object file
+server/server.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/taller_server.dir/build.make CMakeFiles/taller_server.dir/server/server.cpp.o
+.PHONY : server/server.cpp.o
+
+server/server.i: server/server.cpp.i
+.PHONY : server/server.i
+
+# target to preprocess a source file
+server/server.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/taller_server.dir/build.make CMakeFiles/taller_server.dir/server/server.cpp.i
+.PHONY : server/server.cpp.i
+
+server/server.s: server/server.cpp.s
+.PHONY : server/server.s
+
+# target to generate assembly for a file
+server/server.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/taller_server.dir/build.make CMakeFiles/taller_server.dir/server/server.cpp.s
+.PHONY : server/server.cpp.s
+
+server/server_main.o: server/server_main.cpp.o
+.PHONY : server/server_main.o
+
+# target to build an object file
+server/server_main.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/taller_server.dir/build.make CMakeFiles/taller_server.dir/server/server_main.cpp.o
+.PHONY : server/server_main.cpp.o
+
+server/server_main.i: server/server_main.cpp.i
+.PHONY : server/server_main.i
+
+# target to preprocess a source file
+server/server_main.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/taller_server.dir/build.make CMakeFiles/taller_server.dir/server/server_main.cpp.i
+.PHONY : server/server_main.cpp.i
+
+server/server_main.s: server/server_main.cpp.s
+.PHONY : server/server_main.s
+
+# target to generate assembly for a file
+server/server_main.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/taller_server.dir/build.make CMakeFiles/taller_server.dir/server/server_main.cpp.s
+.PHONY : server/server_main.cpp.s
+
+server/server_protocol.o: server/server_protocol.cpp.o
+.PHONY : server/server_protocol.o
+
+# target to build an object file
+server/server_protocol.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/taller_server.dir/build.make CMakeFiles/taller_server.dir/server/server_protocol.cpp.o
+.PHONY : server/server_protocol.cpp.o
+
+server/server_protocol.i: server/server_protocol.cpp.i
+.PHONY : server/server_protocol.i
+
+# target to preprocess a source file
+server/server_protocol.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/taller_server.dir/build.make CMakeFiles/taller_server.dir/server/server_protocol.cpp.i
+.PHONY : server/server_protocol.cpp.i
+
+server/server_protocol.s: server/server_protocol.cpp.s
+.PHONY : server/server_protocol.s
+
+# target to generate assembly for a file
+server/server_protocol.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/taller_server.dir/build.make CMakeFiles/taller_server.dir/server/server_protocol.cpp.s
+.PHONY : server/server_protocol.cpp.s
+
+server/world_entities/car.o: server/world_entities/car.cpp.o
+.PHONY : server/world_entities/car.o
+
+# target to build an object file
+server/world_entities/car.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/taller_server.dir/build.make CMakeFiles/taller_server.dir/server/world_entities/car.cpp.o
+.PHONY : server/world_entities/car.cpp.o
+
+server/world_entities/car.i: server/world_entities/car.cpp.i
+.PHONY : server/world_entities/car.i
+
+# target to preprocess a source file
+server/world_entities/car.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/taller_server.dir/build.make CMakeFiles/taller_server.dir/server/world_entities/car.cpp.i
+.PHONY : server/world_entities/car.cpp.i
+
+server/world_entities/car.s: server/world_entities/car.cpp.s
+.PHONY : server/world_entities/car.s
+
+# target to generate assembly for a file
+server/world_entities/car.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/taller_server.dir/build.make CMakeFiles/taller_server.dir/server/world_entities/car.cpp.s
+.PHONY : server/world_entities/car.cpp.s
+
+server/world_entities/checkpoint.o: server/world_entities/checkpoint.cpp.o
+.PHONY : server/world_entities/checkpoint.o
+
+# target to build an object file
+server/world_entities/checkpoint.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/taller_server.dir/build.make CMakeFiles/taller_server.dir/server/world_entities/checkpoint.cpp.o
+.PHONY : server/world_entities/checkpoint.cpp.o
+
+server/world_entities/checkpoint.i: server/world_entities/checkpoint.cpp.i
+.PHONY : server/world_entities/checkpoint.i
+
+# target to preprocess a source file
+server/world_entities/checkpoint.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/taller_server.dir/build.make CMakeFiles/taller_server.dir/server/world_entities/checkpoint.cpp.i
+.PHONY : server/world_entities/checkpoint.cpp.i
+
+server/world_entities/checkpoint.s: server/world_entities/checkpoint.cpp.s
+.PHONY : server/world_entities/checkpoint.s
+
+# target to generate assembly for a file
+server/world_entities/checkpoint.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/taller_server.dir/build.make CMakeFiles/taller_server.dir/server/world_entities/checkpoint.cpp.s
+.PHONY : server/world_entities/checkpoint.cpp.s
+
+server/world_entities/wall.o: server/world_entities/wall.cpp.o
+.PHONY : server/world_entities/wall.o
+
+# target to build an object file
+server/world_entities/wall.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/taller_server.dir/build.make CMakeFiles/taller_server.dir/server/world_entities/wall.cpp.o
+.PHONY : server/world_entities/wall.cpp.o
+
+server/world_entities/wall.i: server/world_entities/wall.cpp.i
+.PHONY : server/world_entities/wall.i
+
+# target to preprocess a source file
+server/world_entities/wall.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/taller_server.dir/build.make CMakeFiles/taller_server.dir/server/world_entities/wall.cpp.i
+.PHONY : server/world_entities/wall.cpp.i
+
+server/world_entities/wall.s: server/world_entities/wall.cpp.s
+.PHONY : server/world_entities/wall.s
+
+# target to generate assembly for a file
+server/world_entities/wall.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/taller_server.dir/build.make CMakeFiles/taller_server.dir/server/world_entities/wall.cpp.s
+.PHONY : server/world_entities/wall.cpp.s
+
 taller_client_autogen/mocs_compilation.o: taller_client_autogen/mocs_compilation.cpp.o
 .PHONY : taller_client_autogen/mocs_compilation.o
 
@@ -1510,6 +1885,30 @@ taller_editor_autogen/mocs_compilation.s: taller_editor_autogen/mocs_compilation
 taller_editor_autogen/mocs_compilation.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/taller_editor.dir/build.make CMakeFiles/taller_editor.dir/taller_editor_autogen/mocs_compilation.cpp.s
 .PHONY : taller_editor_autogen/mocs_compilation.cpp.s
+
+taller_server_autogen/mocs_compilation.o: taller_server_autogen/mocs_compilation.cpp.o
+.PHONY : taller_server_autogen/mocs_compilation.o
+
+# target to build an object file
+taller_server_autogen/mocs_compilation.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/taller_server.dir/build.make CMakeFiles/taller_server.dir/taller_server_autogen/mocs_compilation.cpp.o
+.PHONY : taller_server_autogen/mocs_compilation.cpp.o
+
+taller_server_autogen/mocs_compilation.i: taller_server_autogen/mocs_compilation.cpp.i
+.PHONY : taller_server_autogen/mocs_compilation.i
+
+# target to preprocess a source file
+taller_server_autogen/mocs_compilation.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/taller_server.dir/build.make CMakeFiles/taller_server.dir/taller_server_autogen/mocs_compilation.cpp.i
+.PHONY : taller_server_autogen/mocs_compilation.cpp.i
+
+taller_server_autogen/mocs_compilation.s: taller_server_autogen/mocs_compilation.cpp.s
+.PHONY : taller_server_autogen/mocs_compilation.s
+
+# target to generate assembly for a file
+taller_server_autogen/mocs_compilation.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/taller_server.dir/build.make CMakeFiles/taller_server.dir/taller_server_autogen/mocs_compilation.cpp.s
+.PHONY : taller_server_autogen/mocs_compilation.cpp.s
 
 # Help Target
 help:
@@ -1569,6 +1968,8 @@ help:
 	@echo "... taller_client_autogen_timestamp_deps"
 	@echo "... taller_editor_autogen"
 	@echo "... taller_editor_autogen_timestamp_deps"
+	@echo "... taller_server_autogen"
+	@echo "... taller_server_autogen_timestamp_deps"
 	@echo "... uninstall"
 	@echo "... yaml-cpp-parse_autogen"
 	@echo "... yaml-cpp-parse_autogen_timestamp_deps"
@@ -1589,6 +1990,7 @@ help:
 	@echo "... taller_client"
 	@echo "... taller_common"
 	@echo "... taller_editor"
+	@echo "... taller_server"
 	@echo "... yaml-cpp"
 	@echo "... yaml-cpp-parse"
 	@echo "... yaml-cpp-read"
@@ -1641,12 +2043,57 @@ help:
 	@echo "... editor/mainwindow.o"
 	@echo "... editor/mainwindow.i"
 	@echo "... editor/mainwindow.s"
+	@echo "... server/acceptor.o"
+	@echo "... server/acceptor.i"
+	@echo "... server/acceptor.s"
+	@echo "... server/client_handler.o"
+	@echo "... server/client_handler.i"
+	@echo "... server/client_handler.s"
+	@echo "... server/collisions_listener.o"
+	@echo "... server/collisions_listener.i"
+	@echo "... server/collisions_listener.s"
+	@echo "... server/gameloop.o"
+	@echo "... server/gameloop.i"
+	@echo "... server/gameloop.s"
+	@echo "... server/match.o"
+	@echo "... server/match.i"
+	@echo "... server/match.s"
+	@echo "... server/queues_monitor.o"
+	@echo "... server/queues_monitor.i"
+	@echo "... server/queues_monitor.s"
+	@echo "... server/receiver.o"
+	@echo "... server/receiver.i"
+	@echo "... server/receiver.s"
+	@echo "... server/sender.o"
+	@echo "... server/sender.i"
+	@echo "... server/sender.s"
+	@echo "... server/server.o"
+	@echo "... server/server.i"
+	@echo "... server/server.s"
+	@echo "... server/server_main.o"
+	@echo "... server/server_main.i"
+	@echo "... server/server_main.s"
+	@echo "... server/server_protocol.o"
+	@echo "... server/server_protocol.i"
+	@echo "... server/server_protocol.s"
+	@echo "... server/world_entities/car.o"
+	@echo "... server/world_entities/car.i"
+	@echo "... server/world_entities/car.s"
+	@echo "... server/world_entities/checkpoint.o"
+	@echo "... server/world_entities/checkpoint.i"
+	@echo "... server/world_entities/checkpoint.s"
+	@echo "... server/world_entities/wall.o"
+	@echo "... server/world_entities/wall.i"
+	@echo "... server/world_entities/wall.s"
 	@echo "... taller_client_autogen/mocs_compilation.o"
 	@echo "... taller_client_autogen/mocs_compilation.i"
 	@echo "... taller_client_autogen/mocs_compilation.s"
 	@echo "... taller_editor_autogen/mocs_compilation.o"
 	@echo "... taller_editor_autogen/mocs_compilation.i"
 	@echo "... taller_editor_autogen/mocs_compilation.s"
+	@echo "... taller_server_autogen/mocs_compilation.o"
+	@echo "... taller_server_autogen/mocs_compilation.i"
+	@echo "... taller_server_autogen/mocs_compilation.s"
 .PHONY : help
 
 

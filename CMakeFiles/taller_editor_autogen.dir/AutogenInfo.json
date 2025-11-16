@@ -220,6 +220,9 @@
 		"/usr/share/cmake-3.28/Modules/FindPackageHandleStandardArgs.cmake",
 		"/usr/share/cmake-3.28/Modules/FindPackageMessage.cmake",
 		"/usr/share/cmake-3.28/Modules/FetchContent/CMakeLists.cmake.in",
+		"/usr/local/lib/Box2D/Box2DConfig.cmake",
+		"/usr/local/lib/Box2D/Box2D-targets.cmake",
+		"/usr/local/lib/Box2D/Box2D-targets-noconfig.cmake",
 		"/usr/lib/x86_64-linux-gnu/cmake/Qt6/Qt6ConfigVersion.cmake",
 		"/usr/lib/x86_64-linux-gnu/cmake/Qt6/Qt6ConfigVersionImpl.cmake",
 		"/usr/lib/x86_64-linux-gnu/cmake/Qt6/Qt6Config.cmake",
@@ -377,7 +380,13 @@
 		"/home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/taller_client_autogen/include/client/Pantallas/ui_loginscreen.h",
 		"/home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/taller_client_autogen/include/client/ui_mainwindow.h",
 		"/home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/taller_client_autogen/include/editor/ui_mainwindow.h",
-		"/home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/taller_client_autogen/mocs_compilation.cpp"
+		"/home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/taller_client_autogen/mocs_compilation.cpp",
+		"/home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/taller_server_autogen/include/client/Pantallas/ui_carselectscreen.h",
+		"/home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/taller_server_autogen/include/client/Pantallas/ui_lobbyscreen.h",
+		"/home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/taller_server_autogen/include/client/Pantallas/ui_loginscreen.h",
+		"/home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/taller_server_autogen/include/client/ui_mainwindow.h",
+		"/home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/taller_server_autogen/include/editor/ui_mainwindow.h",
+		"/home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/taller_server_autogen/mocs_compilation.cpp"
 	],
 	"MULTI_CONFIG" : false,
 	"PARALLEL" : 6,
@@ -409,7 +418,13 @@
 		"/home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/taller_client_autogen/include/client/Pantallas/ui_loginscreen.h",
 		"/home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/taller_client_autogen/include/client/ui_mainwindow.h",
 		"/home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/taller_client_autogen/include/editor/ui_mainwindow.h",
-		"/home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/taller_client_autogen/mocs_compilation.cpp"
+		"/home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/taller_client_autogen/mocs_compilation.cpp",
+		"/home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/taller_server_autogen/include/client/Pantallas/ui_carselectscreen.h",
+		"/home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/taller_server_autogen/include/client/Pantallas/ui_lobbyscreen.h",
+		"/home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/taller_server_autogen/include/client/Pantallas/ui_loginscreen.h",
+		"/home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/taller_server_autogen/include/client/ui_mainwindow.h",
+		"/home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/taller_server_autogen/include/editor/ui_mainwindow.h",
+		"/home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/taller_server_autogen/mocs_compilation.cpp"
 	],
 	"UIC_UI_FILES" : [],
 	"VERBOSITY" : 0

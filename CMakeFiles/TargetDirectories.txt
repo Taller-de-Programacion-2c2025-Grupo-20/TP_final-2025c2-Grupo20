@@ -1,10 +1,13 @@
 /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/CMakeFiles/taller_common.dir
 /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/CMakeFiles/taller_client.dir
+/home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/CMakeFiles/taller_server.dir
 /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/CMakeFiles/taller_editor.dir
 /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/CMakeFiles/edit_cache.dir
 /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/CMakeFiles/rebuild_cache.dir
 /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/CMakeFiles/taller_client_autogen_timestamp_deps.dir
 /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/CMakeFiles/taller_client_autogen.dir
+/home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/CMakeFiles/taller_server_autogen_timestamp_deps.dir
+/home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/CMakeFiles/taller_server_autogen.dir
 /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/CMakeFiles/taller_editor_autogen_timestamp_deps.dir
 /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/CMakeFiles/taller_editor_autogen.dir
 /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/common/CMakeFiles/edit_cache.dir
@@ -92,5 +95,7 @@
 /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/yaml-cpp-build/util/CMakeFiles/yaml-cpp-parse_autogen.dir
 /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/yaml-cpp-build/util/CMakeFiles/yaml-cpp-read_autogen_timestamp_deps.dir
 /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/yaml-cpp-build/util/CMakeFiles/yaml-cpp-read_autogen.dir
+/home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/server/CMakeFiles/edit_cache.dir
+/home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/server/CMakeFiles/rebuild_cache.dir
 /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/editor/CMakeFiles/edit_cache.dir
 /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/editor/CMakeFiles/rebuild_cache.dir

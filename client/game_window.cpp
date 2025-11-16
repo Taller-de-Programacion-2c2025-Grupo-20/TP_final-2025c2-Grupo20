@@ -253,14 +253,23 @@ int GameWindow::runGame() {
                 have_state = 1;
             }
             */
-            last_state = receiver.pollGameState();
+            GameStateDTO gs = receiver.pollGameState();
+            
+            if (!gs.players.empty()) {
+                last_state = gs;
+                have_state = true;
+            }
             std::cout << "Mi player id es: " << static_cast<int>(client.getMyPlayerId()) << "\n";
-
 
             renderer.SetDrawColor(0, 0, 0, 255);
             renderer.Clear();
 
             renderer.Copy(background, srcRect, dstRect);
+
+            if (!have_state) {
+                renderer.Present(); 
+                continue; 
+            }
 
             for (size_t i = 0; i < last_state.players.size(); i++) {
 

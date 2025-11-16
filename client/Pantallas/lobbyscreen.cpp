@@ -54,6 +54,11 @@ void LobbyScreen::on_readyButton_clicked() {
 
 void LobbyScreen::on_startButton_clicked() {
     // (Aquí iría la lógica para enviar un CMD_START_GAME
+    InputCmd cmd;
+    cmd.player_id = client->getMyPlayerId();
+    cmd.key = InputKey::CreateMatch;
+    cmd.action = InputAction::Press;
+    client->push_input(cmd);
     poll_timer->stop();
     emit startGame(client);
 }

@@ -7,7 +7,8 @@ enum class LobbyCommandType : uint8_t {
     LOGIN_ATTEMPT,
     CREATE_MATCH,
     JOIN_MATCH,
-    TOGGLE_READY
+    TOGGLE_READY,
+    START_GAME
 };
 
 struct LobbyCommand {

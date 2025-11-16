@@ -712,6 +712,9 @@ taller_client_autogen/timestamp: \
 	/usr/lib/x86_64-linux-gnu/cmake/Qt6WidgetsTools/Qt6WidgetsToolsTargets-none.cmake \
 	/usr/lib/x86_64-linux-gnu/cmake/Qt6WidgetsTools/Qt6WidgetsToolsTargets.cmake \
 	/usr/lib/x86_64-linux-gnu/cmake/Qt6WidgetsTools/Qt6WidgetsToolsVersionlessTargets.cmake \
+	/usr/local/lib/Box2D/Box2D-targets-noconfig.cmake \
+	/usr/local/lib/Box2D/Box2D-targets.cmake \
+	/usr/local/lib/Box2D/Box2DConfig.cmake \
 	/usr/share/cmake-3.28/Modules/CMakeCXXInformation.cmake \
 	/usr/share/cmake-3.28/Modules/CMakeCheckCompilerFlagCommonPatterns.cmake \
 	/usr/share/cmake-3.28/Modules/CMakeCommonLanguageInclude.cmake \

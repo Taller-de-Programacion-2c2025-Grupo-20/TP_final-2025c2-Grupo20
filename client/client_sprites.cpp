@@ -92,11 +92,6 @@ const SDL2pp::Rect SpritesManager::SPEED_TENS     = SDL2pp::Rect(434, 619, 82, 1
 const SDL2pp::Rect SpritesManager::SPEED_UNITS    = SDL2pp::Rect(525, 619, 82, 100);
 #include "client_sprites.h"
 
-// (todas tus definiciones de mapas y const Rects arriba, esas están bien)
-
-// =======================
-//  Métodos de la clase
-// =======================
 
 const SDL2pp::Rect& SpritesManager::getCarRect(CarType carType, int frameId) const {
     switch (carType) {

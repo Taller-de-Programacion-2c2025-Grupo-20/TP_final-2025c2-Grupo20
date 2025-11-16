@@ -4679,6 +4679,11 @@ CMakeFiles/taller_server.dir/server/world_entities/wall.cpp.o: server/world_enti
   /usr/local/include/Box2D/Dynamics/b2World.h \
   /usr/local/include/Box2D/Dynamics/b2WorldCallbacks.h
 
+CMakeFiles/taller_server.dir/taller_server_autogen/mocs_compilation.cpp.o: taller_server_autogen/mocs_compilation.cpp \
+  /usr/include/stdc-predef.h
+
+
+taller_server_autogen/mocs_compilation.cpp:
 
 server/world_entities/car.cpp:
 

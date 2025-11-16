@@ -69,10 +69,24 @@ include CMakeFiles/taller_server.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/taller_server.dir/flags.make
 
+CMakeFiles/taller_server.dir/taller_server_autogen/mocs_compilation.cpp.o: CMakeFiles/taller_server.dir/flags.make
+CMakeFiles/taller_server.dir/taller_server_autogen/mocs_compilation.cpp.o: taller_server_autogen/mocs_compilation.cpp
+CMakeFiles/taller_server.dir/taller_server_autogen/mocs_compilation.cpp.o: CMakeFiles/taller_server.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/taller_server.dir/taller_server_autogen/mocs_compilation.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/taller_server.dir/taller_server_autogen/mocs_compilation.cpp.o -MF CMakeFiles/taller_server.dir/taller_server_autogen/mocs_compilation.cpp.o.d -o CMakeFiles/taller_server.dir/taller_server_autogen/mocs_compilation.cpp.o -c /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/taller_server_autogen/mocs_compilation.cpp
+
+CMakeFiles/taller_server.dir/taller_server_autogen/mocs_compilation.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/taller_server.dir/taller_server_autogen/mocs_compilation.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/taller_server_autogen/mocs_compilation.cpp > CMakeFiles/taller_server.dir/taller_server_autogen/mocs_compilation.cpp.i
+
+CMakeFiles/taller_server.dir/taller_server_autogen/mocs_compilation.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/taller_server.dir/taller_server_autogen/mocs_compilation.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/taller_server_autogen/mocs_compilation.cpp -o CMakeFiles/taller_server.dir/taller_server_autogen/mocs_compilation.cpp.s
+
 CMakeFiles/taller_server.dir/server/server_main.cpp.o: CMakeFiles/taller_server.dir/flags.make
 CMakeFiles/taller_server.dir/server/server_main.cpp.o: server/server_main.cpp
 CMakeFiles/taller_server.dir/server/server_main.cpp.o: CMakeFiles/taller_server.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/taller_server.dir/server/server_main.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/taller_server.dir/server/server_main.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/taller_server.dir/server/server_main.cpp.o -MF CMakeFiles/taller_server.dir/server/server_main.cpp.o.d -o CMakeFiles/taller_server.dir/server/server_main.cpp.o -c /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/server/server_main.cpp
 
 CMakeFiles/taller_server.dir/server/server_main.cpp.i: cmake_force
@@ -86,7 +100,7 @@ CMakeFiles/taller_server.dir/server/server_main.cpp.s: cmake_force
 CMakeFiles/taller_server.dir/server/acceptor.cpp.o: CMakeFiles/taller_server.dir/flags.make
 CMakeFiles/taller_server.dir/server/acceptor.cpp.o: server/acceptor.cpp
 CMakeFiles/taller_server.dir/server/acceptor.cpp.o: CMakeFiles/taller_server.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/taller_server.dir/server/acceptor.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/taller_server.dir/server/acceptor.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/taller_server.dir/server/acceptor.cpp.o -MF CMakeFiles/taller_server.dir/server/acceptor.cpp.o.d -o CMakeFiles/taller_server.dir/server/acceptor.cpp.o -c /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/server/acceptor.cpp
 
 CMakeFiles/taller_server.dir/server/acceptor.cpp.i: cmake_force
@@ -100,7 +114,7 @@ CMakeFiles/taller_server.dir/server/acceptor.cpp.s: cmake_force
 CMakeFiles/taller_server.dir/server/world_entities/car.cpp.o: CMakeFiles/taller_server.dir/flags.make
 CMakeFiles/taller_server.dir/server/world_entities/car.cpp.o: server/world_entities/car.cpp
 CMakeFiles/taller_server.dir/server/world_entities/car.cpp.o: CMakeFiles/taller_server.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/taller_server.dir/server/world_entities/car.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/taller_server.dir/server/world_entities/car.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/taller_server.dir/server/world_entities/car.cpp.o -MF CMakeFiles/taller_server.dir/server/world_entities/car.cpp.o.d -o CMakeFiles/taller_server.dir/server/world_entities/car.cpp.o -c /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/server/world_entities/car.cpp
 
 CMakeFiles/taller_server.dir/server/world_entities/car.cpp.i: cmake_force
@@ -114,7 +128,7 @@ CMakeFiles/taller_server.dir/server/world_entities/car.cpp.s: cmake_force
 CMakeFiles/taller_server.dir/server/world_entities/wall.cpp.o: CMakeFiles/taller_server.dir/flags.make
 CMakeFiles/taller_server.dir/server/world_entities/wall.cpp.o: server/world_entities/wall.cpp
 CMakeFiles/taller_server.dir/server/world_entities/wall.cpp.o: CMakeFiles/taller_server.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/taller_server.dir/server/world_entities/wall.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/taller_server.dir/server/world_entities/wall.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/taller_server.dir/server/world_entities/wall.cpp.o -MF CMakeFiles/taller_server.dir/server/world_entities/wall.cpp.o.d -o CMakeFiles/taller_server.dir/server/world_entities/wall.cpp.o -c /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/server/world_entities/wall.cpp
 
 CMakeFiles/taller_server.dir/server/world_entities/wall.cpp.i: cmake_force
@@ -128,7 +142,7 @@ CMakeFiles/taller_server.dir/server/world_entities/wall.cpp.s: cmake_force
 CMakeFiles/taller_server.dir/server/world_entities/checkpoint.cpp.o: CMakeFiles/taller_server.dir/flags.make
 CMakeFiles/taller_server.dir/server/world_entities/checkpoint.cpp.o: server/world_entities/checkpoint.cpp
 CMakeFiles/taller_server.dir/server/world_entities/checkpoint.cpp.o: CMakeFiles/taller_server.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/taller_server.dir/server/world_entities/checkpoint.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/taller_server.dir/server/world_entities/checkpoint.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/taller_server.dir/server/world_entities/checkpoint.cpp.o -MF CMakeFiles/taller_server.dir/server/world_entities/checkpoint.cpp.o.d -o CMakeFiles/taller_server.dir/server/world_entities/checkpoint.cpp.o -c /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/server/world_entities/checkpoint.cpp
 
 CMakeFiles/taller_server.dir/server/world_entities/checkpoint.cpp.i: cmake_force
@@ -142,7 +156,7 @@ CMakeFiles/taller_server.dir/server/world_entities/checkpoint.cpp.s: cmake_force
 CMakeFiles/taller_server.dir/server/collisions_listener.cpp.o: CMakeFiles/taller_server.dir/flags.make
 CMakeFiles/taller_server.dir/server/collisions_listener.cpp.o: server/collisions_listener.cpp
 CMakeFiles/taller_server.dir/server/collisions_listener.cpp.o: CMakeFiles/taller_server.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/taller_server.dir/server/collisions_listener.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/taller_server.dir/server/collisions_listener.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/taller_server.dir/server/collisions_listener.cpp.o -MF CMakeFiles/taller_server.dir/server/collisions_listener.cpp.o.d -o CMakeFiles/taller_server.dir/server/collisions_listener.cpp.o -c /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/server/collisions_listener.cpp
 
 CMakeFiles/taller_server.dir/server/collisions_listener.cpp.i: cmake_force
@@ -156,7 +170,7 @@ CMakeFiles/taller_server.dir/server/collisions_listener.cpp.s: cmake_force
 CMakeFiles/taller_server.dir/server/client_handler.cpp.o: CMakeFiles/taller_server.dir/flags.make
 CMakeFiles/taller_server.dir/server/client_handler.cpp.o: server/client_handler.cpp
 CMakeFiles/taller_server.dir/server/client_handler.cpp.o: CMakeFiles/taller_server.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/taller_server.dir/server/client_handler.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/taller_server.dir/server/client_handler.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/taller_server.dir/server/client_handler.cpp.o -MF CMakeFiles/taller_server.dir/server/client_handler.cpp.o.d -o CMakeFiles/taller_server.dir/server/client_handler.cpp.o -c /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/server/client_handler.cpp
 
 CMakeFiles/taller_server.dir/server/client_handler.cpp.i: cmake_force
@@ -170,7 +184,7 @@ CMakeFiles/taller_server.dir/server/client_handler.cpp.s: cmake_force
 CMakeFiles/taller_server.dir/server/gameloop.cpp.o: CMakeFiles/taller_server.dir/flags.make
 CMakeFiles/taller_server.dir/server/gameloop.cpp.o: server/gameloop.cpp
 CMakeFiles/taller_server.dir/server/gameloop.cpp.o: CMakeFiles/taller_server.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/taller_server.dir/server/gameloop.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/taller_server.dir/server/gameloop.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/taller_server.dir/server/gameloop.cpp.o -MF CMakeFiles/taller_server.dir/server/gameloop.cpp.o.d -o CMakeFiles/taller_server.dir/server/gameloop.cpp.o -c /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/server/gameloop.cpp
 
 CMakeFiles/taller_server.dir/server/gameloop.cpp.i: cmake_force
@@ -184,7 +198,7 @@ CMakeFiles/taller_server.dir/server/gameloop.cpp.s: cmake_force
 CMakeFiles/taller_server.dir/server/queues_monitor.cpp.o: CMakeFiles/taller_server.dir/flags.make
 CMakeFiles/taller_server.dir/server/queues_monitor.cpp.o: server/queues_monitor.cpp
 CMakeFiles/taller_server.dir/server/queues_monitor.cpp.o: CMakeFiles/taller_server.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/taller_server.dir/server/queues_monitor.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/taller_server.dir/server/queues_monitor.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/taller_server.dir/server/queues_monitor.cpp.o -MF CMakeFiles/taller_server.dir/server/queues_monitor.cpp.o.d -o CMakeFiles/taller_server.dir/server/queues_monitor.cpp.o -c /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/server/queues_monitor.cpp
 
 CMakeFiles/taller_server.dir/server/queues_monitor.cpp.i: cmake_force
@@ -198,7 +212,7 @@ CMakeFiles/taller_server.dir/server/queues_monitor.cpp.s: cmake_force
 CMakeFiles/taller_server.dir/server/receiver.cpp.o: CMakeFiles/taller_server.dir/flags.make
 CMakeFiles/taller_server.dir/server/receiver.cpp.o: server/receiver.cpp
 CMakeFiles/taller_server.dir/server/receiver.cpp.o: CMakeFiles/taller_server.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/taller_server.dir/server/receiver.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/taller_server.dir/server/receiver.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/taller_server.dir/server/receiver.cpp.o -MF CMakeFiles/taller_server.dir/server/receiver.cpp.o.d -o CMakeFiles/taller_server.dir/server/receiver.cpp.o -c /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/server/receiver.cpp
 
 CMakeFiles/taller_server.dir/server/receiver.cpp.i: cmake_force
@@ -212,7 +226,7 @@ CMakeFiles/taller_server.dir/server/receiver.cpp.s: cmake_force
 CMakeFiles/taller_server.dir/server/sender.cpp.o: CMakeFiles/taller_server.dir/flags.make
 CMakeFiles/taller_server.dir/server/sender.cpp.o: server/sender.cpp
 CMakeFiles/taller_server.dir/server/sender.cpp.o: CMakeFiles/taller_server.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/taller_server.dir/server/sender.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/taller_server.dir/server/sender.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/taller_server.dir/server/sender.cpp.o -MF CMakeFiles/taller_server.dir/server/sender.cpp.o.d -o CMakeFiles/taller_server.dir/server/sender.cpp.o -c /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/server/sender.cpp
 
 CMakeFiles/taller_server.dir/server/sender.cpp.i: cmake_force
@@ -226,7 +240,7 @@ CMakeFiles/taller_server.dir/server/sender.cpp.s: cmake_force
 CMakeFiles/taller_server.dir/server/server_protocol.cpp.o: CMakeFiles/taller_server.dir/flags.make
 CMakeFiles/taller_server.dir/server/server_protocol.cpp.o: server/server_protocol.cpp
 CMakeFiles/taller_server.dir/server/server_protocol.cpp.o: CMakeFiles/taller_server.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/taller_server.dir/server/server_protocol.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/taller_server.dir/server/server_protocol.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/taller_server.dir/server/server_protocol.cpp.o -MF CMakeFiles/taller_server.dir/server/server_protocol.cpp.o.d -o CMakeFiles/taller_server.dir/server/server_protocol.cpp.o -c /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/server/server_protocol.cpp
 
 CMakeFiles/taller_server.dir/server/server_protocol.cpp.i: cmake_force
@@ -240,7 +254,7 @@ CMakeFiles/taller_server.dir/server/server_protocol.cpp.s: cmake_force
 CMakeFiles/taller_server.dir/server/server.cpp.o: CMakeFiles/taller_server.dir/flags.make
 CMakeFiles/taller_server.dir/server/server.cpp.o: server/server.cpp
 CMakeFiles/taller_server.dir/server/server.cpp.o: CMakeFiles/taller_server.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/taller_server.dir/server/server.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/taller_server.dir/server/server.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/taller_server.dir/server/server.cpp.o -MF CMakeFiles/taller_server.dir/server/server.cpp.o.d -o CMakeFiles/taller_server.dir/server/server.cpp.o -c /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/server/server.cpp
 
 CMakeFiles/taller_server.dir/server/server.cpp.i: cmake_force
@@ -254,7 +268,7 @@ CMakeFiles/taller_server.dir/server/server.cpp.s: cmake_force
 CMakeFiles/taller_server.dir/server/match.cpp.o: CMakeFiles/taller_server.dir/flags.make
 CMakeFiles/taller_server.dir/server/match.cpp.o: server/match.cpp
 CMakeFiles/taller_server.dir/server/match.cpp.o: CMakeFiles/taller_server.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/taller_server.dir/server/match.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/taller_server.dir/server/match.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/taller_server.dir/server/match.cpp.o -MF CMakeFiles/taller_server.dir/server/match.cpp.o.d -o CMakeFiles/taller_server.dir/server/match.cpp.o -c /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/server/match.cpp
 
 CMakeFiles/taller_server.dir/server/match.cpp.i: cmake_force
@@ -267,6 +281,7 @@ CMakeFiles/taller_server.dir/server/match.cpp.s: cmake_force
 
 # Object files for target taller_server
 taller_server_OBJECTS = \
+"CMakeFiles/taller_server.dir/taller_server_autogen/mocs_compilation.cpp.o" \
 "CMakeFiles/taller_server.dir/server/server_main.cpp.o" \
 "CMakeFiles/taller_server.dir/server/acceptor.cpp.o" \
 "CMakeFiles/taller_server.dir/server/world_entities/car.cpp.o" \
@@ -285,6 +300,7 @@ taller_server_OBJECTS = \
 # External object files for target taller_server
 taller_server_EXTERNAL_OBJECTS =
 
+taller_server: CMakeFiles/taller_server.dir/taller_server_autogen/mocs_compilation.cpp.o
 taller_server: CMakeFiles/taller_server.dir/server/server_main.cpp.o
 taller_server: CMakeFiles/taller_server.dir/server/acceptor.cpp.o
 taller_server: CMakeFiles/taller_server.dir/server/world_entities/car.cpp.o
@@ -304,7 +320,7 @@ taller_server: libtaller_common.a
 taller_server: /usr/local/lib/libBox2D.a
 taller_server: _deps/yaml-cpp-build/libyaml-cpp.so.0.7.0
 taller_server: CMakeFiles/taller_server.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Linking CXX executable taller_server"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Linking CXX executable taller_server"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/taller_server.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

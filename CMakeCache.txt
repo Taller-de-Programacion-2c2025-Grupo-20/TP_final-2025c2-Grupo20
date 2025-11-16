@@ -1130,16 +1130,16 @@ SNDIO_LIB:FILEPATH=/usr/lib/x86_64-linux-gnu/libsndio.so
 SampleRate_DIR:PATH=SampleRate_DIR-NOTFOUND
 
 //Enable / disable client program.
-TALLER_CLIENT:BOOL=OFF
+TALLER_CLIENT:BOOL=ON
 
 //Enable / disable editor program.
-TALLER_EDITOR:BOOL=OFF
+TALLER_EDITOR:BOOL=ON
 
 //Enable / disable warnings as errors.
 TALLER_MAKE_WARNINGS_AS_ERRORS:BOOL=OFF
 
 //Enable / disable server program.
-TALLER_SERVER:BOOL=ON
+TALLER_SERVER:BOOL=OFF
 
 //Enable / disable tests.
 TALLER_TESTS:BOOL=OFF
@@ -1488,7 +1488,7 @@ CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_NM
 CMAKE_NM-ADVANCED:INTERNAL=1
 //number of local generators
-CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=5
+CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=11
 //ADVANCED property for variable: CMAKE_OBJCOPY
 CMAKE_OBJCOPY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_OBJDUMP

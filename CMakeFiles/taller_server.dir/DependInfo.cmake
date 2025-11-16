@@ -22,6 +22,7 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/server/world_entities/car.cpp" "CMakeFiles/taller_server.dir/server/world_entities/car.cpp.o" "gcc" "CMakeFiles/taller_server.dir/server/world_entities/car.cpp.o.d"
   "/home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/server/world_entities/checkpoint.cpp" "CMakeFiles/taller_server.dir/server/world_entities/checkpoint.cpp.o" "gcc" "CMakeFiles/taller_server.dir/server/world_entities/checkpoint.cpp.o.d"
   "/home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/server/world_entities/wall.cpp" "CMakeFiles/taller_server.dir/server/world_entities/wall.cpp.o" "gcc" "CMakeFiles/taller_server.dir/server/world_entities/wall.cpp.o.d"
+  "/home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/taller_server_autogen/mocs_compilation.cpp" "CMakeFiles/taller_server.dir/taller_server_autogen/mocs_compilation.cpp.o" "gcc" "CMakeFiles/taller_server.dir/taller_server_autogen/mocs_compilation.cpp.o.d"
   )
 
 # Targets to which this target links which contain Fortran sources.

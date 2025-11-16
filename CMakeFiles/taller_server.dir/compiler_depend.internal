@@ -4693,3 +4693,7 @@ CMakeFiles/taller_server.dir/server/world_entities/wall.cpp.o
  /usr/local/include/Box2D/Dynamics/b2World.h
  /usr/local/include/Box2D/Dynamics/b2WorldCallbacks.h
 
+CMakeFiles/taller_server.dir/taller_server_autogen/mocs_compilation.cpp.o
+ /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/taller_server_autogen/mocs_compilation.cpp
+ /usr/include/stdc-predef.h
+

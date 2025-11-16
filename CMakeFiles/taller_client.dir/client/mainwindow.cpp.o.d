@@ -382,9 +382,15 @@ CMakeFiles/taller_client.dir/client/mainwindow.cpp.o: \
  /usr/include/x86_64-linux-gnu/qt6/QtGui/qcursor.h \
  /usr/include/x86_64-linux-gnu/qt6/QtGui/qbitmap.h \
  /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qtabwidget.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtCore/QObject \
+ /usr/include/x86_64-linux-gnu/qt6/QtCore/qobject.h \
  /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/client/Pantallas/loginscreen.h \
  /usr/include/x86_64-linux-gnu/qt6/QtWidgets/QWidget \
  /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qwidget.h \
+ /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/client/Pantallas/lobbyscreen.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtCore/QTimer \
+ /usr/include/x86_64-linux-gnu/qt6/QtCore/qtimer.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtCore/qbasictimer.h \
  /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/client/client.h \
  /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL.h \
  /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_main.h \
@@ -556,8 +562,7 @@ CMakeFiles/taller_client.dir/client/mainwindow.cpp.o: \
  /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/client/../common/thread.h \
  /usr/include/c++/13/iostream /usr/include/c++/13/thread \
  /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/client/client_receiver.h \
- /usr/include/x86_64-linux-gnu/qt6/QtCore/QObject \
- /usr/include/x86_64-linux-gnu/qt6/QtCore/qobject.h \
+ /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/client/client.h \
  /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/taller_client_autogen/include/ui_mainwindow.h \
  /usr/include/x86_64-linux-gnu/qt6/QtCore/QVariant \
  /usr/include/x86_64-linux-gnu/qt6/QtCore/qvariant.h \
@@ -576,4 +581,6 @@ CMakeFiles/taller_client.dir/client/mainwindow.cpp.o: \
  /usr/include/x86_64-linux-gnu/qt6/QtWidgets/QStackedWidget \
  /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qstackedwidget.h \
  /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qframe.h \
- /usr/include/x86_64-linux-gnu/qt6/QtWidgets/QWidget
+ /usr/include/x86_64-linux-gnu/qt6/QtWidgets/QWidget \
+ /usr/include/x86_64-linux-gnu/qt6/QtCore/QDebug \
+ /usr/include/x86_64-linux-gnu/qt6/QtCore/qdebug.h

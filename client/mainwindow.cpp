@@ -1,45 +1,58 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include <stdexcept>
+#include <QDebug>
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent),
       ui(new Ui::MainWindow) {
 
     ui->setupUi(this);
-
     pantallaLogin = new LoginScreen(this);
     ui->stackedWidget->addWidget(pantallaLogin);
+    pantallaLobby = new LobbyScreen(this);
+    ui->stackedWidget->addWidget(pantallaLobby);
     ui->stackedWidget->setCurrentWidget(pantallaLogin);
-
-    // Conecta el botón de LoginScreen a un slot de MainWindow
     connect(pantallaLogin, &LoginScreen::connectAttempted,
             this, &MainWindow::onLoginAttempt);
+            
+    connect(pantallaLobby, &LobbyScreen::startGame, this, &MainWindow::startGame);
 }
 
 MainWindow::~MainWindow() {
     delete ui;
 }
 
-// Este slot se activa cuando el LoginScreen emite "connectAttempted"
 void MainWindow::onLoginAttempt(const QString& ip, const QString& port, const QString& name) {
-    // 1. Deshabilita la UI para evitar doble clic
     pantallaLogin->setEnabled(false);
-    pantallaLogin->displayError("Conectando..."); // Muestra mensaje
+    pantallaLogin->displayError("Conectando...");
     
-    // 2. Retransmite la señal al 'main' para que cree el cliente
-    emit loginRequested(ip.toStdString(), port.toStdString(), name.toStdString());
+    try {
+        client = std::make_unique<Client>(ip.toStdString().c_str(),
+                                          port.toStdString().c_str());
+
+        connect(&(client->getReceiver()), &ClientReceiver::loginSuccess, 
+                                     this, &MainWindow::handleLoginSuccess);
+        
+        connect(&(client->getReceiver()), &ClientReceiver::loginFailed,
+                                     this, &MainWindow::handleLoginFailed);
+
+        client->start_threads();
+        client->send_login_request(name.toStdString());
+        
+    } catch (const std::exception& e) {
+        handleLoginFailed();
+    }
 }
 
-// Este slot se activa cuando el HILO RECEIVER emite "loginSuccess"
-void MainWindow::handleLoginSuccess(uint8_t /*player_id*/) {
-    // ¡Login exitoso! Emitimos la señal para empezar el juego
-    emit startGame();
+void MainWindow::handleLoginSuccess() {
+    pantallaLogin->displayError("¡Conectado!");
+    pantallaLobby->setClient(client.get());
+    ui->stackedWidget->setCurrentWidget(pantallaLobby);
 }
 
-// Este slot se activa cuando el HILO RECEIVER emite "loginFailed"
 void MainWindow::handleLoginFailed() {
-    // El login falló, reactivamos la UI
     pantallaLogin->setEnabled(true);
     pantallaLogin->displayError("Error: no se pudo autenticar.");
+    client.reset();
 }

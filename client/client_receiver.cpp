@@ -2,6 +2,7 @@
 #include "../common/constants.h"
 #include <stdexcept>
 #include <iostream>
+#include <QDebug>
 
 ClientReceiver::ClientReceiver(ClientProtocol& protocol, QObject* parent) :
     QObject(parent),
@@ -19,7 +20,7 @@ void ClientReceiver::run() {
             if (!protocol.receive_command_code(cmd_code)) {
                 break;
             }
-            
+            std::cout << "Received command code: " << static_cast<int>(cmd_code) << std::endl;
             switch (cmd_code) {
                 case LOGIN_SUCCESS: {
                     uint8_t my_id = protocol.receive_login_response_payload();
@@ -48,7 +49,7 @@ void ClientReceiver::run() {
         }
     } catch (const std::exception& e) {
         if (should_keep_running()) {
-             emit loginFailed();
+            emit loginFailed();
         }
     }
 }

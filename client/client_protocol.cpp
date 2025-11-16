@@ -13,8 +13,12 @@ ClientProtocol::~ClientProtocol() {}
 
 void ClientProtocol::send_login_attempt(const std::string& username) {
     std::vector<uint8_t> buffer;
-    buffer.push_back(CMD_LOGIN);
-    sendString(username); 
+    uint8_t cmd = CMD_LOGIN;
+    buffer.push_back(cmd);
+    uint16_t name_length = username.length();
+    addUint16_tToBuffer(buffer, name_length);
+    buffer.insert(buffer.end(), username.data(), username.data() + name_length);
+    skt.sendall(buffer.data(), buffer.size());
 }
 
 void ClientProtocol::send_create_match(const std::string& match_name) {

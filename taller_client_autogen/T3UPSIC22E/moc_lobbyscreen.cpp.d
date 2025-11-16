@@ -1,5 +1,67 @@
 /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/taller_client_autogen/T3UPSIC22E/moc_lobbyscreen.cpp: /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/client/Pantallas/lobbyscreen.h \
   /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/taller_client_autogen/moc_predefs.h \
+  /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build/include-config-/SDL2/SDL_config.h \
+  /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL.h \
+  /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_assert.h \
+  /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_atomic.h \
+  /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_audio.h \
+  /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_blendmode.h \
+  /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_clipboard.h \
+  /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_cpuinfo.h \
+  /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_endian.h \
+  /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_error.h \
+  /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_events.h \
+  /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_filesystem.h \
+  /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_gamecontroller.h \
+  /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_gesture.h \
+  /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_guid.h \
+  /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_haptic.h \
+  /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_hidapi.h \
+  /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_hints.h \
+  /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_joystick.h \
+  /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_keyboard.h \
+  /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_keycode.h \
+  /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_loadso.h \
+  /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_locale.h \
+  /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_log.h \
+  /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_main.h \
+  /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_messagebox.h \
+  /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_metal.h \
+  /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_misc.h \
+  /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_mouse.h \
+  /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_mutex.h \
+  /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_pixels.h \
+  /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_platform.h \
+  /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_power.h \
+  /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_quit.h \
+  /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_rect.h \
+  /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_render.h \
+  /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_rwops.h \
+  /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_scancode.h \
+  /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_sensor.h \
+  /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_shape.h \
+  /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_stdinc.h \
+  /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_surface.h \
+  /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_system.h \
+  /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_thread.h \
+  /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_timer.h \
+  /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_touch.h \
+  /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_version.h \
+  /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_video.h \
+  /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/begin_code.h \
+  /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/close_code.h \
+  /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/client/client.h \
+  /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/client/client_protocol.h \
+  /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/client/client_receiver.h \
+  /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/client/client_sender.h \
+  /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/common/clientCommand.h \
+  /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/common/constants.h \
+  /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/common/gameState.h \
+  /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/common/lobbyState.h \
+  /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/common/queue.h \
+  /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/common/serverState.h \
+  /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/common/socket.h \
+  /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/common/thread.h \
   /usr/include/alloca.h \
   /usr/include/asm-generic/errno-base.h \
   /usr/include/asm-generic/errno.h \
@@ -29,6 +91,7 @@
   /usr/include/c++/13/bits/cpp_type_traits.h \
   /usr/include/c++/13/bits/cxxabi_forced.h \
   /usr/include/c++/13/bits/cxxabi_init_exception.h \
+  /usr/include/c++/13/bits/deque.tcc \
   /usr/include/c++/13/bits/enable_special_members.h \
   /usr/include/c++/13/bits/erase_if.h \
   /usr/include/c++/13/bits/exception.h \
@@ -39,6 +102,7 @@
   /usr/include/c++/13/bits/hash_bytes.h \
   /usr/include/c++/13/bits/invoke.h \
   /usr/include/c++/13/bits/ios_base.h \
+  /usr/include/c++/13/bits/istream.tcc \
   /usr/include/c++/13/bits/iterator_concepts.h \
   /usr/include/c++/13/bits/list.tcc \
   /usr/include/c++/13/bits/locale_classes.h \
@@ -81,6 +145,7 @@
   /usr/include/c++/13/bits/stl_algobase.h \
   /usr/include/c++/13/bits/stl_bvector.h \
   /usr/include/c++/13/bits/stl_construct.h \
+  /usr/include/c++/13/bits/stl_deque.h \
   /usr/include/c++/13/bits/stl_function.h \
   /usr/include/c++/13/bits/stl_heap.h \
   /usr/include/c++/13/bits/stl_iterator.h \
@@ -91,6 +156,7 @@
   /usr/include/c++/13/bits/stl_multimap.h \
   /usr/include/c++/13/bits/stl_numeric.h \
   /usr/include/c++/13/bits/stl_pair.h \
+  /usr/include/c++/13/bits/stl_queue.h \
   /usr/include/c++/13/bits/stl_raw_storage_iter.h \
   /usr/include/c++/13/bits/stl_relops.h \
   /usr/include/c++/13/bits/stl_tempbuf.h \
@@ -116,6 +182,7 @@
   /usr/include/c++/13/cmath \
   /usr/include/c++/13/compare \
   /usr/include/c++/13/concepts \
+  /usr/include/c++/13/condition_variable \
   /usr/include/c++/13/cstddef \
   /usr/include/c++/13/cstdint \
   /usr/include/c++/13/cstdlib \
@@ -124,6 +191,7 @@
   /usr/include/c++/13/cwctype \
   /usr/include/c++/13/debug/assertions.h \
   /usr/include/c++/13/debug/debug.h \
+  /usr/include/c++/13/deque \
   /usr/include/c++/13/exception \
   /usr/include/c++/13/ext/aligned_buffer.h \
   /usr/include/c++/13/ext/alloc_traits.h \
@@ -136,11 +204,14 @@
   /usr/include/c++/13/initializer_list \
   /usr/include/c++/13/ios \
   /usr/include/c++/13/iosfwd \
+  /usr/include/c++/13/iostream \
+  /usr/include/c++/13/istream \
   /usr/include/c++/13/iterator \
   /usr/include/c++/13/limits \
   /usr/include/c++/13/list \
   /usr/include/c++/13/map \
   /usr/include/c++/13/memory \
+  /usr/include/c++/13/mutex \
   /usr/include/c++/13/new \
   /usr/include/c++/13/numbers \
   /usr/include/c++/13/numeric \
@@ -150,10 +221,12 @@
   /usr/include/c++/13/pstl/glue_algorithm_defs.h \
   /usr/include/c++/13/pstl/glue_memory_defs.h \
   /usr/include/c++/13/pstl/glue_numeric_defs.h \
+  /usr/include/c++/13/queue \
   /usr/include/c++/13/stdexcept \
   /usr/include/c++/13/streambuf \
   /usr/include/c++/13/string \
   /usr/include/c++/13/string_view \
+  /usr/include/c++/13/thread \
   /usr/include/c++/13/tr1/bessel_function.tcc \
   /usr/include/c++/13/tr1/beta_function.tcc \
   /usr/include/c++/13/tr1/ell_integral.tcc \
@@ -178,10 +251,12 @@
   /usr/include/errno.h \
   /usr/include/features-time64.h \
   /usr/include/features.h \
+  /usr/include/inttypes.h \
   /usr/include/limits.h \
   /usr/include/linux/errno.h \
   /usr/include/linux/limits.h \
   /usr/include/locale.h \
+  /usr/include/math.h \
   /usr/include/pthread.h \
   /usr/include/sched.h \
   /usr/include/stdc-predef.h \
@@ -208,12 +283,21 @@
   /usr/include/x86_64-linux-gnu/bits/errno.h \
   /usr/include/x86_64-linux-gnu/bits/floatn-common.h \
   /usr/include/x86_64-linux-gnu/bits/floatn.h \
+  /usr/include/x86_64-linux-gnu/bits/flt-eval-method.h \
+  /usr/include/x86_64-linux-gnu/bits/fp-fast.h \
+  /usr/include/x86_64-linux-gnu/bits/fp-logb.h \
   /usr/include/x86_64-linux-gnu/bits/getopt_core.h \
   /usr/include/x86_64-linux-gnu/bits/getopt_posix.h \
+  /usr/include/x86_64-linux-gnu/bits/iscanonical.h \
   /usr/include/x86_64-linux-gnu/bits/libc-header-start.h \
+  /usr/include/x86_64-linux-gnu/bits/libm-simd-decl-stubs.h \
   /usr/include/x86_64-linux-gnu/bits/local_lim.h \
   /usr/include/x86_64-linux-gnu/bits/locale.h \
   /usr/include/x86_64-linux-gnu/bits/long-double.h \
+  /usr/include/x86_64-linux-gnu/bits/math-vector.h \
+  /usr/include/x86_64-linux-gnu/bits/mathcalls-helper-functions.h \
+  /usr/include/x86_64-linux-gnu/bits/mathcalls-narrow.h \
+  /usr/include/x86_64-linux-gnu/bits/mathcalls.h \
   /usr/include/x86_64-linux-gnu/bits/posix1_lim.h \
   /usr/include/x86_64-linux-gnu/bits/posix2_lim.h \
   /usr/include/x86_64-linux-gnu/bits/posix_opt.h \
@@ -283,6 +367,8 @@
   /usr/include/x86_64-linux-gnu/c++/13/bits/os_defines.h \
   /usr/include/x86_64-linux-gnu/gnu/stubs-64.h \
   /usr/include/x86_64-linux-gnu/gnu/stubs.h \
+  /usr/include/x86_64-linux-gnu/qt6/QtCore/QObject \
+  /usr/include/x86_64-linux-gnu/qt6/QtCore/QTimer \
   /usr/include/x86_64-linux-gnu/qt6/QtCore/qalgorithms.h \
   /usr/include/x86_64-linux-gnu/qt6/QtCore/qanystringview.h \
   /usr/include/x86_64-linux-gnu/qt6/QtCore/qarraydata.h \
@@ -291,6 +377,7 @@
   /usr/include/x86_64-linux-gnu/qt6/QtCore/qatomic.h \
   /usr/include/x86_64-linux-gnu/qt6/QtCore/qatomic_cxx11.h \
   /usr/include/x86_64-linux-gnu/qt6/QtCore/qbasicatomic.h \
+  /usr/include/x86_64-linux-gnu/qt6/QtCore/qbasictimer.h \
   /usr/include/x86_64-linux-gnu/qt6/QtCore/qbindingstorage.h \
   /usr/include/x86_64-linux-gnu/qt6/QtCore/qbytearray.h \
   /usr/include/x86_64-linux-gnu/qt6/QtCore/qbytearrayalgorithms.h \
@@ -360,6 +447,7 @@
   /usr/include/x86_64-linux-gnu/qt6/QtCore/qtcore-config.h \
   /usr/include/x86_64-linux-gnu/qt6/QtCore/qtcoreexports.h \
   /usr/include/x86_64-linux-gnu/qt6/QtCore/qtextstream.h \
+  /usr/include/x86_64-linux-gnu/qt6/QtCore/qtimer.h \
   /usr/include/x86_64-linux-gnu/qt6/QtCore/qtmetamacros.h \
   /usr/include/x86_64-linux-gnu/qt6/QtCore/qtypeinfo.h \
   /usr/include/x86_64-linux-gnu/qt6/QtCore/qutf8stringview.h \
@@ -400,6 +488,101 @@
   /usr/include/x86_64-linux-gnu/sys/select.h \
   /usr/include/x86_64-linux-gnu/sys/syscall.h \
   /usr/include/x86_64-linux-gnu/sys/types.h \
+  /usr/lib/gcc/x86_64-linux-gnu/13/include/adxintrin.h \
+  /usr/lib/gcc/x86_64-linux-gnu/13/include/amxbf16intrin.h \
+  /usr/lib/gcc/x86_64-linux-gnu/13/include/amxcomplexintrin.h \
+  /usr/lib/gcc/x86_64-linux-gnu/13/include/amxfp16intrin.h \
+  /usr/lib/gcc/x86_64-linux-gnu/13/include/amxint8intrin.h \
+  /usr/lib/gcc/x86_64-linux-gnu/13/include/amxtileintrin.h \
+  /usr/lib/gcc/x86_64-linux-gnu/13/include/avx2intrin.h \
+  /usr/lib/gcc/x86_64-linux-gnu/13/include/avx5124fmapsintrin.h \
+  /usr/lib/gcc/x86_64-linux-gnu/13/include/avx5124vnniwintrin.h \
+  /usr/lib/gcc/x86_64-linux-gnu/13/include/avx512bf16intrin.h \
+  /usr/lib/gcc/x86_64-linux-gnu/13/include/avx512bf16vlintrin.h \
+  /usr/lib/gcc/x86_64-linux-gnu/13/include/avx512bitalgintrin.h \
+  /usr/lib/gcc/x86_64-linux-gnu/13/include/avx512bwintrin.h \
+  /usr/lib/gcc/x86_64-linux-gnu/13/include/avx512cdintrin.h \
+  /usr/lib/gcc/x86_64-linux-gnu/13/include/avx512dqintrin.h \
+  /usr/lib/gcc/x86_64-linux-gnu/13/include/avx512erintrin.h \
+  /usr/lib/gcc/x86_64-linux-gnu/13/include/avx512fintrin.h \
+  /usr/lib/gcc/x86_64-linux-gnu/13/include/avx512fp16intrin.h \
+  /usr/lib/gcc/x86_64-linux-gnu/13/include/avx512fp16vlintrin.h \
+  /usr/lib/gcc/x86_64-linux-gnu/13/include/avx512ifmaintrin.h \
+  /usr/lib/gcc/x86_64-linux-gnu/13/include/avx512ifmavlintrin.h \
+  /usr/lib/gcc/x86_64-linux-gnu/13/include/avx512pfintrin.h \
+  /usr/lib/gcc/x86_64-linux-gnu/13/include/avx512vbmi2intrin.h \
+  /usr/lib/gcc/x86_64-linux-gnu/13/include/avx512vbmi2vlintrin.h \
+  /usr/lib/gcc/x86_64-linux-gnu/13/include/avx512vbmiintrin.h \
+  /usr/lib/gcc/x86_64-linux-gnu/13/include/avx512vbmivlintrin.h \
+  /usr/lib/gcc/x86_64-linux-gnu/13/include/avx512vlbwintrin.h \
+  /usr/lib/gcc/x86_64-linux-gnu/13/include/avx512vldqintrin.h \
+  /usr/lib/gcc/x86_64-linux-gnu/13/include/avx512vlintrin.h \
+  /usr/lib/gcc/x86_64-linux-gnu/13/include/avx512vnniintrin.h \
+  /usr/lib/gcc/x86_64-linux-gnu/13/include/avx512vnnivlintrin.h \
+  /usr/lib/gcc/x86_64-linux-gnu/13/include/avx512vp2intersectintrin.h \
+  /usr/lib/gcc/x86_64-linux-gnu/13/include/avx512vp2intersectvlintrin.h \
+  /usr/lib/gcc/x86_64-linux-gnu/13/include/avx512vpopcntdqintrin.h \
+  /usr/lib/gcc/x86_64-linux-gnu/13/include/avx512vpopcntdqvlintrin.h \
+  /usr/lib/gcc/x86_64-linux-gnu/13/include/avxifmaintrin.h \
+  /usr/lib/gcc/x86_64-linux-gnu/13/include/avxintrin.h \
+  /usr/lib/gcc/x86_64-linux-gnu/13/include/avxneconvertintrin.h \
+  /usr/lib/gcc/x86_64-linux-gnu/13/include/avxvnniint8intrin.h \
+  /usr/lib/gcc/x86_64-linux-gnu/13/include/avxvnniintrin.h \
+  /usr/lib/gcc/x86_64-linux-gnu/13/include/bmi2intrin.h \
+  /usr/lib/gcc/x86_64-linux-gnu/13/include/bmiintrin.h \
+  /usr/lib/gcc/x86_64-linux-gnu/13/include/cetintrin.h \
+  /usr/lib/gcc/x86_64-linux-gnu/13/include/cldemoteintrin.h \
+  /usr/lib/gcc/x86_64-linux-gnu/13/include/clflushoptintrin.h \
+  /usr/lib/gcc/x86_64-linux-gnu/13/include/clwbintrin.h \
+  /usr/lib/gcc/x86_64-linux-gnu/13/include/clzerointrin.h \
+  /usr/lib/gcc/x86_64-linux-gnu/13/include/cmpccxaddintrin.h \
+  /usr/lib/gcc/x86_64-linux-gnu/13/include/emmintrin.h \
+  /usr/lib/gcc/x86_64-linux-gnu/13/include/enqcmdintrin.h \
+  /usr/lib/gcc/x86_64-linux-gnu/13/include/f16cintrin.h \
+  /usr/lib/gcc/x86_64-linux-gnu/13/include/float.h \
+  /usr/lib/gcc/x86_64-linux-gnu/13/include/fmaintrin.h \
+  /usr/lib/gcc/x86_64-linux-gnu/13/include/fxsrintrin.h \
+  /usr/lib/gcc/x86_64-linux-gnu/13/include/gfniintrin.h \
+  /usr/lib/gcc/x86_64-linux-gnu/13/include/hresetintrin.h \
+  /usr/lib/gcc/x86_64-linux-gnu/13/include/ia32intrin.h \
+  /usr/lib/gcc/x86_64-linux-gnu/13/include/immintrin.h \
+  /usr/lib/gcc/x86_64-linux-gnu/13/include/keylockerintrin.h \
+  /usr/lib/gcc/x86_64-linux-gnu/13/include/lwpintrin.h \
+  /usr/lib/gcc/x86_64-linux-gnu/13/include/lzcntintrin.h \
+  /usr/lib/gcc/x86_64-linux-gnu/13/include/mm_malloc.h \
+  /usr/lib/gcc/x86_64-linux-gnu/13/include/mmintrin.h \
+  /usr/lib/gcc/x86_64-linux-gnu/13/include/movdirintrin.h \
+  /usr/lib/gcc/x86_64-linux-gnu/13/include/mwaitintrin.h \
+  /usr/lib/gcc/x86_64-linux-gnu/13/include/mwaitxintrin.h \
+  /usr/lib/gcc/x86_64-linux-gnu/13/include/pconfigintrin.h \
+  /usr/lib/gcc/x86_64-linux-gnu/13/include/pkuintrin.h \
+  /usr/lib/gcc/x86_64-linux-gnu/13/include/pmmintrin.h \
+  /usr/lib/gcc/x86_64-linux-gnu/13/include/popcntintrin.h \
+  /usr/lib/gcc/x86_64-linux-gnu/13/include/prfchiintrin.h \
+  /usr/lib/gcc/x86_64-linux-gnu/13/include/prfchwintrin.h \
+  /usr/lib/gcc/x86_64-linux-gnu/13/include/raointintrin.h \
+  /usr/lib/gcc/x86_64-linux-gnu/13/include/rdseedintrin.h \
+  /usr/lib/gcc/x86_64-linux-gnu/13/include/rtmintrin.h \
+  /usr/lib/gcc/x86_64-linux-gnu/13/include/serializeintrin.h \
+  /usr/lib/gcc/x86_64-linux-gnu/13/include/sgxintrin.h \
+  /usr/lib/gcc/x86_64-linux-gnu/13/include/shaintrin.h \
+  /usr/lib/gcc/x86_64-linux-gnu/13/include/smmintrin.h \
   /usr/lib/gcc/x86_64-linux-gnu/13/include/stdarg.h \
   /usr/lib/gcc/x86_64-linux-gnu/13/include/stdbool.h \
-  /usr/lib/gcc/x86_64-linux-gnu/13/include/stddef.h
+  /usr/lib/gcc/x86_64-linux-gnu/13/include/stddef.h \
+  /usr/lib/gcc/x86_64-linux-gnu/13/include/tbmintrin.h \
+  /usr/lib/gcc/x86_64-linux-gnu/13/include/tmmintrin.h \
+  /usr/lib/gcc/x86_64-linux-gnu/13/include/tsxldtrkintrin.h \
+  /usr/lib/gcc/x86_64-linux-gnu/13/include/uintrintrin.h \
+  /usr/lib/gcc/x86_64-linux-gnu/13/include/vaesintrin.h \
+  /usr/lib/gcc/x86_64-linux-gnu/13/include/vpclmulqdqintrin.h \
+  /usr/lib/gcc/x86_64-linux-gnu/13/include/waitpkgintrin.h \
+  /usr/lib/gcc/x86_64-linux-gnu/13/include/wbnoinvdintrin.h \
+  /usr/lib/gcc/x86_64-linux-gnu/13/include/wmmintrin.h \
+  /usr/lib/gcc/x86_64-linux-gnu/13/include/x86gprintrin.h \
+  /usr/lib/gcc/x86_64-linux-gnu/13/include/xmmintrin.h \
+  /usr/lib/gcc/x86_64-linux-gnu/13/include/xsavecintrin.h \
+  /usr/lib/gcc/x86_64-linux-gnu/13/include/xsaveintrin.h \
+  /usr/lib/gcc/x86_64-linux-gnu/13/include/xsaveoptintrin.h \
+  /usr/lib/gcc/x86_64-linux-gnu/13/include/xsavesintrin.h \
+  /usr/lib/gcc/x86_64-linux-gnu/13/include/xtestintrin.h

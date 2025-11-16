@@ -50,6 +50,7 @@
   /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_video.h \
   /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/begin_code.h \
   /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/close_code.h \
+  /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/client/Pantallas/lobbyscreen.h \
   /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/client/Pantallas/loginscreen.h \
   /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/client/client.h \
   /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/client/client_protocol.h \
@@ -369,6 +370,7 @@
   /usr/include/x86_64-linux-gnu/gnu/stubs-64.h \
   /usr/include/x86_64-linux-gnu/gnu/stubs.h \
   /usr/include/x86_64-linux-gnu/qt6/QtCore/QObject \
+  /usr/include/x86_64-linux-gnu/qt6/QtCore/QTimer \
   /usr/include/x86_64-linux-gnu/qt6/QtCore/qalgorithms.h \
   /usr/include/x86_64-linux-gnu/qt6/QtCore/qanystringview.h \
   /usr/include/x86_64-linux-gnu/qt6/QtCore/qarraydata.h \
@@ -377,6 +379,7 @@
   /usr/include/x86_64-linux-gnu/qt6/QtCore/qatomic.h \
   /usr/include/x86_64-linux-gnu/qt6/QtCore/qatomic_cxx11.h \
   /usr/include/x86_64-linux-gnu/qt6/QtCore/qbasicatomic.h \
+  /usr/include/x86_64-linux-gnu/qt6/QtCore/qbasictimer.h \
   /usr/include/x86_64-linux-gnu/qt6/QtCore/qbindingstorage.h \
   /usr/include/x86_64-linux-gnu/qt6/QtCore/qbytearray.h \
   /usr/include/x86_64-linux-gnu/qt6/QtCore/qbytearrayalgorithms.h \
@@ -446,6 +449,7 @@
   /usr/include/x86_64-linux-gnu/qt6/QtCore/qtcore-config.h \
   /usr/include/x86_64-linux-gnu/qt6/QtCore/qtcoreexports.h \
   /usr/include/x86_64-linux-gnu/qt6/QtCore/qtextstream.h \
+  /usr/include/x86_64-linux-gnu/qt6/QtCore/qtimer.h \
   /usr/include/x86_64-linux-gnu/qt6/QtCore/qtmetamacros.h \
   /usr/include/x86_64-linux-gnu/qt6/QtCore/qtypeinfo.h \
   /usr/include/x86_64-linux-gnu/qt6/QtCore/qutf8stringview.h \

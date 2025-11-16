@@ -62,9 +62,15 @@ int Client::run_game_loop() {
 
         GameStateDTO game_state = receiver.pollGameState();
 
-        std::cout << "Game state update. Mi auto está en: " 
-                  << game_state.players[0].state.x 
-                  << std::endl;
+        if (!game_state.players.empty()) {
+            for (const auto& player : game_state.players) {
+                if (player.player_id == my_player_id) {
+                    std::cout << "Game state update. Mi auto está en: " 
+                              << player.state.x << std::endl;
+                    break;
+                }
+            }
+        }
 
         std::this_thread::sleep_for(std::chrono::milliseconds(16));
     }

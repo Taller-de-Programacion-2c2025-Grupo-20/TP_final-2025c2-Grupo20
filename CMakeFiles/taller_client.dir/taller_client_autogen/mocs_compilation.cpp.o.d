@@ -383,41 +383,10 @@ CMakeFiles/taller_client.dir/taller_client_autogen/mocs_compilation.cpp.o: \
  /usr/include/x86_64-linux-gnu/qt6/QtGui/qbitmap.h \
  /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/taller_client_autogen/T3UPSIC22E/moc_lobbyscreen.cpp \
  /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/taller_client_autogen/T3UPSIC22E/../../client/Pantallas/lobbyscreen.h \
- /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/taller_client_autogen/T3UPSIC22E/moc_loginscreen.cpp \
- /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/taller_client_autogen/T3UPSIC22E/../../client/Pantallas/loginscreen.h \
- /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/taller_client_autogen/7EM65HM6UG/moc_client_receiver.cpp \
- /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/taller_client_autogen/7EM65HM6UG/../../client/client_receiver.h \
- /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/taller_client_autogen/7EM65HM6UG/../../client/../common/thread.h \
- /usr/include/c++/13/iostream /usr/include/c++/13/thread \
- /usr/include/c++/13/stop_token /usr/include/c++/13/bits/std_thread.h \
- /usr/include/c++/13/semaphore /usr/include/c++/13/bits/semaphore_base.h \
- /usr/include/c++/13/bits/atomic_timed_wait.h \
- /usr/include/c++/13/bits/this_thread_sleep.h \
- /usr/include/x86_64-linux-gnu/sys/time.h /usr/include/semaphore.h \
- /usr/include/x86_64-linux-gnu/bits/semaphore.h \
- /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/taller_client_autogen/7EM65HM6UG/../../client/../common/queue.h \
- /usr/include/c++/13/condition_variable \
- /usr/include/c++/13/bits/unique_lock.h /usr/include/c++/13/deque \
- /usr/include/c++/13/bits/stl_deque.h /usr/include/c++/13/bits/deque.tcc \
- /usr/include/c++/13/mutex /usr/include/c++/13/queue \
- /usr/include/c++/13/bits/stl_queue.h \
- /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/taller_client_autogen/7EM65HM6UG/../../client/../common/gameState.h \
- /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/taller_client_autogen/7EM65HM6UG/../../client/../common/serverState.h \
- /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/taller_client_autogen/7EM65HM6UG/../../client/../common/lobbyState.h \
- /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/taller_client_autogen/7EM65HM6UG/../../client/client_protocol.h \
- /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/taller_client_autogen/7EM65HM6UG/../../client/../common/socket.h \
- /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/taller_client_autogen/7EM65HM6UG/../../client/../common/clientCommand.h \
- /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/taller_client_autogen/7EM65HM6UG/../../client/../common/constants.h \
- /usr/include/x86_64-linux-gnu/qt6/QtCore/QObject \
- /usr/include/x86_64-linux-gnu/qt6/QtCore/qobject.h \
- /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/taller_client_autogen/7EM65HM6UG/moc_mainwindow.cpp \
- /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/taller_client_autogen/7EM65HM6UG/../../client/mainwindow.h \
- /usr/include/x86_64-linux-gnu/qt6/QtWidgets/QMainWindow \
- /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qmainwindow.h \
- /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qwidget.h \
- /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qtabwidget.h \
- /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/taller_client_autogen/7EM65HM6UG/../../client/Pantallas/loginscreen.h \
- /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/taller_client_autogen/7EM65HM6UG/../../client/client.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtCore/QTimer \
+ /usr/include/x86_64-linux-gnu/qt6/QtCore/qtimer.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtCore/qbasictimer.h \
+ /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/client/client.h \
  /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL.h \
  /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_main.h \
  /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_stdinc.h \
@@ -565,5 +534,41 @@ CMakeFiles/taller_client.dir/taller_client_autogen/mocs_compilation.cpp.o: \
  /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_version.h \
  /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_locale.h \
  /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/_deps/sdl2-build/include/SDL2/SDL_misc.h \
- /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/taller_client_autogen/7EM65HM6UG/../../client/client_sender.h \
- /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/taller_client_autogen/7EM65HM6UG/../../client/client_receiver.h
+ /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/client/client_protocol.h \
+ /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/client/../common/socket.h \
+ /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/client/../common/clientCommand.h \
+ /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/client/../common/constants.h \
+ /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/client/../common/gameState.h \
+ /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/client/../common/serverState.h \
+ /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/client/../common/lobbyState.h \
+ /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/client/client_sender.h \
+ /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/client/../common/queue.h \
+ /usr/include/c++/13/condition_variable \
+ /usr/include/c++/13/bits/unique_lock.h /usr/include/c++/13/stop_token \
+ /usr/include/c++/13/bits/std_thread.h /usr/include/c++/13/semaphore \
+ /usr/include/c++/13/bits/semaphore_base.h \
+ /usr/include/c++/13/bits/atomic_timed_wait.h \
+ /usr/include/c++/13/bits/this_thread_sleep.h \
+ /usr/include/x86_64-linux-gnu/sys/time.h /usr/include/semaphore.h \
+ /usr/include/x86_64-linux-gnu/bits/semaphore.h /usr/include/c++/13/deque \
+ /usr/include/c++/13/bits/stl_deque.h /usr/include/c++/13/bits/deque.tcc \
+ /usr/include/c++/13/mutex /usr/include/c++/13/queue \
+ /usr/include/c++/13/bits/stl_queue.h \
+ /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/client/../common/thread.h \
+ /usr/include/c++/13/iostream /usr/include/c++/13/thread \
+ /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/client/client_receiver.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtCore/QObject \
+ /usr/include/x86_64-linux-gnu/qt6/QtCore/qobject.h \
+ /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/taller_client_autogen/T3UPSIC22E/moc_loginscreen.cpp \
+ /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/taller_client_autogen/T3UPSIC22E/../../client/Pantallas/loginscreen.h \
+ /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/taller_client_autogen/7EM65HM6UG/moc_client_receiver.cpp \
+ /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/taller_client_autogen/7EM65HM6UG/../../client/client_receiver.h \
+ /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/taller_client_autogen/7EM65HM6UG/moc_mainwindow.cpp \
+ /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/taller_client_autogen/7EM65HM6UG/../../client/mainwindow.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtWidgets/QMainWindow \
+ /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qmainwindow.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qwidget.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qtabwidget.h \
+ /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/taller_client_autogen/7EM65HM6UG/../../client/Pantallas/loginscreen.h \
+ /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/taller_client_autogen/7EM65HM6UG/../../client/Pantallas/lobbyscreen.h \
+ /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/taller_client_autogen/7EM65HM6UG/../../client/client.h

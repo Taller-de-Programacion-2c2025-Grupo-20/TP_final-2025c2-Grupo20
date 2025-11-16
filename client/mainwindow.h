@@ -2,8 +2,10 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include <QObject>
 #include <memory>
 #include "Pantallas/loginscreen.h"
+#include "Pantallas/lobbyscreen.h"
 #include "client.h"
 
 QT_BEGIN_NAMESPACE
@@ -18,11 +20,10 @@ public:
 
 signals:
     void loginRequested(const std::string& host, const std::string& port, const std::string& username);
-    
-    void startGame(); 
+    void startGame(Client* client); 
 
 public slots:
-    void handleLoginSuccess(uint8_t player_id);
+    void handleLoginSuccess();
     void handleLoginFailed();
 
 private slots:
@@ -31,6 +32,8 @@ private slots:
 private:
     Ui::MainWindow *ui;
     LoginScreen *pantallaLogin;
+    LobbyScreen *pantallaLobby;
+    std::unique_ptr<Client> client; 
 };
 
 #endif

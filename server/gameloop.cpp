@@ -72,11 +72,20 @@ void Gameloop::loadCheckpoints(const YAML::Node& map_data) {
                 float width_meters = (width_pixels / 2) / PIXELS_PER_METER;
                 float height_meters = (height_pixels / 2) / PIXELS_PER_METER;
 
-                int id = obj["id"].as<int>();
+                int checkpoint_id = -1;
+
+                if (obj["properties"]) {
+                    for (const auto& prop : obj["properties"]) {
+                        if (prop["name"].as<std::string>() == "ID") {
+                            checkpoint_id = prop["value"].as<int>();
+                            break;
+                        }
+                    }
+                }
 
                 world_checkpoints.emplace(
-                        id, std::make_unique<Checkpoint>(world, b2Vec2(x_meters, y_meters),
-                                                         width_meters, height_meters, id));
+                        checkpoint_id, std::make_unique<Checkpoint>(world, b2Vec2(x_meters, y_meters),
+                                                         width_meters, height_meters, checkpoint_id));
             }
         }
     }
@@ -106,7 +115,7 @@ void Gameloop::loadInitialPos(const YAML::Node& map_data) {
 
 void Gameloop::loadMapData() {
     YAML::Node map_data =
-            YAML::LoadFile("../liberty_city_original_con_checkpoints_y_posinciales.yaml");
+            YAML::LoadFile("../liberty_city.yaml");
 
     loadWalls(map_data);
     loadCheckpoints(map_data);

@@ -1,4 +1,3 @@
-#include "client.h"
 #include "game_window.h"
 #include "../common/gameState.h"
 #include <iostream>
@@ -15,6 +14,8 @@ using namespace SDL2pp;
 
 static constexpr float PPM = 16.0f;
 static constexpr float PI  = 3.14159265358979323846f;
+static constexpr int BOX_W = 240;
+static constexpr int BOX_H = 60;
 
 
 static inline int angle_to_frame(float rad) {
@@ -26,381 +27,111 @@ static inline int angle_to_frame(float rad) {
     return (4 + idx) & 15;
 }
 
+int GameWindow::iround(float v) {
+    return static_cast<int>(std::lround(v));
+}
+
+
+void GameWindow::drawDigitDst(Renderer& renderer, Texture& hud, int d, const Rect& dst) {
+    const Rect& src = game_sprites.getDigitRect(d);
+    renderer.Copy(hud, src, dst);
+}
+
+BoxMap GameWindow::makeBoxMap(Renderer& renderer, Texture& hud,
+                              const Rect& panelSrc, int px, int py){
+    float aspect_src = (float)panelSrc.GetW() / (float)panelSrc.GetH();
+    float aspect_box = (float)BOX_W / (float)BOX_H;
+
+    float scale;
+    if (aspect_src > aspect_box)
+        scale = (float)BOX_W / (float)panelSrc.GetW();
+    else
+        scale = (float)BOX_H / (float)panelSrc.GetH();
+
+    int w = iround(panelSrc.GetW() * scale);
+    int h = iround(panelSrc.GetH() * scale);
+
+    int ox = px + (BOX_W - w) / 2;
+    int oy = py + (BOX_H - h) / 2;
+
+    renderer.Copy(hud, panelSrc, Rect(ox, oy, w, h));
+
+    return {scale, ox, oy, panelSrc};
+}
+
+Rect GameWindow::atlasToFit(const BoxMap& m, const Rect& slotAtlas){
+    int dx = slotAtlas.GetX() - m.panel.GetX();
+    int dy = slotAtlas.GetY() - m.panel.GetY();
+    return Rect(
+        m.ox + iround(dx * m.s),
+        m.oy + iround(dy * m.s),
+        iround(slotAtlas.GetW() * m.s),
+        iround(slotAtlas.GetH() * m.s)
+    );
+}
+void GameWindow::drawHealthBar(Renderer& renderer, Texture& hud,
+                               int hudX, int hudY, int hp) {
+    const Rect& PANEL_HP = game_sprites.getHealthPanelRect();
+    BoxMap hpMap = makeBoxMap(renderer, hud, PANEL_HP, hudX, hudY);
+
+    int hp_clamped = std::clamp(hp, 0, 999);
+
+    drawDigitDst(renderer, hud, (hp_clamped/100)%10,
+                 atlasToFit(hpMap, game_sprites.getHealthDigitRectHundreds()));
+    drawDigitDst(renderer, hud, (hp_clamped/10)%10,
+                 atlasToFit(hpMap, game_sprites.getHealthDigitRectTens()));
+    drawDigitDst(renderer, hud, hp_clamped%10,
+                 atlasToFit(hpMap, game_sprites.getHealthDigitRectUnits()));
+
+    int hearts = std::clamp(hp/20, 0, 5);
+    for (int k = 0; k < 5; ++k) {
+        const Rect& heartSrc = (k < hearts)
+            ? game_sprites.getFullHeartRect()
+            : game_sprites.getEmptyHeartRect();
+
+        renderer.Copy(hud, heartSrc,
+                      atlasToFit(hpMap, game_sprites.getHeartSlotRect(k)));
+    }
+}
+
+void GameWindow::drawCronometer(Renderer& renderer, Texture& hud,
+                                int hudX, int hudY, GameStateDTO& last_state)
+{
+    const Rect& PANEL_TIME  = game_sprites.getTimePanelRect();
+    BoxMap timeMap = makeBoxMap(renderer, hud, PANEL_TIME, hudX, hudY);
+
+    int total = static_cast<int>(last_state.elapsed_time);
+    int mm = (total / 60) % 100;
+    int ss = total % 60;
+
+    drawDigitDst(renderer, hud, (mm/10)%10, atlasToFit(timeMap, game_sprites.getTimeDigitRectMmTens()));
+    drawDigitDst(renderer, hud,  mm%10,     atlasToFit(timeMap, game_sprites.getTimeDigitRectMmUnits()));
+    drawDigitDst(renderer, hud, (ss/10)%10, atlasToFit(timeMap, game_sprites.getTimeDigitRectSsTens()));
+    drawDigitDst(renderer, hud,  ss%10,     atlasToFit(timeMap, game_sprites.getTimeDigitRectSsUnits()));
+}
+
+void GameWindow::drawSpeedometer(Renderer& renderer, Texture& hud,
+                                 int my_player_index, GameStateDTO& last_state,
+                                 int hudX, int hudY)
+{
+    float speed_kmh = last_state.players[my_player_index].state.speed*10;
+
+    const Rect& PANEL_SPEED = game_sprites.getSpeedPanelRect();
+    BoxMap spdMap = makeBoxMap(renderer, hud, PANEL_SPEED, hudX, hudY);
+
+    int v = std::clamp((int)std::round(speed_kmh), 0, 999);
+    drawDigitDst(renderer, hud, (v/100)%10, atlasToFit(spdMap, game_sprites.getSpeedDigitRectHundreds()));
+    drawDigitDst(renderer, hud, (v/10 )%10, atlasToFit(spdMap, game_sprites.getSpeedDigitRectTens()));
+    drawDigitDst(renderer, hud,  v%10,      atlasToFit(spdMap, game_sprites.getSpeedDigitRectUnits()));
+}
+
+
+void GameWindow::drawMinimap(Texture& background, Renderer& renderer, GameStateDTO& last_state, Rect& dstRect){
+
+            int bgH = background.GetHeight();
+            int bgW = background.GetWidth(); 
 
-int GameWindow::runGame() {
-    try {
-        receiver.start();
-        sender.start();
-
-        // Init SDL
-        SDL sdl(SDL_INIT_VIDEO);
-
-        // Hints ANTES de crear Window/Renderer
-        SDL_SetHint(SDL_HINT_RENDER_SCALE_QUALITY, "0");
-        SDL_SetHint(SDL_HINT_RENDER_BATCHING, "1");
-        SDL_SetHint(SDL_HINT_RENDER_DRIVER, "vulkan");
-
-        // Ventana y renderer
-        Window window("SDL2pp demo",
-                      SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED,
-                      1600, 800,
-                      SDL_WINDOW_RESIZABLE);
-
-        Renderer renderer(window, -1, SDL_RENDERER_ACCELERATED);
-
-        Surface surface(DATA_PATH "/cars/Mobile - Grand Theft Auto 4 - Miscellaneous - Cars.png");
-        surface.SetColorKey(true, SDL_MapRGB(surface.Get()->format, 163, 163, 13));
-        Texture sprites(renderer, surface);
-
-        Surface hud_surface(DATA_PATH "/assets/hud.png");
-        hud_surface.SetColorKey(true, SDL_MapRGB(hud_surface.Get()->format, 255, 201, 14));
-        Texture hud(renderer, hud_surface);
-
-        renderer.SetLogicalSize(1600, 800);
-            
-        std::array<std::string, 3> maps = {
-            "/cities/Game Boy _ GBC - Grand Theft Auto - Backgrounds - Liberty City.png",
-            "/cities/Game Boy _ GBC - Grand Theft Auto - Backgrounds - San Andreas.png",
-            "/cities/Game Boy _ GBC - Grand Theft Auto - Backgrounds - Vice City.png"
-        };
-        int map_to_play = 0;
-        Texture background(renderer, DATA_PATH + maps[map_to_play]);
-        const int bgW = background.GetWidth();
-        const int bgH = background.GetHeight();
-
-        std::map<int, Rect> carPositionsGreen = {
-            {0, Rect(0, 0, 32, 32)}, {1, Rect(32, 0, 32, 32)}, {2, Rect(64, 0, 32, 32)}, {3, Rect(96, 0, 32, 32)},
-            {4, Rect(128, 0, 32, 32)}, {5, Rect(160, 0, 32, 32)}, {6, Rect(192, 0, 32, 32)}, {7, Rect(224, 0, 32, 32)},
-            {8, Rect(0, 32, 32, 32)}, {9, Rect(32, 32, 32, 32)}, {10, Rect(64, 32, 32, 32)}, {11, Rect(96, 32, 32, 32)},
-            {12, Rect(128, 32, 32, 32)}, {13, Rect(160, 32, 32, 32)}, {14, Rect(192, 32, 32, 32)}, {15, Rect(224, 32, 32, 32)}
-        };
-        std::map<int, Rect> carPositionsRed = {
-            {0, Rect(0, 64, 40, 40)}, {1, Rect(40, 64, 40, 40)}, {2, Rect(80, 64, 40, 40)}, {3, Rect(120, 64, 40, 40)},
-            {4, Rect(160, 64, 40, 40)}, {5, Rect(200, 64, 40, 40)}, {6, Rect(240, 64, 40, 40)}, {7, Rect(280, 64, 40, 40)},
-            {8, Rect(0, 104, 40, 40)}, {9, Rect(40, 104, 40, 40)}, {10, Rect(80, 104, 40, 40)}, {11, Rect(120, 104, 40, 40)},
-            {12, Rect(160, 104, 40, 40)}, {13, Rect(200, 104, 40, 40)}, {14, Rect(240, 104, 40, 40)}, {15, Rect(280, 104, 40, 40)}
-        };
-        std::map<int, Rect> carPositionsDescapotable = {
-            {0, Rect(0, 144, 40, 40)}, {1, Rect(40, 144, 40, 40)}, {2, Rect(80, 144, 40, 40)}, {3, Rect(120, 144, 40, 40)},
-            {4, Rect(160, 144, 40, 40)}, {5, Rect(200, 144, 40, 40)}, {6, Rect(240, 144, 40, 40)}, {7, Rect(280, 144, 40, 40)},
-            {8, Rect(0, 184, 40, 40)}, {9, Rect(40, 184, 40, 40)}, {10, Rect(80, 184, 40, 40)}, {11, Rect(120, 184, 40, 40)},
-            {12, Rect(160, 184, 40, 40)}, {13, Rect(200, 184, 40, 40)}, {14, Rect(240, 184, 40, 40)}, {15, Rect(280, 184, 40, 40)}
-        };
-        std::map<int, Rect> carPositionsCeleste = {
-            {0, Rect(0, 224, 40, 40)}, {1, Rect(40, 224, 40, 40)}, {2, Rect(80, 224, 40, 40)}, {3, Rect(120, 224, 40, 40)},
-            {4, Rect(160, 224, 40, 40)}, {5, Rect(200, 224, 40, 40)}, {6, Rect(240, 224, 40, 40)}, {7, Rect(280, 224, 40, 40)},
-            {8, Rect(0, 264, 40, 40)}, {9, Rect(40, 264, 40, 40)}, {10, Rect(80, 264, 40, 40)}, {11, Rect(120, 264, 40, 40)},
-            {12, Rect(160, 264, 40, 40)}, {13, Rect(200, 264, 40, 40)}, {14, Rect(240, 264, 40, 40)}, {15, Rect(280, 264, 40, 40)}
-        };
-        std::map<int, Rect> carPositionsJeep = {
-            {0, Rect(0, 304, 40, 40)}, {1, Rect(40, 304, 40, 40)}, {2, Rect(80, 304, 40, 40)}, {3, Rect(120, 304, 40, 40)},
-            {4, Rect(160, 304, 40, 40)}, {5, Rect(200, 304, 40, 40)}, {6, Rect(240, 304, 40, 40)}, {7, Rect(280, 304, 40, 40)},
-            {8, Rect(0, 344, 40, 40)}, {9, Rect(40, 344, 40, 40)}, {10, Rect(80, 344, 40, 40)}, {11, Rect(120, 344, 40, 40)},
-            {12, Rect(160, 344, 40, 40)}, {13, Rect(200, 344, 40, 40)}, {14, Rect(240, 344, 40, 40)}, {15, Rect(280, 344, 40, 40)}
-        };
-        std::map<int, Rect> carPositionsCamioneta = {
-            {0, Rect(0, 384, 40, 40)}, {1, Rect(40, 384, 40, 40)}, {2, Rect(80, 384, 40, 40)}, {3, Rect(120, 384, 40, 40)},
-            {4, Rect(160, 384, 40, 40)}, {5, Rect(200, 384, 40, 40)}, {6, Rect(240, 384, 40, 40)}, {7, Rect(280, 384, 40, 40)},
-            {8, Rect(0, 424, 40, 40)}, {9, Rect(40, 424, 40, 40)}, {10, Rect(80, 424, 40, 40)}, {11, Rect(120, 424, 40, 40)},
-            {12, Rect(160, 424, 40, 40)}, {13, Rect(200, 424, 40, 40)}, {14, Rect(240, 424, 40, 40)}, {15, Rect(280, 424, 40, 40)}
-        };
-        std::map<int, Rect> carPositionsCamion = {
-            {0, Rect(0, 464, 48, 48)}, {1, Rect(48, 464, 48, 48)}, {2, Rect(96, 464, 48, 48)}, {3, Rect(144, 464, 48, 48)},
-            {4, Rect(192, 464, 48, 48)}, {5, Rect(240, 464, 48, 48)}, {6, Rect(288, 464, 48, 48)}, {7, Rect(336, 464, 48, 48)},
-            {8, Rect(0, 512, 48, 48)}, {9, Rect(48, 512, 48, 48)}, {10, Rect(96, 512, 48, 48)}, {11, Rect(144, 512, 48, 48)},
-            {12, Rect(192, 512, 48, 48)}, {13, Rect(240, 512, 48, 48)}, {14, Rect(288, 512, 48, 48)}, {15, Rect(336, 512, 48, 48)}
-        };
-
-        int car_to_use = 2;
-        std::array<std::map<int, Rect>, 7> carsPositions = {
-            carPositionsGreen, carPositionsRed, carPositionsDescapotable,
-            carPositionsCeleste, carPositionsJeep, carPositionsCamioneta, carPositionsCamion
-        };
-
-        const double rate = 1.0 / 60.0;
-        const uint64_t perf_freq = SDL_GetPerformanceFrequency();
-        uint64_t t1 = SDL_GetPerformanceCounter();
-        uint64_t it = 0;
-
-        Rect srcRect(0, 0, 1600, 800);
-        Rect dstRect(0, 0, 1600, 800);
-        const int viewW = dstRect.GetW();
-        const int viewH = dstRect.GetH();
-
-        GameStateDTO last_state;
-        bool have_state = false;
-        bool exit = false;
-        int   actual_pos = 0;
-        float pos_x_m = 0.f, pos_y_m = 0.f, angle = 0.f;
-
-        int hp = 0;
-
-        Rect zero(973,358,82,100);
-        Rect one(1053,358,82,100);
-        Rect two(1134,358,82,100);
-        Rect three(1219,358,82,100);
-        Rect four(1304,358,82,100);
-        Rect five(1385,358,82,100);
-        Rect six(1466,358,82,100);
-        Rect seven(1548,358,82,100);
-        Rect eight(1630,358,82,100);
-        Rect nine(1712,358,82,100);
-
-
-        int variacionVel = 35;
-        int variacionTiempo = 25;
-
-        Rect healthRect(23, 18, 847, 239);
-
-        Rect healthUnitRect(569, 85, 82, 100);
-        Rect healthDecimalRect(478, 85, 82, 100);
-        Rect healthCentecimalRect(387, 85, 82, 100);
-
-        Rect heartZero(60, 58, 80, 74);
-        Rect heartOne(154, 58, 80, 74);
-        Rect heartTwo(248, 58, 80, 74);
-        Rect heartThree(109, 148, 80, 74);
-        Rect heartFour(200, 148, 80, 74);
-
-        Rect emptyHeart(972, 260, 80, 74);
-        Rect fullHeart(1085, 260, 80, 74);        
-
-        Rect timeRect(23, 295, 847, 239);
-
-        Rect timeSecondsUnitRect(742, 333 + variacionTiempo, 82, 100);
-        Rect timeSecondsDecimalRect(651, 333 + variacionTiempo, 82, 100);
-
-        Rect timeMinutesUnitRect(527, 333 + variacionTiempo, 82, 100);
-        Rect timeMinutesDecimalRect(432, 333 + variacionTiempo, 82, 100);
-
-
-        Rect speedRect(23, 555, 847, 239);
-
-        Rect speedUnitRect(525, 584 + variacionVel, 82, 100);
-        Rect speedDecimalRect(434, 584 + variacionVel, 82, 100);
-        Rect speedCentecimalRect(342, 584 + variacionVel, 82, 100);
-
-
-        std::array<Rect,10> DIGITS = { zero, one, two, three, four, five, six, seven, eight, nine };
-        // Íconos:
-        // const Rect HEART_EMPTY = emptyHeart;
-        // const Rect HEART_FULL  = fullHeart;
-        // Marcos/paneles:
-        const Rect PANEL_HP    = healthRect;
-        const Rect PANEL_TIME  = timeRect;
-        const Rect PANEL_SPEED = speedRect;
-        // Casilleros de HP / TIME / SPEED (dígitos):
-        // const Rect HP_CEN = healthCentecimalRect, HP_DEC = healthDecimalRect, HP_UNI = healthUnitRect;
-        // const Rect T_MM_D = timeMinutesDecimalRect, T_MM_U = timeMinutesUnitRect,
-        //         T_SS_D = timeSecondsDecimalRect, T_SS_U = timeSecondsUnitRect;
-        // const Rect V_KM_C = speedCentecimalRect,    V_KM_D = speedDecimalRect, V_KM_U = speedUnitRect;
-
-        int my_player_index = 0;
-
-        while (true) {
-
-            SDL_Event ev;
-            while (SDL_PollEvent(&ev)) {
-                if (ev.type == SDL_QUIT) {
-                    InputCmd quit{};
-                    quit.player_id = client.getMyPlayerId();
-                    quit.key = InputKey::Quit;
-                    quit.action = InputAction::Press;
-                    input_queue.try_push(quit);
-                    exit = true;
-                    break;
-                }
-                if (ev.type == SDL_KEYDOWN || ev.type == SDL_KEYUP) {
-                    InputCmd cmd{};
-                    cmd.player_id = client.getMyPlayerId();
-                    cmd.action = (ev.type == SDL_KEYDOWN) ? InputAction::Press : InputAction::Release;
-                    switch (ev.key.keysym.sym) {
-                        case SDLK_UP:    cmd.key = InputKey::Up; input_queue.try_push(cmd);break;
-                        case SDLK_w:    cmd.key = InputKey::Up; input_queue.try_push(cmd); break;
-                        case SDLK_DOWN:  cmd.key = InputKey::Down; input_queue.try_push(cmd); break;
-                        case SDLK_s:  cmd.key = InputKey::Down; input_queue.try_push(cmd); break;
-                        case SDLK_LEFT:  cmd.key = InputKey::Left; input_queue.try_push(cmd); break;
-                        case SDLK_a:  cmd.key = InputKey::Left; input_queue.try_push(cmd); break;
-                        case SDLK_RIGHT: cmd.key = InputKey::Right; input_queue.try_push(cmd); break;
-                        case SDLK_d: cmd.key = InputKey::Right; input_queue.try_push(cmd); break;
-                        case SDLK_q:
-                        case SDLK_ESCAPE: cmd.key = InputKey::Quit; input_queue.try_push(cmd); break;
-                    }
-                    
-                    if (cmd.key == InputKey::Quit && cmd.action == InputAction::Press) {
-                        exit = true;
-                        break;
-                    }
-                }
-            }
-
-            if (exit){
-                break;
-            }
-
-            GameStateDTO gs;
-            bool got = false;
-            while (state_queue.try_pop(gs)) {
-                last_state = std::move(gs);
-                got = true;
-            }
-            
-            if (got == true or have_state == true){
-                have_state = 1;
-            }
-            std::cout << "Mi player id es: " << static_cast<int>(client.getMyPlayerId()) << "\n";
-
-
-            renderer.SetDrawColor(0, 0, 0, 255);
-            renderer.Clear();
-
-            renderer.Copy(background, srcRect, dstRect);
-
-            for (size_t i = 0; i < last_state.players.size(); i++) {
-
-                if (have_state && last_state.players[i].player_id == client.getMyPlayerId()) {
-                    my_player_index = i;
-                    const auto& st = last_state.players[i].state;
-                    pos_x_m = st.x;
-                    pos_y_m = st.y;
-                    angle = st.angle;
-                    actual_pos = angle_to_frame(angle);
-
-                    hp = std::clamp<int>(static_cast<int>(last_state.players[i].health), 0, 100);
-
-                    const int car_cx_px = static_cast<int>(std::lround(pos_x_m * PPM));
-                    const int car_cy_px = static_cast<int>(std::lround(pos_y_m * PPM));
-
-                    int camX = car_cx_px - viewW / 2;
-                    int camY = car_cy_px - viewH / 2;
-
-                    camX = std::clamp(camX, 0, std::max(0, bgW - viewW));
-                    camY = std::clamp(camY, 0, std::max(0, bgH - viewH));
-
-                    srcRect.SetX(camX).SetY(camY);
-                }
-
-                const auto& st = last_state.players[i].state;
-                pos_x_m = st.x;
-                pos_y_m = st.y;
-                angle = st.angle;
-                actual_pos = angle_to_frame(angle);
-
-                const Rect& spr = carsPositions[car_to_use][actual_pos];
-                const int car_x_px = static_cast<int>(pos_x_m * PPM + 0.5f);
-                const int car_y_px = static_cast<int>(pos_y_m * PPM + 0.5f);
-                
-                const int draw_x = car_x_px - spr.GetW() / 2 - srcRect.GetX();
-                const int draw_y = car_y_px - spr.GetH() / 2 - srcRect.GetY();
-
-                if (draw_x + spr.GetW() < 0 || draw_x > viewW ||
-                    draw_y + spr.GetH() < 0 || draw_y > viewH) {
-                    continue;
-                }
-
-                renderer.Copy(sprites, spr, Rect(draw_x, draw_y, spr.GetW(), spr.GetH()));
-            }
-
-           
-            
-            const int BOX_W = 240;
-            const int BOX_H = 60;
-
-
-            const int HUD_PAD      = 2;
-            const int HUD_MARGIN_X = 8;
-            const int HUD_MARGIN_Y = 8;
-
-            int hudX = HUD_MARGIN_X, hudY = HUD_MARGIN_Y;
-            
-            auto iround = [](float v){ return (int)std::lround(v); };
-
-            struct BoxMap {
-                float s;
-                int   ox, oy;
-                Rect  panel;
-            };
-
-
-            auto makeBoxMap = [&](const Rect& panelSrc, int px, int py) -> BoxMap {
-
-                float aspect_src = (float)panelSrc.GetW() / (float)panelSrc.GetH();
-                float aspect_box = (float)BOX_W / (float)BOX_H;
-
-
-                float scale;
-                if (aspect_src > aspect_box)
-                    scale = (float)BOX_W / (float)panelSrc.GetW();
-                else
-                    scale = (float)BOX_H / (float)panelSrc.GetH();
-
-                int w = iround(panelSrc.GetW() * scale);
-                int h = iround(panelSrc.GetH() * scale);
-
-                int ox = px + (BOX_W - w) / 2;
-                int oy = py + (BOX_H - h) / 2;
-
-                renderer.Copy(hud, panelSrc, Rect(ox, oy, w, h));
-
-                return {scale, ox, oy, panelSrc};
-            };
-
-
-            auto atlasToFit = [&](const BoxMap& m, const Rect& slotAtlas) -> Rect {
-                int dx = slotAtlas.GetX() - m.panel.GetX();
-                int dy = slotAtlas.GetY() - m.panel.GetY();
-                return Rect(
-                    m.ox + iround(dx * m.s),
-                    m.oy + iround(dy * m.s),
-                    iround(slotAtlas.GetW() * m.s),
-                    iround(slotAtlas.GetH() * m.s)
-                );
-            };
-
-            auto drawDigitDst = [&](int d, const Rect& dst) {
-                renderer.Copy(hud, DIGITS[d % 10], dst);
-            };
-
-            BoxMap hpMap = makeBoxMap(PANEL_HP, hudX, hudY);
-
-            int hp_clamped = std::clamp(hp, 0, 999);
-            drawDigitDst((hp_clamped/100)%10, atlasToFit(hpMap, healthCentecimalRect));
-            drawDigitDst((hp_clamped/10 )%10, atlasToFit(hpMap, healthDecimalRect));
-            drawDigitDst( hp_clamped%10,      atlasToFit(hpMap, healthUnitRect));
-
-            std::array<Rect,5> HEART_SLOTS = { heartZero, heartOne, heartTwo, heartThree, heartFour };
-            int hearts = std::clamp(hp/20, 0, 5);
-            for (int k = 0; k < 5; ++k) {
-                const Rect& src = (k < hearts) ? fullHeart : emptyHeart;
-                renderer.Copy(hud, src, atlasToFit(hpMap, HEART_SLOTS[k]));
-            }
-
-            hudX += BOX_W + HUD_PAD;
-
-            BoxMap timeMap = makeBoxMap(PANEL_TIME, hudX, hudY);
-
-            int total = static_cast<int>(last_state.elapsed_time);
-            
-            int mm = (total / 60) % 100;
-            int ss = total % 60;
-
-            drawDigitDst((mm/10)%10, atlasToFit(timeMap, timeMinutesDecimalRect));
-            drawDigitDst( mm%10,     atlasToFit(timeMap, timeMinutesUnitRect));
-            drawDigitDst((ss/10)%10, atlasToFit(timeMap, timeSecondsDecimalRect));
-            drawDigitDst( ss%10,     atlasToFit(timeMap, timeSecondsUnitRect));
-
-            hudX += BOX_W + HUD_PAD;
-
-
-            float speed_kmh = last_state.players[my_player_index].state.speed*10;
-
-            BoxMap spdMap = makeBoxMap(PANEL_SPEED, hudX, hudY);
-
-            int v = std::clamp((int)std::round(speed_kmh), 0, 999);
-            drawDigitDst((v/100)%10, atlasToFit(spdMap, speedCentecimalRect));
-            drawDigitDst((v/10 )%10, atlasToFit(spdMap, speedDecimalRect));
-            drawDigitDst( v%10,      atlasToFit(spdMap, speedUnitRect));
-
+            int viewW = dstRect.GetW();
 
             const int MINIMAP_MARGIN = 12;
             const int MINIMAP_W = 280;
@@ -450,38 +181,257 @@ int GameWindow::runGame() {
             }
 
 
-            renderer.Present();
-            
+}
 
-            uint64_t t2 = SDL_GetPerformanceCounter();
-            double elapsed = static_cast<double>(t2 - t1) / perf_freq;
-            double rest = rate - elapsed;
-
-            if (rest > 0.0) {
-
-                double rest_ms = rest * 1000.0;
-                if (rest_ms > 1.5) {
-                    SDL_Delay(static_cast<Uint32>(rest_ms - 1.0));
+void GameWindow::drawGame(Renderer& renderer,
+                         Texture& hud,
+                         Texture& background,
+                         Texture& sprites,
+                         Rect& srcRect,
+                         Rect& dstRect,
+                         int viewW, int viewH,
+                         int bgW, int bgH,
+                         double rate,
+                         uint64_t perf_freq,
+                         uint64_t& t1,
+                         uint64_t& it,
+                         GameStateDTO& last_state,
+                         bool& have_state,
+                         bool& exit,
+                         int& my_player_index,
+                         int& hp,
+                        int& actual_pos, float& pos_x_m, float& pos_y_m, float& angle)
+{
+    while (true){
+        SDL_Event ev;
+        while (SDL_PollEvent(&ev)) {
+            if (ev.type == SDL_QUIT) {
+                InputCmd quit{};
+                quit.player_id = client.getMyPlayerId();
+                quit.key = InputKey::Quit;
+                quit.action = InputAction::Press;
+                input_queue.try_push(quit);
+                exit = true;
+                break;
+            }
+            if (ev.type == SDL_KEYDOWN || ev.type == SDL_KEYUP) {
+                InputCmd cmd{};
+                cmd.player_id = client.getMyPlayerId();
+                cmd.action = (ev.type == SDL_KEYDOWN) ? InputAction::Press : InputAction::Release;
+                switch (ev.key.keysym.sym) {
+                    case SDLK_UP:    cmd.key = InputKey::Up; input_queue.try_push(cmd);break;
+                    case SDLK_w:    cmd.key = InputKey::Up; input_queue.try_push(cmd); break;
+                    case SDLK_DOWN:  cmd.key = InputKey::Down; input_queue.try_push(cmd); break;
+                    case SDLK_s:  cmd.key = InputKey::Down; input_queue.try_push(cmd); break;
+                    case SDLK_LEFT:  cmd.key = InputKey::Left; input_queue.try_push(cmd); break;
+                    case SDLK_a:  cmd.key = InputKey::Left; input_queue.try_push(cmd); break;
+                    case SDLK_RIGHT: cmd.key = InputKey::Right; input_queue.try_push(cmd); break;
+                    case SDLK_d: cmd.key = InputKey::Right; input_queue.try_push(cmd); break;
+                    case SDLK_q:
+                    case SDLK_ESCAPE: cmd.key = InputKey::Quit; input_queue.try_push(cmd); break;
                 }
-
-                for (;;) {
-                    uint64_t now = SDL_GetPerformanceCounter();
-                    if ((double)(now - t1) / perf_freq >= rate) break;
+                
+                if (cmd.key == InputKey::Quit && cmd.action == InputAction::Press) {
+                    exit = true;
+                    break;
                 }
-            } else {
+            }
+        }
 
-                double behind = -rest;
-                double lost = behind - std::fmod(behind, rate);
-                t1 += static_cast<uint64_t>(lost * perf_freq);
-                it += static_cast<uint64_t>(lost / rate);
+        if (exit){
+            break;
+        }
+
+        GameStateDTO gs;
+        bool got = false;
+        while (state_queue.try_pop(gs)) {
+            last_state = std::move(gs);
+            got = true;
+        }
+        
+        if (got == true or have_state == true){
+            have_state = 1;
+        }
+
+        renderer.SetDrawColor(0, 0, 0, 255);
+        renderer.Clear();
+
+        renderer.Copy(background, srcRect, dstRect);
+
+        for (size_t i = 0; i < last_state.players.size(); i++) {
+
+            if (have_state && last_state.players[i].player_id == client.getMyPlayerId()) {
+                my_player_index = i;
+                const auto& st = last_state.players[i].state;
+                pos_x_m = st.x;
+                pos_y_m = st.y;
+                angle = st.angle;
+                actual_pos = angle_to_frame(angle);
+
+                hp = std::clamp<int>(static_cast<int>(last_state.players[i].health), 0, 100);
+
+                const int car_cx_px = static_cast<int>(std::lround(pos_x_m * PPM));
+                const int car_cy_px = static_cast<int>(std::lround(pos_y_m * PPM));
+
+                int camX = car_cx_px - viewW / 2;
+                int camY = car_cy_px - viewH / 2;
+
+                camX = std::clamp(camX, 0, std::max(0, bgW - viewW));
+                camY = std::clamp(camY, 0, std::max(0, bgH - viewH));
+
+                srcRect.SetX(camX).SetY(camY);
             }
 
+            const auto& st = last_state.players[i].state;
+            pos_x_m = st.x;
+            pos_y_m = st.y;
+            angle = st.angle;
+            actual_pos = angle_to_frame(angle);
 
-            t1 += static_cast<uint64_t>(rate * perf_freq);
-            ++it;
+            const Rect& spr = game_sprites.getCarRect(car_to_use, actual_pos);
+            const int car_x_px = static_cast<int>(pos_x_m * PPM + 0.5f);
+            const int car_y_px = static_cast<int>(pos_y_m * PPM + 0.5f);
+            
+            const int draw_x = car_x_px - spr.GetW() / 2 - srcRect.GetX();
+            const int draw_y = car_y_px - spr.GetH() / 2 - srcRect.GetY();
+
+            if (draw_x + spr.GetW() < 0 || draw_x > viewW ||
+                draw_y + spr.GetH() < 0 || draw_y > viewH) {
+                continue;
+            }
+
+            renderer.Copy(sprites, spr, Rect(draw_x, draw_y, spr.GetW(), spr.GetH()));
+        }
+
+        const int HUD_PAD      = 2;
+        const int HUD_MARGIN_X = 8;
+        const int HUD_MARGIN_Y = 8;
+
+        int hudX = HUD_MARGIN_X, hudY = HUD_MARGIN_Y;
+
+        drawHealthBar(renderer, hud, hudX, hudY, hp);
+
+        hudX += BOX_W + HUD_PAD;
+
+        drawSpeedometer(renderer, hud, my_player_index, last_state, hudX, hudY);
+
+        hudX += BOX_W + HUD_PAD;
+
+        drawCronometer(renderer, hud, hudX, hudY, last_state);
+
+        drawMinimap(background, renderer, last_state, dstRect);
+
+        renderer.Present();
+
+        uint64_t t2 = SDL_GetPerformanceCounter();
+        double elapsed = static_cast<double>(t2 - t1) / perf_freq;
+        double rest = rate - elapsed;
+
+        if (rest > 0.0) {
+
+            double rest_ms = rest * 1000.0;
+            if (rest_ms > 1.5) {
+                SDL_Delay(static_cast<Uint32>(rest_ms - 1.0));
+            }
+
+            for (;;) {
+                uint64_t now = SDL_GetPerformanceCounter();
+                if ((double)(now - t1) / perf_freq >= rate) break;
+            }
+        } else {
+
+            double behind = -rest;
+            double lost = behind - std::fmod(behind, rate);
+            t1 += static_cast<uint64_t>(lost * perf_freq);
+            it += static_cast<uint64_t>(lost / rate);
         }
 
 
+        t1 += static_cast<uint64_t>(rate * perf_freq);
+        ++it;
+    }
+}
+
+int GameWindow::runGame() {
+    try {
+        receiver.start();
+        sender.start();
+
+        // Init SDL
+        SDL sdl(SDL_INIT_VIDEO);
+
+        // Hints ANTES de crear Window/Renderer
+        SDL_SetHint(SDL_HINT_RENDER_SCALE_QUALITY, "0");
+        SDL_SetHint(SDL_HINT_RENDER_BATCHING, "1");
+        SDL_SetHint(SDL_HINT_RENDER_DRIVER, "vulkan");
+
+        // Ventana y renderer
+        Window window("SDL2pp demo",
+                      SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED,
+                      1600, 800,
+                      SDL_WINDOW_RESIZABLE);
+
+        Renderer renderer(window, -1, SDL_RENDERER_ACCELERATED);
+
+        Surface surface(DATA_PATH "/cars/Mobile - Grand Theft Auto 4 - Miscellaneous - Cars.png");
+        surface.SetColorKey(true, SDL_MapRGB(surface.Get()->format, 163, 163, 13));
+        Texture sprites(renderer, surface);
+
+        Surface hud_surface(DATA_PATH "/assets/hud.png");
+        hud_surface.SetColorKey(true, SDL_MapRGB(hud_surface.Get()->format, 255, 201, 14));
+        Texture hud(renderer, hud_surface);
+
+        renderer.SetLogicalSize(1600, 800);
+            
+        std::array<std::string, 3> maps = {
+            "/cities/Game Boy _ GBC - Grand Theft Auto - Backgrounds - Liberty City.png",
+            "/cities/Game Boy _ GBC - Grand Theft Auto - Backgrounds - San Andreas.png",
+            "/cities/Game Boy _ GBC - Grand Theft Auto - Backgrounds - Vice City.png"
+        };
+        int map_to_play = 0;
+        Texture background(renderer, DATA_PATH + maps[map_to_play]);
+        const int bgW = background.GetWidth();
+        const int bgH = background.GetHeight();
+
+        const double rate = 1.0 / 60.0;
+        const uint64_t perf_freq = SDL_GetPerformanceFrequency();
+        uint64_t t1 = SDL_GetPerformanceCounter();
+        uint64_t it = 0;
+
+        Rect srcRect(0, 0, 1600, 800);
+        Rect dstRect(0, 0, 1600, 800);
+        const int viewW = dstRect.GetW();
+        const int viewH = dstRect.GetH();
+
+        GameStateDTO last_state;
+        bool have_state = false;
+        bool exit = false;
+        int   actual_pos = 0;
+        float pos_x_m = 0.f, pos_y_m = 0.f, angle = 0.f;
+
+        int hp = 0;     
+
+        int my_player_index = 0;
+        
+        drawGame(renderer,
+                      hud,
+                      background,
+                      sprites,
+                      srcRect,
+                      dstRect,
+                      viewW, viewH,
+                      bgW, bgH,
+                      rate,
+                      perf_freq,
+                      t1,
+                      it,
+                      last_state,
+                      have_state,
+                      exit,
+                      my_player_index,
+                      hp,
+                      actual_pos, pos_x_m, pos_y_m, angle);
+        
         receiver.stop();
         sender.stop();
         receiver.join();
@@ -497,4 +447,6 @@ int GameWindow::runGame() {
 GameWindow::GameWindow(Client& c)
     : client(c),
       sender(c.getProtocol(), input_queue),
-      receiver(c.getProtocol(), state_queue) {}
+      receiver(c.getProtocol(), state_queue),
+      game_sprites(),
+      car_to_use(CarType::ROJO) {}

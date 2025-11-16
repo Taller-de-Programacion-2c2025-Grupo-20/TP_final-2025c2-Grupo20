@@ -7,6 +7,7 @@ target_sources(taller_client PRIVATE
     client_sender.cpp
     client_receiver.cpp
     game_window.cpp
+    client_sprites.cpp
 
     Pantallas/carselectscreen.cpp
     Pantallas/lobbyscreen.cpp
@@ -20,6 +21,7 @@ target_sources(taller_client PUBLIC
     client_receiver.h  
     client_sender.h
     game_window.h
+    client_sprites.h
 )
 
 # --- Archivos de Interfaz (.ui) ---

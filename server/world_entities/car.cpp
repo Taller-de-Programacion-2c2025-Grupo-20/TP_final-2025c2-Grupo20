@@ -93,12 +93,6 @@ void Car::updateCarPhysics() {
         force = accelaration * forward;
     } else if (braking) {
         force = -accelaration * forward;
-    } else {
-        // Aplico freno si no hay input, por rozamiento con el piso
-        b2Vec2 fwdVel = getForwardVelocity();
-        float brakingFactor = 0.01f;
-        b2Vec2 brakeImpulse = -(brakingFactor * car_body->GetMass()) * fwdVel;
-        car_body->ApplyLinearImpulse(brakeImpulse, car_body->GetWorldCenter());
     }
 
     car_body->ApplyForce(force, car_body->GetWorldCenter());
@@ -151,7 +145,7 @@ Car::Car(b2World& world, const b2Vec2& initial_position) {
     carDef.position.Set(initial_position.x, initial_position.y);
     carDef.angle = 0.f;
     carDef.angularDamping = 1.0f;
-    carDef.linearDamping = 0.1f;
+    carDef.linearDamping = 0.5f; //rozamiento con el piso
 
     car_body = world.CreateBody(&carDef);
     car_body->SetUserData(this);

@@ -4285,6 +4285,15 @@ layers:
         width: 31
         x: 1616
         'y': 546
+      - height: 322
+        id: 587
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 39.5
+        x: 1670
+        'y': 1555.5
     opacity: 1
     type: objectgroup
     visible: true
@@ -4366,6 +4375,15 @@ layers:
         width: 0
         x: 95
         'y': 319.5
+      - height: 0
+        id: 586
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 0
+        x: 63.3333333333333
+        'y': 319.333333333333
     opacity: 1
     type: objectgroup
     visible: true
@@ -4375,8 +4393,17 @@ layers:
     id: 5
     name: Checkpoints
     objects:
+      - height: 0
+        id: 551
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 0
+        x: 8656
+        'y': -256
       - height: 64
-        id: 0
+        id: 553
         name: ''
         properties:
           - name: ID
@@ -4389,7 +4416,7 @@ layers:
         x: 160
         'y': 56
       - height: 42
-        id: 1
+        id: 555
         name: ''
         properties:
           - name: ID
@@ -4402,7 +4429,7 @@ layers:
         x: 342
         'y': 304
       - height: 32
-        id: 2
+        id: 557
         name: ''
         properties:
           - name: ID
@@ -4420,7 +4447,7 @@ layers:
     x: 0
     'y': 0
 nextlayerid: 7
-nextobjectid: 586
+nextobjectid: 588
 orientation: orthogonal
 renderorder: right-down
 tiledversion: 1.11.2

@@ -1,13 +1,14 @@
 #include "car.h"
+
 #include <iostream>
 
 b2Vec2 Car::getLateralVelocity() {
-    b2Vec2 rightNormal = car_body->GetWorldVector(b2Vec2(1,0));
+    b2Vec2 rightNormal = car_body->GetWorldVector(b2Vec2(1, 0));
     return b2Dot(rightNormal, car_body->GetLinearVelocity()) * rightNormal;
 }
 
 b2Vec2 Car::getForwardVelocity() {
-    b2Vec2 forwardNormal = car_body->GetWorldVector(b2Vec2(0,1));
+    b2Vec2 forwardNormal = car_body->GetWorldVector(b2Vec2(0, 1));
     return b2Dot(forwardNormal, car_body->GetLinearVelocity()) * forwardNormal;
 }
 
@@ -34,71 +35,65 @@ void Car::updateFriction() {
 
 void Car::handleInput(InputCmd cmd) {
 
-    if (cmd.key == InputKey::Up){
-        if (cmd.action == InputAction::Press){
+    if (cmd.key == InputKey::Up) {
+        if (cmd.action == InputAction::Press) {
             accelerating = true;
             std::cout << "Apreto acelerador\n";
         }
 
-        if (cmd.action == InputAction::Release){
+        if (cmd.action == InputAction::Release) {
             accelerating = false;
             std::cout << "Suelto acelerador\n";
         }
     }
 
-    if (cmd.key == InputKey::Down){
-        if (cmd.action == InputAction::Press){
+    if (cmd.key == InputKey::Down) {
+        if (cmd.action == InputAction::Press) {
             braking = true;
             std::cout << "Apreto freno\n";
         }
 
-        if (cmd.action == InputAction::Release){
+        if (cmd.action == InputAction::Release) {
             braking = false;
             std::cout << "Solto freno\n";
         }
     }
 
-    if (cmd.key == InputKey::Left){
-        if (cmd.action == InputAction::Press){
+    if (cmd.key == InputKey::Left) {
+        if (cmd.action == InputAction::Press) {
             turningLeft = true;
             std::cout << "Dobla a la izquierda\n";
         }
 
-        if (cmd.action == InputAction::Release){
+        if (cmd.action == InputAction::Release) {
             turningLeft = false;
             std::cout << "Deja de doblar a la izquierda\n";
         }
     }
 
-    if (cmd.key == InputKey::Right){
-        if (cmd.action == InputAction::Press){
+    if (cmd.key == InputKey::Right) {
+        if (cmd.action == InputAction::Press) {
             turningRight = true;
             std::cout << "Dobla a la derecha\n";
         }
 
-        if (cmd.action == InputAction::Release){
+        if (cmd.action == InputAction::Release) {
             turningRight = false;
             std::cout << "Deja de doblar a la derecha\n";
         }
     }
-
 }
 
 void Car::updateCarPhysics() {
-    b2Vec2 forward = car_body->GetWorldVector(b2Vec2(0,1));
-    b2Vec2 force(0,0);
-    float torque = 0.f;
+    b2Vec2 forward = car_body->GetWorldVector(b2Vec2(0, 1));
+    b2Vec2 force(0, 0);
 
     // Aplico fuerza de aceleración o frenado
-    if (accelerating) { 
+    if (accelerating) {
         force = accelaration * forward;
-    } 
-    
-    else if (braking) { 
+    } else if (braking) {
         force = -accelaration * forward;
-    }
-
-    else {
+    } else {
         // Aplico freno si no hay input, por rozamiento con el piso
         b2Vec2 fwdVel = getForwardVelocity();
         float brakingFactor = 0.01f;
@@ -114,8 +109,11 @@ void Car::updateCarPhysics() {
     b2Vec2 fwdVel = getForwardVelocity();
     float forwardSpeed = fwdVel.Length();
     if (forwardSpeed > 1.5f) {
-        if (turningLeft)  torque -= rotation_torque * dir;
-        if (turningRight) torque += rotation_torque * dir;
+        float torque = 0.f;
+        if (turningLeft)
+            torque -= rotation_torque * dir;
+        if (turningRight)
+            torque += rotation_torque * dir;
         car_body->ApplyTorque(torque);
     }
 
@@ -124,16 +122,12 @@ void Car::updateCarPhysics() {
     limitSpeed();
 }
 
-const b2Vec2& Car::position() {
-    return car_body->GetPosition();
-}
+const b2Vec2& Car::position() { return car_body->GetPosition(); }
 
-float Car::angle() {
-    return car_body->GetAngle();
-}
+float Car::angle() { return car_body->GetAngle(); }
 
 void Car::recieveDamage(uint8_t damage) {
-    if ( (car_health - damage) <= 0) {
+    if ((car_health - damage) <= 0) {
         car_health = 0;
         return;
     }
@@ -141,20 +135,14 @@ void Car::recieveDamage(uint8_t damage) {
     car_health -= damage;
 }
 
-uint8_t Car::health(){
-    return car_health;
-}
+uint8_t Car::health() { return car_health; }
 
-int Car::nextCheckpointId(){
-    return next_checkpoint_id;
-}
+int Car::nextCheckpointId() { return next_checkpoint_id; }
 
-void Car::incrementNextCheckpointId(){
-    next_checkpoint_id++;
-}
+void Car::incrementNextCheckpointId() { next_checkpoint_id++; }
 
 float Car::getSpeed() const {
-    return car_body->GetLinearVelocity().Length(); // m/s
+    return car_body->GetLinearVelocity().Length();  // m/s
 }
 
 Car::Car(b2World& world, const b2Vec2& initial_position) {
@@ -164,11 +152,11 @@ Car::Car(b2World& world, const b2Vec2& initial_position) {
     carDef.angle = 0.f;
     carDef.angularDamping = 1.0f;
     carDef.linearDamping = 0.1f;
-    
-    car_body = world.CreateBody(&carDef);
-    car_body->SetUserData( this );
 
-    b2PolygonShape car_shape; 
+    car_body = world.CreateBody(&carDef);
+    car_body->SetUserData(this);
+
+    b2PolygonShape car_shape;
     car_shape.SetAsBox(0.5f, 1.f);
-    car_body->CreateFixture(&car_shape,1.f);
+    car_body->CreateFixture(&car_shape, 1.f);
 }

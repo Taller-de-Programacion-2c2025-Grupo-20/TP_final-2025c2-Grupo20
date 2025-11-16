@@ -4,15 +4,15 @@
 #include <Box2D/Box2D.h>
 
 #include "world_entities/car.h"
-#include "world_entities/wall.h"
 #include "world_entities/checkpoint.h"
+#include "world_entities/wall.h"
 
 class CollisionsListener: public b2ContactListener {
 private:
-
     const float damage_minimum = 0.4f;
 
-    void handlerCollisionCarAndCar(Car* carA, Car* carB, const b2ContactImpulse* impulse, b2Contact* contact);
+    void handlerCollisionCarAndCar(Car* carA, Car* carB, const b2ContactImpulse* impulse,
+                                   b2Contact* contact);
 
     void handlerCollisionCarAndWall(Car* car, const b2ContactImpulse* impulse, b2Contact* contact);
 

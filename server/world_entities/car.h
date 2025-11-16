@@ -1,18 +1,17 @@
 #ifndef CAR_H
 #define CAR_H
 
-#include <Box2D/Box2D.h>
+#include <string>
 
-#include "entity.h"
+#include <Box2D/Box2D.h>
 
 #include "../../common/clientCommand.h"
 #include "../../common/constants.h"
 
-#include <string>
+#include "entity.h"
 
-class Car : public Entity {
+class Car: public Entity {
 private:
-
     float accelaration = 50.f;
     float rotation_torque = 10.f;
     float max_speed = 10.f;
@@ -37,7 +36,6 @@ private:
     void updateFriction();
 
 public:
-
     void handleInput(InputCmd cmd);
 
     void updateCarPhysics();

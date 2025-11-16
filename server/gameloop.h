@@ -1,8 +1,10 @@
 #ifndef GAMELOOP_H
 #define GAMELOOP_H
 
+#include <memory>
 #include <mutex>
 #include <unordered_map>
+#include <vector>
 
 #include <Box2D/Box2D.h>
 #include <yaml-cpp/yaml.h>
@@ -10,17 +12,17 @@
 #include "../common/clientCommand.h"
 #include "../common/queue.h"
 #include "../common/thread.h"
-
 #include "world_entities/car.h"
-#include "world_entities/wall.h"
 #include "world_entities/checkpoint.h"
+#include "world_entities/wall.h"
+
 #include "collisions_listener.h"
 #include "queues_monitor.h"
 
-struct PlayerPos{
+struct PlayerPos {
     float x, y;
 
-    PlayerPos(float x, float y) : x(x), y(y) {}
+    PlayerPos(float x, float y): x(x), y(y) {}
 };
 
 class Gameloop: public Thread {
@@ -50,9 +52,10 @@ private:
 
     void readUsersInput();
 
-    float getCurrentCheckpointHintAngle(const b2Vec2& car_pos, float car_angle, const b2Vec2& checkpoint_pos);
+    float getCurrentCheckpointHintAngle(const b2Vec2& car_pos, float car_angle,
+                                        const b2Vec2& checkpoint_pos);
 
-    GameStateDTO getCurrentGameState();
+    GameStateDTO getCurrentGameState(const float elapsed_time);
 
 public:
     void addCar(uint8_t client_id);

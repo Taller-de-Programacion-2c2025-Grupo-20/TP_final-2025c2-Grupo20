@@ -3,11 +3,13 @@
 #include <iostream>
 
 #include <Box2D/Box2D.h>
-#include "world_entities/entity.h"
 
 #include "../common/constants.h"
+#include "world_entities/entity.h"
 
-void CollisionsListener::handlerCollisionCarAndCar(Car* carA, Car* carB, const b2ContactImpulse* impulse, b2Contact* contact){
+void CollisionsListener::handlerCollisionCarAndCar(Car* carA, Car* carB,
+                                                   const b2ContactImpulse* impulse,
+                                                   b2Contact* contact) {
 
     float total_impulse = 0;
     for (int i = 0; i < contact->GetManifold()->pointCount; ++i) {
@@ -24,10 +26,10 @@ void CollisionsListener::handlerCollisionCarAndCar(Car* carA, Car* carB, const b
     std::cout << "2 Autos colisionaron\n";
     std::cout << "Daño recibido: " << (total_impulse * 0.5) << "\n";
     std::cout << "Vida restante autos: " << static_cast<int>(carA->health()) << "\n";
-
 }
 
-void CollisionsListener::handlerCollisionCarAndWall(Car* car, const b2ContactImpulse* impulse, b2Contact* contact){
+void CollisionsListener::handlerCollisionCarAndWall(Car* car, const b2ContactImpulse* impulse,
+                                                    b2Contact* contact) {
 
     float total_impulse = 0;
     for (int i = 0; i < contact->GetManifold()->pointCount; ++i) {
@@ -43,32 +45,32 @@ void CollisionsListener::handlerCollisionCarAndWall(Car* car, const b2ContactImp
     std::cout << "Auto colisiono con una pared\n";
     std::cout << "Daño recibido: " << (total_impulse * 0.5) << "\n";
     std::cout << "Vida restante auto: " << static_cast<int>(car->health()) << "\n";
-
 }
 
-void CollisionsListener::handlerCollisionCarAndCheckpoint(Car* car, Checkpoint* checkpoint){
+void CollisionsListener::handlerCollisionCarAndCheckpoint(Car* car, Checkpoint* checkpoint) {
     if (car->nextCheckpointId() == checkpoint->getId()) {
         car->incrementNextCheckpointId();
 
-        std::cout << "ALERTA: Auto colisiono con el checkpoint de id: " << checkpoint->getId() << "\n";
+        std::cout << "ALERTA: Auto colisiono con el checkpoint de id: " << checkpoint->getId()
+                  << "\n";
     }
 }
 
-void CollisionsListener::BeginContact(b2Contact* contact){
+void CollisionsListener::BeginContact(b2Contact* contact) {
     Entity* objectA = reinterpret_cast<Entity*>(contact->GetFixtureA()->GetBody()->GetUserData());
     Entity* objectB = reinterpret_cast<Entity*>(contact->GetFixtureB()->GetBody()->GetUserData());
 
-    if (!objectA || !objectB){
+    if (!objectA || !objectB) {
         return;
     }
 
-    if (objectA->getType() == EntityType::CAR && objectB->getType() == EntityType::CHECKPOINT){
+    if (objectA->getType() == EntityType::CAR && objectB->getType() == EntityType::CHECKPOINT) {
         Car* car = static_cast<Car*>(objectA);
         Checkpoint* checkpoint = static_cast<Checkpoint*>(objectB);
         handlerCollisionCarAndCheckpoint(car, checkpoint);
     }
 
-    if (objectA->getType() == EntityType::CHECKPOINT && objectB->getType() == EntityType::CAR){
+    if (objectA->getType() == EntityType::CHECKPOINT && objectB->getType() == EntityType::CAR) {
         Car* car = static_cast<Car*>(objectB);
         Checkpoint* checkpoint = static_cast<Checkpoint*>(objectA);
         handlerCollisionCarAndCheckpoint(car, checkpoint);
@@ -79,22 +81,22 @@ void CollisionsListener::PostSolve(b2Contact* contact, const b2ContactImpulse* i
     Entity* objectA = reinterpret_cast<Entity*>(contact->GetFixtureA()->GetBody()->GetUserData());
     Entity* objectB = reinterpret_cast<Entity*>(contact->GetFixtureB()->GetBody()->GetUserData());
 
-    if (!objectA || !objectB){
+    if (!objectA || !objectB) {
         return;
     }
 
-    if (objectA->getType() == EntityType::CAR && objectB->getType() == EntityType::CAR){
+    if (objectA->getType() == EntityType::CAR && objectB->getType() == EntityType::CAR) {
         Car* carA = static_cast<Car*>(objectA);
         Car* carB = static_cast<Car*>(objectB);
         handlerCollisionCarAndCar(carA, carB, impulse, contact);
     }
 
-    if (objectA->getType() == EntityType::CAR && objectB->getType() == EntityType::WALL){
+    if (objectA->getType() == EntityType::CAR && objectB->getType() == EntityType::WALL) {
         Car* car = static_cast<Car*>(objectA);
         handlerCollisionCarAndWall(car, impulse, contact);
     }
 
-    if (objectA->getType() == EntityType::WALL && objectB->getType() == EntityType::CAR){
+    if (objectA->getType() == EntityType::WALL && objectB->getType() == EntityType::CAR) {
         Car* car = static_cast<Car*>(objectB);
         handlerCollisionCarAndWall(car, impulse, contact);
     }

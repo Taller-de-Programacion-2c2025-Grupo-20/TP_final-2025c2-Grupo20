@@ -6,7 +6,7 @@ Wall::Wall(b2World& world, const b2Vec2& position, float width, float height) {
     bodyDef.position = position;
 
     wall_body = world.CreateBody(&bodyDef);
-    wall_body->SetUserData( this );
+    wall_body->SetUserData(this);
 
     b2PolygonShape shape;
     shape.SetAsBox(width, height);

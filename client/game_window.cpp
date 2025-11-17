@@ -125,8 +125,65 @@ void GameWindow::drawSpeedometer(Renderer& renderer, Texture& hud,
     drawDigitDst(renderer, hud,  v%10,      atlasToFit(spdMap, game_sprites.getSpeedDigitRectUnits()));
 }
 
+void GameWindow::drawCheckpoint(
+    Renderer& renderer,
+    Texture& checkpoint_flag,
+    const GameStateDTO& state,
+    const Rect& srcRect,
+    int viewW,
+    int viewH
+) {
+    int my_id = client.getMyPlayerId();
+    const PlayerState* me = nullptr;
 
-void GameWindow::drawMinimap(Texture& background, Renderer& renderer, GameStateDTO& last_state, Rect& dstRect){
+    for (const auto& p : state.players) {
+        if (p.player_id == my_id) {
+            me = &p;
+            break;
+        }
+    }
+    if (!me) return;
+
+    if (me->next_checkpoint_position_x == 0 &&
+        me->next_checkpoint_position_y == 0) {
+        return;
+    }
+
+    float cx_px = me->next_checkpoint_position_x * PPM;
+    float cy_px = me->next_checkpoint_position_y * PPM;
+
+    int texW = checkpoint_flag.GetWidth();
+    int texH = checkpoint_flag.GetHeight();
+
+    const float CP_W_M = 3.0f;
+    const float CP_H_M = 3.0f;
+
+    float maxW = CP_W_M * PPM;
+    float maxH = CP_H_M * PPM;
+
+    float s = std::min(maxW / texW, maxH / texH);
+
+    int cpW = (int)(texW * s);
+    int cpH = (int)(texH * s);
+
+    int screenX = (int)(cx_px - cpW / 2 - srcRect.GetX());
+    int screenY = (int)(cy_px - cpH / 2 - srcRect.GetY());
+
+    if (screenX > viewW  || screenX + cpW < 0 ||
+        screenY > viewH || screenY + cpH < 0) {
+        return;
+    }
+
+    renderer.Copy(
+        checkpoint_flag,
+        Rect(0, 0, texW, texH),
+        Rect(screenX, screenY, cpW, cpH)
+    );
+}
+
+
+
+void GameWindow::drawMinimap(Texture& background, Renderer& renderer, GameStateDTO& last_state, Rect& dstRect, Texture& checkpoint_flag){
 
             int bgH = background.GetHeight();
             int bgW = background.GetWidth(); 
@@ -176,30 +233,37 @@ void GameWindow::drawMinimap(Texture& background, Renderer& renderer, GameStateD
 
                 if (p.player_id == client.getMyPlayerId()) {
 
-                    if(p.next_checkpoint_position_x != 0 && p.next_checkpoint_position_y) {
-                        
-                        float rw_m = 20;
-                        float rh_m = 10;
+                    if (p.next_checkpoint_position_x != 0 && p.next_checkpoint_position_y != 0) {
+                            float cx_px = p.next_checkpoint_position_x * PPM;
+                            float cy_px = p.next_checkpoint_position_y * PPM;
 
-                        float rw_px = rw_m * PPM;
-                        float rh_px = rh_m * PPM;
+                            int cx_mini = miniX + (int)std::round(cx_px * miniScale);
+                            int cy_mini = miniY + (int)std::round(cy_px * miniScale);
 
-                        int rw_mini = (int)std::round(rw_px * miniScale);
-                        int rh_mini = (int)std::round(rh_px * miniScale);
+                            const int MAX_CP_W = 22;
+                            const int MAX_CP_H = 22;
 
-                        float cx_px = p.next_checkpoint_position_x * PPM;
-                        float cy_px = p.next_checkpoint_position_y * PPM;
+                            int texW = checkpoint_flag.GetWidth();
+                            int texH = checkpoint_flag.GetHeight();
 
-                        int cx_mini = miniX + (int)std::round(cx_px * miniScale);
-                        int cy_mini = miniY + (int)std::round(cy_px * miniScale);
 
-                        int rx_mini = cx_mini - rw_mini / 2;
-                        int ry_mini = cy_mini - rh_mini / 2;
+                            float s = std::min(
+                                (float)MAX_CP_W / (float)texW,
+                                (float)MAX_CP_H / (float)texH
+                            );
 
-                        renderer.SetDrawColor(255, 0, 255, 180);
-                        renderer.DrawRect(Rect(rx_mini, ry_mini, rw_mini, rh_mini));
+                            int cpW = (int)std::lround(texW * s);
+                            int cpH = (int)std::lround(texH * s);
 
-                    }
+
+                            int rx_mini = cx_mini - cpW / 2;
+                            int ry_mini = cy_mini - cpH / 2;
+
+                            Rect src_cp(0, 0, texW, texH);
+                            Rect dst_cp(rx_mini, ry_mini, cpW, cpH);
+
+                            renderer.Copy(checkpoint_flag, src_cp, dst_cp);
+                        }
 
 
                     renderer.SetDrawColor(255, 255, 255, 230);
@@ -214,6 +278,7 @@ void GameWindow::drawGame(Renderer& renderer,
                          Texture& hud,
                          Texture& background,
                          Texture& sprites,
+                         Texture& checkpoint_flag,
                          Rect& srcRect,
                          Rect& dstRect,
                          int viewW, int viewH,
@@ -285,6 +350,8 @@ void GameWindow::drawGame(Renderer& renderer,
 
         renderer.Copy(background, srcRect, dstRect);
 
+        drawCheckpoint(renderer, checkpoint_flag, last_state, srcRect, viewW,viewH);
+
         for (size_t i = 0; i < last_state.players.size(); i++) {
 
             if (have_state && last_state.players[i].player_id == client.getMyPlayerId()) {
@@ -346,7 +413,7 @@ void GameWindow::drawGame(Renderer& renderer,
 
         drawCronometer(renderer, hud, hudX, hudY, last_state);
 
-        drawMinimap(background, renderer, last_state, dstRect);
+        drawMinimap(background, renderer, last_state, dstRect, checkpoint_flag);
 
         renderer.Present();
 
@@ -366,13 +433,11 @@ void GameWindow::drawGame(Renderer& renderer,
                 if ((double)(now - t1) / perf_freq >= rate) break;
             }
         } else {
-
             double behind = -rest;
             double lost = behind - std::fmod(behind, rate);
             t1 += static_cast<uint64_t>(lost * perf_freq);
             it += static_cast<uint64_t>(lost / rate);
         }
-
 
         t1 += static_cast<uint64_t>(rate * perf_freq);
         ++it;
@@ -407,6 +472,10 @@ int GameWindow::runGame() {
         Surface hud_surface(DATA_PATH "/assets/hud.png");
         hud_surface.SetColorKey(true, SDL_MapRGB(hud_surface.Get()->format, 255, 201, 14));
         Texture hud(renderer, hud_surface);
+
+        Surface checkpoints_surface(DATA_PATH "/assets/checkpoint.png");
+        checkpoints_surface.SetColorKey(true, SDL_MapRGB(checkpoints_surface.Get()->format, 255, 201, 14));
+        Texture checkpoint_flag(renderer, checkpoints_surface);
 
         renderer.SetLogicalSize(1600, 800);
             
@@ -444,6 +513,7 @@ int GameWindow::runGame() {
                       hud,
                       background,
                       sprites,
+                      checkpoint_flag,
                       srcRect,
                       dstRect,
                       viewW, viewH,

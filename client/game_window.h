@@ -51,7 +51,8 @@ private:
     void drawMinimap(SDL2pp::Texture& background,
                      SDL2pp::Renderer& renderer,
                      GameStateDTO& last_state,
-                     SDL2pp::Rect& dstRect);
+                     SDL2pp::Rect& dstRect,
+                     SDL2pp::Texture& checkpoint_flag);
 
     SDL2pp::Rect atlasToFit(const BoxMap& m, const SDL2pp::Rect& slotAtlas);
 
@@ -82,6 +83,7 @@ private:
                  SDL2pp::Texture& hud,
                  SDL2pp::Texture& background,
                  SDL2pp::Texture& sprites,
+                 SDL2pp::Texture& checkpoint_flag,
                  SDL2pp::Rect& srcRect,
                  SDL2pp::Rect& dstRect,
                  int viewW, int viewH,
@@ -95,6 +97,12 @@ private:
                  bool& exit,
                  int& my_player_index,
                  int& hp,int& actual_pos, float& pos_x_m, float& pos_y_m, float& angle);
+
+    void drawCheckpoint(SDL2pp::Renderer& renderer,
+                        SDL2pp::Texture& checkpoint_flag,
+                        const GameStateDTO& state,
+                        const SDL2pp::Rect& srcRect,
+                        int viewW, int viewH);
 
 public:
     int runGame();

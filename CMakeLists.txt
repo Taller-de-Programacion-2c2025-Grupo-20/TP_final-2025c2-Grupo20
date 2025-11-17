@@ -14,7 +14,7 @@ project(taller_tp
     VERSION 1.0
     HOMEPAGE_URL "https://github.com/URL-HERE"
     LANGUAGES CXX
-    )
+)
 
 option(TALLER_TESTS "Enable / disable tests." ON)
 option(TALLER_CLIENT "Enable / disable client program." ON)
@@ -25,11 +25,9 @@ option(TALLER_MAKE_WARNINGS_AS_ERRORS "Enable / disable warnings as errors." ON)
 message(CMAKE_CXX_COMPILER_ID="${CMAKE_CXX_COMPILER_ID}")
 
 # Define target: lib common between client, server and editor programs
-# HEY TODO XXX: change the name to something that you like
 add_library(taller_common STATIC)
 
 # add the source files that make the lib
-# HEY!! TODO XXX: add more subfolders here
 add_subdirectory(common/)
 
 
@@ -42,91 +40,77 @@ set_project_warnings(taller_common ${TALLER_MAKE_WARNINGS_AS_ERRORS} FALSE)
 # location (so our dependants will not have to explicitly request this)
 target_include_directories(taller_common PUBLIC .)
 
-# HEY!! TODO XXX: you need to install some runtime and dev libraries *before*
-# compiling the client/editor code.
-#
-# In xubuntu 24.04 these are:
-#
-# sudo apt-get install libopus-dev libopusfile-dev libxmp-dev libfluidsynth-dev fluidsynth libwavpack1 libwavpack-dev libfreetype-dev wavpack
-#
-
-if (TALLER_CLIENT OR TALLER_EDITOR)
-    # 1. Configuración de Qt (Ahora condicional)
+if (TALLER_CLIENT)
     set(CMAKE_AUTOUIC ON)
     set(CMAKE_AUTOMOC ON)
     set(CMAKE_AUTORCC ON)
-    find_package(Qt6 COMPONENTS Widgets Network REQUIRED) 
     
-    # 2. Configuración de SDL2/SDL2pp (Ahora unificada)
+    include(FetchContent)
+    
+    find_package(Qt6 COMPONENTS Widgets Network REQUIRED)
+
+    find_package(SDL2 REQUIRED)
+    find_package(SDL2_image REQUIRED)
+    find_package(SDL2_ttf REQUIRED)
+    find_package(SDL2_mixer REQUIRED)
+
     set(SDL2PP_WITH_IMAGE ON CACHE BOOL "" FORCE)
     set(SDL2PP_WITH_TTF   ON CACHE BOOL "" FORCE)
+    set(SDL2PP_WITH_MIXER ON CACHE BOOL "" FORCE)
 
-    include(FetchContent)
-    FetchContent_Declare(SDL2         GIT_REPOSITORY https://github.com/libsdl-org/SDL.git         GIT_TAG release-2.30.8  GIT_SHALLOW TRUE GIT_PROGRESS TRUE OVERRIDE_FIND_PACKAGE)
-    FetchContent_Declare(SDL2_image   GIT_REPOSITORY https://github.com/libsdl-org/SDL_image.git   GIT_TAG release-2.8.2   GIT_SHALLOW TRUE GIT_PROGRESS TRUE OVERRIDE_FIND_PACKAGE)
-    FetchContent_Declare(SDL2_mixer   GIT_REPOSITORY https://github.com/libsdl-org/SDL_mixer.git   GIT_TAG release-2.8.0   GIT_SHALLOW TRUE GIT_PROGRESS TRUE OVERRIDE_FIND_PACKAGE)
-    FetchContent_Declare(SDL2_ttf     GIT_REPOSITORY https://github.com/libsdl-org/SDL_ttf.git     GIT_TAG release-2.22.0  GIT_SHALLOW TRUE GIT_PROGRESS TRUE OVERRIDE_FIND_PACKAGE)
-    FetchContent_Declare(libSDL2pp    URL https://github.com/libSDL2pp/libSDL2pp/archive/cc198c9a5657048bee67ece82de620b2d5661084.zip OVERRIDE_FIND_PACKAGE)
-    FetchContent_MakeAvailable(SDL2 SDL2_image SDL2_mixer SDL2_ttf libSDL2pp)
+    FetchContent_Declare(libSDL2pp
+        URL https://github.com/libSDL2pp/libSDL2pp/archive/cc198c9a5657048bee67ece82de620b2d5661084.zip
+        OVERRIDE_FIND_PACKAGE
+    )
+    FetchContent_MakeAvailable(libSDL2pp)
+
+    add_executable(taller_client)
+    add_subdirectory(client)
+
+    target_compile_definitions(taller_client PRIVATE DATA_PATH="${CMAKE_SOURCE_DIR}/client/data")
+    set_project_warnings(taller_client ${TALLER_MAKE_WARNINGS_AS_ERRORS} FALSE)
+
+    target_link_libraries(taller_client
+        PRIVATE
+            taller_common
+            SDL2pp::SDL2pp
+            SDL2::SDL2
+            SDL2_image::SDL2_image
+            SDL2_ttf::SDL2_ttf
+            SDL2_mixer::SDL2_mixer
+            Qt6::Widgets
+            Qt6::Network
+    )
 endif()
-
-
-# Install libSDL2 and libSDL2pp (for client or editor)
-# HEY!! TODO XXX: add more dependendies (either for client, server or editor)
-if(TALLER_CLIENT)
-  # SDL2/SDL2pp
-
-  add_executable(taller_client)  # sin listar Qt
-
-  # Agrego SOLO los .cpp del cliente “puro”
-  add_subdirectory(client)
-
-  target_compile_definitions(taller_client PRIVATE DATA_PATH="${CMAKE_SOURCE_DIR}/client/data")
-  set_project_warnings(taller_client ${TALLER_MAKE_WARNINGS_AS_ERRORS} FALSE)
-
-  target_link_libraries(taller_client
-    PRIVATE
-      taller_common
-      SDL2pp::SDL2pp
-      SDL2::SDL2
-      SDL2_image::SDL2_image
-      SDL2_ttf::SDL2_ttf
-      SDL2_mixer::SDL2_mixer
-      Qt6::Widgets
-      Qt6::Network
-  )
-endif()
-
-include(FetchContent)
-
-FetchContent_Declare(
-  yaml-cpp
-  GIT_REPOSITORY https://github.com/jbeder/yaml-cpp.git
-  GIT_TAG yaml-cpp-0.7.0
-)
-FetchContent_MakeAvailable(yaml-cpp)
 
 if(TALLER_SERVER)
-    # HEY!! TODO XXX: Change the name of the executable to the one you like!
+
+    include(FetchContent)
+
+    FetchContent_Declare(
+      yaml-cpp
+      GIT_REPOSITORY https://github.com/jbeder/yaml-cpp.git
+      GIT_TAG yaml-cpp-0.7.0
+    )
+    FetchContent_MakeAvailable(yaml-cpp)
+
     add_executable(taller_server)
 
     # Make them depend on taller_common lib
     add_dependencies(taller_server taller_common)
 
     # Add source files and enable warnings
-    # HEY!! TODO XXX: add more subfolders here
     add_subdirectory(server)
 
     set_project_warnings(taller_server ${TALLER_MAKE_WARNINGS_AS_ERRORS} FALSE)
 
     find_package(Box2D REQUIRED)
 
-    # Decirle al compilador dónde están los headers
     target_include_directories(taller_server PRIVATE ${Box2D_INCLUDE_DIRS})
 
     target_link_libraries(taller_server
     PRIVATE
-        taller_common   # <--- esto es lo que te falta
+        taller_common
         Box2D
         yaml-cpp::yaml-cpp
     )
@@ -134,31 +118,26 @@ if(TALLER_SERVER)
 endif()
 
 if(TALLER_EDITOR)
-    # 1. Le decimos a CMake que busque Qt6
+
+    set(CMAKE_AUTOUIC ON)
+    set(CMAKE_AUTOMOC ON)
+    set(CMAKE_AUTORCC ON)
     find_package(Qt6 COMPONENTS Widgets REQUIRED)
 
-    # 2. Creamos el ejecutable
     add_executable(taller_editor)
 
-    # 3. Hacemos que dependa solo de 'common'
     add_dependencies(taller_editor taller_common)
 
-    # 4. Le decimos que busque código en la carpeta 'editor/'
     add_subdirectory(editor)
 
     set_project_warnings(taller_editor ${TALLER_MAKE_WARNINGS_AS_ERRORS} FALSE)
 
-    # 5. Enlazamos las librerías con Qt
     target_link_libraries(taller_editor
         PRIVATE
-        taller_common
-        Qt6::Widgets
+            taller_common
+            Qt6::Widgets
     )
 endif()
-
-
-# Testing section
-# ---------------
 
 if(TALLER_TESTS)
     # Let's use google test
@@ -198,7 +177,7 @@ if(TALLER_TESTS)
         PUBLIC
         ${gtest_SOURCE_DIR}/include
         ${gmock_SOURCE_DIR}/include
-        )
+    )
 
     # HEY!! TODO XXX: I'm assuming that the code under testing is in taller_common
     # Change this if you have to.

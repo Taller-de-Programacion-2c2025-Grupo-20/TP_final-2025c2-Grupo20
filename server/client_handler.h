@@ -10,6 +10,7 @@
 #include "../common/lobbyCommand.h"
 #include "../common/gameState.h"
 #include "../common/lobbyState.h"
+#include "../common/match_list.h"
 #include "server_protocol.h"
 #include "sender.h"
 #include "receiver.h"
@@ -39,6 +40,7 @@ public:
     void start_in_lobby(Queue<LobbyCommand>& lobby_queue);
     void connect_to_match(Queue<InputCmd>& game_queue, Queue<GameStateDTO>& sender_queue);
     void send_lobby_update(const LobbyStateDTO& state);
+    void send_match_list(const MatchListDTO& list);
 };
 
 #endif

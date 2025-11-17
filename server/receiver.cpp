@@ -26,6 +26,10 @@ void Receiver::run() {
             uint8_t command_code = protocol.receiveCommand();
             if (command_code == 0x0) break; 
 
+            std::cout << "SERVER DEBUG: Receiver (ID: " << (int)id 
+                      << ") recibió el comando: 0x" << std::hex << (int)command_code 
+                      << std::dec << std::endl;
+
             std::lock_guard<std::mutex> lock(mtx);
 
             switch (command_code) {
@@ -37,8 +41,10 @@ void Receiver::run() {
                     break;
                 }
                 case CMD_CREATE_MATCH: {
+                    std::cout << "SERVER DEBUG: Comando es CMD_CREATE_MATCH. Procesando..." << std::endl;
                     if (!lobby_queue) continue;
-                    lobby_queue->push(LobbyCommand(LobbyCommandType::CREATE_MATCH, id, ""));
+                    std::string match_name = protocol.receive_create_match_payload();
+                    lobby_queue->push(LobbyCommand(LobbyCommandType::CREATE_MATCH, id, match_name));
                     break;
                 }
                 case CMD_JOIN_MATCH: {
@@ -47,9 +53,9 @@ void Receiver::run() {
                     lobby_queue->push(LobbyCommand(LobbyCommandType::JOIN_MATCH, id, match_id));
                     break;
                 }
-                case CMD_TOGGLE_READY: {
+                case CMD_START_GAME: {
                     if (!lobby_queue) continue;
-                    lobby_queue->push(LobbyCommand(LobbyCommandType::TOGGLE_READY, id));
+                    lobby_queue->push(LobbyCommand(LobbyCommandType::START_GAME, id));
                     break;
                 }
                 case CMD_ENVIAR_INPUT: {

@@ -36,6 +36,9 @@ void MainWindow::onLoginAttempt(const QString& ip, const QString& port, const QS
         
         connect(&(client->getReceiver()), &ClientReceiver::loginFailed,
                                      this, &MainWindow::handleLoginFailed);
+        
+        connect(&(client->getReceiver()), &ClientReceiver::gameStarted,
+                                     this, &MainWindow::on_gameStarted);
 
         client->start_threads();
         client->send_login_request(name.toStdString());
@@ -55,4 +58,8 @@ void MainWindow::handleLoginFailed() {
     pantallaLogin->setEnabled(true);
     pantallaLogin->displayError("Error: no se pudo autenticar.");
     client.reset();
+}
+
+void MainWindow::on_gameStarted() {
+    emit startGame(client.get());
 }

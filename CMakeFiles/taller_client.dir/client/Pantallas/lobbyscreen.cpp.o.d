@@ -538,6 +538,7 @@ CMakeFiles/taller_client.dir/client/Pantallas/lobbyscreen.cpp.o: \
  /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/client/../common/gameState.h \
  /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/client/../common/serverState.h \
  /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/client/../common/lobbyState.h \
+ /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/client/../common/match_list.h \
  /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/client/client_sender.h \
  /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/client/../common/queue.h \
  /usr/include/c++/13/condition_variable \
@@ -578,6 +579,12 @@ CMakeFiles/taller_client.dir/client/Pantallas/lobbyscreen.cpp.o: \
  /usr/include/x86_64-linux-gnu/qt6/QtCore/qiodevice.h \
  /usr/include/x86_64-linux-gnu/qt6/QtGui/qtextdocument.h \
  /usr/include/x86_64-linux-gnu/qt6/QtCore/qurl.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtWidgets/QLineEdit \
+ /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qlineedit.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtGui/qtextcursor.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtGui/qtextformat.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtGui/qpen.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtGui/qtextoption.h \
  /usr/include/x86_64-linux-gnu/qt6/QtWidgets/QListWidget \
  /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qlistwidget.h \
  /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qlistview.h \
@@ -599,7 +606,15 @@ CMakeFiles/taller_client.dir/client/Pantallas/lobbyscreen.cpp.o: \
  /usr/include/x86_64-linux-gnu/qt6/QtWidgets/QPushButton \
  /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qpushbutton.h \
  /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qabstractbutton.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtWidgets/QStackedWidget \
+ /usr/include/x86_64-linux-gnu/qt6/QtWidgets/qstackedwidget.h \
  /usr/include/x86_64-linux-gnu/qt6/QtWidgets/QWidget \
  /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/client/../common/constants.h \
+ /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/client/../common/clientCommand.h \
  /usr/include/x86_64-linux-gnu/qt6/QtWidgets/QPushButton \
- /usr/include/x86_64-linux-gnu/qt6/QtWidgets/QListWidget
+ /usr/include/x86_64-linux-gnu/qt6/QtWidgets/QListWidget \
+ /usr/include/x86_64-linux-gnu/qt6/QtWidgets/QLineEdit \
+ /usr/include/x86_64-linux-gnu/qt6/QtWidgets/QStackedWidget \
+ /usr/include/x86_64-linux-gnu/qt6/QtWidgets/QListWidgetItem \
+ /usr/include/x86_64-linux-gnu/qt6/QtCore/QDebug \
+ /usr/include/x86_64-linux-gnu/qt6/QtCore/qdebug.h

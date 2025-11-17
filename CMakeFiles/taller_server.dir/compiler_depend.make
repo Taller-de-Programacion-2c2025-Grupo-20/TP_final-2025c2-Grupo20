@@ -8,6 +8,7 @@ CMakeFiles/taller_server.dir/server/acceptor.cpp.o: server/acceptor.cpp \
   common/liberror.h \
   common/lobbyCommand.h \
   common/lobbyState.h \
+  common/match_list.h \
   common/queue.h \
   common/serverState.h \
   common/socket.h \
@@ -320,6 +321,7 @@ CMakeFiles/taller_server.dir/server/client_handler.cpp.o: server/client_handler.
   common/gameState.h \
   common/lobbyCommand.h \
   common/lobbyState.h \
+  common/match_list.h \
   common/queue.h \
   common/serverState.h \
   common/socket.h \
@@ -1387,6 +1389,7 @@ CMakeFiles/taller_server.dir/server/match.cpp.o: server/match.cpp \
   common/gameState.h \
   common/lobbyCommand.h \
   common/lobbyState.h \
+  common/match_list.h \
   common/queue.h \
   common/serverState.h \
   common/socket.h \
@@ -2046,6 +2049,7 @@ CMakeFiles/taller_server.dir/server/receiver.cpp.o: server/receiver.cpp \
   common/liberror.h \
   common/lobbyCommand.h \
   common/lobbyState.h \
+  common/match_list.h \
   common/queue.h \
   common/serverState.h \
   common/socket.h \
@@ -2329,6 +2333,7 @@ CMakeFiles/taller_server.dir/server/sender.cpp.o: server/sender.cpp \
   common/gameState.h \
   common/liberror.h \
   common/lobbyState.h \
+  common/match_list.h \
   common/queue.h \
   common/serverState.h \
   common/socket.h \
@@ -2669,6 +2674,7 @@ CMakeFiles/taller_server.dir/server/server.cpp.o: server/server.cpp \
   common/gameState.h \
   common/lobbyCommand.h \
   common/lobbyState.h \
+  common/match_list.h \
   common/queue.h \
   common/serverState.h \
   common/socket.h \
@@ -3120,6 +3126,7 @@ CMakeFiles/taller_server.dir/server/server_main.cpp.o: server/server_main.cpp \
   common/gameState.h \
   common/lobbyCommand.h \
   common/lobbyState.h \
+  common/match_list.h \
   common/queue.h \
   common/serverState.h \
   common/socket.h \
@@ -3505,6 +3512,7 @@ CMakeFiles/taller_server.dir/server/server_protocol.cpp.o: server/server_protoco
   common/constants.h \
   common/gameState.h \
   common/lobbyState.h \
+  common/match_list.h \
   common/serverState.h \
   common/socket.h \
   server/server_protocol.h \
@@ -4937,13 +4945,7 @@ _deps/yaml-cpp-src/include/yaml-cpp/node/detail/impl.h:
 
 /usr/include/x86_64-linux-gnu/bits/types/clock_t.h:
 
-/usr/include/c++/13/concepts:
-
-/usr/local/include/Box2D/Dynamics/Joints/b2PulleyJoint.h:
-
-/usr/include/c++/13/memory:
-
-/usr/include/x86_64-linux-gnu/bits/floatn.h:
+/usr/include/x86_64-linux-gnu/bits/types/__mbstate_t.h:
 
 /usr/include/c++/13/cctype:
 
@@ -5035,6 +5037,8 @@ server/gameloop.cpp:
 
 /usr/include/c++/13/bits/ranges_uninitialized.h:
 
+common/match_list.h:
+
 server/collisions_listener.h:
 
 /usr/include/c++/13/bits/std_abs.h:
@@ -5047,12 +5051,6 @@ server/receiver.cpp:
 
 /usr/include/c++/13/bits/ostream_insert.h:
 
-/usr/include/c++/13/bits/stl_function.h:
-
-/usr/include/c++/13/bits/move.h:
-
-/usr/include/asm-generic/sockios.h:
-
 /usr/include/c++/13/bits/memoryfwd.h:
 
 /usr/include/c++/13/cerrno:
@@ -5060,14 +5058,6 @@ server/receiver.cpp:
 /usr/include/x86_64-linux-gnu/bits/stdint-least.h:
 
 /usr/include/c++/13/bits/locale_facets.h:
-
-/usr/include/c++/13/bits/alloc_traits.h:
-
-/usr/include/c++/13/bits/concept_check.h:
-
-/usr/include/x86_64-linux-gnu/gnu/stubs-64.h:
-
-/usr/include/c++/13/bits/node_handle.h:
 
 /usr/include/c++/13/bits/predefined_ops.h:
 
@@ -5125,8 +5115,6 @@ common/thread.h:
 
 server/sender.h:
 
-/usr/include/x86_64-linux-gnu/bits/types/__mbstate_t.h:
-
 /usr/include/c++/13/bits/iterator_concepts.h:
 
 /usr/include/c++/13/bits/stringfwd.h:
@@ -5144,6 +5132,10 @@ server/world_entities/entity.h:
 /usr/include/c++/13/bits/string_view.tcc:
 
 /usr/include/x86_64-linux-gnu/bits/thread-shared-types.h:
+
+/usr/include/asm-generic/sockios.h:
+
+/usr/include/c++/13/bits/move.h:
 
 /usr/local/include/Box2D/Collision/Shapes/b2CircleShape.h:
 
@@ -5187,10 +5179,6 @@ server/acceptor.cpp:
 
 /usr/include/c++/13/cstdio:
 
-_deps/yaml-cpp-src/include/yaml-cpp/node/emit.h:
-
-/usr/include/alloca.h:
-
 /usr/include/x86_64-linux-gnu/sys/time.h:
 
 common/queue.h:
@@ -5198,6 +5186,8 @@ common/queue.h:
 /usr/include/c++/13/bits/cxxabi_init_exception.h:
 
 /usr/include/c++/13/typeinfo:
+
+/usr/include/c++/13/bits/stl_function.h:
 
 /usr/include/c++/13/bits/ranges_algobase.h:
 
@@ -5221,6 +5211,20 @@ common/liberror.h:
 
 common/lobbyState.h:
 
+_deps/yaml-cpp-src/include/yaml-cpp/node/emit.h:
+
+/usr/include/alloca.h:
+
+/usr/include/c++/13/bits/cxxabi_forced.h:
+
+/usr/include/x86_64-linux-gnu/c++/13/bits/ctype_base.h:
+
+/usr/include/c++/13/bits/ranges_util.h:
+
+/usr/include/c++/13/bits/stl_iterator_base_funcs.h:
+
+/usr/include/asm-generic/errno-base.h:
+
 /usr/include/x86_64-linux-gnu/sys/socket.h:
 
 /usr/include/x86_64-linux-gnu/bits/types/struct_iovec.h:
@@ -5241,6 +5245,14 @@ common/clientCommand.h:
 
 /usr/include/x86_64-linux-gnu/bits/posix2_lim.h:
 
+/usr/include/c++/13/compare:
+
+/usr/include/c++/13/system_error:
+
+server/receiver.h:
+
+server/client_handler.h:
+
 /usr/include/c++/13/bits/ostream.tcc:
 
 /usr/include/c++/13/numbers:
@@ -5257,13 +5269,13 @@ _deps/yaml-cpp-src/include/yaml-cpp/node/impl.h:
 
 /usr/include/linux/stddef.h:
 
-/usr/include/c++/13/compare:
+/usr/include/c++/13/bits/alloc_traits.h:
 
-/usr/include/c++/13/system_error:
+/usr/include/c++/13/bits/concept_check.h:
 
-server/receiver.h:
+/usr/include/x86_64-linux-gnu/gnu/stubs-64.h:
 
-server/client_handler.h:
+/usr/include/c++/13/bits/node_handle.h:
 
 /usr/include/c++/13/tr1/modified_bessel_func.tcc:
 
@@ -5333,16 +5345,6 @@ server/client_handler.cpp:
 
 /usr/include/x86_64-linux-gnu/bits/types.h:
 
-/usr/include/c++/13/bits/cxxabi_forced.h:
-
-/usr/include/x86_64-linux-gnu/c++/13/bits/ctype_base.h:
-
-/usr/include/c++/13/bits/ranges_util.h:
-
-/usr/include/c++/13/bits/stl_iterator_base_funcs.h:
-
-/usr/include/asm-generic/errno-base.h:
-
 /usr/include/x86_64-linux-gnu/bits/socket_type.h:
 
 /usr/include/c++/13/bits/localefwd.h:
@@ -5368,6 +5370,14 @@ common/lobbyCommand.h:
 /usr/include/errno.h:
 
 /usr/include/c++/13/bits/hash_bytes.h:
+
+/usr/include/c++/13/concepts:
+
+/usr/local/include/Box2D/Dynamics/Joints/b2PulleyJoint.h:
+
+/usr/include/c++/13/memory:
+
+/usr/include/x86_64-linux-gnu/bits/floatn.h:
 
 /usr/include/c++/13/cstddef:
 

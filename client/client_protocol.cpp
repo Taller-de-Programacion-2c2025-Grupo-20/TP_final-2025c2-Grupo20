@@ -4,6 +4,7 @@
 #include <arpa/inet.h>
 #include "../common/constants.h"
 #include "../common/gameState.h"
+#include "../common/match_list.h"
 #include <iostream>
 #include <vector>
 
@@ -24,7 +25,10 @@ void ClientProtocol::send_login_attempt(const std::string& username) {
 void ClientProtocol::send_create_match(const std::string& match_name) {
     std::vector<uint8_t> buffer;
     buffer.push_back(CMD_CREATE_MATCH);
-    sendString(match_name);
+    uint16_t name_length = match_name.length();
+    addUint16_tToBuffer(buffer, name_length);
+    buffer.insert(buffer.end(), match_name.data(), match_name.data() + name_length);
+    skt.sendall(buffer.data(), buffer.size());
 }
 
 void ClientProtocol::send_join_match(uint8_t match_id) {
@@ -34,9 +38,9 @@ void ClientProtocol::send_join_match(uint8_t match_id) {
     skt.sendall(buffer.data(), buffer.size());
 }
 
-void ClientProtocol::send_toggle_ready() {
+void ClientProtocol::send_start_game() {
     std::vector<uint8_t> buffer;
-    buffer.push_back(CMD_TOGGLE_READY);
+    buffer.push_back(CMD_START_GAME);
     skt.sendall(buffer.data(), buffer.size());
 }
 
@@ -103,19 +107,30 @@ GameStateDTO ClientProtocol::receive_game_state_payload() {
     return state_dto;
 }
 
+MatchListDTO ClientProtocol::receive_match_list_payload() {
+    MatchListDTO list_dto;
+
+    uint8_t match_count = receiveUint8_t();
+
+    for (uint8_t i = 0; i < match_count; ++i) {
+        MatchInfo match;
+
+        match.match_id = receiveUint8_t();
+        match.player_count = receiveUint8_t();
+        match.name = receiveString(); 
+
+        list_dto.matches.push_back(match);
+    }
+
+    return list_dto;
+}
+
+
 void ClientProtocol::addUint16_tToBuffer(std::vector<uint8_t>& buffer, uint16_t value) {
     uint16_t value_big_endian = htons(value);
     size_t buffer_size = buffer.size();
     buffer.resize(buffer_size + sizeof(uint16_t));
     memcpy(buffer.data() + buffer_size, &value_big_endian, sizeof(uint16_t));
-}
-
-void ClientProtocol::sendString(const std::string& s) {
-    std::vector<uint8_t> buffer;
-    uint16_t len = s.length();
-    addUint16_tToBuffer(buffer, len);
-    buffer.insert(buffer.end(), s.begin(), s.end());
-    skt.sendall(buffer.data(), buffer.size());
 }
 
 uint8_t ClientProtocol::receiveUint8_t() {

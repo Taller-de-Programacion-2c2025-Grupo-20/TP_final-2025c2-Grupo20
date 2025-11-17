@@ -5,6 +5,7 @@
 #include "../common/queue.h"
 #include "../common/gameState.h"
 #include "../common/lobbyState.h"
+#include "../common/match_list.h"
 #include "client_protocol.h"
 #include <atomic>
 #include <mutex>
@@ -20,6 +21,8 @@ private:
 
     Queue<LobbyStateDTO> lobby_state_queue;
     Queue<GameStateDTO> game_state_queue;
+    Queue<MatchListDTO> match_list_queue;
+    MatchListDTO last_match_list;
     
     GameStateDTO last_game_state;
     LobbyStateDTO last_lobby_state;
@@ -32,6 +35,7 @@ public:
     
     GameStateDTO pollGameState();
     LobbyStateDTO pollLobbyState();
+    MatchListDTO pollMatchList();
 
     bool is_logged_in() const;
     uint8_t get_my_id() const;

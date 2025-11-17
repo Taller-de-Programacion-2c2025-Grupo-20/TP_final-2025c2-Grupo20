@@ -28,6 +28,7 @@ public slots:
 
 private slots:
     void onLoginAttempt(const QString& ip, const QString& port, const QString& name);
+    void on_gameStarted();
 
 private:
     Ui::MainWindow *ui;

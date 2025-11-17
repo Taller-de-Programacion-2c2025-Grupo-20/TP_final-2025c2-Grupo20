@@ -344,6 +344,7 @@ CMakeFiles/taller_client.dir/client/client.cpp.o: \
  /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/client/../common/gameState.h \
  /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/client/../common/serverState.h \
  /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/client/../common/lobbyState.h \
+ /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/client/../common/match_list.h \
  /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/client/client_sender.h \
  /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/client/../common/queue.h \
  /usr/include/c++/13/condition_variable /usr/include/c++/13/bits/chrono.h \
@@ -501,4 +502,17 @@ CMakeFiles/taller_client.dir/client/client.cpp.o: \
  /usr/include/c++/13/bits/locale_facets_nonio.tcc \
  /usr/include/c++/13/bits/locale_conv.h \
  /usr/include/c++/13/bits/quoted_string.h /usr/include/c++/13/format \
- /usr/include/c++/13/charconv /usr/include/c++/13/span
+ /usr/include/c++/13/charconv /usr/include/c++/13/span \
+ /usr/include/x86_64-linux-gnu/qt6/QtCore/QDebug \
+ /usr/include/x86_64-linux-gnu/qt6/QtCore/qdebug.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtCore/qtextstream.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtCore/qstringconverter_base.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtCore/qcontiguouscache.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtCore/qsharedpointer.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtCore/qshareddata.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtCore/qsharedpointer_impl.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtCore/qmap.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtCore/qshareddata_impl.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtCore/qset.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtCore/qhash.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtCore/qvarlengtharray.h

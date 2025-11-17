@@ -12,8 +12,10 @@
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QLabel>
+#include <QtWidgets/QLineEdit>
 #include <QtWidgets/QListWidget>
 #include <QtWidgets/QPushButton>
+#include <QtWidgets/QStackedWidget>
 #include <QtWidgets/QWidget>
 
 QT_BEGIN_NAMESPACE
@@ -21,36 +23,61 @@ QT_BEGIN_NAMESPACE
 class Ui_LobbyScreen
 {
 public:
-    QPushButton *readyButton;
-    QPushButton *startButton;
-    QListWidget *playerListWidget;
-    QLabel *players;
     QLabel *title;
+    QStackedWidget *stackedWidget_Lobby;
+    QWidget *page_WaitingRoom;
+    QListWidget *playerListWidget;
+    QPushButton *startButton;
+    QWidget *page_Selection;
+    QPushButton *createButton;
+    QLineEdit *matchNameEdit;
+    QPushButton *joinButton;
+    QListWidget *matchListWidget;
 
     void setupUi(QWidget *LobbyScreen)
     {
         if (LobbyScreen->objectName().isEmpty())
             LobbyScreen->setObjectName("LobbyScreen");
         LobbyScreen->resize(751, 536);
-        readyButton = new QPushButton(LobbyScreen);
-        readyButton->setObjectName("readyButton");
-        readyButton->setGeometry(QRect(310, 200, 121, 26));
-        startButton = new QPushButton(LobbyScreen);
-        startButton->setObjectName("startButton");
-        startButton->setGeometry(QRect(310, 240, 121, 26));
-        playerListWidget = new QListWidget(LobbyScreen);
-        playerListWidget->setObjectName("playerListWidget");
-        playerListWidget->setGeometry(QRect(240, 330, 256, 192));
-        players = new QLabel(LobbyScreen);
-        players->setObjectName("players");
-        players->setGeometry(QRect(300, 300, 151, 18));
         title = new QLabel(LobbyScreen);
         title->setObjectName("title");
-        title->setGeometry(QRect(310, 90, 121, 31));
+        title->setGeometry(QRect(350, 80, 121, 31));
         title->setStyleSheet(QString::fromUtf8("\n"
 "font: 500 11pt \"Ubuntu Sans\";"));
+        stackedWidget_Lobby = new QStackedWidget(LobbyScreen);
+        stackedWidget_Lobby->setObjectName("stackedWidget_Lobby");
+        stackedWidget_Lobby->setGeometry(QRect(120, 120, 541, 411));
+        page_WaitingRoom = new QWidget();
+        page_WaitingRoom->setObjectName("page_WaitingRoom");
+        playerListWidget = new QListWidget(page_WaitingRoom);
+        playerListWidget->setObjectName("playerListWidget");
+        playerListWidget->setGeometry(QRect(160, 110, 256, 192));
+        startButton = new QPushButton(page_WaitingRoom);
+        startButton->setObjectName("startButton");
+        startButton->setGeometry(QRect(230, 60, 111, 26));
+        stackedWidget_Lobby->addWidget(page_WaitingRoom);
+        page_Selection = new QWidget();
+        page_Selection->setObjectName("page_Selection");
+        createButton = new QPushButton(page_Selection);
+        createButton->setObjectName("createButton");
+        createButton->setGeometry(QRect(230, 30, 111, 26));
+        matchNameEdit = new QLineEdit(page_Selection);
+        matchNameEdit->setObjectName("matchNameEdit");
+        matchNameEdit->setGeometry(QRect(220, 60, 131, 26));
+        matchNameEdit->setStyleSheet(QString::fromUtf8("nombre...\n"
+""));
+        joinButton = new QPushButton(page_Selection);
+        joinButton->setObjectName("joinButton");
+        joinButton->setGeometry(QRect(230, 120, 111, 26));
+        matchListWidget = new QListWidget(page_Selection);
+        matchListWidget->setObjectName("matchListWidget");
+        matchListWidget->setGeometry(QRect(160, 150, 256, 192));
+        stackedWidget_Lobby->addWidget(page_Selection);
 
         retranslateUi(LobbyScreen);
+
+        stackedWidget_Lobby->setCurrentIndex(0);
+
 
         QMetaObject::connectSlotsByName(LobbyScreen);
     } // setupUi
@@ -58,10 +85,14 @@ public:
     void retranslateUi(QWidget *LobbyScreen)
     {
         LobbyScreen->setWindowTitle(QCoreApplication::translate("LobbyScreen", "Form", nullptr));
-        readyButton->setText(QCoreApplication::translate("LobbyScreen", "Listo!", nullptr));
-        startButton->setText(QCoreApplication::translate("LobbyScreen", "Iniciar partida", nullptr));
-        players->setText(QCoreApplication::translate("LobbyScreen", "Jugadores conectados", nullptr));
         title->setText(QCoreApplication::translate("LobbyScreen", "NEED FOR SPEED", nullptr));
+        startButton->setText(QCoreApplication::translate("LobbyScreen", "Iniciar partida", nullptr));
+        createButton->setText(QCoreApplication::translate("LobbyScreen", "Crear partida", nullptr));
+#if QT_CONFIG(whatsthis)
+        matchNameEdit->setWhatsThis(QCoreApplication::translate("LobbyScreen", "<html><head/><body><p>nombre...</p><p><br/></p></body></html>", nullptr));
+#endif // QT_CONFIG(whatsthis)
+        matchNameEdit->setText(QCoreApplication::translate("LobbyScreen", "Ingresar nombre...", nullptr));
+        joinButton->setText(QCoreApplication::translate("LobbyScreen", "Unirse a partida", nullptr));
     } // retranslateUi
 
 };

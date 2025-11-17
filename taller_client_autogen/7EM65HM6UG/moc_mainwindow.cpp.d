@@ -60,6 +60,7 @@
   /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/common/constants.h \
   /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/common/gameState.h \
   /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/common/lobbyState.h \
+  /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/common/match_list.h \
   /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/common/queue.h \
   /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/common/serverState.h \
   /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/common/socket.h \

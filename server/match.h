@@ -32,17 +32,22 @@ private:
     std::mutex clients_mtx;
 
     void reap_dead_clients();
+    void broadcast_waiting_room_state();
 
 public:
     Match(uint8_t id, const std::string& name);
     ~Match();
 
-    void run();
+    void start();
     void stop();
 
     bool add_player(std::unique_ptr<ClientHandler> player);
     bool is_full() const;
     bool is_running() const;
+    bool has_player(uint8_t player_id);
+    uint8_t get_id() const;
+    std::string get_name() const;
+    size_t get_player_count();
 
     void run_match_logic(); 
 };

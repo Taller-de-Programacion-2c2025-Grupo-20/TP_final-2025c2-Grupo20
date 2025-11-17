@@ -23,8 +23,10 @@ signals:
 
 private slots:
     void updateLobbyState();
-    void on_readyButton_clicked();
     void on_startButton_clicked();
+    void on_joinButton_clicked();
+    void on_createButton_clicked();
+    void on_matchListWidget_currentItemChanged();
 
 private:
     Ui::LobbyScreen *ui;

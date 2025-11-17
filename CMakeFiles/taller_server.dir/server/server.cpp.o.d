@@ -236,6 +236,7 @@ CMakeFiles/taller_server.dir/server/server.cpp.o: \
  /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/server/../common/constants.h \
  /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/server/../common/gameState.h \
  /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/server/../common/serverState.h \
+ /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/server/../common/match_list.h \
  /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/server/server_protocol.h \
  /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/server/../common/constants.h \
  /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/server/sender.h \

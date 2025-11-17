@@ -19,4 +19,5 @@ target_sources(taller_common
     thread.h
     gameState.h
     lobbyCommand.h
+    match_list.h
     )

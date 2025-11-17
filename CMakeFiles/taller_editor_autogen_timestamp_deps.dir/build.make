@@ -67,9 +67,9 @@ include CMakeFiles/taller_editor_autogen_timestamp_deps.dir/compiler_depend.make
 include CMakeFiles/taller_editor_autogen_timestamp_deps.dir/progress.make
 
 CMakeFiles/taller_editor_autogen_timestamp_deps: libtaller_common.a
-CMakeFiles/taller_editor_autogen_timestamp_deps: /usr/lib/qt6/libexec/uic
-CMakeFiles/taller_editor_autogen_timestamp_deps: /usr/lib/qt6/libexec/moc
 CMakeFiles/taller_editor_autogen_timestamp_deps: /usr/lib/x86_64-linux-gnu/libQt6Widgets.so.6.4.2
+CMakeFiles/taller_editor_autogen_timestamp_deps: /usr/lib/qt6/libexec/moc
+CMakeFiles/taller_editor_autogen_timestamp_deps: /usr/lib/qt6/libexec/uic
 
 taller_editor_autogen_timestamp_deps: CMakeFiles/taller_editor_autogen_timestamp_deps
 taller_editor_autogen_timestamp_deps: CMakeFiles/taller_editor_autogen_timestamp_deps.dir/build.make

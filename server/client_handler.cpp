@@ -64,3 +64,11 @@ void ClientHandler::send_lobby_update(const LobbyStateDTO& state) {
         is_alive_flag = false; 
     }
 }
+
+void ClientHandler::send_match_list(const MatchListDTO& list) {
+    try {
+        protocol.send_match_list(list);
+    } catch (const std::exception& e) {
+        is_alive_flag = false; 
+    }
+}

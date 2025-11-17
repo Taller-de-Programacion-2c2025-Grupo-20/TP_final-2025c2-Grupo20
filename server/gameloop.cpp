@@ -62,10 +62,14 @@ void Gameloop::loadWalls(const YAML::Node& map_data) {
 }
 
 void Gameloop::loadMapData() {
-    YAML::Node map_data = YAML::LoadFile("../liberty.yaml");
-    loadWalls(map_data);
+    try {
+        YAML::Node map_data = YAML::LoadFile("liberty.yaml");
+        loadWalls(map_data);
+    } catch (const std::exception& e) {
+        std::cerr << "ERROR: No se pudo cargar el mapa ../liberty.yaml: " << e.what() << std::endl;
+        throw; 
+    }
 }
-
 void Gameloop::readUsersInput() {
     InputCmd input;
     while (gameloop_queue.try_pop(input)) {

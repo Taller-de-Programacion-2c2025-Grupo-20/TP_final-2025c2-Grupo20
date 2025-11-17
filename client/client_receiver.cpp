@@ -38,6 +38,19 @@ void ClientReceiver::run() {
                     break;
                 }
 
+                case RSP_MATCH_LIST: { 
+                    MatchListDTO list = protocol.receive_match_list_payload();
+                    MatchListDTO dummy;
+                    match_list_queue.try_pop(dummy);
+                    match_list_queue.push(std::move(list));
+                    break;
+                }
+
+                case EVT_GAME_STARTED: {
+                    emit gameStarted();
+                    break;
+                }
+
                 case EVT_GAME_STATE: {
                     GameStateDTO new_state = protocol.receive_game_state_payload();
                     GameStateDTO dummy;
@@ -75,6 +88,18 @@ LobbyStateDTO ClientReceiver::pollLobbyState() {
     } else {
         std::lock_guard<std::mutex> lock(mtx);
         return last_lobby_state;
+    }
+}
+
+MatchListDTO ClientReceiver::pollMatchList() {
+    MatchListDTO new_list;
+    if (match_list_queue.try_pop(new_list)) {
+        std::lock_guard<std::mutex> lock(mtx);
+        last_match_list = new_list;
+        return new_list;
+    } else {
+        std::lock_guard<std::mutex> lock(mtx);
+        return last_match_list;
     }
 }
 

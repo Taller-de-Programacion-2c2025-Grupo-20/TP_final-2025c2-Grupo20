@@ -2,6 +2,7 @@
 #include <iostream>
 #include <SDL2/SDL.h>
 #include <QObject>
+#include <QDebug>
 
 Client::Client(const char* hostname, const char* port) : 
     protocol(hostname, port),
@@ -44,6 +45,7 @@ ClientReceiver& Client::getReceiver() {
 ClientProtocol& Client::getProtocol() { return protocol; }
 
 void Client::push_input(const InputCmd& cmd) {
+    qDebug() << "CLIENT DEBUG 2: 'push_input' llamado. Key:" << (int)cmd.key;
     input_queue.try_push(cmd);
 }
 

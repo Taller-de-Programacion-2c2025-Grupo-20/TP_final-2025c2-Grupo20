@@ -225,6 +225,7 @@ CMakeFiles/taller_server.dir/server/client_handler.cpp.o: \
  /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/server/../common/gameState.h \
  /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/server/../common/serverState.h \
  /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/server/../common/lobbyState.h \
+ /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/server/../common/match_list.h \
  /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/server/server_protocol.h \
  /usr/include/c++/13/map /usr/include/c++/13/bits/stl_tree.h \
  /usr/include/c++/13/bits/node_handle.h \

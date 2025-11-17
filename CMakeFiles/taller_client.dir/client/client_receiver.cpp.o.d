@@ -212,6 +212,7 @@ CMakeFiles/taller_client.dir/client/client_receiver.cpp.o: \
  /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/client/../common/gameState.h \
  /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/client/../common/serverState.h \
  /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/client/../common/lobbyState.h \
+ /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/client/../common/match_list.h \
  /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/client/client_protocol.h \
  /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/client/../common/socket.h \
  /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/client/../common/clientCommand.h \

@@ -9,6 +9,7 @@ CMakeFiles/taller_server.dir/server/acceptor.cpp.o
  /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/common/liberror.h
  /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/common/lobbyCommand.h
  /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/common/lobbyState.h
+ /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/common/match_list.h
  /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/common/queue.h
  /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/common/serverState.h
  /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/common/socket.h
@@ -322,6 +323,7 @@ CMakeFiles/taller_server.dir/server/client_handler.cpp.o
  /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/common/gameState.h
  /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/common/lobbyCommand.h
  /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/common/lobbyState.h
+ /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/common/match_list.h
  /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/common/queue.h
  /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/common/serverState.h
  /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/common/socket.h
@@ -1392,6 +1394,7 @@ CMakeFiles/taller_server.dir/server/match.cpp.o
  /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/common/gameState.h
  /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/common/lobbyCommand.h
  /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/common/lobbyState.h
+ /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/common/match_list.h
  /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/common/queue.h
  /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/common/serverState.h
  /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/common/socket.h
@@ -2053,6 +2056,7 @@ CMakeFiles/taller_server.dir/server/receiver.cpp.o
  /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/common/liberror.h
  /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/common/lobbyCommand.h
  /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/common/lobbyState.h
+ /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/common/match_list.h
  /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/common/queue.h
  /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/common/serverState.h
  /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/common/socket.h
@@ -2337,6 +2341,7 @@ CMakeFiles/taller_server.dir/server/sender.cpp.o
  /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/common/gameState.h
  /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/common/liberror.h
  /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/common/lobbyState.h
+ /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/common/match_list.h
  /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/common/queue.h
  /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/common/serverState.h
  /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/common/socket.h
@@ -2678,6 +2683,7 @@ CMakeFiles/taller_server.dir/server/server.cpp.o
  /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/common/gameState.h
  /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/common/lobbyCommand.h
  /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/common/lobbyState.h
+ /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/common/match_list.h
  /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/common/queue.h
  /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/common/serverState.h
  /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/common/socket.h
@@ -3130,6 +3136,7 @@ CMakeFiles/taller_server.dir/server/server_main.cpp.o
  /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/common/gameState.h
  /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/common/lobbyCommand.h
  /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/common/lobbyState.h
+ /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/common/match_list.h
  /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/common/queue.h
  /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/common/serverState.h
  /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/common/socket.h
@@ -3516,6 +3523,7 @@ CMakeFiles/taller_server.dir/server/server_protocol.cpp.o
  /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/common/constants.h
  /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/common/gameState.h
  /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/common/lobbyState.h
+ /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/common/match_list.h
  /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/common/serverState.h
  /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/common/socket.h
  /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/server/server_protocol.h

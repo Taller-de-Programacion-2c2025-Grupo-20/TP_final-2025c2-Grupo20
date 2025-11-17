@@ -541,6 +541,7 @@ CMakeFiles/taller_client.dir/taller_client_autogen/mocs_compilation.cpp.o: \
  /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/client/../common/gameState.h \
  /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/client/../common/serverState.h \
  /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/client/../common/lobbyState.h \
+ /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/client/../common/match_list.h \
  /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/client/client_sender.h \
  /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/client/../common/queue.h \
  /usr/include/c++/13/condition_variable \

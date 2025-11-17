@@ -226,4 +226,5 @@ CMakeFiles/taller_server.dir/server/receiver.cpp.o: \
  /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/server/../common/gameState.h \
  /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/server/../common/serverState.h \
  /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/server/../common/lobbyState.h \
+ /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/server/../common/match_list.h \
  /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/server/../common/liberror.h

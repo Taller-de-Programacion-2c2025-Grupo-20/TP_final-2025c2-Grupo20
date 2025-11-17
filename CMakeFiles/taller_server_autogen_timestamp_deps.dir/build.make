@@ -67,8 +67,8 @@ include CMakeFiles/taller_server_autogen_timestamp_deps.dir/compiler_depend.make
 include CMakeFiles/taller_server_autogen_timestamp_deps.dir/progress.make
 
 CMakeFiles/taller_server_autogen_timestamp_deps: libtaller_common.a
-CMakeFiles/taller_server_autogen_timestamp_deps: /usr/lib/qt6/libexec/uic
 CMakeFiles/taller_server_autogen_timestamp_deps: /usr/lib/qt6/libexec/moc
+CMakeFiles/taller_server_autogen_timestamp_deps: /usr/lib/qt6/libexec/uic
 CMakeFiles/taller_server_autogen_timestamp_deps: _deps/yaml-cpp-build/libyaml-cpp.so.0.7.0
 CMakeFiles/taller_server_autogen_timestamp_deps: /usr/local/lib/libBox2D.a
 

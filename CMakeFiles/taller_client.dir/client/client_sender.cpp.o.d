@@ -220,4 +220,137 @@ CMakeFiles/taller_client.dir/client/client_sender.cpp.o: \
  /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/client/../common/gameState.h \
  /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/client/../common/serverState.h \
  /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/client/../common/lobbyState.h \
- /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/client/../common/liberror.h
+ /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/client/../common/match_list.h \
+ /home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/client/../common/liberror.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtCore/QDebug \
+ /usr/include/x86_64-linux-gnu/qt6/QtCore/qdebug.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtCore/qcontainerfwd.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtCore/qglobal.h /usr/include/assert.h \
+ /usr/lib/gcc/x86_64-linux-gnu/13/include/stdbool.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtCore/qconfig.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtCore/qtcore-config.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtCore/qtconfigmacros.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtCore/qtcoreexports.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtCore/qsystemdetection.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtCore/qprocessordetection.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtCore/qcompilerdetection.h \
+ /usr/include/c++/13/version \
+ /usr/include/x86_64-linux-gnu/qt6/QtCore/qtypeinfo.h \
+ /usr/include/c++/13/variant \
+ /usr/include/c++/13/bits/enable_special_members.h \
+ /usr/include/c++/13/optional \
+ /usr/include/x86_64-linux-gnu/qt6/QtCore/qsysinfo.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtCore/qlogging.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtCore/qflags.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtCore/qcompare_impl.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtCore/qatomic.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtCore/qbasicatomic.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtCore/qatomic_cxx11.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtCore/qgenericatomic.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtCore/qglobalstatic.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtCore/qnumeric.h \
+ /usr/include/c++/13/cmath /usr/include/math.h \
+ /usr/include/x86_64-linux-gnu/bits/math-vector.h \
+ /usr/include/x86_64-linux-gnu/bits/libm-simd-decl-stubs.h \
+ /usr/include/x86_64-linux-gnu/bits/flt-eval-method.h \
+ /usr/include/x86_64-linux-gnu/bits/fp-logb.h \
+ /usr/include/x86_64-linux-gnu/bits/fp-fast.h \
+ /usr/include/x86_64-linux-gnu/bits/mathcalls-helper-functions.h \
+ /usr/include/x86_64-linux-gnu/bits/mathcalls.h \
+ /usr/include/x86_64-linux-gnu/bits/mathcalls-narrow.h \
+ /usr/include/x86_64-linux-gnu/bits/iscanonical.h \
+ /usr/include/c++/13/bits/specfun.h /usr/include/c++/13/tr1/gamma.tcc \
+ /usr/include/c++/13/tr1/special_function_util.h \
+ /usr/include/c++/13/tr1/bessel_function.tcc \
+ /usr/include/c++/13/tr1/beta_function.tcc \
+ /usr/include/c++/13/tr1/ell_integral.tcc \
+ /usr/include/c++/13/tr1/exp_integral.tcc \
+ /usr/include/c++/13/tr1/hypergeometric.tcc \
+ /usr/include/c++/13/tr1/legendre_function.tcc \
+ /usr/include/c++/13/tr1/modified_bessel_func.tcc \
+ /usr/include/c++/13/tr1/poly_hermite.tcc \
+ /usr/include/c++/13/tr1/poly_laguerre.tcc \
+ /usr/include/c++/13/tr1/riemann_zeta.tcc \
+ /usr/include/x86_64-linux-gnu/qt6/QtCore/qversiontagging.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtCore/qforeach.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtCore/qtextstream.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtCore/qiodevicebase.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtCore/qchar.h \
+ /usr/include/c++/13/functional /usr/include/c++/13/bits/std_function.h \
+ /usr/include/c++/13/unordered_map \
+ /usr/include/c++/13/bits/unordered_map.h \
+ /usr/include/c++/13/bits/hashtable.h \
+ /usr/include/c++/13/bits/hashtable_policy.h \
+ /usr/include/c++/13/bits/node_handle.h \
+ /usr/include/c++/13/bits/erase_if.h /usr/include/c++/13/array \
+ /usr/include/c++/13/bits/stl_algo.h \
+ /usr/include/c++/13/bits/algorithmfwd.h \
+ /usr/include/c++/13/bits/uniform_int_dist.h \
+ /usr/include/c++/13/bits/stl_tempbuf.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtCore/qstringview.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtCore/qbytearray.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtCore/qrefcount.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtCore/qnamespace.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtCore/qtmetamacros.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtCore/qarraydata.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtCore/qpair.h /usr/include/string.h \
+ /usr/include/strings.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtCore/qarraydatapointer.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtCore/qarraydataops.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtCore/qcontainertools_impl.h \
+ /usr/include/c++/13/cstring /usr/include/c++/13/iterator \
+ /usr/include/c++/13/bits/stream_iterator.h /usr/include/c++/13/memory \
+ /usr/include/c++/13/bits/stl_raw_storage_iter.h \
+ /usr/include/c++/13/bits/shared_ptr_atomic.h \
+ /usr/include/c++/13/backward/auto_ptr.h \
+ /usr/include/c++/13/bits/ranges_uninitialized.h \
+ /usr/include/c++/13/bits/ranges_algobase.h \
+ /usr/include/c++/13/pstl/glue_memory_defs.h \
+ /usr/include/c++/13/pstl/execution_defs.h /usr/include/c++/13/algorithm \
+ /usr/include/c++/13/bits/ranges_algo.h \
+ /usr/include/c++/13/pstl/glue_algorithm_defs.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtCore/qbytearrayalgorithms.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtCore/qbytearrayview.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtCore/qstringfwd.h \
+ /usr/include/c++/13/stdlib.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtCore/qstringliteral.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtCore/qstringalgorithms.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtCore/qscopedpointer.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtCore/qstringconverter_base.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtCore/qstring.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtCore/qanystringview.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtCore/qutf8stringview.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtCore/qstringtokenizer.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtCore/qcontiguouscache.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtCore/qsharedpointer.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtCore/qshareddata.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtCore/qhashfunctions.h \
+ /usr/include/c++/13/numeric /usr/include/c++/13/bits/stl_numeric.h \
+ /usr/include/c++/13/pstl/glue_numeric_defs.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtCore/qsharedpointer_impl.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtCore/qmetatype.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtCore/qcompare.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtCore/qscopeguard.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtCore/qdatastream.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtCore/qiterable.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtCore/qmetacontainer.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtCore/qcontainerinfo.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtCore/qtaggedpointer.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtCore/qalgorithms.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtCore/qmath.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtCore/qobjectdefs.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtCore/qobjectdefs_impl.h \
+ /usr/include/c++/13/list /usr/include/c++/13/bits/stl_list.h \
+ /usr/include/c++/13/bits/list.tcc /usr/include/c++/13/map \
+ /usr/include/c++/13/bits/stl_tree.h /usr/include/c++/13/bits/stl_map.h \
+ /usr/include/c++/13/bits/stl_multimap.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtCore/qlist.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtCore/qiterator.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtCore/qbytearraylist.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtCore/qstringlist.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtCore/qstringmatcher.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtCore/qmap.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtCore/qshareddata_impl.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtCore/qset.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtCore/qhash.h \
+ /usr/include/x86_64-linux-gnu/qt6/QtCore/qvarlengtharray.h

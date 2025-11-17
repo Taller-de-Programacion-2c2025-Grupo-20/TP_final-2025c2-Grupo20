@@ -8,6 +8,7 @@ taller_editor_autogen/timestamp: \
 	/home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/common/gameState.h \
 	/home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/common/liberror.h \
 	/home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/common/lobbyCommand.h \
+	/home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/common/match_list.h \
 	/home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/common/queue.h \
 	/home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/common/resolver.h \
 	/home/nacho/Escritorio/TALLER/TP_final-2025c2-Grupo20/common/resolvererror.h \

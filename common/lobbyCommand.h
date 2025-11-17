@@ -7,7 +7,6 @@ enum class LobbyCommandType : uint8_t {
     LOGIN_ATTEMPT,
     CREATE_MATCH,
     JOIN_MATCH,
-    TOGGLE_READY,
     START_GAME
 };
 
@@ -15,18 +14,18 @@ struct LobbyCommand {
     LobbyCommandType type;
     uint8_t client_id; 
     
-    std::string username; 
-    uint8_t match_id;   
+    std::string text_payload; 
+    uint8_t id_payload;   
 
     LobbyCommand() {}
 
-    LobbyCommand(LobbyCommandType type, uint8_t id, const std::string& user) :
-        type(type), client_id(id), username(user), match_id(0) {}
+    LobbyCommand(LobbyCommandType type, uint8_t id, const std::string& text) :
+        type(type), client_id(id), text_payload(text), id_payload(0) {}
     
-    LobbyCommand(LobbyCommandType type, uint8_t id, uint8_t match) :
-        type(type), client_id(id), username(""), match_id(match) {}
+    LobbyCommand(LobbyCommandType type, uint8_t id, uint8_t numeric_id) :
+        type(type), client_id(id), text_payload(""), id_payload(numeric_id) {}
     
     LobbyCommand(LobbyCommandType type, uint8_t id) :
-        type(type), client_id(id), username(""), match_id(0) {}
+        type(type), client_id(id), text_payload(""), id_payload(0) {}
 };
 

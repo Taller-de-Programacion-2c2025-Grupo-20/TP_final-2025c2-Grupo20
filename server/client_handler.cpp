@@ -66,9 +66,9 @@ void ClientHandler::send_lobby_update(const LobbyStateDTO& state) {
 }
 
 void ClientHandler::send_match_list(const MatchListDTO& list) {
-    try {
-        protocol.send_match_list(list);
-    } catch (const std::exception& e) {
-        is_alive_flag = false; 
-    }
+    protocol.send_match_list(list);
+}
+
+void ClientHandler::send_start_game() {
+    protocol.send_start_game();
 }

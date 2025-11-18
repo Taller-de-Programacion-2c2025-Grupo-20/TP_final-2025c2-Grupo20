@@ -32,7 +32,7 @@ private:
     std::mutex clients_mtx;
 
     void reap_dead_clients();
-    void broadcast_waiting_room_state();
+    
 
 public:
     Match(uint8_t id, const std::string& name);
@@ -50,6 +50,7 @@ public:
     size_t get_player_count();
 
     void run_match_logic(); 
+    void broadcast_waiting_room_state();
 };
 
 #endif 

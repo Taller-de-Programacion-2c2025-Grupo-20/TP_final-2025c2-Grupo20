@@ -112,7 +112,6 @@ void ServerProtocol::send_login_ok(uint8_t player_id) {
     std::vector<uint8_t> buffer;
     buffer.push_back(LOGIN_SUCCESS);   // mismo código que espera el cliente
     buffer.push_back(player_id);   // id asignado al cliente
-    std::cout << "mando con id " << static_cast<int>(player_id) << "\n";
     skt.sendall(buffer.data(), buffer.size());
 }
 
@@ -126,7 +125,6 @@ void ServerProtocol::send_lobby_state(const LobbyStateDTO& state) {
 
     for (const auto& player : state.players) {
         buffer.push_back(player.player_id);
-        buffer.push_back(player.is_ready ? 1 : 0);
         
         uint16_t name_len = player.name.length();
         addUint16_tToBuffer(buffer, name_len); 
@@ -155,6 +153,10 @@ void ServerProtocol::send_match_list(const MatchListDTO& list) {
     skt.sendall(buffer.data(), buffer.size());
 }
 
+void ServerProtocol::send_start_game() {
+    uint8_t cmd = EVT_GAME_STARTED;
+    skt.sendall(&cmd, sizeof(uint8_t));
+}
 
 ServerProtocol::ServerProtocol(Socket&& skt): skt(std::move(skt)) {}
 

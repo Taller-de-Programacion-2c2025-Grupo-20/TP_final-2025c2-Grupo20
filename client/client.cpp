@@ -6,7 +6,7 @@
 
 Client::Client(const char* hostname, const char* port) : 
     protocol(hostname, port),
-    my_player_id(0),
+    //my_player_id(0),
     is_running(true),
     input_queue(128),
     sender(protocol, input_queue),
@@ -35,7 +35,7 @@ int Client::runGame() {
 }
 
 uint8_t Client::getMyPlayerId() const {
-    return my_player_id;
+    return receiver.get_my_id();
 }
 
 ClientReceiver& Client::getReceiver() {
@@ -66,7 +66,7 @@ int Client::run_game_loop() {
 
         if (!game_state.players.empty()) {
             for (const auto& player : game_state.players) {
-                if (player.player_id == my_player_id) {
+                if (player.player_id == getMyPlayerId()) {
                     std::cout << "Game state update. Mi auto está en: " 
                               << player.state.x << std::endl;
                     break;
@@ -82,7 +82,7 @@ int Client::run_game_loop() {
 void Client::handle_sdl_event(const SDL_Event& event) {
     if (event.type == SDL_KEYDOWN || event.type == SDL_KEYUP) {
         InputCmd cmd{};
-        cmd.player_id = my_player_id;
+        cmd.player_id = getMyPlayerId();
         cmd.action = (event.type == SDL_KEYDOWN) ? InputAction::Press : InputAction::Release;
         
         switch (event.key.keysym.sym) {

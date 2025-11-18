@@ -73,7 +73,6 @@ LobbyStateDTO ClientProtocol::receive_lobby_state_payload() {
     for (int i = 0; i < player_count; ++i) {
         LobbyPlayerInfo player;
         player.player_id = receiveUint8_t();
-        player.is_ready = (receiveUint8_t() == 1);
         player.name = receiveString(); 
         state.players.push_back(player);
     }

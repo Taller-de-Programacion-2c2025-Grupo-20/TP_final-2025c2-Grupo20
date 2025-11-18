@@ -18,7 +18,6 @@ Server::Server(const char* port) :
 }
 
 Server::~Server() {
-    stop();
 }
 
 /**
@@ -108,21 +107,28 @@ void Server::process_lobby_commands() {
     LobbyCommand cmd;
     while (lobby_queue.try_pop(cmd)) {
         
-        std::lock_guard<std::mutex> lock(mtx); 
-        std::cout << "ENTRE A PROCESAR COMANDO: " << (int)cmd.type << std::endl;
-        switch (cmd.type) {
-            case LobbyCommandType::LOGIN_ATTEMPT:
-                handle_login(cmd);
-                break;
-            case LobbyCommandType::CREATE_MATCH:
-                handle_create_match(cmd);
-                break;
-            case LobbyCommandType::JOIN_MATCH:
-                handle_join_match(cmd);
-                break;
-            case LobbyCommandType::START_GAME:
-                handle_start_game(cmd);
-                break;
+        Match* match_creado = nullptr;
+        {
+            std::lock_guard<std::mutex> lock(mtx); 
+            std::cout << "ENTRE A PROCESAR COMANDO: " << (int)cmd.type << std::endl;
+            switch (cmd.type) {
+                case LobbyCommandType::LOGIN_ATTEMPT:
+                    handle_login(cmd);
+                    break;
+                case LobbyCommandType::CREATE_MATCH:
+                    match_creado = handle_create_match(cmd);
+                    break;
+                case LobbyCommandType::JOIN_MATCH:
+                    handle_join_match(cmd);
+                    break;
+                case LobbyCommandType::START_GAME:
+                    handle_start_game(cmd);
+                    break;
+            }
+        }
+        if (match_creado) {
+            // Esto es seguro, no bloquea a nadie más
+            match_creado->broadcast_waiting_room_state();
         }
         //broadcast_lobby_state();
     }
@@ -194,7 +200,7 @@ void Server::broadcast_match_list() {
     }
 }
 
-void Server::handle_create_match(const LobbyCommand& cmd) {
+Match* Server::handle_create_match(const LobbyCommand& cmd) {
     std::unique_ptr<ClientHandler> client;
     clients_in_lobby.remove_if([&client, &cmd](auto& c) {
         if (c->get_id() == cmd.client_id) {
@@ -204,16 +210,18 @@ void Server::handle_create_match(const LobbyCommand& cmd) {
         return false;
     });
 
-    if (!client) return; 
-
+    if (!client) return nullptr; 
     uint8_t new_id = next_match_id++;
     std::string match_name = "Partida " + std::to_string(new_id);
+
     auto new_match = std::make_unique<Match>(new_id, match_name);
+
     new_match->add_player(std::move(client));
-    new_match->start(); 
-    
+
+    Match* match_ptr = new_match.get();
     active_matches[new_id] = std::move(new_match);
     std::cout << "Partida " << (int)new_id << " creada por cliente " << (int)cmd.client_id << std::endl;
+    return match_ptr;
 }
 
 void Server::handle_join_match(const LobbyCommand& cmd) {
@@ -280,7 +288,7 @@ void Server::cleanup_finished_matches() {
     std::lock_guard<std::mutex> lock(mtx);
     bool match_removed = false;
     for (auto it = active_matches.begin(); it != active_matches.end(); ) {
-        if (!it->second->is_running()) {
+        if (!it->second->is_running() && it->second->get_player_count() == 0) {
             std::cout << "Limpiando partida terminada " << (int)it->first << std::endl;
             match_removed = true;
             it = active_matches.erase(it);

@@ -14,7 +14,7 @@
 class Client {
 private:
     ClientProtocol protocol;
-    uint8_t my_player_id;
+    //uint8_t my_player_id;
     std::atomic<bool> is_running;
 
     Queue<InputCmd> input_queue;

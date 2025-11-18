@@ -10,7 +10,6 @@
 struct LobbyPlayerInfo {
     uint8_t player_id;  
     std::string name;
-    bool is_ready;
     uint8_t car_id;
 };
 

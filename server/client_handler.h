@@ -41,6 +41,7 @@ public:
     void connect_to_match(Queue<InputCmd>& game_queue, Queue<GameStateDTO>& sender_queue);
     void send_lobby_update(const LobbyStateDTO& state);
     void send_match_list(const MatchListDTO& list);
+    void send_start_game();
 };
 
 #endif

@@ -32,6 +32,7 @@ public:
     void send_login_ok(uint8_t player_id);
     void send_lobby_state(const LobbyStateDTO& state);
     void send_match_list(const MatchListDTO& list);
+    void send_start_game();
 
     void close();
 

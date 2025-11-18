@@ -39,7 +39,7 @@ private:
     void cleanup_finished_matches();
 
     void handle_login(const LobbyCommand& cmd);
-    void handle_create_match(const LobbyCommand& cmd);
+    Match* handle_create_match(const LobbyCommand& cmd);
     void handle_join_match(const LobbyCommand& cmd);
     //void broadcast_lobby_state();
     void broadcast_match_list();

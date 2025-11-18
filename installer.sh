@@ -5,8 +5,10 @@ INSTALL_PREFIX="/usr"
 BIN_DIR="$INSTALL_PREFIX/bin"
 ETC_DIR="/etc/$GAME_NAME"
 VAR_DIR="/var/$GAME_NAME"
+REPO_URL="https://github.com/Taller-de-Programacion-2c2025-Grupo-20/TP_final-2025c2-Grupo20.git"
 
-REPO_DIR="$(pwd)"
+WORKDIR="/tmp/${GAME_NAME}_repo"
+REPO_DIR="$WORKDIR/TP_final-2025c2-Grupo20"
 
 # Colores
 GREEN='\033[0;32m'
@@ -16,6 +18,9 @@ NC='\033[0m'
 echo -e "${BLUE}=== Instalador del juego $GAME_NAME ===${NC}"
 sleep 1
 
+# LIMPIEZA PREVIA
+sudo rm -rf "$WORKDIR"
+mkdir -p "$WORKDIR"
 
 # ACTUALIZAR SISTEMA
 echo -e "${GREEN}→ Actualizando lista de paquetes...${NC}"
@@ -23,11 +28,21 @@ sudo apt update -y
 
 # INSTALAR DEPENDENCIAS
 echo -e "${GREEN}→ Instalando dependencias...${NC}"
-
 sudo apt install -y \
     git build-essential cmake pkg-config wget unzip \
     libsdl2-dev libsdl2-image-dev libsdl2-ttf-dev libsdl2-mixer-dev \
     qt6-base-dev qt6-base-dev-tools
+
+# CLONAR REPO
+echo -e "${GREEN}→ Clonando repositorio...${NC}"
+cd "$WORKDIR"
+git clone "$REPO_URL"
+
+if [ $? -ne 0 ]; then
+    echo "❌ Error al clonar el repositorio"
+    exit 1
+fi
+echo -e "${GREEN}✓ Repositorio clonado en $REPO_DIR${NC}"
 
 # INSTALAR BOX2D 2.1.2
 echo -e "${GREEN}→ Instalando Box2D 2.1.2...${NC}"
@@ -56,30 +71,23 @@ mkdir -p build
 cd build
 
 cmake .. -DTALLER_CLIENT=ON -DTALLER_EDITOR=OFF -DTALLER_SERVER=ON -DTALLER_TESTS=OFF -DINSTALL_MODE=ON -DCMAKE_MESSAGE_LOG_LEVEL=VERBOSE
-
 make -j"$(nproc)"
 
 echo -e "${GREEN}✓ Compilación finalizada.${NC}"
 
-
-#ESTRUCTURA DE INSTALACIÓN
+# DIRECTORIOS
 echo -e "${GREEN}→ Creando directorios...${NC}"
 sudo mkdir -p "$ETC_DIR"
 sudo mkdir -p "$VAR_DIR"
 sudo mkdir -p "$VAR_DIR/SDL_data"
 sudo mkdir -p "$VAR_DIR/maps_data"
 
-
-#COPIAR BINARIOS
+# INSTALAR BINARIOS
 echo -e "${GREEN}→ Instalando ejecutables...${NC}"
-
 sudo cp taller_server "$BIN_DIR/taller_server"
 sudo cp taller_client "$BIN_DIR/taller_client"
 
-#   COPIAR CONFIG & DATA
-#echo -e "${GREEN}→ Instalando configuración en $ETC_DIR ...${NC}"
-#sudo cp ../config/*.yaml "$ETC_DIR/"
-
+# INSTALAR DATOS
 echo -e "${GREEN}→ Instalando data files en $VAR_DIR ...${NC}"
 sudo cp -r "$REPO_DIR/client/data/"* "$VAR_DIR/SDL_data"
 sudo cp -r "$REPO_DIR/server/data/"* "$VAR_DIR/maps_data"

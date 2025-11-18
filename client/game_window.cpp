@@ -6,10 +6,6 @@
 #include <algorithm>
 #include <cmath>
 
-#ifndef DATA_PATH
-#define DATA_PATH "../data"
-#endif
-
 using namespace SDL2pp;
 
 static constexpr float PPM = 16.0f;
@@ -465,15 +461,15 @@ int GameWindow::runGame() {
 
         Renderer renderer(window, -1, SDL_RENDERER_ACCELERATED);
 
-        Surface surface(DATA_PATH "/cars/Mobile - Grand Theft Auto 4 - Miscellaneous - Cars.png");
+        Surface surface(std::string(SDL_DATA_PATH) + "/cars/Mobile - Grand Theft Auto 4 - Miscellaneous - Cars.png");
         surface.SetColorKey(true, SDL_MapRGB(surface.Get()->format, 163, 163, 13));
         Texture sprites(renderer, surface);
 
-        Surface hud_surface(DATA_PATH "/assets/hud.png");
+        Surface hud_surface(std::string(SDL_DATA_PATH) + "/assets/hud.png");
         hud_surface.SetColorKey(true, SDL_MapRGB(hud_surface.Get()->format, 255, 201, 14));
         Texture hud(renderer, hud_surface);
 
-        Surface checkpoints_surface(DATA_PATH "/assets/checkpoint.png");
+        Surface checkpoints_surface(std::string(SDL_DATA_PATH) + "/assets/checkpoint.png");
         checkpoints_surface.SetColorKey(true, SDL_MapRGB(checkpoints_surface.Get()->format, 255, 201, 14));
         Texture checkpoint_flag(renderer, checkpoints_surface);
 
@@ -485,7 +481,7 @@ int GameWindow::runGame() {
             "/cities/Game Boy _ GBC - Grand Theft Auto - Backgrounds - Vice City.png"
         };
         int map_to_play = 0;
-        Texture background(renderer, DATA_PATH + maps[map_to_play]);
+        Texture background(renderer, std::string(SDL_DATA_PATH) + maps[map_to_play]);
         const int bgW = background.GetWidth();
         const int bgH = background.GetHeight();
 

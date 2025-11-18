@@ -115,7 +115,7 @@ void Gameloop::loadInitialPos(const YAML::Node& map_data) {
 
 void Gameloop::loadMapData() {
     YAML::Node map_data =
-            YAML::LoadFile("../liberty_city.yaml");
+            YAML::LoadFile(std::string(MAPS_DATA_PATH) + "liberty_city.yaml");
 
     loadWalls(map_data);
     loadCheckpoints(map_data);

@@ -40,30 +40,9 @@ void LobbyScreen::setClient(Client* client) {
 
 void LobbyScreen::updateLobbyState() {
     if (!client) return;
-    MatchListDTO list = client->getReceiver().pollMatchList();
-    
-    QListWidgetItem* selected_item = ui->matchListWidget->currentItem();
-    int selected_id = -1;
-    if (selected_item) {
-        selected_id = selected_item->data(Qt::UserRole).toInt();
-    }
-    
-    ui->matchListWidget->clear();
-    for (const auto& match : list.matches) {
-        QString text = QString::fromStdString(match.name) + 
-                       " (" + QString::number(match.player_count) + "/8)";
-        
-        QListWidgetItem* item = new QListWidgetItem(text);
-        item->setData(Qt::UserRole, (int)match.match_id); 
-        ui->matchListWidget->addItem(item);
-
-        if ((int)match.match_id == selected_id) {
-            ui->matchListWidget->setCurrentItem(item);
-        }
-    }
 
     LobbyStateDTO state = client->getReceiver().pollLobbyState();
-    
+
     if (!state.players.empty()) {
         if (ui->stackedWidget_Lobby->currentWidget() == ui->page_Selection) {
             ui->stackedWidget_Lobby->setCurrentWidget(ui->page_WaitingRoom);
@@ -73,12 +52,36 @@ void LobbyScreen::updateLobbyState() {
         for (const auto& player : state.players) {
             ui->playerListWidget->addItem(QString::fromStdString(player.name));
         }
-
         if (client->getMyPlayerId() == state.host_id) {
             ui->startButton->setEnabled(true);
+        } else {
+            ui->startButton->setEnabled(false);
         }
+
     } else {
         ui->stackedWidget_Lobby->setCurrentWidget(ui->page_Selection);
+        client->send_refresh_request(); 
+        MatchListDTO list = client->getReceiver().pollMatchList();
+        
+        QListWidgetItem* selected_item = ui->matchListWidget->currentItem();
+        int selected_id = -1;
+        if (selected_item) {
+            selected_id = selected_item->data(Qt::UserRole).toInt();
+        }
+        
+        ui->matchListWidget->clear();
+        for (const auto& match : list.matches) {
+             QString text = QString::fromStdString(match.name) + 
+                       " (" + QString::number(match.player_count) + "/8)";
+        
+            QListWidgetItem* item = new QListWidgetItem(text);
+            item->setData(Qt::UserRole, (int)match.match_id); 
+            ui->matchListWidget->addItem(item);
+
+            if ((int)match.match_id == selected_id) {
+                ui->matchListWidget->setCurrentItem(item);
+            }
+        }
     }
 }
 

@@ -30,6 +30,7 @@ public:
     void send_join_match(uint8_t match_id);
     void send_start_game();
     void send_input(const InputCmd& cmd);
+    void send_refresh_match_list();
 
     bool receive_command_code(uint8_t& code);
     uint8_t receive_login_response_payload();

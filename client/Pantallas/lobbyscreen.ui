@@ -40,7 +40,7 @@ font: 500 11pt &quot;Ubuntu Sans&quot;;</string>
     </rect>
    </property>
    <property name="currentIndex">
-    <number>0</number>
+    <number>1</number>
    </property>
    <widget class="QWidget" name="page_WaitingRoom">
     <widget class="QListWidget" name="playerListWidget">
@@ -98,7 +98,7 @@ font: 500 11pt &quot;Ubuntu Sans&quot;;</string>
 </string>
      </property>
      <property name="text">
-      <string>Ingresar nombre...</string>
+      <string/>
      </property>
     </widget>
     <widget class="QPushButton" name="joinButton">
@@ -118,7 +118,7 @@ font: 500 11pt &quot;Ubuntu Sans&quot;;</string>
      <property name="geometry">
       <rect>
        <x>160</x>
-       <y>150</y>
+       <y>160</y>
        <width>256</width>
        <height>192</height>
       </rect>

@@ -166,3 +166,8 @@ void ClientProtocol::close() {
     skt.shutdown(SHUT_RDWR);
     skt.close();
 }
+
+void ClientProtocol::send_refresh_match_list() {
+    uint8_t cmd = CMD_REFRESH_MATCH_LIST; 
+    skt.sendall(&cmd, 1);
+}

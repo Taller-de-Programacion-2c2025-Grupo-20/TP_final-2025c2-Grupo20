@@ -30,6 +30,10 @@ void Client::send_login_request(const std::string& username) {
     protocol.send_login_attempt(username);
 }
 
+void Client::send_refresh_request() {
+    protocol.send_refresh_match_list(); 
+}
+
 int Client::runGame() {
     return run_game_loop();
 }

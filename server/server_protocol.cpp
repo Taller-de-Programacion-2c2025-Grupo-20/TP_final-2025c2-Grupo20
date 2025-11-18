@@ -142,12 +142,10 @@ void ServerProtocol::send_match_list(const MatchListDTO& list) {
 
     for (const auto& match : list.matches) {
         buffer.push_back(match.match_id);
-        
+        buffer.push_back(match.player_count); 
         uint16_t name_len = match.name.length();
         addUint16_tToBuffer(buffer, name_len); 
         buffer.insert(buffer.end(), match.name.begin(), match.name.end());
-        
-        buffer.push_back(match.player_count);
     }
     
     skt.sendall(buffer.data(), buffer.size());

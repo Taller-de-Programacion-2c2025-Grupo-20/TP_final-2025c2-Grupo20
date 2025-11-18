@@ -30,6 +30,7 @@ public:
 
     void start_threads();
     void send_login_request(const std::string& username);
+    void send_refresh_request();
     int runGame();
 
     ClientReceiver& getReceiver();

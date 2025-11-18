@@ -71,11 +71,11 @@ CMakeFiles/taller_client_autogen_timestamp_deps: /usr/lib/x86_64-linux-gnu/libQt
 CMakeFiles/taller_client_autogen_timestamp_deps: /usr/lib/qt6/libexec/moc
 CMakeFiles/taller_client_autogen_timestamp_deps: /usr/lib/qt6/libexec/uic
 CMakeFiles/taller_client_autogen_timestamp_deps: /usr/lib/x86_64-linux-gnu/libQt6Network.so.6.4.2
-CMakeFiles/taller_client_autogen_timestamp_deps: _deps/sdl2_image-build/libSDL2_image-2.0.so.0.800.2
-CMakeFiles/taller_client_autogen_timestamp_deps: _deps/sdl2_ttf-build/libSDL2_ttf-2.0.so.0.2200.0
-CMakeFiles/taller_client_autogen_timestamp_deps: _deps/libsdl2pp-build/libSDL2pp.so.8.3.0
-CMakeFiles/taller_client_autogen_timestamp_deps: _deps/sdl2_mixer-build/libSDL2_mixer-2.0.so.0.800.0
 CMakeFiles/taller_client_autogen_timestamp_deps: _deps/sdl2-build/libSDL2-2.0.so.0.3000.8
+CMakeFiles/taller_client_autogen_timestamp_deps: _deps/libsdl2pp-build/libSDL2pp.so.8.3.0
+CMakeFiles/taller_client_autogen_timestamp_deps: _deps/sdl2_ttf-build/libSDL2_ttf-2.0.so.0.2200.0
+CMakeFiles/taller_client_autogen_timestamp_deps: _deps/sdl2_image-build/libSDL2_image-2.0.so.0.800.2
+CMakeFiles/taller_client_autogen_timestamp_deps: _deps/sdl2_mixer-build/libSDL2_mixer-2.0.so.0.800.0
 
 taller_client_autogen_timestamp_deps: CMakeFiles/taller_client_autogen_timestamp_deps
 taller_client_autogen_timestamp_deps: CMakeFiles/taller_client_autogen_timestamp_deps.dir/build.make

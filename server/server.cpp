@@ -112,25 +112,30 @@ void Server::process_lobby_commands() {
             std::lock_guard<std::mutex> lock(mtx); 
             std::cout << "ENTRE A PROCESAR COMANDO: " << (int)cmd.type << std::endl;
             switch (cmd.type) {
-                case LobbyCommandType::LOGIN_ATTEMPT:
-                    handle_login(cmd);
-                    break;
-                case LobbyCommandType::CREATE_MATCH:
-                    match_creado = handle_create_match(cmd);
-                    break;
-                case LobbyCommandType::JOIN_MATCH:
-                    handle_join_match(cmd);
-                    break;
-                case LobbyCommandType::START_GAME:
-                    handle_start_game(cmd);
-                    break;
+            case LobbyCommandType::LOGIN_ATTEMPT:
+                handle_login(cmd);
+                break;
+            
+            case LobbyCommandType::CREATE_MATCH:
+                handle_create_match(cmd);
+                break;
+            
+            case LobbyCommandType::JOIN_MATCH:
+                handle_join_match(cmd);
+                break;
+            
+            case LobbyCommandType::START_GAME:
+                handle_start_game(cmd);
+                break;
+
+            case LobbyCommandType::REFRESH_MATCH_LIST: 
+                send_match_list(cmd.client_id);
+                break;
             }
         }
         if (match_creado) {
-            // Esto es seguro, no bloquea a nadie más
             match_creado->broadcast_waiting_room_state();
         }
-        //broadcast_lobby_state();
     }
 }
 
@@ -200,7 +205,35 @@ void Server::broadcast_match_list() {
     }
 }
 
-Match* Server::handle_create_match(const LobbyCommand& cmd) {
+void Server::send_match_list(uint8_t client_id) {
+    ClientHandler* target_client = nullptr;
+    for (auto& client : clients_in_lobby) {
+        if (client->get_id() == client_id) {
+            target_client = client.get();
+            break;
+        }
+    }
+
+    if (!target_client) return;
+
+    MatchListDTO list_dto;
+    for (const auto& pair : active_matches) {
+        const auto& match = pair.second;
+        if (!match->is_running() && !match->is_full()) {
+            MatchInfo match_info;
+            match_info.match_id = match->get_id();
+            match_info.name = match->get_name();
+            match_info.player_count = match->get_player_count(); 
+            list_dto.matches.push_back(match_info);
+        }
+    }
+
+    try {
+        target_client->send_match_list(list_dto);
+    } catch (...) {}
+}
+
+void Server::handle_create_match(const LobbyCommand& cmd) {
     std::unique_ptr<ClientHandler> client;
     clients_in_lobby.remove_if([&client, &cmd](auto& c) {
         if (c->get_id() == cmd.client_id) {
@@ -210,25 +243,28 @@ Match* Server::handle_create_match(const LobbyCommand& cmd) {
         return false;
     });
 
-    if (!client) return nullptr; 
+    if (!client) return; 
+
     uint8_t new_id = next_match_id++;
-    std::string match_name = "Partida " + std::to_string(new_id);
-
+    std::string match_name = cmd.text_payload;
+    if (match_name.empty()) {
+        match_name = "Partida " + std::to_string(new_id);
+    }
+    
     auto new_match = std::make_unique<Match>(new_id, match_name);
-
     new_match->add_player(std::move(client));
-
-    Match* match_ptr = new_match.get();
+    
     active_matches[new_id] = std::move(new_match);
-    std::cout << "Partida " << (int)new_id << " creada por cliente " << (int)cmd.client_id << std::endl;
-    return match_ptr;
+    
+    std::cout << "Partida " << (int)new_id << " creada. Total: " << active_matches.size() << std::endl;
+    
+    active_matches[new_id]->broadcast_waiting_room_state();
 }
 
 void Server::handle_join_match(const LobbyCommand& cmd) {
     auto it = active_matches.find(cmd.id_payload);
     if (it == active_matches.end() || it->second->is_full() || it->second->is_running()) {
-        std::cerr << "Error: Partida " << (int)cmd.id_payload << " no existe o está llena/en curso." << std::endl;
-        return;
+        return; 
     }
 
     std::unique_ptr<ClientHandler> client;
@@ -241,11 +277,8 @@ void Server::handle_join_match(const LobbyCommand& cmd) {
     });
 
     if (client) {
-        if (!it->second->add_player(std::move(client))) {
-            // No se pudo unir (ej: se llenó justo), lo devolvemos al lobby
-            clients_in_lobby.push_back(std::move(client));
-            // (Enviar error al cliente)
-        }
+        it->second->add_player(std::move(client));
+        it->second->broadcast_waiting_room_state();
     }
 }
 

@@ -37,14 +37,16 @@ private:
     void process_lobby_commands();
     void reap_dead_lobby_clients();
     void cleanup_finished_matches();
+    void send_match_list(uint8_t client_id);
 
     void handle_login(const LobbyCommand& cmd);
-    Match* handle_create_match(const LobbyCommand& cmd);
+    void handle_create_match(const LobbyCommand& cmd);
     void handle_join_match(const LobbyCommand& cmd);
     //void broadcast_lobby_state();
     void broadcast_match_list();
     void handle_toggle_ready(const LobbyCommand& cmd);
     void handle_start_game(const LobbyCommand& cmd);
+
 
 public:
     Server(const char* port);

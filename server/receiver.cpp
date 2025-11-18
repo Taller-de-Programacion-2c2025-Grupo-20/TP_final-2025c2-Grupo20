@@ -47,6 +47,11 @@ void Receiver::run() {
                     lobby_queue->push(LobbyCommand(LobbyCommandType::CREATE_MATCH, id, match_name));
                     break;
                 }
+                case CMD_REFRESH_MATCH_LIST: {
+                    if (!lobby_queue) continue;
+                    lobby_queue->push(LobbyCommand(LobbyCommandType::REFRESH_MATCH_LIST, id));
+                    break;
+                }
                 case CMD_JOIN_MATCH: {
                     if (!lobby_queue) continue;
                     uint8_t match_id = protocol.receiveUint8_t();

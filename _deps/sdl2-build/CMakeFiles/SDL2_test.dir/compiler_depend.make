@@ -32,26 +32,12 @@ _deps/sdl2-build/SDL2_test_autogen/timestamp: CMakeFiles/3.28.3/CMakeCCompiler.c
   _deps/sdl2-src/src/test/SDL_test_memory.c \
   _deps/sdl2-src/src/test/SDL_test_random.c \
   /usr/bin/cmake \
-  /usr/share/cmake-3.28/Modules/CMakeCCompiler.cmake.in \
-  /usr/share/cmake-3.28/Modules/CMakeCCompilerABI.c \
   /usr/share/cmake-3.28/Modules/CMakeCInformation.cmake \
   /usr/share/cmake-3.28/Modules/CMakeCommonLanguageInclude.cmake \
-  /usr/share/cmake-3.28/Modules/CMakeCompilerIdDetection.cmake \
   /usr/share/cmake-3.28/Modules/CMakeDependentOption.cmake \
-  /usr/share/cmake-3.28/Modules/CMakeDetermineCCompiler.cmake \
-  /usr/share/cmake-3.28/Modules/CMakeDetermineCompileFeatures.cmake \
-  /usr/share/cmake-3.28/Modules/CMakeDetermineCompiler.cmake \
-  /usr/share/cmake-3.28/Modules/CMakeDetermineCompilerABI.cmake \
-  /usr/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake \
-  /usr/share/cmake-3.28/Modules/CMakeFindBinUtils.cmake \
   /usr/share/cmake-3.28/Modules/CMakeLanguageInformation.cmake \
   /usr/share/cmake-3.28/Modules/CMakeParseArguments.cmake \
-  /usr/share/cmake-3.28/Modules/CMakeParseImplicitIncludeInfo.cmake \
-  /usr/share/cmake-3.28/Modules/CMakeParseImplicitLinkInfo.cmake \
-  /usr/share/cmake-3.28/Modules/CMakeParseLibraryArchitecture.cmake \
   /usr/share/cmake-3.28/Modules/CMakePushCheckState.cmake \
-  /usr/share/cmake-3.28/Modules/CMakeTestCCompiler.cmake \
-  /usr/share/cmake-3.28/Modules/CMakeTestCompilerCommon.cmake \
   /usr/share/cmake-3.28/Modules/CheckCCompilerFlag.cmake \
   /usr/share/cmake-3.28/Modules/CheckCSourceCompiles.cmake \
   /usr/share/cmake-3.28/Modules/CheckCSourceRuns.cmake \
@@ -64,50 +50,8 @@ _deps/sdl2-build/SDL2_test_autogen/timestamp: CMakeFiles/3.28.3/CMakeCCompiler.c
   /usr/share/cmake-3.28/Modules/CheckSourceCompiles.cmake \
   /usr/share/cmake-3.28/Modules/CheckStructHasMember.cmake \
   /usr/share/cmake-3.28/Modules/CheckSymbolExists.cmake \
-  /usr/share/cmake-3.28/Modules/Compiler/ADSP-DetermineCompiler.cmake \
-  /usr/share/cmake-3.28/Modules/Compiler/ARMCC-DetermineCompiler.cmake \
-  /usr/share/cmake-3.28/Modules/Compiler/ARMClang-DetermineCompiler.cmake \
-  /usr/share/cmake-3.28/Modules/Compiler/AppleClang-DetermineCompiler.cmake \
-  /usr/share/cmake-3.28/Modules/Compiler/Borland-DetermineCompiler.cmake \
-  /usr/share/cmake-3.28/Modules/Compiler/Bruce-C-DetermineCompiler.cmake \
-  /usr/share/cmake-3.28/Modules/Compiler/Clang-DetermineCompiler.cmake \
-  /usr/share/cmake-3.28/Modules/Compiler/Clang-DetermineCompilerInternal.cmake \
-  /usr/share/cmake-3.28/Modules/Compiler/Compaq-C-DetermineCompiler.cmake \
-  /usr/share/cmake-3.28/Modules/Compiler/Cray-DetermineCompiler.cmake \
-  /usr/share/cmake-3.28/Modules/Compiler/CrayClang-DetermineCompiler.cmake \
-  /usr/share/cmake-3.28/Modules/Compiler/Embarcadero-DetermineCompiler.cmake \
-  /usr/share/cmake-3.28/Modules/Compiler/Fujitsu-DetermineCompiler.cmake \
-  /usr/share/cmake-3.28/Modules/Compiler/FujitsuClang-DetermineCompiler.cmake \
-  /usr/share/cmake-3.28/Modules/Compiler/GHS-DetermineCompiler.cmake \
-  /usr/share/cmake-3.28/Modules/Compiler/GNU-C-DetermineCompiler.cmake \
   /usr/share/cmake-3.28/Modules/Compiler/GNU-C.cmake \
-  /usr/share/cmake-3.28/Modules/Compiler/GNU-FindBinUtils.cmake \
   /usr/share/cmake-3.28/Modules/Compiler/GNU.cmake \
-  /usr/share/cmake-3.28/Modules/Compiler/HP-C-DetermineCompiler.cmake \
-  /usr/share/cmake-3.28/Modules/Compiler/IAR-DetermineCompiler.cmake \
-  /usr/share/cmake-3.28/Modules/Compiler/IBMCPP-C-DetermineVersionInternal.cmake \
-  /usr/share/cmake-3.28/Modules/Compiler/IBMClang-C-DetermineCompiler.cmake \
-  /usr/share/cmake-3.28/Modules/Compiler/Intel-DetermineCompiler.cmake \
-  /usr/share/cmake-3.28/Modules/Compiler/IntelLLVM-DetermineCompiler.cmake \
-  /usr/share/cmake-3.28/Modules/Compiler/LCC-C-DetermineCompiler.cmake \
-  /usr/share/cmake-3.28/Modules/Compiler/MSVC-DetermineCompiler.cmake \
-  /usr/share/cmake-3.28/Modules/Compiler/NVHPC-DetermineCompiler.cmake \
-  /usr/share/cmake-3.28/Modules/Compiler/NVIDIA-DetermineCompiler.cmake \
-  /usr/share/cmake-3.28/Modules/Compiler/OpenWatcom-DetermineCompiler.cmake \
-  /usr/share/cmake-3.28/Modules/Compiler/OrangeC-DetermineCompiler.cmake \
-  /usr/share/cmake-3.28/Modules/Compiler/PGI-DetermineCompiler.cmake \
-  /usr/share/cmake-3.28/Modules/Compiler/PathScale-DetermineCompiler.cmake \
-  /usr/share/cmake-3.28/Modules/Compiler/SCO-DetermineCompiler.cmake \
-  /usr/share/cmake-3.28/Modules/Compiler/SDCC-C-DetermineCompiler.cmake \
-  /usr/share/cmake-3.28/Modules/Compiler/SunPro-C-DetermineCompiler.cmake \
-  /usr/share/cmake-3.28/Modules/Compiler/TI-DetermineCompiler.cmake \
-  /usr/share/cmake-3.28/Modules/Compiler/Tasking-DetermineCompiler.cmake \
-  /usr/share/cmake-3.28/Modules/Compiler/TinyCC-C-DetermineCompiler.cmake \
-  /usr/share/cmake-3.28/Modules/Compiler/VisualAge-C-DetermineCompiler.cmake \
-  /usr/share/cmake-3.28/Modules/Compiler/Watcom-DetermineCompiler.cmake \
-  /usr/share/cmake-3.28/Modules/Compiler/XL-C-DetermineCompiler.cmake \
-  /usr/share/cmake-3.28/Modules/Compiler/XLClang-C-DetermineCompiler.cmake \
-  /usr/share/cmake-3.28/Modules/Compiler/zOS-C-DetermineCompiler.cmake \
   /usr/share/cmake-3.28/Modules/FindALSA.cmake \
   /usr/share/cmake-3.28/Modules/FindGit.cmake \
   /usr/share/cmake-3.28/Modules/FindPackageHandleStandardArgs.cmake \
@@ -117,7 +61,6 @@ _deps/sdl2-build/SDL2_test_autogen/timestamp: CMakeFiles/3.28.3/CMakeCCompiler.c
   /usr/share/cmake-3.28/Modules/Internal/CheckCompilerFlag.cmake \
   /usr/share/cmake-3.28/Modules/Internal/CheckSourceCompiles.cmake \
   /usr/share/cmake-3.28/Modules/Internal/CheckSourceRuns.cmake \
-  /usr/share/cmake-3.28/Modules/Internal/FeatureTesting.cmake \
   /usr/share/cmake-3.28/Modules/Platform/Linux-GNU-C.cmake \
   /usr/share/cmake-3.28/Modules/Platform/Linux-GNU.cmake
 
@@ -3776,6 +3719,8 @@ _deps/sdl2-build/CMakeFiles/SDL2_test.dir/src/test/SDL_test_random.c.o: _deps/sd
 
 /usr/include/x86_64-linux-gnu/bits/types/struct_itimerspec.h:
 
+/usr/include/time.h:
+
 /usr/include/x86_64-linux-gnu/bits/pthread_stack_min.h:
 
 /usr/include/x86_64-linux-gnu/bits/pthread_stack_min-dynamic.h:
@@ -3824,6 +3769,10 @@ _deps/sdl2-build/CMakeFiles/SDL2_test.dir/src/test/SDL_test_random.c.o: _deps/sd
 
 /usr/lib/gcc/x86_64-linux-gnu/13/include/pmmintrin.h:
 
+/usr/lib/gcc/x86_64-linux-gnu/13/include/pkuintrin.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/13/include/mwaitxintrin.h:
+
 /usr/lib/gcc/x86_64-linux-gnu/13/include/mm3dnow.h:
 
 /usr/lib/gcc/x86_64-linux-gnu/13/include/lzcntintrin.h:
@@ -3832,445 +3781,81 @@ _deps/sdl2-build/CMakeFiles/SDL2_test.dir/src/test/SDL_test_random.c.o: _deps/sd
 
 /usr/lib/gcc/x86_64-linux-gnu/13/include/keylockerintrin.h:
 
-/usr/lib/gcc/x86_64-linux-gnu/13/include/ia32intrin.h:
+_deps/sdl2-build/include/SDL2/SDL_thread.h:
 
-/usr/lib/gcc/x86_64-linux-gnu/13/include/hresetintrin.h:
+_deps/sdl2-build/include/SDL2/SDL_hidapi.h:
 
-/usr/lib/gcc/x86_64-linux-gnu/13/include/fxsrintrin.h:
+_deps/sdl2-build/include/SDL2/SDL_touch.h:
 
-/usr/lib/gcc/x86_64-linux-gnu/13/include/fmaintrin.h:
+_deps/sdl2-build/include/SDL2/SDL_test_memory.h:
 
-/usr/lib/gcc/x86_64-linux-gnu/13/include/emmintrin.h:
+/usr/lib/gcc/x86_64-linux-gnu/13/include/raointintrin.h:
 
-/usr/lib/gcc/x86_64-linux-gnu/13/include/cmpccxaddintrin.h:
+_deps/sdl2-build/include/SDL2/SDL_test_fuzzer.h:
 
-/usr/lib/gcc/x86_64-linux-gnu/13/include/clzerointrin.h:
-
-/usr/lib/gcc/x86_64-linux-gnu/13/include/clflushoptintrin.h:
-
-/usr/lib/gcc/x86_64-linux-gnu/13/include/uintrintrin.h:
-
-/usr/lib/gcc/x86_64-linux-gnu/13/include/avxvnniint8intrin.h:
-
-/usr/lib/gcc/x86_64-linux-gnu/13/include/avxneconvertintrin.h:
-
-/usr/lib/gcc/x86_64-linux-gnu/13/include/avxifmaintrin.h:
-
-/usr/lib/gcc/x86_64-linux-gnu/13/include/avx512vpopcntdqintrin.h:
-
-/usr/lib/gcc/x86_64-linux-gnu/13/include/serializeintrin.h:
-
-/usr/lib/gcc/x86_64-linux-gnu/13/include/avx512vp2intersectvlintrin.h:
-
-/usr/lib/gcc/x86_64-linux-gnu/13/include/avx512vp2intersectintrin.h:
-
-/usr/lib/gcc/x86_64-linux-gnu/13/include/avx512vnnivlintrin.h:
-
-/usr/lib/gcc/x86_64-linux-gnu/13/include/avx512vnniintrin.h:
-
-/usr/lib/gcc/x86_64-linux-gnu/13/include/cetintrin.h:
-
-/usr/lib/gcc/x86_64-linux-gnu/13/include/avx512vlintrin.h:
-
-/usr/lib/gcc/x86_64-linux-gnu/13/include/avx512vldqintrin.h:
-
-/usr/lib/gcc/x86_64-linux-gnu/13/include/avx512vlbwintrin.h:
-
-/usr/lib/gcc/x86_64-linux-gnu/13/include/avx512vbmi2intrin.h:
-
-/usr/lib/gcc/x86_64-linux-gnu/13/include/limits.h:
-
-/usr/lib/gcc/x86_64-linux-gnu/13/include/avx512pfintrin.h:
-
-/usr/lib/gcc/x86_64-linux-gnu/13/include/avx512dqintrin.h:
+_deps/sdl2-build/include/SDL2/SDL_test_assert.h:
 
 /usr/lib/gcc/x86_64-linux-gnu/13/include/avx512cdintrin.h:
 
-/usr/lib/gcc/x86_64-linux-gnu/13/include/avx512bitalgintrin.h:
+_deps/sdl2-build/include/SDL2/SDL_system.h:
 
-/usr/lib/gcc/x86_64-linux-gnu/13/include/waitpkgintrin.h:
-
-/usr/lib/gcc/x86_64-linux-gnu/13/include/avx512bf16vlintrin.h:
-
-/usr/lib/gcc/x86_64-linux-gnu/13/include/avx5124vnniwintrin.h:
-
-/usr/lib/gcc/x86_64-linux-gnu/13/include/avx5124fmapsintrin.h:
-
-/usr/lib/gcc/x86_64-linux-gnu/13/include/amxtileintrin.h:
-
-/usr/lib/gcc/x86_64-linux-gnu/13/include/amxfp16intrin.h:
-
-/usr/lib/gcc/x86_64-linux-gnu/13/include/amxbf16intrin.h:
-
-_deps/sdl2-build/include/SDL2/SDL_blendmode.h:
-
-/usr/lib/gcc/x86_64-linux-gnu/13/include/prfchiintrin.h:
-
-/usr/lib/gcc/x86_64-linux-gnu/13/include/avx512vbmiintrin.h:
-
-_deps/sdl2-build/SDL2_test_autogen/mocs_compilation.cpp:
-
-/usr/include/alloca.h:
-
-_deps/sdl2-build/include/SDL2/SDL_assert.h:
-
-/usr/share/cmake-3.28/Modules/Platform/Linux-GNU-C.cmake:
-
-_deps/sdl2-src/include/SDL_config.h.cmake:
-
-/usr/share/cmake-3.28/Modules/Internal/FeatureTesting.cmake:
-
-/usr/lib/gcc/x86_64-linux-gnu/13/include/sgxintrin.h:
-
-_deps/sdl2-build/include/SDL2/SDL_atomic.h:
-
-/usr/share/cmake-3.28/Modules/Internal/CheckSourceRuns.cmake:
-
-/usr/lib/gcc/x86_64-linux-gnu/13/include/avx512vpopcntdqvlintrin.h:
-
-/usr/share/cmake-3.28/Modules/Internal/CheckSourceCompiles.cmake:
-
-_deps/sdl2-build/include/SDL2/SDL_power.h:
-
-/usr/include/stdc-predef.h:
-
-/usr/include/x86_64-linux-gnu/bits/endian.h:
-
-/usr/lib/gcc/x86_64-linux-gnu/13/include/avx512vbmivlintrin.h:
-
-/usr/include/x86_64-linux-gnu/gnu/stubs.h:
-
-/usr/lib/gcc/x86_64-linux-gnu/13/include/immintrin.h:
-
-/usr/share/cmake-3.28/Modules/FindPackageHandleStandardArgs.cmake:
-
-/usr/share/cmake-3.28/Modules/Compiler/IntelLLVM-DetermineCompiler.cmake:
-
-/usr/include/x86_64-linux-gnu/bits/thread-shared-types.h:
-
-/usr/share/cmake-3.28/Modules/Compiler/XLClang-C-DetermineCompiler.cmake:
-
-/usr/share/cmake-3.28/Modules/Compiler/TinyCC-C-DetermineCompiler.cmake:
-
-_deps/sdl2-build/include/SDL2/SDL_audio.h:
-
-/usr/share/cmake-3.28/Modules/CheckCSourceCompiles.cmake:
-
-_deps/sdl2-build/include/SDL2/SDL_main.h:
-
-/usr/share/cmake-3.28/Modules/Compiler/SunPro-C-DetermineCompiler.cmake:
-
-/usr/include/x86_64-linux-gnu/bits/posix1_lim.h:
-
-_deps/sdl2-build/include/SDL2/SDL_gamecontroller.h:
-
-/usr/lib/gcc/x86_64-linux-gnu/13/include/mwaitxintrin.h:
-
-/usr/share/cmake-3.28/Modules/Compiler/PGI-DetermineCompiler.cmake:
-
-/usr/lib/gcc/x86_64-linux-gnu/13/include/bmi2intrin.h:
-
-/usr/share/cmake-3.28/Modules/Compiler/MSVC-DetermineCompiler.cmake:
-
-/usr/share/cmake-3.28/Modules/Compiler/Intel-DetermineCompiler.cmake:
-
-/usr/share/cmake-3.28/Modules/CMakeParseLibraryArchitecture.cmake:
-
-/usr/include/endian.h:
-
-/usr/include/stdint.h:
-
-/usr/lib/gcc/x86_64-linux-gnu/13/include/bmiintrin.h:
-
-/usr/share/cmake-3.28/Modules/Compiler/OpenWatcom-DetermineCompiler.cmake:
-
-/usr/share/cmake-3.28/Modules/Compiler/SCO-DetermineCompiler.cmake:
-
-/usr/include/x86_64-linux-gnu/bits/types/struct_timeval.h:
-
-/usr/share/cmake-3.28/Modules/CMakeLanguageInformation.cmake:
-
-/usr/share/cmake-3.28/Modules/Compiler/GNU-C.cmake:
-
-/usr/share/cmake-3.28/Modules/Compiler/GNU-FindBinUtils.cmake:
-
-/usr/share/cmake-3.28/Modules/Compiler/GNU-C-DetermineCompiler.cmake:
-
-/usr/share/cmake-3.28/Modules/Compiler/FujitsuClang-DetermineCompiler.cmake:
-
-/usr/share/cmake-3.28/Modules/Compiler/Fujitsu-DetermineCompiler.cmake:
-
-/usr/lib/gcc/x86_64-linux-gnu/13/include/avx512fp16vlintrin.h:
-
-/usr/share/cmake-3.28/Modules/Compiler/VisualAge-C-DetermineCompiler.cmake:
-
-/usr/share/cmake-3.28/Modules/Compiler/CrayClang-DetermineCompiler.cmake:
-
-_deps/sdl2-build/include/SDL2/SDL.h:
-
-_deps/sdl2-src/src/test/SDL_test_imageFace.c:
-
-/usr/include/x86_64-linux-gnu/bits/waitflags.h:
-
-/usr/lib/gcc/x86_64-linux-gnu/13/include/avx2intrin.h:
-
-/usr/share/cmake-3.28/Modules/Compiler/Cray-DetermineCompiler.cmake:
-
-/usr/share/cmake-3.28/Modules/Compiler/Bruce-C-DetermineCompiler.cmake:
+/usr/share/cmake-3.28/Modules/CheckLanguage.cmake:
 
 _deps/sdl2-build/include/SDL2/SDL_surface.h:
 
-/usr/share/cmake-3.28/Modules/Compiler/LCC-C-DetermineCompiler.cmake:
+/usr/share/cmake-3.28/Modules/Compiler/GNU-C.cmake:
 
-/usr/share/cmake-3.28/Modules/Compiler/Borland-DetermineCompiler.cmake:
+/usr/lib/gcc/x86_64-linux-gnu/13/include/avx512vp2intersectintrin.h:
 
-/usr/include/time.h:
+_deps/sdl2-build/include/SDL2/SDL_stdinc.h:
 
-/usr/share/cmake-3.28/Modules/CMakeDetermineCompileFeatures.cmake:
+/usr/lib/gcc/x86_64-linux-gnu/13/include/pconfigintrin.h:
 
-/usr/share/cmake-3.28/Modules/Compiler/IAR-DetermineCompiler.cmake:
+_deps/sdl2-build/include/SDL2/begin_code.h:
 
-/usr/lib/gcc/x86_64-linux-gnu/13/include/avx512erintrin.h:
+/usr/include/x86_64-linux-gnu/bits/fp-fast.h:
 
-/usr/share/cmake-3.28/Modules/Compiler/AppleClang-DetermineCompiler.cmake:
+_deps/sdl2-build/include/SDL2/SDL_quit.h:
 
-/usr/include/linux/limits.h:
+_deps/sdl2-build/include/SDL2/SDL_power.h:
 
-/usr/share/cmake-3.28/Modules/CheckStructHasMember.cmake:
+_deps/sdl2-build/include/SDL2/SDL_pixels.h:
 
-/usr/share/cmake-3.28/Modules/CheckSourceCompiles.cmake:
+_deps/sdl2-build/include/SDL2/SDL_mutex.h:
 
-/usr/lib/gcc/x86_64-linux-gnu/13/include/avx512vbmi2vlintrin.h:
-
-/usr/share/cmake-3.28/Modules/Compiler/ADSP-DetermineCompiler.cmake:
+/usr/include/x86_64-linux-gnu/bits/types/__fpos_t.h:
 
 _deps/sdl2-build/include/SDL2/SDL_mouse.h:
 
-/usr/share/cmake-3.28/Modules/FindPkgConfig.cmake:
+_deps/sdl2-build/include/SDL2/SDL_messagebox.h:
 
-_deps/sdl2-src/src/test/SDL_test_imagePrimitivesBlend.c:
+_deps/sdl2-build/include/SDL2/SDL_sensor.h:
 
-_deps/sdl2-build/include/SDL2/SDL_test_common.h:
+/usr/lib/gcc/x86_64-linux-gnu/13/include/avx512fp16vlintrin.h:
 
-/usr/include/inttypes.h:
+/usr/lib/gcc/x86_64-linux-gnu/13/include/avx512vldqintrin.h:
 
-/usr/include/x86_64-linux-gnu/bits/local_lim.h:
+_deps/sdl2-build/include/SDL2/SDL_timer.h:
 
-_deps/sdl2-src/sdl2-config.in:
+_deps/sdl2-src/src/test/SDL_test_harness.c:
 
-/usr/share/cmake-3.28/Modules/CMakeParseImplicitIncludeInfo.cmake:
-
-/usr/lib/gcc/x86_64-linux-gnu/13/include/amxint8intrin.h:
-
-_deps/sdl2-src/src/test/SDL_test_imageBlit.c:
-
-_deps/sdl2-build/include/SDL2/SDL_test_log.h:
-
-/usr/lib/gcc/x86_64-linux-gnu/13/include/gfniintrin.h:
-
-_deps/sdl2-build/include/SDL2/SDL_loadso.h:
-
-_deps/sdl2-build/include/SDL2/SDL_test_harness.h:
-
-/usr/share/cmake-3.28/Modules/Compiler/IBMCPP-C-DetermineVersionInternal.cmake:
-
-/usr/share/cmake-3.28/Modules/CheckLibraryExists.cmake:
-
-_deps/sdl2-src/src/test/SDL_test_imageBlitBlend.c:
-
-/usr/lib/gcc/x86_64-linux-gnu/13/include/avxvnniintrin.h:
-
-/usr/share/cmake-3.28/Modules/CMakeCCompiler.cmake.in:
-
-/usr/include/x86_64-linux-gnu/bits/flt-eval-method.h:
+_deps/sdl2-build/include/SDL2/SDL_haptic.h:
 
 _deps/sdl2-build/include/SDL2/SDL_scancode.h:
 
 _deps/sdl2-src/src/test/SDL_test_imagePrimitives.c:
 
-/usr/share/cmake-3.28/Modules/CMakeDetermineCompilerABI.cmake:
+_deps/sdl2-build/include/SDL2/SDL_gesture.h:
 
-_deps/sdl2-build/include/SDL2/SDL_haptic.h:
+/usr/include/x86_64-linux-gnu/bits/posix1_lim.h:
 
-/usr/share/cmake-3.28/Modules/Compiler/NVHPC-DetermineCompiler.cmake:
-
-/usr/lib/gcc/x86_64-linux-gnu/13/include/avx512ifmaintrin.h:
-
-/usr/share/cmake-3.28/Modules/CMakeTestCompilerCommon.cmake:
-
-/usr/share/cmake-3.28/Modules/FindGit.cmake:
-
-/usr/lib/gcc/x86_64-linux-gnu/13/include/avxintrin.h:
-
-_deps/sdl2-src/src/test/SDL_test_font.c:
-
-_deps/sdl2-src/src/test/SDL_test_common.c:
-
-_deps/sdl2-src/src/test/SDL_test_log.c:
-
-/usr/include/x86_64-linux-gnu/bits/types/clockid_t.h:
-
-_deps/sdl2-build/include/SDL2/SDL_cpuinfo.h:
-
-/usr/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake:
-
-_deps/sdl2-src/src/test/SDL_test_assert.c:
-
-/usr/share/cmake-3.28/Modules/CMakeParseImplicitLinkInfo.cmake:
-
-_deps/sdl2-src/src/test/SDL_test_memory.c:
-
-/usr/lib/gcc/x86_64-linux-gnu/13/include/clwbintrin.h:
-
-/usr/share/cmake-3.28/Modules/CMakeCInformation.cmake:
-
-/usr/share/cmake-3.28/Modules/Compiler/GHS-DetermineCompiler.cmake:
-
-_deps/sdl2-build/include/SDL2/SDL_shape.h:
-
-/usr/share/cmake-3.28/Modules/Compiler/IBMClang-C-DetermineCompiler.cmake:
-
-/usr/include/x86_64-linux-gnu/bits/mathcalls.h:
-
-/usr/lib/gcc/x86_64-linux-gnu/13/include/adxintrin.h:
-
-/usr/share/cmake-3.28/Modules/CMakeParseArguments.cmake:
-
-/usr/include/x86_64-linux-gnu/sys/types.h:
-
-/usr/include/x86_64-linux-gnu/bits/long-double.h:
-
-/usr/share/cmake-3.28/Modules/Compiler/OrangeC-DetermineCompiler.cmake:
-
-/usr/share/cmake-3.28/Modules/Compiler/SDCC-C-DetermineCompiler.cmake:
-
-_deps/sdl2-build/SDL_config.h.intermediate:
-
-/usr/share/cmake-3.28/Modules/FindPackageMessage.cmake:
-
-_deps/sdl2-src/cmake/sdlplatform.cmake:
-
-/usr/bin/cmake:
-
-_deps/sdl2-build/include/SDL2/SDL_error.h:
-
-_deps/sdl2-src/src/test/SDL_test_random.c:
-
-_deps/sdl2-src/src/test/SDL_test_crc32.c:
-
-/usr/share/cmake-3.28/Modules/CheckIncludeFile.cmake:
-
-/usr/include/x86_64-linux-gnu/bits/pthreadtypes.h:
-
-_deps/sdl2-src/SDL2.spec.in:
-
-_deps/sdl2-src/cmake_uninstall.cmake.in:
-
-_deps/sdl2-src/include/SDL_revision.h.cmake:
-
-_deps/sdl2-src/cmake/CheckCPUArchitecture.cmake:
-
-/usr/share/cmake-3.28/Modules/Compiler/TI-DetermineCompiler.cmake:
-
-/usr/share/cmake-3.28/Modules/CMakeCommonLanguageInclude.cmake:
-
-_deps/sdl2-build/include/SDL2/SDL_keyboard.h:
-
-/usr/include/string.h:
-
-/usr/share/cmake-3.28/Modules/Compiler/Clang-DetermineCompiler.cmake:
-
-/usr/share/cmake-3.28/Modules/Compiler/GNU.cmake:
-
-/usr/include/x86_64-linux-gnu/bits/fp-logb.h:
-
-/usr/include/x86_64-linux-gnu/bits/libc-header-start.h:
-
-_deps/sdl2-src/cmake/sdlfind.cmake:
-
-/usr/share/cmake-3.28/Modules/CheckCCompilerFlag.cmake:
-
-/usr/share/cmake-3.28/Modules/GNUInstallDirs.cmake:
-
-/usr/share/cmake-3.28/Modules/CheckIncludeFiles.cmake:
+_deps/sdl2-build/include/SDL2/SDL_gamecontroller.h:
 
 _deps/sdl2-build/include/SDL2/SDL_guid.h:
 
-/usr/share/cmake-3.28/Modules/CMakeCCompilerABI.c:
+/usr/share/cmake-3.28/Modules/CheckIncludeFiles.cmake:
 
-/usr/lib/gcc/x86_64-linux-gnu/13/include/mm_malloc.h:
-
-/usr/share/cmake-3.28/Modules/Platform/Linux-GNU.cmake:
-
-/usr/share/cmake-3.28/Modules/Compiler/Compaq-C-DetermineCompiler.cmake:
-
-/usr/include/x86_64-linux-gnu/bits/floatn-common.h:
-
-/usr/share/cmake-3.28/Modules/CheckSymbolExists.cmake:
-
-/usr/include/x86_64-linux-gnu/bits/types/wint_t.h:
-
-_deps/sdl2-src/CMakeLists.txt:
-
-/usr/share/cmake-3.28/Modules/Compiler/zOS-C-DetermineCompiler.cmake:
-
-/usr/share/cmake-3.28/Modules/Compiler/ARMCC-DetermineCompiler.cmake:
-
-/usr/share/cmake-3.28/Modules/CMakeCompilerIdDetection.cmake:
-
-/usr/share/cmake-3.28/Modules/CMakeDependentOption.cmake:
-
-_deps/sdl2-src/src/test/SDL_test_harness.c:
-
-_deps/sdl2-build/include/SDL2/SDL_timer.h:
-
-_deps/sdl2-build/include/SDL2/SDL_test_md5.h:
-
-/usr/share/cmake-3.28/Modules/CMakeDetermineCompiler.cmake:
-
-/usr/lib/gcc/x86_64-linux-gnu/13/include/cldemoteintrin.h:
-
-/usr/share/cmake-3.28/Modules/FindALSA.cmake:
-
-/usr/share/cmake-3.28/Modules/Compiler/Watcom-DetermineCompiler.cmake:
-
-_deps/sdl2-build/include/SDL2/SDL_mutex.h:
-
-/usr/share/cmake-3.28/Modules/Compiler/Tasking-DetermineCompiler.cmake:
-
-_deps/sdl2-build/include/SDL2/SDL_pixels.h:
-
-/usr/include/x86_64-linux-gnu/bits/types/__fpos_t.h:
-
-/usr/share/cmake-3.28/Modules/CheckCXXCompilerFlag.cmake:
-
-/usr/share/cmake-3.28/Modules/CMakePushCheckState.cmake:
-
-/usr/lib/gcc/x86_64-linux-gnu/13/include/pkuintrin.h:
-
-/usr/share/cmake-3.28/Modules/Compiler/XL-C-DetermineCompiler.cmake:
-
-/usr/lib/gcc/x86_64-linux-gnu/13/include/vpclmulqdqintrin.h:
-
-/usr/include/features.h:
-
-_deps/sdl2-src/src/test/SDL_test_md5.c:
-
-/usr/share/cmake-3.28/Modules/CheckLanguage.cmake:
-
-/usr/share/cmake-3.28/Modules/CMakeDetermineCCompiler.cmake:
-
-_deps/sdl2-build/include/SDL2/SDL_system.h:
-
-/usr/share/cmake-3.28/Modules/CMakeTestCCompiler.cmake:
-
-/usr/share/cmake-3.28/Modules/Compiler/Clang-DetermineCompilerInternal.cmake:
-
-/usr/include/x86_64-linux-gnu/bits/endianness.h:
-
-/usr/share/cmake-3.28/Modules/CheckCXXSourceCompiles.cmake:
-
-/usr/include/x86_64-linux-gnu/bits/types/__sigset_t.h:
+_deps/sdl2-build/include/SDL2/SDL_filesystem.h:
 
 /usr/lib/gcc/x86_64-linux-gnu/13/include/amxcomplexintrin.h:
 
@@ -4278,39 +3863,101 @@ _deps/sdl2-build/include/SDL2/SDL_clipboard.h:
 
 _deps/sdl2-build/include/SDL2/SDL_test_images.h:
 
-_deps/sdl2-build/include/SDL2/SDL_endian.h:
+_deps/sdl2-build/include/SDL2/SDL_test_log.h:
+
+/usr/include/string.h:
+
+_deps/sdl2-build/include/SDL2/SDL_blendmode.h:
+
+/usr/include/alloca.h:
+
+_deps/sdl2-build/include/SDL2/SDL_assert.h:
+
+_deps/sdl2-build/include/SDL2/SDL_shape.h:
+
+_deps/sdl2-build/include/SDL2/SDL_log.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/13/include/avx512bf16intrin.h:
+
+_deps/sdl2-build/include/SDL2/SDL_test_compare.h:
+
+_deps/sdl2-build/include/SDL2/SDL.h:
+
+_deps/sdl2-src/src/test/SDL_test_imageFace.c:
+
+/usr/include/x86_64-linux-gnu/bits/waitflags.h:
+
+_deps/sdl2-src/src/test/SDL_test_imageBlit.c:
+
+/usr/lib/gcc/x86_64-linux-gnu/13/include/amxint8intrin.h:
+
+_deps/sdl2-build/include/SDL2/SDL_test_common.h:
+
+/usr/include/inttypes.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/13/include/avxneconvertintrin.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/13/include/mm_malloc.h:
+
+/usr/share/cmake-3.28/Modules/Platform/Linux-GNU.cmake:
+
+/usr/include/x86_64-linux-gnu/bits/floatn-common.h:
+
+_deps/sdl2-build/include/SDL2/SDL_keyboard.h:
+
+/usr/share/cmake-3.28/Modules/CMakeCommonLanguageInclude.cmake:
+
+/usr/share/cmake-3.28/Modules/Platform/Linux-GNU-C.cmake:
+
+_deps/sdl2-src/include/SDL_config.h.cmake:
 
 _deps/sdl2-build/include/SDL2/SDL_events.h:
 
-/usr/lib/gcc/x86_64-linux-gnu/13/include/avx512fp16intrin.h:
+/usr/share/cmake-3.28/Modules/Internal/CheckSourceRuns.cmake:
 
-/usr/include/x86_64-linux-gnu/bits/types/sigset_t.h:
+/usr/include/x86_64-linux-gnu/bits/local_lim.h:
 
-_deps/sdl2-build/include/SDL2/SDL_filesystem.h:
+_deps/sdl2-src/sdl2-config.in:
 
-_deps/sdl2-build/include/SDL2/SDL_gesture.h:
+/usr/include/x86_64-linux-gnu/bits/wordsize.h:
 
-/usr/lib/gcc/x86_64-linux-gnu/13/include/enqcmdintrin.h:
+_deps/sdl2-build/include/SDL2/SDL_rwops.h:
 
-_deps/sdl2-build/include/SDL2/SDL_hints.h:
+_deps/sdl2-src/src/test/SDL_test_fuzzer.c:
 
-/usr/include/wchar.h:
+_deps/sdl2-build/include/SDL2/SDL_misc.h:
 
-_deps/sdl2-build/include/SDL2/SDL_hidapi.h:
+/usr/share/cmake-3.28/Modules/CheckLibraryExists.cmake:
 
-_deps/sdl2-build/include/SDL2/SDL_thread.h:
+_deps/sdl2-build/include/SDL2/SDL_test_harness.h:
 
-_deps/sdl2-src/sdl2.pc.in:
+_deps/sdl2-src/src/test/SDL_test_imageBlitBlend.c:
 
-/usr/include/x86_64-linux-gnu/gnu/stubs-64.h:
+/usr/lib/gcc/x86_64-linux-gnu/13/include/avx2intrin.h:
 
-_deps/sdl2-build/include/SDL2/SDL_version.h:
+_deps/sdl2-build/include/SDL2/SDL_rect.h:
 
-/usr/lib/gcc/x86_64-linux-gnu/13/include/mwaitintrin.h:
+/usr/include/x86_64-linux-gnu/bits/byteswap.h:
 
-/usr/lib/gcc/x86_64-linux-gnu/13/include/f16cintrin.h:
+_deps/sdl2-build/include/SDL2/close_code.h:
 
-_deps/sdl2-build/include/SDL2/SDL_joystick.h:
+_deps/sdl2-build/include/SDL2/SDL_test_random.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/13/include/mmintrin.h:
+
+_deps/sdl2-build/include/SDL2/SDL_platform.h:
+
+/usr/include/x86_64-linux-gnu/bits/types/wint_t.h:
+
+/usr/share/cmake-3.28/Modules/CheckSymbolExists.cmake:
+
+_deps/sdl2-build/include/SDL2/SDL_test_md5.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/13/include/amxbf16intrin.h:
+
+/usr/include/linux/limits.h:
+
+/usr/share/cmake-3.28/Modules/CheckStructHasMember.cmake:
 
 /usr/lib/gcc/x86_64-linux-gnu/13/include/xsaveoptintrin.h:
 
@@ -4318,103 +3965,187 @@ _deps/sdl2-build/include/SDL2/SDL_joystick.h:
 
 _deps/sdl2-build/include/SDL2/SDL_keycode.h:
 
+_deps/sdl2-src/src/test/SDL_test_log.c:
+
+/usr/include/x86_64-linux-gnu/bits/types/clockid_t.h:
+
+_deps/sdl2-src/src/test/SDL_test_memory.c:
+
+/usr/include/x86_64-linux-gnu/bits/types/locale_t.h:
+
+_deps/sdl2-build/include/SDL2/SDL_test.h:
+
+/usr/include/x86_64-linux-gnu/bits/atomic_wide_counter.h:
+
+_deps/sdl2-build/include/SDL2/SDL_audio.h:
+
+_deps/sdl2-build/include/SDL2/SDL_main.h:
+
+/usr/share/cmake-3.28/Modules/CheckCSourceCompiles.cmake:
+
+/usr/lib/gcc/x86_64-linux-gnu/13/include/ia32intrin.h:
+
+/usr/share/cmake-3.28/Modules/CMakeParseArguments.cmake:
+
+/usr/include/x86_64-linux-gnu/sys/types.h:
+
+_deps/sdl2-build/include/SDL2/SDL_version.h:
+
+/usr/include/x86_64-linux-gnu/gnu/stubs-64.h:
+
+_deps/sdl2-src/sdl2.pc.in:
+
+/usr/include/x86_64-linux-gnu/bits/long-double.h:
+
 /usr/include/x86_64-linux-gnu/bits/math-vector.h:
 
 _deps/sdl2-build/include/SDL2/SDL_locale.h:
 
-/usr/lib/gcc/x86_64-linux-gnu/13/include/avx512bf16intrin.h:
+/usr/lib/gcc/x86_64-linux-gnu/13/include/sgxintrin.h:
 
-_deps/sdl2-build/include/SDL2/SDL_log.h:
+_deps/sdl2-build/include/SDL2/SDL_atomic.h:
 
-/usr/lib/gcc/x86_64-linux-gnu/13/include/pconfigintrin.h:
+_deps/sdl2-build/include/SDL2/SDL_error.h:
 
-/usr/include/x86_64-linux-gnu/bits/fp-fast.h:
+_deps/sdl2-src/src/test/SDL_test_random.c:
 
-_deps/sdl2-build/include/SDL2/begin_code.h:
+_deps/sdl2-src/src/test/SDL_test_crc32.c:
 
-_deps/sdl2-build/include/SDL2/SDL_messagebox.h:
+/usr/lib/gcc/x86_64-linux-gnu/13/include/limits.h:
 
-_deps/sdl2-build/include/SDL2/SDL_sensor.h:
+/usr/lib/gcc/x86_64-linux-gnu/13/include/avx512pfintrin.h:
 
-_deps/sdl2-build/include/SDL2/SDL_metal.h:
+_deps/sdl2-build/SDL_config.h.intermediate:
 
-_deps/sdl2-src/src/test/SDL_test_fuzzer.c:
+/usr/bin/cmake:
 
-_deps/sdl2-build/include/SDL2/SDL_misc.h:
+/usr/share/cmake-3.28/Modules/CMakeLanguageInformation.cmake:
 
-/usr/lib/gcc/x86_64-linux-gnu/13/include/mmintrin.h:
+/usr/share/cmake-3.28/Modules/CheckIncludeFile.cmake:
 
-/usr/share/cmake-3.28/Modules/CMakeFindBinUtils.cmake:
+/usr/include/x86_64-linux-gnu/bits/pthreadtypes.h:
 
-_deps/sdl2-build/include/SDL2/SDL_platform.h:
+/usr/include/stdc-predef.h:
 
-_deps/sdl2-build/include/SDL2/SDL_quit.h:
+_deps/sdl2-src/src/test/SDL_test_imagePrimitivesBlend.c:
 
-_deps/sdl2-build/include/SDL2/SDL_rect.h:
+/usr/share/cmake-3.28/Modules/FindPkgConfig.cmake:
 
-/usr/share/cmake-3.28/Modules/Compiler/Embarcadero-DetermineCompiler.cmake:
+/usr/include/x86_64-linux-gnu/bits/endian.h:
+
+_deps/sdl2-src/cmake/CheckCPUArchitecture.cmake:
+
+_deps/sdl2-src/CMakeLists.txt:
+
+/usr/include/x86_64-linux-gnu/sys/cdefs.h:
+
+_deps/sdl2-build/include/SDL2/SDL_test_crc32.h:
+
+_deps/sdl2-src/cmake/sdlchecks.cmake:
+
+/usr/lib/gcc/x86_64-linux-gnu/13/include/hresetintrin.h:
+
+_deps/sdl2-src/include/SDL_revision.h.cmake:
+
+_deps/sdl2-src/src/test/SDL_test_assert.c:
+
+/usr/share/cmake-3.28/Modules/Compiler/GNU.cmake:
+
+/usr/include/x86_64-linux-gnu/bits/fp-logb.h:
+
+_deps/sdl2-src/src/test/SDL_test_font.c:
+
+/usr/lib/gcc/x86_64-linux-gnu/13/include/avxintrin.h:
+
+_deps/sdl2-src/src/test/SDL_test_common.c:
+
+/usr/share/cmake-3.28/Modules/FindGit.cmake:
+
+/usr/include/x86_64-linux-gnu/bits/thread-shared-types.h:
 
 _deps/sdl2-build/include/SDL2/SDL_render.h:
 
-/usr/include/x86_64-linux-gnu/bits/wordsize.h:
+_deps/sdl2-src/cmake_uninstall.cmake.in:
 
-_deps/sdl2-build/include/SDL2/SDL_rwops.h:
+_deps/sdl2-src/SDL2.spec.in:
 
-_deps/sdl2-build/include/SDL2/SDL_stdinc.h:
+_deps/sdl2-src/cmake/sdlfind.cmake:
 
-/usr/include/x86_64-linux-gnu/bits/atomic_wide_counter.h:
+/usr/share/cmake-3.28/Modules/CheckCCompilerFlag.cmake:
 
-_deps/sdl2-build/include/SDL2/SDL_test_assert.h:
+/usr/lib/gcc/x86_64-linux-gnu/13/include/fmaintrin.h:
 
-_deps/sdl2-build/include/SDL2/SDL_test_compare.h:
+/usr/share/cmake-3.28/Modules/GNUInstallDirs.cmake:
 
-_deps/sdl2-build/include/SDL2/SDL_test.h:
+/usr/share/cmake-3.28/Modules/CMakeDependentOption.cmake:
 
-/usr/include/x86_64-linux-gnu/bits/types/locale_t.h:
+_deps/sdl2-src/cmake/sdlplatform.cmake:
+
+/usr/share/cmake-3.28/Modules/FindPackageMessage.cmake:
+
+/usr/lib/gcc/x86_64-linux-gnu/13/include/prfchiintrin.h:
+
+_deps/sdl2-build/SDL2_test_autogen/mocs_compilation.cpp:
+
+/usr/lib/gcc/x86_64-linux-gnu/13/include/avx512vbmiintrin.h:
+
+/usr/share/cmake-3.28/Modules/CMakePushCheckState.cmake:
+
+_deps/sdl2-build/include/SDL2/SDL_video.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/13/include/avx512bitalgintrin.h:
 
 _deps/sdl2-build/include/SDL2/SDL_test_font.h:
 
 /usr/include/x86_64-linux-gnu/bits/floatn.h:
 
-/usr/lib/gcc/x86_64-linux-gnu/13/include/raointintrin.h:
+_deps/sdl2-src/src/test/SDL_test_md5.c:
 
-_deps/sdl2-build/include/SDL2/SDL_test_fuzzer.h:
+_deps/sdl2-build/include/SDL2/SDL_endian.h:
 
-_deps/sdl2-src/cmake/sdlchecks.cmake:
+/usr/share/cmake-3.28/Modules/CheckCXXCompilerFlag.cmake:
 
-_deps/sdl2-build/include/SDL2/SDL_test_crc32.h:
+_deps/sdl2-build/include/SDL2/SDL_metal.h:
 
-/usr/include/x86_64-linux-gnu/sys/cdefs.h:
+/usr/share/cmake-3.28/Modules/CheckSourceCompiles.cmake:
 
-_deps/sdl2-build/include/SDL2/SDL_test_memory.h:
+/usr/lib/gcc/x86_64-linux-gnu/13/include/amxfp16intrin.h:
 
-_deps/sdl2-build/include/SDL2/SDL_test_random.h:
+/usr/lib/gcc/x86_64-linux-gnu/13/include/emmintrin.h:
 
-_deps/sdl2-build/include/SDL2/SDL_touch.h:
+/usr/share/cmake-3.28/Modules/CheckCXXSourceCompiles.cmake:
 
-_deps/sdl2-build/include/SDL2/close_code.h:
+/usr/include/x86_64-linux-gnu/bits/types/__sigset_t.h:
 
-/usr/include/x86_64-linux-gnu/bits/byteswap.h:
+/usr/lib/gcc/x86_64-linux-gnu/13/include/cldemoteintrin.h:
 
-/usr/share/cmake-3.28/Modules/Compiler/HP-C-DetermineCompiler.cmake:
+/usr/share/cmake-3.28/Modules/FindALSA.cmake:
 
-_deps/sdl2-build/include/SDL2/SDL_video.h:
+/usr/lib/gcc/x86_64-linux-gnu/13/include/clflushoptintrin.h:
 
-/usr/lib/gcc/x86_64-linux-gnu/13/include/float.h:
+_deps/sdl2-build/include/SDL2/SDL_cpuinfo.h:
 
-/usr/include/ctype.h:
+/usr/include/x86_64-linux-gnu/bits/flt-eval-method.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/13/include/bmiintrin.h:
 
 _deps/sdl2-src/cmake/macros.cmake:
 
 /usr/include/features-time64.h:
 
+/usr/lib/gcc/x86_64-linux-gnu/13/include/vpclmulqdqintrin.h:
+
+/usr/include/features.h:
+
 /usr/include/x86_64-linux-gnu/bits/types/__FILE.h:
 
 /usr/include/math.h:
 
-/usr/lib/gcc/x86_64-linux-gnu/13/include/movdirintrin.h:
+/usr/include/endian.h:
 
-/usr/share/cmake-3.28/Modules/Compiler/PathScale-DetermineCompiler.cmake:
+/usr/include/stdint.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/13/include/movdirintrin.h:
 
 /usr/include/stdio.h:
 
@@ -4424,7 +4155,17 @@ _deps/sdl2-src/cmake/macros.cmake:
 
 /usr/include/x86_64-linux-gnu/bits/struct_rwlock.h:
 
+/usr/include/x86_64-linux-gnu/bits/endianness.h:
+
+/usr/include/x86_64-linux-gnu/bits/libc-header-start.h:
+
 /usr/include/x86_64-linux-gnu/bits/mathcalls-helper-functions.h:
+
+/usr/include/x86_64-linux-gnu/bits/mathcalls.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/13/include/adxintrin.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/13/include/bmi2intrin.h:
 
 /usr/include/x86_64-linux-gnu/bits/pthreadtypes-arch.h:
 
@@ -4432,11 +4173,13 @@ _deps/sdl2-src/cmake/macros.cmake:
 
 /usr/include/x86_64-linux-gnu/bits/select.h:
 
+/usr/lib/gcc/x86_64-linux-gnu/13/include/uintrintrin.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/13/include/avxvnniint8intrin.h:
+
 /usr/include/x86_64-linux-gnu/bits/stdint-intn.h:
 
-/usr/lib/gcc/x86_64-linux-gnu/13/include/avx512ifmavlintrin.h:
-
-/usr/include/x86_64-linux-gnu/bits/types.h:
+/usr/lib/gcc/x86_64-linux-gnu/13/include/fxsrintrin.h:
 
 /usr/include/x86_64-linux-gnu/bits/stdint-least.h:
 
@@ -4466,13 +4209,21 @@ CMakeFiles/3.28.3/CMakeCCompiler.cmake:
 
 /usr/include/x86_64-linux-gnu/bits/struct_mutex.h:
 
+/usr/lib/gcc/x86_64-linux-gnu/13/include/avx512vpopcntdqintrin.h:
+
 /usr/lib/gcc/x86_64-linux-gnu/13/include/shaintrin.h:
 
 /usr/include/x86_64-linux-gnu/bits/time64.h:
 
+/usr/lib/gcc/x86_64-linux-gnu/13/include/avx512erintrin.h:
+
 /usr/include/x86_64-linux-gnu/bits/timesize.h:
 
+/usr/lib/gcc/x86_64-linux-gnu/13/include/amxtileintrin.h:
+
 /usr/include/x86_64-linux-gnu/bits/types/__fpos64_t.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/13/include/avx512vnnivlintrin.h:
 
 /usr/include/x86_64-linux-gnu/bits/types/__locale_t.h:
 
@@ -4482,13 +4233,19 @@ CMakeFiles/3.28.3/CMakeCCompiler.cmake:
 
 /usr/include/x86_64-linux-gnu/bits/types/cookie_io_functions_t.h:
 
-/usr/share/cmake-3.28/Modules/Compiler/ARMClang-DetermineCompiler.cmake:
-
 /usr/include/x86_64-linux-gnu/bits/wchar.h:
+
+/usr/include/x86_64-linux-gnu/bits/types/sigset_t.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/13/include/avx512fp16intrin.h:
 
 /usr/include/x86_64-linux-gnu/bits/libm-simd-decl-stubs.h:
 
 /usr/include/x86_64-linux-gnu/bits/types/struct_FILE.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/13/include/avx5124fmapsintrin.h:
+
+/usr/include/x86_64-linux-gnu/bits/types/struct_timeval.h:
 
 /usr/include/x86_64-linux-gnu/bits/types/time_t.h:
 
@@ -4496,10 +4253,82 @@ CMakeFiles/3.28.3/CMakeCCompiler.cmake:
 
 /usr/include/x86_64-linux-gnu/bits/typesizes.h:
 
-/usr/lib/gcc/x86_64-linux-gnu/13/include/avx512bwintrin.h:
+/usr/lib/gcc/x86_64-linux-gnu/13/include/avxifmaintrin.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/13/include/avx5124vnniwintrin.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/13/include/waitpkgintrin.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/13/include/avx512bf16vlintrin.h:
+
+/usr/include/ctype.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/13/include/float.h:
 
 _deps/sdl2-src/src/test/SDL_test_compare.c:
 
-/usr/share/cmake-3.28/Modules/Compiler/NVIDIA-DetermineCompiler.cmake:
-
 /usr/include/x86_64-linux-gnu/bits/waitstatus.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/13/include/avx512bwintrin.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/13/include/avx512dqintrin.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/13/include/avx512ifmaintrin.h:
+
+/usr/include/x86_64-linux-gnu/bits/types.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/13/include/avx512ifmavlintrin.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/13/include/avx512vbmi2intrin.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/13/include/avx512vbmi2vlintrin.h:
+
+/usr/include/x86_64-linux-gnu/gnu/stubs.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/13/include/avx512vbmivlintrin.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/13/include/avx512vlbwintrin.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/13/include/cetintrin.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/13/include/avx512vlintrin.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/13/include/avx512vnniintrin.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/13/include/serializeintrin.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/13/include/avx512vp2intersectvlintrin.h:
+
+/usr/share/cmake-3.28/Modules/Internal/CheckSourceCompiles.cmake:
+
+/usr/lib/gcc/x86_64-linux-gnu/13/include/avx512vpopcntdqvlintrin.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/13/include/avxvnniintrin.h:
+
+/usr/share/cmake-3.28/Modules/CMakeCInformation.cmake:
+
+/usr/lib/gcc/x86_64-linux-gnu/13/include/clwbintrin.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/13/include/clzerointrin.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/13/include/cmpccxaddintrin.h:
+
+/usr/include/wchar.h:
+
+_deps/sdl2-build/include/SDL2/SDL_hints.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/13/include/enqcmdintrin.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/13/include/mwaitintrin.h:
+
+_deps/sdl2-build/include/SDL2/SDL_joystick.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/13/include/f16cintrin.h:
+
+_deps/sdl2-build/include/SDL2/SDL_loadso.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/13/include/gfniintrin.h:
+
+/usr/share/cmake-3.28/Modules/FindPackageHandleStandardArgs.cmake:
+
+/usr/lib/gcc/x86_64-linux-gnu/13/include/immintrin.h:

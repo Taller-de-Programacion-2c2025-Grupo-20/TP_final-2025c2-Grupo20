@@ -326,26 +326,12 @@ _deps/sdl2-build/SDL2-static_autogen/timestamp: CMakeFiles/3.28.3/CMakeCCompiler
   _deps/sdl2-src/src/video/yuv2rgb/yuv_rgb_std.c \
   _deps/sdl2-src/src/video/yuv2rgb/yuv_rgb_std.h \
   /usr/bin/cmake \
-  /usr/share/cmake-3.28/Modules/CMakeCCompiler.cmake.in \
-  /usr/share/cmake-3.28/Modules/CMakeCCompilerABI.c \
   /usr/share/cmake-3.28/Modules/CMakeCInformation.cmake \
   /usr/share/cmake-3.28/Modules/CMakeCommonLanguageInclude.cmake \
-  /usr/share/cmake-3.28/Modules/CMakeCompilerIdDetection.cmake \
   /usr/share/cmake-3.28/Modules/CMakeDependentOption.cmake \
-  /usr/share/cmake-3.28/Modules/CMakeDetermineCCompiler.cmake \
-  /usr/share/cmake-3.28/Modules/CMakeDetermineCompileFeatures.cmake \
-  /usr/share/cmake-3.28/Modules/CMakeDetermineCompiler.cmake \
-  /usr/share/cmake-3.28/Modules/CMakeDetermineCompilerABI.cmake \
-  /usr/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake \
-  /usr/share/cmake-3.28/Modules/CMakeFindBinUtils.cmake \
   /usr/share/cmake-3.28/Modules/CMakeLanguageInformation.cmake \
   /usr/share/cmake-3.28/Modules/CMakeParseArguments.cmake \
-  /usr/share/cmake-3.28/Modules/CMakeParseImplicitIncludeInfo.cmake \
-  /usr/share/cmake-3.28/Modules/CMakeParseImplicitLinkInfo.cmake \
-  /usr/share/cmake-3.28/Modules/CMakeParseLibraryArchitecture.cmake \
   /usr/share/cmake-3.28/Modules/CMakePushCheckState.cmake \
-  /usr/share/cmake-3.28/Modules/CMakeTestCCompiler.cmake \
-  /usr/share/cmake-3.28/Modules/CMakeTestCompilerCommon.cmake \
   /usr/share/cmake-3.28/Modules/CheckCCompilerFlag.cmake \
   /usr/share/cmake-3.28/Modules/CheckCSourceCompiles.cmake \
   /usr/share/cmake-3.28/Modules/CheckCSourceRuns.cmake \
@@ -358,50 +344,8 @@ _deps/sdl2-build/SDL2-static_autogen/timestamp: CMakeFiles/3.28.3/CMakeCCompiler
   /usr/share/cmake-3.28/Modules/CheckSourceCompiles.cmake \
   /usr/share/cmake-3.28/Modules/CheckStructHasMember.cmake \
   /usr/share/cmake-3.28/Modules/CheckSymbolExists.cmake \
-  /usr/share/cmake-3.28/Modules/Compiler/ADSP-DetermineCompiler.cmake \
-  /usr/share/cmake-3.28/Modules/Compiler/ARMCC-DetermineCompiler.cmake \
-  /usr/share/cmake-3.28/Modules/Compiler/ARMClang-DetermineCompiler.cmake \
-  /usr/share/cmake-3.28/Modules/Compiler/AppleClang-DetermineCompiler.cmake \
-  /usr/share/cmake-3.28/Modules/Compiler/Borland-DetermineCompiler.cmake \
-  /usr/share/cmake-3.28/Modules/Compiler/Bruce-C-DetermineCompiler.cmake \
-  /usr/share/cmake-3.28/Modules/Compiler/Clang-DetermineCompiler.cmake \
-  /usr/share/cmake-3.28/Modules/Compiler/Clang-DetermineCompilerInternal.cmake \
-  /usr/share/cmake-3.28/Modules/Compiler/Compaq-C-DetermineCompiler.cmake \
-  /usr/share/cmake-3.28/Modules/Compiler/Cray-DetermineCompiler.cmake \
-  /usr/share/cmake-3.28/Modules/Compiler/CrayClang-DetermineCompiler.cmake \
-  /usr/share/cmake-3.28/Modules/Compiler/Embarcadero-DetermineCompiler.cmake \
-  /usr/share/cmake-3.28/Modules/Compiler/Fujitsu-DetermineCompiler.cmake \
-  /usr/share/cmake-3.28/Modules/Compiler/FujitsuClang-DetermineCompiler.cmake \
-  /usr/share/cmake-3.28/Modules/Compiler/GHS-DetermineCompiler.cmake \
-  /usr/share/cmake-3.28/Modules/Compiler/GNU-C-DetermineCompiler.cmake \
   /usr/share/cmake-3.28/Modules/Compiler/GNU-C.cmake \
-  /usr/share/cmake-3.28/Modules/Compiler/GNU-FindBinUtils.cmake \
   /usr/share/cmake-3.28/Modules/Compiler/GNU.cmake \
-  /usr/share/cmake-3.28/Modules/Compiler/HP-C-DetermineCompiler.cmake \
-  /usr/share/cmake-3.28/Modules/Compiler/IAR-DetermineCompiler.cmake \
-  /usr/share/cmake-3.28/Modules/Compiler/IBMCPP-C-DetermineVersionInternal.cmake \
-  /usr/share/cmake-3.28/Modules/Compiler/IBMClang-C-DetermineCompiler.cmake \
-  /usr/share/cmake-3.28/Modules/Compiler/Intel-DetermineCompiler.cmake \
-  /usr/share/cmake-3.28/Modules/Compiler/IntelLLVM-DetermineCompiler.cmake \
-  /usr/share/cmake-3.28/Modules/Compiler/LCC-C-DetermineCompiler.cmake \
-  /usr/share/cmake-3.28/Modules/Compiler/MSVC-DetermineCompiler.cmake \
-  /usr/share/cmake-3.28/Modules/Compiler/NVHPC-DetermineCompiler.cmake \
-  /usr/share/cmake-3.28/Modules/Compiler/NVIDIA-DetermineCompiler.cmake \
-  /usr/share/cmake-3.28/Modules/Compiler/OpenWatcom-DetermineCompiler.cmake \
-  /usr/share/cmake-3.28/Modules/Compiler/OrangeC-DetermineCompiler.cmake \
-  /usr/share/cmake-3.28/Modules/Compiler/PGI-DetermineCompiler.cmake \
-  /usr/share/cmake-3.28/Modules/Compiler/PathScale-DetermineCompiler.cmake \
-  /usr/share/cmake-3.28/Modules/Compiler/SCO-DetermineCompiler.cmake \
-  /usr/share/cmake-3.28/Modules/Compiler/SDCC-C-DetermineCompiler.cmake \
-  /usr/share/cmake-3.28/Modules/Compiler/SunPro-C-DetermineCompiler.cmake \
-  /usr/share/cmake-3.28/Modules/Compiler/TI-DetermineCompiler.cmake \
-  /usr/share/cmake-3.28/Modules/Compiler/Tasking-DetermineCompiler.cmake \
-  /usr/share/cmake-3.28/Modules/Compiler/TinyCC-C-DetermineCompiler.cmake \
-  /usr/share/cmake-3.28/Modules/Compiler/VisualAge-C-DetermineCompiler.cmake \
-  /usr/share/cmake-3.28/Modules/Compiler/Watcom-DetermineCompiler.cmake \
-  /usr/share/cmake-3.28/Modules/Compiler/XL-C-DetermineCompiler.cmake \
-  /usr/share/cmake-3.28/Modules/Compiler/XLClang-C-DetermineCompiler.cmake \
-  /usr/share/cmake-3.28/Modules/Compiler/zOS-C-DetermineCompiler.cmake \
   /usr/share/cmake-3.28/Modules/FindALSA.cmake \
   /usr/share/cmake-3.28/Modules/FindGit.cmake \
   /usr/share/cmake-3.28/Modules/FindPackageHandleStandardArgs.cmake \
@@ -411,7 +355,6 @@ _deps/sdl2-build/SDL2-static_autogen/timestamp: CMakeFiles/3.28.3/CMakeCCompiler
   /usr/share/cmake-3.28/Modules/Internal/CheckCompilerFlag.cmake \
   /usr/share/cmake-3.28/Modules/Internal/CheckSourceCompiles.cmake \
   /usr/share/cmake-3.28/Modules/Internal/CheckSourceRuns.cmake \
-  /usr/share/cmake-3.28/Modules/Internal/FeatureTesting.cmake \
   /usr/share/cmake-3.28/Modules/Platform/Linux-GNU-C.cmake \
   /usr/share/cmake-3.28/Modules/Platform/Linux-GNU.cmake
 
@@ -39839,6 +39782,8 @@ _deps/sdl2-build/wayland-generated-protocols/xdg-shell-protocol.c:
 
 _deps/sdl2-build/wayland-generated-protocols/relative-pointer-unstable-v1-protocol.c:
 
+_deps/sdl2-build/wayland-generated-protocols/primary-selection-unstable-v1-protocol.c:
+
 _deps/sdl2-build/wayland-generated-protocols/fractional-scale-v1-protocol.c:
 
 _deps/sdl2-src/src/video/yuv2rgb/yuv_rgb_std_func.h:
@@ -40003,6 +39948,8 @@ _deps/sdl2-src/src/events/scancodes_ascii.h:
 
 /usr/include/ibus-1.0/ibuskeysyms.h:
 
+/usr/include/ibus-1.0/ibuskeymap.h:
+
 /usr/include/ibus-1.0/ibuserror.h:
 
 /usr/include/ibus-1.0/ibusenginesimple.h:
@@ -40010,6 +39957,8 @@ _deps/sdl2-src/src/events/scancodes_ascii.h:
 /usr/include/ibus-1.0/ibusenginedesc.h:
 
 /usr/include/ibus-1.0/ibusdebug.h:
+
+/usr/include/ibus-1.0/ibusconfig.h:
 
 _deps/sdl2-build/wayland-generated-protocols/keyboard-shortcuts-inhibit-unstable-v1-protocol.c:
 
@@ -40024,6 +39973,8 @@ _deps/sdl2-build/wayland-generated-protocols/keyboard-shortcuts-inhibit-unstable
 /usr/include/glib-2.0/gobject/gtypemodule.h:
 
 /usr/include/glib-2.0/gobject/gparamspecs.h:
+
+/usr/include/glib-2.0/gobject/gobject.h:
 
 /usr/include/glib-2.0/gobject/gobject-autocleanups.h:
 
@@ -40207,89 +40158,75 @@ _deps/sdl2-src/src/joystick/usb_ids.h:
 
 /usr/include/glib-2.0/gio/gsimpleiostream.h:
 
-/usr/lib/x86_64-linux-gnu/glib-2.0/include/glibconfig.h:
+/usr/include/glib-2.0/glib/gtestutils.h:
 
-/usr/include/glib-2.0/gio/gsimpleactiongroup.h:
+/usr/include/alsa/hwdep.h:
 
-/usr/include/GLES/gl.h:
+/usr/include/x86_64-linux-gnu/bits/signal_ext.h:
 
-/usr/include/glib-2.0/gio/gsimpleaction.h:
+/usr/include/x86_64-linux-gnu/bits/time64.h:
 
-/usr/include/glib-2.0/gio/gsettingsschema.h:
+/usr/include/x86_64-linux-gnu/bits/struct_mutex.h:
 
-/usr/include/glib-2.0/gio/gsettings.h:
+/usr/include/x86_64-linux-gnu/bits/statx-generic.h:
 
-/usr/include/glib-2.0/gio/gseekable.h:
+_deps/sdl2-build/wayland-generated-protocols/xdg-output-unstable-v1-protocol.c:
 
-/usr/include/glib-2.0/gio/gresource.h:
+_deps/sdl2-src/src/joystick/controller_list.h:
+
+/usr/include/spa-0.2/spa/param/audio/wma.h:
+
+/usr/include/glib-2.0/glib/deprecated/gcache.h:
+
+/usr/include/x86_64-linux-gnu/bits/select.h:
+
+/usr/include/x86_64-linux-gnu/bits/pthread_stack_min-dynamic.h:
+
+/usr/include/x86_64-linux-gnu/bits/mathcalls.h:
+
+/usr/include/x86_64-linux-gnu/bits/endian.h:
+
+/usr/include/x86_64-linux-gnu/bits/mathcalls-narrow.h:
+
+/usr/include/x86_64-linux-gnu/bits/flt-eval-method.h:
+
+/usr/include/x86_64-linux-gnu/bits/timex.h:
+
+/usr/include/x86_64-linux-gnu/bits/endianness.h:
+
+_deps/sdl2-src/src/video/SDL_blit_A.c:
+
+/usr/include/spa-0.2/spa/utils/json.h:
+
+/usr/include/x86_64-linux-gnu/sys/ipc.h:
+
+/usr/include/x86_64-linux-gnu/bits/cpu-set.h:
+
+/usr/include/linux/version.h:
+
+/usr/include/spa-0.2/spa/param/param.h:
+
+/usr/include/wayland-version.h:
+
+/usr/include/wayland-egl-core.h:
+
+/usr/include/x86_64-linux-gnu/bits/confname.h:
+
+_deps/sdl2-src/src/render/SDL_d3dmath.c:
+
+/usr/include/X11/Xdefs.h:
 
 /usr/include/glib-2.0/gio/gresolver.h:
 
-/usr/include/glib-2.0/gio/gproxyresolver.h:
+/usr/include/unistd.h:
 
-/usr/include/glib-2.0/gio/gproxyaddressenumerator.h:
+_deps/sdl2-src/src/atomic/SDL_atomic.c:
 
-/usr/include/glib-2.0/gio/gproxyaddress.h:
+/usr/include/stdio.h:
 
-/usr/include/glib-2.0/gio/gproxy.h:
+/usr/include/wayland-client-protocol.h:
 
-/usr/include/glib-2.0/gio/gpropertyaction.h:
-
-/usr/include/glib-2.0/gio/gpollableoutputstream.h:
-
-/usr/include/glib-2.0/gio/goutputstream.h:
-
-/usr/include/glib-2.0/gio/gnotification.h:
-
-/usr/include/glib-2.0/gio/gnetworkmonitor.h:
-
-/usr/include/glib-2.0/gio/gnetworkaddress.h:
-
-/usr/include/glib-2.0/gio/gnativevolumemonitor.h:
-
-/usr/include/glib-2.0/gio/gnativesocketaddress.h:
-
-/usr/include/glib-2.0/gio/gmenuexporter.h:
-
-/usr/include/glib-2.0/gio/gmemoryoutputstream.h:
-
-/usr/include/glib-2.0/gio/gmemorymonitor.h:
-
-_deps/sdl2-build/wayland-generated-protocols/wayland-protocol.c:
-
-/usr/include/glib-2.0/gio/gmemoryinputstream.h:
-
-/usr/include/glib-2.0/gio/gloadableicon.h:
-
-/usr/include/glib-2.0/gio/giomodule.h:
-
-/usr/include/glib-2.0/glib/ghmac.h:
-
-/usr/include/glib-2.0/gio/gioenumtypes.h:
-
-/usr/include/glib-2.0/gio/gio.h:
-
-/usr/include/glib-2.0/gio/gmenumodel.h:
-
-/usr/include/glib-2.0/gio/gio-visibility.h:
-
-_deps/sdl2-src/src/video/offscreen/SDL_offscreenframebuffer_c.h:
-
-/usr/include/glib-2.0/gio/ginitable.h:
-
-/usr/include/glib-2.0/gio/gicon.h:
-
-/usr/include/glib-2.0/gio/gfilteroutputstream.h:
-
-/usr/include/glib-2.0/gio/gfilterinputstream.h:
-
-/usr/include/glib-2.0/gio/gfileoutputstream.h:
-
-/usr/include/glib-2.0/gio/gfilenamecompleter.h:
-
-/usr/include/glib-2.0/gio/ginetaddress.h:
-
-/usr/include/linux/close_range.h:
+/usr/include/X11/Xcursor/Xcursor.h:
 
 _deps/sdl2-src/src/render/software/SDL_blendpoint.c:
 
@@ -40302,6 +40239,12 @@ _deps/sdl2-src/src/render/software/SDL_blendpoint.c:
 /usr/include/GLES/glext.h:
 
 /usr/include/dbus-1.0/dbus/dbus-types.h:
+
+/usr/include/ibus-1.0/ibusproxy.h:
+
+/usr/include/x86_64-linux-gnu/bits/stdint-intn.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/13/include/pmmintrin.h:
 
 /usr/include/dbus-1.0/dbus/dbus-threads.h:
 
@@ -40323,6 +40266,12 @@ _deps/sdl2-src/src/render/software/SDL_blendpoint.c:
 
 /usr/include/dbus-1.0/dbus/dbus-memory.h:
 
+_deps/sdl2-src/src/audio/SDL_wave.c:
+
+/usr/include/x86_64-linux-gnu/bits/iscanonical.h:
+
+_deps/sdl2-src/src/render/vitagxm/SDL_render_vita_gxm_tools.h:
+
 /usr/include/linux/param.h:
 
 /usr/include/ctype.h:
@@ -40335,11 +40284,17 @@ _deps/sdl2-src/src/SDL_utils.c:
 
 _deps/sdl2-src/src/events/SDL_keyboard_c.h:
 
+_deps/sdl2-src/src/video/khronos/vk_video/vulkan_video_codec_h265std.h:
+
 _deps/sdl2-src/src/hidapi/linux/hid.c:
 
 _deps/sdl2-src/src/sensor/SDL_sensor_c.h:
 
 _deps/sdl2-src/src/joystick/hidapi/SDL_hidapi_ps4.c:
+
+/usr/include/glib-2.0/gio/gio-visibility.h:
+
+/usr/include/glib-2.0/gio/gmenumodel.h:
 
 _deps/sdl2-src/src/events/SDL_windowevents_c.h:
 
@@ -40350,6 +40305,8 @@ _deps/sdl2-src/src/events/SDL_mouse_c.h:
 /usr/share/cmake-3.28/Modules/Platform/Linux-GNU-C.cmake:
 
 _deps/sdl2-src/src/events/SDL_dropevents_c.h:
+
+_deps/sdl2-src/src/video/wayland/SDL_waylandsym.h:
 
 _deps/sdl2-src/src/video/SDL_vulkan_internal.h:
 
@@ -40369,11 +40326,9 @@ _deps/sdl2-src/src/video/khronos/vulkan/vk_platform.h:
 
 /usr/include/alsa/seqmid.h:
 
-_deps/sdl2-src/src/video/khronos/vk_video/vulkan_video_codec_h265std.h:
+/usr/include/glib-2.0/gio/gio.h:
 
-/usr/include/glib-2.0/gio/gioenums.h:
-
-_deps/sdl2-src/src/thread/pthread/SDL_systhread_c.h:
+_deps/sdl2-src/src/thread/pthread/SDL_syscond.c:
 
 /usr/include/glib-2.0/glib/gstrvbuilder.h:
 
@@ -40385,13 +40340,11 @@ _deps/sdl2-src/src/joystick/SDL_steam_virtual_gamepad.c:
 
 _deps/sdl2-src/src/SDL_log_c.h:
 
-/usr/include/glib-2.0/gio/ginputstream.h:
-
-_deps/sdl2-src/src/SDL_assert_c.h:
-
 _deps/sdl2-build/include/SDL2/SDL_vulkan.h:
 
 _deps/sdl2-build/include/SDL2/SDL_thread.h:
+
+_deps/sdl2-build/include/SDL2/SDL_shape.h:
 
 _deps/sdl2-build/include/SDL2/SDL_sensor.h:
 
@@ -40401,12 +40354,6 @@ _deps/sdl2-build/include/SDL2/SDL_power.h:
 
 _deps/sdl2-build/include/SDL2/SDL_mouse.h:
 
-/usr/include/ibus-1.0/ibusproxy.h:
-
-/usr/include/x86_64-linux-gnu/bits/stdint-intn.h:
-
-/usr/lib/gcc/x86_64-linux-gnu/13/include/pmmintrin.h:
-
 /usr/include/glib-2.0/gio/gappinfo.h:
 
 _deps/sdl2-build/wayland-generated-protocols/idle-inhibit-unstable-v1-client-protocol.h:
@@ -40415,11 +40362,23 @@ _deps/sdl2-build/include/SDL2/SDL_main.h:
 
 _deps/sdl2-build/include/SDL2/SDL_keyboard.h:
 
+_deps/sdl2-build/include/SDL2/SDL_pixels.h:
+
+_deps/sdl2-build/include/SDL2/SDL_hidapi.h:
+
+_deps/sdl2-build/include/SDL2/SDL_haptic.h:
+
+_deps/sdl2-build/include/SDL2/SDL_guid.h:
+
 _deps/sdl2-build/include/SDL2/SDL_gamecontroller.h:
 
 _deps/sdl2-src/cmake/sdlplatform.cmake:
 
 /usr/lib/gcc/x86_64-linux-gnu/13/include/wmmintrin.h:
+
+/usr/include/pulse/proplist.h:
+
+_deps/sdl2-build/include/SDL2/SDL_clipboard.h:
 
 _deps/sdl2-build/include/SDL2/SDL_loadso.h:
 
@@ -40433,15 +40392,11 @@ _deps/sdl2-build/include/SDL2/SDL_bits.h:
 
 _deps/sdl2-build/include/SDL2/SDL_atomic.h:
 
-/usr/share/cmake-3.28/Modules/Compiler/OrangeC-DetermineCompiler.cmake:
-
 _deps/sdl2-src/src/events/scancodes_xfree86.h:
 
 _deps/sdl2-src/src/thread/SDL_thread_c.h:
 
 _deps/sdl2-build/include/SDL2/SDL_assert.h:
-
-/usr/share/cmake-3.28/Modules/CMakeParseImplicitLinkInfo.cmake:
 
 /usr/include/stdc-predef.h:
 
@@ -40457,6 +40412,10 @@ _deps/sdl2-src/src/video/offscreen/SDL_offscreenwindow.c:
 
 /usr/share/cmake-3.28/Modules/CheckSourceCompiles.cmake:
 
+/usr/include/x86_64-linux-gnu/bits/types/FILE.h:
+
+/usr/include/glib-2.0/gio/gconverteroutputstream.h:
+
 /usr/share/cmake-3.28/Modules/Internal/CheckCompilerFlag.cmake:
 
 /usr/share/cmake-3.28/Modules/GNUInstallDirs.cmake:
@@ -40471,91 +40430,7 @@ _deps/sdl2-src/src/events/SDL_gesture_c.h:
 
 /usr/share/cmake-3.28/Modules/FindALSA.cmake:
 
-_deps/sdl2-src/src/video/wayland/SDL_waylandsym.h:
-
-/usr/share/cmake-3.28/Modules/Compiler/VisualAge-C-DetermineCompiler.cmake:
-
-/usr/lib/gcc/x86_64-linux-gnu/13/include/xsavesintrin.h:
-
-_deps/sdl2-build/include/SDL2/SDL_hidapi.h:
-
-_deps/sdl2-build/include/SDL2/SDL_pixels.h:
-
-/usr/include/wayland-egl-core.h:
-
-/usr/include/ibus-1.0/ibusconfig.h:
-
-/usr/share/cmake-3.28/Modules/Compiler/Tasking-DetermineCompiler.cmake:
-
-/usr/include/stdio.h:
-
-/usr/share/cmake-3.28/Modules/FindGit.cmake:
-
-/usr/share/cmake-3.28/Modules/Compiler/PGI-DetermineCompiler.cmake:
-
-/usr/share/cmake-3.28/Modules/Compiler/SDCC-C-DetermineCompiler.cmake:
-
-/usr/share/cmake-3.28/Modules/Compiler/NVHPC-DetermineCompiler.cmake:
-
-_deps/sdl2-src/src/video/x11/SDL_x11keyboard.h:
-
-/usr/include/spa-0.2/spa/pod/vararg.h:
-
-/usr/include/glib-2.0/gobject/gobject.h:
-
-/usr/share/cmake-3.28/Modules/Compiler/MSVC-DetermineCompiler.cmake:
-
-/usr/share/cmake-3.28/Modules/Compiler/LCC-C-DetermineCompiler.cmake:
-
-_deps/sdl2-build/wayland-generated-protocols/idle-inhibit-unstable-v1-protocol.c:
-
-_deps/sdl2-src/src/core/linux/SDL_fcitx.h:
-
-/usr/share/cmake-3.28/Modules/Compiler/IntelLLVM-DetermineCompiler.cmake:
-
-_deps/sdl2-build/include/SDL2/SDL_shape.h:
-
-/usr/share/cmake-3.28/Modules/Compiler/IBMClang-C-DetermineCompiler.cmake:
-
-/usr/include/glib-2.0/gio/gdbusmenumodel.h:
-
-/usr/include/glib-2.0/gio/gdbusnameowning.h:
-
-/usr/share/cmake-3.28/Modules/Compiler/GNU-FindBinUtils.cmake:
-
-_deps/sdl2-build/include/SDL2/SDL_guid.h:
-
-/usr/share/cmake-3.28/Modules/Compiler/GNU-C-DetermineCompiler.cmake:
-
-_deps/sdl2-build/wayland-generated-protocols/primary-selection-unstable-v1-protocol.c:
-
-/usr/share/cmake-3.28/Modules/Compiler/Fujitsu-DetermineCompiler.cmake:
-
-/usr/include/spa-0.2/spa/param/audio/vorbis.h:
-
-/usr/include/x86_64-linux-gnu/bits/math-vector.h:
-
-/usr/lib/gcc/x86_64-linux-gnu/13/include/waitpkgintrin.h:
-
-/usr/share/cmake-3.28/Modules/Compiler/Compaq-C-DetermineCompiler.cmake:
-
-/usr/share/cmake-3.28/Modules/Compiler/GHS-DetermineCompiler.cmake:
-
-/usr/share/cmake-3.28/Modules/Compiler/AppleClang-DetermineCompiler.cmake:
-
-/usr/include/pulse/proplist.h:
-
-_deps/sdl2-build/include/SDL2/SDL_clipboard.h:
-
-/usr/share/cmake-3.28/Modules/Compiler/ADSP-DetermineCompiler.cmake:
-
-_deps/sdl2-src/src/audio/dsp/SDL_dspaudio.c:
-
-/usr/include/X11/extensions/Xext.h:
-
 /usr/share/cmake-3.28/Modules/CheckSymbolExists.cmake:
-
-/usr/share/cmake-3.28/Modules/Compiler/IBMCPP-C-DetermineVersionInternal.cmake:
 
 _deps/sdl2-src/src/hidapi/SDL_hidapi.c:
 
@@ -40567,10 +40442,6 @@ _deps/sdl2-src/src/hidapi/SDL_hidapi.c:
 
 _deps/sdl2-src/src/events/SDL_clipboardevents_c.h:
 
-/usr/include/glib-2.0/gio/gpermission.h:
-
-/usr/include/spa-0.2/spa/param/format-utils.h:
-
 /usr/share/cmake-3.28/Modules/CheckCSourceRuns.cmake:
 
 /usr/include/spa-0.2/spa/param/port-config.h:
@@ -40579,59 +40450,25 @@ _deps/sdl2-src/src/events/SDL_clipboardevents_c.h:
 
 /usr/share/cmake-3.28/Modules/CheckStructHasMember.cmake:
 
-/usr/share/cmake-3.28/Modules/CMakeTestCompilerCommon.cmake:
-
-_deps/sdl2-src/src/video/x11/SDL_x11modes.h:
-
 /usr/share/cmake-3.28/Modules/CMakeParseArguments.cmake:
 
 /usr/lib/gcc/x86_64-linux-gnu/13/include/avx512vbmiintrin.h:
 
-/usr/include/glib-2.0/gio/gpollableinputstream.h:
+/usr/include/glib-2.0/gio/gsubprocess.h:
 
-/usr/include/glib-2.0/gio/gdbusmessage.h:
+/usr/include/x86_64-linux-gnu/bits/sched.h:
 
-/usr/include/ibus-1.0/ibuskeymap.h:
+/usr/include/x86_64-linux-gnu/bits/statx.h:
 
-/usr/share/cmake-3.28/Modules/CMakeFindBinUtils.cmake:
-
-/usr/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake:
-
-_deps/sdl2-build/SDL_config.h.intermediate:
-
-_deps/sdl2-src/src/video/x11/SDL_x11vulkan.h:
-
-/usr/include/glib-2.0/gio/gioerror.h:
-
-/usr/include/x86_64-linux-gnu/sys/types.h:
-
-_deps/sdl2-build/include/SDL2/SDL_haptic.h:
-
-/usr/include/glib-2.0/gio/glistmodel.h:
-
-_deps/sdl2-src/src/timer/SDL_timer.c:
-
-/usr/share/cmake-3.28/Modules/CMakeDetermineCompilerABI.cmake:
-
-/usr/include/ibus-1.0/ibuskeysyms-compat.h:
-
-/usr/lib/gcc/x86_64-linux-gnu/13/include/avx512vlintrin.h:
-
-/usr/include/linux/types.h:
-
-_deps/sdl2-src/src/audio/SDL_wave.c:
-
-/usr/share/cmake-3.28/Modules/CMakeDetermineCompiler.cmake:
-
-/usr/share/cmake-3.28/Modules/CMakeDetermineCompileFeatures.cmake:
-
-/usr/lib/gcc/x86_64-linux-gnu/13/include/stdarg.h:
+_deps/sdl2-src/src/SDL_dataqueue.c:
 
 /usr/share/cmake-3.28/Modules/CMakeCommonLanguageInclude.cmake:
 
 _deps/sdl2-src/src/render/opengles2/SDL_render_gles2.c:
 
 /usr/include/dbus-1.0/dbus/dbus-signature.h:
+
+/usr/include/glib-2.0/gio/gsettingsschema.h:
 
 _deps/sdl2-src/src/video/yuv2rgb/yuv_rgb_sse.c:
 
@@ -40677,9 +40514,11 @@ _deps/sdl2-src/src/video/x11/SDL_x11video.h:
 
 _deps/sdl2-src/src/video/x11/SDL_x11touch.h:
 
-_deps/sdl2-src/src/video/x11/SDL_x11touch.c:
+/usr/include/glib-2.0/gio/gdbusmessage.h:
 
-/usr/share/cmake-3.28/Modules/Compiler/TinyCC-C-DetermineCompiler.cmake:
+/usr/include/glib-2.0/gio/gpollableinputstream.h:
+
+_deps/sdl2-src/src/video/x11/SDL_x11touch.c:
 
 _deps/sdl2-src/src/video/x11/SDL_x11shape.c:
 
@@ -40697,6 +40536,8 @@ _deps/sdl2-src/src/video/x11/SDL_x11opengles.c:
 
 /usr/include/stdlib.h:
 
+/usr/include/glib-2.0/gio/gnativevolumemonitor.h:
+
 _deps/sdl2-src/src/video/x11/SDL_x11opengl.h:
 
 /usr/include/glib-2.0/gio/gdbusactiongroup.h:
@@ -40707,11 +40548,9 @@ _deps/sdl2-src/src/video/x11/SDL_x11mouse.c:
 
 _deps/sdl2-src/src/core/linux/SDL_ime.c:
 
-_deps/sdl2-build/include/SDL2/SDL_scancode.h:
+_deps/sdl2-src/src/video/x11/SDL_x11modes.h:
 
-_deps/sdl2-src/src/SDL_dataqueue.h:
-
-/usr/include/x86_64-linux-gnu/asm/bitsperlong.h:
+/usr/share/cmake-3.28/Modules/FindGit.cmake:
 
 /usr/include/ibus-1.0/ibusfactory.h:
 
@@ -40737,6 +40576,10 @@ _deps/sdl2-src/src/video/x11/SDL_x11keyboard.c:
 
 _deps/sdl2-src/src/video/x11/SDL_x11framebuffer.h:
 
+/usr/include/glib-2.0/gio/gasyncresult.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/13/include/wbnoinvdintrin.h:
+
 /usr/include/X11/XlibConf.h:
 
 _deps/sdl2-src/src/video/x11/SDL_x11framebuffer.c:
@@ -40752,6 +40595,10 @@ _deps/sdl2-src/src/video/x11/SDL_x11events.h:
 _deps/sdl2-src/src/video/x11/SDL_x11events.c:
 
 _deps/sdl2-src/src/SDL_assert.c:
+
+/usr/include/x86_64-linux-gnu/bits/getopt_core.h:
+
+_deps/sdl2-src/src/video/SDL_blit_copy.h:
 
 _deps/sdl2-build/include/SDL2/SDL_audio.h:
 
@@ -40775,6 +40622,8 @@ _deps/sdl2-src/src/render/direct3d12/SDL_shaders_d3d12.c:
 
 _deps/sdl2-src/src/video/wayland/SDL_waylandopengles.c:
 
+/usr/include/glib-2.0/gio/gresource.h:
+
 _deps/sdl2-build/include/SDL2/SDL_filesystem.h:
 
 _deps/sdl2-src/src/video/wayland/SDL_waylandmouse.c:
@@ -40789,23 +40638,19 @@ _deps/sdl2-src/src/cpuinfo/SDL_cpuinfo.c:
 
 _deps/sdl2-src/src/video/wayland/SDL_waylandmessagebox.h:
 
-/usr/include/glib-2.0/gio/gmount.h:
-
-_deps/sdl2-src/src/video/khronos/vk_video/vulkan_video_codec_h265std_decode.h:
-
 _deps/sdl2-src/src/video/wayland/SDL_waylandvulkan.c:
 
 _deps/sdl2-src/src/video/wayland/SDL_waylandkeyboard.h:
 
 _deps/sdl2-src/src/video/wayland/SDL_waylandevents.c:
 
+/usr/include/glib-2.0/gio/gpropertyaction.h:
+
+/usr/include/strings.h:
+
+_deps/sdl2-build/include/SDL2/SDL_revision.h:
+
 /usr/include/inttypes.h:
-
-/usr/include/glib-2.0/gio/gliststore.h:
-
-/usr/include/pulse/volume.h:
-
-_deps/sdl2-src/src/video/wayland/SDL_waylanddatamanager.h:
 
 _deps/sdl2-src/src/events/SDL_events.c:
 
@@ -40849,6 +40694,18 @@ _deps/sdl2-src/src/joystick/steam/SDL_steamcontroller.c:
 
 /usr/include/x86_64-linux-gnu/bits/ipc-perm.h:
 
+_deps/sdl2-build/SDL_config.h.intermediate:
+
+_deps/sdl2-src/src/video/x11/SDL_x11vulkan.h:
+
+/usr/include/glib-2.0/gio/gioerror.h:
+
+/usr/include/x86_64-linux-gnu/sys/types.h:
+
+/usr/include/wayland-util.h:
+
+_deps/sdl2-src/src/joystick/hidapi/SDL_hidapi_wii.c:
+
 _deps/sdl2-src/src/joystick/controller_type.h:
 
 _deps/sdl2-src/src/libm/s_floor.c:
@@ -40871,6 +40728,14 @@ _deps/sdl2-src/include/SDL_config.h.cmake:
 
 _deps/sdl2-src/src/events/SDL_touch.c:
 
+_deps/sdl2-src/src/video/x11/SDL_x11keyboard.h:
+
+/usr/include/spa-0.2/spa/pod/vararg.h:
+
+/usr/include/x86_64-linux-gnu/bits/mathcalls-helper-functions.h:
+
+_deps/sdl2-src/src/SDL_error_c.h:
+
 /usr/include/glib-2.0/glib/deprecated/gallocator.h:
 
 /usr/include/glib-2.0/gio/ginetaddressmask.h:
@@ -40878,6 +40743,12 @@ _deps/sdl2-src/src/events/SDL_touch.c:
 _deps/sdl2-src/src/events/SDL_quit.c:
 
 /usr/include/asm-generic/posix_types.h:
+
+/usr/include/x86_64-linux-gnu/bits/types.h:
+
+/usr/include/dbus-1.0/dbus/dbus-connection.h:
+
+/usr/include/x86_64-linux-gnu/sys/ioctl.h:
 
 _deps/sdl2-src/src/video/SDL_RLEaccel.c:
 
@@ -40889,22 +40760,6 @@ _deps/sdl2-src/src/video/SDL_RLEaccel.c:
 
 /usr/include/spa-0.2/spa/param/audio/mp3.h:
 
-/usr/include/glib-2.0/gio/gpollableutils.h:
-
-/usr/include/pulse/mainloop.h:
-
-_deps/sdl2-src/src/joystick/hidapi/SDL_hidapi_ps5.c:
-
-/usr/include/x86_64-linux-gnu/bits/floatn.h:
-
-/usr/share/cmake-3.28/Modules/Compiler/IAR-DetermineCompiler.cmake:
-
-/usr/include/glib-2.0/gio/gcancellable.h:
-
-/usr/share/cmake-3.28/Modules/CMakeCompilerIdDetection.cmake:
-
-/usr/include/asm-generic/ioctls.h:
-
 _deps/sdl2-src/src/video/x11/SDL_x11xinput2.h:
 
 /usr/include/glib-2.0/gio/gdrive.h:
@@ -40914,8 +40769,6 @@ _deps/sdl2-src/src/joystick/SDL_joystick.c:
 _deps/sdl2-src/src/libm/s_atan.c:
 
 _deps/sdl2-src/src/joystick/hidapi/SDL_hidapi_xboxone.c:
-
-_deps/sdl2-src/src/libm/k_rem_pio2.c:
 
 _deps/sdl2-src/src/render/software/SDL_triangle.c:
 
@@ -40951,6 +40804,12 @@ _deps/sdl2-src/src/video/wayland/SDL_waylandopengles.h:
 
 _deps/sdl2-src/src/render/opengl/SDL_render_gl.c:
 
+/usr/include/pulse/error.h:
+
+/usr/include/wayland-egl.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/13/include/avx512vpopcntdqintrin.h:
+
 _deps/sdl2-src/src/libm/k_tan.c:
 
 /usr/lib/gcc/x86_64-linux-gnu/13/include/avx512ifmavlintrin.h:
@@ -40959,7 +40818,9 @@ _deps/sdl2-src/src/render/vitagxm/SDL_render_vita_gxm_memory.h:
 
 _deps/sdl2-src/src/video/wayland/SDL_waylandmessagebox.c:
 
-/usr/share/cmake-3.28/Modules/Compiler/Intel-DetermineCompiler.cmake:
+/usr/include/string.h:
+
+_deps/sdl2-src/src/stdlib/SDL_vacopy.h:
 
 /usr/include/ibus-1.0/ibuscomponent.h:
 
@@ -40967,23 +40828,25 @@ _deps/sdl2-build/include-config-/SDL2/SDL_config.h:
 
 _deps/sdl2-src/src/core/linux/SDL_sandbox.h:
 
-/usr/include/x86_64-linux-gnu/bits/confname.h:
-
 _deps/sdl2-src/src/video/x11/SDL_x11vulkan.c:
 
 /usr/include/x86_64-linux-gnu/sys/time.h:
 
 /usr/include/ibus-1.0/ibus.h:
 
-/usr/share/cmake-3.28/Modules/Compiler/XLClang-C-DetermineCompiler.cmake:
-
 _deps/sdl2-src/src/events/SDL_dropevents.c:
-
-_deps/sdl2-src/src/core/linux/SDL_evdev.h:
 
 /usr/include/x86_64-linux-gnu/bits/environments.h:
 
+_deps/sdl2-src/src/core/linux/SDL_evdev.h:
+
 /usr/include/x86_64-linux-gnu/gnu/stubs-64.h:
+
+/usr/include/glib-2.0/gio/gsettings.h:
+
+/usr/include/time.h:
+
+_deps/sdl2-src/src/render/direct3d12/SDL_shaders_d3d12.h:
 
 _deps/sdl2-src/src/misc/SDL_sysurl.h:
 
@@ -41009,21 +40872,9 @@ _deps/sdl2-src/src/core/linux/SDL_ime.h:
 
 _deps/sdl2-src/src/render/vitagxm/SDL_render_vita_gxm_memory.c:
 
-_deps/sdl2-src/src/video/SDL_blit_A.c:
-
-/usr/include/spa-0.2/spa/utils/json.h:
-
-/usr/include/x86_64-linux-gnu/sys/ipc.h:
-
 _deps/sdl2-src/src/libm/e_log.c:
 
 _deps/sdl2-src/src/core/linux/SDL_ibus.h:
-
-_deps/sdl2-src/src/atomic/SDL_atomic.c:
-
-_deps/sdl2-build/include/SDL2/SDL_revision.h:
-
-/usr/include/strings.h:
 
 /usr/include/glib-2.0/glib/galloca.h:
 
@@ -41031,13 +40882,9 @@ _deps/sdl2-src/src/libm/e_exp.c:
 
 _deps/sdl2-src/src/audio/SDL_audio.c:
 
-/usr/share/cmake-3.28/Modules/Compiler/SunPro-C-DetermineCompiler.cmake:
-
 /usr/include/x86_64-linux-gnu/bits/semaphore.h:
 
 _deps/sdl2-src/src/render/SDL_yuv_sw.c:
-
-/usr/share/cmake-3.28/Modules/Internal/FeatureTesting.cmake:
 
 _deps/sdl2-src/src/joystick/hidapi/SDL_hidapijoystick.c:
 
@@ -41050,6 +40897,10 @@ _deps/sdl2-src/src/core/linux/SDL_evdev_capabilities.h:
 _deps/sdl2-src/include/SDL_touch.h:
 
 _deps/sdl2-src/src/core/linux/SDL_ibus.c:
+
+_deps/sdl2-src/src/timer/SDL_timer.c:
+
+/usr/include/glib-2.0/gio/glistmodel.h:
 
 /usr/lib/gcc/x86_64-linux-gnu/13/include/avx512fintrin.h:
 
@@ -41083,39 +40934,21 @@ _deps/sdl2-src/src/events/SDL_keyboard.c:
 
 _deps/sdl2-src/src/libm/e_atan2.c:
 
+/usr/include/glib-2.0/gio/gnativesocketaddress.h:
+
 _deps/sdl2-src/src/joystick/hidapi/SDL_hidapi_luna.c:
-
-/usr/include/x86_64-linux-gnu/bits/statx.h:
-
-_deps/sdl2-src/src/SDL_dataqueue.c:
-
-/usr/include/glib-2.0/gio/gsubprocess.h:
-
-/usr/include/x86_64-linux-gnu/bits/sched.h:
-
-_deps/sdl2-src/src/dynapi/SDL_dynapi_procs.h:
-
-_deps/sdl2-src/src/video/wayland/SDL_waylandmouse.h:
-
-/usr/include/dbus-1.0/dbus/dbus-errors.h:
-
-_deps/sdl2-src/src/core/linux/SDL_evdev_kbd.c:
 
 _deps/sdl2-src/cmake/sdlfind.cmake:
 
 _deps/sdl2-src/src/SDL_utils_c.h:
 
-/usr/share/cmake-3.28/Modules/CMakeTestCCompiler.cmake:
-
-/usr/share/cmake-3.28/Modules/CMakeParseImplicitIncludeInfo.cmake:
-
-/usr/include/glib-2.0/gio/gmountoperation.h:
-
-/usr/lib/gcc/x86_64-linux-gnu/13/include/avxintrin.h:
-
 _deps/sdl2-src/src/stdlib/SDL_qsort.c:
 
 _deps/sdl2-src/src/render/software/SDL_triangle.h:
+
+_deps/sdl2-build/wayland-generated-protocols/idle-inhibit-unstable-v1-protocol.c:
+
+_deps/sdl2-src/src/core/linux/SDL_fcitx.h:
 
 _deps/sdl2-build/include/SDL2/SDL_log.h:
 
@@ -41147,6 +40980,14 @@ _deps/sdl2-src/src/audio/alsa/SDL_alsa_audio.c:
 
 /usr/include/x86_64-linux-gnu/sys/shm.h:
 
+/usr/include/wayland-cursor.h:
+
+_deps/sdl2-src/src/thread/pthread/SDL_sysmutex_c.h:
+
+_deps/sdl2-src/src/events/SDL_displayevents_c.h:
+
+/usr/include/alsa/version.h:
+
 _deps/sdl2-src/src/events/SDL_touch_c.h:
 
 _deps/sdl2-src/include/SDL_revision.h.cmake:
@@ -41155,21 +40996,9 @@ _deps/sdl2-src/src/video/SDL_stretch.c:
 
 _deps/sdl2-src/src/audio/pipewire/SDL_pipewire.h:
 
-/usr/include/glib-2.0/gio/gtlsfiledatabase.h:
-
-/usr/include/X11/Xfuncproto.h:
-
-_deps/sdl2-src/src/loadso/dlopen/SDL_sysloadso.c:
-
-_deps/sdl2-src/src/events/default_cursor.h:
-
-_deps/sdl2-src/src/render/software/SDL_blendline.h:
-
 /usr/share/cmake-3.28/Modules/CheckIncludeFile.cmake:
 
 /usr/include/glib-2.0/gio/gfile.h:
-
-_deps/sdl2-src/src/video/offscreen/SDL_offscreenopengles.c:
 
 _deps/sdl2-src/src/SDL_error.c:
 
@@ -41197,6 +41026,10 @@ _deps/sdl2-src/src/events/SDL_mouse.c:
 
 /usr/include/x86_64-linux-gnu/bits/timesize.h:
 
+/usr/include/x86_64-linux-gnu/bits/struct_rwlock.h:
+
+_deps/sdl2-src/src/thread/SDL_thread.c:
+
 /usr/include/glib-2.0/glib/gatomic.h:
 
 _deps/sdl2-src/src/video/SDL_video.c:
@@ -41217,17 +41050,45 @@ _deps/sdl2-src/src/video/x11/SDL_x11video.c:
 
 _deps/sdl2-src/src/joystick/hidapi/SDL_hidapi_rumble.h:
 
+/usr/lib/gcc/x86_64-linux-gnu/13/include/popcntintrin.h:
+
+_deps/sdl2-build/include/SDL2/SDL_error.h:
+
+_deps/sdl2-src/src/joystick/SDL_gamecontroller.c:
+
+_deps/sdl2-src/src/video/khronos/vk_video/vulkan_video_codec_h265std_decode.h:
+
+/usr/include/glib-2.0/gio/gmount.h:
+
 _deps/sdl2-src/src/video/SDL_blit_slow.c:
 
 /usr/include/x86_64-linux-gnu/bits/types/sigset_t.h:
-
-/usr/share/cmake-3.28/Modules/Compiler/Cray-DetermineCompiler.cmake:
 
 _deps/sdl2-src/src/audio/alsa/SDL_alsa_audio.h:
 
 _deps/sdl2-src/sdl2.pc.in:
 
 _deps/sdl2-build/include/SDL2/begin_code.h:
+
+/usr/include/glib-2.0/gio/gmenu.h:
+
+/usr/include/spa-0.2/spa/param/audio/flac-utils.h:
+
+/usr/include/KHR/khrplatform.h:
+
+_deps/sdl2-build/wayland-generated-protocols/wayland-protocol.c:
+
+/usr/include/glib-2.0/gio/gmemoryinputstream.h:
+
+/usr/include/glib-2.0/gio/gpollableoutputstream.h:
+
+/usr/include/x86_64-linux-gnu/bits/stdint-uintn.h:
+
+/usr/include/wayland-client.h:
+
+_deps/sdl2-src/src/video/kmsdrm/SDL_kmsdrmsym.h:
+
+/usr/share/cmake-3.28/Modules/Internal/CheckSourceRuns.cmake:
 
 _deps/sdl2-src/src/thread/pthread/SDL_systls.c:
 
@@ -41265,13 +41126,7 @@ _deps/sdl2-src/src/joystick/hidapi/SDL_hidapi_rumble.c:
 
 _deps/sdl2-src/src/render/vitagxm/SDL_render_vita_gxm_tools.c:
 
-/usr/share/cmake-3.28/Modules/Compiler/zOS-C-DetermineCompiler.cmake:
-
 /usr/include/x86_64-linux-gnu/bits/types/struct_timeval.h:
-
-/usr/include/glib-2.0/gio/ginetsocketaddress.h:
-
-/usr/include/spa-0.2/spa/pod/pod.h:
 
 _deps/sdl2-build/include/SDL2/SDL_stdinc.h:
 
@@ -41285,10 +41140,6 @@ _deps/sdl2-src/src/dynapi/SDL_dynapi.h:
 
 _deps/sdl2-src/src/core/linux/SDL_udev.h:
 
-/usr/include/glib-2.0/gio/gpowerprofilemonitor.h:
-
-/usr/include/pulse/sample.h:
-
 _deps/sdl2-src/cmake_uninstall.cmake.in:
 
 /usr/include/pipewire-0.3/pipewire/stream.h:
@@ -41297,7 +41148,11 @@ _deps/sdl2-src/SDL2.spec.in:
 
 _deps/sdl2-src/src/audio/SDL_audiodev.c:
 
+/usr/include/x86_64-linux-gnu/bits/long-double.h:
+
 _deps/sdl2-src/src/video/offscreen/SDL_offscreenvideo.h:
+
+/usr/include/glib-2.0/gio/gnetworkmonitor.h:
 
 _deps/sdl2-src/src/render/opengles/SDL_render_gles.c:
 
@@ -41315,6 +41170,8 @@ _deps/sdl2-src/sdl2-config.in:
 
 _deps/sdl2-src/src/sensor/dummy/SDL_dummysensor.c:
 
+/usr/include/glib-2.0/gio/gfilterinputstream.h:
+
 _deps/sdl2-build/include/SDL2/SDL_gesture.h:
 
 _deps/sdl2-src/src/video/x11/SDL_x11shape.h:
@@ -41322,14 +41179,6 @@ _deps/sdl2-src/src/video/x11/SDL_x11shape.h:
 _deps/sdl2-src/src/core/linux/SDL_evdev.c:
 
 _deps/sdl2-src/src/video/offscreen/SDL_offscreenopengles.h:
-
-_deps/sdl2-src/src/thread/pthread/SDL_sysmutex_c.h:
-
-_deps/sdl2-src/src/events/SDL_displayevents_c.h:
-
-/usr/include/wayland-cursor.h:
-
-/usr/include/alsa/version.h:
 
 _deps/sdl2-src/src/video/x11/SDL_x11dyn.c:
 
@@ -41349,6 +41198,12 @@ _deps/sdl2-src/cmake/macros.cmake:
 
 _deps/sdl2-src/src/audio/SDL_audiodev_c.h:
 
+_deps/sdl2-src/src/joystick/hidapi/SDL_hidapi_ps5.c:
+
+/usr/include/x86_64-linux-gnu/bits/floatn.h:
+
+/usr/include/glib-2.0/gio/gcancellable.h:
+
 /usr/include/glib-2.0/gio/gsocketservice.h:
 
 _deps/sdl2-src/src/joystick/hidapi/SDL_hidapi_switch.c:
@@ -41356,8 +41211,6 @@ _deps/sdl2-src/src/joystick/hidapi/SDL_hidapi_switch.c:
 _deps/sdl2-src/src/render/SDL_render.c:
 
 _deps/sdl2-src/src/joystick/virtual/SDL_virtualjoystick.c:
-
-/usr/share/cmake-3.28/Modules/Compiler/Bruce-C-DetermineCompiler.cmake:
 
 _deps/sdl2-src/src/audio/sndio/SDL_sndioaudio.h:
 
@@ -41379,6 +41232,10 @@ _deps/sdl2-src/src/video/kmsdrm/SDL_kmsdrmvulkan.c:
 
 /usr/include/dbus-1.0/dbus/dbus.h:
 
+_deps/sdl2-src/src/audio/dsp/SDL_dspaudio.c:
+
+/usr/include/X11/extensions/Xext.h:
+
 _deps/sdl2-src/src/audio/SDL_audiocvt.c:
 
 _deps/sdl2-src/src/libm/s_scalbn.c:
@@ -41393,6 +41250,10 @@ _deps/sdl2-src/src/libm/s_scalbn.c:
 
 _deps/sdl2-src/src/video/SDL_fillrect.c:
 
+/usr/include/x86_64-linux-gnu/bits/byteswap.h:
+
+/usr/share/cmake-3.28/Modules/Compiler/GNU-C.cmake:
+
 _deps/sdl2-src/src/audio/dsp/SDL_dspaudio.h:
 
 /usr/include/glib-2.0/glib/grand.h:
@@ -41405,19 +41266,11 @@ _deps/sdl2-src/src/audio/dsp/SDL_dspaudio.h:
 
 /usr/lib/gcc/x86_64-linux-gnu/13/include/avxvnniintrin.h:
 
-_deps/sdl2-src/src/video/kmsdrm/SDL_kmsdrmsym.h:
-
-/usr/share/cmake-3.28/Modules/Internal/CheckSourceRuns.cmake:
-
-/usr/include/wayland-client.h:
-
-/usr/share/cmake-3.28/Modules/Compiler/GNU-C.cmake:
-
-/usr/include/x86_64-linux-gnu/bits/byteswap.h:
-
 _deps/sdl2-src/src/video/SDL_blit_auto.h:
 
 _deps/sdl2-src/src/joystick/hidapi/SDL_hidapi_shield.c:
+
+/usr/include/x86_64-linux-gnu/bits/libm-simd-decl-stubs.h:
 
 _deps/sdl2-src/src/timer/SDL_timer_c.h:
 
@@ -41449,6 +41302,8 @@ _deps/sdl2-src/src/events/SDL_clipboardevents.c:
 
 _deps/sdl2-src/src/render/direct3d/SDL_shaders_d3d.h:
 
+/usr/include/glib-2.0/gio/goutputstream.h:
+
 _deps/sdl2-src/src/power/linux/SDL_syspower.c:
 
 _deps/sdl2-src/src/core/linux/SDL_fcitx.c:
@@ -41456,6 +41311,10 @@ _deps/sdl2-src/src/core/linux/SDL_fcitx.c:
 _deps/sdl2-build/include/SDL2/SDL_opengl.h:
 
 /usr/include/X11/Xlib.h:
+
+/usr/include/x86_64-linux-gnu/bits/math-vector.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/13/include/waitpkgintrin.h:
 
 _deps/sdl2-src/src/libm/k_cos.c:
 
@@ -41465,11 +41324,25 @@ _deps/sdl2-src/src/haptic/SDL_haptic_c.h:
 
 _deps/sdl2-build/include/SDL2/SDL_render.h:
 
-/usr/share/cmake-3.28/Modules/Compiler/Embarcadero-DetermineCompiler.cmake:
-
 _deps/sdl2-src/src/audio/disk/SDL_diskaudio.c:
 
+_deps/sdl2-src/src/libm/k_rem_pio2.c:
+
+/usr/include/x86_64-linux-gnu/bits/setjmp.h:
+
+_deps/sdl2-src/CMakeLists.txt:
+
+/usr/include/x86_64-linux-gnu/bits/libc-header-start.h:
+
+/usr/include/glib-2.0/gio/gfileicon.h:
+
 _deps/sdl2-build/include/SDL2/SDL_cpuinfo.h:
+
+/usr/include/wayland-client-core.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/13/include/avxneconvertintrin.h:
+
+/usr/include/spa-0.2/spa/param/audio/alac-utils.h:
 
 _deps/sdl2-src/src/libm/s_copysign.c:
 
@@ -41485,25 +41358,25 @@ _deps/sdl2-src/src/libm/s_cos.c:
 
 _deps/sdl2-src/src/libm/s_sin.c:
 
-/usr/share/cmake-3.28/Modules/Compiler/HP-C-DetermineCompiler.cmake:
-
-/usr/lib/gcc/x86_64-linux-gnu/13/include/bmi2intrin.h:
-
 /usr/include/spa-0.2/spa/param/buffers.h:
 
 /usr/include/pipewire-0.3/pipewire/mem.h:
 
+/usr/include/glib-2.0/gio/gtlsfiledatabase.h:
+
+/usr/include/X11/Xfuncproto.h:
+
+_deps/sdl2-src/src/loadso/dlopen/SDL_sysloadso.c:
+
+_deps/sdl2-src/src/events/default_cursor.h:
+
+_deps/sdl2-src/src/render/software/SDL_blendline.h:
+
 _deps/sdl2-src/src/misc/unix/SDL_sysurl.c:
 
-_deps/sdl2-src/src/render/SDL_d3dmath.c:
+/usr/include/spa-0.2/spa/pod/pod.h:
 
-/usr/lib/gcc/x86_64-linux-gnu/13/include/avxneconvertintrin.h:
-
-/usr/include/spa-0.2/spa/param/audio/alac-utils.h:
-
-/usr/include/wayland-client-core.h:
-
-/usr/include/X11/Xdefs.h:
+/usr/include/glib-2.0/gio/ginetsocketaddress.h:
 
 _deps/sdl2-src/src/video/SDL_pixels.c:
 
@@ -41511,11 +41384,9 @@ _deps/sdl2-src/src/video/SDL_pixels.c:
 
 _deps/sdl2-src/src/video/wayland/SDL_waylandvulkan.h:
 
-/usr/include/glib-2.0/gio/giostream.h:
+_deps/sdl2-src/src/video/offscreen/SDL_offscreenopengles.c:
 
-_deps/sdl2-src/src/video/wayland/SDL_waylandkeyboard.c:
-
-_deps/sdl2-src/src/misc/SDL_url.c:
+/usr/include/x86_64-linux-gnu/bits/thread-shared-types.h:
 
 _deps/sdl2-src/src/render/direct3d/SDL_render_d3d.c:
 
@@ -41527,9 +41398,11 @@ _deps/sdl2-build/include/SDL2/SDL_quit.h:
 
 /usr/include/spa-0.2/spa/param/audio/mp3-utils.h:
 
-_deps/sdl2-src/src/video/SDL_blit_copy.h:
+_deps/sdl2-build/include/SDL2/SDL_scancode.h:
 
-/usr/include/x86_64-linux-gnu/bits/getopt_core.h:
+_deps/sdl2-src/src/SDL_dataqueue.h:
+
+/usr/include/x86_64-linux-gnu/asm/bitsperlong.h:
 
 /usr/include/dbus-1.0/dbus/dbus-pending-call.h:
 
@@ -41548,10 +41421,6 @@ _deps/sdl2-src/src/power/SDL_power.c:
 _deps/sdl2-src/src/thread/pthread/SDL_systhread.c:
 
 _deps/sdl2-src/src/video/SDL_rect.c:
-
-_deps/sdl2-src/src/SDL_error_c.h:
-
-/usr/include/x86_64-linux-gnu/bits/mathcalls-helper-functions.h:
 
 _deps/sdl2-src/src/render/opengles2/SDL_shaders_gles2.c:
 
@@ -41577,6 +41446,10 @@ _deps/sdl2-build/wayland-generated-protocols/tablet-unstable-v2-client-protocol.
 
 /usr/include/pipewire-0.3/pipewire/protocol.h:
 
+/usr/include/x86_64-linux-gnu/bits/getopt_posix.h:
+
+/usr/include/spa-0.2/spa/param/audio/raw.h:
+
 _deps/sdl2-src/src/SDL.c:
 
 _deps/sdl2-src/src/atomic/SDL_spinlock.c:
@@ -41587,7 +41460,15 @@ _deps/sdl2-src/src/render/software/SDL_blendline.c:
 
 /usr/include/alsa/output.h:
 
-_deps/sdl2-src/src/thread/pthread/SDL_syscond.c:
+/usr/include/x86_64-linux-gnu/bits/posix_opt.h:
+
+/usr/include/x86_64-linux-gnu/bits/shmlba.h:
+
+/usr/include/glib-2.0/gio/gdbusauthobserver.h:
+
+/usr/include/x86_64-linux-gnu/bits/stdlib-float.h:
+
+/usr/share/cmake-3.28/Modules/CheckCCompilerFlag.cmake:
 
 _deps/sdl2-src/src/joystick/linux/SDL_sysjoystick_c.h:
 
@@ -41609,7 +41490,13 @@ _deps/sdl2-src/src/video/SDL_yuv.c:
 
 _deps/sdl2-src/src/render/vitagxm/SDL_render_vita_gxm.c:
 
+/usr/include/glib-2.0/gio/gfilteroutputstream.h:
+
 _deps/sdl2-src/src/SDL_internal.h:
+
+/usr/include/X11/extensions/XKBstr.h:
+
+/usr/include/linux/patchkey.h:
 
 _deps/sdl2-src/src/render/software/SDL_drawline.c:
 
@@ -41639,13 +41526,27 @@ _deps/sdl2-src/src/render/software/SDL_drawpoint.h:
 
 _deps/sdl2-src/src/render/software/SDL_render_sw.c:
 
-/usr/include/alsa/asoundlib.h:
-
-/usr/include/x86_64-linux-gnu/bits/ipctypes.h:
-
 _deps/sdl2-src/src/stdlib/SDL_mslibc.c:
 
+/usr/lib/x86_64-linux-gnu/glib-2.0/include/glibconfig.h:
+
+/usr/include/glib-2.0/gio/gsimpleactiongroup.h:
+
 _deps/sdl2-src/src/sensor/dummy/SDL_dummysensor.h:
+
+/usr/include/glib-2.0/gio/gmemorymonitor.h:
+
+/usr/include/x86_64-linux-gnu/bits/floatn-common.h:
+
+_deps/sdl2-src/src/video/SDL_blit.h:
+
+/usr/include/ibus-1.0/ibushotkey.h:
+
+/usr/include/glib-2.0/gio/gtlspassword.h:
+
+_deps/sdl2-src/src/joystick/linux/SDL_sysjoystick.c:
+
+/usr/include/X11/Xatom.h:
 
 _deps/sdl2-src/src/stdlib/SDL_crc32.c:
 
@@ -41656,8 +41557,6 @@ _deps/sdl2-src/src/audio/dummy/SDL_dummyaudio.c:
 /usr/include/endian.h:
 
 _deps/sdl2-src/src/video/SDL_blit_0.c:
-
-/usr/share/cmake-3.28/Modules/Compiler/Borland-DetermineCompiler.cmake:
 
 /usr/include/dbus-1.0/dbus/dbus-address.h:
 
@@ -41683,21 +41582,7 @@ _deps/sdl2-src/src/video/SDL_blit.c:
 
 /usr/lib/gcc/x86_64-linux-gnu/13/include/keylockerintrin.h:
 
-_deps/sdl2-src/src/video/SDL_blit.h:
-
-/usr/include/x86_64-linux-gnu/bits/floatn-common.h:
-
-/usr/include/ibus-1.0/ibushotkey.h:
-
-/usr/include/glib-2.0/gio/gtlspassword.h:
-
-_deps/sdl2-src/src/joystick/linux/SDL_sysjoystick.c:
-
-/usr/include/X11/Xatom.h:
-
 /usr/include/glib-2.0/gobject/genums.h:
-
-/usr/share/cmake-3.28/Modules/Compiler/FujitsuClang-DetermineCompiler.cmake:
 
 /usr/include/jack/transport.h:
 
@@ -41739,13 +41624,15 @@ _deps/sdl2-src/src/thread/pthread/SDL_syssem.c:
 
 /usr/include/spa-0.2/spa/param/audio/ra-utils.h:
 
-/usr/share/cmake-3.28/Modules/Compiler/NVIDIA-DetermineCompiler.cmake:
-
 _deps/sdl2-src/src/haptic/linux/SDL_syshaptic.c:
 
 _deps/sdl2-src/src/video/kmsdrm/SDL_kmsdrmmouse.c:
 
 /usr/include/pipewire-0.3/pipewire/pipewire.h:
+
+/usr/include/glib-2.0/glib/glib-visibility.h:
+
+/usr/include/x86_64-linux-gnu/bits/stdint-least.h:
 
 /usr/include/x86_64-linux-gnu/bits/ss_flags.h:
 
@@ -41759,13 +41646,19 @@ _deps/sdl2-src/src/video/dummy/SDL_nullvideo.c:
 
 _deps/sdl2-src/src/video/kmsdrm/SDL_kmsdrmmouse.h:
 
+_deps/sdl2-src/src/dynapi/SDL_dynapi_procs.h:
+
+/usr/include/dbus-1.0/dbus/dbus-errors.h:
+
+_deps/sdl2-src/src/core/linux/SDL_evdev_kbd.c:
+
+_deps/sdl2-src/src/video/wayland/SDL_waylandmouse.h:
+
+/usr/include/x86_64-linux-gnu/bits/pthreadtypes-arch.h:
+
+_deps/sdl2-src/src/video/wayland/SDL_waylandclipboard.c:
+
 _deps/sdl2-src/src/video/kmsdrm/SDL_kmsdrmvideo.c:
-
-_deps/sdl2-src/src/timer/unix/SDL_systimer.c:
-
-/usr/include/x86_64-linux-gnu/bits/types/struct_shmid_ds.h:
-
-/usr/share/cmake-3.28/Modules/CMakeCCompiler.cmake.in:
 
 _deps/sdl2-src/src/video/offscreen/SDL_offscreenevents.c:
 
@@ -41784,152 +41677,6 @@ _deps/sdl2-src/src/video/offscreen/SDL_offscreenframebuffer.c:
 /usr/include/spa-0.2/spa/param/audio/dsd.h:
 
 _deps/sdl2-src/src/video/offscreen/SDL_offscreenvideo.c:
-
-_deps/sdl2-src/src/stdlib/SDL_vacopy.h:
-
-/usr/include/string.h:
-
-_deps/sdl2-src/src/render/direct3d12/SDL_shaders_d3d12.h:
-
-/usr/include/time.h:
-
-/usr/include/unistd.h:
-
-/usr/include/wayland-client-protocol.h:
-
-/usr/include/X11/Xcursor/Xcursor.h:
-
-/usr/include/pulse/error.h:
-
-/usr/include/wayland-egl.h:
-
-/usr/lib/gcc/x86_64-linux-gnu/13/include/avx512vpopcntdqintrin.h:
-
-_deps/sdl2-src/src/joystick/hidapi/SDL_hidapi_wii.c:
-
-/usr/include/wayland-util.h:
-
-/usr/include/wayland-version.h:
-
-/usr/share/cmake-3.28/Modules/CheckCCompilerFlag.cmake:
-
-/usr/include/x86_64-linux-gnu/bits/stdlib-float.h:
-
-/usr/include/x86_64-linux-gnu/bits/statx-generic.h:
-
-_deps/sdl2-build/wayland-generated-protocols/xdg-output-unstable-v1-protocol.c:
-
-_deps/sdl2-src/src/joystick/controller_list.h:
-
-/usr/include/spa-0.2/spa/param/audio/wma.h:
-
-/usr/include/x86_64-linux-gnu/bits/cpu-set.h:
-
-/usr/include/linux/version.h:
-
-/usr/include/spa-0.2/spa/param/param.h:
-
-/usr/include/x86_64-linux-gnu/bits/endian.h:
-
-/usr/include/x86_64-linux-gnu/bits/mathcalls.h:
-
-/usr/include/x86_64-linux-gnu/bits/flt-eval-method.h:
-
-/usr/include/spa-0.2/spa/param/audio/raw.h:
-
-/usr/include/x86_64-linux-gnu/bits/getopt_posix.h:
-
-_deps/sdl2-build/include/SDL2/SDL_error.h:
-
-_deps/sdl2-src/src/joystick/SDL_gamecontroller.c:
-
-/usr/lib/gcc/x86_64-linux-gnu/13/include/popcntintrin.h:
-
-_deps/sdl2-src/src/render/vitagxm/SDL_render_vita_gxm_tools.h:
-
-/usr/include/x86_64-linux-gnu/bits/iscanonical.h:
-
-/usr/include/glib-2.0/gio/gfileicon.h:
-
-/usr/include/x86_64-linux-gnu/bits/libm-simd-decl-stubs.h:
-
-/usr/include/x86_64-linux-gnu/bits/long-double.h:
-
-/usr/include/x86_64-linux-gnu/bits/mathcalls-narrow.h:
-
-/usr/include/x86_64-linux-gnu/bits/posix_opt.h:
-
-/usr/include/x86_64-linux-gnu/bits/shmlba.h:
-
-/usr/include/glib-2.0/gio/gdbusauthobserver.h:
-
-/usr/include/x86_64-linux-gnu/bits/pthread_stack_min-dynamic.h:
-
-_deps/sdl2-src/src/video/wayland/SDL_waylandclipboard.c:
-
-/usr/include/x86_64-linux-gnu/bits/pthreadtypes-arch.h:
-
-_deps/sdl2-src/CMakeLists.txt:
-
-/usr/include/x86_64-linux-gnu/bits/libc-header-start.h:
-
-/usr/include/x86_64-linux-gnu/bits/setjmp.h:
-
-/usr/include/glib-2.0/glib/deprecated/gcache.h:
-
-/usr/include/x86_64-linux-gnu/bits/select.h:
-
-/usr/lib/gcc/x86_64-linux-gnu/13/include/wbnoinvdintrin.h:
-
-/usr/include/glib-2.0/gio/gasyncresult.h:
-
-/usr/include/glib-2.0/glib/glib-visibility.h:
-
-/usr/share/cmake-3.28/Modules/Compiler/ARMCC-DetermineCompiler.cmake:
-
-/usr/include/x86_64-linux-gnu/bits/stdint-least.h:
-
-/usr/include/x86_64-linux-gnu/bits/stdint-uintn.h:
-
-/usr/include/x86_64-linux-gnu/bits/struct_mutex.h:
-
-_deps/sdl2-src/src/thread/SDL_thread.c:
-
-/usr/include/x86_64-linux-gnu/bits/struct_rwlock.h:
-
-/usr/include/glib-2.0/gio/gmenu.h:
-
-/usr/include/KHR/khrplatform.h:
-
-/usr/include/spa-0.2/spa/param/audio/flac-utils.h:
-
-/usr/include/x86_64-linux-gnu/bits/thread-shared-types.h:
-
-/usr/include/x86_64-linux-gnu/bits/time64.h:
-
-/usr/include/x86_64-linux-gnu/bits/endianness.h:
-
-/usr/include/x86_64-linux-gnu/bits/timex.h:
-
-/usr/include/dbus-1.0/dbus/dbus-connection.h:
-
-/usr/include/x86_64-linux-gnu/sys/ioctl.h:
-
-/usr/include/x86_64-linux-gnu/bits/types.h:
-
-/usr/include/glib-2.0/glib/gtestutils.h:
-
-/usr/include/alsa/hwdep.h:
-
-/usr/include/x86_64-linux-gnu/bits/signal_ext.h:
-
-/usr/include/linux/patchkey.h:
-
-/usr/include/X11/extensions/XKBstr.h:
-
-/usr/include/x86_64-linux-gnu/bits/types/FILE.h:
-
-/usr/include/glib-2.0/gio/gconverteroutputstream.h:
 
 /usr/include/x86_64-linux-gnu/bits/types/__fpos64_t.h:
 
@@ -41964,6 +41711,10 @@ _deps/sdl2-src/src/video/khronos/vk_video/vulkan_video_codec_h265std_encode.h:
 /usr/include/x86_64-linux-gnu/bits/types/struct_iovec.h:
 
 /usr/include/x86_64-linux-gnu/sys/ucontext.h:
+
+/usr/include/spa-0.2/spa/param/format-utils.h:
+
+/usr/include/glib-2.0/gio/gpermission.h:
 
 /usr/include/x86_64-linux-gnu/bits/types/struct_itimerspec.h:
 
@@ -42033,6 +41784,8 @@ _deps/sdl2-build/include/SDL2/SDL_version.h:
 
 /usr/include/x86_64-linux-gnu/sys/uio.h:
 
+/usr/include/glib-2.0/gio/gseekable.h:
+
 _deps/sdl2-src/src/video/khronos/vk_video/vulkan_video_codecs_common.h:
 
 /usr/include/xcb/xcb.h:
@@ -42043,19 +41796,13 @@ _deps/sdl2-src/src/video/khronos/vk_video/vulkan_video_codecs_common.h:
 
 /usr/include/xkbcommon/xkbcommon-keysyms.h:
 
+/usr/include/x86_64-linux-gnu/bits/stdio_lim.h:
+
 _deps/sdl2-src/src/audio/dummy/SDL_dummyaudio.h:
 
 _deps/sdl2-src/src/libm/s_tan.c:
 
-/usr/include/x86_64-linux-gnu/bits/stdio_lim.h:
-
 /usr/include/xkbcommon/xkbcommon-names.h:
-
-_deps/sdl2-build/wayland-generated-protocols/viewporter-protocol.c:
-
-/usr/include/glib-2.0/gio/gio-autocleanups.h:
-
-/usr/include/spa-0.2/spa/node/command.h:
 
 /usr/lib/gcc/x86_64-linux-gnu/13/include/amxbf16intrin.h:
 
@@ -42086,8 +41833,6 @@ _deps/sdl2-src/src/video/offscreen/SDL_offscreenevents_c.h:
 /usr/include/spa-0.2/spa/param/audio/dsd-utils.h:
 
 /usr/include/x86_64-linux-gnu/bits/local_lim.h:
-
-/usr/share/cmake-3.28/Modules/CMakeCCompilerABI.c:
 
 /usr/lib/gcc/x86_64-linux-gnu/13/include/avx512cdintrin.h:
 
@@ -42121,6 +41866,14 @@ _deps/sdl2-src/src/video/offscreen/SDL_offscreenevents_c.h:
 
 /usr/lib/gcc/x86_64-linux-gnu/13/include/avx512vldqintrin.h:
 
+/usr/include/ibus-1.0/ibuskeysyms-compat.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/13/include/avx512vlintrin.h:
+
+/usr/include/linux/types.h:
+
+/usr/include/glib-2.0/gio/gicon.h:
+
 /usr/lib/gcc/x86_64-linux-gnu/13/include/avx512vnniintrin.h:
 
 /usr/lib/gcc/x86_64-linux-gnu/13/include/avx512vp2intersectintrin.h:
@@ -42133,17 +41886,21 @@ _deps/sdl2-src/src/render/software/SDL_render_sw_c.h:
 
 /usr/lib/gcc/x86_64-linux-gnu/13/include/avx512vpopcntdqvlintrin.h:
 
+/usr/include/glib-2.0/gio/gmountoperation.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/13/include/avxintrin.h:
+
 /usr/lib/gcc/x86_64-linux-gnu/13/include/avxvnniint8intrin.h:
 
 _deps/sdl2-build/wayland-generated-protocols/tablet-unstable-v2-protocol.c:
 
 /usr/include/glib-2.0/gio/gconverterinputstream.h:
 
+/usr/lib/gcc/x86_64-linux-gnu/13/include/bmi2intrin.h:
+
 /usr/lib/gcc/x86_64-linux-gnu/13/include/bmiintrin.h:
 
 /usr/include/glib-2.0/gobject/gsignal.h:
-
-/usr/share/cmake-3.28/Modules/Compiler/Watcom-DetermineCompiler.cmake:
 
 /usr/lib/gcc/x86_64-linux-gnu/13/include/cldemoteintrin.h:
 
@@ -42176,6 +41933,8 @@ _deps/sdl2-src/src/render/software/SDL_draw.h:
 _deps/sdl2-src/src/libm/e_log10.c:
 
 /usr/lib/gcc/x86_64-linux-gnu/13/include/enqcmdintrin.h:
+
+/usr/include/glib-2.0/gio/gnotification.h:
 
 /usr/lib/gcc/x86_64-linux-gnu/13/include/float.h:
 
@@ -42221,6 +41980,8 @@ _deps/sdl2-src/src/video/yuv2rgb/yuv_rgb_std.h:
 
 /usr/lib/gcc/x86_64-linux-gnu/13/include/smmintrin.h:
 
+/usr/lib/gcc/x86_64-linux-gnu/13/include/stdarg.h:
+
 /usr/lib/gcc/x86_64-linux-gnu/13/include/stdbool.h:
 
 /usr/lib/gcc/x86_64-linux-gnu/13/include/stddef.h:
@@ -42241,7 +42002,17 @@ _deps/sdl2-build/include/SDL2/SDL_misc.h:
 
 /usr/lib/gcc/x86_64-linux-gnu/13/include/xsaveintrin.h:
 
+/usr/lib/gcc/x86_64-linux-gnu/13/include/xsavesintrin.h:
+
+_deps/sdl2-src/src/thread/pthread/SDL_systhread_c.h:
+
+/usr/include/glib-2.0/gio/gioenums.h:
+
 /usr/include/samplerate.h:
+
+/usr/include/pulse/mainloop.h:
+
+/usr/include/glib-2.0/gio/gpollableutils.h:
 
 _deps/sdl2-src/src/audio/SDL_audio_channel_converters.h:
 
@@ -42252,12 +42023,6 @@ _deps/sdl2-src/src/audio/SDL_audio_resampler_filter.h:
 /usr/include/spa-0.2/spa/node/io.h:
 
 /usr/include/asm-generic/bitsperlong.h:
-
-/usr/include/ibus-1.0/ibusinputcontext.h:
-
-/usr/include/glib-2.0/gio/giotypes.h:
-
-/usr/include/glib-2.0/gio/gdbusobject.h:
 
 /usr/include/asm-generic/int-ll64.h:
 
@@ -42295,8 +42060,6 @@ _deps/sdl2-src/src/render/software/SDL_rotate.c:
 
 /usr/include/x86_64-linux-gnu/bits/fcntl.h:
 
-/usr/share/cmake-3.28/Modules/CMakeDetermineCCompiler.cmake:
-
 /usr/include/x86_64-linux-gnu/asm/errno.h:
 
 /usr/include/x86_64-linux-gnu/bits/types/struct_statx.h:
@@ -42311,19 +42074,13 @@ _deps/sdl2-src/src/render/software/SDL_rotate.c:
 
 /usr/include/linux/limits.h:
 
-/usr/share/cmake-3.28/Modules/Compiler/OpenWatcom-DetermineCompiler.cmake:
-
 /usr/include/x86_64-linux-gnu/bits/posix1_lim.h:
 
 /usr/include/x86_64-linux-gnu/bits/locale.h:
 
-/usr/share/cmake-3.28/Modules/Compiler/Clang-DetermineCompilerInternal.cmake:
-
 /usr/include/x86_64-linux-gnu/bits/xopen_lim.h:
 
 /usr/include/alsa/asoundef.h:
-
-/usr/share/cmake-3.28/Modules/Compiler/XL-C-DetermineCompiler.cmake:
 
 /usr/include/alsa/conf.h:
 
@@ -42447,6 +42204,8 @@ _deps/sdl2-build/wayland-generated-protocols/viewporter-client-protocol.h:
 
 /usr/include/glib-2.0/gio/gdtlsconnection.h:
 
+/usr/include/asm-generic/ioctls.h:
+
 /usr/include/linux/soundcard.h:
 
 /usr/include/x86_64-linux-gnu/asm/ioctl.h:
@@ -42471,6 +42230,10 @@ _deps/sdl2-src/include/close_code.h:
 
 /usr/include/x86_64-linux-gnu/sys/ttydefaults.h:
 
+_deps/sdl2-src/src/SDL_assert_c.h:
+
+/usr/include/glib-2.0/gio/ginputstream.h:
+
 /usr/include/jack/jack.h:
 
 /usr/include/jack/systemdeps.h:
@@ -42488,8 +42251,6 @@ _deps/sdl2-src/include/close_code.h:
 /usr/include/pipewire-0.3/pipewire/client.h:
 
 /usr/include/X11/keysym.h:
-
-/usr/share/cmake-3.28/Modules/Compiler/CrayClang-DetermineCompiler.cmake:
 
 /usr/include/glib-2.0/gio/gactiongroup.h:
 
@@ -42523,8 +42284,6 @@ _deps/sdl2-src/src/video/offscreen/SDL_offscreenwindow.h:
 
 _deps/sdl2-build/wayland-generated-protocols/primary-selection-unstable-v1-client-protocol.h:
 
-/usr/share/cmake-3.28/Modules/Compiler/ARMClang-DetermineCompiler.cmake:
-
 /usr/include/EGL/eglplatform.h:
 
 /usr/include/pipewire-0.3/pipewire/thread-loop.h:
@@ -42539,6 +42298,10 @@ _deps/sdl2-build/wayland-generated-protocols/primary-selection-unstable-v1-clien
 
 /usr/include/pulse/xmalloc.h:
 
+/usr/include/linux/close_range.h:
+
+/usr/include/glib-2.0/gio/ginetaddress.h:
+
 /usr/include/spa-0.2/spa/node/event.h:
 
 /usr/include/spa-0.2/spa/node/node.h:
@@ -42549,13 +42312,13 @@ _deps/sdl2-build/wayland-generated-protocols/primary-selection-unstable-v1-clien
 
 /usr/include/spa-0.2/spa/param/audio/alac.h:
 
+/usr/include/glib-2.0/gio/gproxyaddressenumerator.h:
+
 /usr/include/spa-0.2/spa/param/audio/amr-utils.h:
 
 /usr/include/ibus-1.0/ibusversion.h:
 
 /usr/include/spa-0.2/spa/param/audio/amr.h:
-
-/usr/share/cmake-3.28/Modules/Compiler/PathScale-DetermineCompiler.cmake:
 
 /usr/include/X11/extensions/XInput2.h:
 
@@ -42583,15 +42346,11 @@ _deps/sdl2-src/src/audio/pulseaudio/SDL_pulseaudio.c:
 
 /usr/include/spa-0.2/spa/param/audio/iec958.h:
 
-/usr/include/glib-2.0/gio/gremoteactiongroup.h:
-
-_deps/sdl2-src/src/sensor/SDL_sensor.c:
-
-/usr/include/spa-0.2/spa/param/audio/ra.h:
-
 /usr/include/spa-0.2/spa/param/audio/raw-utils.h:
 
 /usr/include/spa-0.2/spa/param/audio/vorbis-utils.h:
+
+/usr/include/spa-0.2/spa/param/audio/vorbis.h:
 
 /usr/include/glib-2.0/gio/gvfs.h:
 
@@ -42602,8 +42361,6 @@ _deps/sdl2-build/include/SDL2/SDL.h:
 /usr/include/spa-0.2/spa/param/format.h:
 
 /usr/include/spa-0.2/spa/param/profile.h:
-
-/usr/share/cmake-3.28/Modules/Compiler/TI-DetermineCompiler.cmake:
 
 /usr/include/spa-0.2/spa/param/route.h:
 
@@ -42621,17 +42378,11 @@ _deps/sdl2-build/include/SDL2/SDL.h:
 
 /usr/include/spa-0.2/spa/utils/list.h:
 
-/usr/share/cmake-3.28/Modules/Compiler/Clang-DetermineCompiler.cmake:
-
 /usr/include/X11/XKBlib.h:
 
 _deps/sdl2-src/src/core/linux/SDL_threadprio.c:
 
 /usr/include/spa-0.2/spa/utils/string.h:
-
-/usr/share/cmake-3.28/Modules/Compiler/SCO-DetermineCompiler.cmake:
-
-/usr/share/cmake-3.28/Modules/CMakeParseLibraryArchitecture.cmake:
 
 /usr/include/spa-0.2/spa/utils/type.h:
 
@@ -42745,9 +42496,23 @@ _deps/sdl2-src/src/render/direct3d11/SDL_shaders_d3d11.h:
 
 /usr/include/X11/keysymdef.h:
 
+/usr/include/pulse/volume.h:
+
+_deps/sdl2-src/src/video/wayland/SDL_waylanddatamanager.h:
+
+/usr/include/glib-2.0/gio/gliststore.h:
+
 /usr/include/x86_64-linux-gnu/bits/ipc.h:
 
+/usr/include/alsa/asoundlib.h:
+
+/usr/include/x86_64-linux-gnu/bits/ipctypes.h:
+
 /usr/include/x86_64-linux-gnu/bits/shm.h:
+
+_deps/sdl2-src/src/timer/unix/SDL_systimer.c:
+
+/usr/include/x86_64-linux-gnu/bits/types/struct_shmid_ds.h:
 
 /usr/include/dirent.h:
 
@@ -42767,9 +42532,9 @@ _deps/sdl2-src/src/render/direct3d11/SDL_shaders_d3d11.h:
 
 /usr/include/glib-2.0/gio/gdatagrambased.h:
 
-_deps/sdl2-src/src/events/imKStoUCS.c:
-
 /usr/include/wchar.h:
+
+_deps/sdl2-src/src/events/imKStoUCS.c:
 
 /usr/include/glib-2.0/gio/gdatainputstream.h:
 
@@ -42781,11 +42546,17 @@ _deps/sdl2-src/src/video/wayland/SDL_waylanddyn.h:
 
 /usr/include/glib-2.0/gio/gdbusinterface.h:
 
+/usr/include/glib-2.0/gio/gnetworkaddress.h:
+
 _deps/sdl2-src/src/sensor/SDL_syssensor.h:
 
 /usr/include/spa-0.2/spa/pod/event.h:
 
 /usr/include/glib-2.0/gio/gdbusintrospection.h:
+
+/usr/include/glib-2.0/gio/gdbusmenumodel.h:
+
+/usr/include/glib-2.0/gio/gdbusnameowning.h:
 
 _deps/sdl2-src/src/render/opengl/SDL_shaders_gl.h:
 
@@ -42816,3 +42587,61 @@ _deps/sdl2-src/include/SDL_scancode.h:
 /usr/include/glib-2.0/gio/gfileenumerator.h:
 
 /usr/include/glib-2.0/gio/gfileinfo.h:
+
+/usr/include/glib-2.0/gio/gfilenamecompleter.h:
+
+/usr/include/glib-2.0/gio/gfileoutputstream.h:
+
+_deps/sdl2-src/src/video/offscreen/SDL_offscreenframebuffer_c.h:
+
+/usr/include/glib-2.0/gio/ginitable.h:
+
+_deps/sdl2-build/wayland-generated-protocols/viewporter-protocol.c:
+
+/usr/include/spa-0.2/spa/node/command.h:
+
+/usr/include/glib-2.0/gio/gio-autocleanups.h:
+
+/usr/include/glib-2.0/glib/ghmac.h:
+
+/usr/include/glib-2.0/gio/gioenumtypes.h:
+
+/usr/include/glib-2.0/gio/giomodule.h:
+
+_deps/sdl2-src/src/video/wayland/SDL_waylandkeyboard.c:
+
+_deps/sdl2-src/src/misc/SDL_url.c:
+
+/usr/include/glib-2.0/gio/giostream.h:
+
+/usr/include/ibus-1.0/ibusinputcontext.h:
+
+/usr/include/glib-2.0/gio/gdbusobject.h:
+
+/usr/include/glib-2.0/gio/giotypes.h:
+
+/usr/include/glib-2.0/gio/gloadableicon.h:
+
+/usr/include/glib-2.0/gio/gmemoryoutputstream.h:
+
+/usr/include/glib-2.0/gio/gmenuexporter.h:
+
+/usr/include/pulse/sample.h:
+
+/usr/include/glib-2.0/gio/gpowerprofilemonitor.h:
+
+/usr/include/glib-2.0/gio/gproxy.h:
+
+/usr/include/glib-2.0/gio/gproxyaddress.h:
+
+/usr/include/glib-2.0/gio/gproxyresolver.h:
+
+_deps/sdl2-src/src/sensor/SDL_sensor.c:
+
+/usr/include/spa-0.2/spa/param/audio/ra.h:
+
+/usr/include/glib-2.0/gio/gremoteactiongroup.h:
+
+/usr/include/GLES/gl.h:
+
+/usr/include/glib-2.0/gio/gsimpleaction.h:

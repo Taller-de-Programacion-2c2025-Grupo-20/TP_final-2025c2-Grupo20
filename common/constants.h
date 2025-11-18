@@ -36,6 +36,7 @@ const uint8_t CMD_ENVIAR_INPUT = 0x03;
 const uint8_t CMD_CREATE_MATCH = 0x04;
 const uint8_t CMD_JOIN_MATCH = 0x05;
 const uint8_t CMD_START_GAME = 0x06;
+const uint8_t CMD_REFRESH_MATCH_LIST = 0x07;
 
 const uint8_t EVT_GAME_STARTED = 0x70;
 const uint8_t EVT_GAME_STATE = 0x80;

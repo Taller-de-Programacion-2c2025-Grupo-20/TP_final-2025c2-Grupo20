@@ -71,12 +71,12 @@ public:
         joinButton->setGeometry(QRect(230, 120, 111, 26));
         matchListWidget = new QListWidget(page_Selection);
         matchListWidget->setObjectName("matchListWidget");
-        matchListWidget->setGeometry(QRect(160, 150, 256, 192));
+        matchListWidget->setGeometry(QRect(160, 160, 256, 192));
         stackedWidget_Lobby->addWidget(page_Selection);
 
         retranslateUi(LobbyScreen);
 
-        stackedWidget_Lobby->setCurrentIndex(0);
+        stackedWidget_Lobby->setCurrentIndex(1);
 
 
         QMetaObject::connectSlotsByName(LobbyScreen);
@@ -91,7 +91,7 @@ public:
 #if QT_CONFIG(whatsthis)
         matchNameEdit->setWhatsThis(QCoreApplication::translate("LobbyScreen", "<html><head/><body><p>nombre...</p><p><br/></p></body></html>", nullptr));
 #endif // QT_CONFIG(whatsthis)
-        matchNameEdit->setText(QCoreApplication::translate("LobbyScreen", "Ingresar nombre...", nullptr));
+        matchNameEdit->setText(QString());
         joinButton->setText(QCoreApplication::translate("LobbyScreen", "Unirse a partida", nullptr));
     } // retranslateUi
 

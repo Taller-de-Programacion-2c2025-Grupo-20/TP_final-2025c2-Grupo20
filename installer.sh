@@ -55,7 +55,7 @@ cd "$REPO_DIR"
 mkdir -p build
 cd build
 
-cmake .. -DTALLER_CLIENT=ON -DTALLER_EDITOR=OFF -DTALLER_SERVER=ON -DTALLER_TESTS=OFF -DCMAKE_MESSAGE_LOG_LEVEL=VERBOSE
+cmake .. -DTALLER_CLIENT=ON -DTALLER_EDITOR=OFF -DTALLER_SERVER=ON -DTALLER_TESTS=OFF -DINSTALL_MODE=ON -DCMAKE_MESSAGE_LOG_LEVEL=VERBOSE
 
 make -j"$(nproc)"
 
@@ -66,6 +66,8 @@ echo -e "${GREEN}✓ Compilación finalizada.${NC}"
 echo -e "${GREEN}→ Creando directorios...${NC}"
 sudo mkdir -p "$ETC_DIR"
 sudo mkdir -p "$VAR_DIR"
+sudo mkdir -p "$VAR_DIR/SDL_data"
+sudo mkdir -p "$VAR_DIR/maps_data"
 
 
 #COPIAR BINARIOS
@@ -74,14 +76,13 @@ echo -e "${GREEN}→ Instalando ejecutables...${NC}"
 sudo cp taller_server "$BIN_DIR/taller_server"
 sudo cp taller_client "$BIN_DIR/taller_client"
 
-
 #   COPIAR CONFIG & DATA
 #echo -e "${GREEN}→ Instalando configuración en $ETC_DIR ...${NC}"
 #sudo cp ../config/*.yaml "$ETC_DIR/"
 
-#echo -e "${GREEN}→ Instalando assets en $VAR_DIR ...${NC}"
-#sudo cp -r ../client/data/* "$VAR_DIR/"
-#sudo cp -r ../server/data/* "$VAR_DIR/"
+echo -e "${GREEN}→ Instalando data files en $VAR_DIR ...${NC}"
+sudo cp -r "$REPO_DIR/client/data/"* "$VAR_DIR/SDL_data"
+sudo cp -r "$REPO_DIR/server/data/"* "$VAR_DIR/maps_data"
 
 echo -e "${GREEN}============================================${NC}"
 echo -e "${GREEN} Instalación completa de $GAME_NAME         ${NC}"

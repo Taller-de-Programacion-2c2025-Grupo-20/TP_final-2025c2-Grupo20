@@ -1,0 +1,4891 @@
+layers:
+  - name: Paredes
+    objects:
+      - height: 69.6969696969697
+        id: 22
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 57.5757575757576
+        x: 145.454545454545
+        'y': 1572.72727272727
+      - height: 57.5757575757577
+        id: 23
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 57.5757575757576
+        x: 148.484848484848
+        'y': 1681.81818181818
+      - height: 39.3939393939395
+        id: 24
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 48.4848484848485
+        x: 236.363636363636
+        'y': 1687.87878787879
+      - height: 236.363636363636
+        id: 25
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 48.4848484848485
+        x: 142.424242424242
+        'y': 1824.24242424242
+      - height: 45.4545454545455
+        id: 32
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 90.9090909090909
+        x: 142.424242424242
+        'y': 893.939393939394
+      - height: 21.2121212121212
+        id: 33
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 90.9090909090909
+        x: 142.424242424242
+        'y': 1003.0303030303
+      - height: 36.3636363636364
+        id: 35
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 24.2424242424242
+        x: 278.787878787879
+        'y': 909.090909090909
+      - height: 27.2727272727273
+        id: 36
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 33.3333333333333
+        x: 275.757575757576
+        'y': 996.969696969697
+      - height: 72
+        id: 40
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 58.6666666666667
+        x: 233.333333333333
+        'y': 1569.33333333333
+      - height: 36
+        id: 45
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 120
+        x: 42
+        'y': 3976
+      - height: 70
+        id: 47
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 26
+        x: 144
+        'y': 3918
+      - height: 168.5
+        id: 53
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 70.5
+        x: 159.5
+        'y': 3643
+      - height: 141
+        id: 55
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 69
+        x: 122
+        'y': 3426.5
+      - height: 240
+        id: 58
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 41.5
+        x: 116.5
+        'y': 2466.5
+      - height: 56.5
+        id: 60
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 180
+        x: 151
+        'y': 2652.5
+      - height: 59.5
+        id: 61
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 264.5
+        x: 118.5
+        'y': 2815
+      - height: 21.5
+        id: 62
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 101.5
+        x: 117.5
+        'y': 2750
+      - height: 330
+        id: 63
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 34
+        x: 350.5
+        'y': 2873
+      - height: 21.5
+        id: 64
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 256.5
+        x: 118.5
+        'y': 3191
+      - height: 153.5
+        id: 65
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 25
+        x: 119
+        'y': 3191
+      - height: 16
+        id: 66
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 80.5
+        x: 216
+        'y': 3646.5
+      - height: 317.5
+        id: 67
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 20.5
+        x: 269
+        'y': 3339
+      - height: 16
+        id: 68
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 144
+        x: 137.5
+        'y': 3328
+      - height: 225.5
+        id: 69
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 186
+        x: 119
+        'y': 2920
+      - height: 369
+        id: 70
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 212.5
+        x: 118.5
+        'y': 128
+      - height: 247
+        id: 71
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 208
+        x: 119.5
+        'y': 544
+      - height: 0
+        id: 72
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 0
+        x: 517.333333333333
+        'y': 204
+      - height: 3616
+        id: 74
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 5
+        x: 34.5
+        'y': 48.75
+      - height: 111.75
+        id: 75
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 80.75
+        x: 39.75
+        'y': 3648.25
+      - height: 225.75
+        id: 76
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 11
+        x: 35.75
+        'y': 3758
+      - height: 121.75
+        id: 77
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 53
+        x: 95.25
+        'y': 3807.75
+      - height: 10.25
+        id: 78
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 28.5
+        x: 140.5
+        'y': 3806.5
+      - height: 108
+        id: 79
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 73.3333333333333
+        x: 257.333333333333
+        'y': 2706.66666666667
+      - height: 258
+        id: 80
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 210
+        x: 119
+        'y': 2126
+      - height: 170
+        id: 81
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 75
+        x: 255
+        'y': 1959
+      - height: 210
+        id: 82
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 209
+        x: 120
+        'y': 1543
+      - height: 165
+        id: 83
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 79
+        x: 252
+        'y': 1750
+      - height: 156
+        id: 84
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 214
+        x: 118
+        'y': 1309
+      - height: 152
+        id: 85
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 216
+        x: 433
+        'y': 1311
+      - height: 169
+        id: 86
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 211
+        x: 119
+        'y': 1095
+      - height: 37
+        id: 87
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 258
+        x: 438
+        'y': 1094
+      - height: 90
+        id: 88
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 264
+        x: 440
+        'y': 1178
+      - height: 56
+        id: 89
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 78
+        x: 437
+        'y': 1123
+      - height: 171
+        id: 90
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 210
+        x: 119
+        'y': 872
+      - height: 176
+        id: 91
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 211
+        x: 437
+        'y': 872
+      - height: 161
+        id: 93
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 50
+        x: 438
+        'y': 630
+      - height: 85
+        id: 94
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 42
+        x: 519
+        'y': 631
+      - height: 54
+        id: 95
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 80
+        x: 483
+        'y': 740
+      - height: 151
+        id: 96
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 194
+        x: 439
+        'y': 128
+      - height: 312
+        id: 97
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 138
+        x: 439
+        'y': 272
+      - height: 33.5
+        id: 99
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 136
+        x: 569
+        'y': 551.5
+      - height: 200
+        id: 100
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 286.666666666667
+        x: 604
+        'y': 594.666666666667
+      - height: 30.6666666666666
+        id: 101
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 106.666666666667
+        x: 601.333333333333
+        'y': 570.666666666667
+      - height: 176
+        id: 102
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 84
+        x: 621.333333333333
+        'y': 328
+      - height: 225.333333333333
+        id: 104
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 136
+        x: 750.666666666667
+        'y': 328
+      - height: 154.666666666667
+        id: 105
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 98
+        x: 663.333333333333
+        'y': 127.333333333333
+      - height: 154
+        id: 106
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 98
+        x: 790
+        'y': 128.666666666667
+      - height: 200.666666666667
+        id: 107
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 132.666666666667
+        x: 933.333333333333
+        'y': 128
+      - height: 206.666666666667
+        id: 108
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 126.666666666667
+        x: 934.666666666667
+        'y': 377.333333333333
+      - height: 161.333333333333
+        id: 110
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 132.666666666667
+        x: 933.333333333333
+        'y': 631.333333333333
+      - height: 258.666666666667
+        id: 111
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 130
+        x: 933.333333333333
+        'y': 871.333333333333
+      - height: 178.666666666667
+        id: 112
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 194
+        x: 695.333333333333
+        'y': 871.333333333333
+      - height: 86.6666666666667
+        id: 114
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 147.333333333333
+        x: 742
+        'y': 1043.33333333333
+      - height: 638.666666666667
+        id: 115
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 125.333333333333
+        x: 436
+        'y': 1544
+      - height: 160
+        id: 117
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 97.3333333333334
+        x: 557.333333333333
+        'y': 2022.66666666667
+      - height: 84
+        id: 118
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 41.3333333333333
+        x: 648
+        'y': 2100
+      - height: 177.333333333333
+        id: 119
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 113.333333333333
+        x: 606.666666666667
+        'y': 1800
+      - height: 96
+        id: 120
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 169.333333333333
+        x: 894.666666666667
+        'y': 1928
+      - height: 66.6666666666667
+        id: 121
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 178.666666666667
+        x: 721.333333333333
+        'y': 1957.33333333333
+      - height: 82.6666666666665
+        id: 122
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 38.6666666666667
+        x: 693.333333333333
+        'y': 1974.66666666667
+      - height: 201.333333333333
+        id: 123
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 72
+        x: 736
+        'y': 2021.33333333333
+      - height: 138.666666666667
+        id: 124
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 121.333333333333
+        x: 886.666666666667
+        'y': 2102.66666666667
+      - height: 153.333333333333
+        id: 125
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 136
+        x: 438.666666666667
+        'y': 2232
+      - height: 152
+        id: 126
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 65.3333333333333
+        x: 624
+        'y': 2232
+      - height: 109.333333333333
+        id: 127
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 125.333333333333
+        x: 681.333333333333
+        'y': 2272
+      - height: 144.5
+        id: 128
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 129
+        x: 198.5
+        'y': 2463.5
+      - height: 200
+        id: 129
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 258.666666666667
+        x: 438.666666666667
+        'y': 2464
+      - height: 46.6666666666665
+        id: 130
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 169.333333333333
+        x: 744
+        'y': 2464
+      - height: 40
+        id: 131
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 158.666666666667
+        x: 686.666666666667
+        'y': 2556
+      - height: 62.6666666666665
+        id: 132
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 34.6666666666667
+        x: 813.333333333333
+        'y': 2502.66666666667
+      - height: 174.666666666667
+        id: 133
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 205.333333333333
+        x: 886.666666666667
+        'y': 2288
+      - height: 186.666666666667
+        id: 134
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 120
+        x: 1053.33333333333
+        'y': 2102.66666666667
+      - height: 130.666666666667
+        id: 135
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 132
+        x: 1144
+        'y': 1974.66666666667
+      - height: 153.333333333333
+        id: 136
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 178.666666666667
+        x: 662.666666666667
+        'y': 1542.66666666667
+      - height: 73.3333333333333
+        id: 137
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 189.333333333333
+        x: 608
+        'y': 1680
+      - height: 288
+        id: 139
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 130.666666666667
+        x: 750.666666666667
+        'y': 1176
+      - height: 153.333333333333
+        id: 140
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 64
+        x: 694.666666666667
+        'y': 1310.66666666667
+      - height: 178.666666666667
+        id: 141
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 138.666666666667
+        x: 926.666666666667
+        'y': 1286.66666666667
+      - height: 68
+        id: 142
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 136
+        x: 926.666666666667
+        'y': 1174.66666666667
+      - height: 9.33333333333348
+        id: 143
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 890.666666666667
+        x: 697.333333333333
+        'y': 2653.33333333333
+      - height: 174.666666666667
+        id: 144
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 88
+        x: 1502.66666666667
+        'y': 2478.66666666667
+      - height: 48
+        id: 146
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 157.333333333333
+        x: 1350.66666666667
+        'y': 2573.33333333333
+      - height: 73.3333333333335
+        id: 147
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 30.6666666666667
+        x: 1342.66666666667
+        'y': 2517.33333333333
+      - height: 24
+        id: 148
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 105.333333333333
+        x: 1350.66666666667
+        'y': 2502.66666666667
+      - height: 93.333333333333
+        id: 149
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 152
+        x: 1436
+        'y': 2340
+      - height: 94.666666666667
+        id: 150
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 24
+        x: 1432
+        'y': 2429.33333333333
+      - height: 143
+        id: 151
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 122
+        x: 1671
+        'y': 2520
+      - height: 44
+        id: 152
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 195
+        x: 1671
+        'y': 2430
+      - height: 193
+        id: 153
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 31
+        x: 1836
+        'y': 2471
+      - height: 216
+        id: 154
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 577
+        x: 1943
+        'y': 2088
+      - height: 174
+        id: 155
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 407
+        x: 1944
+        'y': 2298
+      - height: 15
+        id: 156
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 112
+        x: 1576
+        'y': 2016
+      - height: 329
+        id: 157
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 14
+        x: 1575
+        'y': 2017
+      - height: 320
+        id: 158
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 27
+        x: 1670
+        'y': 2031
+      - height: 158
+        id: 159
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 212
+        x: 1685
+        'y': 2195
+      - height: 195
+        id: 160
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 26
+        x: 1868
+        'y': 2016
+      - height: 21
+        id: 161
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 195
+        x: 1883
+        'y': 2018
+      - height: 186
+        id: 162
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 24
+        x: 2055
+        'y': 1844
+      - height: 27
+        id: 163
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 188
+        x: 2068
+        'y': 1830
+      - height: 163
+        id: 164
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 17
+        x: 2240
+        'y': 1690
+      - height: 25
+        id: 165
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 209
+        x: 2247
+        'y': 1673
+      - height: 322
+        id: 166
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 22
+        x: 2434
+        'y': 1362
+      - height: 18.6666666666667
+        id: 167
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 113.333333333333
+        x: 1574.66666666667
+        'y': 1870.66666666667
+      - height: 185.333333333333
+        id: 168
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 593.333333333333
+        x: 2125.33333333333
+        'y': 1902.66666666667
+      - height: 41.3333333333335
+        id: 169
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 206.666666666667
+        x: 2513.33333333333
+        'y': 2077.33333333333
+      - height: 384
+        id: 170
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 392.666666666667
+        x: 2503.33333333333
+        'y': 1552
+      - height: 162
+        id: 171
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 209.333333333333
+        x: 2302.66666666667
+        'y': 1743.33333333333
+      - height: 81.3333333333333
+        id: 172
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 186.666666666667
+        x: 2502
+        'y': 1423.33333333333
+      - height: 96.6666666666667
+        id: 173
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 44
+        x: 2646
+        'y': 1328.66666666667
+      - height: 206.666666666667
+        id: 174
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 224
+        x: 2768
+        'y': 1264.66666666667
+      - height: 176
+        id: 175
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 226.666666666667
+        x: 2766
+        'y': 1040
+      - height: 321.333333333333
+        id: 176
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 18
+        x: 2670
+        'y': 958.666666666667
+      - height: 97.3333333333333
+        id: 177
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 156.666666666667
+        x: 2444
+        'y': 1280
+      - height: 30.6666666666667
+        id: 178
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 109.333333333333
+        x: 2570.66666666667
+        'y': 1248.66666666667
+      - height: 20.6666666666666
+        id: 179
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 365.333333333333
+        x: 2681.33333333333
+        'y': 938.666666666667
+      - height: 86
+        id: 180
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 31.333333333333
+        x: 3016
+        'y': 872
+      - height: 12.1818181818182
+        id: 181
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 886.545454545455
+        x: 2134.66666666667
+        'y': 872.666666666667
+      - height: 115
+        id: 183
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 53
+        x: 1974
+        'y': 870
+      - height: 25
+        id: 184
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 140
+        x: 2013
+        'y': 885
+      - height: 66
+        id: 186
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 21
+        x: 2100
+        'y': 968
+      - height: 14
+        id: 187
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 140
+        x: 1975
+        'y': 1015
+      - height: 20
+        id: 188
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 91
+        x: 2021
+        'y': 963
+      - height: 166
+        id: 189
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 25
+        x: 1976
+        'y': 1018
+      - height: 14
+        id: 190
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 139
+        x: 1847
+        'y': 1175
+      - height: 186
+        id: 191
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 19
+        x: 1846
+        'y': 1174
+      - height: 18
+        id: 192
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 153
+        x: 1704
+        'y': 1351
+      - height: 203
+        id: 193
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 23
+        x: 1702
+        'y': 1350
+      - height: 242
+        id: 194
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 120
+        x: 1504
+        'y': 1223
+      - height: 191
+        id: 195
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 147
+        x: 1369
+        'y': 1273
+      - height: 376
+        id: 196
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 122
+        x: 1142
+        'y': 1089
+      - height: 191
+        id: 198
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 65
+        x: 1253
+        'y': 1272
+      - height: 224
+        id: 199
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 146
+        x: 1310
+        'y': 1000
+      - height: 82
+        id: 200
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 152
+        x: 1472
+        'y': 872
+      - height: 232
+        id: 201
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 123
+        x: 1502
+        'y': 945
+      - height: 78
+        id: 202
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 283
+        x: 1142
+        'y': 873
+      - height: 100
+        id: 203
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 122
+        x: 1143
+        'y': 939
+      - height: 160
+        id: 204
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 282
+        x: 1143
+        'y': 127
+      - height: 344
+        id: 205
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 282
+        x: 1143
+        'y': 337
+      - height: 64
+        id: 206
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 80
+        x: 1343
+        'y': 727
+      - height: 122
+        id: 207
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 153
+        x: 1144
+        'y': 672
+      - height: 409
+        id: 208
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 115
+        x: 1471
+        'y': 384
+      - height: 209
+        id: 209
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 191
+        x: 1472
+        'y': 127
+      - height: 210
+        id: 210
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 187
+        x: 1711
+        'y': 127
+      - height: 40
+        id: 211
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 116
+        x: 1781
+        'y': 328
+      - height: 120
+        id: 212
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 130.666666666667
+        x: 3038.66666666667
+        'y': 1193.33333333333
+      - height: 122.666666666667
+        id: 213
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 66.6666666666665
+        x: 3214.66666666667
+        'y': 1190.66666666667
+      - height: 104
+        id: 214
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 241.333333333333
+        x: 3038.66666666667
+        'y': 1041.33333333333
+      - height: 86.6666666666667
+        id: 215
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 390.666666666667
+        x: 3128
+        'y': 873.333333333333
+      - height: 97.3333333333333
+        id: 216
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 165.333333333333
+        x: 3360
+        'y': 952
+      - height: 13.3333333333334
+        id: 217
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 249.333333333333
+        x: 3509.33333333333
+        'y': 873.333333333333
+      - height: 160
+        id: 218
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 18.6666666666665
+        x: 3744
+        'y': 876
+      - height: 25.3333333333334
+        id: 220
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 112.666666666667
+        x: 3751
+        'y': 976.333333333333
+      - height: 140.666666666667
+        id: 221
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 8
+        x: 3855.33333333333
+        'y': 995
+      - height: 13.3333333333335
+        id: 222
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 51.333333333333
+        x: 3863
+        'y': 1134.66666666667
+      - height: 163.333333333333
+        id: 223
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 7
+        x: 3911
+        'y': 976.666666666667
+      - height: 185.333333333333
+        id: 224
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 433.333333333333
+        x: 3840
+        'y': 712
+      - height: 188
+        id: 225
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 161.333333333334
+        x: 4318.66666666667
+        'y': 710.666666666667
+      - height: 113.333333333333
+        id: 226
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 224
+        x: 4254.66666666667
+        'y': 552
+      - height: 277.333333333333
+        id: 227
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 212
+        x: 3998.66666666667
+        'y': 385.333333333333
+      - height: 169.333333333333
+        id: 228
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 174.666666666667
+        x: 3838.66666666667
+        'y': 493.333333333333
+      - height: 209.333333333333
+        id: 229
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 282.666666666666
+        x: 4000
+        'y': 128
+      - height: 121.333333333333
+        id: 230
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 154.666666666667
+        x: 4326.66666666667
+        'y': 128
+      - height: 212
+        id: 231
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 152
+        x: 4328
+        'y': 294.666666666667
+      - height: 120
+        id: 232
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 98.666666666667
+        x: 4253.33333333333
+        'y': 385.333333333333
+      - height: 128
+        id: 233
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 205.333333333333
+        x: 1169.33333333333
+        'y': 3080
+      - height: 126.666666666667
+        id: 234
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 169.333333333333
+        x: 1424
+        'y': 3081.33333333333
+      - height: 136
+        id: 235
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 137.333333333333
+        x: 1456
+        'y': 2776
+      - height: 121.333333333333
+        id: 236
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 176
+        x: 1416
+        'y': 3254.66666666667
+      - height: 118.666666666667
+        id: 237
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 198.666666666667
+        x: 1168
+        'y': 3256
+      - height: 117.333333333333
+        id: 238
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 201.333333333333
+        x: 1166.66666666667
+        'y': 3425.33333333333
+      - height: 118.666666666667
+        id: 239
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 178.666666666667
+        x: 1413.33333333333
+        'y': 3425.33333333333
+      - height: 113.333333333333
+        id: 240
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 177.333333333333
+        x: 1414.66666666667
+        'y': 3592
+      - height: 113.333333333333
+        id: 241
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 196
+        x: 1170.66666666667
+        'y': 3590.66666666667
+      - height: 126.666666666667
+        id: 242
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 173.333333333333
+        x: 944
+        'y': 3408
+      - height: 22.6666666666665
+        id: 243
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 186.666666666667
+        x: 760
+        'y': 3512
+      - height: 113.333333333333
+        id: 244
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 176
+        x: 944
+        'y': 3248
+      - height: 118.666666666667
+        id: 245
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 176
+        x: 942.666666666667
+        'y': 3081.33333333333
+      - height: 258.666666666667
+        id: 246
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 17.3333333333334
+        x: 573.333333333333
+        'y': 3881.33333333333
+      - height: 41.3333333333335
+        id: 247
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 102.666666666667
+        x: 573.333333333333
+        'y': 3862.66666666667
+      - height: 454.666666666667
+        id: 248
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 9.33333333333337
+        x: 666.666666666667
+        'y': 3417.33333333333
+      - height: 24
+        id: 249
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 106.666666666667
+        x: 470.666666666667
+        'y': 4081.33333333333
+      - height: 144
+        id: 250
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 12
+        x: 466.666666666667
+        'y': 4097.33333333333
+      - height: 16
+        id: 252
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 99.9999999999999
+        x: 477.333333333333
+        'y': 4230.66666666667
+      - height: 45.333333333333
+        id: 253
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 16
+        x: 576
+        'y': 4193.33333333333
+      - height: 10.666666666667
+        id: 254
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 80
+        x: 577.333333333333
+        'y': 4193.33333333333
+      - height: 250.666666666667
+        id: 255
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 38.6666666666666
+        x: 640
+        'y': 3953.33333333333
+      - height: 208
+        id: 256
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 218.666666666667
+        x: 757.333333333333
+        'y': 3752
+      - height: 8
+        id: 257
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 398.666666666667
+        x: 676
+        'y': 4040
+      - height: 257.333333333333
+        id: 258
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 17.3333333333333
+        x: 1056
+        'y': 3785.33333333333
+      - height: 120
+        id: 259
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 357.333333333333
+        x: 760
+        'y': 3584
+      - height: 20
+        id: 260
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 188
+        x: 674.666666666667
+        'y': 3412
+      - height: 425.333333333333
+        id: 261
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 10.6666666666666
+        x: 852
+        'y': 2997.33333333333
+      - height: 12
+        id: 262
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 306.666666666667
+        x: 861.333333333333
+        'y': 2988
+      - height: 110.666666666667
+        id: 263
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 61.3333333333335
+        x: 1214.66666666667
+        'y': 2889.33333333333
+      - height: 12
+        id: 264
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 184
+        x: 1146.66666666667
+        'y': 2828
+      - height: 165.333333333333
+        id: 266
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 29.3333333333333
+        x: 1320
+        'y': 2834.66666666667
+      - height: 158.666666666667
+        id: 267
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 22.6666666666667
+        x: 1142.66666666667
+        'y': 2837.33333333333
+      - height: 42.6666666666665
+        id: 270
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 245.333333333333
+        x: 1345.33333333333
+        'y': 2958.66666666667
+      - height: 30.666666666667
+        id: 272
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 1141.33333333333
+        x: 264
+        'y': 2777.33333333333
+      - height: 114
+        id: 274
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 573
+        x: 1863
+        'y': 2550
+      - height: 178
+        id: 275
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 105
+        x: 2430
+        'y': 2385
+      - height: 161.333333333333
+        id: 276
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 281.333333333333
+        x: 2270.66666666667
+        'y': 128
+      - height: 161.333333333333
+        id: 277
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 277.333333333333
+        x: 2273.33333333333
+        'y': 336
+      - height: 225.333333333333
+        id: 278
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 245.333333333333
+        x: 1944
+        'y': 144
+      - height: 46.6666666666667
+        id: 279
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 214.666666666667
+        x: 1978.66666666667
+        'y': 362.666666666667
+      - height: 22.6666666666667
+        id: 280
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 100
+        x: 2088
+        'y': 126.666666666667
+      - height: 22.6666666666667
+        id: 281
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 25.3333333333333
+        x: 1944
+        'y': 128
+      - height: 334.666666666667
+        id: 282
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 117.333333333333
+        x: 1816
+        'y': 456
+      - height: 46.6666666666667
+        id: 283
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 81.3333333333333
+        x: 1816
+        'y': 417.333333333333
+      - height: 170.666666666667
+        id: 284
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 209.333333333333
+        x: 1984
+        'y': 456
+      - height: 61
+        id: 285
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 30.5
+        x: 2094
+        'y': 624
+      - height: 121
+        id: 286
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 261.5
+        x: 1930
+        'y': 672.5
+      - height: 34
+        id: 287
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 1681.33333333333
+        x: 1670.66666666667
+        'y': 2776
+      - height: 258
+        id: 288
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 90
+        x: 1674
+        'y': 2810
+      - height: 152
+        id: 289
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 62
+        x: 1746
+        'y': 2918
+      - height: 214
+        id: 290
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 14
+        x: 1854
+        'y': 2920
+      - height: 20
+        id: 291
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 184
+        x: 1674
+        'y': 3120
+      - height: 1120
+        id: 292
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 22
+        x: 1670
+        'y': 3120
+      - height: 130
+        id: 293
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 54
+        x: 1882
+        'y': 2804
+      - height: 26
+        id: 294
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 142
+        x: 1754
+        'y': 2806
+      - height: 12
+        id: 295
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 42
+        x: 1856
+        'y': 2918
+      - height: 257
+        id: 296
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 153
+        x: 1991
+        'y': 3984
+      - height: 217
+        id: 297
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 152
+        x: 1992
+        'y': 4287
+      - height: 83
+        id: 298
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 114
+        x: 1672
+        'y': 4287
+      - height: 142
+        id: 299
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 91
+        x: 1669
+        'y': 4361
+      - height: 66
+        id: 300
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 189
+        x: 1754
+        'y': 4437
+      - height: 89
+        id: 301
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 116
+        x: 1830
+        'y': 4289
+      - height: 68
+        id: 303
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 86
+        x: 1856
+        'y': 4374
+      - height: 152
+        id: 304
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 177
+        x: 2224
+        'y': 4184
+      - height: 120
+        id: 305
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 337
+        x: 2223
+        'y': 4385
+      - height: 235
+        id: 306
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 130
+        x: 2429
+        'y': 4103
+      - height: 152
+        id: 307
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 96
+        x: 2225
+        'y': 3983
+      - height: 34
+        id: 308
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 89
+        x: 2311
+        'y': 4103
+      - height: 135
+        id: 309
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 433
+        x: 2223
+        'y': 3657
+      - height: 144
+        id: 310
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 195
+        x: 2222
+        'y': 3790
+      - height: 138
+        id: 311
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 120
+        x: 2705
+        'y': 3656
+      - height: 120
+        id: 312
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 130
+        x: 2375
+        'y': 3457
+      - height: 23
+        id: 314
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 177
+        x: 2470
+        'y': 3553
+      - height: 216
+        id: 315
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 193
+        x: 2464
+        'y': 3840
+      - height: 71
+        id: 316
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 109
+        x: 2367
+        'y': 3984
+      - height: 234
+        id: 317
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 184
+        x: 2608
+        'y': 4104
+      - height: 216
+        id: 318
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 91
+        x: 2702
+        'y': 3840
+      - height: 115
+        id: 319
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 47
+        x: 2777
+        'y': 3839
+      - height: 400
+        id: 320
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 122
+        x: 2870
+        'y': 3657
+      - height: 56
+        id: 321
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 45
+        x: 2839
+        'y': 4000
+      - height: 104
+        id: 322
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 120
+        x: 3071
+        'y': 4104
+      - height: 400
+        id: 323
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 152
+        x: 2840
+        'y': 4104
+      - height: 119
+        id: 324
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 236
+        x: 2608
+        'y': 4384
+      - height: 184
+        id: 325
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 146
+        x: 2974
+        'y': 1552
+      - height: 192
+        id: 326
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 48
+        x: 2800
+        'y': 2016
+      - height: 464
+        id: 327
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 19
+        x: 1572
+        'y': 3784
+      - height: 10
+        id: 328
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 305
+        x: 1286
+        'y': 4237
+      - height: 122
+        id: 329
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 42
+        x: 1286
+        'y': 4236
+      - height: 16
+        id: 330
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 158
+        x: 1171
+        'y': 4342
+      - height: 105
+        id: 331
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 24
+        x: 1184
+        'y': 4341
+      - height: 48
+        id: 332
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 351
+        x: 1128
+        'y': 4495
+      - height: 199
+        id: 333
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 105
+        x: 1376
+        'y': 4296
+      - height: 90
+        id: 334
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 125
+        x: 1256
+        'y': 4407
+      - height: 102
+        id: 335
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 87
+        x: 993
+        'y': 4433
+      - height: 21
+        id: 336
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 156
+        x: 1052
+        'y': 4427
+      - height: 98
+        id: 337
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 27
+        x: 991
+        'y': 4532
+      - height: 11
+        id: 338
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 521
+        x: 1005
+        'y': 4592
+      - height: 166
+        id: 339
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 66
+        x: 1527
+        'y': 4449
+      - height: 103
+        id: 340
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 64
+        x: 1527
+        'y': 4296
+      - height: 72
+        id: 341
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 130
+        x: 3422
+        'y': 3982
+      - height: 224
+        id: 342
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 136
+        x: 3600
+        'y': 3984
+      - height: 118.666666666667
+        id: 345
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 58.666666666667
+        x: 3732.33333333333
+        'y': 4088.66666666667
+      - height: 224
+        id: 346
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 57.6666666666665
+        x: 3782.66666666667
+        'y': 3984.66666666667
+      - height: 136.333333333333
+        id: 347
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 138
+        x: 3598.66666666667
+        'y': 3800.66666666667
+      - height: 282
+        id: 348
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 56.666666666667
+        x: 3783.33333333333
+        'y': 3655.33333333333
+      - height: 95.3333333333335
+        id: 349
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 447.333333333333
+        x: 3344
+        'y': 3656.66666666667
+      - height: 197.333333333333
+        id: 350
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 130
+        x: 3423.33333333333
+        'y': 3739.33333333333
+      - height: 133
+        id: 351
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 140
+        x: 3238
+        'y': 3801
+      - height: 279
+        id: 352
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 119
+        x: 3072
+        'y': 3657
+      - height: 97
+        id: 353
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 127
+        x: 3168
+        'y': 3656
+      - height: 193
+        id: 354
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 107
+        x: 3216
+        'y': 3384
+      - height: 130
+        id: 355
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 235
+        x: 3316
+        'y': 3448
+      - height: 225
+        id: 356
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 114
+        x: 3367
+        'y': 3174
+      - height: 225
+        id: 357
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 112
+        x: 3527
+        'y': 3175
+      - height: 129
+        id: 358
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 63
+        x: 3476
+        'y': 3270
+      - height: 122
+        id: 359
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 409
+        x: 3128
+        'y': 2960
+      - height: 21
+        id: 360
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 248
+        x: 3288
+        'y': 3075
+      - height: 22
+        id: 361
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 48
+        x: 3129
+        'y': 3075
+      - height: 138
+        id: 362
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 265
+        x: 3400
+        'y': 2775
+      - height: 33.333333333333
+        id: 363
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 262.666666666667
+        x: 1681.33333333333
+        'y': 4208
+      - height: 333.333333333333
+        id: 364
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 48
+        x: 1897.33333333333
+        'y': 3905.33333333333
+      - height: 33.3333333333335
+        id: 365
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 210.666666666667
+        x: 1932
+        'y': 3902.66666666667
+      - height: 396
+        id: 366
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 24
+        x: 2120
+        'y': 3540
+      - height: 32
+        id: 367
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 221.333333333333
+        x: 2105.33333333333
+        'y': 3545.33333333333
+      - height: 196
+        id: 368
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 22.6666666666665
+        x: 2302.66666666667
+        'y': 3380
+      - height: 201.333333333333
+        id: 369
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 298.666666666667
+        x: 2694.66666666667
+        'y': 3376
+      - height: 113.333333333333
+        id: 370
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 245.333333333333
+        x: 2544
+        'y': 3270.66666666667
+      - height: 128
+        id: 371
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 169.333333333333
+        x: 2552
+        'y': 3373.33333333333
+      - height: 24.6666666666665
+        id: 373
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 264.666666666667
+        x: 2323.33333333333
+        'y': 3384
+      - height: 130
+        id: 374
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 137
+        x: 3238
+        'y': 4256
+      - height: 126
+        id: 375
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 130
+        x: 3598
+        'y': 4257
+      - height: 248
+        id: 376
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 67
+        x: 3775
+        'y': 4256
+      - height: 248
+        id: 377
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 129
+        x: 3423
+        'y': 4256
+      - height: 73
+        id: 379
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 242.5
+        x: 3547.5
+        'y': 4431.5
+      - height: 249
+        id: 380
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 124
+        x: 3070
+        'y': 4257
+      - height: 72
+        id: 381
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 240.333333333333
+        x: 3188.66666666667
+        'y': 4432
+      - height: 249
+        id: 382
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 169
+        x: 2623
+        'y': 2976
+      - height: 20
+        id: 383
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 61
+        x: 2570
+        'y': 3135
+      - height: 125
+        id: 384
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 28
+        x: 2546
+        'y': 3145
+      - height: 81
+        id: 385
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 22
+        x: 2770
+        'y': 2899
+      - height: 33.3333333333335
+        id: 386
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 578.666666666667
+        x: 2772
+        'y': 2878.66666666667
+      - height: 114.666666666667
+        id: 387
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 36
+        x: 3316
+        'y': 2778.66666666667
+      - height: 398.666666666667
+        id: 388
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 153.333333333333
+        x: 3686.66666666667
+        'y': 3176
+      - height: 126.666666666667
+        id: 389
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 100
+        x: 3600
+        'y': 3448
+      - height: 138
+        id: 390
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 257.333333333333
+        x: 3582.66666666667
+        'y': 2958.66666666667
+      - height: 52
+        id: 391
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 81.3333333333335
+        x: 3582.66666666667
+        'y': 2908
+      - height: 137.333333333333
+        id: 392
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 126
+        x: 3711.33333333333
+        'y': 2775.33333333333
+      - height: 190
+        id: 393
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 186
+        x: 3918
+        'y': 3177
+      - height: 162
+        id: 394
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 322
+        x: 3920
+        'y': 3415
+      - height: 105
+        id: 395
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 87
+        x: 4151
+        'y': 3313
+      - height: 278
+        id: 396
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 137
+        x: 3919
+        'y': 3658
+      - height: 121
+        id: 397
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 132
+        x: 4102
+        'y': 3816
+      - height: 114
+        id: 398
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 105
+        x: 4104
+        'y': 3655
+      - height: 113
+        id: 399
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 227
+        x: 4256
+        'y': 3656
+      - height: 120
+        id: 400
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 203
+        x: 4279
+        'y': 3816
+      - height: 168
+        id: 402
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 120
+        x: 4359
+        'y': 3983
+      - height: 89
+        id: 403
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 121
+        x: 4359
+        'y': 4184
+      - height: 289
+        id: 404
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 136
+        x: 4176
+        'y': 3983
+      - height: 81
+        id: 405
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 209
+        x: 4271
+        'y': 4320
+      - height: 72
+        id: 406
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 207
+        x: 4272
+        'y': 4433
+      - height: 185
+        id: 407
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 304
+        x: 3919
+        'y': 4320
+      - height: 144
+        id: 408
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 209
+        x: 3920
+        'y': 4129
+      - height: 97
+        id: 409
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 211
+        x: 3918
+        'y': 3985
+      - height: 200
+        id: 410
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 56
+        x: 1424
+        'y': 1544
+      - height: 338.666666666667
+        id: 411
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 77.3333333333333
+        x: 1512
+        'y': 1542.66666666667
+      - height: 42.6666666666667
+        id: 412
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 213.333333333333
+        x: 1312
+        'y': 1777.33333333333
+      - height: 246.666666666667
+        id: 413
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 52
+        x: 1310.66666666667
+        'y': 1777.33333333333
+      - height: 10.6666666666667
+        id: 414
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 53.3333333333335
+        x: 1266.66666666667
+        'y': 1974.66666666667
+      - height: 153.333333333333
+        id: 415
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 121.333333333333
+        x: 1142.66666666667
+        'y': 1774.66666666667
+      - height: 153.333333333333
+        id: 416
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 177.333333333333
+        x: 886.666666666667
+        'y': 1542.66666666667
+      - height: 186.666666666667
+        id: 417
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 248
+        x: 1142.66666666667
+        'y': 1542.66666666667
+      - height: 121.333333333333
+        id: 418
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 217.333333333333
+        x: 846.666666666667
+        'y': 1758.66666666667
+      - height: 114.666666666667
+        id: 419
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 84
+        x: 765.333333333333
+        'y': 1800
+      - height: 22.6666666666665
+        id: 420
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 82.6666666666667
+        x: 845.333333333333
+        'y': 1744
+      - height: 24
+        id: 421
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 65.3333333333334
+        x: 998.666666666667
+        'y': 1742.66666666667
+      - height: 16.6666666666665
+        id: 422
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 1415.33333333333
+        x: 2417.33333333333
+        'y': 2646.66666666667
+      - height: 122.666666666667
+        id: 423
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 764
+        x: 3073.33333333333
+        'y': 2529.33333333333
+      - height: 82.5
+        id: 425
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 31.5
+        x: 3128
+        'y': 2449.5
+      - height: 126.5
+        id: 426
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 173
+        x: 3146
+        'y': 2352.5
+      - height: 29.5
+        id: 427
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 110
+        x: 3298
+        'y': 2339
+      - height: 105
+        id: 428
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 19.5
+        x: 3388
+        'y': 2262
+      - height: 136.5
+        id: 429
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 202.5
+        x: 3638
+        'y': 2167
+      - height: 127
+        id: 430
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 202
+        x: 3638
+        'y': 2353
+      - height: 135.5
+        id: 431
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 137.5
+        x: 3454.5
+        'y': 2344.5
+      - height: 63
+        id: 432
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 93.5
+        x: 3367
+        'y': 2416
+      - height: 14.5
+        id: 433
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 193.5
+        x: 3398
+        'y': 2282.5
+      - height: 325
+        id: 434
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 17.5
+        x: 3574.5
+        'y': 1973.5
+      - height: 81.5
+        id: 435
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 107
+        x: 3638
+        'y': 2040
+      - height: 204.5
+        id: 436
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 50
+        x: 3791
+        'y': 1915.5
+      - height: 21
+        id: 437
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 220
+        x: 3574.5
+        'y': 1971
+      - height: 367
+        id: 438
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 13
+        x: 3827
+        'y': 1552
+      - height: 6.66666666666652
+        id: 439
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 673.333333333333
+        x: 3166.66666666667
+        'y': 1552
+      - height: 245
+        id: 440
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 24
+        x: 3166
+        'y': 1551.5
+      - height: 14.5
+        id: 441
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 203
+        x: 2976
+        'y': 1785.5
+      - height: 245
+        id: 442
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 16.5
+        x: 2976
+        'y': 1785.5
+      - height: 17
+        id: 443
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 89
+        x: 2896
+        'y': 2016.5
+      - height: 143
+        id: 444
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 29.5
+        x: 2894.5
+        'y': 2017
+      - height: 42.5
+        id: 445
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 102.5
+        x: 2959.5
+        'y': 2296
+      - height: 153
+        id: 446
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 65.5
+        x: 3013
+        'y': 2156
+      - height: 18
+        id: 447
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 119
+        x: 2918
+        'y': 2141
+      - height: 12
+        id: 448
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 75
+        x: 2907.5
+        'y': 2320
+      - height: 90
+        id: 449
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 20
+        x: 2892
+        'y': 2229.5
+      - height: 42
+        id: 450
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 64.5
+        x: 2903.5
+        'y': 2207
+      - height: 11
+        id: 451
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 62.5
+        x: 2846.5
+        'y': 2204.5
+      - height: 200.5
+        id: 452
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 8.5
+        x: 2600
+        'y': 2200.5
+      - height: 10.5
+        id: 453
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 206.5
+        x: 2599
+        'y': 2199.5
+      - height: 11.5
+        id: 454
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 75.5
+        x: 2528.5
+        'y': 2384.5
+      - height: 90.6666666666665
+        id: 455
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 185.333333333333
+        x: 4152
+        'y': 3176
+      - height: 88
+        id: 456
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 96
+        x: 4384
+        'y': 3176
+      - height: 144
+        id: 457
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 190.666666666667
+        x: 4285.33333333333
+        'y': 3312
+      - height: 70.666666666667
+        id: 458
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 192
+        x: 4288
+        'y': 3505.33333333333
+      - height: 136
+        id: 459
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 192
+        x: 4318.66666666667
+        'y': 2960
+      - height: 136
+        id: 460
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 214.666666666667
+        x: 4057.33333333333
+        'y': 2960
+      - height: 133.333333333333
+        id: 461
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 590.666666666667
+        x: 3921.33333333333
+        'y': 2778.66666666667
+      - height: 196
+        id: 462
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 86.6666666666665
+        x: 3920
+        'y': 2900
+      - height: 143.333333333333
+        id: 463
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 145.333333333333
+        x: 3919.33333333333
+        'y': 2521.33333333333
+      - height: 96.666666666667
+        id: 464
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 296.666666666667
+        x: 3919.33333333333
+        'y': 2377.33333333333
+      - height: 193.333333333333
+        id: 465
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 297.333333333333
+        x: 3919.33333333333
+        'y': 2136
+      - height: 146
+        id: 466
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 216.666666666667
+        x: 4262.66666666667
+        'y': 2135.33333333333
+      - height: 169.333333333333
+        id: 467
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 216.666666666667
+        x: 4262.66666666667
+        'y': 2328
+      - height: 44.6666666666665
+        id: 468
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 72
+        x: 4407.33333333333
+        'y': 2482.66666666667
+      - height: 162
+        id: 469
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 106
+        x: 4294.66666666667
+        'y': 1895.33333333333
+      - height: 160
+        id: 470
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 104.666666666667
+        x: 4143.33333333333
+        'y': 1896
+      - height: 181.333333333333
+        id: 471
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 176
+        x: 3919.33333333333
+        'y': 1874
+      - height: 333.333333333333
+        id: 472
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 14
+        x: 3919.33333333333
+        'y': 1552
+      - height: 50.6666666666667
+        id: 473
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 280
+        x: 3918
+        'y': 1551.33333333333
+      - height: 45.3333333333333
+        id: 474
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 592
+        x: 3360
+        'y': 1424
+      - height: 281.333333333333
+        id: 475
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 120
+        x: 3358.66666666667
+        'y': 1094.66666666667
+      - height: 384
+        id: 476
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 15.3333333333335
+        x: 3524.66666666667
+        'y': 1046
+      - height: 16
+        id: 478
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 92
+        x: 3914.66666666667
+        'y': 1296
+      - height: 166.666666666667
+        id: 479
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 22.6666666666665
+        x: 3928.66666666667
+        'y': 1303.33333333333
+      - height: 15
+        id: 480
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 136
+        x: 3910
+        'y': 975
+      - height: 343
+        id: 481
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 16
+        x: 4031
+        'y': 975
+      - height: 180.333333333333
+        id: 482
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 50
+        x: 3998.33333333333
+        'y': 1290.66666666667
+      - height: 142
+        id: 483
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 256.5
+        x: 4127.5
+        'y': 976
+      - height: 597
+        id: 484
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 16
+        x: 4126.5
+        'y': 975
+      - height: 207
+        id: 487
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 198
+        x: 4433
+        'y': 976
+      - height: 23
+        id: 488
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 70
+        x: 4366
+        'y': 1142
+      - height: 182
+        id: 489
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 24
+        x: 4361
+        'y': 975
+      - height: 936.5
+        id: 491
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 6
+        x: 4558
+        'y': 48
+      - height: 7.5
+        id: 492
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 4436.16666666667
+        x: 128.333333333333
+        'y': 40
+      - height: 5.66666666666666
+        id: 493
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 101.666666666667
+        x: 34.3333333333333
+        'y': 42.6666666666667
+      - height: 17.5
+        id: 494
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 2976
+        x: 1591
+        'y': 4585
+      - height: 2547
+        id: 496
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 10
+        x: 4558.5
+        'y': 2041.5
+      - height: 235.5
+        id: 497
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 117.5
+        x: 4446.5
+        'y': 1819.5
+      - height: 16.6969696969697
+        id: 498
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 376.272727272727
+        x: 4072.72727272727
+        'y': 1830.30303030303
+      - height: 35.25
+        id: 499
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 15.25
+        x: 4079.25
+        'y': 1840.5
+      - height: 92
+        id: 500
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 368
+        x: 4110.66666666667
+        'y': 2570.66666666667
+      - height: 116
+        id: 501
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 101.333333333333
+        x: 4112
+        'y': 2456
+      - height: 25.5
+        id: 502
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 153
+        x: 4206
+        'y': 2544
+      - height: 105.333333333333
+        id: 503
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 312.666666666667
+        x: 3239.33333333333
+        'y': 4104
+      - height: 124
+        id: 504
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 136
+        x: 3238.66666666667
+        'y': 3984
+      - height: 72.6666666666665
+        id: 505
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 172
+        x: 3071.33333333333
+        'y': 3984.66666666667
+      - height: 380
+        id: 506
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 97.3333333333335
+        x: 3070.66666666667
+        'y': 3193.33333333333
+      - height: 162.666666666667
+        id: 507
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 112
+        x: 3208
+        'y': 3174.66666666667
+      - height: 20
+        id: 508
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 44
+        x: 3070.66666666667
+        'y': 3177.33333333333
+      - height: 141.333333333333
+        id: 509
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 45.3333333333335
+        x: 3165.33333333333
+        'y': 3192
+      - height: 134.666666666667
+        id: 510
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 241.333333333333
+        x: 2838.66666666667
+        'y': 2961.33333333333
+      - height: 102.666666666667
+        id: 511
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 152
+        x: 2838.66666666667
+        'y': 3088
+      - height: 88
+        id: 512
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 152
+        x: 2840
+        'y': 3240
+      - height: 129.333333333333
+        id: 514
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 86.6666666666665
+        x: 3224
+        'y': 664
+      - height: 49.3333333333334
+        id: 515
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 114.666666666667
+        x: 3270.66666666667
+        'y': 662.666666666667
+      - height: 46.6666666666667
+        id: 516
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 160
+        x: 3224
+        'y': 569.333333333333
+      - height: 256
+        id: 517
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 62.6666666666665
+        x: 3432
+        'y': 353.333333333333
+      - height: 130.666666666667
+        id: 518
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 138.666666666667
+        x: 3454.66666666667
+        'y': 226.666666666667
+      - height: 236.5
+        id: 519
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 16.5
+        x: 3302.5
+        'y': 282.5
+      - height: 23
+        id: 520
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 101
+        x: 3307
+        'y': 280.5
+      - height: 144
+        id: 521
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 24.5
+        x: 3385
+        'y': 160
+      - height: 12.5
+        id: 522
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 244.5
+        x: 3398
+        'y': 163
+      - height: 254
+        id: 523
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 12
+        x: 3638.5
+        'y': 175.5
+      - height: 18.5
+        id: 524
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 114.5
+        x: 3543
+        'y': 407
+      - height: 262
+        id: 525
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 11.5
+        x: 3542.5
+        'y': 408
+      - height: 26.5
+        id: 526
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 124
+        x: 3431
+        'y': 655.5
+      - height: 34
+        id: 527
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 399.5
+        x: 3359.5
+        'y': 758.5
+      - height: 393
+        id: 528
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 12.5
+        x: 3748.5
+        'y': 400
+      - height: 59
+        id: 529
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 167.5
+        x: 3753
+        'y': 357.5
+      - height: 382
+        id: 530
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 15
+        x: 3906
+        'y': 35
+      - height: 23.3333333333333
+        id: 531
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 905.333333333333
+        x: 2270.66666666667
+        'y': 770
+      - height: 195.333333333333
+        id: 532
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 414.666666666667
+        x: 2270.66666666667
+        'y': 576.666666666667
+      - height: 160
+        id: 533
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 74.6666666666665
+        x: 2630.66666666667
+        'y': 190.666666666667
+      - height: 190.666666666667
+        id: 534
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 44.6666666666665
+        x: 2630.66666666667
+        'y': 400
+      - height: 12
+        id: 535
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 156.666666666667
+        x: 2630.66666666667
+        'y': 399.333333333333
+      - height: 102.666666666667
+        id: 536
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 43.333333333333
+        x: 2752
+        'y': 304
+      - height: 62.6666666666667
+        id: 537
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 130
+        x: 2678
+        'y': 193.333333333333
+      - height: 98
+        id: 538
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 258.666666666667
+        x: 2630.66666666667
+        'y': 44.6666666666667
+      - height: 173.333333333333
+        id: 539
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 25.3333333333335
+        x: 2854.66666666667
+        'y': 140.666666666667
+      - height: 11.3333333333334
+        id: 540
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 102
+        x: 2759.33333333333
+        'y': 304.666666666667
+      - height: 285
+        id: 541
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 17
+        x: 3158
+        'y': 495
+      - height: 11
+        id: 542
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 156
+        x: 3163
+        'y': 507
+      - height: 170
+        id: 543
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 77.5
+        x: 3367
+        'y': 351
+      - height: 189
+        id: 544
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 154
+        x: 1631
+        'y': 601
+      - height: 41
+        id: 545
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 25
+        x: 1616
+        'y': 600
+      - height: 41
+        id: 546
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 30
+        x: 1615
+        'y': 752
+      - height: 183
+        id: 547
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 98
+        x: 1630
+        'y': 383
+      - height: 152
+        id: 548
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 78
+        x: 1707
+        'y': 415
+      - height: 43
+        id: 549
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 34
+        x: 1615
+        'y': 384
+      - height: 20
+        id: 550
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 31
+        x: 1616
+        'y': 546
+      - height: 322
+        id: 587
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 39.5
+        x: 1670
+        'y': 1555.5
+  - name: PosIniciales
+    objects:
+      - height: 0
+        id: 570
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 0
+        x: 64
+        'y': 127
+      - height: 0
+        id: 571
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 0
+        x: 97
+        'y': 127
+      - height: 0
+        id: 578
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 0
+        x: 64.5
+        'y': 191.5
+      - height: 0
+        id: 579
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 0
+        x: 96
+        'y': 191.5
+      - height: 0
+        id: 582
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 0
+        x: 64
+        'y': 256
+      - height: 0
+        id: 583
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 0
+        x: 96
+        'y': 256
+      - height: 0
+        id: 584
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 0.5
+        x: 63.5
+        'y': 320
+      - height: 0
+        id: 585
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 0
+        x: 95
+        'y': 319.5
+      - height: 0
+        id: 586
+        name: ''
+        rotation: 0
+        type: ''
+        visible: true
+        width: 0
+        x: 63.3333333333333
+        'y': 319.333333333333
+  - name: Checkpoints
+    objects:
+      - height: 20
+        id: 589
+        name: ''
+        properties:
+          - name: ID
+            type: int
+            value: 0
+        rotation: 0
+        type: ''
+        visible: true
+        width: 64
+        x: 48
+        'y': 411
+      - height: 20
+        id: 593
+        name: ''
+        properties:
+          - name: ID
+            type: int
+            value: 1
+        rotation: 0
+        type: ''
+        visible: true
+        width: 64
+        x: 48
+        'y': 949.030303030303
+      - height: 60
+        id: 594
+        name: ''
+        properties:
+          - name: ID
+            type: int
+            value: 2
+        rotation: 0
+        type: ''
+        visible: true
+        width: 26.6666666666667
+        x: 128
+        'y': 1472.66666666667
+      - height: 60
+        id: 595
+        name: ''
+        properties:
+          - name: ID
+            type: int
+            value: 3
+        rotation: 0
+        type: ''
+        visible: true
+        width: 26.6667
+        x: 719.999983333333
+        'y': 1475.33333333333
+      - height: 25.3333333333333
+        id: 596
+        name: ''
+        properties:
+          - name: ID
+            type: int
+            value: 4
+        rotation: 0
+        type: ''
+        visible: true
+        width: 68.0000333333332
+        x: 1067.99998333333
+        'y': 1396.66666666667
+      - height: 25.3333
+        id: 597
+        name: ''
+        properties:
+          - name: ID
+            type: int
+            value: 5
+        rotation: 0
+        type: ''
+        visible: true
+        width: 68
+        x: 1072.06060606061
+        'y': 954.000016666667
+      - height: 73.8181484848485
+        id: 598
+        name: ''
+        properties:
+          - name: ID
+            type: int
+            value: 6
+        rotation: 0
+        type: ''
+        visible: true
+        width: 28.6060606060606
+        x: 766
+        'y': 793.393956060606
+      - height: 25.3333
+        id: 599
+        name: ''
+        properties:
+          - name: ID
+            type: int
+            value: 7
+        rotation: 0
+        type: ''
+        visible: true
+        width: 92.2424242424242
+        x: 335.69696969697
+        'y': 702.484865151515
+      - height: 25.3333
+        id: 600
+        name: ''
+        properties:
+          - name: ID
+            type: int
+            value: 8
+        rotation: 0
+        type: ''
+        visible: true
+        width: 92.2424
+        x: 338.727284848485
+        'y': 187.33335
+      - height: 64.7272393939394
+        id: 601
+        name: ''
+        properties:
+          - name: ID
+            type: int
+            value: 9
+        rotation: 0
+        type: ''
+        visible: true
+        width: 25.5757333333334
+        x: 1011.45455757576
+        'y': 57.0303196969697
+      - height: 64.7272
+        id: 602
+        name: ''
+        properties:
+          - name: ID
+            type: int
+            value: 10
+        rotation: 0
+        type: ''
+        visible: true
+        width: 25.5757
+        x: 1778.12124090909
+        'y': 58.5454909090909
+      - height: 28.3635636363636
+        id: 603
+        name: ''
+        properties:
+          - name: ID
+            type: int
+            value: 11
+        rotation: 0
+        type: ''
+        visible: true
+        width: 74.0605484848484
+        x: 2196.30305909091
+        'y': 585.818218181818
+      - height: 61.6969333333333
+        id: 604
+        name: ''
+        properties:
+          - name: ID
+            type: int
+            value: 12
+        rotation: 0
+        type: ''
+        visible: true
+        width: 25.5756515151515
+        x: 2905.39399242424
+        'y': 804.000018181818
+      - height: 61.6969
+        id: 605
+        name: ''
+        properties:
+          - name: ID
+            type: int
+            value: 13
+        rotation: 0
+        type: ''
+        visible: true
+        width: 25.5757
+        x: 3667.21215
+        'y': 797.15155
+      - height: 21.6969
+        id: 606
+        name: ''
+        properties:
+          - name: ID
+            type: int
+            value: 14
+        rotation: 0
+        type: ''
+        visible: true
+        width: 69.5756999999999
+        x: 3919.21215
+        'y': 389.15155
+      - height: 21.6969
+        id: 607
+        name: ''
+        properties:
+          - name: ID
+            type: int
+            value: 15
+        rotation: 0
+        type: ''
+        visible: true
+        width: 69.5757
+        x: 4485.21215
+        'y': 145.15155
+      - height: 21.6969
+        id: 608
+        name: ''
+        properties:
+          - name: ID
+            type: int
+            value: 16
+        rotation: 0
+        type: ''
+        visible: true
+        width: 69.5757
+        x: 4489.21215
+        'y': 845.15155
+      - height: 21.6969
+        id: 609
+        name: ''
+        properties:
+          - name: ID
+            type: int
+            value: 17
+        rotation: 0
+        type: ''
+        visible: true
+        width: 69.5757
+        x: 4053.21215
+        'y': 1069.15155
+      - height: 21.6969
+        id: 610
+        name: ''
+        properties:
+          - name: ID
+            type: int
+            value: 18
+        rotation: 0
+        type: ''
+        visible: true
+        width: 69.5757
+        x: 3845.21215
+        'y': 1699.15155
+      - height: 76.2423545454545
+        id: 611
+        name: ''
+        properties:
+          - name: ID
+            type: int
+            value: 19
+        rotation: 0
+        type: ''
+        visible: true
+        width: 24.1211545454553
+        x: 4319.75760454545
+        'y': 2052.78791363636
+      - height: 24.7272484848485
+        id: 612
+        name: ''
+        properties:
+          - name: ID
+            type: int
+            value: 20
+        rotation: 0
+        type: ''
+        visible: true
+        width: 78.6666545454536
+        x: 4475.81818787879
+        'y': 2613.39395151515
+      - height: 108.7272
+        id: 613
+        name: ''
+        properties:
+          - name: ID
+            type: int
+            value: 21
+        rotation: 0
+        type: ''
+        visible: true
+        width: 30.6667000000002
+        x: 3236.66665
+        'y': 2663.6364
+      - height: 108.727
+        id: 614
+        name: ''
+        properties:
+          - name: ID
+            type: int
+            value: 22
+        rotation: 0
+        type: ''
+        visible: true
+        width: 30.6667
+        x: 1720.66665
+        'y': 2669.6365
+      - height: 24.727
+        id: 615
+        name: ''
+        properties:
+          - name: ID
+            type: int
+            value: 23
+        rotation: 0
+        type: ''
+        visible: true
+        width: 66.6667
+        x: 1596.66665
+        'y': 3185.6365
+      - height: 68.7269999999999
+        id: 616
+        name: ''
+        properties:
+          - name: ID
+            type: int
+            value: 26
+        rotation: 0
+        type: ''
+        visible: true
+        width: 38.6667
+        x: 822.66665
+        'y': 3963.6365
+      - height: 68.727
+        id: 617
+        name: ''
+        properties:
+          - name: ID
+            type: int
+            value: 24
+        rotation: 0
+        type: ''
+        visible: true
+        width: 38.6667
+        x: 1448.66665
+        'y': 3705.6365
+      - height: 32.727
+        id: 618
+        name: ''
+        properties:
+          - name: ID
+            type: int
+            value: 28
+        rotation: 0
+        type: ''
+        visible: true
+        width: 82.6667
+        x: 1592.66665
+        'y': 3929.6365
+      - height: 32.7269999999999
+        id: 619
+        name: ''
+        properties:
+          - name: ID
+            type: int
+            value: 27
+        rotation: 0
+        type: ''
+        visible: true
+        width: 74.6667
+        x: 680.66665
+        'y': 3765.6365
+      - height: 32.727
+        id: 620
+        name: ''
+        properties:
+          - name: ID
+            type: int
+            value: 25
+        rotation: 0
+        type: ''
+        visible: true
+        width: 74.6667
+        x: 970.66665
+        'y': 3859.6365
+      - height: 32.727
+        id: 621
+        name: ''
+        properties:
+          - name: ID
+            type: int
+            value: 29
+        rotation: 0
+        type: ''
+        visible: true
+        width: 82.6667
+        x: 1590.66665
+        'y': 4439.6365
+      - height: 64.7269999999999
+        id: 622
+        name: ''
+        properties:
+          - name: ID
+            type: int
+            value: 30
+        rotation: 0
+        type: ''
+        visible: true
+        width: 30.6667000000002
+        x: 2050.66665
+        'y': 4507.6365
+      - height: 32.7269999999999
+        id: 623
+        name: ''
+        properties:
+          - name: ID
+            type: int
+            value: 31
+        rotation: 0
+        type: ''
+        visible: true
+        width: 70.6667000000002
+        x: 2144.66665
+        'y': 4063.6365
+      - height: 32.727
+        id: 624
+        name: ''
+        properties:
+          - name: ID
+            type: int
+            value: 32
+        rotation: 0
+        type: ''
+        visible: true
+        width: 70.6667
+        x: 2152.66665
+        'y': 3671.6365
+      - height: 64.7269999999999
+        id: 625
+        name: ''
+        properties:
+          - name: ID
+            type: int
+            value: 33
+        rotation: 0
+        type: ''
+        visible: true
+        width: 34.6667000000002
+        x: 2892.66665
+        'y': 3579.6365
+      - height: 32.727
+        id: 626
+        name: ''
+        properties:
+          - name: ID
+            type: int
+            value: 34
+        rotation: 0
+        type: ''
+        visible: true
+        width: 70.6667000000002
+        x: 2990.66665
+        'y': 3983.6365
+      - height: 68.727
+        id: 627
+        name: ''
+        properties:
+          - name: ID
+            type: int
+            value: 35
+        rotation: 0
+        type: ''
+        visible: true
+        width: 30.6667000000002
+        x: 3112.66665
+        'y': 4503.6365
+      - height: 32.7269999999999
+        id: 628
+        name: ''
+        properties:
+          - name: ID
+            type: int
+            value: 36
+        rotation: 0
+        type: ''
+        visible: true
+        width: 70.6667000000002
+        x: 3844.66665
+        'y': 4413.6365
+      - height: 32.727
+        id: 629
+        name: ''
+        properties:
+          - name: ID
+            type: int
+            value: 37
+        rotation: 0
+        type: ''
+        visible: true
+        width: 70.6667
+        x: 3844.66665
+        'y': 3687.6365
+      - height: 72.7269999999999
+        id: 630
+        name: ''
+        properties:
+          - name: ID
+            type: int
+            value: 38
+        rotation: 0
+        type: ''
+        visible: true
+        width: 38.6667000000002
+        x: 3936.66665
+        'y': 3095.6365
+      - height: 32.7269999999999
+        id: 631
+        name: ''
+        properties:
+          - name: ID
+            type: int
+            value: 39
+        rotation: 0
+        type: ''
+        visible: true
+        width: 58.6666999999998
+        x: 4484.66665
+        'y': 3179.6365
+      - height: 32.727
+        id: 632
+        name: ''
+        properties:
+          - name: ID
+            type: int
+            value: 40
+        rotation: 0
+        type: ''
+        visible: true
+        width: 58.6667
+        x: 4490.66665
+        'y': 3883.6365
+      - height: 72.7269999999999
+        id: 633
+        name: ''
+        properties:
+          - name: ID
+            type: int
+            value: 41
+        rotation: 0
+        type: ''
+        visible: true
+        width: 30.6666999999998
+        x: 4290.66665
+        'y': 4507.6365

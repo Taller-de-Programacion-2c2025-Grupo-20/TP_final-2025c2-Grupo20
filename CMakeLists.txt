@@ -16,6 +16,20 @@ project(taller_tp
     LANGUAGES CXX
 )
 
+option(INSTALL_MODE "Build for system installation" OFF)
+
+if (INSTALL_MODE)
+    add_compile_definitions(
+        SDL_DATA_PATH=\"/var/tp_taller/SDL_data/\"
+        MAPS_DATA_PATH=\"/var/tp_taller/maps_data/\"
+    )
+else()
+    add_compile_definitions(
+        SDL_DATA_PATH=\"${CMAKE_SOURCE_DIR}/client/data/\"
+        MAPS_DATA_PATH=\"${CMAKE_SOURCE_DIR}/server/data/\"
+    )
+endif()
+
 option(TALLER_TESTS "Enable / disable tests." ON)
 option(TALLER_CLIENT "Enable / disable client program." ON)
 option(TALLER_SERVER "Enable / disable server program." ON)

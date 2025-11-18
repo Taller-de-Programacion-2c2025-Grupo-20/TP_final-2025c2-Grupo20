@@ -1,6 +1,6 @@
 #!/bin/bash
 
-GAME_NAME="taller_tp"
+GAME_NAME="tp_taller"
 INSTALL_PREFIX="/usr"
 BIN_DIR="$INSTALL_PREFIX/bin"
 ETC_DIR="/etc/$GAME_NAME"
@@ -71,8 +71,8 @@ sudo mkdir -p "$VAR_DIR"
 #COPIAR BINARIOS
 echo -e "${GREEN}→ Instalando ejecutables...${NC}"
 
-sudo cp taller_server "$BIN_DIR/$GAME_NAME-server"
-sudo cp taller_client "$BIN_DIR/$GAME_NAME-client"
+sudo cp taller_server "$BIN_DIR/taller_server"
+sudo cp taller_client "$BIN_DIR/taller_client"
 
 
 #   COPIAR CONFIG & DATA
@@ -81,6 +81,7 @@ sudo cp taller_client "$BIN_DIR/$GAME_NAME-client"
 
 #echo -e "${GREEN}→ Instalando assets en $VAR_DIR ...${NC}"
 #sudo cp -r ../client/data/* "$VAR_DIR/"
+#sudo cp -r ../server/data/* "$VAR_DIR/"
 
 echo -e "${GREEN}============================================${NC}"
 echo -e "${GREEN} Instalación completa de $GAME_NAME         ${NC}"

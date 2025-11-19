@@ -43,18 +43,7 @@ set_project_warnings(taller_common ${TALLER_MAKE_WARNINGS_AS_ERRORS} FALSE)
 target_include_directories(taller_common PUBLIC .)
 
 if (TALLER_CLIENT)
-    set(CMAKE_AUTOUIC ON)
-    set(CMAKE_AUTOMOC ON)
-    set(CMAKE_AUTORCC ON)
-
     include(FetchContent)
-
-    find_package(Qt6 COMPONENTS Widgets Network REQUIRED)
-
-    find_package(SDL2 REQUIRED)
-    find_package(SDL2_image REQUIRED)
-    find_package(SDL2_ttf REQUIRED)
-    find_package(SDL2_mixer REQUIRED)
 
     set(SDL2PP_WITH_IMAGE ON CACHE BOOL "" FORCE)
     set(SDL2PP_WITH_TTF   ON CACHE BOOL "" FORCE)
@@ -65,6 +54,20 @@ if (TALLER_CLIENT)
         OVERRIDE_FIND_PACKAGE
     )
     FetchContent_MakeAvailable(libSDL2pp)
+endif()
+
+if (TALLER_CLIENT)
+
+    set(CMAKE_AUTOUIC ON)
+    set(CMAKE_AUTOMOC ON)
+    set(CMAKE_AUTORCC ON)
+
+    find_package(Qt6 COMPONENTS Widgets REQUIRED)
+
+    find_package(SDL2 REQUIRED)
+    find_package(SDL2_image REQUIRED)
+    find_package(SDL2_ttf REQUIRED)
+    find_package(SDL2_mixer REQUIRED)
 
     add_executable(taller_client)
     add_subdirectory(client)
@@ -81,7 +84,6 @@ if (TALLER_CLIENT)
             SDL2_ttf::SDL2_ttf
             SDL2_mixer::SDL2_mixer
             Qt6::Widgets
-            Qt6::Network
     )
 endif()
 
@@ -97,22 +99,19 @@ if(TALLER_SERVER)
     FetchContent_MakeAvailable(yaml-cpp)
 
     add_executable(taller_server)
-
     add_dependencies(taller_server taller_common)
-
     add_subdirectory(server)
 
     set_project_warnings(taller_server ${TALLER_MAKE_WARNINGS_AS_ERRORS} FALSE)
 
     find_package(Box2D REQUIRED)
-
     target_include_directories(taller_server PRIVATE ${Box2D_INCLUDE_DIRS})
 
     target_link_libraries(taller_server
-    PRIVATE
-        taller_common
-        Box2D
-        yaml-cpp::yaml-cpp
+        PRIVATE
+            taller_common
+            Box2D
+            yaml-cpp::yaml-cpp
     )
 endif()
 
@@ -141,6 +140,7 @@ endif()
 if(TALLER_TESTS)
 
     include(FetchContent)
+
     FetchContent_Declare(
         googletest
         URL https://github.com/google/googletest/archive/03597a01ee50ed33e9dfd640b249b4be3799d395.zip
@@ -153,17 +153,15 @@ if(TALLER_TESTS)
     add_executable(taller_tests)
 
     add_dependencies(taller_tests taller_common)
-
-    target_include_directories(taller_tests PUBLIC .)
-
+    
     add_subdirectory(tests/)
 
     set_project_warnings(taller_tests ${TALLER_MAKE_WARNINGS_AS_ERRORS} TRUE)
 
     target_include_directories(taller_tests
         PUBLIC
-        ${gtest_SOURCE_DIR}/include
-        ${gmock_SOURCE_DIR}/include
+            ${gtest_SOURCE_DIR}/include
+            ${gmock_SOURCE_DIR}/include
     )
 
     target_link_libraries(taller_tests

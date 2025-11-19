@@ -6,6 +6,10 @@
 #include <algorithm>
 #include <cmath>
 
+#ifndef DATA_PATH
+#define DATA_PATH "../data"
+#endif
+
 using namespace SDL2pp;
 
 static constexpr float PPM = 16.0f;
@@ -270,11 +274,86 @@ void GameWindow::drawMinimap(Texture& background, Renderer& renderer, GameStateD
 
 }
 
+void GameWindow::drawCheckpointHintAroundCar(
+    Renderer& renderer,
+    Texture& checkpoint_hint,
+    const GameStateDTO& state,
+    const Rect& srcRect,
+    int viewW,
+    int viewH
+) {
+    int my_id = client.getMyPlayerId();
+    const PlayerState* me = nullptr;
+
+    for (const auto& p : state.players) {
+        if (p.player_id == my_id) {
+            me = &p;
+            break;
+        }
+    }
+    if (!me) return;
+
+    if (me->next_checkpoint_position_x == 0 &&
+        me->next_checkpoint_position_y == 0) {
+        return;
+    }
+
+    float angle_world = me->state.angle + me->next_checkpoint_hint;
+
+    float a = std::fmod(angle_world, 2.0f * PI);
+    if (a < 0) a += 2.0f * PI;
+
+
+    const int frameCount = 8;
+    int frameIndex = static_cast<int>(
+        std::lround(a * frameCount / (2.0f * PI))
+    ) & (frameCount - 1);
+
+    int texW = checkpoint_hint.GetWidth();
+    int texH = checkpoint_hint.GetHeight();
+    int frameW = texW / frameCount;
+    int frameH = texH;
+
+    Rect src(frameW * frameIndex, 0, frameW, frameH);
+
+    float car_cx_px = me->state.x * PPM;
+    float car_cy_px = me->state.y * PPM;
+
+    int car_screen_cx = static_cast<int>(std::lround(car_cx_px - srcRect.GetX()));
+    int car_screen_cy = static_cast<int>(std::lround(car_cy_px - srcRect.GetY()));
+
+    const float R = 40.0f;
+
+    int hint_center_x = car_screen_cx + static_cast<int>(std::lround(std::cos(a) * R));
+    int hint_center_y = car_screen_cy + static_cast<int>(std::lround(std::sin(a) * R));
+
+    const float SCALE = 0.35f;
+    int dstW = static_cast<int>(std::lround(frameW * SCALE));
+    int dstH = static_cast<int>(std::lround(frameH * SCALE));
+
+    int dstX = hint_center_x - dstW / 2;
+    int dstY = hint_center_y - dstH / 2;
+
+    if (dstX > viewW  || dstX + dstW < 0 ||
+        dstY > viewH || dstY + dstH < 0) {
+        return;
+    }
+
+    renderer.Copy(
+        checkpoint_hint,
+        src,
+        Rect(dstX, dstY, dstW, dstH)
+    );
+}
+
+
+
 void GameWindow::drawGame(Renderer& renderer,
                          Texture& hud,
                          Texture& background,
                          Texture& sprites,
                          Texture& checkpoint_flag,
+                         Texture& checkpoint_hint,
                          Rect& srcRect,
                          Rect& dstRect,
                          int viewW, int viewH,
@@ -393,6 +472,13 @@ void GameWindow::drawGame(Renderer& renderer,
             renderer.Copy(sprites, spr, Rect(draw_x, draw_y, spr.GetW(), spr.GetH()));
         }
 
+        drawCheckpointHintAroundCar(renderer,
+                                    checkpoint_hint,
+                                    last_state,
+                                    srcRect,
+                                    viewW,
+                                    viewH);
+
         const int HUD_PAD      = 2;
         const int HUD_MARGIN_X = 8;
         const int HUD_MARGIN_Y = 8;
@@ -461,17 +547,21 @@ int GameWindow::runGame() {
 
         Renderer renderer(window, -1, SDL_RENDERER_ACCELERATED);
 
-        Surface surface(std::string(SDL_DATA_PATH) + "/cars/Mobile - Grand Theft Auto 4 - Miscellaneous - Cars.png");
+        Surface surface(DATA_PATH "/cars/Mobile - Grand Theft Auto 4 - Miscellaneous - Cars.png");
         surface.SetColorKey(true, SDL_MapRGB(surface.Get()->format, 163, 163, 13));
         Texture sprites(renderer, surface);
 
-        Surface hud_surface(std::string(SDL_DATA_PATH) + "/assets/hud.png");
+        Surface hud_surface(DATA_PATH "/assets/hud.png");
         hud_surface.SetColorKey(true, SDL_MapRGB(hud_surface.Get()->format, 255, 201, 14));
         Texture hud(renderer, hud_surface);
 
-        Surface checkpoints_surface(std::string(SDL_DATA_PATH) + "/assets/checkpoint.png");
+        Surface checkpoints_surface(DATA_PATH "/assets/checkpoint.png");
         checkpoints_surface.SetColorKey(true, SDL_MapRGB(checkpoints_surface.Get()->format, 255, 201, 14));
         Texture checkpoint_flag(renderer, checkpoints_surface);
+
+        Surface hints_surface(DATA_PATH "/assets/hints.png");
+        hints_surface.SetColorKey(true, SDL_MapRGB(hints_surface.Get()->format, 255, 201, 14));
+        Texture checkpoint_hint(renderer, hints_surface);
 
         renderer.SetLogicalSize(1600, 800);
             
@@ -481,7 +571,7 @@ int GameWindow::runGame() {
             "/cities/Game Boy _ GBC - Grand Theft Auto - Backgrounds - Vice City.png"
         };
         int map_to_play = 0;
-        Texture background(renderer, std::string(SDL_DATA_PATH) + maps[map_to_play]);
+        Texture background(renderer, DATA_PATH + maps[map_to_play]);
         const int bgW = background.GetWidth();
         const int bgH = background.GetHeight();
 
@@ -510,6 +600,7 @@ int GameWindow::runGame() {
                       background,
                       sprites,
                       checkpoint_flag,
+                      checkpoint_hint,
                       srcRect,
                       dstRect,
                       viewW, viewH,

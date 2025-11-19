@@ -84,6 +84,7 @@ private:
                  SDL2pp::Texture& background,
                  SDL2pp::Texture& sprites,
                  SDL2pp::Texture& checkpoint_flag,
+                 SDL2pp::Texture& checkpoint_hint,
                  SDL2pp::Rect& srcRect,
                  SDL2pp::Rect& dstRect,
                  int viewW, int viewH,
@@ -103,6 +104,14 @@ private:
                         const GameStateDTO& state,
                         const SDL2pp::Rect& srcRect,
                         int viewW, int viewH);
+
+    void drawCheckpointHintAroundCar(
+    SDL2pp::Renderer& renderer,
+    SDL2pp::Texture& checkpoint_hint,
+    const GameStateDTO& state,
+    const SDL2pp::Rect& srcRect,
+    int viewW,
+    int viewH);
 
 public:
     int runGame();

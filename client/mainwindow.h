@@ -15,11 +15,11 @@ QT_END_NAMESPACE
 class MainWindow : public QMainWindow {
     Q_OBJECT
 public:
-    explicit MainWindow(QWidget* parent = nullptr);
+    explicit MainWindow(const std::string& host, const std::string& port, QWidget* parent = nullptr);
     ~MainWindow();
 
 signals:
-    void loginRequested(const std::string& host, const std::string& port, const std::string& username);
+    void loginRequested(const std::string& username);
     void startGame(Client* client); 
 
 public slots:
@@ -27,11 +27,13 @@ public slots:
     void handleLoginFailed();
 
 private slots:
-    void onLoginAttempt(const QString& ip, const QString& port, const QString& name);
+    void onLoginAttempt(const QString& name);
     void on_gameStarted();
 
 private:
     Ui::MainWindow *ui;
+    QString serverIp;
+    QString serverPort;
     LoginScreen *pantallaLogin;
     LobbyScreen *pantallaLobby;
     std::unique_ptr<Client> client; 

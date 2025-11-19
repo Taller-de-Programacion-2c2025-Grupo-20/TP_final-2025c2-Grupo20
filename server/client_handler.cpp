@@ -57,6 +57,10 @@ void ClientHandler::send_login_ok(uint8_t player_id) {
     }
 }
 
+void ClientHandler::send_login_failed() {
+    protocol.send_login_failed();
+}
+
 void ClientHandler::send_lobby_update(const LobbyStateDTO& state) {
     try {
         protocol.send_lobby_state(state);

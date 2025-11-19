@@ -3,10 +3,12 @@
 #include <stdexcept>
 #include <QDebug>
 
-MainWindow::MainWindow(QWidget *parent)
+MainWindow::MainWindow(const std::string& host, const std::string& port, QWidget *parent)
     : QMainWindow(parent),
-      ui(new Ui::MainWindow) {
-
+      ui(new Ui::MainWindow),
+      serverIp(QString::fromStdString(host)), 
+      serverPort(QString::fromStdString(port))
+{
     ui->setupUi(this);
     pantallaLogin = new LoginScreen(this);
     ui->stackedWidget->addWidget(pantallaLogin);
@@ -23,13 +25,13 @@ MainWindow::~MainWindow() {
     delete ui;
 }
 
-void MainWindow::onLoginAttempt(const QString& ip, const QString& port, const QString& name) {
+void MainWindow::onLoginAttempt(const QString& name) {
     pantallaLogin->setEnabled(false);
     pantallaLogin->displayError("Conectando...");
     
     try {
-        client = std::make_unique<Client>(ip.toStdString().c_str(),
-                                          port.toStdString().c_str());
+        client = std::make_unique<Client>(serverIp.toStdString().c_str(),
+                                          serverPort.toStdString().c_str());
 
         connect(&(client->getReceiver()), &ClientReceiver::loginSuccess, 
                                      this, &MainWindow::handleLoginSuccess);

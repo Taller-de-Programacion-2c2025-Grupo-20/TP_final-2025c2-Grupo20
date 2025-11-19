@@ -29,6 +29,11 @@ void ClientReceiver::run() {
                     emit loginSuccess(my_id);
                     break;
                 }
+
+                case LOGIN_FAILED: {
+                    emit loginFailed();
+                    break;
+                }
                 
                 case RSP_LOBBY_STATE: {
                     LobbyStateDTO new_state = protocol.receive_lobby_state_payload();

@@ -26,14 +26,12 @@ QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 namespace {
 struct qt_meta_stringdata_LoginScreen_t {
-    uint offsetsAndSizes[14];
+    uint offsetsAndSizes[10];
     char stringdata0[12];
     char stringdata1[17];
     char stringdata2[1];
-    char stringdata3[3];
-    char stringdata4[5];
-    char stringdata5[5];
-    char stringdata6[24];
+    char stringdata3[5];
+    char stringdata4[24];
 };
 #define QT_MOC_LITERAL(ofs, len) \
     uint(sizeof(qt_meta_stringdata_LoginScreen_t::offsetsAndSizes) + ofs), len 
@@ -42,16 +40,12 @@ Q_CONSTINIT static const qt_meta_stringdata_LoginScreen_t qt_meta_stringdata_Log
         QT_MOC_LITERAL(0, 11),  // "LoginScreen"
         QT_MOC_LITERAL(12, 16),  // "connectAttempted"
         QT_MOC_LITERAL(29, 0),  // ""
-        QT_MOC_LITERAL(30, 2),  // "ip"
-        QT_MOC_LITERAL(33, 4),  // "port"
-        QT_MOC_LITERAL(38, 4),  // "name"
-        QT_MOC_LITERAL(43, 23)   // "on_btn_conectar_clicked"
+        QT_MOC_LITERAL(30, 4),  // "name"
+        QT_MOC_LITERAL(35, 23)   // "on_btn_conectar_clicked"
     },
     "LoginScreen",
     "connectAttempted",
     "",
-    "ip",
-    "port",
     "name",
     "on_btn_conectar_clicked"
 };
@@ -72,13 +66,13 @@ Q_CONSTINIT static const uint qt_meta_data_LoginScreen[] = {
        1,       // signalCount
 
  // signals: name, argc, parameters, tag, flags, initial metatype offsets
-       1,    3,   26,    2, 0x06,    1 /* Public */,
+       1,    1,   26,    2, 0x06,    1 /* Public */,
 
  // slots: name, argc, parameters, tag, flags, initial metatype offsets
-       6,    0,   33,    2, 0x08,    5 /* Private */,
+       4,    0,   29,    2, 0x08,    3 /* Private */,
 
  // signals: parameters
-    QMetaType::Void, QMetaType::QString, QMetaType::QString, QMetaType::QString,    3,    4,    5,
+    QMetaType::Void, QMetaType::QString,    3,
 
  // slots: parameters
     QMetaType::Void,
@@ -98,8 +92,6 @@ Q_CONSTINIT const QMetaObject LoginScreen::staticMetaObject = { {
         // method 'connectAttempted'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
         QtPrivate::TypeAndForceComplete<const QString &, std::false_type>,
-        QtPrivate::TypeAndForceComplete<const QString &, std::false_type>,
-        QtPrivate::TypeAndForceComplete<const QString &, std::false_type>,
         // method 'on_btn_conectar_clicked'
         QtPrivate::TypeAndForceComplete<void, std::false_type>
     >,
@@ -112,14 +104,14 @@ void LoginScreen::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id,
         auto *_t = static_cast<LoginScreen *>(_o);
         (void)_t;
         switch (_id) {
-        case 0: _t->connectAttempted((*reinterpret_cast< std::add_pointer_t<QString>>(_a[1])),(*reinterpret_cast< std::add_pointer_t<QString>>(_a[2])),(*reinterpret_cast< std::add_pointer_t<QString>>(_a[3]))); break;
+        case 0: _t->connectAttempted((*reinterpret_cast< std::add_pointer_t<QString>>(_a[1]))); break;
         case 1: _t->on_btn_conectar_clicked(); break;
         default: ;
         }
     } else if (_c == QMetaObject::IndexOfMethod) {
         int *result = reinterpret_cast<int *>(_a[0]);
         {
-            using _t = void (LoginScreen::*)(const QString & , const QString & , const QString & );
+            using _t = void (LoginScreen::*)(const QString & );
             if (_t _q_method = &LoginScreen::connectAttempted; *reinterpret_cast<_t *>(_a[1]) == _q_method) {
                 *result = 0;
                 return;
@@ -159,9 +151,9 @@ int LoginScreen::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
 }
 
 // SIGNAL 0
-void LoginScreen::connectAttempted(const QString & _t1, const QString & _t2, const QString & _t3)
+void LoginScreen::connectAttempted(const QString & _t1)
 {
-    void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t1))), const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t2))), const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t3))) };
+    void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t1))) };
     QMetaObject::activate(this, &staticMetaObject, 0, _a);
 }
 QT_WARNING_POP

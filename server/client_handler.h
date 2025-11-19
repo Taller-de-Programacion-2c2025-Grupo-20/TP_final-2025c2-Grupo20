@@ -37,6 +37,7 @@ public:
     std::string get_username() const;
     
     void send_login_ok(uint8_t player_id);
+    void send_login_failed();
     void start_in_lobby(Queue<LobbyCommand>& lobby_queue);
     void connect_to_match(Queue<InputCmd>& game_queue, Queue<GameStateDTO>& sender_queue);
     void send_lobby_update(const LobbyStateDTO& state);

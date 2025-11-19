@@ -115,6 +115,11 @@ void ServerProtocol::send_login_ok(uint8_t player_id) {
     skt.sendall(buffer.data(), buffer.size());
 }
 
+void ServerProtocol::send_login_failed() {
+    uint8_t cmd = LOGIN_FAILED; 
+    skt.sendall(&cmd, sizeof(uint8_t));
+}
+
 void ServerProtocol::send_lobby_state(const LobbyStateDTO& state) {
     std::vector<uint8_t> buffer;
     

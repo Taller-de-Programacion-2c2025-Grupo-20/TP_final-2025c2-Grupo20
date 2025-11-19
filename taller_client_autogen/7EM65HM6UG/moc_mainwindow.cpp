@@ -26,23 +26,20 @@ QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 namespace {
 struct qt_meta_stringdata_MainWindow_t {
-    uint offsetsAndSizes[32];
+    uint offsetsAndSizes[26];
     char stringdata0[11];
     char stringdata1[15];
     char stringdata2[1];
     char stringdata3[12];
-    char stringdata4[5];
-    char stringdata5[5];
-    char stringdata6[9];
-    char stringdata7[10];
-    char stringdata8[8];
-    char stringdata9[7];
-    char stringdata10[19];
-    char stringdata11[18];
+    char stringdata4[9];
+    char stringdata5[10];
+    char stringdata6[8];
+    char stringdata7[7];
+    char stringdata8[19];
+    char stringdata9[18];
+    char stringdata10[15];
+    char stringdata11[5];
     char stringdata12[15];
-    char stringdata13[3];
-    char stringdata14[5];
-    char stringdata15[15];
 };
 #define QT_MOC_LITERAL(ofs, len) \
     uint(sizeof(qt_meta_stringdata_MainWindow_t::offsetsAndSizes) + ofs), len 
@@ -52,25 +49,20 @@ Q_CONSTINIT static const qt_meta_stringdata_MainWindow_t qt_meta_stringdata_Main
         QT_MOC_LITERAL(11, 14),  // "loginRequested"
         QT_MOC_LITERAL(26, 0),  // ""
         QT_MOC_LITERAL(27, 11),  // "std::string"
-        QT_MOC_LITERAL(39, 4),  // "host"
-        QT_MOC_LITERAL(44, 4),  // "port"
-        QT_MOC_LITERAL(49, 8),  // "username"
-        QT_MOC_LITERAL(58, 9),  // "startGame"
-        QT_MOC_LITERAL(68, 7),  // "Client*"
-        QT_MOC_LITERAL(76, 6),  // "client"
-        QT_MOC_LITERAL(83, 18),  // "handleLoginSuccess"
-        QT_MOC_LITERAL(102, 17),  // "handleLoginFailed"
-        QT_MOC_LITERAL(120, 14),  // "onLoginAttempt"
-        QT_MOC_LITERAL(135, 2),  // "ip"
-        QT_MOC_LITERAL(138, 4),  // "name"
-        QT_MOC_LITERAL(143, 14)   // "on_gameStarted"
+        QT_MOC_LITERAL(39, 8),  // "username"
+        QT_MOC_LITERAL(48, 9),  // "startGame"
+        QT_MOC_LITERAL(58, 7),  // "Client*"
+        QT_MOC_LITERAL(66, 6),  // "client"
+        QT_MOC_LITERAL(73, 18),  // "handleLoginSuccess"
+        QT_MOC_LITERAL(92, 17),  // "handleLoginFailed"
+        QT_MOC_LITERAL(110, 14),  // "onLoginAttempt"
+        QT_MOC_LITERAL(125, 4),  // "name"
+        QT_MOC_LITERAL(130, 14)   // "on_gameStarted"
     },
     "MainWindow",
     "loginRequested",
     "",
     "std::string",
-    "host",
-    "port",
     "username",
     "startGame",
     "Client*",
@@ -78,7 +70,6 @@ Q_CONSTINIT static const qt_meta_stringdata_MainWindow_t qt_meta_stringdata_Main
     "handleLoginSuccess",
     "handleLoginFailed",
     "onLoginAttempt",
-    "ip",
     "name",
     "on_gameStarted"
 };
@@ -99,23 +90,23 @@ Q_CONSTINIT static const uint qt_meta_data_MainWindow[] = {
        2,       // signalCount
 
  // signals: name, argc, parameters, tag, flags, initial metatype offsets
-       1,    3,   50,    2, 0x06,    1 /* Public */,
-       7,    1,   57,    2, 0x06,    5 /* Public */,
+       1,    1,   50,    2, 0x06,    1 /* Public */,
+       5,    1,   53,    2, 0x06,    3 /* Public */,
 
  // slots: name, argc, parameters, tag, flags, initial metatype offsets
-      10,    0,   60,    2, 0x0a,    7 /* Public */,
-      11,    0,   61,    2, 0x0a,    8 /* Public */,
-      12,    3,   62,    2, 0x08,    9 /* Private */,
-      15,    0,   69,    2, 0x08,   13 /* Private */,
+       8,    0,   56,    2, 0x0a,    5 /* Public */,
+       9,    0,   57,    2, 0x0a,    6 /* Public */,
+      10,    1,   58,    2, 0x08,    7 /* Private */,
+      12,    0,   61,    2, 0x08,    9 /* Private */,
 
  // signals: parameters
-    QMetaType::Void, 0x80000000 | 3, 0x80000000 | 3, 0x80000000 | 3,    4,    5,    6,
-    QMetaType::Void, 0x80000000 | 8,    9,
+    QMetaType::Void, 0x80000000 | 3,    4,
+    QMetaType::Void, 0x80000000 | 6,    7,
 
  // slots: parameters
     QMetaType::Void,
     QMetaType::Void,
-    QMetaType::Void, QMetaType::QString, QMetaType::QString, QMetaType::QString,   13,    5,   14,
+    QMetaType::Void, QMetaType::QString,   11,
     QMetaType::Void,
 
        0        // eod
@@ -133,8 +124,6 @@ Q_CONSTINIT const QMetaObject MainWindow::staticMetaObject = { {
         // method 'loginRequested'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
         QtPrivate::TypeAndForceComplete<const std::string &, std::false_type>,
-        QtPrivate::TypeAndForceComplete<const std::string &, std::false_type>,
-        QtPrivate::TypeAndForceComplete<const std::string &, std::false_type>,
         // method 'startGame'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
         QtPrivate::TypeAndForceComplete<Client *, std::false_type>,
@@ -144,8 +133,6 @@ Q_CONSTINIT const QMetaObject MainWindow::staticMetaObject = { {
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
         // method 'onLoginAttempt'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
-        QtPrivate::TypeAndForceComplete<const QString &, std::false_type>,
-        QtPrivate::TypeAndForceComplete<const QString &, std::false_type>,
         QtPrivate::TypeAndForceComplete<const QString &, std::false_type>,
         // method 'on_gameStarted'
         QtPrivate::TypeAndForceComplete<void, std::false_type>
@@ -159,18 +146,18 @@ void MainWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
         auto *_t = static_cast<MainWindow *>(_o);
         (void)_t;
         switch (_id) {
-        case 0: _t->loginRequested((*reinterpret_cast< std::add_pointer_t<std::string>>(_a[1])),(*reinterpret_cast< std::add_pointer_t<std::string>>(_a[2])),(*reinterpret_cast< std::add_pointer_t<std::string>>(_a[3]))); break;
+        case 0: _t->loginRequested((*reinterpret_cast< std::add_pointer_t<std::string>>(_a[1]))); break;
         case 1: _t->startGame((*reinterpret_cast< std::add_pointer_t<Client*>>(_a[1]))); break;
         case 2: _t->handleLoginSuccess(); break;
         case 3: _t->handleLoginFailed(); break;
-        case 4: _t->onLoginAttempt((*reinterpret_cast< std::add_pointer_t<QString>>(_a[1])),(*reinterpret_cast< std::add_pointer_t<QString>>(_a[2])),(*reinterpret_cast< std::add_pointer_t<QString>>(_a[3]))); break;
+        case 4: _t->onLoginAttempt((*reinterpret_cast< std::add_pointer_t<QString>>(_a[1]))); break;
         case 5: _t->on_gameStarted(); break;
         default: ;
         }
     } else if (_c == QMetaObject::IndexOfMethod) {
         int *result = reinterpret_cast<int *>(_a[0]);
         {
-            using _t = void (MainWindow::*)(const std::string & , const std::string & , const std::string & );
+            using _t = void (MainWindow::*)(const std::string & );
             if (_t _q_method = &MainWindow::loginRequested; *reinterpret_cast<_t *>(_a[1]) == _q_method) {
                 *result = 0;
                 return;
@@ -217,9 +204,9 @@ int MainWindow::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
 }
 
 // SIGNAL 0
-void MainWindow::loginRequested(const std::string & _t1, const std::string & _t2, const std::string & _t3)
+void MainWindow::loginRequested(const std::string & _t1)
 {
-    void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t1))), const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t2))), const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t3))) };
+    void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t1))) };
     QMetaObject::activate(this, &staticMetaObject, 0, _a);
 }
 

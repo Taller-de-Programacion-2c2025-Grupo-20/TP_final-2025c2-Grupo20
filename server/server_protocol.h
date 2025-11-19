@@ -30,6 +30,7 @@ public:
     InputCmd receive_input_command();
     std::string receive_create_match_payload();
     void send_login_ok(uint8_t player_id);
+    void send_login_failed();
     void send_lobby_state(const LobbyStateDTO& state);
     void send_match_list(const MatchListDTO& list);
     void send_start_game();

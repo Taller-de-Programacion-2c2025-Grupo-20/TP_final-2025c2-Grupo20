@@ -24,13 +24,9 @@ class Ui_LoginScreen
 public:
     QGridLayout *gridLayout;
     QLabel *label_titulo;
-    QLabel *label_nombre;
-    QLineEdit *edit_nombre;
-    QLabel *label_ip_servidor;
-    QLineEdit *edit_ip_servidor;
-    QLabel *label_puerto;
-    QLineEdit *edit_puerto;
     QPushButton *btn_conectar;
+    QLineEdit *edit_nombre;
+    QLabel *label_nombre;
     QLabel *label_error;
 
     void setupUi(QWidget *LoginScreen)
@@ -51,50 +47,28 @@ public:
 
         gridLayout->addWidget(label_titulo, 0, 0, 1, 2);
 
-        label_nombre = new QLabel(LoginScreen);
-        label_nombre->setObjectName("label_nombre");
-        label_nombre->setAlignment(Qt::AlignRight|Qt::AlignVCenter);
+        btn_conectar = new QPushButton(LoginScreen);
+        btn_conectar->setObjectName("btn_conectar");
 
-        gridLayout->addWidget(label_nombre, 1, 0, 1, 1);
+        gridLayout->addWidget(btn_conectar, 2, 0, 1, 2);
 
         edit_nombre = new QLineEdit(LoginScreen);
         edit_nombre->setObjectName("edit_nombre");
 
         gridLayout->addWidget(edit_nombre, 1, 1, 1, 1);
 
-        label_ip_servidor = new QLabel(LoginScreen);
-        label_ip_servidor->setObjectName("label_ip_servidor");
-        label_ip_servidor->setAlignment(Qt::AlignRight|Qt::AlignVCenter);
+        label_nombre = new QLabel(LoginScreen);
+        label_nombre->setObjectName("label_nombre");
+        label_nombre->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
 
-        gridLayout->addWidget(label_ip_servidor, 2, 0, 1, 1);
-
-        edit_ip_servidor = new QLineEdit(LoginScreen);
-        edit_ip_servidor->setObjectName("edit_ip_servidor");
-
-        gridLayout->addWidget(edit_ip_servidor, 2, 1, 1, 1);
-
-        label_puerto = new QLabel(LoginScreen);
-        label_puerto->setObjectName("label_puerto");
-        label_puerto->setAlignment(Qt::AlignRight|Qt::AlignVCenter);
-
-        gridLayout->addWidget(label_puerto, 3, 0, 1, 1);
-
-        edit_puerto = new QLineEdit(LoginScreen);
-        edit_puerto->setObjectName("edit_puerto");
-
-        gridLayout->addWidget(edit_puerto, 3, 1, 1, 1);
-
-        btn_conectar = new QPushButton(LoginScreen);
-        btn_conectar->setObjectName("btn_conectar");
-
-        gridLayout->addWidget(btn_conectar, 4, 0, 1, 2);
+        gridLayout->addWidget(label_nombre, 1, 0, 1, 1);
 
         label_error = new QLabel(LoginScreen);
         label_error->setObjectName("label_error");
         label_error->setStyleSheet(QString::fromUtf8("color: red;"));
         label_error->setAlignment(Qt::AlignCenter);
 
-        gridLayout->addWidget(label_error, 5, 0, 1, 2);
+        gridLayout->addWidget(label_error, 3, 0, 1, 2);
 
 
         retranslateUi(LoginScreen);
@@ -106,12 +80,8 @@ public:
     {
         LoginScreen->setWindowTitle(QCoreApplication::translate("LoginScreen", "Login", nullptr));
         label_titulo->setText(QCoreApplication::translate("LoginScreen", "Need for Speed", nullptr));
-        label_nombre->setText(QCoreApplication::translate("LoginScreen", "Nombre:", nullptr));
-        label_ip_servidor->setText(QCoreApplication::translate("LoginScreen", "IP Servidor:", nullptr));
-        edit_ip_servidor->setPlaceholderText(QCoreApplication::translate("LoginScreen", "localhost o 127.0.0.1", nullptr));
-        label_puerto->setText(QCoreApplication::translate("LoginScreen", "Puerto:", nullptr));
-        edit_puerto->setPlaceholderText(QCoreApplication::translate("LoginScreen", "p.ej. 5555", nullptr));
         btn_conectar->setText(QCoreApplication::translate("LoginScreen", "Conectar", nullptr));
+        label_nombre->setText(QCoreApplication::translate("LoginScreen", "Nombre:", nullptr));
         label_error->setText(QString());
     } // retranslateUi
 

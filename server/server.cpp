@@ -140,21 +140,27 @@ void Server::process_lobby_commands() {
 }
 
 void Server::handle_login(const LobbyCommand& cmd) {
+    bool name_taken = false;
     for (const auto& client : clients_in_lobby) {
-        if (client->get_username() == cmd.text_payload && !cmd.text_payload.empty()) {
-            std::cerr << "Login fallido: nombre " << cmd.text_payload << " ya en uso." << std::endl;
-            return;
+        if (!cmd.text_payload.empty() && client->get_username() == cmd.text_payload) {
+            name_taken = true;
+            break;
         }
     }
 
     for (auto& client : clients_in_lobby) {
         if (client->get_id() == cmd.client_id) {
             
+            if (name_taken || cmd.text_payload.empty()) {
+                std::cerr << "Login fallido: nombre " << cmd.text_payload << " ya en uso o inválido." << std::endl;
+                client->send_login_failed(); 
+                return;
+            }
+
             client->set_username(cmd.text_payload);
             client->send_login_ok(cmd.client_id); 
             
             std::cout << "Jugador " << (int)cmd.client_id << " se logueó como " << cmd.text_payload << std::endl;
-            
             return;
         }
     }
@@ -287,9 +293,6 @@ void Server::handle_join_match(const LobbyCommand& cmd) {
 void Server::handle_start_game(const LobbyCommand& cmd) {
     for (auto& pair : active_matches) {
         if (pair.second->has_player(cmd.client_id)) {
-            
-            // (Aquí iría la lógica de verificar si es el host)
-            
             std::cout << "Iniciando partida " << (int)pair.first << "..." << std::endl;
             pair.second->start();
             return;

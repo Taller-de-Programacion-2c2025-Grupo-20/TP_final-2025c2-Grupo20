@@ -36,7 +36,7 @@ sudo apt install -y \
 # CLONAR REPO
 echo -e "${GREEN}→ Clonando repositorio...${NC}"
 cd "$WORKDIR"
-git clone "$REPO_URL"
+git clone -b entrega --single-branch "$REPO_URL"
 
 if [ $? -ne 0 ]; then
     echo "❌ Error al clonar el repositorio"

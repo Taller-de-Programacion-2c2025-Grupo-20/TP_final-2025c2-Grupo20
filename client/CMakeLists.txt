@@ -1,6 +1,7 @@
 
 # --- Archivos de Código (.cpp) ---
 target_sources(taller_client PRIVATE
+    client_main.cpp
     client.cpp
     client_protocol.cpp
     mainwindow.cpp

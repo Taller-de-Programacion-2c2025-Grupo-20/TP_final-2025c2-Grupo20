@@ -1,29 +1,62 @@
 #ifndef SERVER_H
 #define SERVER_H
 
-#include "../common/queue.h"
-#include "../common/socket.h"
-#include "../common/clientCommand.h"
+#include <map>
+#include <list>
+#include <memory>
+#include <mutex>
+#include <atomic>
+#include <string>
+#include <thread>
 
+#include "../common/socket.h"
+#include "../common/queue.h"
+#include "../common/lobbyCommand.h"
+#include "../common/lobbyState.h"
+#include "acceptor.h"
 #include "client_handler.h"
-#include "queues_monitor.h"
+#include "match.h"
 
 class Server {
 private:
-    const char* port;
+    Socket listener; 
+    Acceptor acceptor;
+    std::atomic<bool> is_running;
+    std::thread input_listener_thread;
 
-    QueuesMonitor clients_queues;
-    Queue<InputCmd> gameloop_queue;
+    Queue<std::unique_ptr<ClientHandler>> new_clients_queue;    
+    Queue<LobbyCommand> lobby_queue;
+    LobbyStateDTO current_lobby_state;
+
+    std::mutex mtx; 
+    std::list<std::unique_ptr<ClientHandler>> clients_in_lobby;
+    std::map<uint8_t, std::unique_ptr<Match>> active_matches;
+    uint8_t next_match_id;
+
+    void process_new_clients();
+    void process_lobby_commands();
+    void reap_dead_lobby_clients();
+    void cleanup_finished_matches();
+    void send_match_list(uint8_t client_id);
+
+    void handle_login(const LobbyCommand& cmd);
+    void handle_create_match(const LobbyCommand& cmd);
+    void handle_join_match(const LobbyCommand& cmd);
+    //void broadcast_lobby_state();
+    void broadcast_match_list();
+    void handle_toggle_ready(const LobbyCommand& cmd);
+    void handle_start_game(const LobbyCommand& cmd);
+
 
 public:
+    Server(const char* port);
+    ~Server();
+    
     int run();
-
-    explicit Server(const char* port);
+    void stop();
 
     Server(const Server&) = delete;
     Server& operator=(const Server&) = delete;
-
-    ~Server();
 };
 
-#endif
+#endif 

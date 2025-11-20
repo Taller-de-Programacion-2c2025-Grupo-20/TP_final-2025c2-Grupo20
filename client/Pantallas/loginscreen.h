@@ -14,8 +14,7 @@ public:
     void displayError(const QString &message);
 
 signals:
-    // Pasamos exactamente lo que pide el usuario
-    void connectAttempted(const QString& ip, const QString& port, const QString& name);
+    void connectAttempted(const QString& name);
 
 private slots:
     void on_btn_conectar_clicked();

@@ -1,40 +1,48 @@
 #ifndef CLIENT_HANDLER_H
 #define CLIENT_HANDLER_H
 
-#include <string>
-#include <utility>
-
+#include <memory>
+#include <atomic>
+#include "../common/socket.h"
+#include "../common/thread.h"
 #include "../common/queue.h"
 #include "../common/clientCommand.h"
+#include "../common/lobbyCommand.h"
 #include "../common/gameState.h"
-
-#include "receiver.h"
-#include "sender.h"
+#include "../common/lobbyState.h"
+#include "../common/match_list.h"
 #include "server_protocol.h"
+#include "sender.h"
+#include "receiver.h"
 
 class ClientHandler {
 private:
-    ServerProtocol protocol;
     uint8_t id;
+    std::string username;
+    ServerProtocol protocol;
+    std::atomic<bool> is_alive_flag;
 
     Receiver receiver;
     Sender sender;
 
 public:
-    void start();
+    ClientHandler(Socket&& skt, uint8_t id);
+    ~ClientHandler();
+
     void stop();
     void join();
-    bool is_alive();
-
-    uint8_t client_id();
-
-    ClientHandler(Socket&& skt, Queue<InputCmd>& gameloop_queue,
-                  Queue<GameStateDTO>& client_queue, uint8_t id);
-
-    ClientHandler(const ClientHandler&) = delete;
-    ClientHandler& operator=(const ClientHandler&) = delete;
-
-    ~ClientHandler();
+    bool is_alive() const;
+    uint8_t get_id() const;
+    void set_username(const std::string& name);
+    std::string get_username() const;
+    
+    void send_login_ok(uint8_t player_id);
+    void send_login_failed();
+    void start_in_lobby(Queue<LobbyCommand>& lobby_queue);
+    void connect_to_match(Queue<InputCmd>& game_queue, Queue<GameStateDTO>& sender_queue);
+    void send_lobby_update(const LobbyStateDTO& state);
+    void send_match_list(const MatchListDTO& list);
+    void send_start_game();
 };
 
 #endif

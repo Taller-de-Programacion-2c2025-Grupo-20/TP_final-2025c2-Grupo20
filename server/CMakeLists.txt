@@ -34,4 +34,6 @@ target_sources(taller_server
     sender.h
     server_protocol.h
     server.h
+    match.h
+    match.cpp
     )

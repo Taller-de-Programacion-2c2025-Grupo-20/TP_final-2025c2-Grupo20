@@ -377,7 +377,7 @@ void GameWindow::drawGame(Renderer& renderer,
                 quit.player_id = client.getMyPlayerId();
                 quit.key = InputKey::Quit;
                 quit.action = InputAction::Press;
-                input_queue.try_push(quit);
+                client.push_input(quit);
                 exit = true;
                 break;
             }
@@ -386,18 +386,22 @@ void GameWindow::drawGame(Renderer& renderer,
                 cmd.player_id = client.getMyPlayerId();
                 cmd.action = (ev.type == SDL_KEYDOWN) ? InputAction::Press : InputAction::Release;
                 switch (ev.key.keysym.sym) {
-                    case SDLK_UP:    cmd.key = InputKey::Up; input_queue.try_push(cmd);break;
-                    case SDLK_w:    cmd.key = InputKey::Up; input_queue.try_push(cmd); break;
-                    case SDLK_DOWN:  cmd.key = InputKey::Down; input_queue.try_push(cmd); break;
-                    case SDLK_s:  cmd.key = InputKey::Down; input_queue.try_push(cmd); break;
-                    case SDLK_LEFT:  cmd.key = InputKey::Left; input_queue.try_push(cmd); break;
-                    case SDLK_a:  cmd.key = InputKey::Left; input_queue.try_push(cmd); break;
-                    case SDLK_RIGHT: cmd.key = InputKey::Right; input_queue.try_push(cmd); break;
-                    case SDLK_d: cmd.key = InputKey::Right; input_queue.try_push(cmd); break;
+                    case SDLK_UP:    cmd.key = InputKey::Up; break;
+                    case SDLK_w:    cmd.key = InputKey::Up; break;
+                    case SDLK_DOWN:  cmd.key = InputKey::Down; break;
+                    case SDLK_s:  cmd.key = InputKey::Down; break;
+                    case SDLK_LEFT:  cmd.key = InputKey::Left; break;
+                    case SDLK_a:  cmd.key = InputKey::Left; break;
+                    case SDLK_RIGHT: cmd.key = InputKey::Right; break;
+                    case SDLK_d: cmd.key = InputKey::Right; break;
                     case SDLK_q:
-                    case SDLK_ESCAPE: cmd.key = InputKey::Quit; input_queue.try_push(cmd); break;
+                    case SDLK_ESCAPE: cmd.key = InputKey::Quit; break;
                 }
-                
+
+                if (cmd.key != InputKey::Unknown) {
+                    client.push_input(cmd);
+                }
+
                 if (cmd.key == InputKey::Quit && cmd.action == InputAction::Press) {
                     exit = true;
                     break;
@@ -409,21 +413,23 @@ void GameWindow::drawGame(Renderer& renderer,
             break;
         }
 
-        GameStateDTO gs;
-        bool got = false;
-        while (state_queue.try_pop(gs)) {
-            last_state = std::move(gs);
-            got = true;
-        }
+        GameStateDTO gs = receiver.pollGameState();
         
-        if (got == true or have_state == true){
-            have_state = 1;
+        if (!gs.players.empty()) {
+            last_state = gs;
+            have_state = true;
         }
+        std::cout << "Mi player id es: " << static_cast<int>(client.getMyPlayerId()) << "\n";
 
         renderer.SetDrawColor(0, 0, 0, 255);
         renderer.Clear();
 
         renderer.Copy(background, srcRect, dstRect);
+
+        if (!have_state) {
+            renderer.Present(); 
+            continue; 
+        }
 
         drawCheckpoint(renderer, checkpoint_flag, last_state, srcRect, viewW,viewH);
 
@@ -528,8 +534,6 @@ void GameWindow::drawGame(Renderer& renderer,
 
 int GameWindow::runGame() {
     try {
-        receiver.start();
-        sender.start();
 
         // Init SDL
         SDL sdl(SDL_INIT_VIDEO);
@@ -542,7 +546,7 @@ int GameWindow::runGame() {
         // Ventana y renderer
         Window window("SDL2pp demo",
                       SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED,
-                      1600, 800,
+                      1600, 900,
                       SDL_WINDOW_RESIZABLE);
 
         Renderer renderer(window, -1, SDL_RENDERER_ACCELERATED);
@@ -563,7 +567,7 @@ int GameWindow::runGame() {
         hints_surface.SetColorKey(true, SDL_MapRGB(hints_surface.Get()->format, 255, 201, 14));
         Texture checkpoint_hint(renderer, hints_surface);
 
-        renderer.SetLogicalSize(1600, 800);
+        renderer.SetLogicalSize(1600, 900);
             
         std::array<std::string, 3> maps = {
             "/cities/Game Boy _ GBC - Grand Theft Auto - Backgrounds - Liberty City.png",
@@ -580,8 +584,8 @@ int GameWindow::runGame() {
         uint64_t t1 = SDL_GetPerformanceCounter();
         uint64_t it = 0;
 
-        Rect srcRect(0, 0, 1600, 800);
-        Rect dstRect(0, 0, 1600, 800);
+        Rect srcRect(0, 0, 1600, 900);
+        Rect dstRect(0, 0, 1600, 900);
         const int viewW = dstRect.GetW();
         const int viewH = dstRect.GetH();
 
@@ -616,10 +620,7 @@ int GameWindow::runGame() {
                       hp,
                       actual_pos, pos_x_m, pos_y_m, angle);
         
-        receiver.stop();
-        sender.stop();
-        receiver.join();
-        sender.join();
+
         return 0;
 
     } catch (std::exception& e) {
@@ -630,7 +631,6 @@ int GameWindow::runGame() {
 
 GameWindow::GameWindow(Client& c)
     : client(c),
-      sender(c.getProtocol(), input_queue),
-      receiver(c.getProtocol(), state_queue),
       game_sprites(),
-      car_to_use(CarType::ROJO) {}
+      car_to_use(CarType::ROJO),
+      receiver(c.getReceiver()) {}

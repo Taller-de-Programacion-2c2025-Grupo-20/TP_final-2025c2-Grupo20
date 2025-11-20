@@ -2,8 +2,10 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include <QObject>
 #include <memory>
 #include "Pantallas/loginscreen.h"
+#include "Pantallas/lobbyscreen.h"
 #include "client.h"
 
 QT_BEGIN_NAMESPACE
@@ -13,19 +15,28 @@ QT_END_NAMESPACE
 class MainWindow : public QMainWindow {
     Q_OBJECT
 public:
-    explicit MainWindow(Client* client = nullptr, QWidget* parent = nullptr);
+    explicit MainWindow(const std::string& host, const std::string& port, QWidget* parent = nullptr);
     ~MainWindow();
 
 signals:
-    void loginOk(Client* client);
-    void quitApp();
+    void loginRequested(const std::string& username);
+    void startGame(Client* client); 
+
+public slots:
+    void handleLoginSuccess();
+    void handleLoginFailed();
 
 private slots:
-    void handleLoginAttempt(const QString& ip, const QString& port, const QString& name);
+    void onLoginAttempt(const QString& name);
+    void on_gameStarted();
 
 private:
     Ui::MainWindow *ui;
+    QString serverIp;
+    QString serverPort;
     LoginScreen *pantallaLogin;
+    LobbyScreen *pantallaLobby;
+    std::unique_ptr<Client> client; 
 };
 
-#endif // MAINWINDOW_H
+#endif

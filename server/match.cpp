@@ -7,7 +7,7 @@ Match::Match(uint8_t id, const std::string& name) :
     running(false),
     clients_queues(),
     gameloop_queue(1024), 
-    gameloop(gameloop_queue, clients_queues) 
+    gameloop(gameloop_queue, clients_queues, LIBERTY_CITY) 
 {}
 
 Match::~Match() {

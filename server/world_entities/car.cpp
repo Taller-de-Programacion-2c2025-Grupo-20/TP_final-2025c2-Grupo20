@@ -18,6 +18,9 @@ CarAttributes Car::getCarTypeAttributes(CarType car_type) {
             return {48.f, 12.f, 10.5f, 130, 0.7f, 0.75f, 1.3f, 1.1f, 0.6f};
         case CarType::CAMION:
             return {38.f, 13.5f, 8.5f, 160, 0.5f, 1.5f, 1.6f, 1.2f, 0.65f};
+        
+        default:
+            return {0, 0, 0, 0, 0, 0, 0, 0, 0.};
     }
 }
 

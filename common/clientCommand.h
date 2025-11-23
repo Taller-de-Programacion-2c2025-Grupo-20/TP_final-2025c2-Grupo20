@@ -12,7 +12,7 @@ struct InputCmd {
     std::string username;
     uint8_t match_id;
 
-    explicit InputCmd() : player_id(0), key(InputKey::Up), action(InputAction::Press) {}
+    explicit InputCmd() : player_id(0), key(InputKey::Up), action(InputAction::Press), match_id(0) {}
 };
 
 #endif

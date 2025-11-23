@@ -5,10 +5,9 @@ Match::Match(uint8_t id, const std::string& name) :
     match_id(id),
     name(name),
     running(false),
-    world(b2Vec2(0,0), true), 
     clients_queues(),
     gameloop_queue(1024), 
-    gameloop(gameloop_queue, clients_queues, world) 
+    gameloop(gameloop_queue, clients_queues) 
 {}
 
 Match::~Match() {
@@ -24,7 +23,7 @@ void Match::start() {
         client->send_start_game(); 
     }
     for (auto& client : clients) {
-        gameloop.add_player(client->get_id());
+        gameloop.addCar(client->get_id());
     }
     gameloop.start(); 
 }

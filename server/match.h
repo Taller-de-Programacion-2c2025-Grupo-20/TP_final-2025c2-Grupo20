@@ -20,8 +20,6 @@ private:
     uint8_t match_id;
     const std::string name;
     std::atomic<bool> running;
-
-    b2World world;
     
     QueuesMonitor clients_queues;
     Queue<InputCmd> gameloop_queue;

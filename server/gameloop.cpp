@@ -25,7 +25,7 @@ void Gameloop::addCar(uint8_t client_id) {
     cars_inital_pos.erase(cars_inital_pos.begin());
 
     clients_cars.emplace(
-            client_id, std::make_unique<Car>(world, b2Vec2(car_initial_pos.x, car_initial_pos.y)));
+            client_id, std::make_unique<Car>(world, b2Vec2(car_initial_pos.x, car_initial_pos.y), CarType::ROJO));
     mutex.unlock();
  
     std::cout << "Auto creado para jugador " << (int)client_id << std::endl;

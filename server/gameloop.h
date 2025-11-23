@@ -48,7 +48,7 @@ private:
     void loadCheckpoints(const YAML::Node& map_data);
     void loadInitialPos(const YAML::Node& map_data);
 
-    void loadMapData();
+    void loadMapData(const std::string& map_name);
 
     void readUsersInput();
 
@@ -64,7 +64,7 @@ public:
 
     void stop() override;
 
-    Gameloop(Queue<InputCmd>& gameloop_queue, QueuesMonitor& clients_queues);
+    Gameloop(Queue<InputCmd>& gameloop_queue, QueuesMonitor& clients_queues, const std::string& map_name);
 };
 
 

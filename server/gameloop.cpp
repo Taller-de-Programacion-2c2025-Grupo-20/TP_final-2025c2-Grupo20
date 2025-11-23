@@ -112,9 +112,9 @@ void Gameloop::loadInitialPos(const YAML::Node& map_data) {
     std::cout << "Termino carga de posiciones iniciales\n";
 }
 
-void Gameloop::loadMapData() {
+void Gameloop::loadMapData(const std::string& map_name) {
     YAML::Node map_data =
-            YAML::LoadFile(std::string(MAPS_DATA_PATH) + "liberty_city.yaml");
+            YAML::LoadFile(std::string(MAPS_DATA_PATH) + map_name);
 
     loadWalls(map_data);
     loadCheckpoints(map_data);
@@ -246,8 +246,8 @@ void Gameloop::stop() {
     gameloop_queue.close();
 }
 
-Gameloop::Gameloop(Queue<InputCmd>& gameloop_queue, QueuesMonitor& clients_queues):
+Gameloop::Gameloop(Queue<InputCmd>& gameloop_queue, QueuesMonitor& clients_queues, const std::string& map_name):
         gameloop_queue(gameloop_queue), clients_queues(clients_queues), world(b2Vec2(0, 0), true) {
     world.SetContactListener(&collision_listener);
-    loadMapData();
+    loadMapData(map_name);
 }

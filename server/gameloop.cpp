@@ -185,6 +185,44 @@ GameStateDTO Gameloop::getCurrentGameState(const float elapsed_time) {
     return current_state;
 }
 
+void Gameloop::updatePhysics(const double& rate) {
+    for (auto& pair: clients_cars) {
+        pair.second->updateCarPhysics();
+    }
+    world.Step(rate, 6, 2);
+}
+
+std::chrono::_V2::steady_clock::time_point Gameloop::keepLoopRate(std::chrono::steady_clock::time_point t1, const double& rate) {
+    using clock = std::chrono::steady_clock;
+    auto t2 = clock::now();
+
+    double elapsed = std::chrono::duration<double>(t2 - t1).count();
+    double rest = rate - elapsed;
+    
+    if (rest < 0) {
+        
+        double behind = -rest;
+        double adjust = rate - fmod(behind, rate);
+        double lost = behind + adjust;
+
+        auto lost_dur = std::chrono::duration_cast<clock::duration>(
+                std::chrono::duration<double>(lost));
+
+        t1 += lost_dur;
+
+    } else {
+
+        std::this_thread::sleep_for(std::chrono::duration<double>(rest));
+        auto rate_dur = std::chrono::duration_cast<clock::duration>(
+                std::chrono::duration<double>(rate));
+        
+        t1 += rate_dur;
+    
+    }
+
+    return t1;
+}
+
 void Gameloop::run() {
 
     using clock = std::chrono::steady_clock;
@@ -202,40 +240,12 @@ void Gameloop::run() {
             break;
         }
 
-        for (auto& pair: clients_cars) {
-            pair.second->updateCarPhysics();
-        }
-        world.Step(rate, 6, 2);
+        updatePhysics(rate);
 
-        auto t2 = clock::now();
-        double elapsed = std::chrono::duration<double>(t2 - t1).count();
-
-        double rest = rate - elapsed;
-
-        if (rest < 0) {
-            double behind = -rest;
-
-            double adjust = rate - fmod(behind, rate);
-            double lost = behind + adjust;
-
-            auto lost_dur = std::chrono::duration_cast<clock::duration>(
-                    std::chrono::duration<double>(lost));
-
-            t1 += lost_dur;
-
-        } else {
-
-            std::this_thread::sleep_for(std::chrono::duration<double>(rest));
-
-            auto rate_dur = std::chrono::duration_cast<clock::duration>(
-                    std::chrono::duration<double>(rate));
-
-            t1 += rate_dur;
-        }
+        t1 = keepLoopRate(t1, rate);
 
         float elapsed_time = std::chrono::duration<float>(clock::now() - start_time).count();
-        GameStateDTO state = getCurrentGameState(elapsed_time);
-        clients_queues.broadcast(state);
+        clients_queues.broadcast(getCurrentGameState(elapsed_time));
     }
 
     std::cout << "Gameloop terminado.\n";

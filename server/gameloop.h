@@ -57,6 +57,10 @@ private:
 
     GameStateDTO getCurrentGameState(const float elapsed_time);
 
+    void updatePhysics(const double& rate);
+
+    std::chrono::_V2::steady_clock::time_point keepLoopRate(std::chrono::steady_clock::time_point t1, const double& rate);
+
 public:
     void addCar(uint8_t client_id);
 

@@ -1,14 +1,18 @@
 #ifndef CONSTANTS_H
 #define CONSTANTS_H
 #include <cstdint>
+#include <string>
 
 //Constantes TP FINAL
 
 enum class InputAction : uint8_t { Press, Release };
 enum class InputKey    : uint8_t { Up, Down, Left, Right, Quit, CreateMatch, JoinMatch, StartGame, Unknown };
 enum class EntityType  : uint8_t { CAR, WALL, CHECKPOINT };
-enum class CarType  : uint8_t {VERDE, ROJO, DESCAPOTABLE, CELESTE, JEEP, CAMIONETA, CAMION};
+enum class CarType     : uint8_t {VERDE, ROJO, DESCAPOTABLE, CELESTE, JEEP, CAMIONETA, CAMION};
 
+const std::string LIBERTY_CITY = "liberty_city.yaml";
+const std::string VICE_CITY = "vice_city.yaml";
+const std::string SAN_ANDREAS = "sa_andreas.yaml";
 
 //Constantes VIEJAS
 struct Instruction {

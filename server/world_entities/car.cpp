@@ -2,6 +2,25 @@
 
 #include <iostream>
 
+CarAttributes Car::getCarTypeAttributes(CarType car_type) {
+    switch (car_type) {
+        case CarType::VERDE:
+            return {52.f, 10.5f, 11.f, 100, 0.5f, 0.5f, 1.0f, 1.0f, 0.5f};
+        case CarType::ROJO:
+            return {60.f, 9.5f, 14.f, 90, 0.5f, 1.f, 0.9f, 0.9f, 0.45f};
+        case CarType::DESCAPOTABLE:
+            return {58.f, 11.f, 13.f, 85, 0.5f, 1.f, 0.85f, 0.9f, 0.45f};
+        case CarType::CELESTE:
+            return {54.f, 10.5f, 12.f, 105, 0.5f, 1.f, 1.05f, 1.0f, 0.5f};
+        case CarType::JEEP:
+            return {50.f, 11.5f, 11.f, 120, 0.7f, 0.75f, 1.2f, 1.05f, 0.55f};
+        case CarType::CAMIONETA:
+            return {48.f, 12.f, 10.5f, 130, 0.7f, 0.75f, 1.3f, 1.1f, 0.6f};
+        case CarType::CAMION:
+            return {38.f, 13.5f, 8.5f, 160, 0.5f, 1.5f, 1.6f, 1.2f, 0.65f};
+    }
+}
+
 b2Vec2 Car::getLateralVelocity() {
     b2Vec2 rightNormal = car_body->GetWorldVector(b2Vec2(1, 0));
     return b2Dot(rightNormal, car_body->GetLinearVelocity()) * rightNormal;
@@ -139,18 +158,42 @@ float Car::getSpeed() const {
     return car_body->GetLinearVelocity().Length();  // m/s
 }
 
-Car::Car(b2World& world, const b2Vec2& initial_position) {
+CarType Car::getCarType() { 
+    return car_type; 
+}
+
+Car::Car(b2World& world, const b2Vec2& initial_position, CarType type) : 
+        car_type(type), 
+        accelerating(false), 
+        braking(false), 
+        turningLeft(false), 
+        turningRight(false), 
+        next_checkpoint_id(0) 
+    
+    {
+    CarAttributes attributes = getCarTypeAttributes(type);
+
+    accelaration = attributes.acceleration;
+    rotation_torque = attributes.rotation_torque;
+    max_speed = attributes.max_speed;
+    car_health = attributes.health;
+
     b2BodyDef carDef;
     carDef.type = b2_dynamicBody;
     carDef.position.Set(initial_position.x, initial_position.y);
     carDef.angle = 0.f;
-    carDef.angularDamping = 1.0f;
-    carDef.linearDamping = 0.5f; //rozamiento con el piso
+    carDef.angularDamping = attributes.angular_damping;
+    carDef.linearDamping = attributes.linear_damping; // rozamiento con el piso
 
     car_body = world.CreateBody(&carDef);
     car_body->SetUserData(this);
 
     b2PolygonShape car_shape;
-    car_shape.SetAsBox(0.5f, 1.f);
-    car_body->CreateFixture(&car_shape, 1.f);
+    car_shape.SetAsBox( attributes.width, attributes.height);
+
+    b2FixtureDef fixture_definition;
+    fixture_definition.shape = &car_shape;
+    fixture_definition.density = attributes.density;
+    fixture_definition.friction = 0.3f;
+    car_body->CreateFixture(&fixture_definition);
 }

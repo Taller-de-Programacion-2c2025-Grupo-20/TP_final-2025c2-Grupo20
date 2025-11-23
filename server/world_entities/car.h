@@ -10,22 +10,38 @@
 
 #include "entity.h"
 
+struct CarAttributes {
+    float acceleration;
+    float rotation_torque;
+    float max_speed;
+    uint8_t health;
+    float width;
+    float height;
+    float density;
+    float angular_damping;
+    float linear_damping;
+};
+
 class Car: public Entity {
 private:
-    float accelaration = 50.f;
-    float rotation_torque = 10.f;
-    float max_speed = 10.f;
+    float accelaration;
+    float rotation_torque;
+    float max_speed;
 
-    bool accelerating = false;
-    bool braking = false;
-    bool turningLeft = false;
-    bool turningRight = false;
+    CarType car_type;
 
-    b2Body* car_body = nullptr;
-
-    uint8_t car_health = 100;
+    bool accelerating;
+    bool braking;
+    bool turningLeft;
+    bool turningRight;
 
     int next_checkpoint_id = 0;
+
+    b2Body* car_body;
+
+    uint8_t car_health;
+
+    CarAttributes getCarTypeAttributes(CarType car_type);
 
     b2Vec2 getLateralVelocity();
 
@@ -48,6 +64,8 @@ public:
 
     uint8_t health();
 
+    CarType getCarType();
+
     int nextCheckpointId();
 
     void incrementNextCheckpointId();
@@ -57,6 +75,7 @@ public:
     EntityType getType() const override { return EntityType::CAR; }
 
     Car(b2World& world, const b2Vec2& initial_position);
+    Car(b2World& world, const b2Vec2& initial_position, CarType car_type);
 };
 
 

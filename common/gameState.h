@@ -2,11 +2,14 @@
 #include <vector>
 #include <stdint.h>
 #include "serverState.h"
+#include "constants.h"
 
 struct PlayerState {
     uint8_t player_id;
     ServerState state;
     uint8_t health;
+
+    CarType car_type;
 
     float next_checkpoint_position_x;
     float next_checkpoint_position_y;

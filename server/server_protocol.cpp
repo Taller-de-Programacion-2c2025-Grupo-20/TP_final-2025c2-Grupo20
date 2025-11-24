@@ -84,6 +84,8 @@ void ServerProtocol::send_game_state(const GameStateDTO& state) {
         addFloatToBuffer(buffer, player.state.speed);
         
         buffer.push_back(player.health);
+
+        buffer.push_back(static_cast<uint8_t>(player.car_type));
         
         addFloatToBuffer(buffer, player.next_checkpoint_position_x);
         addFloatToBuffer(buffer, player.next_checkpoint_position_y);

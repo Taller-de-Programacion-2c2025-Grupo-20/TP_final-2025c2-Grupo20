@@ -100,6 +100,8 @@ GameStateDTO ClientProtocol::receive_game_state_payload() {
         
         skt.recvall(&player.health, 1);
 
+        skt.recvall(&player.car_type, 1);
+
         player.next_checkpoint_position_x = receiveFloat();
         player.next_checkpoint_position_y = receiveFloat();
         player.next_checkpoint_hint = receiveFloat();

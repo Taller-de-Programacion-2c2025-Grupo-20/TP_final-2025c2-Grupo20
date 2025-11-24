@@ -23,7 +23,7 @@ void Match::start() {
         client->send_start_game(); 
     }
     for (auto& client : clients) {
-        gameloop.addCar(client->get_id());
+        gameloop.addCar(client->get_id(), CarType::JEEP);
     }
     gameloop.start(); 
 }

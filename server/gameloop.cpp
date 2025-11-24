@@ -19,13 +19,13 @@ void Gameloop::handleInput(const InputCmd& input) {
     it->second->handleInput(input);
 }
 
-void Gameloop::addCar(uint8_t client_id) {
+void Gameloop::addCar(uint8_t client_id, const CarType& car_type) {
     mutex.lock();
     PlayerPos car_initial_pos = cars_inital_pos.front();
     cars_inital_pos.erase(cars_inital_pos.begin());
 
     clients_cars.emplace(
-            client_id, std::make_unique<Car>(world, b2Vec2(car_initial_pos.x, car_initial_pos.y), CarType::ROJO));
+            client_id, std::make_unique<Car>(world, b2Vec2(car_initial_pos.x, car_initial_pos.y), car_type));
     mutex.unlock();
  
     std::cout << "Auto creado para jugador " << (int)client_id << std::endl;
@@ -161,6 +161,7 @@ GameStateDTO Gameloop::getCurrentGameState(const float elapsed_time) {
                 ServerState(current_client_car->position().x, current_client_car->position().y,
                             current_client_car->angle(), current_client_car->getSpeed());
         current_player_state.health = current_client_car->health();
+        current_player_state.car_type = current_client_car->getCarType();
 
         if ((size_t)current_client_car->nextCheckpointId() < world_checkpoints.size()) {
             int next_checkpoint_id = current_client_car->nextCheckpointId();

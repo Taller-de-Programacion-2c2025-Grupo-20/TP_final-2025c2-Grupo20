@@ -14,10 +14,15 @@ void QueuesMonitor::broadcast(const GameStateDTO& res) {
     std::lock_guard<std::mutex> lock(mutex);
 
     for (auto it = queues.begin(); it != queues.end();) {
-        if (it->second.is_alive) {
+        if (!it->second.is_alive) {
+            it = queues.erase(it);
+            continue;
+        }
+
+        try {
             it->second.queue.try_push(res);
             ++it;
-        } else {
+        } catch (const ClosedQueue&) {
             it = queues.erase(it);
         }
     }

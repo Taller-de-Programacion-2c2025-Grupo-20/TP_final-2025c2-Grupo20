@@ -14,7 +14,7 @@ LobbyScreen::LobbyScreen(QWidget *parent) :
     ui(new Ui::LobbyScreen) {
     
     ui->setupUi(this);
-    
+    setupComboBoxes();
     poll_timer = new QTimer(this);
     connect(poll_timer, &QTimer::timeout, this, &LobbyScreen::updateLobbyState);
 

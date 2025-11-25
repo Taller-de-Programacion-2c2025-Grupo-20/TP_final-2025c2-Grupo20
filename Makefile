@@ -1587,6 +1587,30 @@ server/world_entities/wall.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/taller_server.dir/build.make CMakeFiles/taller_server.dir/server/world_entities/wall.cpp.s
 .PHONY : server/world_entities/wall.cpp.s
 
+taller_client_autogen/7EM65HM6UG/qrc_assets.o: taller_client_autogen/7EM65HM6UG/qrc_assets.cpp.o
+.PHONY : taller_client_autogen/7EM65HM6UG/qrc_assets.o
+
+# target to build an object file
+taller_client_autogen/7EM65HM6UG/qrc_assets.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/taller_client.dir/build.make CMakeFiles/taller_client.dir/taller_client_autogen/7EM65HM6UG/qrc_assets.cpp.o
+.PHONY : taller_client_autogen/7EM65HM6UG/qrc_assets.cpp.o
+
+taller_client_autogen/7EM65HM6UG/qrc_assets.i: taller_client_autogen/7EM65HM6UG/qrc_assets.cpp.i
+.PHONY : taller_client_autogen/7EM65HM6UG/qrc_assets.i
+
+# target to preprocess a source file
+taller_client_autogen/7EM65HM6UG/qrc_assets.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/taller_client.dir/build.make CMakeFiles/taller_client.dir/taller_client_autogen/7EM65HM6UG/qrc_assets.cpp.i
+.PHONY : taller_client_autogen/7EM65HM6UG/qrc_assets.cpp.i
+
+taller_client_autogen/7EM65HM6UG/qrc_assets.s: taller_client_autogen/7EM65HM6UG/qrc_assets.cpp.s
+.PHONY : taller_client_autogen/7EM65HM6UG/qrc_assets.s
+
+# target to generate assembly for a file
+taller_client_autogen/7EM65HM6UG/qrc_assets.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/taller_client.dir/build.make CMakeFiles/taller_client.dir/taller_client_autogen/7EM65HM6UG/qrc_assets.cpp.s
+.PHONY : taller_client_autogen/7EM65HM6UG/qrc_assets.cpp.s
+
 taller_client_autogen/mocs_compilation.o: taller_client_autogen/mocs_compilation.cpp.o
 .PHONY : taller_client_autogen/mocs_compilation.o
 
@@ -1817,6 +1841,9 @@ help:
 	@echo "... server/world_entities/wall.o"
 	@echo "... server/world_entities/wall.i"
 	@echo "... server/world_entities/wall.s"
+	@echo "... taller_client_autogen/7EM65HM6UG/qrc_assets.o"
+	@echo "... taller_client_autogen/7EM65HM6UG/qrc_assets.i"
+	@echo "... taller_client_autogen/7EM65HM6UG/qrc_assets.s"
 	@echo "... taller_client_autogen/mocs_compilation.o"
 	@echo "... taller_client_autogen/mocs_compilation.i"
 	@echo "... taller_client_autogen/mocs_compilation.s"

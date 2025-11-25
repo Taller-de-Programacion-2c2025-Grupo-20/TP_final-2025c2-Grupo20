@@ -67,8 +67,6 @@ bool Match::add_player(std::unique_ptr<ClientHandler> new_player) {
     new_player->connect_to_match(gameloop_queue, sender_queue);
     clients.push_back(std::move(new_player));
 
-    //broadcast_waiting_room_state();
-    
     return true;
 }
 

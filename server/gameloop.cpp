@@ -198,15 +198,34 @@ void Gameloop::registerFinish(uint8_t player_id, float elapsed_time) {
 }
 
 void Gameloop::registerDestroy(uint8_t player_id, float elapsed_time) {
-    race_results.push_back(
+    not_finished_results.push_back(
             {player_id, 0, elapsed_time, false, true, false});
 }
 
 void Gameloop::registerTimeout(float elapsed_time) {
     for (auto& car : clients_cars) {
-        race_results.push_back(
+        not_finished_results.push_back(
                 {car.first, 0, elapsed_time, false, false, true});
     }
+}
+
+void Gameloop::logRaceResults() const {
+    std::cout << "===== Resultados de la carrera =====\n";
+
+    for (const auto& res : race_results) {
+        std::cout << "Jugador " << static_cast<int>(res.player_id) << ": ";
+        if (res.finished) {
+            std::cout << "posicion " << static_cast<int>(res.position)
+                      << ", tiempo " << res.finish_time << "s\n";
+        } else if (res.destroyed) {
+            std::cout << "eliminado por destruccion en " << res.finish_time << "s\n";
+        } else if (res.timed_out) {
+            std::cout << "timeout, no llego en " << res.finish_time << "s\n";
+        } else {
+            std::cout << "estado desconocido en " << res.finish_time << "s\n";
+        }
+    }
+    std::cout << "====================================\n";
 }
 
 void Gameloop::removeClientsCars(float elapsed_time) {
@@ -307,6 +326,9 @@ void Gameloop::run() {
         removeClientsCars(elapsed_time);
 
         if (gameEnded(elapsed_time)) {
+            race_results.insert(race_results.end(),
+                        not_finished_results.begin(), not_finished_results.end());
+            not_finished_results.clear();
             break;
         }
 
@@ -316,6 +338,7 @@ void Gameloop::run() {
     }
 
     std::cout << "Gameloop terminado.\n";
+    logRaceResults();
 }
 
 void Gameloop::stop() {

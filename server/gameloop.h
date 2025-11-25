@@ -44,6 +44,7 @@ private:
     std::vector<PlayerPos> cars_inital_pos;
     
     std::vector<PlayerRaceInfo> race_results;
+    std::vector<PlayerRaceInfo> not_finished_results;
     uint8_t next_finish_position;
 
     b2World world;
@@ -71,9 +72,12 @@ private:
     std::chrono::_V2::steady_clock::time_point keepLoopRate(std::chrono::steady_clock::time_point t1, const double& rate);
 
     void removeClientsCars(float elapsed_time);
+    
     void registerFinish(uint8_t player_id, float elapsed_time);
     void registerDestroy(uint8_t player_id, float elapsed_time);
     void registerTimeout(float elapsed_time);
+
+    void logRaceResults() const;
 
     bool gameEnded(float elapsed_time);
 

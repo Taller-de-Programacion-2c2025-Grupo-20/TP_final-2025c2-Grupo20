@@ -2,7 +2,6 @@
 #define GAMELOOP_H
 
 #include <memory>
-#include <mutex>
 #include <unordered_map>
 #include <vector>
 
@@ -40,8 +39,6 @@ private:
 
     std::chrono::steady_clock::time_point start_time;
 
-    std::mutex mutex;
-
     void handleInput(const InputCmd& input);
 
     void loadWalls(const YAML::Node& map_data);
@@ -61,6 +58,14 @@ private:
 
     std::chrono::_V2::steady_clock::time_point keepLoopRate(std::chrono::steady_clock::time_point t1, const double& rate);
 
+    void removeDestroyedCars();
+
+    bool allPlayersFinished();
+
+    bool gameEnded(float elapsed_time);
+
+    bool queue_closed = false;
+
 public:
     void addCar(uint8_t client_id, const CarType& car_type);
 
@@ -69,6 +74,8 @@ public:
     void stop() override;
 
     Gameloop(Queue<InputCmd>& gameloop_queue, QueuesMonitor& clients_queues, const std::string& map_name);
+
+    ~Gameloop();
 };
 
 

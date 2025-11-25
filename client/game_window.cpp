@@ -367,7 +367,7 @@ void GameWindow::drawGame(Renderer& renderer,
                          bool& exit,
                          int& my_player_index,
                          int& hp,
-                        int& actual_pos, float& pos_x_m, float& pos_y_m, float& angle)
+                        int& actual_pos, float& pos_x_m, float& pos_y_m, float& angle, SoundManager& soundManager)
 {
     while (true){
         SDL_Event ev;
@@ -409,7 +409,10 @@ void GameWindow::drawGame(Renderer& renderer,
             }
         }
 
+
+
         if (exit){
+            soundManager.stopEngineSound();
             break;
         }
 
@@ -429,6 +432,25 @@ void GameWindow::drawGame(Renderer& renderer,
         if (!have_state) {
             renderer.Present(); 
             continue; 
+        }
+
+        int my_id = client.getMyPlayerId();
+        const PlayerState* me = nullptr;
+
+        for (const auto& p : last_state.players) {
+            if (p.player_id == my_id) {
+                me = &p;
+                break;
+            }
+        }
+
+        if (me) {
+            int new_hp = std::clamp<int>(static_cast<int>(me->health), 0, 100);
+
+            if (new_hp < hp) {
+                soundManager.playCrash();
+            }
+            hp = new_hp;
         }
 
         drawCheckpoint(renderer, checkpoint_flag, last_state, srcRect, viewW,viewH);
@@ -477,6 +499,8 @@ void GameWindow::drawGame(Renderer& renderer,
 
             renderer.Copy(sprites, spr, Rect(draw_x, draw_y, spr.GetW(), spr.GetH()));
         }
+
+        soundManager.updateEngineSound();
 
         drawCheckpointHintAroundCar(renderer,
                                     checkpoint_hint,
@@ -535,8 +559,7 @@ void GameWindow::drawGame(Renderer& renderer,
 int GameWindow::runGame() {
     try {
 
-        // Init SDL
-        SDL sdl(SDL_INIT_VIDEO);
+        SDL sdl(SDL_INIT_VIDEO | SDL_INIT_AUDIO);
 
         // Hints ANTES de crear Window/Renderer
         SDL_SetHint(SDL_HINT_RENDER_SCALE_QUALITY, "0");
@@ -550,6 +573,9 @@ int GameWindow::runGame() {
                       SDL_WINDOW_RESIZABLE);
 
         Renderer renderer(window, -1, SDL_RENDERER_ACCELERATED);
+
+        SDL2pp::Mixer mixer(44100, MIX_DEFAULT_FORMAT, 2, 1024);
+        SoundManager soundManager(mixer);
 
         Surface surface(DATA_PATH "/cars/Mobile - Grand Theft Auto 4 - Miscellaneous - Cars.png");
         surface.SetColorKey(true, SDL_MapRGB(surface.Get()->format, 163, 163, 13));
@@ -618,7 +644,7 @@ int GameWindow::runGame() {
                       exit,
                       my_player_index,
                       hp,
-                      actual_pos, pos_x_m, pos_y_m, angle);
+                      actual_pos, pos_x_m, pos_y_m, angle, soundManager);
         
 
         return 0;

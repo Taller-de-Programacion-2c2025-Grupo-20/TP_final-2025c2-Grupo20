@@ -25,6 +25,10 @@
 #include "client_sprites.h"
 #include "client.h"
 
+#include <SDL2pp/Mixer.hh>
+#include "sound_manager.h"
+
+
 #include <QApplication>
 #include <QMainWindow> 
 
@@ -43,6 +47,12 @@ private:
     SpritesManager game_sprites;
     CarType car_to_use;
     ClientReceiver& receiver;
+
+    // --- NUEVO: estado de teclas para skid ---
+    bool keyDownPressed  = false;
+    bool keyLeftPressed  = false;
+    bool keyRightPressed = false;
+    bool skidActive      = false; // para no spamear el sonido
 
     bool running = false;
     bool backwards = false;
@@ -97,7 +107,7 @@ private:
                  bool& have_state,
                  bool& exit,
                  int& my_player_index,
-                 int& hp,int& actual_pos, float& pos_x_m, float& pos_y_m, float& angle);
+                 int& hp,int& actual_pos, float& pos_x_m, float& pos_y_m, float& angle, SoundManager& soundManager);
 
     void drawCheckpoint(SDL2pp::Renderer& renderer,
                         SDL2pp::Texture& checkpoint_flag,

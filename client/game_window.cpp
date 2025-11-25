@@ -100,7 +100,7 @@ void GameWindow::drawCronometer(Renderer& renderer, Texture& hud,
     const Rect& PANEL_TIME  = game_sprites.getTimePanelRect();
     BoxMap timeMap = makeBoxMap(renderer, hud, PANEL_TIME, hudX, hudY);
 
-    int total = static_cast<int>(last_state.elapsed_time);
+    int total = static_cast<int>(last_state.elapsed_time) - 10; //BORRAR - 10 LUEGO
     int mm = (total / 60) % 100;
     int ss = total % 60;
 
@@ -346,7 +346,36 @@ void GameWindow::drawCheckpointHintAroundCar(
     );
 }
 
+void GameWindow::drawMarket(
+    Renderer& renderer,
+    Texture& market,
+    const GameStateDTO& /*state*/,
+    const Rect& /*srcRect*/,
+    int viewW,
+    int viewH
+) {
+    int texW = market.GetWidth();
+    int texH = market.GetHeight();
 
+    // Escala para que quepa en la pantalla manteniendo aspecto
+    float scale = std::min(
+        viewW  / static_cast<float>(texW),
+        viewH  / static_cast<float>(texH)
+    );
+
+    int dstW = static_cast<int>(std::lround(texW * scale));
+    int dstH = static_cast<int>(std::lround(texH * scale));
+
+    int dstX = (viewW - dstW) / 2;
+    int dstY = (viewH - dstH) / 2;
+
+    // SOLO dibuja el cartel, sin fondo negro
+    renderer.Copy(
+        market,
+        Rect(0, 0, texW, texH),
+        Rect(dstX, dstY, dstW, dstH)
+    );
+}
 
 void GameWindow::drawGame(Renderer& renderer,
                          Texture& hud,
@@ -354,6 +383,7 @@ void GameWindow::drawGame(Renderer& renderer,
                          Texture& sprites,
                          Texture& checkpoint_flag,
                          Texture& checkpoint_hint,
+                         Texture& market,
                          Rect& srcRect,
                          Rect& dstRect,
                          int viewW, int viewH,
@@ -432,6 +462,12 @@ void GameWindow::drawGame(Renderer& renderer,
         if (!have_state) {
             renderer.Present(); 
             continue; 
+        }
+
+        if (static_cast<int>(last_state.elapsed_time) <= 10) {
+            drawMarket(renderer, market, last_state, srcRect, viewW, viewH);
+            renderer.Present();
+            continue;
         }
 
         int my_id = client.getMyPlayerId();
@@ -594,6 +630,10 @@ int GameWindow::runGame() {
         hints_surface.SetColorKey(true, SDL_MapRGB(hints_surface.Get()->format, 255, 201, 14));
         Texture checkpoint_hint(renderer, hints_surface);
 
+        Surface market_surface(DATA_PATH "/assets/mejoras.png");
+        Texture market(renderer, market_surface);
+
+
         renderer.SetLogicalSize(1600, 900);
             
         std::array<std::string, 3> maps = {
@@ -632,6 +672,7 @@ int GameWindow::runGame() {
                       sprites,
                       checkpoint_flag,
                       checkpoint_hint,
+                      market,
                       srcRect,
                       dstRect,
                       viewW, viewH,

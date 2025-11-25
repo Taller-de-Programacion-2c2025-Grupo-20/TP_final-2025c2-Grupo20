@@ -200,3 +200,18 @@ Car::Car(b2World& world, const b2Vec2& initial_position, CarType type) :
     fixture_definition.friction = 0.3f;
     car_body->CreateFixture(&fixture_definition);
 }
+
+Car::~Car() {
+
+    if (!car_body) {
+        return;
+    }
+
+    b2World* world = car_body->GetWorld();
+    if (world) {
+        world->DestroyBody(car_body);
+    }
+
+    car_body = nullptr;
+
+}

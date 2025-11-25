@@ -14,6 +14,23 @@ const std::string LIBERTY_CITY = "liberty_city.yaml";
 const std::string VICE_CITY = "vice_city.yaml";
 const std::string SAN_ANDREAS = "sa_andreas.yaml";
 
+inline const char* LIBERTY = "Liberty City";
+inline const char* VICE = "Vice City";
+inline const char* ANDREAS = "San Andreas";
+
+inline const char* LIBERTY_CITY_FILE = "Game Boy _ GBC - Grand Theft Auto - Backgrounds - Liberty City.png";
+inline const char* VICE_CITY_FILE = "Game Boy _ GBC - Grand Theft Auto - Backgrounds - Vice City.png";
+inline const char* SAN_ANDREAS_FILE = "Game Boy _ GBC - Grand Theft Auto - Backgrounds - San Andreas.png";
+
+inline const char* VERDE = "Verde";
+inline const char* ROJO = "Rojo";
+inline const char* DESCAPOTABLE = "Descapotable";
+inline const char* CELESTE = "Celeste";
+inline const char* JEEP = "Jeep";
+inline const char* CAMIONETA = "Camioneta";
+inline const char* CAMION = "Camión";
+
+
 //Constantes VIEJAS
 struct Instruction {
     uint8_t command;

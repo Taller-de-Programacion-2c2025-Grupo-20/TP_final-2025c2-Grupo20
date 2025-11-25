@@ -23,10 +23,17 @@ signals:
 
 private slots:
     void updateLobbyState();
+    void handleWaitingRoomState(const LobbyStateDTO& state);
+    void handleSelectionState();
     void on_startButton_clicked();
     void on_joinButton_clicked();
     void on_createButton_clicked();
     void on_matchListWidget_currentItemChanged();
+    void setupComboBoxes();
+    void showMapPreview(int index);
+    void showCarPreview(int index);
+    void on_mapComboBox_currentIndexChanged(int index);
+    void on_carComboBox_currentIndexChanged(int index);
 
 private:
     Ui::LobbyScreen *ui;

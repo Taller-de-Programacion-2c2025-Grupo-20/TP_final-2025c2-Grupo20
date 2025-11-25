@@ -24,6 +24,15 @@ struct PlayerPos {
     PlayerPos(float x, float y): x(x), y(y) {}
 };
 
+struct PlayerRaceInfo {
+    uint8_t player_id;
+    uint8_t position;
+    float finish_time;    
+    bool finished;
+    bool destroyed;
+    bool timed_out;
+};
+
 class Gameloop: public Thread {
 private:
     Queue<InputCmd>& gameloop_queue;
@@ -33,6 +42,9 @@ private:
     std::vector<std::unique_ptr<Wall>> world_walls;
     std::unordered_map<int, std::unique_ptr<Checkpoint>> world_checkpoints;
     std::vector<PlayerPos> cars_inital_pos;
+    
+    std::vector<PlayerRaceInfo> race_results;
+    uint8_t next_finish_position;
 
     b2World world;
     CollisionsListener collision_listener;
@@ -58,9 +70,10 @@ private:
 
     std::chrono::_V2::steady_clock::time_point keepLoopRate(std::chrono::steady_clock::time_point t1, const double& rate);
 
-    void removeDestroyedCars();
-
-    bool allPlayersFinished();
+    void removeClientsCars(float elapsed_time);
+    void registerFinish(uint8_t player_id, float elapsed_time);
+    void registerDestroy(uint8_t player_id, float elapsed_time);
+    void registerTimeout(float elapsed_time);
 
     bool gameEnded(float elapsed_time);
 
@@ -68,6 +81,8 @@ private:
 
 public:
     void addCar(uint8_t client_id, const CarType& car_type);
+
+    const std::vector<PlayerRaceInfo>& getRaceResults() const { return race_results; }
 
     void run() override;
 

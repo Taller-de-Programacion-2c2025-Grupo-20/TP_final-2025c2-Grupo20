@@ -485,7 +485,8 @@ void GameWindow::drawGame(Renderer& renderer,
             angle = st.angle;
             actual_pos = angle_to_frame(angle);
 
-            const Rect& spr = game_sprites.getCarRect(car_to_use, actual_pos);
+            CarType car_type_to_draw = last_state.players[i].car_type;
+            const Rect& spr = game_sprites.getCarRect(car_type_to_draw, actual_pos);
             const int car_x_px = static_cast<int>(pos_x_m * PPM + 0.5f);
             const int car_y_px = static_cast<int>(pos_y_m * PPM + 0.5f);
             
@@ -658,5 +659,4 @@ int GameWindow::runGame() {
 GameWindow::GameWindow(Client& c)
     : client(c),
       game_sprites(),
-      car_to_use(CarType::ROJO),
       receiver(c.getReceiver()) {}

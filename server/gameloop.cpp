@@ -165,8 +165,6 @@ GameStateDTO Gameloop::getCurrentGameState(const float elapsed_time) {
                             current_client_car->angle(), current_client_car->getSpeed());
         current_player_state.health = current_client_car->health();
 
-        std::cout << static_cast<int>(current_player_state.health) << "\n";
-
         current_player_state.car_type = current_client_car->getCarType();
 
         if ((size_t)current_client_car->nextCheckpointId() < world_checkpoints.size()) {

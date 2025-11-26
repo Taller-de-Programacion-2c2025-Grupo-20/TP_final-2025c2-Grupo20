@@ -141,6 +141,7 @@ void ServerProtocol::send_lobby_state(const LobbyStateDTO& state) {
         uint16_t name_len = player.name.length();
         addUint16_tToBuffer(buffer, name_len); 
         buffer.insert(buffer.end(), player.name.begin(), player.name.end());
+        buffer.push_back(player.car_id);
     }
     
     skt.sendall(buffer.data(), buffer.size());

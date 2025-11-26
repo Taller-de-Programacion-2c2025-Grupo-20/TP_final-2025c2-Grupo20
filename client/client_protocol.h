@@ -31,6 +31,8 @@ public:
     void send_start_game();
     void send_input(const InputCmd& cmd);
     void send_refresh_match_list();
+    void send_select_map(uint8_t map_id);
+    void send_select_car(uint8_t car_id);
 
     bool receive_command_code(uint8_t& code);
     uint8_t receive_login_response_payload();

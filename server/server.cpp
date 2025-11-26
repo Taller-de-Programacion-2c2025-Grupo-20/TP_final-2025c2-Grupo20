@@ -103,38 +103,46 @@ void Server::process_new_clients() {
  * @brief Procesa los comandos de los clientes (ej: "unirse", "crear").
  */
 void Server::process_lobby_commands() {
-
     LobbyCommand cmd;
     while (lobby_queue.try_pop(cmd)) {
         
-        Match* match_creado = nullptr;
+        Match* match_afectado = nullptr; 
         {
             std::lock_guard<std::mutex> lock(mtx); 
             std::cout << "ENTRE A PROCESAR COMANDO: " << (int)cmd.type << std::endl;
+            
             switch (cmd.type) {
-            case LobbyCommandType::LOGIN_ATTEMPT:
-                handle_login(cmd);
-                break;
-            
-            case LobbyCommandType::CREATE_MATCH:
-                handle_create_match(cmd);
-                break;
-            
-            case LobbyCommandType::JOIN_MATCH:
-                handle_join_match(cmd);
-                break;
-            
-            case LobbyCommandType::START_GAME:
-                handle_start_game(cmd);
-                break;
+                case LobbyCommandType::LOGIN_ATTEMPT:
+                    handle_login(cmd);
+                    break;
+                
+                case LobbyCommandType::CREATE_MATCH:
+                    handle_create_match(cmd);
+                    break;
+                
+                case LobbyCommandType::JOIN_MATCH:
+                    handle_join_match(cmd);
+                    break;
+                
+                case LobbyCommandType::START_GAME:
+                    handle_start_game(cmd);
+                    break;
 
-            case LobbyCommandType::REFRESH_MATCH_LIST: 
-                send_match_list(cmd.client_id);
-                break;
+                case LobbyCommandType::REFRESH_MATCH_LIST: 
+                    send_match_list(cmd.client_id);
+                    break;
+
+                case LobbyCommandType::SELECT_MAP:
+                    match_afectado = handle_select_map(cmd); 
+                    break;
+
+                case LobbyCommandType::SELECT_CAR:
+                    match_afectado = handle_select_car(cmd);
+                    break;
             }
         }
-        if (match_creado) {
-            match_creado->broadcast_waiting_room_state();
+        if (match_afectado) {
+            match_afectado->broadcast_waiting_room_state();
         }
     }
 }
@@ -165,32 +173,6 @@ void Server::handle_login(const LobbyCommand& cmd) {
         }
     }
 }
-/*
-void Server::broadcast_lobby_state() {
-    LobbyStateDTO state_to_send;
-    
-    if (!clients_in_lobby.empty()) {
-        state_to_send.host_id = clients_in_lobby.front()->get_id();
-    } else {
-        state_to_send.host_id = 0;
-    }
-    
-    state_to_send.map_id = 0;
-
-    for (const auto& client : clients_in_lobby) {
-        LobbyPlayerInfo player_info;
-        player_info.player_id = client->get_id();
-        player_info.name = client->get_username(); 
-        player_info.is_ready = false;
-        
-        state_to_send.players.push_back(player_info);
-    }
-
-    for (auto& client : clients_in_lobby) {
-        client->send_lobby_update(state_to_send);
-    }
-} */
-
 
 void Server::broadcast_match_list() {
     MatchListDTO list_dto;
@@ -298,6 +280,31 @@ void Server::handle_start_game(const LobbyCommand& cmd) {
             return;
         }
     }
+}
+
+Match* Server::handle_select_map(const LobbyCommand& cmd) {
+    for (auto& pair : active_matches) {
+        if (pair.second->has_player(cmd.client_id)) {
+            Match* match = pair.second.get();
+            if (match->get_host_id() == cmd.client_id) {
+                match->set_map_id(cmd.id_payload);
+                return match; 
+            }
+            return nullptr; 
+        }
+    }
+    return nullptr;
+}
+
+Match* Server::handle_select_car(const LobbyCommand& cmd) {
+    for (auto& pair : active_matches) {
+        if (pair.second->has_player(cmd.client_id)) {
+            Match* match = pair.second.get();
+            match->set_player_car(cmd.client_id, cmd.id_payload);
+            return match;
+        }
+    }
+    return nullptr;
 }
 
 void Server::reap_dead_lobby_clients() {

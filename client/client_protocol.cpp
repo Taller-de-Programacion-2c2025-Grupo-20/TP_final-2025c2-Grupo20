@@ -54,6 +54,19 @@ void ClientProtocol::send_input(const InputCmd& cmd) {
     skt.sendall(buffer.data(), buffer.size());
 }
 
+void ClientProtocol::send_select_map(uint8_t map_id) {
+    std::vector<uint8_t> buffer;
+    buffer.push_back(CMD_SELECT_MAP);
+    buffer.push_back(map_id);
+    skt.sendall(buffer.data(), buffer.size());
+}
+
+void ClientProtocol::send_select_car(uint8_t car_id) {
+    std::vector<uint8_t> buffer;
+    buffer.push_back(CMD_SELECT_CAR);
+    buffer.push_back(car_id);
+    skt.sendall(buffer.data(), buffer.size());
+}
 
 bool ClientProtocol::receive_command_code(uint8_t& code) {
     return (skt.recvall(&code, 1) > 0);
@@ -74,6 +87,7 @@ LobbyStateDTO ClientProtocol::receive_lobby_state_payload() {
         LobbyPlayerInfo player;
         player.player_id = receiveUint8_t();
         player.name = receiveString(); 
+        player.car_id = receiveUint8_t();
         state.players.push_back(player);
     }
     return state;

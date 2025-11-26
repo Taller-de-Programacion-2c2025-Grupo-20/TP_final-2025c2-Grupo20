@@ -36,6 +36,9 @@ public:
     ClientReceiver& getReceiver();
     uint8_t getMyPlayerId() const;
     ClientProtocol& getProtocol();
+    uint8_t getCarType(int player_id);
+    uint8_t getMapId();
+
     void push_input(const InputCmd& cmd);
     
     Client(const Client&) = delete;

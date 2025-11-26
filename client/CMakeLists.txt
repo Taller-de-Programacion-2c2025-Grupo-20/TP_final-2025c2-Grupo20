@@ -10,6 +10,7 @@ target_sources(taller_client PRIVATE
     game_window.cpp
     client_sprites.cpp
     sound_manager.cpp
+    assets.qrc
 
     Pantallas/carselectscreen.cpp
     Pantallas/lobbyscreen.cpp

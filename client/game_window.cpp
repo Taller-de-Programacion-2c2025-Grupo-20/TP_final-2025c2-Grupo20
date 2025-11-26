@@ -521,8 +521,8 @@ void GameWindow::drawGame(Renderer& renderer,
             angle = st.angle;
             actual_pos = angle_to_frame(angle);
 
-            CarType car_type_to_draw = last_state.players[i].car_type;
-            const Rect& spr = game_sprites.getCarRect(car_type_to_draw, actual_pos);
+            CarType tipo_real = static_cast<CarType>(last_state.players[i].car_type);
+            const Rect& spr = game_sprites.getCarRect(tipo_real, actual_pos);
             const int car_x_px = static_cast<int>(pos_x_m * PPM + 0.5f);
             const int car_y_px = static_cast<int>(pos_y_m * PPM + 0.5f);
             
@@ -638,10 +638,17 @@ int GameWindow::runGame() {
             
         std::array<std::string, 3> maps = {
             "/cities/Game Boy _ GBC - Grand Theft Auto - Backgrounds - Liberty City.png",
-            "/cities/Game Boy _ GBC - Grand Theft Auto - Backgrounds - San Andreas.png",
-            "/cities/Game Boy _ GBC - Grand Theft Auto - Backgrounds - Vice City.png"
+            "/cities/Game Boy _ GBC - Grand Theft Auto - Backgrounds - Vice City.png",
+            "/cities/Game Boy _ GBC - Grand Theft Auto - Backgrounds - San Andreas.png"
         };
-        int map_to_play = 0;
+        int map_to_play = static_cast<int>(client.getMapId());
+        std::cout << "CLIENT DEBUG: ID de Mapa recibido del Lobby: " << map_to_play << std::endl;
+
+        if (map_to_play < 0 || map_to_play >= 3) { 
+            std::cerr << "CLIENT ERROR: ID de mapa inválido (" << map_to_play << "). Usando 0 por defecto." << std::endl;
+            map_to_play = 0; 
+        }
+
         Texture background(renderer, DATA_PATH + maps[map_to_play]);
         const int bgW = background.GetWidth();
         const int bgH = background.GetHeight();
@@ -700,4 +707,5 @@ int GameWindow::runGame() {
 GameWindow::GameWindow(Client& c)
     : client(c),
       game_sprites(),
+      car_to_use(CarType::VERDE),
       receiver(c.getReceiver()) {}

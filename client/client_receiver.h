@@ -40,6 +40,8 @@ public:
     bool is_logged_in() const;
     uint8_t get_my_id() const;
     void stop() override;
+    uint8_t get_car_type(int player_id);
+    uint8_t get_map_id();
 
 signals:
     void loginSuccess(uint8_t player_id);

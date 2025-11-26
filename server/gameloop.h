@@ -58,8 +58,6 @@ private:
     void loadCheckpoints(const YAML::Node& map_data);
     void loadInitialPos(const YAML::Node& map_data);
 
-    void loadMapData(const std::string& map_name);
-
     void readUsersInput();
 
     float getCurrentCheckpointHintAngle(const b2Vec2& car_pos, float car_angle,
@@ -85,6 +83,7 @@ private:
 
 public:
     void addCar(uint8_t client_id, const CarType& car_type);
+    void loadMapData(const std::string& map_name);
 
     const std::vector<PlayerRaceInfo>& getRaceResults() const { return race_results; }
 
@@ -92,7 +91,7 @@ public:
 
     void stop() override;
 
-    Gameloop(Queue<InputCmd>& gameloop_queue, QueuesMonitor& clients_queues, const std::string& map_name);
+    Gameloop(Queue<InputCmd>& gameloop_queue, QueuesMonitor& clients_queues);
 
     ~Gameloop();
 };

@@ -21,6 +21,7 @@ private:
     std::string username;
     ServerProtocol protocol;
     std::atomic<bool> is_alive_flag;
+    uint8_t car_id;
 
     Receiver receiver;
     Sender sender;
@@ -35,6 +36,8 @@ public:
     uint8_t get_id() const;
     void set_username(const std::string& name);
     std::string get_username() const;
+    void set_car_id(uint8_t car_id);
+    uint8_t get_car_id() const;
     
     void send_login_ok(uint8_t player_id);
     void send_login_failed();

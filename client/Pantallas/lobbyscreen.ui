@@ -16,8 +16,8 @@
   <widget class="QLabel" name="title">
    <property name="geometry">
     <rect>
-     <x>350</x>
-     <y>80</y>
+     <x>330</x>
+     <y>10</y>
      <width>121</width>
      <height>31</height>
     </rect>
@@ -33,31 +33,31 @@ font: 500 11pt &quot;Ubuntu Sans&quot;;</string>
   <widget class="QStackedWidget" name="stackedWidget_Lobby">
    <property name="geometry">
     <rect>
-     <x>120</x>
-     <y>120</y>
-     <width>541</width>
-     <height>411</height>
+     <x>30</x>
+     <y>40</y>
+     <width>701</width>
+     <height>481</height>
     </rect>
    </property>
    <property name="currentIndex">
-    <number>1</number>
+    <number>0</number>
    </property>
    <widget class="QWidget" name="page_WaitingRoom">
     <widget class="QListWidget" name="playerListWidget">
      <property name="geometry">
       <rect>
-       <x>160</x>
-       <y>110</y>
-       <width>256</width>
-       <height>192</height>
+       <x>260</x>
+       <y>70</y>
+       <width>201</width>
+       <height>141</height>
       </rect>
      </property>
     </widget>
     <widget class="QPushButton" name="startButton">
      <property name="geometry">
       <rect>
-       <x>230</x>
-       <y>60</y>
+       <x>300</x>
+       <y>20</y>
        <width>111</width>
        <height>26</height>
       </rect>
@@ -66,13 +66,105 @@ font: 500 11pt &quot;Ubuntu Sans&quot;;</string>
       <string>Iniciar partida</string>
      </property>
     </widget>
+    <widget class="QComboBox" name="mapComboBox">
+     <property name="geometry">
+      <rect>
+       <x>40</x>
+       <y>230</y>
+       <width>161</width>
+       <height>26</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QLabel" name="title_2">
+     <property name="geometry">
+      <rect>
+       <x>60</x>
+       <y>190</y>
+       <width>121</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">
+font: 500 11pt &quot;Ubuntu Sans&quot;;</string>
+     </property>
+     <property name="text">
+      <string>Seleccionar mapa</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="title_3">
+     <property name="geometry">
+      <rect>
+       <x>540</x>
+       <y>190</y>
+       <width>121</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">
+font: 500 11pt &quot;Ubuntu Sans&quot;;</string>
+     </property>
+     <property name="text">
+      <string>Seleccionar auto</string>
+     </property>
+    </widget>
+    <widget class="QComboBox" name="carComboBox">
+     <property name="geometry">
+      <rect>
+       <x>510</x>
+       <y>230</y>
+       <width>161</width>
+       <height>26</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_mapPreview">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>270</y>
+       <width>251</width>
+       <height>221</height>
+      </rect>
+     </property>
+     <property name="minimumSize">
+      <size>
+       <width>200</width>
+       <height>150</height>
+      </size>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_carPreview">
+     <property name="geometry">
+      <rect>
+       <x>529</x>
+       <y>280</y>
+       <width>121</width>
+       <height>101</height>
+      </rect>
+     </property>
+     <property name="minimumSize">
+      <size>
+       <width>100</width>
+       <height>75</height>
+      </size>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
    </widget>
    <widget class="QWidget" name="page_Selection">
     <widget class="QPushButton" name="createButton">
      <property name="geometry">
       <rect>
-       <x>230</x>
-       <y>30</y>
+       <x>300</x>
+       <y>50</y>
        <width>111</width>
        <height>26</height>
       </rect>
@@ -84,8 +176,8 @@ font: 500 11pt &quot;Ubuntu Sans&quot;;</string>
     <widget class="QLineEdit" name="matchNameEdit">
      <property name="geometry">
       <rect>
-       <x>220</x>
-       <y>60</y>
+       <x>290</x>
+       <y>80</y>
        <width>131</width>
        <height>26</height>
       </rect>
@@ -104,8 +196,8 @@ font: 500 11pt &quot;Ubuntu Sans&quot;;</string>
     <widget class="QPushButton" name="joinButton">
      <property name="geometry">
       <rect>
-       <x>230</x>
-       <y>120</y>
+       <x>300</x>
+       <y>150</y>
        <width>111</width>
        <height>26</height>
       </rect>
@@ -117,8 +209,8 @@ font: 500 11pt &quot;Ubuntu Sans&quot;;</string>
     <widget class="QListWidget" name="matchListWidget">
      <property name="geometry">
       <rect>
-       <x>160</x>
-       <y>160</y>
+       <x>230</x>
+       <y>190</y>
        <width>256</width>
        <height>192</height>
       </rect>

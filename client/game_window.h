@@ -46,6 +46,7 @@ private:
     Queue<GameStateDTO> state_queue;
     SpritesManager game_sprites;
     ClientReceiver& receiver;
+    int map_id;
 
     // --- NUEVO: estado de teclas para skid ---
     bool keyDownPressed  = false;
@@ -133,6 +134,8 @@ private:
 
 public:
     int runGame();
+    uint8_t getCarType(int player_id);
+    uint8_t getMapId();
 
     GameWindow(Client &client);
 

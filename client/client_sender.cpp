@@ -28,6 +28,14 @@ void ClientSender::run() {
                     protocol.send_join_match(response.match_id);
                     break;
 
+                case InputKey::SelectMap:
+                    protocol.send_select_map(response.match_id); 
+                    break;
+
+                case InputKey::SelectCar:
+                    protocol.send_select_car(response.match_id);
+                    break;
+
                 case InputKey::StartGame:
                     protocol.send_start_game();
                     break;

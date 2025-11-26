@@ -112,15 +112,19 @@ void Gameloop::loadInitialPos(const YAML::Node& map_data) {
 }
 
 void Gameloop::loadMapData(const std::string& map_name) {
-    YAML::Node map_data =
-            YAML::LoadFile(std::string(MAPS_DATA_PATH) + map_name);
+    world_walls.clear();
+    world_checkpoints.clear();
+    cars_inital_pos.clear();
+
+    YAML::Node map_data = YAML::LoadFile(std::string(MAPS_DATA_PATH) + map_name);
 
     loadWalls(map_data);
     loadCheckpoints(map_data);
     loadInitialPos(map_data);
 
-    std::cout << "Termino carga de datos del mapa\n";
+    std::cout << "Gameloop: Mapa " << map_name << " cargado correctamente.\n";
 }
+
 /* ========================= GAME LOOP ========================== */
 void Gameloop::readUsersInput() {
     InputCmd input;
@@ -350,7 +354,7 @@ Gameloop::Gameloop(Queue<InputCmd>& gameloop_queue, QueuesMonitor& clients_queue
         gameloop_queue(gameloop_queue), clients_queues(clients_queues), next_finish_position(1),
         world(b2Vec2(0, 0), true) {
     world.SetContactListener(&collision_listener);
-    loadMapData(map_name);
+    //loadMapData(map_name);
 }
 
 Gameloop::~Gameloop() {

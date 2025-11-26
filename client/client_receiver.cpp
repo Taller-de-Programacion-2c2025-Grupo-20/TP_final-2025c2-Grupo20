@@ -110,6 +110,19 @@ MatchListDTO ClientReceiver::pollMatchList() {
 
 bool ClientReceiver::is_logged_in() const { return is_authenticated; }
 uint8_t ClientReceiver::get_my_id() const { return my_player_id; }
+uint8_t ClientReceiver::get_car_type(int player_id) {
+    std::lock_guard<std::mutex> lock(mtx);
+    for (const auto& player : last_game_state.players) {
+        if (player.player_id == player_id) {
+            return static_cast<uint8_t>(player.car_type);
+        }
+    }
+    throw std::runtime_error("Player ID not found in last game state.");
+}
+uint8_t ClientReceiver::get_map_id() {
+    std::lock_guard<std::mutex> lock(mtx);
+    return last_lobby_state.map_id;
+}
 
 void ClientReceiver::stop() {
     Thread::stop();

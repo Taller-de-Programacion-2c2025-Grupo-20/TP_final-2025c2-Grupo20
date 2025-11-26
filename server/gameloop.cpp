@@ -350,11 +350,15 @@ void Gameloop::stop() {
     gameloop_queue.close();
 }
 
-Gameloop::Gameloop(Queue<InputCmd>& gameloop_queue, QueuesMonitor& clients_queues, const std::string& map_name):
-        gameloop_queue(gameloop_queue), clients_queues(clients_queues), next_finish_position(1),
-        world(b2Vec2(0, 0), true) {
+Gameloop::Gameloop(Queue<InputCmd>& gameloop_queue,
+                   QueuesMonitor& clients_queues)
+    : gameloop_queue(gameloop_queue),
+      clients_queues(clients_queues),
+      next_finish_position(1),
+      world(b2Vec2(0, 0), true) {
     world.SetContactListener(&collision_listener);
-    //loadMapData(map_name);
+    // Si querés cargar un mapa fijo, podrías hacer:
+    // loadMapData("liberty_city.yaml");
 }
 
 Gameloop::~Gameloop() {

@@ -46,6 +46,7 @@ private:
     Queue<GameStateDTO> state_queue;
     SpritesManager game_sprites;
     ClientReceiver& receiver;
+    CarType car_to_use;
     int map_id;
 
     // --- NUEVO: estado de teclas para skid ---

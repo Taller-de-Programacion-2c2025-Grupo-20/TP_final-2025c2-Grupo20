@@ -706,6 +706,9 @@ int GameWindow::runGame() {
 
 GameWindow::GameWindow(Client& c)
     : client(c),
+      input_queue(),
+      state_queue(),
       game_sprites(),
+      receiver(c.getReceiver()),
       car_to_use(CarType::VERDE),
-      receiver(c.getReceiver()) {}
+      map_id(0) {}

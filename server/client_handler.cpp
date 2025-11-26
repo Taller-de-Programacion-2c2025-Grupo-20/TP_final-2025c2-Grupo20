@@ -26,7 +26,12 @@ void ClientHandler::connect_to_match(Queue<InputCmd>& game_queue,
 
 void ClientHandler::stop() {
     is_alive_flag = false;
-    protocol.close();
+    try {
+        protocol.close();
+    } catch (const LibError& e) {
+        std::cerr << "El cliente ya estaba cerrado: "
+                  << e.what() << std::endl;
+    }
     receiver.stop();
     sender.stop();
 }

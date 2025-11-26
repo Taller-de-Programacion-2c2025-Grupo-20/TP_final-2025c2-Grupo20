@@ -133,7 +133,7 @@ void Match::broadcast_waiting_room_state() {
         LobbyPlayerInfo player_info;
         player_info.player_id = client->get_id();
         player_info.name = client->get_username(); 
-
+        player_info.car_id = client->get_car_id();
         state_to_send.players.push_back(player_info);
     }
 

@@ -14,6 +14,7 @@
 #include "server_protocol.h"
 #include "sender.h"
 #include "receiver.h"
+#include "../common/liberror.h"
 
 class ClientHandler {
 private:

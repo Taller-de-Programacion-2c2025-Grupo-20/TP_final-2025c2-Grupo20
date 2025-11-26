@@ -6,13 +6,13 @@
 //Constantes TP FINAL
 
 enum class InputAction : uint8_t { Press, Release };
-enum class InputKey    : uint8_t { Up, Down, Left, Right, Quit, CreateMatch, JoinMatch, StartGame, Unknown };
+enum class InputKey    : uint8_t { Up, Down, Left, Right, Quit, CreateMatch, JoinMatch, StartGame, SelectCar, SelectMap, Unknown };
 enum class EntityType  : uint8_t { CAR, WALL, CHECKPOINT };
 enum class CarType     : uint8_t {VERDE, ROJO, DESCAPOTABLE, CELESTE, JEEP, CAMIONETA, CAMION};
 
 const std::string LIBERTY_CITY = "liberty_city.yaml";
 const std::string VICE_CITY = "vice_city.yaml";
-const std::string SAN_ANDREAS = "sa_andreas.yaml";
+const std::string SAN_ANDREAS = "san_andreas.yaml";
 
 inline const char* LIBERTY = "Liberty City";
 inline const char* VICE = "Vice City";
@@ -61,6 +61,8 @@ const uint8_t CMD_CREATE_MATCH = 0x05;
 const uint8_t CMD_JOIN_MATCH = 0x06;
 const uint8_t CMD_START_GAME = 0x07;
 const uint8_t CMD_REFRESH_MATCH_LIST = 0x08;
+const uint8_t CMD_SELECT_MAP = 0x09;
+const uint8_t CMD_SELECT_CAR = 0x0A;
 
 const uint8_t EVT_GAME_STARTED = 0x70;
 const uint8_t EVT_GAME_STATE = 0x80;

@@ -6,7 +6,6 @@
 
 Client::Client(const char* hostname, const char* port) : 
     protocol(hostname, port),
-    //my_player_id(0),
     is_running(true),
     input_queue(128),
     sender(protocol, input_queue),
@@ -40,6 +39,14 @@ int Client::runGame() {
 
 uint8_t Client::getMyPlayerId() const {
     return receiver.get_my_id();
+}
+
+uint8_t Client::getCarType(int player_id) {
+    return receiver.get_car_type(player_id);
+}
+
+uint8_t Client::getMapId() {
+    return receiver.get_map_id();
 }
 
 ClientReceiver& Client::getReceiver() {

@@ -47,6 +47,7 @@ private:
     SpritesManager game_sprites;
     CarType car_to_use;
     ClientReceiver& receiver;
+    int map_id;
 
     // --- NUEVO: estado de teclas para skid ---
     bool keyDownPressed  = false;
@@ -125,6 +126,8 @@ private:
 
 public:
     int runGame();
+    uint8_t getCarType(int player_id);
+    uint8_t getMapId();
 
     GameWindow(Client &client);
 

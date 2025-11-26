@@ -8,7 +8,9 @@ enum class LobbyCommandType : uint8_t {
     CREATE_MATCH,
     JOIN_MATCH,
     START_GAME,
-    REFRESH_MATCH_LIST
+    REFRESH_MATCH_LIST,
+    SELECT_MAP,
+    SELECT_CAR
 };
 
 struct LobbyCommand {

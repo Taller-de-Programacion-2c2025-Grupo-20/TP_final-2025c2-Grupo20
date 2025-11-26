@@ -67,14 +67,14 @@ include CMakeFiles/taller_client_autogen_timestamp_deps.dir/compiler_depend.make
 include CMakeFiles/taller_client_autogen_timestamp_deps.dir/progress.make
 
 CMakeFiles/taller_client_autogen_timestamp_deps: libtaller_common.a
-CMakeFiles/taller_client_autogen_timestamp_deps: /usr/lib/x86_64-linux-gnu/libSDL2.so
-CMakeFiles/taller_client_autogen_timestamp_deps: /usr/lib/x86_64-linux-gnu/libSDL2_mixer.so
-CMakeFiles/taller_client_autogen_timestamp_deps: /usr/lib/x86_64-linux-gnu/libQt6Network.so.6.4.2
-CMakeFiles/taller_client_autogen_timestamp_deps: /usr/lib/x86_64-linux-gnu/libQt6Widgets.so.6.4.2
-CMakeFiles/taller_client_autogen_timestamp_deps: /usr/lib/qt6/libexec/moc
 CMakeFiles/taller_client_autogen_timestamp_deps: /usr/lib/qt6/libexec/uic
+CMakeFiles/taller_client_autogen_timestamp_deps: /usr/lib/qt6/libexec/moc
+CMakeFiles/taller_client_autogen_timestamp_deps: /usr/lib/x86_64-linux-gnu/libQt6Network.so.6.4.2
 CMakeFiles/taller_client_autogen_timestamp_deps: /usr/lib/x86_64-linux-gnu/libSDL2_ttf.so
+CMakeFiles/taller_client_autogen_timestamp_deps: /usr/lib/x86_64-linux-gnu/libQt6Widgets.so.6.4.2
+CMakeFiles/taller_client_autogen_timestamp_deps: /usr/lib/x86_64-linux-gnu/libSDL2.so
 CMakeFiles/taller_client_autogen_timestamp_deps: /usr/lib/x86_64-linux-gnu/libSDL2_image.so
+CMakeFiles/taller_client_autogen_timestamp_deps: /usr/lib/x86_64-linux-gnu/libSDL2_mixer.so
 CMakeFiles/taller_client_autogen_timestamp_deps: _deps/libsdl2pp-build/libSDL2pp.so.8.3.0
 
 taller_client_autogen_timestamp_deps: CMakeFiles/taller_client_autogen_timestamp_deps

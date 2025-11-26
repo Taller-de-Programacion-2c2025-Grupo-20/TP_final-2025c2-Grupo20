@@ -244,17 +244,27 @@ void LobbyScreen::showMapPreview(int index) {
 void LobbyScreen::on_mapComboBox_currentIndexChanged(int index) {
     showMapPreview(index);
     if (client && ui->mapComboBox->isEnabled()) {
-        uint8_t map_id = static_cast<uint8_t>(index);
         
-        qDebug() << "Host seleccionó mapa ID:" << map_id;
+        InputCmd cmd;
+        cmd.player_id = client->getMyPlayerId();
+        cmd.key = InputKey::SelectMap; 
+        cmd.action = InputAction::Press;
+        cmd.match_id = static_cast<uint8_t>(index); 
+        
+        client->push_input(cmd);
     }
 }
 
 void LobbyScreen::on_carComboBox_currentIndexChanged(int index) {
     showCarPreview(index);
-
     if (client) {
-        uint8_t car_id = static_cast<uint8_t>(index);
-        qDebug() << "Jugador seleccionó auto ID:" << car_id;
+        
+        InputCmd cmd;
+        cmd.player_id = client->getMyPlayerId();
+        cmd.key = InputKey::SelectCar; 
+        cmd.action = InputAction::Press;
+        cmd.match_id = static_cast<uint8_t>(index); 
+        
+        client->push_input(cmd);
     }
 }

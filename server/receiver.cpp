@@ -63,6 +63,18 @@ void Receiver::run() {
                     lobby_queue->push(LobbyCommand(LobbyCommandType::START_GAME, id));
                     break;
                 }
+                case CMD_SELECT_MAP: {
+                    if (!lobby_queue) continue;
+                    uint8_t map_id = protocol.receiveUint8_t(); 
+                    lobby_queue->push(LobbyCommand(LobbyCommandType::SELECT_MAP, id, map_id));
+                    break;
+                }
+                case CMD_SELECT_CAR: {
+                    if (!lobby_queue) continue;
+                    uint8_t car_id = protocol.receiveUint8_t();
+                    lobby_queue->push(LobbyCommand(LobbyCommandType::SELECT_CAR, id, car_id));
+                    break;
+                }
                 case CMD_ENVIAR_INPUT: {
                     if (!gameloop_queue) continue;
                     InputCmd cmd = protocol.receive_input_command();

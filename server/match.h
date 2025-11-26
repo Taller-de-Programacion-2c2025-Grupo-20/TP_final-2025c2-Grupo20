@@ -29,6 +29,10 @@ private:
     std::list<std::unique_ptr<ClientHandler>> clients;
     std::mutex clients_mtx;
 
+    uint8_t map_id;
+    std::string map_name;
+    std::map<uint8_t, CarType> player_cars;
+
     void reap_dead_clients();
     
 
@@ -46,6 +50,9 @@ public:
     uint8_t get_id() const;
     std::string get_name() const;
     size_t get_player_count();
+    void set_map_id(uint8_t id);
+    void set_player_car(uint8_t player_id, uint8_t car_id);
+    uint8_t get_host_id();
 
     void run_match_logic(); 
     void broadcast_waiting_room_state();

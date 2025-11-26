@@ -5,6 +5,7 @@ ClientHandler::ClientHandler(Socket&& skt, uint8_t id):
         id(id),
         protocol(std::move(skt)),
         is_alive_flag(true),
+        car_id(0),
         receiver(protocol, id),
         sender(protocol)
 {}
@@ -47,6 +48,14 @@ void ClientHandler::set_username(const std::string& name) {
 
 std::string ClientHandler::get_username() const {
     return this->username;
+}
+
+void ClientHandler::set_car_id(uint8_t id) {
+    this->car_id = id;
+}
+
+uint8_t ClientHandler::get_car_id() const {
+    return this->car_id;
 }
 
 void ClientHandler::send_login_ok(uint8_t player_id) {

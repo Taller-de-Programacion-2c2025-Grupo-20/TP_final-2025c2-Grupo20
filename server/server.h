@@ -42,7 +42,8 @@ private:
     void handle_login(const LobbyCommand& cmd);
     void handle_create_match(const LobbyCommand& cmd);
     void handle_join_match(const LobbyCommand& cmd);
-    //void broadcast_lobby_state();
+    Match* handle_select_map(const LobbyCommand& cmd);
+    Match* handle_select_car(const LobbyCommand& cmd);
     void broadcast_match_list();
     void handle_toggle_ready(const LobbyCommand& cmd);
     void handle_start_game(const LobbyCommand& cmd);

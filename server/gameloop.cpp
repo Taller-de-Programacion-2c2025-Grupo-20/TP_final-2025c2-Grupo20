@@ -164,6 +164,9 @@ GameStateDTO Gameloop::getCurrentGameState(const float elapsed_time) {
                 ServerState(current_client_car->position().x, current_client_car->position().y,
                             current_client_car->angle(), current_client_car->getSpeed());
         current_player_state.health = current_client_car->health();
+
+        std::cout << static_cast<int>(current_player_state.health) << "\n";
+
         current_player_state.car_type = current_client_car->getCarType();
 
         if ((size_t)current_client_car->nextCheckpointId() < world_checkpoints.size()) {
@@ -350,15 +353,11 @@ void Gameloop::stop() {
     gameloop_queue.close();
 }
 
-Gameloop::Gameloop(Queue<InputCmd>& gameloop_queue,
-                   QueuesMonitor& clients_queues)
-    : gameloop_queue(gameloop_queue),
-      clients_queues(clients_queues),
-      next_finish_position(1),
-      world(b2Vec2(0, 0), true) {
+Gameloop::Gameloop(Queue<InputCmd>& gameloop_queue, QueuesMonitor& clients_queues):
+        gameloop_queue(gameloop_queue), clients_queues(clients_queues), next_finish_position(1),
+        world(b2Vec2(0, 0), true) {
     world.SetContactListener(&collision_listener);
-    // Si querés cargar un mapa fijo, podrías hacer:
-    // loadMapData("liberty_city.yaml");
+    //loadMapData(map_name);
 }
 
 Gameloop::~Gameloop() {

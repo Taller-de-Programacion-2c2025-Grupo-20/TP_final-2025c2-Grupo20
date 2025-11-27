@@ -1,10 +1,21 @@
 #include "loginscreen.h"
 #include "ui_loginscreen.h"
 
+#include <QStyleOption>
+#include <QPainter>
+#include <QStyle>
+
 LoginScreen::LoginScreen(QWidget *parent)
     : QWidget(parent),
       ui(new Ui::LoginScreen) {
     ui->setupUi(this);
+    this->setObjectName("LoginScreen");
+
+    this->setStyleSheet(
+        "#LoginScreen { "
+        "   border-image: url(:Pantallas/fondo_login.png)"
+        "}"
+    );
 }
 
 LoginScreen::~LoginScreen() {
@@ -24,4 +35,11 @@ void LoginScreen::on_btn_conectar_clicked() {
     }
     displayError("");
     emit connectAttempted(name);
+}
+
+void LoginScreen::paintEvent(QPaintEvent *) {
+    QStyleOption opt;
+    opt.initFrom(this);
+    QPainter p(this);
+    style()->drawPrimitive(QStyle::PE_Widget, &opt, &p, this);
 }

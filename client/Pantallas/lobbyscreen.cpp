@@ -8,12 +8,23 @@
 #include <QStackedWidget>
 #include <QListWidgetItem>
 #include <QDebug>
+#include <QStyleOption>
+#include <QPainter>
+#include <QStyle>
 
 LobbyScreen::LobbyScreen(QWidget *parent) :
     QWidget(parent),
     ui(new Ui::LobbyScreen) {
     
     ui->setupUi(this);
+    this->setObjectName("LoginScreen");
+
+    this->setStyleSheet(
+        "#LoginScreen { "
+        "   border-image: url(:Pantallas/fondo_lobby.png)"
+        "}"
+    );
+
     setupComboBoxes();
     poll_timer = new QTimer(this);
     connect(poll_timer, &QTimer::timeout, this, &LobbyScreen::updateLobbyState);
@@ -267,4 +278,11 @@ void LobbyScreen::on_carComboBox_currentIndexChanged(int index) {
         
         client->push_input(cmd);
     }
+}
+
+void LobbyScreen::paintEvent(QPaintEvent *) {
+    QStyleOption opt;
+    opt.initFrom(this);
+    QPainter p(this);
+    style()->drawPrimitive(QStyle::PE_Widget, &opt, &p, this);
 }

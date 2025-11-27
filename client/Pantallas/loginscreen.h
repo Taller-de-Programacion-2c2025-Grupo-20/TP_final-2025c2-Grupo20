@@ -2,6 +2,9 @@
 #define LOGINSCREEN_H
 
 #include <QWidget>
+#include <QPaintEvent>
+#include <QStyleOption>
+#include <QPainter>
 
 namespace Ui { class LoginScreen; }
 
@@ -21,6 +24,7 @@ private slots:
 
 private:
     Ui::LoginScreen *ui;
+    void paintEvent(QPaintEvent *event) override;
 };
 
 #endif // LOGINSCREEN_H

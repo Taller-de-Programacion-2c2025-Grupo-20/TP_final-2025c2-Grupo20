@@ -39,6 +39,7 @@ private:
     Ui::LobbyScreen *ui;
     Client* client = nullptr;
     QTimer* poll_timer;
+    void paintEvent(QPaintEvent *event) override;
 };
 
 #endif

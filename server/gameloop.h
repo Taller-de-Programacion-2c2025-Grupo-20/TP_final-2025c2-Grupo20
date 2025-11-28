@@ -38,6 +38,8 @@ private:
     Queue<InputCmd>& gameloop_queue;
     QueuesMonitor& clients_queues;
 
+    YAML::Node map_data;
+
     std::unordered_map<uint8_t, std::unique_ptr<Car>> clients_cars;
     std::vector<std::unique_ptr<Wall>> world_walls;
     std::unordered_map<int, std::unique_ptr<Checkpoint>> world_checkpoints;
@@ -47,6 +49,9 @@ private:
     std::vector<PlayerRaceInfo> not_finished_results;
     uint8_t next_finish_position;
 
+    size_t cars_out_of_race;
+    int current_race_number;
+
     b2World world;
     CollisionsListener collision_listener;
 
@@ -54,9 +59,9 @@ private:
 
     void handleInput(const InputCmd& input);
 
-    void loadWalls(const YAML::Node& map_data);
-    void loadCheckpoints(const YAML::Node& map_data);
-    void loadInitialPos(const YAML::Node& map_data);
+    void loadWalls();
+    void loadCheckpoints(int race_number);
+    void loadInitialPos(int race_number);
 
     void readUsersInput();
 
@@ -75,9 +80,11 @@ private:
     void registerDestroy(uint8_t player_id, float elapsed_time);
     void registerTimeout(float elapsed_time);
 
+    void resetCars();
+    void moveToNextRace();
     void logRaceResults() const;
 
-    bool gameEnded(float elapsed_time);
+    bool raceEnded(float elapsed_time);
 
     bool queue_closed = false;
 

@@ -32,7 +32,7 @@ void Gameloop::addCar(uint8_t client_id, const CarType& car_type) {
 
 /* ========================= MAP LOADING ========================== */
 
-void Gameloop::loadWalls(const YAML::Node& map_data) {
+void Gameloop::loadWalls() {
     for (const auto& layer: map_data["layers"]) {
         if (layer["name"].as<std::string>() == "Paredes") {
             for (const auto& obj: layer["objects"]) {
@@ -56,7 +56,8 @@ void Gameloop::loadWalls(const YAML::Node& map_data) {
     std::cout << "Termino carga de paredes\n";
 }
 
-void Gameloop::loadCheckpoints(const YAML::Node& map_data) {
+void Gameloop::loadCheckpoints(int race_number) {
+    if (race_number == 0) 
     for (const auto& layer: map_data["layers"]) {
         if (layer["name"].as<std::string>() == "Checkpoints") {
             for (const auto& obj: layer["objects"]) {
@@ -91,7 +92,8 @@ void Gameloop::loadCheckpoints(const YAML::Node& map_data) {
     std::cout << "Termino carga de checkpoints\n";
 }
 
-void Gameloop::loadInitialPos(const YAML::Node& map_data) {
+void Gameloop::loadInitialPos(int race_number) {
+    if (race_number == 0)
     for (const auto& layer: map_data["layers"]) {
         if (layer["name"].as<std::string>() == "PosIniciales") {
             for (const auto& obj: layer["objects"]) {
@@ -116,11 +118,11 @@ void Gameloop::loadMapData(const std::string& map_name) {
     world_checkpoints.clear();
     cars_inital_pos.clear();
 
-    YAML::Node map_data = YAML::LoadFile(std::string(MAPS_DATA_PATH) + map_name);
+    map_data = YAML::LoadFile(std::string(MAPS_DATA_PATH) + map_name);
 
-    loadWalls(map_data);
-    loadCheckpoints(map_data);
-    loadInitialPos(map_data);
+    loadWalls();
+    loadCheckpoints(0);
+    loadInitialPos(0);
 
     std::cout << "Gameloop: Mapa " << map_name << " cargado correctamente.\n";
 }
@@ -260,7 +262,7 @@ void Gameloop::removeClientsCars(float elapsed_time) {
     }
 }
 
-bool Gameloop::gameEnded(float elapsed_time) {
+bool Gameloop::raceEnded(float elapsed_time) {
     if (elapsed_time >= MATCH_DURATION_SECONDS) {
         std::cout << "La partida alcanzó 10 minutos.\n";
         
@@ -330,7 +332,7 @@ void Gameloop::run() {
         float elapsed_time = std::chrono::duration<float>(clock::now() - start_time).count();
         removeClientsCars(elapsed_time);
 
-        if (gameEnded(elapsed_time)) {
+        if (raceEnded(elapsed_time)) {
             race_results.insert(race_results.end(),
                         not_finished_results.begin(), not_finished_results.end());
             not_finished_results.clear();
@@ -352,10 +354,13 @@ void Gameloop::stop() {
 }
 
 Gameloop::Gameloop(Queue<InputCmd>& gameloop_queue, QueuesMonitor& clients_queues):
-        gameloop_queue(gameloop_queue), clients_queues(clients_queues), next_finish_position(1),
+        gameloop_queue(gameloop_queue), 
+        clients_queues(clients_queues), 
+        next_finish_position(1),
         world(b2Vec2(0, 0), true) {
-    world.SetContactListener(&collision_listener);
-    //loadMapData(map_name);
+
+            world.SetContactListener(&collision_listener);
+
 }
 
 Gameloop::~Gameloop() {

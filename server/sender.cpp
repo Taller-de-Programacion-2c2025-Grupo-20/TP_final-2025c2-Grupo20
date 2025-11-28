@@ -30,9 +30,10 @@ void Sender::run() {
             }
         }
     } catch (const ClosedQueue&) {
-        // La cola se cerró (la partida terminó)
+        std::cerr << "La queue se cerro, finalizando el thread sender." << std::endl;
+
     } catch (const LibError& e) {
-        // El socket se rompió.
+        std::cerr << "LibError en Sender: " << e.what() << std::endl;
     }
 }
 

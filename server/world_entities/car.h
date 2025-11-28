@@ -35,6 +35,8 @@ private:
     bool turningLeft;
     bool turningRight;
 
+    bool out_of_race;
+
     int next_checkpoint_id = 0;
 
     b2Body* car_body;
@@ -73,6 +75,9 @@ public:
     float getSpeed() const;
 
     EntityType getType() const override { return EntityType::CAR; }
+
+    bool setOutOfRaceState( bool isOut ) { out_of_race = isOut; }
+    bool isOutOfRace() { return out_of_race; }
 
     Car(b2World& world, const b2Vec2& initial_position);
     Car(b2World& world, const b2Vec2& initial_position, CarType car_type);

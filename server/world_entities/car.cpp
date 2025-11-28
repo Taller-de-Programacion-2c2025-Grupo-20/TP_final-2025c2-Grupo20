@@ -170,7 +170,8 @@ Car::Car(b2World& world, const b2Vec2& initial_position, CarType type) :
         accelerating(false), 
         braking(false), 
         turningLeft(false), 
-        turningRight(false), 
+        turningRight(false),
+        out_of_race(false),
         next_checkpoint_id(0) 
     
     {

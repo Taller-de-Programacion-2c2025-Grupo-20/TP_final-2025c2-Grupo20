@@ -27,7 +27,7 @@ private:
     GameStateDTO last_game_state;
     LobbyStateDTO last_lobby_state;
     std::mutex mtx;
-
+    std::atomic<bool> server_down{false};
     void run() override;
 
 public:
@@ -42,6 +42,7 @@ public:
     void stop() override;
     uint8_t get_car_type(int player_id);
     uint8_t get_map_id();
+    bool isServerDown() const;
 
 signals:
     void loginSuccess(uint8_t player_id);

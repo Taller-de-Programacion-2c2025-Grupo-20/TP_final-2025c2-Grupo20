@@ -400,6 +400,13 @@ void GameWindow::drawGame(Renderer& renderer,
                         int& actual_pos, float& pos_x_m, float& pos_y_m, float& angle, SoundManager& soundManager)
 {
     while (true){
+
+        if (receiver.isServerDown()) {
+            std::cerr << "CLIENT: servidor desconectado, cerrando ventana SDL...\n";
+            soundManager.stopEngineSound();
+            break;
+        }
+
         SDL_Event ev;
         while (SDL_PollEvent(&ev)) {
             if (ev.type == SDL_QUIT) {

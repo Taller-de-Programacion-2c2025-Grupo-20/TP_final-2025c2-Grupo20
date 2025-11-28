@@ -11,6 +11,11 @@ void CollisionsListener::handlerCollisionCarAndCar(Car* carA, Car* carB,
                                                    const b2ContactImpulse* impulse,
                                                    b2Contact* contact) {
 
+    if (carA->isOutOfRace() || carB->isOutOfRace()){
+        contact->SetEnabled(false);
+        return;
+    }
+
     float total_impulse = 0;
     for (int i = 0; i < contact->GetManifold()->pointCount; ++i) {
         total_impulse += impulse->normalImpulses[i];

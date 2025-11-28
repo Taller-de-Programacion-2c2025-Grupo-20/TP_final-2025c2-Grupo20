@@ -142,7 +142,7 @@ const b2Vec2& Car::position() { return car_body->GetPosition(); }
 
 float Car::angle() { return car_body->GetAngle(); }
 
-void Car::recieveDamage(uint8_t damage) {
+void Car::recieveDamage(uint8_t damage) {    
     if ((car_health - damage) <= 0) {
         car_health = 0;
         return;
@@ -163,6 +163,15 @@ float Car::getSpeed() const {
 
 CarType Car::getCarType() { 
     return car_type; 
+}
+
+void Car::setOutOfRaceState(bool isOut){
+
+    out_of_race = isOut;
+
+    for (b2Fixture* f = car_body->GetFixtureList(); f; f = f->GetNext()) {
+        f->SetSensor(isOut);
+    }
 }
 
 Car::Car(b2World& world, const b2Vec2& initial_position, CarType type) : 

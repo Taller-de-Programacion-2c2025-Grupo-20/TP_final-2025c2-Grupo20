@@ -125,7 +125,6 @@ void LobbyScreen::on_createButton_clicked() {
     if (match_name.empty()) {
         return;
     }
-    qDebug() << "CLIENT DEBUG 1: 'Create Match' clickeado. Nombre:" << QString::fromStdString(match_name);
     InputCmd cmd;
     cmd.player_id = client->getMyPlayerId();
     cmd.key = InputKey::CreateMatch;
@@ -194,7 +193,6 @@ void LobbyScreen::showCarPreview(int index) {
     QPixmap spritesheet(":/data/cars/Mobile - Grand Theft Auto 4 - Miscellaneous - Cars.png"); 
 
     if (spritesheet.isNull()) {
-        qDebug() << "ERROR: No se encontró la imagen en client/data/cars/";
         ui->label_carPreview->setText("Img no encontrada");
         return;
     }

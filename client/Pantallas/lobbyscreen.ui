@@ -170,29 +170,29 @@ font: 500 11pt &quot;Ubuntu Sans&quot;;</string>
      </property>
      <property name="styleSheet">
       <string notr="true">QPushButton {
-    background-color: #CDCDCD;
-    color: #032766;
+    background-color: #032766;
+    color: #CDCDCD;
     font-family: &quot;Press Start 2P&quot;;
     font-size: 12px;
     font-weight: bold;
-    border: 3px solid #032766;
+    border: 3px solid #CDCDCD;
     border-radius: 6px;
-    border-bottom: 8px solid #032766;
-    border-right: 8px solid #032766;
+    border-bottom: 8px solid #CDCDCD;
+    border-right: 8px solid #CDCDCD;
     padding: 10px 15px;
 }
 
 QPushButton:hover {
-    background-color: #032766; 
-    color: #CDCDCD;
-    border-color: #CDCDCD;
+    background-color: #CDCDCD; 
+    color: #032766;
+    border-color: #032766;
 }
 
 QPushButton:pressed {
-    background-color: #032766;
-    color: #CDCDCD;
-    border-bottom: 3px solid #032766;
-    border-right: 3px solid #032766;
+    background-color: #CDCDCD;
+    color: #032766;
+    border-bottom: 3px solid #CDCDCD;
+    border-right: 3px solid #CDCDCD;
     padding-top: 15px; 
     padding-left: 20px;
 }</string>
@@ -215,25 +215,25 @@ QPushButton:pressed {
      </property>
      <property name="styleSheet">
       <string notr="true">QLineEdit {
-    background-color: #CDCDCD; 
-    color: #032766;
+    background-color: #032766; 
+    color: #CDCDCD;
     font-family: &quot;Press Start 2P&quot;;
     font-size: 12px;
     font-weight: bold;
-    border: 2px solid #032766;
-    border-bottom: 6px solid #032766; 
-    border-right: 6px solid #032766;
+    border: 2px solid #CDCDCD;
+    border-bottom: 6px solid #CDCDCD; 
+    border-right: 6px solid #CDCDCD;
     padding: 5px;
     padding-left: 10px;
-    selection-background-color: #032766;
-    selection-color: #CDCDCD;
+    selection-background-color: #CDCDCD;
+    selection-color: #032766;
     border-radius: 6px;
 }
 
 QLineEdit:focus {
-    color: #9C9C9C; 
-    border-color: #9C9C9C; 
-    background-color: #032766; 
+    color: #032766; 
+    border-color: #032766; 
+    background-color: #CDCDCD; 
 }
 </string>
      </property>
@@ -255,29 +255,29 @@ QLineEdit:focus {
      </property>
      <property name="styleSheet">
       <string notr="true">QPushButton {
-    background-color: #CDCDCD;
-    color: #032766;
+    background-color: #032766;
+    color: #CDCDCD;
     font-family: &quot;Press Start 2P&quot;;
     font-size: 10px;
     font-weight: bold;
-    border: 3px solid #032766;
+    border: 3px solid #CDCDCD;
     border-radius: 6px;
-    border-bottom: 8px solid #032766;
-    border-right: 8px solid #032766;
+    border-bottom: 8px solid #CDCDCD;
+    border-right: 8px solid #CDCDCD;
     padding: 10px 15px;
 }
 
 QPushButton:hover {
-    background-color: #032766; 
-    color: #CDCDCD;
-    border-color: #CDCDCD;
+    background-color: #CDCDCD; 
+    color: #032766;
+    border-color: #032766;
 }
 
 QPushButton:pressed {
-    background-color: #032766;
-    color: #CDCDCD;
-    border-bottom: 3px solid #032766;
-    border-right: 3px solid #032766;
+    background-color: #CDCDCD;
+    color: #032766;
+    border-bottom: 3px solid #CDCDCD;
+    border-right: 3px solid #CDCDCD;
     padding-top: 15px; 
     padding-left: 20px;
 }</string>
@@ -292,8 +292,62 @@ QPushButton:pressed {
        <x>200</x>
        <y>310</y>
        <width>321</width>
-       <height>151</height>
+       <height>171</height>
       </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QListWidget {
+    background-color: #CDCDCD;
+    color: #032766;
+    font-family: &quot;Press Start 2P&quot;;
+    font-size: 10px;
+    font-weight: bold;
+    border: 3px solid #032766;
+    border-radius: 6px;
+    border-bottom: 8px solid #032766;
+    border-right: 8px solid #032766;
+    padding: 10px;
+    outline: 0;
+}
+
+QListWidget::item {
+    padding: 10px;
+    margin-bottom: 4px;
+    border-bottom: 2px solid #032766;
+}
+
+QListWidget::item:hover {
+    background-color: rgba(3, 39, 102, 30);
+    color: #032766;
+}
+
+QListWidget::item:selected {
+    background-color: #032766;
+    color: #CDCDCD;
+    border: 2px solid #CDCDCD;
+}
+
+QScrollBar:vertical {
+    border-left: 2px solid #032766;
+    background: #CDCDCD;
+    width: 15px;
+    margin: 0px;
+}
+QScrollBar::handle:vertical {
+    background: #032766;
+    min-height: 20px;
+}
+QScrollBar::add-line:vertical, QScrollBar::sub-line:vertical {
+    background: none;
+}
+
+QScrollBar::handle:horizontal {
+    background: #032766;
+}
+
+QScrollBar::add-line:horizontal, QScrollBar::sub-line:horizontal {
+    background: none;
+}</string>
      </property>
     </widget>
    </widget>

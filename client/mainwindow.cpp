@@ -19,6 +19,12 @@ MainWindow::MainWindow(const std::string& host, const std::string& port, QWidget
             this, &MainWindow::onLoginAttempt);
             
     connect(pantallaLobby, &LobbyScreen::startGame, this, &MainWindow::startGame);
+
+    connect(pantallaLobby, &LobbyScreen::serverDisconnected,
+            this, [this]() {
+                this->close();
+            });
+
 }
 
 MainWindow::~MainWindow() {

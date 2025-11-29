@@ -354,7 +354,7 @@ void GameWindow::drawMarket(
     int viewW,
     int viewH
 ) {
-    int texW = market.GetWidth();
+    int texW = 1034;
     int texH = market.GetHeight();
 
     // Escala para que quepa en la pantalla manteniendo aspecto

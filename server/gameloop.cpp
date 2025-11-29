@@ -8,7 +8,6 @@
 #include "../common/queue.h"
 
 const float PIXELS_PER_METER = 16.0f;
-const float MATCH_DURATION_SECONDS = 600.0f;
 
 void Gameloop::handleInput(const InputCmd& input) {
     auto it = clients_cars.find(input.player_id);

@@ -106,18 +106,33 @@ void Car::handleInput(InputCmd cmd) {
     }
 
     if (cmd.key == InputKey::BuySpeedUpgrade){
-        applied_upgrades.insert(UpgradeType::SpeedUpgrade);
-        max_speed += 10.0f;
+        auto [it, inserted] = applied_upgrades.insert(UpgradeType::SpeedUpgrade);
+        if (inserted){
+            max_speed += 10.0f;
+            next_race_time_penalty += 15.0f;
+
+            std::cout << "Cliente compro mas velocidad maxima\n";
+        }
     }
 
     if (cmd.key == InputKey::BuyAccelerationUpgrade){
-        applied_upgrades.insert(UpgradeType::AccelerationUpgrade);
-        accelaration += 2.0f;
+        auto [it, inserted] = applied_upgrades.insert(UpgradeType::AccelerationUpgrade);
+        if (inserted) {
+            accelaration += 2.0f;
+            next_race_time_penalty += 10.0f;
+            
+            std::cout << "Cliente compro mas aceleracion\n";
+        }
     }
 
     if (cmd.key == InputKey::BuyHealthUpgrade){
-        applied_upgrades.insert(UpgradeType::HealtUpgrade);
-        car_health += 50;
+        auto [it, inserted] = applied_upgrades.insert(UpgradeType::HealtUpgrade);
+        if (inserted) {
+            car_health += 50;
+            next_race_time_penalty += 5.0f;
+
+            std::cout << "Cliente compro mas vida\n";
+        }
     }
 
 }
@@ -181,13 +196,17 @@ CarType Car::getCarType() {
     return car_type; 
 }
 
-float Car::timePenalization(){
+float Car::timePenalty(){
     return time_penalization;
 }
 
-Car::Car(b2World& world, const b2Vec2& initial_position, CarType type) : 
+float Car::nextRaceTimePenalty(){
+    return next_race_time_penalty;
+}
+
+Car::Car(b2World& world, const b2Vec2& initial_position, CarType type, float time_penalty) : 
         car_type(type),
-        time_penalization(0.0),
+        next_race_time_penalty(0.0),
         accelerating(false), 
         braking(false), 
         turningLeft(false), 
@@ -201,6 +220,8 @@ Car::Car(b2World& world, const b2Vec2& initial_position, CarType type) :
     rotation_torque = attributes.rotation_torque;
     max_speed = attributes.max_speed;
     car_health = attributes.health;
+
+    time_penalization = time_penalty;
 
     b2BodyDef carDef;
     carDef.type = b2_dynamicBody;

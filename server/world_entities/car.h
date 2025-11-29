@@ -33,6 +33,7 @@ private:
 
     std::set<UpgradeType> applied_upgrades;
     float time_penalization;
+    float next_race_time_penalty;
     
     bool accelerating;
     bool braking;
@@ -74,12 +75,12 @@ public:
 
     float getSpeed() const;
 
-    float timePenalization();
+    float timePenalty();
+    float nextRaceTimePenalty();
 
     EntityType getType() const override { return EntityType::CAR; }
 
-    Car(b2World& world, const b2Vec2& initial_position);
-    Car(b2World& world, const b2Vec2& initial_position, CarType car_type);
+    Car(b2World& world, const b2Vec2& initial_position, CarType car_type, float time_penalty);
 
     ~Car();
 };

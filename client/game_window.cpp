@@ -407,6 +407,13 @@ void GameWindow::drawGame(Renderer& renderer,
             break;
         }
 
+        GameStateDTO gs = receiver.pollGameState();
+        
+        if (!gs.players.empty()) {
+            last_state = gs;
+            have_state = true;
+        }
+
         SDL_Event ev;
         while (SDL_PollEvent(&ev)) {
             if (ev.type == SDL_QUIT) {
@@ -433,10 +440,22 @@ void GameWindow::drawGame(Renderer& renderer,
                     case SDLK_d: cmd.key = InputKey::Right; break;
                     case SDLK_q:
                     case SDLK_ESCAPE: cmd.key = InputKey::Quit; break;
+                    case SDLK_1: cmd.key = InputKey::BuySpeedUpgrade; break;
+                    case SDLK_2: cmd.key = InputKey::BuyAccelerationUpgrade; break;
+                    case SDLK_3: cmd.key = InputKey::BuyHealthUpgrade; break;
+                    default: cmd.key = InputKey::Unknown; break;
                 }
 
                 if (cmd.key != InputKey::Unknown) {
-                    client.push_input(cmd);
+
+                    if ((cmd.key == InputKey::BuySpeedUpgrade || 
+                        cmd.key == InputKey::BuyAccelerationUpgrade || 
+                        cmd.key == InputKey::BuyHealthUpgrade) && (static_cast<int>(last_state.elapsed_time) > BUY_TIME_SECONDS)) {
+                            std::cout << "No se puede comprar upgrades en medio de la carrera!\n";
+                        }
+                    else{
+                        client.push_input(cmd);
+                    }
                 }
 
                 if (cmd.key == InputKey::Quit && cmd.action == InputAction::Press) {
@@ -453,12 +472,6 @@ void GameWindow::drawGame(Renderer& renderer,
             break;
         }
 
-        GameStateDTO gs = receiver.pollGameState();
-        
-        if (!gs.players.empty()) {
-            last_state = gs;
-            have_state = true;
-        }
         std::cout << "Mi player id es: " << static_cast<int>(client.getMyPlayerId()) << "\n";
 
         renderer.SetDrawColor(0, 0, 0, 255);
@@ -471,7 +484,7 @@ void GameWindow::drawGame(Renderer& renderer,
             continue; 
         }
 
-        if (static_cast<int>(last_state.elapsed_time) <= 10) {
+        if (static_cast<int>(last_state.elapsed_time) <= BUY_TIME_SECONDS) {
             drawMarket(renderer, market, last_state, srcRect, viewW, viewH);
             renderer.Present();
             continue;

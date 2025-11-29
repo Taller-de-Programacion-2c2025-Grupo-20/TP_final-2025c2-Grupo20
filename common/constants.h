@@ -6,7 +6,7 @@
 //Constantes TP FINAL
 
 enum class InputAction : uint8_t { Press, Release };
-enum class InputKey    : uint8_t { Up, Down, Left, Right, Quit, CreateMatch, JoinMatch, StartGame, SelectCar, SelectMap, Unknown };
+enum class InputKey    : uint8_t { Up, Down, Left, Right, Quit, CreateMatch, JoinMatch, StartGame, SelectCar, SelectMap, Unknown, BuySpeedUpgrade, BuyAccelerationUpgrade, BuyHealthUpgrade};
 enum class EntityType  : uint8_t { CAR, WALL, CHECKPOINT };
 enum class CarType     : uint8_t {VERDE, ROJO, DESCAPOTABLE, CELESTE, JEEP, CAMIONETA, CAMION};
 
@@ -29,6 +29,8 @@ inline const char* CELESTE = "Celeste";
 inline const char* JEEP = "Jeep";
 inline const char* CAMIONETA = "Camioneta";
 inline const char* CAMION = "Camión";
+
+inline constexpr int BUY_TIME_SECONDS = 10;
 
 
 //Constantes VIEJAS

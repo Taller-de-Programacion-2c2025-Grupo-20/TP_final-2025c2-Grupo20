@@ -33,6 +33,11 @@ struct PlayerRaceInfo {
     bool timed_out;
 };
 
+struct DeletedCar {
+    uint8_t player_id;
+    CarType type;
+};
+
 class Gameloop: public Thread {
 private:
     Queue<InputCmd>& gameloop_queue;
@@ -49,7 +54,8 @@ private:
     std::vector<PlayerRaceInfo> not_finished_results;
     uint8_t next_finish_position;
 
-    size_t cars_out_of_race;
+    std::vector<DeletedCar> deleted_cars;
+
     int current_race_number;
 
     b2World world;

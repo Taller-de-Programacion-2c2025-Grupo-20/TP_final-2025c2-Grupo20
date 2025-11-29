@@ -2,6 +2,7 @@
 #define CAR_H
 
 #include <string>
+#include <set>
 
 #include <Box2D/Box2D.h>
 
@@ -27,9 +28,12 @@ private:
     float accelaration;
     float rotation_torque;
     float max_speed;
-
     CarType car_type;
+    uint8_t car_health;
 
+    std::set<UpgradeType> applied_upgrades;
+    float time_penalization;
+    
     bool accelerating;
     bool braking;
     bool turningLeft;
@@ -38,8 +42,6 @@ private:
     int next_checkpoint_id = 0;
 
     b2Body* car_body;
-
-    uint8_t car_health;
 
     CarAttributes getCarTypeAttributes(CarType car_type);
 
@@ -71,6 +73,8 @@ public:
     void incrementNextCheckpointId();
 
     float getSpeed() const;
+
+    float timePenalization();
 
     EntityType getType() const override { return EntityType::CAR; }
 

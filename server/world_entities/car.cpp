@@ -104,6 +104,22 @@ void Car::handleInput(InputCmd cmd) {
             std::cout << "Deja de doblar a la derecha\n";
         }
     }
+
+    if (cmd.key == InputKey::BuySpeedUpgrade){
+        applied_upgrades.insert(UpgradeType::SpeedUpgrade);
+        max_speed += 10.0f;
+    }
+
+    if (cmd.key == InputKey::BuyAccelerationUpgrade){
+        applied_upgrades.insert(UpgradeType::AccelerationUpgrade);
+        accelaration += 2.0f;
+    }
+
+    if (cmd.key == InputKey::BuyHealthUpgrade){
+        applied_upgrades.insert(UpgradeType::HealtUpgrade);
+        car_health += 50;
+    }
+
 }
 
 void Car::updateCarPhysics() {
@@ -165,8 +181,13 @@ CarType Car::getCarType() {
     return car_type; 
 }
 
+float Car::timePenalization(){
+    return time_penalization;
+}
+
 Car::Car(b2World& world, const b2Vec2& initial_position, CarType type) : 
-        car_type(type), 
+        car_type(type),
+        time_penalization(0.0),
         accelerating(false), 
         braking(false), 
         turningLeft(false), 

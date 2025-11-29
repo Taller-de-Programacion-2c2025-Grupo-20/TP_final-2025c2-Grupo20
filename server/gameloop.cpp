@@ -259,7 +259,7 @@ void Gameloop::removeClientsCars(float elapsed_time) {
         if (finished) {
             std::cout << "Jugador " << static_cast<int>(it->first)
                       << " completó el último checkpoint, sacando su auto del mapa.\n";
-            registerFinish(it->first, elapsed_time);
+            registerFinish(it->first, (elapsed_time + it->second->timePenalization()) );
 
             deleted_cars.push_back(DeletedCar(it->first, it->second->getCarType()));
 

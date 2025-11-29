@@ -37,6 +37,8 @@ struct PlayerRaceInfo {
 struct DeletedCar {
     uint8_t player_id;
     CarType type;
+
+    DeletedCar(uint8_t player_id, CarType type) : player_id(player_id), type(type) {}
 };
 
 class Gameloop: public Thread {

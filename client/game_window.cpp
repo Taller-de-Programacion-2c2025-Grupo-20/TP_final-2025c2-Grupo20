@@ -527,13 +527,22 @@ void GameWindow::drawGame(Renderer& renderer,
 
                 if (cmd.key != InputKey::Unknown) {
 
-                    if ((cmd.key == InputKey::BuySpeedUpgrade || 
-                        cmd.key == InputKey::BuyAccelerationUpgrade || 
-                        cmd.key == InputKey::BuyHealthUpgrade) && (static_cast<int>(last_state.elapsed_time) > BUY_TIME_SECONDS)) {
+                    if ((cmd.key == InputKey::BuySpeedUpgrade || cmd.key == InputKey::BuyAccelerationUpgrade || cmd.key == InputKey::BuyHealthUpgrade)) {
+                        if (static_cast<int>(last_state.elapsed_time) > BUY_TIME_SECONDS){
                             std::cout << "No se puede comprar upgrades en medio de la carrera!\n";
                         }
+                        else {
+                            client.push_input(cmd);
+                        }
+                            
+                    }
                     else{
-                        client.push_input(cmd);
+                        if (static_cast<int>(last_state.elapsed_time) <= BUY_TIME_SECONDS){
+                            std::cout << "No te podes mover antes de que arranque la carrera!\n";
+                        }
+                        else {
+                            client.push_input(cmd);
+                        }
                     }
                 }
 

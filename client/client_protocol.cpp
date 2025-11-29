@@ -116,6 +116,13 @@ GameStateDTO ClientProtocol::receive_game_state_payload() {
 
         skt.recvall(&player.car_type, 1);
 
+        uint8_t upgrade_count = receiveUint8_t();
+        for (uint8_t j = 0; j < upgrade_count; ++j) {
+            uint8_t upgrade;
+            skt.recvall(&upgrade, 1);
+            player.applied_upgrades.insert(static_cast<UpgradeType>(upgrade));
+        }
+
         player.next_checkpoint_position_x = receiveFloat();
         player.next_checkpoint_position_y = receiveFloat();
         player.next_checkpoint_hint = receiveFloat();

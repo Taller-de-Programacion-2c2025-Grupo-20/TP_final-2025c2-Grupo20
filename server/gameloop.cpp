@@ -26,9 +26,19 @@ void Gameloop::addCar(uint8_t client_id, const CarType& car_type) {
     cars_inital_pos.erase(cars_inital_pos.begin());
 
     clients_cars.emplace(
-            client_id, std::make_unique<Car>(world, b2Vec2(car_initial_pos.x, car_initial_pos.y), car_type));
+            client_id, std::make_unique<Car>(world, b2Vec2(car_initial_pos.x, car_initial_pos.y), car_type, 0.0));
  
     std::cout << "Auto creado para jugador " << (int)client_id << std::endl;
+}
+
+void Gameloop::addCarWithTimePenalty(uint8_t client_id, const CarType& car_type, float time_penalty) {
+    PlayerPos car_initial_pos = cars_inital_pos.front();
+    cars_inital_pos.erase(cars_inital_pos.begin());
+
+    clients_cars.emplace(
+            client_id, std::make_unique<Car>(world, b2Vec2(car_initial_pos.x, car_initial_pos.y), car_type, time_penalty));
+ 
+    std::cout << "Auto con penalizacion creado para jugador " << (int)client_id << std::endl;
 }
 
 /* ========================= MAP LOADING ========================== */
@@ -169,6 +179,7 @@ GameStateDTO Gameloop::getCurrentGameState(const float elapsed_time) {
         current_player_state.health = current_client_car->health();
 
         current_player_state.car_type = current_client_car->getCarType();
+        current_player_state.applied_upgrades = current_client_car->applyedUpgrades();
 
         if ((size_t)current_client_car->nextCheckpointId() < world_checkpoints.size()) {
             int next_checkpoint_id = current_client_car->nextCheckpointId();
@@ -250,7 +261,7 @@ void Gameloop::removeClientsCars(float elapsed_time) {
                       << " por vida 0\n";
             registerDestroy(it->first, elapsed_time);
 
-            deleted_cars.push_back(DeletedCar(it->first, it->second->getCarType()));
+            deleted_cars.push_back(CarInfo(it->first, it->second->getCarType(), it->second->nextRaceTimePenalty()));
 
             it = clients_cars.erase(it);
             continue;
@@ -259,9 +270,9 @@ void Gameloop::removeClientsCars(float elapsed_time) {
         if (finished) {
             std::cout << "Jugador " << static_cast<int>(it->first)
                       << " completó el último checkpoint, sacando su auto del mapa.\n";
-            registerFinish(it->first, elapsed_time);
+            registerFinish(it->first, (elapsed_time + it->second->timePenalty()) );
 
-            deleted_cars.push_back(DeletedCar(it->first, it->second->getCarType()));
+            deleted_cars.push_back(CarInfo(it->first, it->second->getCarType(), it->second->nextRaceTimePenalty()));
 
             it = clients_cars.erase(it);
             continue;
@@ -290,23 +301,27 @@ bool Gameloop::raceEnded(float elapsed_time) {
 
 void Gameloop::resetCars() {
 
-    std::vector<std::pair<int, CarType>> all_cars;
+    std::vector<CarInfo> all_cars;
 
     for (auto& client_car : clients_cars) {
-        all_cars.emplace_back(client_car.first, client_car.second->getCarType());
+        all_cars.emplace_back( CarInfo(client_car.first, client_car.second->getCarType(), client_car.second->nextRaceTimePenalty()) );
     }
 
     for (auto& deleted_car : deleted_cars) {
-        all_cars.emplace_back(deleted_car.player_id, deleted_car.type);
+        all_cars.emplace_back(deleted_car);
     }
 
     clients_cars.clear();
     deleted_cars.clear();
 
     for (auto& car : all_cars) {
-        int id = car.first;
-        CarType type = car.second;
-        addCar(id, type);
+
+        if (car.next_race_time_penalty != 0.0){
+            addCarWithTimePenalty(car.player_id, car.type, car.next_race_time_penalty);
+        } else {
+            addCar(car.player_id, car.type);
+        }
+
     }
 
 }

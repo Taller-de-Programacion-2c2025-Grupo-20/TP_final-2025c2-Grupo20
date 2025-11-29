@@ -9,6 +9,8 @@
 
 const float PIXELS_PER_METER = 16.0f;
 
+const int MAX_RACES = 3;
+
 void Gameloop::handleInput(const InputCmd& input) {
     auto it = clients_cars.find(input.player_id);
 
@@ -31,7 +33,7 @@ void Gameloop::addCar(uint8_t client_id, const CarType& car_type) {
 
 /* ========================= MAP LOADING ========================== */
 
-void Gameloop::loadWalls(const YAML::Node& map_data) {
+void Gameloop::loadWalls() {
     for (const auto& layer: map_data["layers"]) {
         if (layer["name"].as<std::string>() == "Paredes") {
             for (const auto& obj: layer["objects"]) {
@@ -55,7 +57,8 @@ void Gameloop::loadWalls(const YAML::Node& map_data) {
     std::cout << "Termino carga de paredes\n";
 }
 
-void Gameloop::loadCheckpoints(const YAML::Node& map_data) {
+void Gameloop::loadCheckpoints(int race_number) {
+    race_number = race_number + 1;
     for (const auto& layer: map_data["layers"]) {
         if (layer["name"].as<std::string>() == "Checkpoints") {
             for (const auto& obj: layer["objects"]) {
@@ -90,7 +93,8 @@ void Gameloop::loadCheckpoints(const YAML::Node& map_data) {
     std::cout << "Termino carga de checkpoints\n";
 }
 
-void Gameloop::loadInitialPos(const YAML::Node& map_data) {
+void Gameloop::loadInitialPos(int race_number) {
+    race_number = race_number + 1;
     for (const auto& layer: map_data["layers"]) {
         if (layer["name"].as<std::string>() == "PosIniciales") {
             for (const auto& obj: layer["objects"]) {
@@ -115,11 +119,11 @@ void Gameloop::loadMapData(const std::string& map_name) {
     world_checkpoints.clear();
     cars_inital_pos.clear();
 
-    YAML::Node map_data = YAML::LoadFile(std::string(MAPS_DATA_PATH) + map_name);
+    map_data = YAML::LoadFile(std::string(MAPS_DATA_PATH) + map_name);
 
-    loadWalls(map_data);
-    loadCheckpoints(map_data);
-    loadInitialPos(map_data);
+    loadWalls();
+    loadCheckpoints(0);
+    loadInitialPos(0);
 
     std::cout << "Gameloop: Mapa " << map_name << " cargado correctamente.\n";
 }
@@ -191,7 +195,9 @@ GameStateDTO Gameloop::getCurrentGameState(const float elapsed_time) {
 
 void Gameloop::updatePhysics(const double& rate) {
     for (auto& pair: clients_cars) {
+
         pair.second->updateCarPhysics();
+
     }
     world.Step(rate, 6, 2);
 }
@@ -243,6 +249,9 @@ void Gameloop::removeClientsCars(float elapsed_time) {
             std::cout << "Eliminando auto del jugador con ID: " << static_cast<int>(it->first)
                       << " por vida 0\n";
             registerDestroy(it->first, elapsed_time);
+
+            deleted_cars.push_back(DeletedCar(it->first, it->second->getCarType()));
+
             it = clients_cars.erase(it);
             continue;
         }
@@ -251,6 +260,9 @@ void Gameloop::removeClientsCars(float elapsed_time) {
             std::cout << "Jugador " << static_cast<int>(it->first)
                       << " completó el último checkpoint, sacando su auto del mapa.\n";
             registerFinish(it->first, elapsed_time);
+
+            deleted_cars.push_back(DeletedCar(it->first, it->second->getCarType()));
+
             it = clients_cars.erase(it);
             continue;
         }
@@ -259,7 +271,7 @@ void Gameloop::removeClientsCars(float elapsed_time) {
     }
 }
 
-bool Gameloop::gameEnded(float elapsed_time) {
+bool Gameloop::raceEnded(float elapsed_time) {
     if (elapsed_time >= MATCH_DURATION_SECONDS) {
         std::cout << "La partida alcanzó 10 minutos.\n";
         
@@ -274,6 +286,42 @@ bool Gameloop::gameEnded(float elapsed_time) {
     }
 
     return false;
+}
+
+void Gameloop::resetCars() {
+
+    std::vector<std::pair<int, CarType>> all_cars;
+
+    for (auto& client_car : clients_cars) {
+        all_cars.emplace_back(client_car.first, client_car.second->getCarType());
+    }
+
+    for (auto& deleted_car : deleted_cars) {
+        all_cars.emplace_back(deleted_car.player_id, deleted_car.type);
+    }
+
+    clients_cars.clear();
+    deleted_cars.clear();
+
+    for (auto& car : all_cars) {
+        int id = car.first;
+        CarType type = car.second;
+        addCar(id, type);
+    }
+
+}
+
+void Gameloop::moveToNextRace() {
+    next_finish_position = 1;
+
+    world_checkpoints.clear();
+    cars_inital_pos.clear();
+
+    loadInitialPos(current_race_number);
+    loadCheckpoints(current_race_number);
+    
+    resetCars();
+
 }
 
 std::chrono::_V2::steady_clock::time_point Gameloop::keepLoopRate(std::chrono::steady_clock::time_point t1, const double& rate) {
@@ -309,40 +357,50 @@ std::chrono::_V2::steady_clock::time_point Gameloop::keepLoopRate(std::chrono::s
 
 void Gameloop::run() {
 
-    using clock = std::chrono::steady_clock;
     const double rate = 1.0 / 60.0;
-    auto t1 = clock::now();
 
-    start_time = t1;
+    while (should_keep_running() && (current_race_number <= MAX_RACES ) ) {
 
-    while (should_keep_running()) {
-
-        try {
-            readUsersInput();
-        } catch (const ClosedQueue&) {
-            std::cout << "Gameloop: cola cerrada, saliendo.\n";
-            break;
+        if (current_race_number > 1) {
+            moveToNextRace();
         }
 
-        updatePhysics(rate);
+        using clock = std::chrono::steady_clock;
+        auto t1 = clock::now();
 
-        float elapsed_time = std::chrono::duration<float>(clock::now() - start_time).count();
-        removeClientsCars(elapsed_time);
+        start_time = t1;
 
-        if (gameEnded(elapsed_time)) {
-            race_results.insert(race_results.end(),
-                        not_finished_results.begin(), not_finished_results.end());
-            not_finished_results.clear();
-            break;
+        while (should_keep_running()) {
+
+            try {
+                readUsersInput();
+            } catch (const ClosedQueue&) {
+                std::cout << "Gameloop: cola cerrada, saliendo.\n";
+                break;
+            }
+
+            updatePhysics(rate);
+
+            float elapsed_time = std::chrono::duration<float>(clock::now() - start_time).count();
+            removeClientsCars(elapsed_time);
+
+            if (raceEnded(elapsed_time)) {
+                race_results.insert(race_results.end(),
+                            not_finished_results.begin(), not_finished_results.end());
+                not_finished_results.clear();
+                break;
+            }
+
+            clients_queues.broadcast(getCurrentGameState(elapsed_time));
+
+            t1 = keepLoopRate(t1, rate);
         }
 
-        clients_queues.broadcast(getCurrentGameState(elapsed_time));
-
-        t1 = keepLoopRate(t1, rate);
+        current_race_number++;
     }
 
     std::cout << "Gameloop terminado.\n";
-    logRaceResults();
+    //logRaceResults();
 }
 
 void Gameloop::stop() {
@@ -351,10 +409,14 @@ void Gameloop::stop() {
 }
 
 Gameloop::Gameloop(Queue<InputCmd>& gameloop_queue, QueuesMonitor& clients_queues):
-        gameloop_queue(gameloop_queue), clients_queues(clients_queues), next_finish_position(1),
+        gameloop_queue(gameloop_queue), 
+        clients_queues(clients_queues), 
+        next_finish_position(1),
+        current_race_number(1),
         world(b2Vec2(0, 0), true) {
-    world.SetContactListener(&collision_listener);
-    //loadMapData(map_name);
+
+            world.SetContactListener(&collision_listener);
+
 }
 
 Gameloop::~Gameloop() {

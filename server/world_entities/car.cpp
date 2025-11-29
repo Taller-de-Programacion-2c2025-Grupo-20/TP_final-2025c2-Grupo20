@@ -142,7 +142,7 @@ const b2Vec2& Car::position() { return car_body->GetPosition(); }
 
 float Car::angle() { return car_body->GetAngle(); }
 
-void Car::recieveDamage(uint8_t damage) {
+void Car::recieveDamage(uint8_t damage) {    
     if ((car_health - damage) <= 0) {
         car_health = 0;
         return;
@@ -170,7 +170,8 @@ Car::Car(b2World& world, const b2Vec2& initial_position, CarType type) :
         accelerating(false), 
         braking(false), 
         turningLeft(false), 
-        turningRight(false), 
+        turningRight(false),
+        out_of_race(false),
         next_checkpoint_id(0) 
     
     {

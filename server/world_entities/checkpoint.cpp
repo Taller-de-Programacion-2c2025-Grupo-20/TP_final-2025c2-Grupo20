@@ -22,3 +22,18 @@ Checkpoint::Checkpoint(b2World& world, const b2Vec2& position, float width, floa
 const b2Vec2& Checkpoint::position() { return checkpoint_body->GetPosition(); }
 
 int Checkpoint::getId() { return id; }
+
+Checkpoint::~Checkpoint() {
+
+    if (!checkpoint_body) {
+        return;
+    }
+
+    b2World* world = checkpoint_body->GetWorld();
+    if (world) {
+        world->DestroyBody(checkpoint_body);
+    }
+
+    checkpoint_body = nullptr;
+
+}

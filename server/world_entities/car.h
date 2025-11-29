@@ -35,6 +35,8 @@ private:
     bool turningLeft;
     bool turningRight;
 
+    bool out_of_race;
+
     int next_checkpoint_id = 0;
 
     b2Body* car_body;

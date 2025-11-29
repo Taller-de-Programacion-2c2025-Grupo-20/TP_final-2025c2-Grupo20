@@ -24,6 +24,8 @@ public:
     int getId();
 
     Checkpoint(b2World& world, const b2Vec2& position, float width, float height, int id);
+
+    ~Checkpoint();
 };
 
 

@@ -58,7 +58,7 @@ QPushButton:pressed {
 }</string>
    </property>
    <property name="text">
-    <string>START!</string>
+    <string>¡COMENZAR!</string>
    </property>
   </widget>
   <widget class="QLineEdit" name="edit_nombre">
@@ -75,7 +75,7 @@ QPushButton:pressed {
     background-color: #CDCDCD; 
     color: #032766;
     font-family: &quot;Press Start 2P&quot;;
-    font-size: 12px;
+    font-size: 10px;
     font-weight: bold;
     border: 2px solid #032766;
     border-bottom: 6px solid #032766; 
@@ -97,7 +97,7 @@ QLineEdit:focus {
     <string/>
    </property>
    <property name="placeholderText">
-    <string>Username ...</string>
+    <string>Nombre de usuario ...</string>
    </property>
   </widget>
   <widget class="QLabel" name="label_error">

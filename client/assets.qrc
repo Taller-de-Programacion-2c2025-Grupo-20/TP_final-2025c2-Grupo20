@@ -6,6 +6,8 @@
         <file>data/cities/Game Boy _ GBC - Grand Theft Auto - Backgrounds - San Andreas.png</file>
         <file>Pantallas/fondo_login.png</file>
         <file>Pantallas/fondo_lobby.png</file>
+        <file>Pantallas/fondo_select_map.png</file>
+        <file>Pantallas/fondo_garage.png</file>
         <file>data/font/PressStart2P-Regular.ttf</file>
     </qresource>
 </RCC>

@@ -29,17 +29,40 @@ private slots:
     void on_joinButton_clicked();
     void on_createButton_clicked();
     void on_matchListWidget_currentItemChanged();
+    /*
     void setupComboBoxes();
     void showMapPreview(int index);
     void showCarPreview(int index);
     void on_mapComboBox_currentIndexChanged(int index);
     void on_carComboBox_currentIndexChanged(int index);
+    */
+
+    void goToMapScreen();
+    void goToCarScreen();
+    void backToLobby();
+
+    void onMapNext();
+    void onMapPrev();
+    void onCarNext();
+    void onCarPrev();
 
 private:
     Ui::LobbyScreen *ui;
     Client* client = nullptr;
     QTimer* poll_timer;
+    QPixmap backgroundLobby;
+    QPixmap backgroundMapSelect;
+    QPixmap backgroundCarSelect;
     void paintEvent(QPaintEvent *event) override;
+
+    int currentMapIndex = 0;
+    int currentCarIndex = 0;
+    
+    const int TOTAL_MAPS = 3; 
+    const int TOTAL_CARS = 7;
+
+    void updateBigMapPreview();
+    void updateBigCarPreview();
 };
 
 #endif

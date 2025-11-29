@@ -76,9 +76,6 @@ public:
 
     EntityType getType() const override { return EntityType::CAR; }
 
-    void setOutOfRaceState(bool isOut);
-    bool isOutOfRace() { return out_of_race; }
-
     Car(b2World& world, const b2Vec2& initial_position);
     Car(b2World& world, const b2Vec2& initial_position, CarType car_type);
 

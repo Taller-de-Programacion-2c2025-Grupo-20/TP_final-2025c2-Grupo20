@@ -544,14 +544,10 @@ void GameWindow::drawGame(Renderer& renderer,
             }
         }
 
-
-
         if (exit){
             soundManager.stopEngineSound();
             break;
         }
-
-        std::cout << "Mi player id es: " << static_cast<int>(client.getMyPlayerId()) << "\n";
 
         renderer.SetDrawColor(0, 0, 0, 255);
         renderer.Clear();
@@ -560,6 +556,7 @@ void GameWindow::drawGame(Renderer& renderer,
 
         if (!have_state) {
             renderer.Present(); 
+            SDL_Delay(5);
             continue; 
         }
 
@@ -676,16 +673,7 @@ void GameWindow::drawGame(Renderer& renderer,
         double rest = rate - elapsed;
 
         if (rest > 0.0) {
-
-            double rest_ms = rest * 1000.0;
-            if (rest_ms > 1.5) {
-                SDL_Delay(static_cast<Uint32>(rest_ms - 1.0));
-            }
-
-            for (;;) {
-                uint64_t now = SDL_GetPerformanceCounter();
-                if ((double)(now - t1) / perf_freq >= rate) break;
-            }
+            SDL_Delay(static_cast<Uint32>(rest * 1000.0));
         } else {
             double behind = -rest;
             double lost = behind - std::fmod(behind, rate);
@@ -693,8 +681,9 @@ void GameWindow::drawGame(Renderer& renderer,
             it += static_cast<uint64_t>(lost / rate);
         }
 
-        t1 += static_cast<uint64_t>(rate * perf_freq);
+        t1 = SDL_GetPerformanceCounter();
         ++it;
+
     }
 }
 
@@ -702,11 +691,6 @@ int GameWindow::runGame() {
     try {
 
         SDL sdl(SDL_INIT_VIDEO | SDL_INIT_AUDIO);
-
-        // Hints ANTES de crear Window/Renderer
-        SDL_SetHint(SDL_HINT_RENDER_SCALE_QUALITY, "0");
-        SDL_SetHint(SDL_HINT_RENDER_BATCHING, "1");
-        SDL_SetHint(SDL_HINT_RENDER_DRIVER, "vulkan");
 
         // Ventana y renderer
         Window window("SDL2pp demo",

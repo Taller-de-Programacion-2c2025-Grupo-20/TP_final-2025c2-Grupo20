@@ -179,6 +179,7 @@ GameStateDTO Gameloop::getCurrentGameState(const float elapsed_time) {
         current_player_state.health = current_client_car->health();
 
         current_player_state.car_type = current_client_car->getCarType();
+        current_player_state.applied_upgrades = current_client_car->applyedUpgrades();
 
         if ((size_t)current_client_car->nextCheckpointId() < world_checkpoints.size()) {
             int next_checkpoint_id = current_client_car->nextCheckpointId();

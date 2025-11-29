@@ -100,7 +100,7 @@ void GameWindow::drawCronometer(Renderer& renderer, Texture& hud,
     const Rect& PANEL_TIME  = game_sprites.getTimePanelRect();
     BoxMap timeMap = makeBoxMap(renderer, hud, PANEL_TIME, hudX, hudY);
 
-    int total = static_cast<int>(last_state.elapsed_time) - 10; //BORRAR - 10 LUEGO
+    int total = static_cast<int>(last_state.elapsed_time) - BUY_TIME_SECONDS; //BORRAR - BUY_TIME_SECONDS LUEGO
     int mm = (total / 60) % 100;
     int ss = total % 60;
 
@@ -353,18 +353,16 @@ void GameWindow::drawCheckpointHintAroundCar(
 void GameWindow::drawMarket(
     Renderer& renderer,
     Texture& market,
-    const GameStateDTO& /*state*/,
-    const Rect& /*srcRect*/,
+    const GameStateDTO& state,
     int viewW,
     int viewH
 ) {
     int texW = 1034;
     int texH = market.GetHeight();
 
-    // Escala para que quepa en la pantalla manteniendo aspecto
     float scale = std::min(
-        viewW  / static_cast<float>(texW),
-        viewH  / static_cast<float>(texH)
+        viewW / static_cast<float>(texW),
+        viewH / static_cast<float>(texH)
     );
 
     int dstW = static_cast<int>(std::lround(texW * scale));
@@ -373,13 +371,90 @@ void GameWindow::drawMarket(
     int dstX = (viewW - dstW) / 2;
     int dstY = (viewH - dstH) / 2;
 
-    // SOLO dibuja el cartel, sin fondo negro
     renderer.Copy(
         market,
         Rect(0, 0, texW, texH),
         Rect(dstX, dstY, dstW, dstH)
     );
+
+    auto toDst = [&](const Rect& r) -> Rect {
+        return Rect(
+            dstX + static_cast<int>(std::lround(r.GetX() * scale)),
+            dstY + static_cast<int>(std::lround(r.GetY() * scale)),
+            static_cast<int>(std::lround(r.GetW() * scale)),
+            static_cast<int>(std::lround(r.GetH() * scale))
+        );
+    };
+
+    Rect slot_speed_unbought   (179, 255, 802, 118);
+    Rect slot_accel_unbought   (179, 397, 802, 118);
+    Rect slot_health_unbought  (179, 539, 802, 118);
+
+    Rect src_speed_bought   (1088, 253, 802, 118);
+    Rect src_accel_bought   (1088, 396, 802, 118);
+    Rect src_health_bought  (1088, 538, 802, 118);
+
+
+    if (state.car_count > 0) {
+        renderer.Copy(market, src_speed_bought, toDst(slot_speed_unbought));
+    }
+
+    if (state.car_count > 0) {
+        renderer.Copy(market, src_accel_bought, toDst(slot_accel_unbought));
+    }
+
+    if (state.car_count > 0) {
+        renderer.Copy(market, src_health_bought, toDst(slot_health_unbought));
+    }
 }
+
+void GameWindow::drawMarketCountdown(Renderer& renderer,
+                                     Texture& market,
+                                     int seconds,
+                                     int viewW, int viewH)
+{
+    if (seconds < 0)  seconds = 0;
+    if (seconds > 99) seconds = 99;
+
+    int d_tens  = (seconds / 10) % 10;
+    int d_units =  seconds % 10;
+
+    int texW = 1034;
+    int texH = market.GetHeight();
+
+    float scale = std::min(
+        viewW / static_cast<float>(texW),
+        viewH / static_cast<float>(texH)
+    );
+
+    int dstW = static_cast<int>(std::lround(texW * scale));
+    int dstH = static_cast<int>(std::lround(texH * scale));
+
+    int dstX = (viewW - dstW) / 2;
+    int dstY = (viewH - dstH) / 2;
+
+    Rect slot_tens_orig  (317, 714, 66, 77); 
+    Rect slot_units_orig (393, 714, 66, 77);
+
+    auto toDst = [&](const Rect& r) -> Rect {
+        return Rect(
+            dstX + static_cast<int>(std::lround(r.GetX() * scale)),
+            dstY + static_cast<int>(std::lround(r.GetY() * scale)),
+            static_cast<int>(std::lround(r.GetW() * scale)),
+            static_cast<int>(std::lround(r.GetH() * scale))
+        );
+    };
+
+    Rect dst_tens  = toDst(slot_tens_orig);
+    Rect dst_units = toDst(slot_units_orig);
+
+    const Rect& src_tens  = game_sprites.getMarketDigitRect(d_tens);
+    const Rect& src_units = game_sprites.getMarketDigitRect(d_units);
+
+    renderer.Copy(market, src_tens,  dst_tens);
+    renderer.Copy(market, src_units, dst_units);
+}
+
 
 void GameWindow::drawGame(Renderer& renderer,
                          Texture& hud,
@@ -489,7 +564,12 @@ void GameWindow::drawGame(Renderer& renderer,
         }
 
         if (static_cast<int>(last_state.elapsed_time) <= BUY_TIME_SECONDS) {
-            drawMarket(renderer, market, last_state, srcRect, viewW, viewH);
+            drawMarket(renderer, market, last_state, viewW, viewH);
+
+            int remaining = BUY_TIME_SECONDS - static_cast<int>(last_state.elapsed_time);
+            //int remaining = static_cast<int>(last_state.elapsed_time) - (MATCH_DURATION_SECONDS - BUY_TIME_SECONDS);
+            drawMarketCountdown(renderer, market, remaining, viewW, viewH);            
+
             renderer.Present();
             continue;
         }

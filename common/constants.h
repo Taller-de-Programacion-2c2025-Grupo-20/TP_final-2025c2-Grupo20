@@ -30,11 +30,10 @@ inline const char* JEEP = "Jeep";
 inline const char* CAMIONETA = "Camioneta";
 inline const char* CAMION = "Camión";
 
-inline constexpr float MATCH_DURATION_SECONDS = 610.0f;
-inline constexpr int BUY_TIME_SECONDS = 10;
+inline constexpr float MATCH_DURATION_SECONDS = 615.0f;
+inline constexpr int BUY_TIME_SECONDS = 15;
 
 
-//Constantes VIEJAS
 struct Instruction {
     uint8_t command;
     int client_id;

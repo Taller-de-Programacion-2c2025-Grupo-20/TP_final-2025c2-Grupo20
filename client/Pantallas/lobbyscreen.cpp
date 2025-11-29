@@ -17,11 +17,12 @@ LobbyScreen::LobbyScreen(QWidget *parent) :
     ui(new Ui::LobbyScreen) {
     
     ui->setupUi(this);
-    this->setObjectName("LoginScreen");
+    this->setObjectName("LobbyScreen");
 
     this->setStyleSheet(
-        "#LoginScreen { "
-        "   border-image: url(:Pantallas/fondo_lobby.png)"
+        "#LobbyScreen { "
+        "   border-image: url(:/Pantallas/fondo_lobby.png) 0 0 0 0 stretch stretch;"
+        "   font-family: 'Press Start 2P';"
         "}"
     );
 

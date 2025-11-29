@@ -13,7 +13,8 @@ LoginScreen::LoginScreen(QWidget *parent)
 
     this->setStyleSheet(
         "#LoginScreen { "
-        "   border-image: url(:Pantallas/fondo_login.png)"
+        "   border-image: url(:/Pantallas/fondo_login.png) 0 0 0 0 stretch stretch;"
+        "   font-family: 'Press Start 2P';"
         "}"
     );
 }

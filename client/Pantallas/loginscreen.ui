@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>800</width>
+    <width>846</width>
     <height>600</height>
    </rect>
   </property>
@@ -22,43 +22,82 @@
   <widget class="QPushButton" name="btn_conectar">
    <property name="geometry">
     <rect>
-     <x>310</x>
+     <x>280</x>
      <y>240</y>
-     <width>151</width>
-     <height>26</height>
+     <width>241</width>
+     <height>51</height>
     </rect>
    </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton {
+    background-color: #CDCDCD;
+    color: #032766;
+    font-family: &quot;Press Start 2P&quot;;
+    font-size: 20px;
+    font-weight: bold;
+    border: 3px solid #032766;
+    border-radius: 6px;
+    border-bottom: 8px solid #032766;
+    border-right: 8px solid #032766;
+    padding: 10px 15px;
+}
+
+QPushButton:hover {
+    background-color: #032766; 
+    color: #CDCDCD;
+    border-color: #CDCDCD;
+}
+
+QPushButton:pressed {
+    background-color: #032766;
+    color: #CDCDCD;
+    border-bottom: 3px solid #032766;
+    border-right: 3px solid #032766;
+    padding-top: 15px; 
+    padding-left: 20px;
+}</string>
+   </property>
    <property name="text">
-    <string>Conectarse</string>
+    <string>START!</string>
    </property>
   </widget>
   <widget class="QLineEdit" name="edit_nombre">
    <property name="geometry">
     <rect>
-     <x>310</x>
-     <y>210</y>
-     <width>151</width>
-     <height>26</height>
-    </rect>
-   </property>
-  </widget>
-  <widget class="QLabel" name="label_nombre">
-   <property name="geometry">
-    <rect>
-     <x>310</x>
-     <y>170</y>
-     <width>141</width>
-     <height>31</height>
+     <x>280</x>
+     <y>190</y>
+     <width>241</width>
+     <height>41</height>
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">color: white;</string>
+    <string notr="true">QLineEdit {
+    background-color: #CDCDCD; 
+    color: #032766;
+    font-family: &quot;Press Start 2P&quot;;
+    font-size: 12px;
+    font-weight: bold;
+    border: 2px solid #032766;
+    border-bottom: 6px solid #032766; 
+    border-right: 6px solid #032766;
+    padding: 5px;
+    padding-left: 10px;
+    selection-background-color: #032766;
+    selection-color: #CDCDCD;
+    border-radius: 6px;
+}
+
+QLineEdit:focus {
+    color: #9C9C9C; 
+    border-color: #9C9C9C; 
+    background-color: #032766; 
+}</string>
    </property>
    <property name="text">
-    <string>Nombre de usuario: </string>
+    <string/>
    </property>
-   <property name="alignment">
-    <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+   <property name="placeholderText">
+    <string>Username ...</string>
    </property>
   </widget>
   <widget class="QLabel" name="label_error">

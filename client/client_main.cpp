@@ -1,5 +1,6 @@
 #include <memory>
 #include <QApplication>
+#include <QFontDatabase>
 #include "mainwindow.h"
 #include "client.h"
 #include "game_window.h"
@@ -12,6 +13,11 @@ int main(int argc, char* argv[]) {
     std::string host = argv[1];
     std::string port = argv[2];
     QApplication app(argc, argv);
+
+    int id = QFontDatabase::addApplicationFont(":/data/font/PressStart2P-Regular.ttf");
+    
+    QString family;
+    family = QFontDatabase::applicationFontFamilies(id).at(0);
     Client* client_ptr_for_game = nullptr;
     MainWindow w(host, port, nullptr);
 

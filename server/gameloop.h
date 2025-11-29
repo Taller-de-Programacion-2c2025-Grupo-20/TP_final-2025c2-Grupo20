@@ -34,11 +34,12 @@ struct PlayerRaceInfo {
     bool timed_out;
 };
 
-struct DeletedCar {
+struct CarInfo {
     uint8_t player_id;
     CarType type;
+    float next_race_time_penalty;
 
-    DeletedCar(uint8_t player_id, CarType type) : player_id(player_id), type(type) {}
+    CarInfo(uint8_t player_id, CarType type, float next_race_time_penalty) : player_id(player_id), type(type), next_race_time_penalty(next_race_time_penalty) {}
 };
 
 class Gameloop: public Thread {
@@ -57,7 +58,7 @@ private:
     std::vector<PlayerRaceInfo> not_finished_results;
     uint8_t next_finish_position;
 
-    std::vector<DeletedCar> deleted_cars;
+    std::vector<CarInfo> deleted_cars;
 
     int current_race_number;
 
@@ -65,6 +66,8 @@ private:
     CollisionsListener collision_listener;
 
     std::chrono::steady_clock::time_point start_time;
+
+    void addCarWithTimePenalty(uint8_t client_id, const CarType& car_type, float time_penalty);
 
     void handleInput(const InputCmd& input);
 

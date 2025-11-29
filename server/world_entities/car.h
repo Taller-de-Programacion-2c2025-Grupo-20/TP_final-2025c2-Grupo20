@@ -78,6 +78,8 @@ public:
     float timePenalty();
     float nextRaceTimePenalty();
 
+    std::set<UpgradeType> applyedUpgrades() { return applied_upgrades; }
+
     EntityType getType() const override { return EntityType::CAR; }
 
     Car(b2World& world, const b2Vec2& initial_position, CarType car_type, float time_penalty);

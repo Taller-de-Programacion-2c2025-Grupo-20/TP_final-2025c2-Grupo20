@@ -114,6 +114,10 @@ void GameWindow::drawSpeedometer(Renderer& renderer, Texture& hud,
                                  int my_player_index, GameStateDTO& last_state,
                                  int hudX, int hudY)
 {
+    if (my_player_index < 0 || my_player_index >= (int)last_state.players.size()) {
+        return;
+    }
+
     float speed_kmh = last_state.players[my_player_index].state.speed*10;
 
     const Rect& PANEL_SPEED = game_sprites.getSpeedPanelRect();
@@ -480,6 +484,7 @@ void GameWindow::drawGame(Renderer& renderer,
             }
         }
 
+        my_player_index = -1;
         if (me) {
             int new_hp = std::clamp<int>(static_cast<int>(me->health), 0, 100);
 
@@ -671,7 +676,7 @@ int GameWindow::runGame() {
 
         int hp = 0;     
 
-        int my_player_index = 0;
+        int my_player_index = -1;
         
         drawGame(renderer,
                       hud,

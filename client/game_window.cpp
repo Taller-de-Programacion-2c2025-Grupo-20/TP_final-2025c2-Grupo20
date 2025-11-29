@@ -455,6 +455,41 @@ void GameWindow::drawMarketCountdown(Renderer& renderer,
     renderer.Copy(market, src_units, dst_units);
 }
 
+void GameWindow::drawUpgradesBar(Renderer& renderer,
+                                 Texture& hud,
+                                 int hudX, int hudY,
+                                 bool speedActive,
+                                 bool accelActive,
+                                 bool healthActive)
+{
+    const float SCALE = 0.7f;
+    const int ICON_W = int(106 * SCALE);
+    const int ICON_H = int(86  * SCALE);
+    const int SPACE  = 6;
+
+    int x = hudX;
+
+    if (speedActive) {
+        renderer.Copy(hud,
+                      game_sprites.getUpgradeSpeedRect(),
+                      Rect(x, hudY, ICON_W, ICON_H));
+    }
+    x += ICON_W + SPACE;
+
+    if (accelActive) {
+        renderer.Copy(hud,
+                      game_sprites.getUpgradeAccelRect(),
+                      Rect(x, hudY, ICON_W, ICON_H));
+    }
+    x += ICON_W + SPACE;
+
+    if (healthActive) {
+        renderer.Copy(hud,
+                      game_sprites.getUpgradeHealthRect(),
+                      Rect(x, hudY, ICON_W, ICON_H));
+    }
+}
+
 
 void GameWindow::drawGame(Renderer& renderer,
                          Texture& hud,
@@ -600,6 +635,16 @@ void GameWindow::drawGame(Renderer& renderer,
             hp = new_hp;
         }
 
+        bool speed_upgrades = true;
+        bool accel_upgrades = true;
+        bool health_upgrades = true;
+        
+        // if (me) {
+        //     speed_upgrades = me->speed_upgrades;
+        //     accel_upgrades = me->accel_upgrades;
+        //     health_upgrades = me->health_upgrades;
+        // }
+
         drawCheckpoint(renderer, checkpoint_flag, last_state, srcRect, viewW,viewH);
 
         for (size_t i = 0; i < last_state.players.size(); i++) {
@@ -672,6 +717,16 @@ void GameWindow::drawGame(Renderer& renderer,
         hudX += BOX_W + HUD_PAD;
 
         drawCronometer(renderer, hud, hudX, hudY, last_state);
+
+        hudX += BOX_W + HUD_PAD;
+
+        drawUpgradesBar(renderer,
+                        hud,
+                        hudX,
+                        hudY,
+                        speed_upgrades,
+                        accel_upgrades,
+                        health_upgrades);
 
         drawMinimap(background, renderer, last_state, dstRect, checkpoint_flag);
 

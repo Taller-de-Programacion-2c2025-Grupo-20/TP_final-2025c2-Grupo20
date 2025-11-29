@@ -104,7 +104,11 @@ const SDL2pp::Rect SpritesManager::TIME_SS_UNITS  = SDL2pp::Rect(742, 358, 82, 1
 const SDL2pp::Rect SpritesManager::SPEED_HUNDREDS = SDL2pp::Rect(342, 619, 82, 100);
 const SDL2pp::Rect SpritesManager::SPEED_TENS     = SDL2pp::Rect(434, 619, 82, 100);
 const SDL2pp::Rect SpritesManager::SPEED_UNITS    = SDL2pp::Rect(525, 619, 82, 100);
-#include "client_sprites.h"
+
+// Iconos de upgrades en hud.png
+const SDL2pp::Rect SpritesManager::UPGRADE_SPEED  = SDL2pp::Rect(992,  586, 106, 86);
+const SDL2pp::Rect SpritesManager::UPGRADE_ACCEL  = SDL2pp::Rect(1099, 586, 106, 86);
+const SDL2pp::Rect SpritesManager::UPGRADE_HEALTH = SDL2pp::Rect(1206, 586, 106, 86);
 
 
 const SDL2pp::Rect& SpritesManager::getCarRect(CarType carType, int frameId) const {
@@ -165,5 +169,10 @@ const SDL2pp::Rect& SpritesManager::getTimeDigitRectSsUnits()  const { return TI
 const SDL2pp::Rect& SpritesManager::getSpeedDigitRectHundreds() const { return SPEED_HUNDREDS; }
 const SDL2pp::Rect& SpritesManager::getSpeedDigitRectTens()     const { return SPEED_TENS; }
 const SDL2pp::Rect& SpritesManager::getSpeedDigitRectUnits()    const { return SPEED_UNITS; }
+
+const SDL2pp::Rect& SpritesManager::getUpgradeSpeedRect() const { return UPGRADE_SPEED; }
+const SDL2pp::Rect& SpritesManager::getUpgradeAccelRect() const { return UPGRADE_ACCEL; }
+const SDL2pp::Rect& SpritesManager::getUpgradeHealthRect() const { return UPGRADE_HEALTH; }
+
 
 SpritesManager::SpritesManager() {}

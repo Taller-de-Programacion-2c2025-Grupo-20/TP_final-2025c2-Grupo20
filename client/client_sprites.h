@@ -43,6 +43,10 @@ public:
 
     const SDL2pp::Rect& getMarketDigitRect(int d) const;
 
+    const SDL2pp::Rect& getUpgradeSpeedRect() const;
+    const SDL2pp::Rect& getUpgradeAccelRect() const;
+    const SDL2pp::Rect& getUpgradeHealthRect() const;
+
 private:
     // Autos
     static const std::map<int, SDL2pp::Rect> carPositionsGreen;
@@ -84,4 +88,10 @@ private:
     static const SDL2pp::Rect SPEED_HUNDREDS;
     static const SDL2pp::Rect SPEED_TENS;
     static const SDL2pp::Rect SPEED_UNITS;
+
+    // HUD: iconos de mejoras
+    static const SDL2pp::Rect UPGRADE_SPEED;
+    static const SDL2pp::Rect UPGRADE_ACCEL;
+    static const SDL2pp::Rect UPGRADE_HEALTH;
+
 };

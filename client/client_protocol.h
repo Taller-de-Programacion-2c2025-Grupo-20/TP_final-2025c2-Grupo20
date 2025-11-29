@@ -4,7 +4,7 @@
 #include <string>
 #include <vector>
 #include <stdint.h>
-
+#include <atomic>
 #include "../common/socket.h"
 #include "../common/clientCommand.h"
 #include "../common/gameState.h"
@@ -39,6 +39,7 @@ public:
     LobbyStateDTO receive_lobby_state_payload();
     GameStateDTO receive_game_state_payload();
     MatchListDTO receive_match_list_payload();
+    
     
     void close();
 

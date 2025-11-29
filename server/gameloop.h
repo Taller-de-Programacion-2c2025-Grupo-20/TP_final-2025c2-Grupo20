@@ -11,6 +11,7 @@
 #include "../common/clientCommand.h"
 #include "../common/queue.h"
 #include "../common/thread.h"
+#include "../common/constants.h"
 #include "world_entities/car.h"
 #include "world_entities/checkpoint.h"
 #include "world_entities/wall.h"

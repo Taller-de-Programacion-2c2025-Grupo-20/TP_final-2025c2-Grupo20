@@ -10,7 +10,8 @@ ClientReceiver::ClientReceiver(ClientProtocol& protocol, QObject* parent) :
     is_authenticated(false),
     my_player_id(0),
     lobby_state_queue(1),
-    game_state_queue(1)
+    game_state_queue(1),
+    server_down(false)
 {}
 
 void ClientReceiver::run() {
@@ -65,11 +66,21 @@ void ClientReceiver::run() {
                 }
             }
         }
+
+        server_down.store(true);
+
     } catch (const std::exception& e) {
+
+        server_down.store(true);
+
         if (should_keep_running()) {
             emit loginFailed();
         }
     }
+}
+
+bool ClientReceiver::isServerDown() const {
+    return server_down.load();
 }
 
 GameStateDTO ClientReceiver::pollGameState() {

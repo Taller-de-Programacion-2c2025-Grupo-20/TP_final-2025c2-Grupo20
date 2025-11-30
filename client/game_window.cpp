@@ -654,6 +654,7 @@ void GameWindow::drawGame(Renderer& renderer,
             hp = new_hp;
         }
 
+        std::cout << "Checkpoint passed: " << static_cast<int>(me->checkpoints_passed) << "\n";
 
         drawCheckpoint(renderer, checkpoint_flag, last_state, srcRect, viewW,viewH);
 

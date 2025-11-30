@@ -17,6 +17,8 @@ struct PlayerState {
     float next_checkpoint_position_x;
     float next_checkpoint_position_y;
     float next_checkpoint_hint;
+    
+    uint8_t checkpoints_passed;
 };
 
 struct GameStateDTO {

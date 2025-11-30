@@ -96,6 +96,7 @@ void ServerProtocol::send_game_state(const GameStateDTO& state) {
         addFloatToBuffer(buffer, player.next_checkpoint_position_y);
         addFloatToBuffer(buffer, player.next_checkpoint_hint);
         
+        buffer.push_back(player.checkpoints_passed);
     }
 
     skt.sendall(buffer.data(), buffer.size());

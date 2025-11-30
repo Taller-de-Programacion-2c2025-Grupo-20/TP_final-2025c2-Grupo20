@@ -126,6 +126,8 @@ GameStateDTO ClientProtocol::receive_game_state_payload() {
         player.next_checkpoint_position_x = receiveFloat();
         player.next_checkpoint_position_y = receiveFloat();
         player.next_checkpoint_hint = receiveFloat();
+
+        player.checkpoints_passed = receiveUint8_t();
         
         state_dto.players.push_back(player);
     }

@@ -196,10 +196,14 @@ GameStateDTO Gameloop::getCurrentGameState(const float elapsed_time) {
             current_player_state.next_checkpoint_hint = 0;
         }
 
+        current_player_state.checkpoints_passed = static_cast<uint8_t>(current_client_car->nextCheckpointId());
+
         current_state.players.push_back(current_player_state);
     }
 
     current_state.elapsed_time = elapsed_time;
+
+
 
     return current_state;
 }

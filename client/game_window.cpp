@@ -132,6 +132,7 @@ void GameWindow::drawSpeedometer(Renderer& renderer, Texture& hud,
 void GameWindow::drawCheckpoint(
     Renderer& renderer,
     Texture& checkpoint_flag,
+    Texture& checkered_flag,
     const GameStateDTO& state,
     const Rect& srcRect,
     int viewW,
@@ -139,6 +140,9 @@ void GameWindow::drawCheckpoint(
 ) {
     int my_id = client.getMyPlayerId();
     const PlayerState* me = nullptr;
+
+    Texture* flag_to_draw = &checkpoint_flag;
+
 
     for (const auto& p : state.players) {
         if (p.player_id == my_id) {
@@ -153,11 +157,15 @@ void GameWindow::drawCheckpoint(
         return;
     }
 
+    if (me->checkpoints_passed == 14){
+        flag_to_draw = &checkered_flag;
+    }
+
     float cx_px = me->next_checkpoint_position_x * PPM;
     float cy_px = me->next_checkpoint_position_y * PPM;
 
-    int texW = checkpoint_flag.GetWidth();
-    int texH = checkpoint_flag.GetHeight();
+    int texW = flag_to_draw->GetWidth();
+    int texH = flag_to_draw->GetHeight();
 
     const float CP_W_M = 3.0f;
     const float CP_H_M = 3.0f;
@@ -179,7 +187,7 @@ void GameWindow::drawCheckpoint(
     }
 
     renderer.Copy(
-        checkpoint_flag,
+        *flag_to_draw,
         Rect(0, 0, texW, texH),
         Rect(screenX, screenY, cpW, cpH)
     );
@@ -187,7 +195,7 @@ void GameWindow::drawCheckpoint(
 
 
 
-void GameWindow::drawMinimap(Texture& background, Renderer& renderer, GameStateDTO& last_state, Rect& dstRect, Texture& checkpoint_flag){
+void GameWindow::drawMinimap(Texture& background, Renderer& renderer, GameStateDTO& last_state, Rect& dstRect, Texture& checkpoint_flag, Texture& checkered_flag){
 
             int bgH = background.GetHeight();
             int bgW = background.GetWidth(); 
@@ -238,6 +246,13 @@ void GameWindow::drawMinimap(Texture& background, Renderer& renderer, GameStateD
                 if (p.player_id == client.getMyPlayerId()) {
 
                     if (p.next_checkpoint_position_x != 0 && p.next_checkpoint_position_y != 0) {
+
+                            Texture* flag_to_draw = &checkpoint_flag;
+
+                            if (p.checkpoints_passed == 14){
+                                flag_to_draw = &checkered_flag;
+                            }
+
                             float cx_px = p.next_checkpoint_position_x * PPM;
                             float cy_px = p.next_checkpoint_position_y * PPM;
 
@@ -247,9 +262,8 @@ void GameWindow::drawMinimap(Texture& background, Renderer& renderer, GameStateD
                             const int MAX_CP_W = 22;
                             const int MAX_CP_H = 22;
 
-                            int texW = checkpoint_flag.GetWidth();
-                            int texH = checkpoint_flag.GetHeight();
-
+                            int texW = flag_to_draw->GetWidth();
+                            int texH = flag_to_draw->GetHeight();
 
                             float s = std::min(
                                 (float)MAX_CP_W / (float)texW,
@@ -266,7 +280,7 @@ void GameWindow::drawMinimap(Texture& background, Renderer& renderer, GameStateD
                             Rect src_cp(0, 0, texW, texH);
                             Rect dst_cp(rx_mini, ry_mini, cpW, cpH);
 
-                            renderer.Copy(checkpoint_flag, src_cp, dst_cp);
+                            renderer.Copy(*flag_to_draw, src_cp, dst_cp);
                         }
 
 
@@ -498,6 +512,7 @@ void GameWindow::drawGame(Renderer& renderer,
                          Texture& background,
                          Texture& sprites,
                          Texture& checkpoint_flag,
+                         Texture& checkered_flag,
                          Texture& checkpoint_hint,
                          Texture& market,
                          Rect& srcRect,
@@ -646,7 +661,7 @@ void GameWindow::drawGame(Renderer& renderer,
 
         my_player_index = -1;
         if (me) {
-            int new_hp = std::clamp<int>(static_cast<int>(me->health), 0, 100);
+            int new_hp = std::clamp<int>(static_cast<int>(me->health), 0, 999);
 
             if (new_hp < hp) {
                 soundManager.playCrash();
@@ -656,7 +671,7 @@ void GameWindow::drawGame(Renderer& renderer,
 
         std::cout << "Checkpoint passed: " << static_cast<int>(me->checkpoints_passed) << "\n";
 
-        drawCheckpoint(renderer, checkpoint_flag, last_state, srcRect, viewW,viewH);
+        drawCheckpoint(renderer, checkpoint_flag, checkered_flag, last_state, srcRect, viewW,viewH);
 
         for (size_t i = 0; i < last_state.players.size(); i++) {
 
@@ -668,7 +683,7 @@ void GameWindow::drawGame(Renderer& renderer,
                 angle = st.angle;
                 actual_pos = angle_to_frame(angle);
 
-                hp = std::clamp<int>(static_cast<int>(last_state.players[i].health), 0, 100);
+                hp = std::clamp<int>(static_cast<int>(last_state.players[i].health), 0, 999);
 
                 const int car_cx_px = static_cast<int>(std::lround(pos_x_m * PPM));
                 const int car_cy_px = static_cast<int>(std::lround(pos_y_m * PPM));
@@ -739,7 +754,7 @@ void GameWindow::drawGame(Renderer& renderer,
                         accel_upgrades,
                         health_upgrades);
 
-        drawMinimap(background, renderer, last_state, dstRect, checkpoint_flag);
+        drawMinimap(background, renderer, last_state, dstRect, checkpoint_flag, checkered_flag);
 
         renderer.Present();
 
@@ -789,6 +804,10 @@ int GameWindow::runGame() {
         Surface checkpoints_surface(DATA_PATH "/assets/checkpoint.png");
         checkpoints_surface.SetColorKey(true, SDL_MapRGB(checkpoints_surface.Get()->format, 255, 201, 14));
         Texture checkpoint_flag(renderer, checkpoints_surface);
+
+        Surface checkered_flag_surface(DATA_PATH "/assets/meta.png");
+        checkered_flag_surface.SetColorKey(true, SDL_MapRGB(checkered_flag_surface.Get()->format, 255, 201, 14));
+        Texture checkered_flag(renderer, checkered_flag_surface);
 
         Surface hints_surface(DATA_PATH "/assets/hints.png");
         hints_surface.SetColorKey(true, SDL_MapRGB(hints_surface.Get()->format, 255, 201, 14));
@@ -842,6 +861,7 @@ int GameWindow::runGame() {
                       background,
                       sprites,
                       checkpoint_flag,
+                      checkered_flag,
                       checkpoint_hint,
                       market,
                       srcRect,

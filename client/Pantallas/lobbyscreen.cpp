@@ -21,11 +21,11 @@ LobbyScreen::LobbyScreen(QWidget *parent) :
     backgroundMapSelect.load(":/Pantallas/fondo_select_map.png");
     backgroundCarSelect.load(":/Pantallas/fondo_garage.png");
 
-    ui->stackedWidget_Lobby->setStyleSheet("background: transparent;");
-    ui->page_WaitingRoom->setStyleSheet("background: transparent;");
-    ui->page_Selection->setStyleSheet("background: transparent;");
-    ui->page_MapSelect->setStyleSheet("background: transparent;");
-    ui->page_CarSelect->setStyleSheet("background: transparent;");
+    ui->stackedWidget_Lobby->setStyleSheet(BACKGROUND_STYLE);
+    ui->page_WaitingRoom->setStyleSheet(BACKGROUND_STYLE);
+    ui->page_Selection->setStyleSheet(BACKGROUND_STYLE);
+    ui->page_MapSelect->setStyleSheet(BACKGROUND_STYLE);
+    ui->page_CarSelect->setStyleSheet(BACKGROUND_STYLE);
 
     poll_timer = new QTimer(this);
     connect(poll_timer, &QTimer::timeout, this, &LobbyScreen::updateLobbyState);
@@ -294,7 +294,7 @@ void LobbyScreen::updateBigMapPreview() {
 }
 
 void LobbyScreen::updateBigCarPreview() {
-    QPixmap spritesheet(":/data/cars/Mobile - Grand Theft Auto 4 - Miscellaneous - Cars.png"); 
+    QPixmap spritesheet(":/data/cars/" + QString(CARS_FILE)); 
 
     int x = 0, y = 0, w = 0, h = 0;
     CarType tipo = static_cast<CarType>(currentCarIndex); 
@@ -340,6 +340,7 @@ void LobbyScreen::handleWaitingRoomState(const LobbyStateDTO& state) {
     ui->playerListWidget->clear();
     for (const auto& player : state.players) {
         QString carName;
+        switch_cars(carName)
         switch (static_cast<CarType>(player.car_id)) {
             case CarType::VERDE:        carName = VERDE; break;
             case CarType::ROJO:         carName = ROJO; break;

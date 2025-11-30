@@ -22,6 +22,7 @@ inline const char* ANDREAS = "San Andreas";
 inline const char* LIBERTY_CITY_FILE = "Game Boy _ GBC - Grand Theft Auto - Backgrounds - Liberty City.png";
 inline const char* VICE_CITY_FILE = "Game Boy _ GBC - Grand Theft Auto - Backgrounds - Vice City.png";
 inline const char* SAN_ANDREAS_FILE = "Game Boy _ GBC - Grand Theft Auto - Backgrounds - San Andreas.png";
+inline const char* CARS_FILE = "Mobile - Grand Theft Auto 4 - Miscellaneous - Cars.png";
 
 inline const char* VERDE = "Verde";
 inline const char* ROJO = "Rojo";
@@ -30,6 +31,8 @@ inline const char* CELESTE = "Celeste";
 inline const char* JEEP = "Jeep";
 inline const char* CAMIONETA = "Camioneta";
 inline const char* CAMION = "Camión";
+
+inline const char* BACKGROUND_STYLE = "background: transparent;";
 
 inline constexpr float MATCH_DURATION_SECONDS = 615.0f;
 inline constexpr int BUY_TIME_SECONDS = 15;

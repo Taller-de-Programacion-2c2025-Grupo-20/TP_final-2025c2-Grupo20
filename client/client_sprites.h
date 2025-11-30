@@ -47,6 +47,12 @@ public:
     const SDL2pp::Rect& getUpgradeAccelRect() const;
     const SDL2pp::Rect& getUpgradeHealthRect() const;
 
+    const SDL2pp::Rect& getCheckpointPanelRect() const;
+    const SDL2pp::Rect& getCheckpointDigitRectTens() const;
+    const SDL2pp::Rect& getCheckpointDigitRectUnits() const;
+    const SDL2pp::Rect& getCheckpointNumberRect(int d) const;
+
+
 private:
     // Autos
     static const std::map<int, SDL2pp::Rect> carPositionsGreen;
@@ -93,5 +99,11 @@ private:
     static const SDL2pp::Rect UPGRADE_SPEED;
     static const SDL2pp::Rect UPGRADE_ACCEL;
     static const SDL2pp::Rect UPGRADE_HEALTH;
+
+    // HUD: cartel de checkpoints
+    static const SDL2pp::Rect CHECKPOINT_PANEL;
+    static const SDL2pp::Rect CHECKPOINT_TENS_SLOT;
+    static const SDL2pp::Rect CHECKPOINT_UNITS_SLOT;
+    static const std::array<SDL2pp::Rect, 10> CHECKPOINT_DIGITS;
 
 };

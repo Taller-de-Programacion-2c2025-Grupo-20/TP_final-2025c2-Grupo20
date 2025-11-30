@@ -149,7 +149,12 @@ private:
                         bool accelActive,
                         bool healthActive);
 
-    
+    void drawCheckpointCounter(SDL2pp::Renderer& renderer,
+                            SDL2pp::Texture& hud,
+                            int hudX, int hudY,
+                            int count);
+
+        
 public:
     int runGame();
     uint8_t getCarType(int player_id);

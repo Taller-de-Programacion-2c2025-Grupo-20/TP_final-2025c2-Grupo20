@@ -506,6 +506,46 @@ void GameWindow::drawUpgradesBar(Renderer& renderer,
     }
 }
 
+void GameWindow::drawCheckpointCounter(Renderer& renderer,
+                                       Texture& hud,
+                                       int hudX, int hudY,
+                                       int count)
+{
+    count = std::clamp(count, 0, 99);
+    int tens  = (count / 10) % 10;
+    int units = count % 10;
+
+    const Rect& PANEL = game_sprites.getCheckpointPanelRect();
+    BoxMap cpMap = makeBoxMap(renderer, hud, PANEL, hudX, hudY);
+
+    const Rect& SLOT_TENS  = game_sprites.getCheckpointDigitRectTens();
+    const Rect& SLOT_UNITS = game_sprites.getCheckpointDigitRectUnits();
+
+    const Rect& DIG_TENS  = game_sprites.getCheckpointNumberRect(tens);
+    const Rect& DIG_UNITS = game_sprites.getCheckpointNumberRect(units);
+
+    Rect dstT = atlasToFit(cpMap, SLOT_TENS);
+    Rect dstU = atlasToFit(cpMap, SLOT_UNITS);
+
+    auto shrinkAroundCenter = [](const Rect& r, float factor) {
+        int newW = static_cast<int>(std::lround(r.GetW() * factor));
+        int newH = static_cast<int>(std::lround(r.GetH() * factor));
+        int cx   = r.GetX() + r.GetW() / 2;
+        int cy   = r.GetY() + r.GetH() / 2;
+        int nx   = cx - newW / 2;
+        int ny   = cy - newH / 2;
+        return Rect(nx, ny, newW, newH);
+    };
+
+    const float DIGIT_SCALE = 0.8f;
+    dstT = shrinkAroundCenter(dstT, DIGIT_SCALE);
+    dstU = shrinkAroundCenter(dstU, DIGIT_SCALE);
+
+    renderer.Copy(hud, DIG_TENS,  dstT);
+    renderer.Copy(hud, DIG_UNITS, dstU);
+}
+
+
 
 void GameWindow::drawGame(Renderer& renderer,
                          Texture& hud,
@@ -748,6 +788,11 @@ void GameWindow::drawGame(Renderer& renderer,
 
         hudX += BOX_W + HUD_PAD;
 
+        int cp_count = (me ? me->checkpoints_passed : 0);
+        drawCheckpointCounter(renderer, hud, hudX, hudY, cp_count);
+
+        hudX += BOX_W + HUD_PAD; 
+
         drawUpgradesBar(renderer,
                         hud,
                         hudX,
@@ -755,6 +800,7 @@ void GameWindow::drawGame(Renderer& renderer,
                         speed_upgrades,
                         accel_upgrades,
                         health_upgrades);
+
 
         drawMinimap(background, renderer, last_state, dstRect, checkpoint_flag, checkered_flag);
 

@@ -43,6 +43,27 @@ const std::map<int, SDL2pp::Rect> SpritesManager::carPositionsCamion = {
     {8, SDL2pp::Rect(0, 512, 48, 48)}, {9, SDL2pp::Rect(48, 512, 48, 48)}, {10, SDL2pp::Rect(96, 512, 48, 48)}, {11, SDL2pp::Rect(144, 512, 48, 48)},
     {12, SDL2pp::Rect(192, 512, 48, 48)}, {13, SDL2pp::Rect(240, 512, 48, 48)}, {14, SDL2pp::Rect(288, 512, 48, 48)}, {15, SDL2pp::Rect(336, 512, 48, 48)}
 };
+const SDL2pp::Rect SpritesManager::CHECKPOINT_PANEL =
+    SDL2pp::Rect(925, 76, 270, 86);
+
+const SDL2pp::Rect SpritesManager::CHECKPOINT_TENS_SLOT =
+    SDL2pp::Rect(937, 97, 38, 44);
+
+const SDL2pp::Rect SpritesManager::CHECKPOINT_UNITS_SLOT =
+    SDL2pp::Rect(977, 97, 38, 44);
+
+const std::array<SDL2pp::Rect, 10> SpritesManager::CHECKPOINT_DIGITS = {{
+    SDL2pp::Rect(1260, 93, 38, 44), //0
+    SDL2pp::Rect(1302, 93, 38, 44), //1
+    SDL2pp::Rect(1341, 93, 38, 44), //2
+    SDL2pp::Rect(1382, 93, 38, 44), //3
+    SDL2pp::Rect(1426, 93, 38, 44), //4
+    SDL2pp::Rect(1466, 93, 38, 44), //5
+    SDL2pp::Rect(1506, 93, 38, 44), //6
+    SDL2pp::Rect(1547, 93, 38, 44), //7
+    SDL2pp::Rect(1588, 93, 38, 44), //8
+    SDL2pp::Rect(1629, 93, 38, 44)  //9
+}};
 
 
 // HUD: dígitos 0–9
@@ -173,6 +194,22 @@ const SDL2pp::Rect& SpritesManager::getSpeedDigitRectUnits()    const { return S
 const SDL2pp::Rect& SpritesManager::getUpgradeSpeedRect() const { return UPGRADE_SPEED; }
 const SDL2pp::Rect& SpritesManager::getUpgradeAccelRect() const { return UPGRADE_ACCEL; }
 const SDL2pp::Rect& SpritesManager::getUpgradeHealthRect() const { return UPGRADE_HEALTH; }
+
+const SDL2pp::Rect& SpritesManager::getCheckpointPanelRect() const {
+    return CHECKPOINT_PANEL;
+}
+
+const SDL2pp::Rect& SpritesManager::getCheckpointDigitRectTens() const {
+    return CHECKPOINT_TENS_SLOT;
+}
+
+const SDL2pp::Rect& SpritesManager::getCheckpointDigitRectUnits() const {
+    return CHECKPOINT_UNITS_SLOT;
+}
+
+const SDL2pp::Rect& SpritesManager::getCheckpointNumberRect(int d) const {
+    return CHECKPOINT_DIGITS[d % 10];
+}
 
 
 SpritesManager::SpritesManager() {}

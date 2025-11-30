@@ -12,7 +12,6 @@ target_sources(taller_client PRIVATE
     sound_manager.cpp
     assets.qrc
 
-    Pantallas/carselectscreen.cpp
     Pantallas/lobbyscreen.cpp
     Pantallas/loginscreen.cpp
 )
@@ -32,7 +31,6 @@ target_sources(taller_client PUBLIC
 target_sources(taller_client PRIVATE
     mainwindow.ui
 
-    Pantallas/carselectscreen.ui
     Pantallas/lobbyscreen.ui
     Pantallas/loginscreen.ui
 )

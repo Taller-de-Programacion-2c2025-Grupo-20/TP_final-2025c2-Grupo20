@@ -819,30 +819,6 @@ yaml-cpp-read_autogen/fast:
 	$(MAKE) $(MAKESILENT) -f _deps/yaml-cpp-build/util/CMakeFiles/yaml-cpp-read_autogen.dir/build.make _deps/yaml-cpp-build/util/CMakeFiles/yaml-cpp-read_autogen.dir/build
 .PHONY : yaml-cpp-read_autogen/fast
 
-client/Pantallas/carselectscreen.o: client/Pantallas/carselectscreen.cpp.o
-.PHONY : client/Pantallas/carselectscreen.o
-
-# target to build an object file
-client/Pantallas/carselectscreen.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/taller_client.dir/build.make CMakeFiles/taller_client.dir/client/Pantallas/carselectscreen.cpp.o
-.PHONY : client/Pantallas/carselectscreen.cpp.o
-
-client/Pantallas/carselectscreen.i: client/Pantallas/carselectscreen.cpp.i
-.PHONY : client/Pantallas/carselectscreen.i
-
-# target to preprocess a source file
-client/Pantallas/carselectscreen.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/taller_client.dir/build.make CMakeFiles/taller_client.dir/client/Pantallas/carselectscreen.cpp.i
-.PHONY : client/Pantallas/carselectscreen.cpp.i
-
-client/Pantallas/carselectscreen.s: client/Pantallas/carselectscreen.cpp.s
-.PHONY : client/Pantallas/carselectscreen.s
-
-# target to generate assembly for a file
-client/Pantallas/carselectscreen.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/taller_client.dir/build.make CMakeFiles/taller_client.dir/client/Pantallas/carselectscreen.cpp.s
-.PHONY : client/Pantallas/carselectscreen.cpp.s
-
 client/Pantallas/lobbyscreen.o: client/Pantallas/lobbyscreen.cpp.o
 .PHONY : client/Pantallas/lobbyscreen.o
 
@@ -1745,9 +1721,6 @@ help:
 	@echo "... yaml-cpp-parse"
 	@echo "... yaml-cpp-read"
 	@echo "... yaml-cpp-sandbox"
-	@echo "... client/Pantallas/carselectscreen.o"
-	@echo "... client/Pantallas/carselectscreen.i"
-	@echo "... client/Pantallas/carselectscreen.s"
 	@echo "... client/Pantallas/lobbyscreen.o"
 	@echo "... client/Pantallas/lobbyscreen.i"
 	@echo "... client/Pantallas/lobbyscreen.s"

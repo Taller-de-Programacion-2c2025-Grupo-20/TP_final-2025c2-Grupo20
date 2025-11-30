@@ -27,7 +27,6 @@ LobbyScreen::LobbyScreen(QWidget *parent) :
     ui->page_MapSelect->setStyleSheet("background: transparent;");
     ui->page_CarSelect->setStyleSheet("background: transparent;");
 
-    //setupComboBoxes();
     poll_timer = new QTimer(this);
     connect(poll_timer, &QTimer::timeout, this, &LobbyScreen::updateLobbyState);
 
@@ -36,11 +35,6 @@ LobbyScreen::LobbyScreen(QWidget *parent) :
     connect(ui->startButton, &QPushButton::clicked, this, &LobbyScreen::on_startButton_clicked);
     connect(ui->matchListWidget, &QListWidget::currentItemChanged,
             this, &LobbyScreen::on_matchListWidget_currentItemChanged);
-    
-    //connect(ui->mapComboBox, QOverload<int>::of(&QComboBox::currentIndexChanged),this, &LobbyScreen::on_mapComboBox_currentIndexChanged);
-
-    //connect(ui->carComboBox, QOverload<int>::of(&QComboBox::currentIndexChanged),this, &LobbyScreen::on_carComboBox_currentIndexChanged);
-
     
     connect(ui->btnGoToMap, &QPushButton::clicked, this, &LobbyScreen::goToMapScreen);
     connect(ui->btnGoToCar, &QPushButton::clicked, this, &LobbyScreen::goToCarScreen);
@@ -86,34 +80,7 @@ void LobbyScreen::updateLobbyState() {
         handleSelectionState();
     }
 }
-/*
-void LobbyScreen::handleWaitingRoomState(const LobbyStateDTO& state) {
-    if (ui->stackedWidget_Lobby->currentWidget() != ui->page_WaitingRoom) {
-        ui->stackedWidget_Lobby->setCurrentWidget(ui->page_WaitingRoom);
-    }
-    ui->playerListWidget->clear();
-    for (const auto& player : state.players) {
-        QString carName = ui->carComboBox->itemText(player.car_id);
-        QString text = QString::fromStdString(player.name) + " (" + carName + ")";
-        ui->playerListWidget->addItem(text);
-    }
 
-    if (client->getMyPlayerId() == state.host_id) {
-        ui->startButton->setEnabled(true);
-        ui->mapComboBox->setEnabled(true);
-        ui->startButton->setText("Iniciar Partida");
-    } else {
-        ui->startButton->setEnabled(false);
-        ui->mapComboBox->setEnabled(false);
-        ui->startButton->setText("Esperando al Host...");
-        if (ui->mapComboBox->currentIndex() != state.map_id) {
-            const QSignalBlocker blocker(ui->mapComboBox);
-            ui->mapComboBox->setCurrentIndex(state.map_id);
-            showMapPreview(state.map_id);
-        }
-    }
-}
-*/
 
 void LobbyScreen::handleSelectionState() {
     if (ui->stackedWidget_Lobby->currentWidget() != ui->page_Selection) {
@@ -190,116 +157,6 @@ void LobbyScreen::on_matchListWidget_currentItemChanged() {
     ui->joinButton->setEnabled(is_item_selected);
 }
 
-/*
-void LobbyScreen::setupComboBoxes() {
-    ui->mapComboBox->clear();
-    ui->mapComboBox->addItem(LIBERTY, 0); 
-    ui->mapComboBox->addItem(VICE, 1);    
-    ui->mapComboBox->addItem(ANDREAS, 2);  
-
-    ui->carComboBox->clear();
-    ui->carComboBox->addItem(VERDE, 0);        
-    ui->carComboBox->addItem(ROJO, 1);         
-    ui->carComboBox->addItem(DESCAPOTABLE, 2); 
-    ui->carComboBox->addItem(CELESTE, 3);    
-    ui->carComboBox->addItem(JEEP, 4);         
-    ui->carComboBox->addItem(CAMIONETA, 5);    
-    ui->carComboBox->addItem(CAMION, 6);      
-
-    showMapPreview(0);
-    showCarPreview(0);
-}
-
-void LobbyScreen::showCarPreview(int index) {
-    QPixmap spritesheet(":/data/cars/Mobile - Grand Theft Auto 4 - Miscellaneous - Cars.png"); 
-
-    if (spritesheet.isNull()) {
-        ui->label_carPreview->setText("Img no encontrada");
-        return;
-    }
-
-    int x = 0, y = 0, w = 0, h = 0;
-    CarType tipo = static_cast<CarType>(index);
-    switch (tipo) {
-        case CarType::VERDE: x = 0; y = 0; w = 32; h = 32; break;
-        case CarType::ROJO:  x = 0; y = 64; w = 40; h = 40; break;
-        case CarType::DESCAPOTABLE: x = 0; y = 144; w = 40; h = 40; break;
-        case CarType::CELESTE: x = 0; y = 224; w = 40; h = 40; break;
-        case CarType::JEEP: x = 0; y = 304; w = 40; h = 40; break;
-        case CarType::CAMIONETA: x = 0; y = 384; w = 40; h = 40; break;
-        case CarType::CAMION: x = 0; y = 464; w = 48; h = 48; break;
-        default:
-            ui->label_carPreview->clear();
-            return;
-    }
-    QPixmap carSprite = spritesheet.copy(x, y, w, h);
-
-    int previewSize = 120; 
-    QPixmap scaledSprite = carSprite.scaled(previewSize, previewSize, 
-                                            Qt::KeepAspectRatio, 
-                                            Qt::FastTransformation);
-
-    ui->label_carPreview->setPixmap(scaledSprite);
-}
-
-void LobbyScreen::showMapPreview(int index) {
-    QString filename;
-    switch (index) {
-        case 0: 
-            filename = LIBERTY_CITY_FILE;
-            break;
-        case 1:
-            filename = VICE_CITY_FILE;
-            break;
-        case 2: 
-            filename = SAN_ANDREAS_FILE;
-            break;
-        default:
-            ui->label_mapPreview->clear();
-            return;
-    }
-    QString fullPath = ":/data/cities/" + filename;
-    QPixmap pix(fullPath);
-    
-    if (!pix.isNull()) {
-        ui->label_mapPreview->setPixmap(pix.scaled(ui->label_mapPreview->size(), 
-                                                   Qt::KeepAspectRatio, 
-                                                   Qt::SmoothTransformation));
-    } else {
-        qDebug() << "ERROR: No se cargó el mapa. Ruta:" << fullPath;
-        ui->label_mapPreview->setText("Sin Preview");
-    }
-}
-
-
-void LobbyScreen::on_mapComboBox_currentIndexChanged(int index) {
-    showMapPreview(index);
-    if (client && ui->mapComboBox->isEnabled()) {
-        
-        InputCmd cmd;
-        cmd.player_id = client->getMyPlayerId();
-        cmd.key = InputKey::SelectMap; 
-        cmd.action = InputAction::Press;
-        cmd.match_id = static_cast<uint8_t>(index); 
-        
-        client->push_input(cmd);
-    }
-}
-
-void LobbyScreen::on_carComboBox_currentIndexChanged(int index) {
-    showCarPreview(index);
-    if (client) {
-        
-        InputCmd cmd;
-        cmd.player_id = client->getMyPlayerId();
-        cmd.key = InputKey::SelectCar; 
-        cmd.action = InputAction::Press;
-        cmd.match_id = static_cast<uint8_t>(index); 
-        
-        client->push_input(cmd);
-    }
-}
-*/
 void LobbyScreen::paintEvent(QPaintEvent *) {
     QPainter p(this);
     QWidget* currentWidget = ui->stackedWidget_Lobby->currentWidget();
@@ -319,6 +176,13 @@ void LobbyScreen::paintEvent(QPaintEvent *) {
 
 
 void LobbyScreen::goToMapScreen() {
+    bool amIHost = (client && client->getMyPlayerId() == currentHostId);
+    ui->btnMapPrev->setVisible(amIHost);
+    ui->btnMapNext->setVisible(amIHost);
+    if (!amIHost) {
+        ui->btnMapSelect->setText("Volver al Lobby");
+    }
+
     ui->stackedWidget_Lobby->setCurrentWidget(ui->page_MapSelect);
     updateBigMapPreview();
     this->update();
@@ -331,14 +195,18 @@ void LobbyScreen::goToCarScreen() {
 }
 
 void LobbyScreen::backToLobby() {
+    bool amIHost = (client && client->getMyPlayerId() == currentHostId);
+
     if (client) {
         if (ui->stackedWidget_Lobby->currentWidget() == ui->page_MapSelect) {
-             InputCmd cmd;
-             cmd.player_id = client->getMyPlayerId();
-             cmd.key = InputKey::SelectMap; 
-             cmd.action = InputAction::Press;
-             cmd.match_id = static_cast<uint8_t>(currentMapIndex);
-             client->push_input(cmd);
+             if (amIHost) {
+                 InputCmd cmd;
+                 cmd.player_id = client->getMyPlayerId();
+                 cmd.key = InputKey::SelectMap; 
+                 cmd.action = InputAction::Press;
+                 cmd.match_id = static_cast<uint8_t>(currentMapIndex);
+                 client->push_input(cmd);
+             }
         }
         else if (ui->stackedWidget_Lobby->currentWidget() == ui->page_CarSelect) {
              InputCmd cmd;
@@ -357,11 +225,29 @@ void LobbyScreen::backToLobby() {
 void LobbyScreen::onMapNext() {
     currentMapIndex = (currentMapIndex + 1) % TOTAL_MAPS;
     updateBigMapPreview();
+    
+    if (client && client->getMyPlayerId() == currentHostId) {
+         InputCmd cmd;
+         cmd.player_id = client->getMyPlayerId();
+         cmd.key = InputKey::SelectMap; 
+         cmd.action = InputAction::Press;
+         cmd.match_id = static_cast<uint8_t>(currentMapIndex);
+         client->push_input(cmd);
+    }
 }
 
 void LobbyScreen::onMapPrev() {
     currentMapIndex = (currentMapIndex - 1 + TOTAL_MAPS) % TOTAL_MAPS;
     updateBigMapPreview();
+
+    if (client && client->getMyPlayerId() == currentHostId) {
+         InputCmd cmd;
+         cmd.player_id = client->getMyPlayerId();
+         cmd.key = InputKey::SelectMap; 
+         cmd.action = InputAction::Press;
+         cmd.match_id = static_cast<uint8_t>(currentMapIndex);
+         client->push_input(cmd);
+    }
 }
 
 void LobbyScreen::onCarNext() {
@@ -377,26 +263,38 @@ void LobbyScreen::onCarPrev() {
 
 void LobbyScreen::updateBigMapPreview() {
     QString filename;
+    QString mapName;
+
     switch (currentMapIndex) {
-        case 0: filename = LIBERTY_CITY_FILE; break;
-        case 1: filename = VICE_CITY_FILE; break;
-        case 2: filename = SAN_ANDREAS_FILE; break;
-        default: return;
+        case 0: 
+            filename = LIBERTY_CITY_FILE;
+            mapName = LIBERTY; 
+            break;
+        case 1:
+            filename = VICE_CITY_FILE;
+            mapName = VICE;
+            break;
+        case 2: 
+            filename = SAN_ANDREAS_FILE;
+            mapName = ANDREAS;
+            break;
+        default:
+            return;
     }
+
+    ui->label_MapName->setText(mapName);
     QString fullPath = ":/data/cities/" + filename;
     QPixmap pix(fullPath);
+    
     if (!pix.isNull()) {
-        ui->label_BigMapPreview->setPixmap(pix.scaled(ui->label_BigMapPreview->size(), Qt::KeepAspectRatio, Qt::SmoothTransformation));
+        ui->label_BigMapPreview->setPixmap(pix.scaled(ui->label_BigMapPreview->size(), 
+                                                      Qt::KeepAspectRatio, 
+                                                      Qt::SmoothTransformation));
     }
 }
 
 void LobbyScreen::updateBigCarPreview() {
     QPixmap spritesheet(":/data/cars/Mobile - Grand Theft Auto 4 - Miscellaneous - Cars.png"); 
-
-    if (spritesheet.isNull()) {
-        ui->label_BigCarPreview->setText("Img no encontrada");
-        return;
-    }
 
     int x = 0, y = 0, w = 0, h = 0;
     CarType tipo = static_cast<CarType>(currentCarIndex); 
@@ -423,8 +321,19 @@ void LobbyScreen::updateBigCarPreview() {
 }
 
 void LobbyScreen::handleWaitingRoomState(const LobbyStateDTO& state) {
+    currentHostId = state.host_id;
+
+    bool amIHost = (client->getMyPlayerId() == state.host_id);
+    bool inMapScreen = (ui->stackedWidget_Lobby->currentWidget() == ui->page_MapSelect);
+
+    if (!amIHost || !inMapScreen) {
+        currentMapIndex = state.map_id;
+    }
+
     QWidget* current = ui->stackedWidget_Lobby->currentWidget();
-    if (current != ui->page_WaitingRoom && current != ui->page_MapSelect && current != ui->page_CarSelect) {
+    if (current != ui->page_WaitingRoom && 
+        current != ui->page_MapSelect && 
+        current != ui->page_CarSelect) {
         ui->stackedWidget_Lobby->setCurrentWidget(ui->page_WaitingRoom);
     }
 
@@ -439,6 +348,7 @@ void LobbyScreen::handleWaitingRoomState(const LobbyStateDTO& state) {
             case CarType::JEEP:         carName = JEEP; break;
             case CarType::CAMIONETA:    carName = CAMIONETA; break;
             case CarType::CAMION:       carName = CAMION; break;
+            default: break;
         }
         QString text = QString::fromStdString(player.name) + " (" + carName + ")";
         ui->playerListWidget->addItem(text);
@@ -447,14 +357,17 @@ void LobbyScreen::handleWaitingRoomState(const LobbyStateDTO& state) {
     if (client->getMyPlayerId() == state.host_id) {
         ui->startButton->setEnabled(true);
         ui->btnGoToMap->setEnabled(true);
-        ui->startButton->setText("Iniciar Partida");
     } else {
         ui->startButton->setEnabled(false);
-        ui->btnGoToMap->setEnabled(false); 
-        ui->startButton->setText("Esperando al Host...");
-        ui->btnGoToMap->setText("Host seleccionando mapa...");
-        currentMapIndex = state.map_id; 
+        ui->startButton->setText("Esperando \n\n al host...");
+
+        ui->btnGoToMap->setEnabled(true); 
+        ui->btnGoToMap->setText("Ver mapa");
     }
-    
+
     ui->btnGoToCar->setEnabled(true);
+    if (inMapScreen) {
+        updateBigMapPreview();
+        this->update(); 
+    }
 }

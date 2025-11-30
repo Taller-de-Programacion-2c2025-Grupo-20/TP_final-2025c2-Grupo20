@@ -340,7 +340,7 @@ void LobbyScreen::handleWaitingRoomState(const LobbyStateDTO& state) {
     ui->playerListWidget->clear();
     for (const auto& player : state.players) {
         QString carName;
-        switch_cars(carName)
+
         switch (static_cast<CarType>(player.car_id)) {
             case CarType::VERDE:        carName = VERDE; break;
             case CarType::ROJO:         carName = ROJO; break;
@@ -349,7 +349,7 @@ void LobbyScreen::handleWaitingRoomState(const LobbyStateDTO& state) {
             case CarType::JEEP:         carName = JEEP; break;
             case CarType::CAMIONETA:    carName = CAMIONETA; break;
             case CarType::CAMION:       carName = CAMION; break;
-            default: break;
+            default:                    carName = "Desconocido"; break;
         }
         QString text = QString::fromStdString(player.name) + " (" + carName + ")";
         ui->playerListWidget->addItem(text);

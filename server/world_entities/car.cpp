@@ -126,7 +126,7 @@ void Car::handleInput(InputCmd cmd) {
     }
 
     if (cmd.key == InputKey::BuyHealthUpgrade){
-        auto [it, inserted] = applied_upgrades.insert(UpgradeType::HealtUpgrade);
+        auto [it, inserted] = applied_upgrades.insert(UpgradeType::HealthUpgrade);
         if (inserted) {
             car_health += 50;
             next_race_time_penalty += 5.0f;

@@ -353,9 +353,11 @@ void GameWindow::drawCheckpointHintAroundCar(
 void GameWindow::drawMarket(
     Renderer& renderer,
     Texture& market,
-    const GameStateDTO& state,
     int viewW,
-    int viewH
+    int viewH,
+    bool boughtSpeed,
+    bool boughtAccel,
+    bool boughtHealth
 ) {
     int texW = 1034;
     int texH = market.GetHeight();
@@ -395,15 +397,15 @@ void GameWindow::drawMarket(
     Rect src_health_bought  (1088, 538, 802, 118);
 
 
-    if (state.car_count > 0) {
+    if (boughtSpeed) {
         renderer.Copy(market, src_speed_bought, toDst(slot_speed_unbought));
     }
 
-    if (state.car_count > 0) {
+    if (boughtAccel) {
         renderer.Copy(market, src_accel_bought, toDst(slot_accel_unbought));
     }
 
-    if (state.car_count > 0) {
+    if (boughtHealth) {
         renderer.Copy(market, src_health_bought, toDst(slot_health_unbought));
     }
 }
@@ -604,17 +606,6 @@ void GameWindow::drawGame(Renderer& renderer,
             continue; 
         }
 
-        if (static_cast<int>(last_state.elapsed_time) <= BUY_TIME_SECONDS) {
-            drawMarket(renderer, market, last_state, viewW, viewH);
-
-            int remaining = BUY_TIME_SECONDS - static_cast<int>(last_state.elapsed_time);
-            //int remaining = static_cast<int>(last_state.elapsed_time) - (MATCH_DURATION_SECONDS - BUY_TIME_SECONDS);
-            drawMarketCountdown(renderer, market, remaining, viewW, viewH);            
-
-            renderer.Present();
-            continue;
-        }
-
         int my_id = client.getMyPlayerId();
         const PlayerState* me = nullptr;
 
@@ -623,6 +614,34 @@ void GameWindow::drawGame(Renderer& renderer,
                 me = &p;
                 break;
             }
+        }
+
+        bool speed_upgrades = false;
+        bool accel_upgrades = false;
+        bool health_upgrades = false;
+        
+        if (me) {
+        if ((me->applied_upgrades).find(UpgradeType::SpeedUpgrade) != (me->applied_upgrades).end()) {
+            speed_upgrades = true;
+        }
+        if ((me->applied_upgrades).find(UpgradeType::AccelerationUpgrade) != (me->applied_upgrades).end()) {
+            accel_upgrades = true;
+        }
+        if ((me->applied_upgrades).find(UpgradeType::HealthUpgrade) != (me->applied_upgrades).end()) {
+            health_upgrades = true;
+        }
+        }
+
+
+        if (static_cast<int>(last_state.elapsed_time) <= BUY_TIME_SECONDS) {
+            drawMarket(renderer, market, viewW, viewH, speed_upgrades, accel_upgrades, health_upgrades);
+
+            int remaining = BUY_TIME_SECONDS - static_cast<int>(last_state.elapsed_time);
+            //int remaining = static_cast<int>(last_state.elapsed_time) - (MATCH_DURATION_SECONDS - BUY_TIME_SECONDS);
+            drawMarketCountdown(renderer, market, remaining, viewW, viewH);            
+
+            renderer.Present();
+            continue;
         }
 
         my_player_index = -1;
@@ -635,15 +654,6 @@ void GameWindow::drawGame(Renderer& renderer,
             hp = new_hp;
         }
 
-        bool speed_upgrades = true;
-        bool accel_upgrades = true;
-        bool health_upgrades = true;
-        
-        // if (me) {
-        //     speed_upgrades = me->speed_upgrades;
-        //     accel_upgrades = me->accel_upgrades;
-        //     health_upgrades = me->health_upgrades;
-        // }
 
         drawCheckpoint(renderer, checkpoint_flag, last_state, srcRect, viewW,viewH);
 

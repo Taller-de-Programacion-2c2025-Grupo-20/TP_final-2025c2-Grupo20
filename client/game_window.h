@@ -128,9 +128,11 @@ private:
     void drawMarket(
     SDL2pp::Renderer& renderer,
     SDL2pp::Texture& market,
-    const GameStateDTO& state,
     int viewW,
-    int viewH);
+    int viewH,
+    bool boughtSpeed,
+    bool boughtAccel,
+    bool boughtHealth);
 
     void drawMarketCountdown(SDL2pp::Renderer& renderer,
                             SDL2pp::Texture& market,

@@ -621,6 +621,8 @@ void GameWindow::drawGame(Renderer& renderer,
             continue; 
         }
 
+        soundManager.updateBackgroundMusic(last_state.elapsed_time);
+
         int my_id = client.getMyPlayerId();
         const PlayerState* me = nullptr;
 
@@ -879,6 +881,7 @@ int GameWindow::runGame() {
                       hp,
                       actual_pos, pos_x_m, pos_y_m, angle, soundManager);
         
+        mixer.HaltMusic();
 
         return 0;
 

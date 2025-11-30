@@ -3,6 +3,8 @@
 
 #include <SDL2pp/Mixer.hh>
 #include <SDL2pp/Chunk.hh>
+#include <SDL2pp/Music.hh>  
+#include <SDL2pp/Exception.hh>
 
 class SoundManager {
 public:
@@ -13,6 +15,7 @@ public:
 
     void playSkid();
     void playCrash();
+    void updateBackgroundMusic(double elapsedSeconds);
 
 private:
     SDL2pp::Mixer& mixer;
@@ -31,6 +34,9 @@ private:
 
     // Cooldown mínimo entre golpes
     static constexpr Uint32 CRASH_COOLDOWN_MS = 250;
+
+    SDL2pp::Music bgMusic;
+    bool bgMusicStarted = false;
 };
 
 #endif

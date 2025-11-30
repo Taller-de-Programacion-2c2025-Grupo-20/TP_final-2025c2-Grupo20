@@ -10,9 +10,11 @@ SoundManager::SoundManager(SDL2pp::Mixer& mixer)
     : mixer(mixer),
       engineIdle(DATA_PATH "/sounds/1000 RPM.wav"),
       skidChunk(DATA_PATH "/sounds/skid.wav"),
-      crashChunk(DATA_PATH "/sounds/crash.wav")
+      crashChunk(DATA_PATH "/sounds/crash.wav"),
+      bgMusic(DATA_PATH "/sounds/soundtrack.ogg") 
 {
     std::cout << "SoundManager cargado.\n";
+    mixer.SetMusicVolume(MIX_MAX_VOLUME / 2);
 }
 
 void SoundManager::updateEngineSound() {
@@ -55,5 +57,18 @@ void SoundManager::playCrash() {
     if (crashChannel < 0) {
         std::cerr << "Error al reproducir crash: "
                   << Mix_GetError() << std::endl;
+    }
+}
+
+void SoundManager::updateBackgroundMusic(double elapsedSeconds) {
+
+    if (!bgMusicStarted && elapsedSeconds >= 6.0) {
+        try {
+            mixer.PlayMusic(bgMusic, -1);
+            bgMusicStarted = true;
+        } catch (const SDL2pp::Exception& e) {
+            std::cerr << "Error al reproducir música de fondo: "
+                      << e.GetSDLError() << std::endl;
+        }
     }
 }

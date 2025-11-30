@@ -100,7 +100,7 @@ void GameWindow::drawCronometer(Renderer& renderer, Texture& hud,
     const Rect& PANEL_TIME  = game_sprites.getTimePanelRect();
     BoxMap timeMap = makeBoxMap(renderer, hud, PANEL_TIME, hudX, hudY);
 
-    int total = static_cast<int>(last_state.elapsed_time) - 10; //BORRAR - 10 LUEGO
+    int total = static_cast<int>(last_state.elapsed_time) - BUY_TIME_SECONDS; //BORRAR - BUY_TIME_SECONDS LUEGO
     int mm = (total / 60) % 100;
     int ss = total % 60;
 
@@ -353,18 +353,16 @@ void GameWindow::drawCheckpointHintAroundCar(
 void GameWindow::drawMarket(
     Renderer& renderer,
     Texture& market,
-    const GameStateDTO& /*state*/,
-    const Rect& /*srcRect*/,
+    const GameStateDTO& state,
     int viewW,
     int viewH
 ) {
     int texW = 1034;
     int texH = market.GetHeight();
 
-    // Escala para que quepa en la pantalla manteniendo aspecto
     float scale = std::min(
-        viewW  / static_cast<float>(texW),
-        viewH  / static_cast<float>(texH)
+        viewW / static_cast<float>(texW),
+        viewH / static_cast<float>(texH)
     );
 
     int dstW = static_cast<int>(std::lround(texW * scale));
@@ -373,13 +371,125 @@ void GameWindow::drawMarket(
     int dstX = (viewW - dstW) / 2;
     int dstY = (viewH - dstH) / 2;
 
-    // SOLO dibuja el cartel, sin fondo negro
     renderer.Copy(
         market,
         Rect(0, 0, texW, texH),
         Rect(dstX, dstY, dstW, dstH)
     );
+
+    auto toDst = [&](const Rect& r) -> Rect {
+        return Rect(
+            dstX + static_cast<int>(std::lround(r.GetX() * scale)),
+            dstY + static_cast<int>(std::lround(r.GetY() * scale)),
+            static_cast<int>(std::lround(r.GetW() * scale)),
+            static_cast<int>(std::lround(r.GetH() * scale))
+        );
+    };
+
+    Rect slot_speed_unbought   (179, 255, 802, 118);
+    Rect slot_accel_unbought   (179, 397, 802, 118);
+    Rect slot_health_unbought  (179, 539, 802, 118);
+
+    Rect src_speed_bought   (1088, 253, 802, 118);
+    Rect src_accel_bought   (1088, 396, 802, 118);
+    Rect src_health_bought  (1088, 538, 802, 118);
+
+
+    if (state.car_count > 0) {
+        renderer.Copy(market, src_speed_bought, toDst(slot_speed_unbought));
+    }
+
+    if (state.car_count > 0) {
+        renderer.Copy(market, src_accel_bought, toDst(slot_accel_unbought));
+    }
+
+    if (state.car_count > 0) {
+        renderer.Copy(market, src_health_bought, toDst(slot_health_unbought));
+    }
 }
+
+void GameWindow::drawMarketCountdown(Renderer& renderer,
+                                     Texture& market,
+                                     int seconds,
+                                     int viewW, int viewH)
+{
+    if (seconds < 0)  seconds = 0;
+    if (seconds > 99) seconds = 99;
+
+    int d_tens  = (seconds / 10) % 10;
+    int d_units =  seconds % 10;
+
+    int texW = 1034;
+    int texH = market.GetHeight();
+
+    float scale = std::min(
+        viewW / static_cast<float>(texW),
+        viewH / static_cast<float>(texH)
+    );
+
+    int dstW = static_cast<int>(std::lround(texW * scale));
+    int dstH = static_cast<int>(std::lround(texH * scale));
+
+    int dstX = (viewW - dstW) / 2;
+    int dstY = (viewH - dstH) / 2;
+
+    Rect slot_tens_orig  (317, 714, 66, 77); 
+    Rect slot_units_orig (393, 714, 66, 77);
+
+    auto toDst = [&](const Rect& r) -> Rect {
+        return Rect(
+            dstX + static_cast<int>(std::lround(r.GetX() * scale)),
+            dstY + static_cast<int>(std::lround(r.GetY() * scale)),
+            static_cast<int>(std::lround(r.GetW() * scale)),
+            static_cast<int>(std::lround(r.GetH() * scale))
+        );
+    };
+
+    Rect dst_tens  = toDst(slot_tens_orig);
+    Rect dst_units = toDst(slot_units_orig);
+
+    const Rect& src_tens  = game_sprites.getMarketDigitRect(d_tens);
+    const Rect& src_units = game_sprites.getMarketDigitRect(d_units);
+
+    renderer.Copy(market, src_tens,  dst_tens);
+    renderer.Copy(market, src_units, dst_units);
+}
+
+void GameWindow::drawUpgradesBar(Renderer& renderer,
+                                 Texture& hud,
+                                 int hudX, int hudY,
+                                 bool speedActive,
+                                 bool accelActive,
+                                 bool healthActive)
+{
+    const float SCALE = 0.7f;
+    const int ICON_W = int(106 * SCALE);
+    const int ICON_H = int(86  * SCALE);
+    const int SPACE  = 6;
+
+    int x = hudX;
+
+    if (speedActive) {
+        renderer.Copy(hud,
+                      game_sprites.getUpgradeSpeedRect(),
+                      Rect(x, hudY, ICON_W, ICON_H));
+    }
+    x += ICON_W + SPACE;
+
+    if (accelActive) {
+        renderer.Copy(hud,
+                      game_sprites.getUpgradeAccelRect(),
+                      Rect(x, hudY, ICON_W, ICON_H));
+    }
+    x += ICON_W + SPACE;
+
+    if (healthActive) {
+        renderer.Copy(hud,
+                      game_sprites.getUpgradeHealthRect(),
+                      Rect(x, hudY, ICON_W, ICON_H));
+    }
+}
+
 
 void GameWindow::drawGame(Renderer& renderer,
                          Texture& hud,
@@ -452,13 +562,22 @@ void GameWindow::drawGame(Renderer& renderer,
 
                 if (cmd.key != InputKey::Unknown) {
 
-                    if ((cmd.key == InputKey::BuySpeedUpgrade || 
-                        cmd.key == InputKey::BuyAccelerationUpgrade || 
-                        cmd.key == InputKey::BuyHealthUpgrade) && (static_cast<int>(last_state.elapsed_time) > BUY_TIME_SECONDS)) {
+                    if ((cmd.key == InputKey::BuySpeedUpgrade || cmd.key == InputKey::BuyAccelerationUpgrade || cmd.key == InputKey::BuyHealthUpgrade)) {
+                        if (static_cast<int>(last_state.elapsed_time) > BUY_TIME_SECONDS){
                             std::cout << "No se puede comprar upgrades en medio de la carrera!\n";
                         }
+                        else {
+                            client.push_input(cmd);
+                        }
+                            
+                    }
                     else{
-                        client.push_input(cmd);
+                        if (static_cast<int>(last_state.elapsed_time) <= BUY_TIME_SECONDS){
+                            std::cout << "No te podes mover antes de que arranque la carrera!\n";
+                        }
+                        else {
+                            client.push_input(cmd);
+                        }
                     }
                 }
 
@@ -469,14 +588,10 @@ void GameWindow::drawGame(Renderer& renderer,
             }
         }
 
-
-
         if (exit){
             soundManager.stopEngineSound();
             break;
         }
-
-        std::cout << "Mi player id es: " << static_cast<int>(client.getMyPlayerId()) << "\n";
 
         renderer.SetDrawColor(0, 0, 0, 255);
         renderer.Clear();
@@ -485,11 +600,17 @@ void GameWindow::drawGame(Renderer& renderer,
 
         if (!have_state) {
             renderer.Present(); 
+            SDL_Delay(5);
             continue; 
         }
 
         if (static_cast<int>(last_state.elapsed_time) <= BUY_TIME_SECONDS) {
-            drawMarket(renderer, market, last_state, srcRect, viewW, viewH);
+            drawMarket(renderer, market, last_state, viewW, viewH);
+
+            int remaining = BUY_TIME_SECONDS - static_cast<int>(last_state.elapsed_time);
+            //int remaining = static_cast<int>(last_state.elapsed_time) - (MATCH_DURATION_SECONDS - BUY_TIME_SECONDS);
+            drawMarketCountdown(renderer, market, remaining, viewW, viewH);            
+
             renderer.Present();
             continue;
         }
@@ -513,6 +634,16 @@ void GameWindow::drawGame(Renderer& renderer,
             }
             hp = new_hp;
         }
+
+        bool speed_upgrades = true;
+        bool accel_upgrades = true;
+        bool health_upgrades = true;
+        
+        // if (me) {
+        //     speed_upgrades = me->speed_upgrades;
+        //     accel_upgrades = me->accel_upgrades;
+        //     health_upgrades = me->health_upgrades;
+        // }
 
         drawCheckpoint(renderer, checkpoint_flag, last_state, srcRect, viewW,viewH);
 
@@ -587,6 +718,16 @@ void GameWindow::drawGame(Renderer& renderer,
 
         drawCronometer(renderer, hud, hudX, hudY, last_state);
 
+        hudX += BOX_W + HUD_PAD;
+
+        drawUpgradesBar(renderer,
+                        hud,
+                        hudX,
+                        hudY,
+                        speed_upgrades,
+                        accel_upgrades,
+                        health_upgrades);
+
         drawMinimap(background, renderer, last_state, dstRect, checkpoint_flag);
 
         renderer.Present();
@@ -596,16 +737,7 @@ void GameWindow::drawGame(Renderer& renderer,
         double rest = rate - elapsed;
 
         if (rest > 0.0) {
-
-            double rest_ms = rest * 1000.0;
-            if (rest_ms > 1.5) {
-                SDL_Delay(static_cast<Uint32>(rest_ms - 1.0));
-            }
-
-            for (;;) {
-                uint64_t now = SDL_GetPerformanceCounter();
-                if ((double)(now - t1) / perf_freq >= rate) break;
-            }
+            SDL_Delay(static_cast<Uint32>(rest * 1000.0));
         } else {
             double behind = -rest;
             double lost = behind - std::fmod(behind, rate);
@@ -613,8 +745,9 @@ void GameWindow::drawGame(Renderer& renderer,
             it += static_cast<uint64_t>(lost / rate);
         }
 
-        t1 += static_cast<uint64_t>(rate * perf_freq);
+        t1 = SDL_GetPerformanceCounter();
         ++it;
+
     }
 }
 
@@ -622,11 +755,6 @@ int GameWindow::runGame() {
     try {
 
         SDL sdl(SDL_INIT_VIDEO | SDL_INIT_AUDIO);
-
-        // Hints ANTES de crear Window/Renderer
-        SDL_SetHint(SDL_HINT_RENDER_SCALE_QUALITY, "0");
-        SDL_SetHint(SDL_HINT_RENDER_BATCHING, "1");
-        SDL_SetHint(SDL_HINT_RENDER_DRIVER, "vulkan");
 
         // Ventana y renderer
         Window window("SDL2pp demo",

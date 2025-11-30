@@ -16,6 +16,9 @@ void ClientSender::run() {
                 case InputKey::Down:
                 case InputKey::Left:
                 case InputKey::Right:
+                case InputKey::BuySpeedUpgrade:
+                case InputKey::BuyAccelerationUpgrade:
+                case InputKey::BuyHealthUpgrade:
                     protocol.send_input(response);
                     break;
 

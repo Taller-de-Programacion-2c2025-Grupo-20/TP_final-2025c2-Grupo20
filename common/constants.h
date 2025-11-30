@@ -9,6 +9,7 @@ enum class InputAction : uint8_t { Press, Release };
 enum class InputKey    : uint8_t { Up, Down, Left, Right, Quit, CreateMatch, JoinMatch, StartGame, SelectCar, SelectMap, Unknown, BuySpeedUpgrade, BuyAccelerationUpgrade, BuyHealthUpgrade};
 enum class EntityType  : uint8_t { CAR, WALL, CHECKPOINT };
 enum class CarType     : uint8_t {VERDE, ROJO, DESCAPOTABLE, CELESTE, JEEP, CAMIONETA, CAMION};
+enum class UpgradeType : uint8_t { SpeedUpgrade, AccelerationUpgrade, HealtUpgrade };
 
 const std::string LIBERTY_CITY = "liberty_city.yaml";
 const std::string VICE_CITY = "vice_city.yaml";
@@ -30,11 +31,10 @@ inline const char* JEEP = "Jeep";
 inline const char* CAMIONETA = "Camioneta";
 inline const char* CAMION = "Camión";
 
-inline constexpr float MATCH_DURATION_SECONDS = 610.0f;
-inline constexpr int BUY_TIME_SECONDS = 10;
+inline constexpr float MATCH_DURATION_SECONDS = 615.0f;
+inline constexpr int BUY_TIME_SECONDS = 15;
 
 
-//Constantes VIEJAS
 struct Instruction {
     uint8_t command;
     int client_id;

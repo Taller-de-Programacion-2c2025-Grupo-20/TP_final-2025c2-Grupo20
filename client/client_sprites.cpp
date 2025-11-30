@@ -59,6 +59,20 @@ const std::array<SDL2pp::Rect, 10> SpritesManager::DIGITS = {{
     SDL2pp::Rect(1712, 358, 82, 100)   // 9
 }};
 
+// Dígitos 0–9 del cartel de mejoras
+const std::array<SDL2pp::Rect, 10> SpritesManager::MARKET_DIGITS = {{
+    SDL2pp::Rect(1086,696,66,77), // 0
+    SDL2pp::Rect(1159,696,66,77), // 1
+    SDL2pp::Rect(1230,696,66,77), // 2
+    SDL2pp::Rect(1302,696,66,77), // 3
+    SDL2pp::Rect(1379,696,66,77), // 4
+    SDL2pp::Rect(1448,696,66,77), // 5
+    SDL2pp::Rect(1518,696,66,77), // 6
+    SDL2pp::Rect(1590,696,66,77), // 7
+    SDL2pp::Rect(1662,696,66,77), // 8
+    SDL2pp::Rect(1735,696,66,77)  // 9
+}};
+
 // HUD: paneles
 const SDL2pp::Rect SpritesManager::PANEL_HP    = SDL2pp::Rect(23,  18, 847, 239);
 const SDL2pp::Rect SpritesManager::PANEL_TIME  = SDL2pp::Rect(23, 295, 847, 239);
@@ -90,7 +104,11 @@ const SDL2pp::Rect SpritesManager::TIME_SS_UNITS  = SDL2pp::Rect(742, 358, 82, 1
 const SDL2pp::Rect SpritesManager::SPEED_HUNDREDS = SDL2pp::Rect(342, 619, 82, 100);
 const SDL2pp::Rect SpritesManager::SPEED_TENS     = SDL2pp::Rect(434, 619, 82, 100);
 const SDL2pp::Rect SpritesManager::SPEED_UNITS    = SDL2pp::Rect(525, 619, 82, 100);
-#include "client_sprites.h"
+
+// Iconos de upgrades en hud.png
+const SDL2pp::Rect SpritesManager::UPGRADE_SPEED  = SDL2pp::Rect(992,  586, 106, 86);
+const SDL2pp::Rect SpritesManager::UPGRADE_ACCEL  = SDL2pp::Rect(1099, 586, 106, 86);
+const SDL2pp::Rect SpritesManager::UPGRADE_HEALTH = SDL2pp::Rect(1206, 586, 106, 86);
 
 
 const SDL2pp::Rect& SpritesManager::getCarRect(CarType carType, int frameId) const {
@@ -117,6 +135,11 @@ const SDL2pp::Rect& SpritesManager::getCarRect(CarType carType, int frameId) con
 // HUD: dígitos 0–9
 const SDL2pp::Rect& SpritesManager::getDigitRect(int d) const {
     return DIGITS[d % 10];
+}
+
+// Dígitos del cartel de mejoras
+const SDL2pp::Rect& SpritesManager::getMarketDigitRect(int d) const {
+    return MARKET_DIGITS[d % 10];
 }
 
 // Paneles
@@ -146,5 +169,10 @@ const SDL2pp::Rect& SpritesManager::getTimeDigitRectSsUnits()  const { return TI
 const SDL2pp::Rect& SpritesManager::getSpeedDigitRectHundreds() const { return SPEED_HUNDREDS; }
 const SDL2pp::Rect& SpritesManager::getSpeedDigitRectTens()     const { return SPEED_TENS; }
 const SDL2pp::Rect& SpritesManager::getSpeedDigitRectUnits()    const { return SPEED_UNITS; }
+
+const SDL2pp::Rect& SpritesManager::getUpgradeSpeedRect() const { return UPGRADE_SPEED; }
+const SDL2pp::Rect& SpritesManager::getUpgradeAccelRect() const { return UPGRADE_ACCEL; }
+const SDL2pp::Rect& SpritesManager::getUpgradeHealthRect() const { return UPGRADE_HEALTH; }
+
 
 SpritesManager::SpritesManager() {}

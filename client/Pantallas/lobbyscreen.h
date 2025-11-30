@@ -20,6 +20,7 @@ public:
 
 signals:
     void startGame(Client* client);
+    void serverDisconnected();   
 
 private slots:
     void updateLobbyState();

@@ -71,6 +71,13 @@ void LobbyScreen::setClient(Client* client) {
 void LobbyScreen::updateLobbyState() {
     if (!client) return;
 
+    if (client->getReceiver().isServerDown()) {
+        poll_timer->stop();
+
+        emit serverDisconnected();
+        return;
+    }
+
     LobbyStateDTO state = client->getReceiver().pollLobbyState();
 
     if (!state.players.empty()) {

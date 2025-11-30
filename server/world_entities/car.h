@@ -2,6 +2,7 @@
 #define CAR_H
 
 #include <string>
+#include <set>
 
 #include <Box2D/Box2D.h>
 
@@ -27,21 +28,21 @@ private:
     float accelaration;
     float rotation_torque;
     float max_speed;
-
     CarType car_type;
+    uint8_t car_health;
 
+    std::set<UpgradeType> applied_upgrades;
+    float time_penalization;
+    float next_race_time_penalty;
+    
     bool accelerating;
     bool braking;
     bool turningLeft;
     bool turningRight;
 
-    bool out_of_race;
-
     int next_checkpoint_id = 0;
 
     b2Body* car_body;
-
-    uint8_t car_health;
 
     CarAttributes getCarTypeAttributes(CarType car_type);
 
@@ -74,10 +75,14 @@ public:
 
     float getSpeed() const;
 
+    float timePenalty();
+    float nextRaceTimePenalty();
+
+    std::set<UpgradeType> applyedUpgrades() { return applied_upgrades; }
+
     EntityType getType() const override { return EntityType::CAR; }
 
-    Car(b2World& world, const b2Vec2& initial_position);
-    Car(b2World& world, const b2Vec2& initial_position, CarType car_type);
+    Car(b2World& world, const b2Vec2& initial_position, CarType car_type, float time_penalty);
 
     ~Car();
 };

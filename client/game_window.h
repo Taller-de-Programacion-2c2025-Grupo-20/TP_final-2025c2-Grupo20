@@ -129,10 +129,22 @@ private:
     SDL2pp::Renderer& renderer,
     SDL2pp::Texture& market,
     const GameStateDTO& state,
-    const SDL2pp::Rect& srcRect,
     int viewW,
     int viewH);
 
+    void drawMarketCountdown(SDL2pp::Renderer& renderer,
+                            SDL2pp::Texture& market,
+                            int seconds,
+                            int viewW, int viewH);
+        
+    void drawUpgradesBar(SDL2pp::Renderer& renderer,
+                        SDL2pp::Texture& hud,
+                        int hudX, int hudY,
+                        bool speedActive,
+                        bool accelActive,
+                        bool healthActive);
+
+    
 public:
     int runGame();
     uint8_t getCarType(int player_id);

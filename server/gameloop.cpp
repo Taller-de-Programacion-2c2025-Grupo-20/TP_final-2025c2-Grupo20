@@ -67,11 +67,25 @@ void Gameloop::loadWalls() {
     std::cout << "Termino carga de paredes\n";
 }
 
+YAML::Node Gameloop::findRaceGroup(int race_number) {
+    std::string target = std::to_string(race_number);
+
+    for (const auto& layer : map_data["layers"]) {
+        if (layer["name"].as<std::string>() == target) {
+            return layer;
+        }
+    }
+
+    throw std::runtime_error("No existe el grupo de carrera " + target);
+}
+
 void Gameloop::loadCheckpoints(int race_number) {
-    race_number = race_number + 1;
-    for (const auto& layer: map_data["layers"]) {
-        if (layer["name"].as<std::string>() == "Checkpoints") {
-            for (const auto& obj: layer["objects"]) {
+    YAML::Node grupo = findRaceGroup(race_number);
+
+    for (const auto& sublayer : grupo["layers"]) {
+        if (sublayer["name"].as<std::string>() == "Checkpoints") {
+
+            for (const auto& obj : sublayer["objects"]) {
                 float x_pixels = obj["x"].as<float>();
                 float y_pixels = obj["y"].as<float>();
                 float width_pixels = obj["width"].as<float>();
@@ -83,9 +97,8 @@ void Gameloop::loadCheckpoints(int race_number) {
                 float height_meters = (height_pixels / 2) / PIXELS_PER_METER;
 
                 int checkpoint_id = -1;
-
                 if (obj["properties"]) {
-                    for (const auto& prop : obj["properties"]) {
+                    for (const auto& prop: obj["properties"]) {
                         if (prop["name"].as<std::string>() == "ID") {
                             checkpoint_id = prop["value"].as<int>();
                             break;
@@ -94,20 +107,27 @@ void Gameloop::loadCheckpoints(int race_number) {
                 }
 
                 world_checkpoints.emplace(
-                        checkpoint_id, std::make_unique<Checkpoint>(world, b2Vec2(x_meters, y_meters),
-                                                         width_meters, height_meters, checkpoint_id));
+                    checkpoint_id,
+                    std::make_unique<Checkpoint>(
+                        world, b2Vec2(x_meters, y_meters),
+                        width_meters, height_meters, checkpoint_id
+                    )
+                );
             }
         }
     }
 
-    std::cout << "Termino carga de checkpoints\n";
+    std::cout << "Termino carga de checkpoints para carrera "
+              << race_number << "\n";
 }
 
 void Gameloop::loadInitialPos(int race_number) {
-    race_number = race_number + 1;
-    for (const auto& layer: map_data["layers"]) {
-        if (layer["name"].as<std::string>() == "PosIniciales") {
-            for (const auto& obj: layer["objects"]) {
+    YAML::Node grupo = findRaceGroup(race_number);
+
+    for (const auto& sublayer : grupo["layers"]) {
+        if (sublayer["name"].as<std::string>() == "PosIniciales") {
+
+            for (const auto& obj : sublayer["objects"]) {
                 float x_pixels = obj["x"].as<float>();
                 float y_pixels = obj["y"].as<float>();
                 float width_pixels = obj["width"].as<float>();
@@ -116,12 +136,13 @@ void Gameloop::loadInitialPos(int race_number) {
                 float x_meters = (x_pixels + width_pixels / 2) / PIXELS_PER_METER;
                 float y_meters = (y_pixels + height_pixels / 2) / PIXELS_PER_METER;
 
-                cars_inital_pos.push_back(PlayerPos(x_meters, y_meters));
+                cars_inital_pos.emplace_back(x_meters, y_meters);
             }
         }
     }
 
-    std::cout << "Termino carga de posiciones iniciales\n";
+    std::cout << "Termino carga de posiciones iniciales para carrera "
+              << race_number << "\n";
 }
 
 void Gameloop::loadMapData(const std::string& map_name) {
@@ -132,8 +153,8 @@ void Gameloop::loadMapData(const std::string& map_name) {
     map_data = YAML::LoadFile(std::string(MAPS_DATA_PATH) + map_name);
 
     loadWalls();
-    loadCheckpoints(0);
-    loadInitialPos(0);
+    loadCheckpoints(1);
+    loadInitialPos(1);
 
     std::cout << "Gameloop: Mapa " << map_name << " cargado correctamente.\n";
 }
@@ -203,7 +224,7 @@ GameStateDTO Gameloop::getCurrentGameState(const float elapsed_time) {
 
     current_state.elapsed_time = elapsed_time;
 
-
+    
 
     return current_state;
 }

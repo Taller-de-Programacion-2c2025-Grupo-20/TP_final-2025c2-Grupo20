@@ -100,6 +100,8 @@ private:
 
     bool queue_closed = false;
 
+    YAML::Node findRaceGroup(int race_number);
+
 public:
     void addCar(uint8_t client_id, const CarType& car_type);
     void loadMapData(const std::string& map_name);

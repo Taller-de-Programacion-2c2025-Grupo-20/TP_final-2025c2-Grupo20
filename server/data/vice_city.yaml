@@ -3133,798 +3133,831 @@ layers:
         width: 74.6666666666661
         x: 4170
         'y': 3879.33333333333
-  - name: PosIniciales
-    objects:
-      - height: 0
-        id: 391
-        name: ''
-        rotation: 0
-        type: ''
+  - name: 1
+    layers:
+      - name: PosIniciales
+        objects:
+          - height: 0
+            id: 525
+            name: ''
+            rotation: 0
+            type: ''
+            visible: true
+            width: 0
+            x: 2310.66666666667
+            'y': 2110.66666666667
+          - height: 0
+            id: 526
+            name: ''
+            rotation: 0
+            type: ''
+            visible: true
+            width: 0
+            x: 2358
+            'y': 2110.66666666667
+          - height: 0
+            id: 527
+            name: ''
+            rotation: 0
+            type: ''
+            visible: true
+            width: 0
+            x: 2310.66666666667
+            'y': 2176
+          - height: 0
+            id: 528
+            name: ''
+            rotation: 0
+            type: ''
+            visible: true
+            width: 0
+            x: 2359.33333333333
+            'y': 2176.66666666667
+          - height: 0
+            id: 529
+            name: ''
+            rotation: 0
+            type: ''
+            visible: true
+            width: 0
+            x: 2310
+            'y': 2240
+          - height: 0
+            id: 530
+            name: ''
+            rotation: 0
+            type: ''
+            visible: true
+            width: 0
+            x: 2359.33333333333
+            'y': 2240.66666666667
+          - height: 0
+            id: 531
+            name: ''
+            rotation: 0
+            type: ''
+            visible: true
+            width: 0
+            x: 2311.33333333333
+            'y': 2305.33333333333
+          - height: 0
+            id: 532
+            name: ''
+            rotation: 0
+            type: ''
+            visible: true
+            width: 0
+            x: 2359.33333333333
+            'y': 2305.33333333333
+      - name: Checkpoints
+        objects:
+          - height: 31
+            id: 533
+            name: ''
+            properties:
+              - name: ID
+                type: int
+                value: 0
+            rotation: 0
+            type: ''
+            visible: true
+            width: 96.5
+            x: 2287
+            'y': 2400
+          - height: 31
+            id: 536
+            name: ''
+            properties:
+              - name: ID
+                type: int
+                value: 1
+            rotation: 0
+            type: ''
+            visible: true
+            width: 96.5
+            x: 2289.75
+            'y': 4174.5
+          - height: 100.696969696969
+            id: 537
+            name: ''
+            properties:
+              - name: ID
+                type: int
+                value: 2
+            rotation: 0
+            type: ''
+            visible: true
+            width: 35.893939393939
+            x: 3254.7803030303
+            'y': 4205.71212121212
+          - height: 37.0606363636366
+            id: 538
+            name: ''
+            properties:
+              - name: ID
+                type: int
+                value: 3
+            rotation: 0
+            type: ''
+            visible: true
+            width: 172.257536363636
+            x: 4312.35608030303
+            'y': 3749.6515
+          - height: 103.727266666667
+            id: 539
+            name: ''
+            properties:
+              - name: ID
+                type: int
+                value: 4
+            rotation: 0
+            type: ''
+            visible: true
+            width: 48.0155757575753
+            x: 3868.41645454545
+            'y': 2699.65151818182
+          - height: 146.151242424242
+            id: 540
+            name: ''
+            properties:
+              - name: ID
+                type: int
+                value: 5
+            rotation: 0
+            type: ''
+            visible: true
+            width: 48.0156
+            x: 3400.23462424242
+            'y': 3048.1365
+          - height: 146.151
+            id: 541
+            name: ''
+            properties:
+              - name: ID
+                type: int
+                value: 6
+            rotation: 0
+            type: ''
+            visible: true
+            width: 48.0156
+            x: 1821.44674545455
+            'y': 3042.07601515152
+          - height: 24.9388787878785
+            id: 542
+            name: ''
+            properties:
+              - name: ID
+                type: int
+                value: 7
+            rotation: 0
+            type: ''
+            visible: true
+            width: 90.4398424242423
+            x: 879.022503030303
+            'y': 3490.56086363636
+          - height: 24.9389
+            id: 543
+            name: ''
+            properties:
+              - name: ID
+                type: int
+                value: 8
+            rotation: 0
+            type: ''
+            visible: true
+            width: 90.4398
+            x: 442.658887878788
+            'y': 4090.5608530303
+          - height: 70.3934454545451
+            id: 544
+            name: ''
+            properties:
+              - name: ID
+                type: int
+                value: 9
+            rotation: 0
+            type: ''
+            visible: true
+            width: 35.8943454545456
+            x: 1360.84070606061
+            'y': 4108.74267121212
+          - height: 70.3934
+            id: 545
+            name: ''
+            properties:
+              - name: ID
+                type: int
+                value: 10
+            rotation: 0
+            type: ''
+            visible: true
+            width: 35.8943
+            x: 2033.56800151515
+            'y': 3552.68208787879
+          - height: 70.3934
+            id: 546
+            name: ''
+            properties:
+              - name: ID
+                type: int
+                value: 11
+            rotation: 0
+            type: ''
+            visible: true
+            width: 35.8943
+            x: 2706.29527424242
+            'y': 3949.65178484849
+          - height: 34.0297636363634
+            id: 547
+            name: ''
+            properties:
+              - name: ID
+                type: int
+                value: 12
+            rotation: 0
+            type: ''
+            visible: true
+            width: 81.3488454545454
+            x: 3333.56800151515
+            'y': 3525.40936060606
+          - height: 34.0298
+            id: 548
+            name: ''
+            properties:
+              - name: ID
+                type: int
+                value: 13
+            rotation: 0
+            type: ''
+            visible: true
+            width: 81.3488
+            x: 3768.41650909091
+            'y': 3564.80328181818
+          - height: 73.4237393939393
+            id: 549
+            name: ''
+            properties:
+              - name: ID
+                type: int
+                value: 14
+            rotation: 0
+            type: ''
+            visible: true
+            width: 41.9548606060612
+            x: 3474.47711515152
+            'y': 3946.62146363636
+        opacity: 1
+        type: objectgroup
         visible: true
-        width: 0
-        x: 3813.5
-        'y': 807.5
-      - height: 0
-        id: 392
-        name: ''
-        rotation: 0
-        type: ''
-        visible: true
-        width: 0
-        x: 3849.66666666667
-        'y': 808
-      - height: 0
-        id: 393
-        name: ''
-        rotation: 0
-        type: ''
-        visible: true
-        width: 0
-        x: 3813.33333333333
-        'y': 872.333333333333
-      - height: 0
-        id: 394
-        name: ''
-        rotation: 0
-        type: ''
-        visible: true
-        width: 0
-        x: 3849.66666666667
-        'y': 871.333333333333
-      - height: 0
-        id: 395
-        name: ''
-        rotation: 0
-        type: ''
-        visible: true
-        width: 0
-        x: 3813
-        'y': 936.333333333333
-      - height: 0
-        id: 396
-        name: ''
-        rotation: 0
-        type: ''
-        visible: true
-        width: 0
-        x: 3849.66666666667
-        'y': 935.666666666667
-      - height: 0
-        id: 397
-        name: ''
-        rotation: 0
-        type: ''
-        visible: true
-        width: 0
-        x: 3813.33333333333
-        'y': 1000.33333333333
-      - height: 0
-        id: 398
-        name: ''
-        properties:
-          - name: ID
-            type: int
-            value: 0
-        rotation: 0
-        type: ''
-        visible: true
-        width: 0
-        x: 3850
-        'y': 1000
-  - name: Checkpoints
-    objects:
-      - height: 22
-        id: 415
-        name: ''
-        properties:
-          - name: ID
-            type: int
-            value: 0
-        rotation: 0
-        type: ''
-        visible: true
-        width: 69
-        x: 3797
-        'y': 1045
-      - height: 96
-        id: 420
-        name: ''
-        properties:
-          - name: ID
-            type: int
-            value: 1
-        rotation: 0
-        type: ''
-        visible: true
-        width: 27
-        x: 4275.5
-        'y': 1100
-      - height: 22
-        id: 423
-        name: ''
-        properties:
-          - name: ID
-            type: int
-            value: 2
-        rotation: 0
-        type: ''
-        visible: true
-        width: 69
-        x: 4311.5
-        'y': 1743
-      - height: 22
-        id: 425
-        name: ''
-        properties:
-          - name: ID
-            type: int
-            value: 3
-        rotation: 0
-        type: ''
-        visible: true
-        width: 69
-        x: 4194.5
-        'y': 1780
-      - height: 22
-        id: 426
-        name: ''
-        properties:
-          - name: ID
-            type: int
-            value: 4
-        rotation: 0
-        type: ''
-        visible: true
-        width: 69
-        x: 4312.5
-        'y': 1367
-      - height: 91.3333333333333
-        id: 427
-        name: ''
-        properties:
-          - name: ID
-            type: int
-            value: 5
-        rotation: 0
-        type: ''
-        visible: true
-        width: 30.333333333333
-        x: 4125.5
-        'y': 1097
-      - height: 106
-        id: 428
-        name: ''
-        properties:
-          - name: ID
-            type: int
-            value: 6
-        rotation: 0
-        type: ''
-        visible: true
-        width: 39.6666666666665
-        x: 3314.83333333333
-        'y': 1095.66666666667
-      - height: 106
-        id: 429
-        name: ''
-        properties:
-          - name: ID
-            type: int
-            value: 7
-        rotation: 0
-        type: ''
-        visible: true
-        width: 39.6667
-        x: 1984.16665
-        'y': 1089
-      - height: 34
-        id: 430
-        name: ''
-        properties:
-          - name: ID
-            type: int
-            value: 8
-        rotation: 0
-        type: ''
-        visible: true
-        width: 63.6667
-        x: 1757.49998333333
-        'y': 1219
-      - height: 34
-        id: 434
-        name: ''
-        properties:
-          - name: ID
-            type: int
-            value: 9
-        rotation: 0
-        type: ''
-        visible: true
-        width: 63.6667
-        x: 1762.16665
-        'y': 1751
-      - height: 58
-        id: 435
-        name: ''
-        properties:
-          - name: ID
-            type: int
-            value: 10
-        rotation: 0
-        type: ''
-        visible: true
-        width: 31.6667
-        x: 1222.16665
-        'y': 1811
-      - height: 21
-        id: 436
-        name: ''
-        properties:
-          - name: ID
-            type: int
-            value: 11
-        rotation: 0
-        type: ''
-        visible: true
-        width: 73.6667
-        x: 1075.16665
-        'y': 1544
-      - height: 21
-        id: 437
-        name: ''
-        properties:
-          - name: ID
-            type: int
-            value: 12
-        rotation: 0
-        type: ''
-        visible: true
-        width: 73.6667
-        x: 1072.25755909091
-        'y': 974.348484848485
-      - height: 73
-        id: 438
-        name: ''
-        properties:
-          - name: ID
-            type: int
-            value: 13
-        rotation: 0
-        type: ''
-        visible: true
-        width: 36.6667
-        x: 954.16665
-        'y': 633.5
-      - height: 21
-        id: 439
-        name: ''
-        properties:
-          - name: ID
-            type: int
-            value: 14
-        rotation: 0
-        type: ''
-        visible: true
-        width: 76.6667
-        x: 169.66665
-        'y': 519.5
-      - height: 69
-        id: 440
-        name: ''
-        properties:
-          - name: ID
-            type: int
-            value: 15
-        rotation: 0
-        type: ''
-        visible: true
-        width: 26.6667
-        x: 325.66665
-        'y': 195.5
-      - height: 69
-        id: 441
-        name: ''
-        properties:
-          - name: ID
-            type: int
-            value: 16
-        rotation: 0
-        type: ''
-        visible: true
-        width: 26.6667
-        x: 1080.66665
-        'y': 197.5
-      - height: 29
-        id: 442
-        name: ''
-        properties:
-          - name: ID
-            type: int
-            value: 17
-        rotation: 0
-        type: ''
-        visible: true
-        width: 74.6667
-        x: 1384.66665
-        'y': 335.5
-      - height: 65
-        id: 443
-        name: ''
-        properties:
-          - name: ID
-            type: int
-            value: 18
-        rotation: 0
-        type: ''
-        visible: true
-        width: 32.6667
-        x: 1900.66665
-        'y': 401.5
-      - height: 11
-        id: 444
-        name: ''
-        properties:
-          - name: ID
-            type: int
-            value: 19
-        rotation: 0
-        type: ''
-        visible: true
-        width: 38.6667000000002
-        x: 2083.66665
-        'y': 215.5
-      - height: 11
-        id: 445
-        name: ''
-        properties:
-          - name: ID
-            type: int
-            value: 20
-        rotation: 0
-        type: ''
-        visible: true
-        width: 38.6667
-        x: 1659.33331666667
-        'y': 289.166666666667
-      - height: 16.3333333333334
-        id: 446
-        name: ''
-        properties:
-          - name: ID
-            type: int
-            value: 21
-        rotation: 0
-        type: ''
-        visible: true
-        width: 76.0000333333332
-        x: 1752.66665
-        'y': 665.166666666667
-      - height: 16.3333
-        id: 447
-        name: ''
-        properties:
-          - name: ID
-            type: int
-            value: 22
-        rotation: 0
-        type: ''
-        visible: true
-        width: 76
-        x: 1756.66666666667
-        'y': 1315.83335
-      - height: 16.3333
-        id: 448
-        name: ''
-        properties:
-          - name: ID
-            type: int
-            value: 23
-        rotation: 0
-        type: ''
-        visible: true
-        width: 76
-        x: 1753.33333333333
-        'y': 1643.16668333333
-      - height: 72.3333
-        id: 449
-        name: ''
-        properties:
-          - name: ID
-            type: int
-            value: 24
-        rotation: 0
-        type: ''
-        visible: true
-        width: 26
-        x: 2125
-        'y': 1803.83335
-      - height: 22.3332999999998
-        id: 450
-        name: ''
-        properties:
-          - name: ID
-            type: int
-            value: 25
-        rotation: 0
-        type: ''
-        visible: true
-        width: 112
-        x: 2279
-        'y': 2113.83335
-      - height: 22.3333
-        id: 451
-        name: ''
-        properties:
-          - name: ID
-            type: int
-            value: 26
-        rotation: 0
-        type: ''
-        visible: true
-        width: 112
-        x: 2279
-        'y': 2589.83335
-      - height: 100.999966666667
-        id: 452
-        name: ''
-        properties:
-          - name: ID
-            type: int
-            value: 27
-        rotation: 0
-        type: ''
-        visible: true
-        width: 32
-        x: 2058.66666666667
-        'y': 3070.16668333333
-      - height: 101
-        id: 454
-        name: ''
-        properties:
-          - name: ID
-            type: int
-            value: 28
-        rotation: 0
-        type: ''
-        visible: true
-        width: 32
-        x: 1098
-        'y': 3067.5
-      - height: 35
-        id: 455
-        name: ''
-        properties:
-          - name: ID
-            type: int
-            value: 29
-        rotation: 0
-        type: ''
-        visible: true
-        width: 74
-        x: 888
-        'y': 3459.5
-      - height: 35
-        id: 456
-        name: ''
-        properties:
-          - name: ID
-            type: int
-            value: 30
-        rotation: 0
-        type: ''
-        visible: true
-        width: 74
-        x: 889
-        'y': 3860.5
-      - height: 35
-        id: 457
-        name: ''
-        properties:
-          - name: ID
-            type: int
-            value: 31
-        rotation: 0
-        type: ''
-        visible: true
-        width: 74
-        x: 1051
-        'y': 4057.16666666667
-      - height: 69.666666666667
-        id: 458
-        name: ''
-        properties:
-          - name: ID
-            type: int
-            value: 32
-        rotation: 0
-        type: ''
-        visible: true
-        width: 24.6666666666666
-        x: 792.333333333333
-        'y': 4267.83333333333
-      - height: 15.6666999999998
-        id: 459
-        name: ''
-        properties:
-          - name: ID
-            type: int
-            value: 33
-        rotation: 0
-        type: ''
-        visible: true
-        width: 62.6667
-        x: 597.66665
-        'y': 4453.16665
-      - height: 15.6667
-        id: 460
-        name: ''
-        properties:
-          - name: ID
-            type: int
-            value: 34
-        rotation: 0
-        type: ''
-        visible: true
-        width: 62.6667
-        x: 88.66665
-        'y': 4476.16665
-      - height: 15.6667
-        id: 461
-        name: ''
-        properties:
-          - name: ID
-            type: int
-            value: 35
-        rotation: 0
-        type: ''
-        visible: true
-        width: 62.6667
-        x: 160.66665
-        'y': 4057.49998333333
-      - height: 71.6667000000002
-        id: 462
-        name: ''
-        properties:
-          - name: ID
-            type: int
-            value: 36
-        rotation: 0
-        type: ''
-        visible: true
-        width: 20.0000333333334
-        x: 309.999983333333
-        'y': 3652.16665
-      - height: 71.6667
-        id: 463
-        name: ''
-        properties:
-          - name: ID
-            type: int
-            value: 37
-        rotation: 0
-        type: ''
-        visible: true
-        width: 20
-        x: 1067.33333333333
-        'y': 3653.49998333333
-      - height: 71.6667
-        id: 464
-        name: ''
-        properties:
-          - name: ID
-            type: int
-            value: 38
-        rotation: 0
-        type: ''
-        visible: true
-        width: 20
-        x: 1571.81818181818
-        'y': 3655.07574090909
-      - height: 71.6667
-        id: 465
-        name: ''
-        properties:
-          - name: ID
-            type: int
-            value: 39
-        rotation: 0
-        type: ''
-        visible: true
-        width: 20
-        x: 2040.90909090909
-        'y': 3556.40907424242
-      - height: 71.6667
-        id: 466
-        name: ''
-        properties:
-          - name: ID
-            type: int
-            value: 40
-        rotation: 0
-        type: ''
-        visible: true
-        width: 20
-        x: 2692
-        'y': 3554.16665
-      - height: 25.6667000000002
-        id: 467
-        name: ''
-        properties:
-          - name: ID
-            type: int
-            value: 41
-        rotation: 0
-        type: ''
-        visible: true
-        width: 67
-        x: 3342
-        'y': 3640.16665
-      - height: 65.060639393939
-        id: 468
-        name: ''
-        properties:
-          - name: ID
-            type: int
-            value: 42
-        rotation: 0
-        type: ''
-        visible: true
-        width: 27.6060606060605
-        x: 3260.43939393939
-        'y': 3950.80301363636
-      - height: 65.0606
-        id: 469
-        name: ''
-        properties:
-          - name: ID
-            type: int
-            value: 43
-        rotation: 0
-        type: ''
-        visible: true
-        width: 27.6061
-        x: 2677.10604090909
-        'y': 3955.34848787879
-      - height: 22.6363575757573
-        id: 470
-        name: ''
-        properties:
-          - name: ID
-            type: int
-            value: 44
-        rotation: 0
-        type: ''
-        visible: true
-        width: 63.969736363636
-        x: 2592.25755606061
-        'y': 3529.28788181818
-      - height: 68.0909454545455
-        id: 471
-        name: ''
-        properties:
-          - name: ID
-            type: int
-            value: 45
-        rotation: 0
-        type: ''
-        visible: true
-        width: 30.6363666666666
-        x: 2977.95454393939
-        'y': 3263.46967878788
-      - height: 68.0909
-        id: 472
-        name: ''
-        properties:
-          - name: ID
-            type: int
-            value: 46
-        rotation: 0
-        type: ''
-        visible: true
-        width: 30.6364
-        x: 3730.13634545455
-        'y': 3262.9242469697
-      - height: 40.8181727272731
-        id: 473
-        name: ''
-        properties:
-          - name: ID
-            type: int
-            value: 47
-        rotation: 0
-        type: ''
-        visible: true
-        width: 70.0303393939394
-        x: 3778.62119393939
-        'y': 3696.25758030303
-      - height: 24.8181999999997
-        id: 474
-        name: ''
-        properties:
-          - name: ID
-            type: int
-            value: 48
-        rotation: 0
-        type: ''
-        visible: true
-        width: 42.5302999999999
-        x: 3810.43939545455
-        'y': 4085.65150606061
-      - height: 100.8182
-        id: 475
-        name: ''
-        properties:
-          - name: ID
-            type: int
-            value: 49
-        rotation: 0
-        type: ''
-        visible: true
-        width: 29.5302999999999
-        x: 3902.73485
-        'y': 4202.5909
-      - height: 26.8180000000002
-        id: 476
-        name: ''
-        properties:
-          - name: ID
-            type: int
-            value: 50
-        rotation: 0
-        type: ''
-        visible: true
-        width: 159.5303
-        x: 4326.23485
-        'y': 4207.591
-      - height: 26.818
-        id: 477
-        name: ''
-        properties:
-          - name: ID
-            type: int
-            value: 51
-        rotation: 0
-        type: ''
-        visible: true
-        width: 159.53
-        x: 4326.235
-        'y': 3753.591
-      - height: 26.818
-        id: 478
-        name: ''
-        properties:
-          - name: ID
-            type: int
-            value: 52
-        rotation: 0
-        type: ''
-        visible: true
-        width: 159.53
-        x: 4330.235
-        'y': 2881.591
-      - height: 17.8180000000002
-        id: 479
-        name: ''
-        properties:
-          - name: ID
-            type: int
-            value: 53
-        rotation: 0
-        type: ''
-        visible: true
-        width: 103.53
-        x: 3964.235
-        'y': 2533.591
-      - height: 17.818
-        id: 480
-        name: ''
-        properties:
-          - name: ID
-            type: int
-            value: 54
-        rotation: 0
-        type: ''
-        visible: true
-        width: 103.53
-        x: 3957.56833333333
-        'y': 1735.091
+        x: 0
+        'y': 0
+  - name: 2
+    layers:
+      - name: Checkpoints
+        objects:
+          - height: 65
+            id: 507
+            name: ''
+            properties:
+              - name: ID
+                type: int
+                value: 0
+            rotation: 0
+            type: ''
+            visible: true
+            width: 22
+            x: 624
+            'y': 639
+          - height: 25
+            id: 510
+            name: ''
+            properties:
+              - name: ID
+                type: int
+                value: 1
+            rotation: 0
+            type: ''
+            visible: true
+            width: 72
+            x: 1385
+            'y': 315.5
+          - height: 25
+            id: 511
+            name: ''
+            properties:
+              - name: ID
+                type: int
+                value: 2
+            rotation: 0
+            type: ''
+            visible: true
+            width: 72
+            x: 170
+            'y': 493.5
+          - height: 25
+            id: 512
+            name: ''
+            properties:
+              - name: ID
+                type: int
+                value: 3
+            rotation: 0
+            type: ''
+            visible: true
+            width: 72
+            x: 1076
+            'y': 891.5
+          - height: 25
+            id: 513
+            name: ''
+            properties:
+              - name: ID
+                type: int
+                value: 4
+            rotation: 0
+            type: ''
+            visible: true
+            width: 72
+            x: 1073.09090909091
+            'y': 1535.98484848485
+          - height: 61.3636363636363
+            id: 514
+            name: ''
+            properties:
+              - name: ID
+                type: int
+                value: 5
+            rotation: 0
+            type: ''
+            visible: true
+            width: 47.7575757575758
+            x: 1912.48484848485
+            'y': 1811.74242424242
+          - height: 28.0302666666666
+            id: 515
+            name: ''
+            properties:
+              - name: ID
+                type: int
+                value: 6
+            rotation: 0
+            type: ''
+            visible: true
+            width: 99.2727515151514
+            x: 2288.24241212121
+            'y': 2572.3485030303
+          - height: 67.4242393939394
+            id: 516
+            name: ''
+            properties:
+              - name: ID
+                type: int
+                value: 8
+            rotation: 0
+            type: ''
+            visible: true
+            width: 56.8485575757575
+            x: 968.545418181819
+            'y': 4264.77272878788
+          - height: 28.0303
+            id: 517
+            name: ''
+            properties:
+              - name: ID
+                type: int
+                value: 7
+            rotation: 0
+            type: ''
+            visible: true
+            width: 99.2728
+            x: 2277.63632727273
+            'y': 4313.25757727273
+          - height: 67.4242
+            id: 518
+            name: ''
+            properties:
+              - name: ID
+                type: int
+                value: 9
+            rotation: 0
+            type: ''
+            visible: true
+            width: 56.8486
+            x: 241.27266969697
+            'y': 3651.13638484849
+          - height: 67.4242
+            id: 519
+            name: ''
+            properties:
+              - name: ID
+                type: int
+                value: 10
+            rotation: 0
+            type: ''
+            visible: true
+            width: 56.8486
+            x: 174.606003030303
+            'y': 4496.59093030303
+          - height: 67.4242
+            id: 520
+            name: ''
+            properties:
+              - name: ID
+                type: int
+                value: 11
+            rotation: 0
+            type: ''
+            visible: true
+            width: 56.8486
+            x: 768.545396969697
+            'y': 3654.16668787879
+          - height: 67.4242
+            id: 521
+            name: ''
+            properties:
+              - name: ID
+                type: int
+                value: 12
+            rotation: 0
+            type: ''
+            visible: true
+            width: 56.8486
+            x: 1704.90903333333
+            'y': 3557.19699090909
+          - height: 67.4242
+            id: 522
+            name: ''
+            properties:
+              - name: ID
+                type: int
+                value: 13
+            rotation: 0
+            type: ''
+            visible: true
+            width: 56.8486
+            x: 1853.39388181818
+            'y': 4111.74244545455
+          - height: 45.4242000000004
+            id: 523
+            name: ''
+            properties:
+              - name: ID
+                type: int
+                value: 14
+            rotation: 0
+            type: ''
+            visible: true
+            width: 72.8486
+            x: 1273.5757
+            'y': 4404.2879
+      - name: PosIniciales
+        objects:
+          - height: 0
+            id: 499
+            name: ''
+            rotation: 0
+            type: ''
+            visible: true
+            width: 0
+            x: 190.5
+            'y': 271.75
+          - height: 0
+            id: 500
+            name: ''
+            rotation: 0
+            type: ''
+            visible: true
+            width: 0
+            x: 224
+            'y': 272.25
+          - height: 0
+            id: 501
+            name: ''
+            rotation: 0
+            type: ''
+            visible: true
+            width: 0
+            x: 190
+            'y': 336.25
+          - height: 0
+            id: 502
+            name: ''
+            rotation: 0
+            type: ''
+            visible: true
+            width: 0
+            x: 224.25
+            'y': 335.5
+          - height: 0
+            id: 503
+            name: ''
+            rotation: 0
+            type: ''
+            visible: true
+            width: 0
+            x: 189.75
+            'y': 400.5
+          - height: 0
+            id: 504
+            name: ''
+            rotation: 0
+            type: ''
+            visible: true
+            width: 0
+            x: 224.5
+            'y': 399.75
+          - height: 0
+            id: 505
+            name: ''
+            rotation: 0
+            type: ''
+            visible: true
+            width: 0
+            x: 189.5
+            'y': 465.25
+          - height: 0
+            id: 506
+            name: ''
+            rotation: 0
+            type: ''
+            visible: true
+            width: 0
+            x: 224
+            'y': 465.25
+  - name: 3
+    layers:
+      - name: PosIniciales
+        objects:
+          - height: 0
+            id: 391
+            name: ''
+            rotation: 0
+            type: ''
+            visible: true
+            width: 0
+            x: 3813.5
+            'y': 807.5
+          - height: 0
+            id: 392
+            name: ''
+            rotation: 0
+            type: ''
+            visible: true
+            width: 0
+            x: 3849.66666666667
+            'y': 808
+          - height: 0
+            id: 393
+            name: ''
+            rotation: 0
+            type: ''
+            visible: true
+            width: 0
+            x: 3813.33333333333
+            'y': 872.333333333333
+          - height: 0
+            id: 394
+            name: ''
+            rotation: 0
+            type: ''
+            visible: true
+            width: 0
+            x: 3849.66666666667
+            'y': 871.333333333333
+          - height: 0
+            id: 395
+            name: ''
+            rotation: 0
+            type: ''
+            visible: true
+            width: 0
+            x: 3813
+            'y': 936.333333333333
+          - height: 0
+            id: 396
+            name: ''
+            rotation: 0
+            type: ''
+            visible: true
+            width: 0
+            x: 3849.66666666667
+            'y': 935.666666666667
+          - height: 0
+            id: 397
+            name: ''
+            rotation: 0
+            type: ''
+            visible: true
+            width: 0
+            x: 3813.33333333333
+            'y': 1000.33333333333
+          - height: 0
+            id: 398
+            name: ''
+            properties:
+              - name: ID
+                type: int
+                value: 0
+            rotation: 0
+            type: ''
+            visible: true
+            width: 0
+            x: 3850
+            'y': 1000
+      - name: Checkpoints
+        objects:
+          - height: 21
+            id: 481
+            name: ''
+            properties:
+              - name: ID
+                type: int
+                value: 0
+            rotation: 0
+            type: ''
+            visible: true
+            width: 75
+            x: 3794
+            'y': 1034
+          - height: 21
+            id: 484
+            name: ''
+            properties:
+              - name: ID
+                type: int
+                value: 1
+            rotation: 0
+            type: ''
+            visible: true
+            width: 75
+            x: 3650.5
+            'y': 1760.16666666667
+          - height: 98.333333333333
+            id: 485
+            name: ''
+            properties:
+              - name: ID
+                type: int
+                value: 2
+            rotation: 0
+            type: ''
+            visible: true
+            width: 24.3333333333335
+            x: 3733.16666666667
+            'y': 2701.5
+          - height: 18.3333
+            id: 486
+            name: ''
+            properties:
+              - name: ID
+                type: int
+                value: 3
+            rotation: 0
+            type: ''
+            visible: true
+            width: 106.999966666667
+            x: 3962.50001666667
+            'y': 1393.50001666667
+          - height: 18.3333
+            id: 487
+            name: ''
+            properties:
+              - name: ID
+                type: int
+                value: 4
+            rotation: 0
+            type: ''
+            visible: true
+            width: 107
+            x: 4291.95454545455
+            'y': 1399.92425909091
+          - height: 69.8484515151517
+            id: 488
+            name: ''
+            properties:
+              - name: ID
+                type: int
+                value: 5
+            rotation: 0
+            type: ''
+            visible: true
+            width: 31.2424242424249
+            x: 4270.74242424242
+            'y': 1845.37880454545
+          - height: 103.181833333333
+            id: 489
+            name: ''
+            properties:
+              - name: ID
+                type: int
+                value: 6
+            rotation: 0
+            type: ''
+            visible: true
+            width: 28.2120969696971
+            x: 4172.25758787879
+            'y': 1092.34847727273
+          - height: 103.182
+            id: 490
+            name: ''
+            properties:
+              - name: ID
+                type: int
+                value: 7
+            rotation: 0
+            type: ''
+            visible: true
+            width: 28.2121
+            x: 3749.89395
+            'y': 1528.409
+          - height: 103.182
+            id: 491
+            name: ''
+            properties:
+              - name: ID
+                type: int
+                value: 8
+            rotation: 0
+            type: ''
+            visible: true
+            width: 28.2121
+            x: 2093.89395
+            'y': 1340.409
+          - height: 23.182
+            id: 492
+            name: ''
+            properties:
+              - name: ID
+                type: int
+                value: 9
+            rotation: 0
+            type: ''
+            visible: true
+            width: 88.2121
+            x: 1749.89395
+            'y': 692.409
+          - height: 63.182
+            id: 493
+            name: ''
+            properties:
+              - name: ID
+                type: int
+                value: 10
+            rotation: 0
+            type: ''
+            visible: true
+            width: 60.2121
+            x: 1863.89395
+            'y': 132.409
+          - height: 63.182
+            id: 494
+            name: ''
+            properties:
+              - name: ID
+                type: int
+                value: 11
+            rotation: 0
+            type: ''
+            visible: true
+            width: 60.2121
+            x: 2597.89395
+            'y': 208.409
+          - height: 63.182
+            id: 495
+            name: ''
+            properties:
+              - name: ID
+                type: int
+                value: 12
+            rotation: 0
+            type: ''
+            visible: true
+            width: 60.2121
+            x: 2297.89395
+            'y': 644.409
+          - height: 63.182
+            id: 496
+            name: ''
+            properties:
+              - name: ID
+                type: int
+                value: 13
+            rotation: 0
+            type: ''
+            visible: true
+            width: 60.2121
+            x: 1757.89395
+            'y': 1428.409
+          - height: 47.1819999999998
+            id: 497
+            name: ''
+            properties:
+              - name: ID
+                type: int
+                value: 14
+            rotation: 0
+            type: ''
+            visible: true
+            width: 120.2121
+            x: 2277.89395
+            'y': 2440.409

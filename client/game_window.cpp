@@ -572,7 +572,7 @@ void GameWindow::drawGame(Renderer& renderer,
 {
     int previous_checkpoints_passed = 0;
     int cp_count = 0;
-
+    bool raceEndSoundPlayed = false;
     while (true){
 
         if (receiver.isServerDown()) {
@@ -692,6 +692,11 @@ void GameWindow::drawGame(Renderer& renderer,
         }
         }
 
+        if (me && previous_checkpoints_passed > cp_count && !raceEndSoundPlayed) {
+            soundManager.playRaceEnd();
+            raceEndSoundPlayed = true;
+        }
+
 
         if (static_cast<int>(last_state.elapsed_time) <= BUY_TIME_SECONDS) {
             drawMarket(renderer, market, viewW, viewH, speed_upgrades, accel_upgrades, health_upgrades);
@@ -711,7 +716,6 @@ void GameWindow::drawGame(Renderer& renderer,
             if (new_hp < hp) {
                     soundManager.playCrash();
                 }
-            }
             hp = new_hp;
 
             std::cout << "Checkpoint passed: " 

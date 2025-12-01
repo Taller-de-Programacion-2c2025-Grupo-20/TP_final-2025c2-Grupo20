@@ -12,8 +12,7 @@ SoundManager::SoundManager(SDL2pp::Mixer& mixer)
       skidChunk(DATA_PATH "/sounds/skid.wav"),
       crashChunk(DATA_PATH "/sounds/crash.wav"),
       bgMusic(DATA_PATH "/sounds/soundtrack.ogg"),
-      raceEndSound(DATA_PATH "/sounds/ending.ogg"),
-      deathSound(DATA_PATH "/sounds/death.ogg")
+      raceEndSound(DATA_PATH "/sounds/ending.ogg")
 {
     std::cout << "SoundManager cargado.\n";
     mixer.SetMusicVolume(MIX_MAX_VOLUME / 2);

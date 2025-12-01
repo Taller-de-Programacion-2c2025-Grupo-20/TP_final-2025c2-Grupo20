@@ -570,6 +570,11 @@ void GameWindow::drawGame(Renderer& renderer,
                          int& hp,
                         int& actual_pos, float& pos_x_m, float& pos_y_m, float& angle, SoundManager& soundManager)
 {
+    bool deathSoundPlayed    = false;
+    bool raceEndSoundPlayed  = false;
+    int previous_checkpoints_passed = 0;
+    int cp_count = 0;
+
     while (true){
 
         if (receiver.isServerDown()) {
@@ -706,12 +711,19 @@ void GameWindow::drawGame(Renderer& renderer,
             int new_hp = std::clamp<int>(static_cast<int>(me->health), 0, 999);
 
             if (new_hp < hp) {
-                soundManager.playCrash();
+                if (new_hp == 0 && !deathSoundPlayed) {
+                    soundManager.playDeath();
+                    deathSoundPlayed = true;
+                } else {
+                    soundManager.playCrash();
+                }
             }
             hp = new_hp;
+
+            std::cout << "Checkpoint passed: " 
+                      << static_cast<int>(me->checkpoints_passed) << "\n";
         }
 
-        std::cout << "Checkpoint passed: " << static_cast<int>(me->checkpoints_passed) << "\n";
 
         drawCheckpoint(renderer, checkpoint_flag, checkered_flag, last_state, srcRect, viewW,viewH);
 
@@ -725,8 +737,6 @@ void GameWindow::drawGame(Renderer& renderer,
                 angle = st.angle;
                 actual_pos = angle_to_frame(angle);
 
-                hp = std::clamp<int>(static_cast<int>(last_state.players[i].health), 0, 999);
-
                 const int car_cx_px = static_cast<int>(std::lround(pos_x_m * PPM));
                 const int car_cy_px = static_cast<int>(std::lround(pos_y_m * PPM));
 
@@ -738,6 +748,7 @@ void GameWindow::drawGame(Renderer& renderer,
 
                 srcRect.SetX(camX).SetY(camY);
             }
+
 
             const auto& st = last_state.players[i].state;
             pos_x_m = st.x;
@@ -788,8 +799,16 @@ void GameWindow::drawGame(Renderer& renderer,
 
         hudX += BOX_W + HUD_PAD;
 
-        int cp_count = (me ? me->checkpoints_passed : 0);
+        previous_checkpoints_passed = cp_count;
+
+        cp_count = (me ? me->checkpoints_passed : 0);
+        
         drawCheckpointCounter(renderer, hud, hudX, hudY, cp_count);
+
+        if (me && previous_checkpoints_passed > cp_count && !raceEndSoundPlayed) {
+            soundManager.playRaceEnd();
+            raceEndSoundPlayed = true;
+        }
 
         hudX += BOX_W + HUD_PAD; 
 

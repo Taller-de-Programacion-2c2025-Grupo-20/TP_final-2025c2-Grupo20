@@ -11,7 +11,9 @@ SoundManager::SoundManager(SDL2pp::Mixer& mixer)
       engineIdle(DATA_PATH "/sounds/1000 RPM.wav"),
       skidChunk(DATA_PATH "/sounds/skid.wav"),
       crashChunk(DATA_PATH "/sounds/crash.wav"),
-      bgMusic(DATA_PATH "/sounds/soundtrack.ogg") 
+      bgMusic(DATA_PATH "/sounds/soundtrack.ogg"),
+      raceEndSound(DATA_PATH "/sounds/ending.ogg"),
+      deathSound(DATA_PATH "/sounds/death.ogg")
 {
     std::cout << "SoundManager cargado.\n";
     mixer.SetMusicVolume(MIX_MAX_VOLUME / 2);
@@ -71,4 +73,28 @@ void SoundManager::updateBackgroundMusic(double elapsedSeconds) {
                       << e.GetSDLError() << std::endl;
         }
     }
+}
+
+void SoundManager::playDeath() {
+    stopEngineSound();
+
+    int ch = mixer.PlayChannel(-1, deathSound, 0);
+    if (ch < 0) {
+        std::cerr << "Error al reproducir death: "
+                  << Mix_GetError() << std::endl;
+    }
+}
+
+void SoundManager::playRaceEnd() {
+    stopBackgroundMusic();
+
+    int ch = mixer.PlayChannel(-1, raceEndSound, 0);
+    if (ch < 0) {
+        std::cerr << "Error al reproducir ending: "
+                  << Mix_GetError() << std::endl;
+    }
+}
+
+void SoundManager::stopBackgroundMusic() {
+    mixer.HaltMusic();
 }

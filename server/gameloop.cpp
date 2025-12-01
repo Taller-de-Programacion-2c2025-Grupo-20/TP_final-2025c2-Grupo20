@@ -225,7 +225,7 @@ GameStateDTO Gameloop::getCurrentGameState(const float elapsed_time) {
 
     current_state.elapsed_time = elapsed_time;
 
-    
+    current_state.is_running = 1;
 
     return current_state;
 }
@@ -484,6 +484,14 @@ std::chrono::_V2::steady_clock::time_point Gameloop::keepLoopRate(std::chrono::s
     return t1;
 }
 
+GameStateDTO Gameloop::gameEndedGamestate(){
+    GameStateDTO current_state;
+    current_state.car_count = 0;
+    current_state.elapsed_time = 0;
+    current_state.is_running = 0;
+    return current_state;
+}
+
 void Gameloop::run() {
 
     const double rate = 1.0 / 60.0;
@@ -535,6 +543,9 @@ void Gameloop::run() {
 
     std::cout << "Gameloop terminado.\n";
     logFinalResults();
+
+    //Termino la partida
+    clients_queues.broadcast(gameEndedGamestate());
 }
 
 void Gameloop::stop() {

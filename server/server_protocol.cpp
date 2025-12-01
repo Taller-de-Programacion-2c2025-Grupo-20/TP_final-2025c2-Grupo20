@@ -98,6 +98,7 @@ void ServerProtocol::send_game_state(const GameStateDTO& state) {
         
         buffer.push_back(player.checkpoints_passed);
     }
+    buffer.push_back(state.is_running);
 
     skt.sendall(buffer.data(), buffer.size());
 }

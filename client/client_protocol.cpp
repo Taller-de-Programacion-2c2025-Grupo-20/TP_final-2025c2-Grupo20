@@ -132,6 +132,8 @@ GameStateDTO ClientProtocol::receive_game_state_payload() {
         state_dto.players.push_back(player);
     }
     
+    state_dto.is_running = receiveUint8_t();
+
     return state_dto;
 }
 

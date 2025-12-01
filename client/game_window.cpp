@@ -601,6 +601,12 @@ void GameWindow::drawGame(Renderer& renderer,
 
         GameStateDTO gs = receiver.pollGameState();
         
+        if (gs.is_running == 0) {
+            std::cerr << "CLIENT: servidor desconectado, cerrando ventana SDL...\n";
+            soundManager.stopEngineSound();
+            break;
+        }
+
         if (!gs.players.empty()) {
             last_state = gs;
             have_state = true;

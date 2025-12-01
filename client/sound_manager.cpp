@@ -75,15 +75,6 @@ void SoundManager::updateBackgroundMusic(double elapsedSeconds) {
     }
 }
 
-void SoundManager::playDeath() {
-    stopEngineSound();
-
-    int ch = mixer.PlayChannel(-1, deathSound, 0);
-    if (ch < 0) {
-        std::cerr << "Error al reproducir death: "
-                  << Mix_GetError() << std::endl;
-    }
-}
 
 void SoundManager::playRaceEnd() {
     stopBackgroundMusic();

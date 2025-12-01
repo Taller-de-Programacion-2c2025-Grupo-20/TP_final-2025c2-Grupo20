@@ -570,8 +570,6 @@ void GameWindow::drawGame(Renderer& renderer,
                          int& hp,
                         int& actual_pos, float& pos_x_m, float& pos_y_m, float& angle, SoundManager& soundManager)
 {
-    bool deathSoundPlayed    = false;
-    bool raceEndSoundPlayed  = false;
     int previous_checkpoints_passed = 0;
     int cp_count = 0;
 
@@ -711,10 +709,6 @@ void GameWindow::drawGame(Renderer& renderer,
             int new_hp = std::clamp<int>(static_cast<int>(me->health), 0, 999);
 
             if (new_hp < hp) {
-                if (new_hp == 0 && !deathSoundPlayed) {
-                    soundManager.playDeath();
-                    deathSoundPlayed = true;
-                } else {
                     soundManager.playCrash();
                 }
             }
@@ -805,11 +799,6 @@ void GameWindow::drawGame(Renderer& renderer,
         
         drawCheckpointCounter(renderer, hud, hudX, hudY, cp_count);
 
-        if (me && previous_checkpoints_passed > cp_count && !raceEndSoundPlayed) {
-            soundManager.playRaceEnd();
-            raceEndSoundPlayed = true;
-        }
-
         hudX += BOX_W + HUD_PAD; 
 
         drawUpgradesBar(renderer,
@@ -842,6 +831,8 @@ void GameWindow::drawGame(Renderer& renderer,
         ++it;
 
     }
+
+    soundManager.playRaceEnd();
 }
 
 int GameWindow::runGame() {

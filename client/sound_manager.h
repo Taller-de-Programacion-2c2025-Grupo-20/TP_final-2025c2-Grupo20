@@ -17,7 +17,6 @@ public:
     void playCrash();
     void updateBackgroundMusic(double elapsedSeconds);
 
-    void playDeath();
     void playRaceEnd();
     void stopBackgroundMusic();
 
@@ -43,7 +42,6 @@ private:
     bool bgMusicStarted = false;
 
     SDL2pp::Chunk raceEndSound;
-    SDL2pp::Chunk deathSound;
 };
 
 #endif

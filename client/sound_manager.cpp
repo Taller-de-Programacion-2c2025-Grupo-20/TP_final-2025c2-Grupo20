@@ -88,7 +88,7 @@ void SoundManager::stopBackgroundMusic() {
 
 
 void SoundManager::updateSkidSound(bool braking, float speed_kmh) {
-    const float MIN_SKID_SPEED = 70.0f; // umbral para que suene
+    const float MIN_SKID_SPEED = 40.0f; // umbral para que suene
 
     bool shouldSkid = braking && (speed_kmh > MIN_SKID_SPEED);
 

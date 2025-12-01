@@ -596,6 +596,7 @@ void GameWindow::drawGame(Renderer& renderer,
         if (receiver.isServerDown()) {
             std::cerr << "CLIENT: servidor desconectado, cerrando ventana SDL...\n";
             soundManager.stopEngineSound();
+            soundManager.stopSkid();    
             break;
         }
 
@@ -659,6 +660,10 @@ void GameWindow::drawGame(Renderer& renderer,
                     }
                 }
 
+                if (cmd.key == InputKey::Down) {
+                    braking = (cmd.action == InputAction::Press);
+                }
+
                 if (cmd.key == InputKey::Quit && cmd.action == InputAction::Press) {
                     exit = true;
                     break;
@@ -668,6 +673,7 @@ void GameWindow::drawGame(Renderer& renderer,
 
         if (exit){
             soundManager.stopEngineSound();
+            soundManager.stopSkid();    
             break;
         }
 
@@ -694,6 +700,12 @@ void GameWindow::drawGame(Renderer& renderer,
             }
         }
 
+        float my_speed_kmh = 0.0f;
+        if (me) {
+            my_speed_kmh = me->state.speed * 10.0f;
+        }
+
+
         bool speed_upgrades = false;
         bool accel_upgrades = false;
         bool health_upgrades = false;
@@ -714,6 +726,7 @@ void GameWindow::drawGame(Renderer& renderer,
 
         if (previous_checkpoints_passed > cp_count) {
             previous_checkpoints_passed = 0;
+            soundManager.stopSkid();    
             soundManager.playRaceEnd();
         }
 
@@ -737,6 +750,7 @@ void GameWindow::drawGame(Renderer& renderer,
             int new_hp = std::clamp<int>(static_cast<int>(me->health), 0, 999);
 
             if (new_hp < hp) {
+                    soundManager.stopSkid();    
                     soundManager.playCrash();
                 }
             hp = new_hp;
@@ -794,6 +808,7 @@ void GameWindow::drawGame(Renderer& renderer,
         }
 
         soundManager.updateEngineSound();
+        soundManager.updateSkidSound(braking, my_speed_kmh);
 
         drawCheckpointHintAroundCar(renderer,
                                     checkpoint_hint,
@@ -844,7 +859,7 @@ void GameWindow::drawGame(Renderer& renderer,
         syncFrame(rate, perf_freq, t1, it);
 
     }
-
+    soundManager.stopSkid();    
     soundManager.playRaceEnd();
 }
 

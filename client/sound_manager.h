@@ -13,7 +13,9 @@ public:
     void updateEngineSound();
     void stopEngineSound();
 
-    void playSkid();
+    void updateSkidSound(bool braking, float speed_kmh);
+    void stopSkid();
+
     void playCrash();
     void updateBackgroundMusic(double elapsedSeconds);
 
@@ -25,6 +27,8 @@ private:
 
     // Motor
     int engineChannel = -1;
+
+    int skidChannel = -1;
 
     // Crash control
     int  crashChannel = -1;

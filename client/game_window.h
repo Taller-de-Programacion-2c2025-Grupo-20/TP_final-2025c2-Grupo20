@@ -53,6 +53,11 @@ private:
     bool backwards = false;
     int  turn_dir = 0;
 
+    void syncFrame(double rate,
+                           uint64_t perf_freq,
+                           uint64_t& t1,
+                           uint64_t& it);
+
     void drawMinimap(SDL2pp::Texture& background,
                      SDL2pp::Renderer& renderer,
                      GameStateDTO& last_state,

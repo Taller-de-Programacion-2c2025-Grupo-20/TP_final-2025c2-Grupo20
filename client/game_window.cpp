@@ -544,6 +544,26 @@ void GameWindow::drawCheckpointCounter(Renderer& renderer,
     renderer.Copy(hud, DIG_UNITS, dstU);
 }
 
+void GameWindow::syncFrame(double rate,
+                           uint64_t perf_freq,
+                           uint64_t& t1,
+                           uint64_t& it) {
+    uint64_t t2 = SDL_GetPerformanceCounter();
+    double elapsed = static_cast<double>(t2 - t1) / perf_freq;
+    double rest = rate - elapsed;
+
+    if (rest > 0.0) {
+        SDL_Delay(static_cast<Uint32>(rest * 1000.0));
+    } else {
+        double behind = -rest;
+        double lost = behind - std::fmod(behind, rate);
+        t1 += static_cast<uint64_t>(lost * perf_freq);
+        it += static_cast<uint64_t>(lost / rate);
+    }
+
+    t1 = SDL_GetPerformanceCounter();
+    ++it;
+}
 
 
 void GameWindow::drawGame(Renderer& renderer,
@@ -658,7 +678,7 @@ void GameWindow::drawGame(Renderer& renderer,
 
         if (!have_state) {
             renderer.Present(); 
-            SDL_Delay(5);
+            syncFrame(rate, perf_freq, t1, it);
             continue; 
         }
 
@@ -707,21 +727,7 @@ void GameWindow::drawGame(Renderer& renderer,
 
             renderer.Present();
 
-            uint64_t t2 = SDL_GetPerformanceCounter();
-            double elapsed = static_cast<double>(t2 - t1) / perf_freq;
-            double rest = rate - elapsed;
-
-            if (rest > 0.0) {
-                SDL_Delay(static_cast<Uint32>(rest * 1000.0));
-            } else {
-                double behind = -rest;
-                double lost = behind - std::fmod(behind, rate);
-                t1 += static_cast<uint64_t>(lost * perf_freq);
-                it += static_cast<uint64_t>(lost / rate);
-            }
-
-            t1 = SDL_GetPerformanceCounter();
-            ++it;
+            syncFrame(rate, perf_freq, t1, it);
 
             continue;
         }
@@ -835,26 +841,14 @@ void GameWindow::drawGame(Renderer& renderer,
 
         renderer.Present();
 
-        uint64_t t2 = SDL_GetPerformanceCounter();
-        double elapsed = static_cast<double>(t2 - t1) / perf_freq;
-        double rest = rate - elapsed;
-
-        if (rest > 0.0) {
-            SDL_Delay(static_cast<Uint32>(rest * 1000.0));
-        } else {
-            double behind = -rest;
-            double lost = behind - std::fmod(behind, rate);
-            t1 += static_cast<uint64_t>(lost * perf_freq);
-            it += static_cast<uint64_t>(lost / rate);
-        }
-
-        t1 = SDL_GetPerformanceCounter();
-        ++it;
+        syncFrame(rate, perf_freq, t1, it);
 
     }
 
     soundManager.playRaceEnd();
 }
+
+
 
 int GameWindow::runGame() {
     try {

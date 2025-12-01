@@ -53,6 +53,8 @@ private:
     bool backwards = false;
     int  turn_dir = 0;
 
+    bool braking = false;
+
     void syncFrame(double rate,
                            uint64_t perf_freq,
                            uint64_t& t1,

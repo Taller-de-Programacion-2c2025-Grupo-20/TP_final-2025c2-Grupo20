@@ -53,6 +53,9 @@ private:
     bool backwards = false;
     int  turn_dir = 0;
 
+    GameStateDTO finalState;
+    bool raceFinished = false;
+
     void drawMinimap(SDL2pp::Texture& background,
                      SDL2pp::Renderer& renderer,
                      GameStateDTO& last_state,
@@ -161,6 +164,8 @@ public:
 
     ~GameWindow() = default;  
     
+    GameStateDTO getFinalState() const { return finalState; }
+    bool wasRaceFinished() const { return raceFinished; }
 };
 
 #endif

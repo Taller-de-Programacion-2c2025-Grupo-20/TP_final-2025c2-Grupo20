@@ -21,8 +21,16 @@ struct PlayerState {
     uint8_t checkpoints_passed;
 };
 
+struct PlayerResultDTO {
+    uint8_t player_id;
+    uint8_t position;
+    float total_time;
+};
+
 struct GameStateDTO {
     uint8_t car_count;
     float elapsed_time;
     std::vector<PlayerState> players;
+    bool race_finished = false;
+    std::vector<PlayerResultDTO> final_results;
 };

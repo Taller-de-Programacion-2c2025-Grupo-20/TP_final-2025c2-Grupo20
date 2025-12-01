@@ -3,6 +3,8 @@
 #include <QFontDatabase>
 #include "mainwindow.h"
 #include "client.h"
+#include "../common/constants.h"
+#include <map>
 #include "game_window.h"
 
 int main(int argc, char* argv[]) {
@@ -14,24 +16,38 @@ int main(int argc, char* argv[]) {
     std::string port = argv[2];
     QApplication app(argc, argv);
 
-    int id = QFontDatabase::addApplicationFont(":/data/font/PressStart2P-Regular.ttf");
+    int id = QFontDatabase::addApplicationFont(FONT_FILE);
+    QString family = QFontDatabase::applicationFontFamilies(id).at(0);
     
-    QString family;
-    family = QFontDatabase::applicationFontFamilies(id).at(0);
     Client* client_ptr_for_game = nullptr;
-    MainWindow w(host, port, nullptr);
+    std::map<uint8_t, QString> player_names;
 
-    QObject::connect(&w, &MainWindow::startGame, [&](Client* client_from_window) {
-        client_ptr_for_game = client_from_window;
-        app.quit(); 
-    });
+    MainWindow w(host, port, nullptr);
+    QObject::connect(&w, &MainWindow::startGameSignal, 
+        [&](Client* client_from_window, std::map<uint8_t, QString> names) {
+            
+            client_ptr_for_game = client_from_window;
+            player_names = names;
+            
+            w.hide();
+            app.quit();
+        }
+    );
 
     w.show();
-    app.exec();
-
+    app.exec(); 
     if (client_ptr_for_game) {
+        
         GameWindow gw(*client_ptr_for_game); 
-        return gw.runGame();                
+        gw.runGame();
+        if (gw.wasRaceFinished()) {
+            w.showResults(gw.getFinalState().final_results, 
+                          player_names, 
+                          client_ptr_for_game->getMyPlayerId());
+
+            w.show();
+            return app.exec(); 
+        }
     }
     
     return EXIT_SUCCESS;

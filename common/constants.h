@@ -28,6 +28,7 @@ inline const char* LIBERTY_CITY_FILE = "liberty_city.png";
 inline const char* VICE_CITY_FILE = "vice_city.png";
 inline const char* SAN_ANDREAS_FILE = "san_andreas.png";
 inline const char* CARS_FILE = "Mobile - Grand Theft Auto 4 - Miscellaneous - Cars.png";
+inline const char* FONT_FILE = ":/data/font/PressStart2P-Regular.ttf";
 
 inline const char* VERDE = "Verde";
 inline const char* ROJO = "Rojo";

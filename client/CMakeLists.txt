@@ -14,6 +14,7 @@ target_sources(taller_client PRIVATE
 
     Pantallas/lobbyscreen.cpp
     Pantallas/loginscreen.cpp
+    Pantallas/resultscreen.cpp
 )
 
 # --- Archivos de Cabecera (SOLO los que NO usan Q_OBJECT) ---
@@ -33,6 +34,7 @@ target_sources(taller_client PRIVATE
 
     Pantallas/lobbyscreen.ui
     Pantallas/loginscreen.ui
+    Pantallas/resultscreen.ui
 )
 
 # --- Directorios de Inclusión ---

@@ -157,7 +157,7 @@ void GameWindow::drawCheckpoint(
         return;
     }
 
-    if (me->checkpoints_passed == 14){
+    if (me->checkpoints_passed == 1){
         flag_to_draw = &checkered_flag;
     }
 
@@ -249,7 +249,7 @@ void GameWindow::drawMinimap(Texture& background, Renderer& renderer, GameStateD
 
                             Texture* flag_to_draw = &checkpoint_flag;
 
-                            if (p.checkpoints_passed == 14){
+                            if (p.checkpoints_passed == 1){
                                 flag_to_draw = &checkered_flag;
                             }
 
@@ -582,6 +582,23 @@ void GameWindow::drawGame(Renderer& renderer,
 
         GameStateDTO gs = receiver.pollGameState();
         
+        if (gs.race_finished) {
+          std::cout << "CLIENT: ¡Carrera terminada! Guardando resultados..." << std::endl;
+          
+          this->finalState = gs; // Guardamos los resultados
+          this->raceFinished = true;
+          
+          // Opcional: Sonido de victoria
+          soundManager.playRaceEnd(); 
+          
+          // Esperamos 2 segundos para que el usuario procese lo que pasó
+          SDL_Delay(2000); 
+          
+          // ROMPEMOS EL BUCLE -> runGame termina -> MainWindow toma el control
+          break; 
+        }
+
+    // 2. SEGUNDO: Si es un paquete normal de física, validamos que tenga datos.
         if (!gs.players.empty()) {
             last_state = gs;
             have_state = true;

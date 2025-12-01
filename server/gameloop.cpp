@@ -10,7 +10,7 @@
 const float PIXELS_PER_METER = 16.0f;
 const float RACE_DURATION_SECONDS = MATCH_DURATION_SECONDS - 15.0f;
 
-const int MAX_RACES = 3;
+const int MAX_RACES = 1;
 
 void Gameloop::handleInput(const InputCmd& input) {
     auto it = clients_cars.find(input.player_id);
@@ -533,7 +533,14 @@ void Gameloop::run() {
         current_race_number++;
     }
 
-    std::cout << "Gameloop terminado.\n";
+    std::cout << "Gameloop terminado. Enviando resultados finales...\n";
+    
+    GameStateDTO final_state = getCurrentGameState(0.0f); // Tiempo irrelevante ya
+    final_state.race_finished = true; // BANDERA QUE AVISA AL CLIENTE
+    final_state.final_results = getFinalResultsDTO();
+
+    clients_queues.broadcast(final_state);
+
     logFinalResults();
 }
 
@@ -559,4 +566,31 @@ Gameloop::~Gameloop() {
     world_checkpoints.clear();
     world_walls.clear();
 
+}
+
+std::vector<PlayerResultDTO> Gameloop::getFinalResultsDTO() {
+    std::vector<PlayerResultDTO> results_dto;
+
+    // 1. Copiar y Ordenar (Igual que en tu logFinalResults)
+    std::vector<std::pair<uint8_t, float>> sorted(
+        clients_acumulated_time.begin(),
+        clients_acumulated_time.end()
+    );
+
+    std::sort(sorted.begin(), sorted.end(),
+              [](const auto& a, const auto& b) {
+                  return a.second < b.second;
+              });
+
+    // 2. Convertir a DTO
+    int pos = 1;
+    for (const auto& [player_id, total_time] : sorted) {
+        PlayerResultDTO res;
+        res.player_id = player_id;
+        res.total_time = total_time;
+        res.position = pos++;
+        results_dto.push_back(res);
+    }
+
+    return results_dto;
 }

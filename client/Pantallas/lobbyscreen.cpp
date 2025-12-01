@@ -377,9 +377,10 @@ void LobbyScreen::handleWaitingRoomState(const LobbyStateDTO& state) {
     
     ui->btnGoToMap->setEnabled(true);
     ui->btnGoToCar->setEnabled(true);
-
+    namesCache.clear();
     ui->playerListWidget->clear();
     for (const auto& player : state.players) {
+        namesCache[player.player_id] = QString::fromStdString(player.name);
         CarDisplayInfo info = getCarInfo(player.car_id);
         QString text = QString::fromStdString(player.name) + " (" + info.name + ")";
         ui->playerListWidget->addItem(text);
@@ -445,4 +446,8 @@ CarDisplayInfo LobbyScreen::getCarInfo(int carIndex) {
     }
     
     return {name, rect, stats};
+}
+
+std::map<uint8_t, QString> LobbyScreen::getPlayerNamesMap() const {
+    return this->namesCache;
 }

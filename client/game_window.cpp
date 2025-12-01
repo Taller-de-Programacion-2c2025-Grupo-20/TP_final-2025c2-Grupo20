@@ -706,6 +706,23 @@ void GameWindow::drawGame(Renderer& renderer,
             drawMarketCountdown(renderer, market, remaining, viewW, viewH);            
 
             renderer.Present();
+
+            uint64_t t2 = SDL_GetPerformanceCounter();
+            double elapsed = static_cast<double>(t2 - t1) / perf_freq;
+            double rest = rate - elapsed;
+
+            if (rest > 0.0) {
+                SDL_Delay(static_cast<Uint32>(rest * 1000.0));
+            } else {
+                double behind = -rest;
+                double lost = behind - std::fmod(behind, rate);
+                t1 += static_cast<uint64_t>(lost * perf_freq);
+                it += static_cast<uint64_t>(lost / rate);
+            }
+
+            t1 = SDL_GetPerformanceCounter();
+            ++it;
+
             continue;
         }
 

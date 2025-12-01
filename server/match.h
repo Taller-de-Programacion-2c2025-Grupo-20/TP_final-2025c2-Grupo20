@@ -32,6 +32,10 @@ private:
     uint8_t map_id;
     std::string map_name;
     std::map<uint8_t, CarType> player_cars;
+    
+    std::thread cleaner_thread;
+    std::atomic<bool> keep_cleaning;
+    void cleaner_loop();
 
     void reap_dead_clients();
     

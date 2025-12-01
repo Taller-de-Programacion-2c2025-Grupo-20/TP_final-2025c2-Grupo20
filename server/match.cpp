@@ -8,15 +8,25 @@ Match::Match(uint8_t id, const std::string& name) :
     clients_queues(),
     gameloop_queue(1024), 
     gameloop(gameloop_queue, clients_queues),
-    map_id(0)
+    map_id(0),
+    keep_cleaning(true)
 {
     this->map_name = LIBERTY_CITY;
+    cleaner_thread = std::thread(&Match::cleaner_loop, this);
 }
 
 Match::~Match() {
+    keep_cleaning = false;
+    if (cleaner_thread.joinable()) cleaner_thread.join();
     stop();
 }
 
+void Match::cleaner_loop() {
+    while (keep_cleaning) {
+        reap_dead_clients();
+        std::this_thread::sleep_for(std::chrono::milliseconds(500));
+    }
+}
 void Match::start() {
     if (running.exchange(true)) {
         return;
@@ -82,28 +92,34 @@ bool Match::add_player(std::unique_ptr<ClientHandler> new_player) {
 }
 
 void Match::reap_dead_clients() {
-    if (!is_running()) return;
     
     std::lock_guard<std::mutex> lock(clients_mtx);
     bool player_removed = false;
     clients.remove_if([this, &player_removed](const std::unique_ptr<ClientHandler>& client) {
-        if (client->is_alive()) {
-            return false;
-        }
+        if (client->is_alive()) return false;
+
         player_removed = true;
-        std::cout << "Limpiando jugador " << (int)client->get_id() << std::endl;
+        uint8_t dead_id = client->get_id();
+        std::cout << "Limpiando jugador desconectado ID: " << (int)dead_id << std::endl;
+
         try {
-            clients_queues.markQueueForDeletion(client->get_id());
-            client->stop();
-            client->join();
+            clients_queues.markQueueForDeletion(dead_id);
         } catch (const std::exception& e) {
-            std::cerr << "Error (ignorable) al limpiar cliente " 
-                      << (int)client->get_id() << ": " << e.what() << std::endl;
+            std::cerr << "Warning limpiando cola de cliente " << (int)dead_id << ": " << e.what() << std::endl;
         }
 
-        if (player_removed && !is_running()) {
-            broadcast_waiting_room_state();
+        try {
+            client->stop();
+        } catch (...) {}
+
+        try {
+            client->join();
+        } catch (...) {}
+
+        if (player_cars.count(dead_id)) {
+            player_cars.erase(dead_id);
         }
+
         return true; 
     });
 }  

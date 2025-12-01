@@ -42,7 +42,7 @@ void ClientHandler::join() {
 }
 
 bool ClientHandler::is_alive() const {
-    return receiver.is_alive() || sender.is_alive();
+    return receiver.is_alive() && sender.is_alive();
 }
 
 uint8_t ClientHandler::get_id() const { return id; }

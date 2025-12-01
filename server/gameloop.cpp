@@ -240,7 +240,7 @@ void Gameloop::updatePhysics(const double& rate) {
 }
 
 void Gameloop::registerFinish(uint8_t player_id, float elapsed_time, float penalty_seconds) {
-    race_results.push_back(
+    races_results[current_race_number].push_back(
             {player_id, next_finish_position++, elapsed_time + penalty_seconds, true, false, false});
 }
 
@@ -260,7 +260,7 @@ void Gameloop::registerTimeout() {
 void Gameloop::logRaceResults() const {
     std::cout << "===== Resultados de la carrera =====\n";
 
-    for (const auto& res : race_results) {
+    for (const auto& res : races_results.at(current_race_number)) {
         std::cout << "Jugador " << static_cast<int>(res.player_id) << ": ";
         if (res.finished) {
             std::cout << "posicion " << static_cast<int>(res.position)
@@ -308,6 +308,93 @@ void Gameloop::removeClientsCars(float elapsed_time) {
         ++it;
     }
 }
+
+void Gameloop::endRace() {
+
+    logRaceResults();
+
+    for (const auto& res : races_results[current_race_number]) {
+        clients_acumulated_time[res.player_id] += res.finish_time;
+    }
+}
+
+void Gameloop::logFinalResults() const {
+    //if (clients_acumulated_time.empty()) {
+    //    return;
+    //}
+
+    // 1) Ordenar jugadores por tiempo acumulado (ya calculado)
+    std::vector<std::pair<uint8_t, float>> sorted(
+        clients_acumulated_time.begin(),
+        clients_acumulated_time.end()
+    );
+
+    std::sort(sorted.begin(), sorted.end(),
+              [](const auto& a, const auto& b) {
+                  return a.second < b.second;
+              });
+
+    std::cout << "===== Clasificacion final =====\n";
+
+    int final_pos = 1;
+
+    // 2) Mostrar info por jugador
+    for (const auto& [player_id, total_time] : sorted) {
+        std::cout << "Jugador " << (int)player_id
+                  << " — Posición final " << final_pos++ << "\n";
+
+        // 3) Mostrar las 3 carreras
+        for (int race = 1; race <= 3; race++) {
+            std::cout << "  Carrera " << race << ": ";
+
+            auto it = races_results.find(race);
+            if (it == races_results.end()) {
+                std::cout << "sin datos\n";
+                continue;
+            }
+
+            const auto& race_vec = it->second;
+
+            // encontrar info del jugador en esta carrera
+            auto rit = std::find_if(race_vec.begin(), race_vec.end(),
+                                    [&](const PlayerRaceInfo& info) {
+                                        return info.player_id == player_id;
+                                    });
+
+            if (rit == race_vec.end()) {
+                std::cout << "no participó\n";
+                continue;
+            }
+
+            const PlayerRaceInfo& r = *rit;
+
+            // 4) Mostrar estado concreto
+            if (r.finished) {
+                std::cout << "terminó en posición "
+                          << (int)r.position
+                          << " con tiempo "
+                          << r.finish_time << "s\n";
+            } else if (r.destroyed) {
+                std::cout << "DESTRUIDO\n";
+            } else if (r.timed_out) {
+                std::cout << "TIMEOUT\n";
+            } else {
+                std::cout << "estado desconocido\n";
+            }
+        }
+
+        std::cout << "  Tiempo total acumulado: "
+                  << total_time << "s\n\n";
+    }
+
+    // 5) Ganador
+    std::cout << "Ganador: jugador "
+              << (int)sorted.front().first << "\n";
+
+    std::cout << "================================\n";
+}
+
+
 
 bool Gameloop::raceEnded(float elapsed_time) {
     if (elapsed_time >= MATCH_DURATION_SECONDS) {
@@ -427,8 +514,11 @@ void Gameloop::run() {
             removeClientsCars(elapsed_time);
 
             if (raceEnded(elapsed_time)) {
-                race_results.insert(race_results.end(),
-                            not_finished_results.begin(), not_finished_results.end());
+                races_results[current_race_number].insert(
+                    races_results[current_race_number].end(),
+                    not_finished_results.begin(),
+                    not_finished_results.end()
+                );
                 not_finished_results.clear();
                 break;
             }
@@ -438,11 +528,13 @@ void Gameloop::run() {
             t1 = keepLoopRate(t1, rate);
         }
 
+        endRace();
+
         current_race_number++;
     }
 
     std::cout << "Gameloop terminado.\n";
-    //logRaceResults();
+    logFinalResults();
 }
 
 void Gameloop::stop() {

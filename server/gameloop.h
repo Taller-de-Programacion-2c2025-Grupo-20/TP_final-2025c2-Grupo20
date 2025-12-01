@@ -54,9 +54,11 @@ private:
     std::unordered_map<int, std::unique_ptr<Checkpoint>> world_checkpoints;
     std::vector<PlayerPos> cars_inital_pos;
     
-    std::vector<PlayerRaceInfo> race_results;
+    std::map<int, std::vector<PlayerRaceInfo>> races_results;
     std::vector<PlayerRaceInfo> not_finished_results;
     uint8_t next_finish_position;
+
+    std::unordered_map<uint8_t, float> clients_acumulated_time;
 
     std::vector<CarInfo> deleted_cars;
 
@@ -97,6 +99,8 @@ private:
     void logRaceResults() const;
 
     bool raceEnded(float elapsed_time);
+    void endRace();
+    void logFinalResults() const;
 
     bool queue_closed = false;
 
@@ -106,7 +110,7 @@ public:
     void addCar(uint8_t client_id, const CarType& car_type);
     void loadMapData(const std::string& map_name);
 
-    const std::vector<PlayerRaceInfo>& getRaceResults() const { return race_results; }
+    //const std::vector<PlayerRaceInfo>& getRaceResults() const { return race_results; }
 
     void run() override;
 

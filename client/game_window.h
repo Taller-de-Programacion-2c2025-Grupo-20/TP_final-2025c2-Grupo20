@@ -79,7 +79,7 @@ private:
     void drawCronometer(SDL2pp::Renderer& renderer,
                         SDL2pp::Texture& hud,
                         int hudX, int hudY,
-                        GameStateDTO& last_state);
+                        GameStateDTO& last_state, const PlayerState* me);
     void drawSpeedometer(SDL2pp::Renderer& renderer,
                          SDL2pp::Texture& hud,
                          int my_player_index,

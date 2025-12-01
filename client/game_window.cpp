@@ -95,12 +95,27 @@ void GameWindow::drawHealthBar(Renderer& renderer, Texture& hud,
 }
 
 void GameWindow::drawCronometer(Renderer& renderer, Texture& hud,
-                                int hudX, int hudY, GameStateDTO& last_state)
+                                int hudX, int hudY, GameStateDTO& last_state, const PlayerState* me)
 {
     const Rect& PANEL_TIME  = game_sprites.getTimePanelRect();
     BoxMap timeMap = makeBoxMap(renderer, hud, PANEL_TIME, hudX, hudY);
 
-    int total = static_cast<int>(last_state.elapsed_time) - BUY_TIME_SECONDS; //BORRAR - BUY_TIME_SECONDS LUEGO
+    int penalty_time = 0;
+
+    if (me->applied_upgrades.count(UpgradeType::HealthUpgrade) > 0) {
+        penalty_time += 5;
+    }
+
+    if (me->applied_upgrades.count(UpgradeType::AccelerationUpgrade) > 0) {
+        penalty_time += 10;
+    }
+
+    if (me->applied_upgrades.count(UpgradeType::SpeedUpgrade) > 0) {
+        penalty_time += 15;
+    }
+
+
+    int total = MATCH_DURATION_SECONDS - static_cast<int>(last_state.elapsed_time) - penalty_time;
     int mm = (total / 60) % 100;
     int ss = total % 60;
 
@@ -822,7 +837,7 @@ void GameWindow::drawGame(Renderer& renderer,
 
         hudX += BOX_W + HUD_PAD;
 
-        drawCronometer(renderer, hud, hudX, hudY, last_state);
+        drawCronometer(renderer, hud, hudX, hudY, last_state, me);
 
         hudX += BOX_W + HUD_PAD;
 

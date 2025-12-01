@@ -572,7 +572,6 @@ void GameWindow::drawGame(Renderer& renderer,
 {
     int previous_checkpoints_passed = 0;
     int cp_count = 0;
-    bool raceEndSoundPlayed = false;
     while (true){
 
         if (receiver.isServerDown()) {
@@ -691,10 +690,12 @@ void GameWindow::drawGame(Renderer& renderer,
             health_upgrades = true;
         }
         }
+        
+        cp_count = (me ? me->checkpoints_passed : 0);
 
-        if (me && previous_checkpoints_passed > cp_count && !raceEndSoundPlayed) {
+        if (previous_checkpoints_passed > cp_count) {
+            previous_checkpoints_passed = 0;
             soundManager.playRaceEnd();
-            raceEndSoundPlayed = true;
         }
 
 

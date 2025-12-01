@@ -87,4 +87,5 @@ void SoundManager::playRaceEnd() {
 
 void SoundManager::stopBackgroundMusic() {
     mixer.HaltMusic();
+    bgMusicStarted = false;
 }

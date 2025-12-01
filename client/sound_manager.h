@@ -22,6 +22,12 @@ public:
     void playRaceEnd();
     void stopBackgroundMusic();
 
+    // 🟩 NUEVO
+    void playCrashPositional(float volumeFactor);
+
+    // 🟩 NUEVO
+    void updateOtherSkid(bool anySkidding, float volumeFactor);
+
 private:
     SDL2pp::Mixer& mixer;
 
@@ -38,6 +44,9 @@ private:
     SDL2pp::Chunk engineIdle;
     SDL2pp::Chunk skidChunk;
     SDL2pp::Chunk crashChunk;
+
+    // 🟩 NUEVO
+    int otherSkidChannel = -1;     // skid de otros jugadores
 
     // Cooldown mínimo entre golpes
     static constexpr Uint32 CRASH_COOLDOWN_MS = 250;

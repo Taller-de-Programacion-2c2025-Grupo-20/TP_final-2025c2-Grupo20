@@ -110,7 +110,8 @@ public:
     void addCar(uint8_t client_id, const CarType& car_type);
     void loadMapData(const std::string& map_name);
 
-    //const std::vector<PlayerRaceInfo>& getRaceResults() const { return race_results; }
+    const std::map<int, std::vector<PlayerRaceInfo>>& racesResults() { return races_results; }
+    const std::unordered_map<uint8_t, float>& clientsTime() { return clients_acumulated_time; }
 
     void run() override;
 

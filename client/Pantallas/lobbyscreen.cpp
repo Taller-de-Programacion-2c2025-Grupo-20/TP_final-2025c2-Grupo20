@@ -319,15 +319,36 @@ void LobbyScreen::updateBigCarPreview() {
     QPixmap spritesheet(":/data/cars/" + QString(CARS_FILE));
     if (!spritesheet.isNull()) {
         QPixmap carSprite = spritesheet.copy(info.spriteRect);
-        
-        QPixmap scaledSprite = carSprite.scaled(ui->label_BigCarPreview->size(), 
-                                                Qt::KeepAspectRatio, 
+
+        const QColor keyColor(163, 163, 13);
+
+        QImage img = carSprite.toImage().convertToFormat(QImage::Format_ARGB32);
+
+        for (int y = 0; y < img.height(); ++y) {
+            QRgb* row = reinterpret_cast<QRgb*>(img.scanLine(y));
+            for (int x = 0; x < img.width(); ++x) {
+                QColor c = QColor::fromRgba(row[x]);
+                if (c.red() == keyColor.red() &&
+                    c.green() == keyColor.green() &&
+                    c.blue() == keyColor.blue()) {
+                    c.setAlpha(0);
+                    row[x] = c.rgba();
+                }
+            }
+        }
+
+        carSprite = QPixmap::fromImage(img);
+
+        QPixmap scaledSprite = carSprite.scaled(ui->label_BigCarPreview->size(),
+                                                Qt::KeepAspectRatio,
                                                 Qt::FastTransformation);
-        
+
         ui->label_BigCarPreview->setPixmap(scaledSprite);
         ui->label_BigCarPreview->setAlignment(Qt::AlignCenter);
+        ui->label_BigCarPreview->setScaledContents(false);
+        ui->label_BigCarPreview->setStyleSheet("background: transparent;");
     }
-    
+
     ui->bar_Speed->setValue(static_cast<int>(info.stats.max_speed));
     ui->bar_Accel->setValue(static_cast<int>(info.stats.acceleration));
     float calculatedSens = (maxSens - info.stats.rotation_torque);

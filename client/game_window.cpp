@@ -373,13 +373,12 @@ void GameWindow::drawMarket(
     bool boughtAccel,
     bool boughtHealth
 ) {
-    int texW = 1034;
+    int texW = 1034;           
     int texH = market.GetHeight();
 
-    float scale = std::min(
-        viewW / static_cast<float>(texW),
-        viewH / static_cast<float>(texH)
-    );
+    int squareSide = std::min(viewW, viewH);
+
+    float scale = squareSide / static_cast<float>(std::max(texW, texH));
 
     int dstW = static_cast<int>(std::lround(texW * scale));
     int dstH = static_cast<int>(std::lround(texH * scale));
@@ -410,7 +409,6 @@ void GameWindow::drawMarket(
     Rect src_accel_bought   (1088, 396, 802, 118);
     Rect src_health_bought  (1088, 538, 802, 118);
 
-
     if (boughtSpeed) {
         renderer.Copy(market, src_speed_bought, toDst(slot_speed_unbought));
     }
@@ -423,6 +421,7 @@ void GameWindow::drawMarket(
         renderer.Copy(market, src_health_bought, toDst(slot_health_unbought));
     }
 }
+
 
 void GameWindow::drawMarketCountdown(Renderer& renderer,
                                      Texture& market,
@@ -438,10 +437,9 @@ void GameWindow::drawMarketCountdown(Renderer& renderer,
     int texW = 1034;
     int texH = market.GetHeight();
 
-    float scale = std::min(
-        viewW / static_cast<float>(texW),
-        viewH / static_cast<float>(texH)
-    );
+    int squareSide = std::min(viewW, viewH);
+
+    float scale = squareSide / static_cast<float>(std::max(texW, texH));
 
     int dstW = static_cast<int>(std::lround(texW * scale));
     int dstH = static_cast<int>(std::lround(texH * scale));
@@ -470,6 +468,7 @@ void GameWindow::drawMarketCountdown(Renderer& renderer,
     renderer.Copy(market, src_tens,  dst_tens);
     renderer.Copy(market, src_units, dst_units);
 }
+
 
 void GameWindow::drawUpgradesBar(Renderer& renderer,
                                  Texture& hud,

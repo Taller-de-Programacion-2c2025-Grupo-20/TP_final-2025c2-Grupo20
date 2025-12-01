@@ -35,10 +35,6 @@ void SoundManager::stopEngineSound() {
     }
 }
 
-void SoundManager::playSkid() {
-    mixer.PlayChannel(-1, skidChunk, 0);
-}
-
 void SoundManager::playCrash() {
 
     Uint32 now = SDL_GetTicks();

@@ -88,9 +88,9 @@ private:
 
     void removeClientsCars(float elapsed_time);
     
-    void registerFinish(uint8_t player_id, float elapsed_time);
-    void registerDestroy(uint8_t player_id, float elapsed_time);
-    void registerTimeout(float elapsed_time);
+    void registerFinish(uint8_t player_id, float elapsed_time, float penalty_seconds);
+    void registerDestroy(uint8_t player_id, float penalty_seconds);
+    void registerTimeout();
 
     void resetCars();
     void moveToNextRace();

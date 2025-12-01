@@ -8,6 +8,7 @@
 #include "../common/queue.h"
 
 const float PIXELS_PER_METER = 16.0f;
+const float RACE_DURATION_SECONDS = MATCH_DURATION_SECONDS - 15.0f;
 
 const int MAX_RACES = 3;
 
@@ -238,20 +239,21 @@ void Gameloop::updatePhysics(const double& rate) {
     world.Step(rate, 6, 2);
 }
 
-void Gameloop::registerFinish(uint8_t player_id, float elapsed_time) {
+void Gameloop::registerFinish(uint8_t player_id, float elapsed_time, float penalty_seconds) {
     race_results.push_back(
-            {player_id, next_finish_position++, elapsed_time, true, false, false});
+            {player_id, next_finish_position++, elapsed_time + penalty_seconds, true, false, false});
 }
 
-void Gameloop::registerDestroy(uint8_t player_id, float elapsed_time) {
+void Gameloop::registerDestroy(uint8_t player_id, float penalty_seconds) {
     not_finished_results.push_back(
-            {player_id, 0, elapsed_time, false, true, false});
+            {player_id, 0, RACE_DURATION_SECONDS + penalty_seconds, false, true, false});
 }
 
-void Gameloop::registerTimeout(float elapsed_time) {
+void Gameloop::registerTimeout() {
     for (auto& car : clients_cars) {
+        float penalty = car.second->timePenalty();
         not_finished_results.push_back(
-                {car.first, 0, elapsed_time, false, false, true});
+                {car.first, 0, RACE_DURATION_SECONDS + penalty, false, false, true});
     }
 }
 
@@ -284,7 +286,7 @@ void Gameloop::removeClientsCars(float elapsed_time) {
         if (destroyed) {
             std::cout << "Eliminando auto del jugador con ID: " << static_cast<int>(it->first)
                       << " por vida 0\n";
-            registerDestroy(it->first, elapsed_time);
+            registerDestroy(it->first, it->second->timePenalty());
 
             deleted_cars.push_back(CarInfo(it->first, it->second->getCarType(), it->second->nextRaceTimePenalty()));
 
@@ -295,7 +297,7 @@ void Gameloop::removeClientsCars(float elapsed_time) {
         if (finished) {
             std::cout << "Jugador " << static_cast<int>(it->first)
                       << " completó el último checkpoint, sacando su auto del mapa.\n";
-            registerFinish(it->first, (elapsed_time + it->second->timePenalty()) );
+            registerFinish(it->first, elapsed_time, it->second->timePenalty());
 
             deleted_cars.push_back(CarInfo(it->first, it->second->getCarType(), it->second->nextRaceTimePenalty()));
 
@@ -311,7 +313,7 @@ bool Gameloop::raceEnded(float elapsed_time) {
     if (elapsed_time >= MATCH_DURATION_SECONDS) {
         std::cout << "La partida alcanzó 10 minutos.\n";
         
-        registerTimeout(elapsed_time);
+        registerTimeout();
 
         return true;
     }

@@ -11,6 +11,11 @@ enum class EntityType  : uint8_t { CAR, WALL, CHECKPOINT };
 enum class CarType     : uint8_t {VERDE, ROJO, DESCAPOTABLE, CELESTE, JEEP, CAMIONETA, CAMION};
 enum class UpgradeType : uint8_t { SpeedUpgrade, AccelerationUpgrade, HealthUpgrade };
 
+
+// Constantes LobbyScreen
+const int TOTAL_CARS = 7;
+const int TOTAL_MAPS = 3;
+const float maxSens = 14.0f;
 const std::string LIBERTY_CITY = "liberty_city.yaml";
 const std::string VICE_CITY = "vice_city.yaml";
 const std::string SAN_ANDREAS = "san_andreas.yaml";
@@ -19,9 +24,9 @@ inline const char* LIBERTY = "Liberty City";
 inline const char* VICE = "Vice City";
 inline const char* ANDREAS = "San Andreas";
 
-inline const char* LIBERTY_CITY_FILE = "Game Boy _ GBC - Grand Theft Auto - Backgrounds - Liberty City.png";
-inline const char* VICE_CITY_FILE = "Game Boy _ GBC - Grand Theft Auto - Backgrounds - Vice City.png";
-inline const char* SAN_ANDREAS_FILE = "Game Boy _ GBC - Grand Theft Auto - Backgrounds - San Andreas.png";
+inline const char* LIBERTY_CITY_FILE = "liberty_city.png";
+inline const char* VICE_CITY_FILE = "vice_city.png";
+inline const char* SAN_ANDREAS_FILE = "san_andreas.png";
 inline const char* CARS_FILE = "Mobile - Grand Theft Auto 4 - Miscellaneous - Cars.png";
 
 inline const char* VERDE = "Verde";

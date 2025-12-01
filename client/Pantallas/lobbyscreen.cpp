@@ -292,7 +292,7 @@ void LobbyScreen::updateBigMapPreview() {
     }
 
     ui->label_MapName->setText(mapName);
-    QString fullPath = ":/data/cities/" + filename;
+    QString fullPath = ":/data/assets/" + filename;
     QPixmap pix(fullPath);
     
     if (!pix.isNull()) {
@@ -323,7 +323,6 @@ void LobbyScreen::updateBigCarPreview() {
     
     ui->bar_Speed->setValue(static_cast<int>(info.stats.max_speed));
     ui->bar_Accel->setValue(static_cast<int>(info.stats.acceleration));
-    float maxSens = 14.0f; 
     float calculatedSens = (maxSens - info.stats.rotation_torque);
     ui->bar_Sensitivity->setValue(static_cast<int>(calculatedSens * 20));
     ui->bar_Health->setValue(static_cast<int>(info.stats.health));
@@ -358,7 +357,7 @@ void LobbyScreen::handleWaitingRoomState(const LobbyStateDTO& state) {
             case CarType::JEEP:         carName = JEEP; break;
             case CarType::CAMIONETA:    carName = CAMIONETA; break;
             case CarType::CAMION:       carName = CAMION; break;
-            default:                    carName = "Desconocido"; break;
+            default: break;
         }
         QString text = QString::fromStdString(player.name) + " (" + carName + ")";
         ui->playerListWidget->addItem(text);

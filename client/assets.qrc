@@ -1,9 +1,9 @@
 <RCC>
     <qresource prefix="/">
         <file>data/cars/Mobile - Grand Theft Auto 4 - Miscellaneous - Cars.png</file>
-        <file>data/cities/Game Boy _ GBC - Grand Theft Auto - Backgrounds - Liberty City.png</file>
-        <file>data/cities/Game Boy _ GBC - Grand Theft Auto - Backgrounds - Vice City.png</file>
-        <file>data/cities/Game Boy _ GBC - Grand Theft Auto - Backgrounds - San Andreas.png</file>
+        <file>data/assets/liberty_city.png</file>
+        <file>data/assets/vice_city.png</file>
+        <file>data/assets/san_andreas.png</file>
         <file>Pantallas/fondo_login.png</file>
         <file>Pantallas/fondo_lobby.png</file>
         <file>Pantallas/fondo_select_map.png</file>

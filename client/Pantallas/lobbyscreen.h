@@ -66,9 +66,6 @@ private:
     int currentCarIndex = 0;
     int currentHostId = -1;
     
-    const int TOTAL_MAPS = 3; 
-    const int TOTAL_CARS = 7;
-
     void updateBigMapPreview();
     void updateBigCarPreview();
     CarDisplayInfo getCarInfo(int carIndex);

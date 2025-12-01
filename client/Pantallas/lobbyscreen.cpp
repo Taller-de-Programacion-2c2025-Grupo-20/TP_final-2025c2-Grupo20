@@ -27,6 +27,15 @@ LobbyScreen::LobbyScreen(QWidget *parent) :
     ui->page_MapSelect->setStyleSheet(BACKGROUND_STYLE);
     ui->page_CarSelect->setStyleSheet(BACKGROUND_STYLE);
 
+    ui->bar_Speed->setRange(0, 14);
+    ui->bar_Speed->setTextVisible(false);
+    ui->bar_Accel->setRange(0, 60); 
+    ui->bar_Accel->setTextVisible(false);
+    ui->bar_Sensitivity->setRange(0, 100); 
+    ui->bar_Sensitivity->setTextVisible(false);
+    ui->bar_Health->setRange(0, 160);
+    ui->bar_Health->setTextVisible(false);
+
     poll_timer = new QTimer(this);
     connect(poll_timer, &QTimer::timeout, this, &LobbyScreen::updateLobbyState);
 
@@ -294,30 +303,30 @@ void LobbyScreen::updateBigMapPreview() {
 }
 
 void LobbyScreen::updateBigCarPreview() {
-    QPixmap spritesheet(":/data/cars/" + QString(CARS_FILE)); 
+    CarDisplayInfo info = getCarInfo(currentCarIndex);
 
-    int x = 0, y = 0, w = 0, h = 0;
-    CarType tipo = static_cast<CarType>(currentCarIndex); 
-
-    switch (tipo) {
-        case CarType::VERDE:        x = 0; y = 0;   w = 32; h = 32; break;
-        case CarType::ROJO:         x = 0; y = 64;  w = 40; h = 40; break;
-        case CarType::DESCAPOTABLE: x = 0; y = 144; w = 40; h = 40; break;
-        case CarType::CELESTE:      x = 0; y = 224; w = 40; h = 40; break;
-        case CarType::JEEP:         x = 0; y = 304; w = 40; h = 40; break;
-        case CarType::CAMIONETA:    x = 0; y = 384; w = 40; h = 40; break;
-        case CarType::CAMION:       x = 0; y = 464; w = 48; h = 48; break;
-        default:
-            ui->label_BigCarPreview->clear();
-            return;
+    if (ui->label_CarName) {
+        ui->label_CarName->setText(info.name);
     }
-    QPixmap carSprite = spritesheet.copy(x, y, w, h);
-    QPixmap scaledSprite = carSprite.scaled(ui->label_BigCarPreview->size(), 
-                                            Qt::KeepAspectRatio, 
-                                            Qt::FastTransformation);
 
-    ui->label_BigCarPreview->setPixmap(scaledSprite);
-    ui->label_BigCarPreview->setAlignment(Qt::AlignCenter); 
+    QPixmap spritesheet(":/data/cars/" + QString(CARS_FILE));
+    if (!spritesheet.isNull()) {
+        QPixmap carSprite = spritesheet.copy(info.spriteRect);
+        
+        QPixmap scaledSprite = carSprite.scaled(ui->label_BigCarPreview->size(), 
+                                                Qt::KeepAspectRatio, 
+                                                Qt::FastTransformation);
+        
+        ui->label_BigCarPreview->setPixmap(scaledSprite);
+        ui->label_BigCarPreview->setAlignment(Qt::AlignCenter);
+    }
+    
+    ui->bar_Speed->setValue(static_cast<int>(info.stats.max_speed));
+    ui->bar_Accel->setValue(static_cast<int>(info.stats.acceleration));
+    float maxSens = 14.0f; 
+    float calculatedSens = (maxSens - info.stats.rotation_torque);
+    ui->bar_Sensitivity->setValue(static_cast<int>(calculatedSens * 20));
+    ui->bar_Health->setValue(static_cast<int>(info.stats.health));
 }
 
 void LobbyScreen::handleWaitingRoomState(const LobbyStateDTO& state) {
@@ -371,4 +380,51 @@ void LobbyScreen::handleWaitingRoomState(const LobbyStateDTO& state) {
         updateBigMapPreview();
         this->update(); 
     }
+}
+
+CarDisplayInfo LobbyScreen::getCarInfo(int carIndex) {
+    CarType type = static_cast<CarType>(carIndex);
+    QRect rect(0,0,0,0);
+    ClientCarAttributes stats = {0,0,0,0};
+    QString name;
+
+    switch (type) {
+        case CarType::VERDE:
+            name = VERDE;
+            rect = QRect(0, 0, 32, 32);
+            stats = {52.f, 10.5f, 11.f, 100};
+            break;
+        case CarType::ROJO:
+            name = ROJO;
+            rect = QRect(0, 64, 40, 40);
+            stats = {60.f, 9.5f, 14.f, 90};
+            break;
+        case CarType::DESCAPOTABLE:
+            name = DESCAPOTABLE;
+            rect = QRect(0, 144, 40, 40);
+            stats = {58.f, 11.f, 13.f, 85};
+            break;
+        case CarType::CELESTE:
+            name = CELESTE;
+            rect = QRect(0, 224, 40, 40);
+            stats = {54.f, 10.5f, 12.f, 105};
+            break;
+        case CarType::JEEP:
+            name = JEEP;
+            rect = QRect(0, 304, 40, 40);
+            stats = {50.f, 11.5f, 11.f, 120};
+            break;
+        case CarType::CAMIONETA:
+            name = CAMIONETA;
+            rect = QRect(0, 384, 40, 40);
+            stats = {48.f, 12.f, 10.5f, 130};
+            break;
+        case CarType::CAMION:
+            name = CAMION;
+            rect = QRect(0, 464, 48, 48);
+            stats = {38.f, 13.5f, 8.5f, 160};
+            break;
+    }
+    
+    return {name, rect, stats};
 }

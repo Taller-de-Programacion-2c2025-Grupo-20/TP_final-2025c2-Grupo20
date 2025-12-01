@@ -10,6 +10,19 @@ namespace Ui {
 class LobbyScreen;
 }
 
+struct ClientCarAttributes {
+    float acceleration;
+    float rotation_torque;
+    float max_speed;
+    uint8_t health;
+};
+
+struct CarDisplayInfo {
+    QString name;
+    QRect spriteRect;
+    ClientCarAttributes stats;
+};
+
 class LobbyScreen : public QWidget {
     Q_OBJECT
 
@@ -58,6 +71,7 @@ private:
 
     void updateBigMapPreview();
     void updateBigCarPreview();
+    CarDisplayInfo getCarInfo(int carIndex);
 };
 
 #endif

@@ -52,7 +52,6 @@ private:
     bool running = false;
     bool backwards = false;
     int  turn_dir = 0;
-
     bool braking = false;
 
     void syncFrame(double rate,

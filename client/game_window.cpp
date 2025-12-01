@@ -100,22 +100,27 @@ void GameWindow::drawCronometer(Renderer& renderer, Texture& hud,
     const Rect& PANEL_TIME  = game_sprites.getTimePanelRect();
     BoxMap timeMap = makeBoxMap(renderer, hud, PANEL_TIME, hudX, hudY);
 
-    int penalty_time = 0;
+    int total = 0;
 
-    if (me->applied_upgrades.count(UpgradeType::HealthUpgrade) > 0) {
-        penalty_time += 5;
+    if (me){
+
+        int penalty_time = 0;
+
+        if (me->applied_upgrades.count(UpgradeType::HealthUpgrade) > 0) {
+            penalty_time += 5;
+        }
+
+        if (me->applied_upgrades.count(UpgradeType::AccelerationUpgrade) > 0) {
+            penalty_time += 10;
+        }
+
+        if (me->applied_upgrades.count(UpgradeType::SpeedUpgrade) > 0) {
+            penalty_time += 15;
+        }
+
+        total = MATCH_DURATION_SECONDS - static_cast<int>(last_state.elapsed_time) - penalty_time;
     }
 
-    if (me->applied_upgrades.count(UpgradeType::AccelerationUpgrade) > 0) {
-        penalty_time += 10;
-    }
-
-    if (me->applied_upgrades.count(UpgradeType::SpeedUpgrade) > 0) {
-        penalty_time += 15;
-    }
-
-
-    int total = MATCH_DURATION_SECONDS - static_cast<int>(last_state.elapsed_time) - penalty_time;
     int mm = (total / 60) % 100;
     int ss = total % 60;
 
@@ -129,11 +134,11 @@ void GameWindow::drawSpeedometer(Renderer& renderer, Texture& hud,
                                  int my_player_index, GameStateDTO& last_state,
                                  int hudX, int hudY)
 {
-    if (my_player_index < 0 || my_player_index >= (int)last_state.players.size()) {
-        return;
-    }
+    float speed_kmh = 0.0f;
 
-    float speed_kmh = last_state.players[my_player_index].state.speed*10;
+    if (!(my_player_index < 0 || my_player_index >= (int)last_state.players.size())) {
+        speed_kmh = last_state.players[my_player_index].state.speed*10;
+    }
 
     const Rect& PANEL_SPEED = game_sprites.getSpeedPanelRect();
     BoxMap spdMap = makeBoxMap(renderer, hud, PANEL_SPEED, hudX, hudY);
@@ -335,7 +340,6 @@ void GameWindow::drawCheckpointHintAroundCar(
 
     float a = std::fmod(angle_world, 2.0f * PI);
     if (a < 0) a += 2.0f * PI;
-
 
     const int frameCount = 8;
     int frameIndex = static_cast<int>(
@@ -611,7 +615,8 @@ void GameWindow::drawGame(Renderer& renderer,
         if (receiver.isServerDown()) {
             std::cerr << "CLIENT: servidor desconectado, cerrando ventana SDL...\n";
             soundManager.stopEngineSound();
-            soundManager.stopSkid();    
+            soundManager.stopSkid();   
+            std::cerr << "salio"; 
             break;
         }
 
@@ -626,6 +631,16 @@ void GameWindow::drawGame(Renderer& renderer,
         if (!gs.players.empty()) {
             last_state = gs;
             have_state = true;
+        }
+
+        int my_id = client.getMyPlayerId();
+        const PlayerState* me = nullptr;
+
+        for (const auto& p : last_state.players) {
+            if (p.player_id == my_id) {
+                me = &p;
+                break;
+            }
         }
 
         SDL_Event ev;
@@ -711,21 +726,10 @@ void GameWindow::drawGame(Renderer& renderer,
 
         soundManager.updateBackgroundMusic(last_state.elapsed_time);
 
-        int my_id = client.getMyPlayerId();
-        const PlayerState* me = nullptr;
-
-        for (const auto& p : last_state.players) {
-            if (p.player_id == my_id) {
-                me = &p;
-                break;
-            }
-        }
-
         float my_speed_kmh = 0.0f;
         if (me) {
             my_speed_kmh = me->state.speed * 10.0f;
         }
-
 
         bool speed_upgrades = false;
         bool accel_upgrades = false;
@@ -734,15 +738,17 @@ void GameWindow::drawGame(Renderer& renderer,
         if (me) {
         if ((me->applied_upgrades).find(UpgradeType::SpeedUpgrade) != (me->applied_upgrades).end()) {
             speed_upgrades = true;
+            
         }
         if ((me->applied_upgrades).find(UpgradeType::AccelerationUpgrade) != (me->applied_upgrades).end()) {
             accel_upgrades = true;
+            
         }
         if ((me->applied_upgrades).find(UpgradeType::HealthUpgrade) != (me->applied_upgrades).end()) {
             health_upgrades = true;
         }
         }
-        
+
         cp_count = (me ? me->checkpoints_passed : 0);
 
         if (previous_checkpoints_passed > cp_count) {
@@ -775,9 +781,9 @@ void GameWindow::drawGame(Renderer& renderer,
                     soundManager.playCrash();
                 }
             hp = new_hp;
-
-            std::cout << "Checkpoint passed: " 
-                      << static_cast<int>(me->checkpoints_passed) << "\n";
+        }
+        else{
+            hp = 0;
         }
 
 
@@ -880,8 +886,6 @@ void GameWindow::drawGame(Renderer& renderer,
         syncFrame(rate, perf_freq, t1, it);
 
     }
-    soundManager.stopSkid();    
-    soundManager.playRaceEnd();
 }
 
 

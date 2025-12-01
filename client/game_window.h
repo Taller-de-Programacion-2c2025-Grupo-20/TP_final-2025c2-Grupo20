@@ -55,6 +55,12 @@ private:
 
     GameStateDTO finalState;
     bool raceFinished = false;
+    bool braking = false;
+
+    void syncFrame(double rate,
+                           uint64_t perf_freq,
+                           uint64_t& t1,
+                           uint64_t& it);
 
     void drawMinimap(SDL2pp::Texture& background,
                      SDL2pp::Renderer& renderer,
@@ -77,7 +83,7 @@ private:
     void drawCronometer(SDL2pp::Renderer& renderer,
                         SDL2pp::Texture& hud,
                         int hudX, int hudY,
-                        GameStateDTO& last_state);
+                        GameStateDTO& last_state, const PlayerState* me);
     void drawSpeedometer(SDL2pp::Renderer& renderer,
                          SDL2pp::Texture& hud,
                          int my_player_index,

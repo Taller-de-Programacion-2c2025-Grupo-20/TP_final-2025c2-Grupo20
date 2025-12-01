@@ -42,6 +42,8 @@ private:
 
     int next_checkpoint_id = 0;
 
+    float pre_collision_speed = 0;
+
     b2Body* car_body;
 
     CarAttributes getCarTypeAttributes(CarType car_type);
@@ -74,6 +76,9 @@ public:
     void incrementNextCheckpointId();
 
     float getSpeed() const;
+    float getBeforeCollisionSpeed() const ;
+
+    void storeSpeed();
 
     float timePenalty();
     float nextRaceTimePenalty();

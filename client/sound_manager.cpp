@@ -35,10 +35,6 @@ void SoundManager::stopEngineSound() {
     }
 }
 
-void SoundManager::playSkid() {
-    mixer.PlayChannel(-1, skidChunk, 0);
-}
-
 void SoundManager::playCrash() {
 
     Uint32 now = SDL_GetTicks();
@@ -88,4 +84,35 @@ void SoundManager::playRaceEnd() {
 void SoundManager::stopBackgroundMusic() {
     mixer.HaltMusic();
     bgMusicStarted = false;
+}
+
+
+void SoundManager::updateSkidSound(bool braking, float speed_kmh) {
+    const float MIN_SKID_SPEED = 40.0f; // umbral para que suene
+
+    bool shouldSkid = braking && (speed_kmh > MIN_SKID_SPEED);
+
+    if (shouldSkid) {
+        // Si no está sonando, arrancar el loop
+        if (skidChannel == -1 || !mixer.IsChannelPlaying(skidChannel)) {
+            skidChannel = mixer.PlayChannel(-1, skidChunk, -1); // loop infinito
+            if (skidChannel < 0) {
+                std::cerr << "Error al reproducir skid: "
+                          << Mix_GetError() << std::endl;
+            }
+        }
+    } else {
+        // Si no debería sonar, detenerlo
+        if (skidChannel != -1) {
+            mixer.HaltChannel(skidChannel);
+            skidChannel = -1;
+        }
+    }
+}
+
+void SoundManager::stopSkid() {
+    if (skidChannel != -1) {
+        mixer.HaltChannel(skidChannel);
+        skidChannel = -1;
+    }
 }

@@ -95,12 +95,27 @@ void GameWindow::drawHealthBar(Renderer& renderer, Texture& hud,
 }
 
 void GameWindow::drawCronometer(Renderer& renderer, Texture& hud,
-                                int hudX, int hudY, GameStateDTO& last_state)
+                                int hudX, int hudY, GameStateDTO& last_state, const PlayerState* me)
 {
     const Rect& PANEL_TIME  = game_sprites.getTimePanelRect();
     BoxMap timeMap = makeBoxMap(renderer, hud, PANEL_TIME, hudX, hudY);
 
-    int total = static_cast<int>(last_state.elapsed_time) - BUY_TIME_SECONDS; //BORRAR - BUY_TIME_SECONDS LUEGO
+    int penalty_time = 0;
+
+    if (me->applied_upgrades.count(UpgradeType::HealthUpgrade) > 0) {
+        penalty_time += 5;
+    }
+
+    if (me->applied_upgrades.count(UpgradeType::AccelerationUpgrade) > 0) {
+        penalty_time += 10;
+    }
+
+    if (me->applied_upgrades.count(UpgradeType::SpeedUpgrade) > 0) {
+        penalty_time += 15;
+    }
+
+
+    int total = MATCH_DURATION_SECONDS - static_cast<int>(last_state.elapsed_time) - penalty_time;
     int mm = (total / 60) % 100;
     int ss = total % 60;
 
@@ -373,13 +388,12 @@ void GameWindow::drawMarket(
     bool boughtAccel,
     bool boughtHealth
 ) {
-    int texW = 1034;
+    int texW = 1034;           
     int texH = market.GetHeight();
 
-    float scale = std::min(
-        viewW / static_cast<float>(texW),
-        viewH / static_cast<float>(texH)
-    );
+    int squareSide = std::min(viewW, viewH);
+
+    float scale = squareSide / static_cast<float>(std::max(texW, texH));
 
     int dstW = static_cast<int>(std::lround(texW * scale));
     int dstH = static_cast<int>(std::lround(texH * scale));
@@ -410,7 +424,6 @@ void GameWindow::drawMarket(
     Rect src_accel_bought   (1088, 396, 802, 118);
     Rect src_health_bought  (1088, 538, 802, 118);
 
-
     if (boughtSpeed) {
         renderer.Copy(market, src_speed_bought, toDst(slot_speed_unbought));
     }
@@ -423,6 +436,7 @@ void GameWindow::drawMarket(
         renderer.Copy(market, src_health_bought, toDst(slot_health_unbought));
     }
 }
+
 
 void GameWindow::drawMarketCountdown(Renderer& renderer,
                                      Texture& market,
@@ -438,10 +452,9 @@ void GameWindow::drawMarketCountdown(Renderer& renderer,
     int texW = 1034;
     int texH = market.GetHeight();
 
-    float scale = std::min(
-        viewW / static_cast<float>(texW),
-        viewH / static_cast<float>(texH)
-    );
+    int squareSide = std::min(viewW, viewH);
+
+    float scale = squareSide / static_cast<float>(std::max(texW, texH));
 
     int dstW = static_cast<int>(std::lround(texW * scale));
     int dstH = static_cast<int>(std::lround(texH * scale));
@@ -470,6 +483,7 @@ void GameWindow::drawMarketCountdown(Renderer& renderer,
     renderer.Copy(market, src_tens,  dst_tens);
     renderer.Copy(market, src_units, dst_units);
 }
+
 
 void GameWindow::drawUpgradesBar(Renderer& renderer,
                                  Texture& hud,
@@ -545,6 +559,26 @@ void GameWindow::drawCheckpointCounter(Renderer& renderer,
     renderer.Copy(hud, DIG_UNITS, dstU);
 }
 
+void GameWindow::syncFrame(double rate,
+                           uint64_t perf_freq,
+                           uint64_t& t1,
+                           uint64_t& it) {
+    uint64_t t2 = SDL_GetPerformanceCounter();
+    double elapsed = static_cast<double>(t2 - t1) / perf_freq;
+    double rest = rate - elapsed;
+
+    if (rest > 0.0) {
+        SDL_Delay(static_cast<Uint32>(rest * 1000.0));
+    } else {
+        double behind = -rest;
+        double lost = behind - std::fmod(behind, rate);
+        t1 += static_cast<uint64_t>(lost * perf_freq);
+        it += static_cast<uint64_t>(lost / rate);
+    }
+
+    t1 = SDL_GetPerformanceCounter();
+    ++it;
+}
 
 
 void GameWindow::drawGame(Renderer& renderer,
@@ -577,6 +611,7 @@ void GameWindow::drawGame(Renderer& renderer,
         if (receiver.isServerDown()) {
             std::cerr << "CLIENT: servidor desconectado, cerrando ventana SDL...\n";
             soundManager.stopEngineSound();
+            soundManager.stopSkid();    
             break;
         }
 
@@ -657,6 +692,10 @@ void GameWindow::drawGame(Renderer& renderer,
                     }
                 }
 
+                if (cmd.key == InputKey::Down) {
+                    braking = (cmd.action == InputAction::Press);
+                }
+
                 if (cmd.key == InputKey::Quit && cmd.action == InputAction::Press) {
                     exit = true;
                     break;
@@ -666,6 +705,7 @@ void GameWindow::drawGame(Renderer& renderer,
 
         if (exit){
             soundManager.stopEngineSound();
+            soundManager.stopSkid();    
             break;
         }
 
@@ -676,7 +716,7 @@ void GameWindow::drawGame(Renderer& renderer,
 
         if (!have_state) {
             renderer.Present(); 
-            SDL_Delay(5);
+            syncFrame(rate, perf_freq, t1, it);
             continue; 
         }
 
@@ -691,6 +731,12 @@ void GameWindow::drawGame(Renderer& renderer,
                 break;
             }
         }
+
+        float my_speed_kmh = 0.0f;
+        if (me) {
+            my_speed_kmh = me->state.speed * 10.0f;
+        }
+
 
         bool speed_upgrades = false;
         bool accel_upgrades = false;
@@ -712,6 +758,7 @@ void GameWindow::drawGame(Renderer& renderer,
 
         if (previous_checkpoints_passed > cp_count) {
             previous_checkpoints_passed = 0;
+            soundManager.stopSkid();    
             soundManager.playRaceEnd();
         }
 
@@ -724,6 +771,9 @@ void GameWindow::drawGame(Renderer& renderer,
             drawMarketCountdown(renderer, market, remaining, viewW, viewH);            
 
             renderer.Present();
+
+            syncFrame(rate, perf_freq, t1, it);
+
             continue;
         }
 
@@ -732,6 +782,7 @@ void GameWindow::drawGame(Renderer& renderer,
             int new_hp = std::clamp<int>(static_cast<int>(me->health), 0, 999);
 
             if (new_hp < hp) {
+                    soundManager.stopSkid();    
                     soundManager.playCrash();
                 }
             hp = new_hp;
@@ -789,6 +840,7 @@ void GameWindow::drawGame(Renderer& renderer,
         }
 
         soundManager.updateEngineSound();
+        soundManager.updateSkidSound(braking, my_speed_kmh);
 
         drawCheckpointHintAroundCar(renderer,
                                     checkpoint_hint,
@@ -811,7 +863,7 @@ void GameWindow::drawGame(Renderer& renderer,
 
         hudX += BOX_W + HUD_PAD;
 
-        drawCronometer(renderer, hud, hudX, hudY, last_state);
+        drawCronometer(renderer, hud, hudX, hudY, last_state, me);
 
         hudX += BOX_W + HUD_PAD;
 
@@ -836,26 +888,14 @@ void GameWindow::drawGame(Renderer& renderer,
 
         renderer.Present();
 
-        uint64_t t2 = SDL_GetPerformanceCounter();
-        double elapsed = static_cast<double>(t2 - t1) / perf_freq;
-        double rest = rate - elapsed;
-
-        if (rest > 0.0) {
-            SDL_Delay(static_cast<Uint32>(rest * 1000.0));
-        } else {
-            double behind = -rest;
-            double lost = behind - std::fmod(behind, rate);
-            t1 += static_cast<uint64_t>(lost * perf_freq);
-            it += static_cast<uint64_t>(lost / rate);
-        }
-
-        t1 = SDL_GetPerformanceCounter();
-        ++it;
+        syncFrame(rate, perf_freq, t1, it);
 
     }
-
+    soundManager.stopSkid();    
     soundManager.playRaceEnd();
 }
+
+
 
 int GameWindow::runGame() {
     try {

@@ -192,6 +192,10 @@ float Car::getSpeed() const {
     return car_body->GetLinearVelocity().Length();  // m/s
 }
 
+float Car::getBeforeCollisionSpeed() const {
+    return pre_collision_speed;
+}
+
 CarType Car::getCarType() { 
     return car_type; 
 }
@@ -202,6 +206,10 @@ float Car::timePenalty(){
 
 float Car::nextRaceTimePenalty(){
     return next_race_time_penalty;
+}
+
+void Car::storeSpeed(){
+    pre_collision_speed = getSpeed();
 }
 
 Car::Car(b2World& world, const b2Vec2& initial_position, CarType type, float time_penalty) : 

@@ -101,7 +101,11 @@ private:
     bool raceEnded(float elapsed_time);
     void endRace();
     void logFinalResults() const;
+<<<<<<< HEAD
     std::vector<PlayerResultDTO> getFinalResultsDTO();
+=======
+    GameStateDTO gameEndedGamestate();
+>>>>>>> main
 
     bool queue_closed = false;
 

@@ -33,4 +33,5 @@ struct GameStateDTO {
     std::vector<PlayerState> players;
     bool race_finished = false;
     std::vector<PlayerResultDTO> final_results;
+    uint8_t is_running;
 };

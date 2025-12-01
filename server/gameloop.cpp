@@ -544,7 +544,7 @@ void Gameloop::run() {
     std::cout << "Gameloop terminado.\n";
     logFinalResults();
 
-    //Termino la partida
+    std::cout << "Enviando mensaje de finalizacion de partida a los clientes...\n";
     clients_queues.broadcast(gameEndedGamestate());
 }
 

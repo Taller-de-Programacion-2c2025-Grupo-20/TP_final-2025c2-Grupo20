@@ -49,12 +49,6 @@ private:
     CarType car_to_use;
     int map_id;
 
-    // --- NUEVO: estado de teclas para skid ---
-    bool keyDownPressed  = false;
-    bool keyLeftPressed  = false;
-    bool keyRightPressed = false;
-    bool skidActive      = false; // para no spamear el sonido
-
     bool running = false;
     bool backwards = false;
     int  turn_dir = 0;

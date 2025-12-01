@@ -11,14 +11,18 @@ class CollisionsListener: public b2ContactListener {
 private:
     const float damage_minimum = 0.4f;
 
-    void handlerCollisionCarAndCar(Car* carA, Car* carB, const b2ContactImpulse* impulse,
-                                   b2Contact* contact);
+    void handlerBeforeCollisionCarAndWall(Car* car);
+    void handlerBeforeCollisionCarAndCar(Car* carA, Car* carB);
 
-    void handlerCollisionCarAndWall(Car* car, const b2ContactImpulse* impulse, b2Contact* contact);
+    void handlerCollisionCarAndCar(Car* carA, Car* carB);
+
+    void handlerCollisionCarAndWall(Car* car);
 
     void handlerCollisionCarAndCheckpoint(Car* car, Checkpoint* checkpoint);
 
 public:
+    void PreSolve(b2Contact* contact, const b2Manifold* oldManifold) override;
+
     void BeginContact(b2Contact* contact) override;
 
     void PostSolve(b2Contact* contact, const b2ContactImpulse* impulse) override;

@@ -23,7 +23,7 @@
     </rect>
    </property>
    <property name="currentIndex">
-    <number>2</number>
+    <number>3</number>
    </property>
    <widget class="QWidget" name="page_WaitingRoom">
     <widget class="QListWidget" name="playerListWidget">
@@ -123,7 +123,7 @@ QPushButton:pressed {
 }</string>
      </property>
      <property name="text">
-      <string>¡Iniciar partida!</string>
+      <string/>
      </property>
     </widget>
     <widget class="QLabel" name="label">
@@ -184,9 +184,7 @@ QPushButton:pressed {
 }</string>
      </property>
      <property name="text">
-      <string>Seleccionar 
-
- mapa</string>
+      <string/>
      </property>
     </widget>
     <widget class="QPushButton" name="btnGoToCar">
@@ -228,9 +226,25 @@ QPushButton:pressed {
 }</string>
      </property>
      <property name="text">
-      <string>Seleccionar 
+      <string>SELECCIONAR  
 
- auto</string>
+ AUTO</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_Notification">
+     <property name="geometry">
+      <rect>
+       <x>280</x>
+       <y>130</y>
+       <width>191</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
      </property>
     </widget>
    </widget>
@@ -371,7 +385,7 @@ QPushButton:pressed {
 }</string>
      </property>
      <property name="text">
-      <string>¡SELECCIONAR!</string>
+      <string/>
      </property>
     </widget>
     <widget class="QLabel" name="label_MapName">
@@ -450,7 +464,7 @@ QPushButton:pressed {
 }</string>
      </property>
      <property name="text">
-      <string>¡SELECCIONAR!</string>
+      <string>SELECCIONAR</string>
      </property>
     </widget>
     <widget class="QPushButton" name="btnCarPrev">

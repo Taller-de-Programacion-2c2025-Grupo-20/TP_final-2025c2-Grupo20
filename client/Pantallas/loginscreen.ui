@@ -103,14 +103,16 @@ QLineEdit:focus {
   <widget class="QLabel" name="label_error">
    <property name="geometry">
     <rect>
-     <x>9</x>
-     <y>335</y>
-     <width>16</width>
+     <x>210</x>
+     <y>530</y>
+     <width>371</width>
      <height>18</height>
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">color: red;</string>
+    <string notr="true">font-family: &quot;Press Start 2P&quot;;
+color: red;
+font-size: 10px;</string>
    </property>
    <property name="text">
     <string/>

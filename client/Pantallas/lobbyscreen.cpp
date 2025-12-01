@@ -23,6 +23,7 @@ LobbyScreen::LobbyScreen(QWidget *parent) :
 
     ui->stackedWidget_Lobby->setStyleSheet(BACKGROUND_STYLE);
     ui->page_WaitingRoom->setStyleSheet(BACKGROUND_STYLE);
+    ui->label_Notification->setVisible(false);
     ui->page_Selection->setStyleSheet(BACKGROUND_STYLE);
     ui->page_MapSelect->setStyleSheet(BACKGROUND_STYLE);
     ui->page_CarSelect->setStyleSheet(BACKGROUND_STYLE);
@@ -66,6 +67,11 @@ LobbyScreen::~LobbyScreen() {
 
 void LobbyScreen::setClient(Client* client) {
     this->client = client;
+    this->lastKnownMapId = -1;
+    
+    this->wasIHost = false; 
+    this->isFirstUpdate = true;
+
     poll_timer->start(250); 
     ui->startButton->setEnabled(false); 
     ui->stackedWidget_Lobby->setCurrentWidget(ui->page_Selection);
@@ -117,6 +123,7 @@ void LobbyScreen::handleSelectionState() {
 
 void LobbyScreen::on_createButton_clicked() {
     if (!client) return;
+
     std::string match_name = ui->matchNameEdit->text().toStdString();
     if (match_name.empty()) {
         return;
@@ -330,13 +337,7 @@ void LobbyScreen::updateBigCarPreview() {
 
 void LobbyScreen::handleWaitingRoomState(const LobbyStateDTO& state) {
     currentHostId = state.host_id;
-
-    bool amIHost = (client->getMyPlayerId() == state.host_id);
-    bool inMapScreen = (ui->stackedWidget_Lobby->currentWidget() == ui->page_MapSelect);
-
-    if (!amIHost || !inMapScreen) {
-        currentMapIndex = state.map_id;
-    }
+    bool amIHost = (client->getMyPlayerId() == currentHostId);
 
     QWidget* current = ui->stackedWidget_Lobby->currentWidget();
     if (current != ui->page_WaitingRoom && 
@@ -345,37 +346,55 @@ void LobbyScreen::handleWaitingRoomState(const LobbyStateDTO& state) {
         ui->stackedWidget_Lobby->setCurrentWidget(ui->page_WaitingRoom);
     }
 
-    ui->playerListWidget->clear();
-    for (const auto& player : state.players) {
-        QString carName;
-
-        switch (static_cast<CarType>(player.car_id)) {
-            case CarType::VERDE:        carName = VERDE; break;
-            case CarType::ROJO:         carName = ROJO; break;
-            case CarType::DESCAPOTABLE: carName = DESCAPOTABLE; break;
-            case CarType::CELESTE:      carName = CELESTE; break;
-            case CarType::JEEP:         carName = JEEP; break;
-            case CarType::CAMIONETA:    carName = CAMIONETA; break;
-            case CarType::CAMION:       carName = CAMION; break;
-            default: break;
-        }
-        QString text = QString::fromStdString(player.name) + " (" + carName + ")";
-        ui->playerListWidget->addItem(text);
+    bool inMapScreen = (current == ui->page_MapSelect);
+    if (!amIHost || !inMapScreen) {
+        currentMapIndex = state.map_id;
     }
 
-    if (client->getMyPlayerId() == state.host_id) {
+    if (!isFirstUpdate && !wasIHost && amIHost) {
+        ui->label_Notification->setText("¡Ahora eres el host!");
+        ui->label_Notification->setStyleSheet("color: hsla(0, 100%, 50%, 1.00); font-family: 'Press Start 2P'; font-weight: bold; font-size: 10pt; background: transparent;");
+        ui->label_Notification->show();
+        ui->label_Notification->adjustSize();
+        
+        int parentWidth = ui->page_WaitingRoom->width();
+        ui->label_Notification->move((parentWidth - ui->label_Notification->width()) / 2, 10);
+
+        QTimer::singleShot(4000, ui->label_Notification, &QLabel::hide);
+    }
+    
+    wasIHost = amIHost;
+    isFirstUpdate = false;
+    if (amIHost) {
         ui->startButton->setEnabled(true);
-        ui->btnGoToMap->setEnabled(true);
+        ui->startButton->setText("INICIAR PARTIDA");
+        ui->btnGoToMap->setText("SELECCIONAR \n\n MAPA");
     } else {
         ui->startButton->setEnabled(false);
         ui->startButton->setText("Esperando \n\n al host...");
+        ui->btnGoToMap->setText("VER MAPA");
+    }
+    
+    ui->btnGoToMap->setEnabled(true);
+    ui->btnGoToCar->setEnabled(true);
 
-        ui->btnGoToMap->setEnabled(true); 
-        ui->btnGoToMap->setText("Ver mapa");
+    ui->playerListWidget->clear();
+    for (const auto& player : state.players) {
+        CarDisplayInfo info = getCarInfo(player.car_id);
+        QString text = QString::fromStdString(player.name) + " (" + info.name + ")";
+        ui->playerListWidget->addItem(text);
     }
 
-    ui->btnGoToCar->setEnabled(true);
     if (inMapScreen) {
+        ui->btnMapPrev->setVisible(amIHost);
+        ui->btnMapNext->setVisible(amIHost);
+        
+        if (amIHost) {
+            ui->btnMapSelect->setText("SELECCIONAR");
+        } else {
+            ui->btnMapSelect->setText("VOLVER");
+        }
+
         updateBigMapPreview();
         this->update(); 
     }

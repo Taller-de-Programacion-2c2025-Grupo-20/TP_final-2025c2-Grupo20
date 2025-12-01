@@ -65,6 +65,10 @@ private:
     int currentMapIndex = 0;
     int currentCarIndex = 0;
     int currentHostId = -1;
+    int lastKnownMapId;
+
+    bool wasIHost;
+    bool isFirstUpdate;
     
     void updateBigMapPreview();
     void updateBigCarPreview();

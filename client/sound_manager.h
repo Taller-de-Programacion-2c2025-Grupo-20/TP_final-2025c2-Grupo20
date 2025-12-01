@@ -17,6 +17,9 @@ public:
     void playCrash();
     void updateBackgroundMusic(double elapsedSeconds);
 
+    void playRaceEnd();
+    void stopBackgroundMusic();
+
 private:
     SDL2pp::Mixer& mixer;
 
@@ -37,6 +40,8 @@ private:
 
     SDL2pp::Music bgMusic;
     bool bgMusicStarted = false;
+
+    SDL2pp::Chunk raceEndSound;
 };
 
 #endif

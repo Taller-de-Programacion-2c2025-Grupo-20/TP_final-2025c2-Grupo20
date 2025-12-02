@@ -21,6 +21,7 @@ public:
 
     // collisions
     float DELTA_SPEED_TOLERANCE() const { return delta_speed_tolerance; }
+    float DAMAGE_FACTOR() const { return damage_factor; }
 
     // cars
     const CarAttributes& getCarAttributes(const CarType& type) const {
@@ -64,6 +65,7 @@ private:
 
         // collisions
         delta_speed_tolerance = config["collisions"]["delta_speed_tolerance"].as<float>();
+        damage_factor = config["collisions"]["damage_factor"].as<float>();
 
         //cars
         for (const auto& car : config["cars"]) {
@@ -95,6 +97,7 @@ private:
 
     // collisions
     float delta_speed_tolerance;
+    float damage_factor;
 
     //cars
     std::unordered_map<CarType, CarAttributes> cars_attributes;

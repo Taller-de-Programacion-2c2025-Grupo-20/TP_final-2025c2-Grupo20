@@ -6,6 +6,7 @@ gameloop:
 
 collisions:
   delta_speed_tolerance: 0.3
+  damage_factor: 0.7
 
 cars:
   VERDE:

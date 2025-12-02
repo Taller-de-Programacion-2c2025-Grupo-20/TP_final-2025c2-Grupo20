@@ -2,27 +2,7 @@
 
 #include <iostream>
 
-CarAttributes Car::getCarTypeAttributes(CarType car_type) {
-    switch (car_type) {
-        case CarType::VERDE:
-            return {52.f, 10.5f, 11.f, 100, 0.5f, 0.5f, 1.0f, 1.0f, 0.5f};
-        case CarType::ROJO:
-            return {60.f, 9.5f, 14.f, 90, 0.5f, 1.f, 0.9f, 0.9f, 0.45f};
-        case CarType::DESCAPOTABLE:
-            return {58.f, 11.f, 13.f, 85, 0.5f, 1.f, 0.85f, 0.9f, 0.45f};
-        case CarType::CELESTE:
-            return {54.f, 10.5f, 12.f, 105, 0.5f, 1.f, 1.05f, 1.0f, 0.5f};
-        case CarType::JEEP:
-            return {50.f, 11.5f, 11.f, 120, 0.7f, 0.75f, 1.2f, 1.05f, 0.55f};
-        case CarType::CAMIONETA:
-            return {48.f, 12.f, 10.5f, 130, 0.7f, 0.75f, 1.3f, 1.1f, 0.6f};
-        case CarType::CAMION:
-            return {38.f, 13.5f, 8.5f, 160, 0.5f, 1.5f, 1.6f, 1.2f, 0.65f};
-        
-        default:
-            return {0, 0, 0, 0, 0, 0, 0, 0, 0.};
-    }
-}
+#include "../../common/config.h"
 
 b2Vec2 Car::getLateralVelocity() {
     b2Vec2 rightNormal = car_body->GetWorldVector(b2Vec2(1, 0));
@@ -222,7 +202,7 @@ Car::Car(b2World& world, const b2Vec2& initial_position, CarType type, float tim
         next_checkpoint_id(0) 
     
     {
-    CarAttributes attributes = getCarTypeAttributes(type);
+    CarAttributes attributes = Config::get().getCarAttributes(type);
 
     accelaration = attributes.acceleration;
     rotation_torque = attributes.rotation_torque;

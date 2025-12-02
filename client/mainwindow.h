@@ -41,7 +41,7 @@ private:
     QString serverPort;
     LoginScreen *loginScreen;
     LobbyScreen *lobbyScreen;
-    ResultScreen *resultScreen;
+    ResultScreen *resultScreen = nullptr;
     std::unique_ptr<Client> client; 
 };
 

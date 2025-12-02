@@ -14,6 +14,10 @@ MainWindow::MainWindow(const std::string& host, const std::string& port, QWidget
     ui->stackedWidget->addWidget(loginScreen);
     lobbyScreen = new LobbyScreen(this);
     ui->stackedWidget->addWidget(lobbyScreen);
+
+    resultScreen = new ResultScreen(this);
+    ui->stackedWidget->addWidget(resultScreen);
+
     ui->stackedWidget->setCurrentWidget(loginScreen);
     connect(loginScreen, &LoginScreen::connectAttempted,
             this, &MainWindow::onLoginAttempt);

@@ -40,8 +40,9 @@ int main(int argc, char* argv[]) {
         
         GameWindow gw(*client_ptr_for_game); 
         gw.runGame();
-        if (gw.wasRaceFinished()) {
-            w.showResults(gw.getFinalState().final_results, 
+        if (client_ptr_for_game->hasFinishedGame()) {
+            std::cout << "Termino la partida";
+            w.showResults(client_ptr_for_game->getFinalState(), 
                           player_names, 
                           client_ptr_for_game->getMyPlayerId());
 

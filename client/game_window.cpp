@@ -612,18 +612,19 @@ void GameWindow::drawGame(Renderer& renderer,
     int cp_count = 0;
     while (true){
 
-        if (receiver.isServerDown()) {
+        GameStateDTO gs = receiver.pollGameState();
+        
+        if (gs.is_running == 0) {
             std::cerr << "CLIENT: servidor desconectado, cerrando ventana SDL...\n";
             soundManager.stopEngineSound();
             soundManager.stopSkid();
             soundManager.stopBackgroundMusic();
             std::cerr << "Musica Detenida.\n"; 
+            client.setFinishedGame();
+            client.setFinalResults(gs.final_results);
             break;
         }
-
-        GameStateDTO gs = receiver.pollGameState();
-        
-        if (gs.is_running == 0) {
+        if (receiver.isServerDown()) {
             std::cerr << "CLIENT: servidor desconectado, cerrando ventana SDL...\n";
             soundManager.stopEngineSound();
             soundManager.stopSkid();

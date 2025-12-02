@@ -131,13 +131,13 @@ void GameWindow::drawCronometer(Renderer& renderer, Texture& hud,
 }
 
 void GameWindow::drawSpeedometer(Renderer& renderer, Texture& hud,
-                                 int my_player_index, GameStateDTO& last_state,
+                                 const PlayerState* me,
                                  int hudX, int hudY)
 {
     float speed_kmh = 0.0f;
 
-    if (!(my_player_index < 0 || my_player_index >= (int)last_state.players.size())) {
-        speed_kmh = last_state.players[my_player_index].state.speed*10;
+    if (me) {
+        speed_kmh = (me->state.speed)*10;
     }
 
     const Rect& PANEL_SPEED = game_sprites.getSpeedPanelRect();
@@ -936,7 +936,7 @@ void GameWindow::drawGame(Renderer& renderer,
 
         hudX += BOX_W + HUD_PAD;
 
-        drawSpeedometer(renderer, hud, (me ? my_id : -1), last_state, hudX, hudY);
+        drawSpeedometer(renderer, hud, me, hudX, hudY);
 
         hudX += BOX_W + HUD_PAD;
 

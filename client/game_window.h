@@ -90,8 +90,7 @@ private:
                         GameStateDTO& last_state, const PlayerState* me);
     void drawSpeedometer(SDL2pp::Renderer& renderer,
                          SDL2pp::Texture& hud,
-                         int my_player_index,
-                         GameStateDTO& last_state,
+                         const PlayerState* me,
                          int hudX, int hudY);
     void drawHealthBar(SDL2pp::Renderer& renderer,
                        SDL2pp::Texture& hud,

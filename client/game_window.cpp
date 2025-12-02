@@ -594,6 +594,7 @@ void GameWindow::drawGame(Renderer& renderer,
                          Texture& checkered_flag,
                          Texture& checkpoint_hint,
                          Texture& market,
+                         Texture& moriste,
                          Rect& srcRect,
                          Rect& dstRect,
                          int viewW, int viewH,
@@ -965,6 +966,29 @@ void GameWindow::drawGame(Renderer& renderer,
 
         drawMinimap(background, renderer, last_state, dstRect, checkpoint_flag, checkered_flag);
 
+        if (!me) {
+            int texW = moriste.GetWidth();
+            int texH = moriste.GetHeight();
+
+            float maxFrac = 0.6f;
+            float scale = std::min(
+                (viewW * maxFrac) / static_cast<float>(texW),
+                (viewH * maxFrac) / static_cast<float>(texH)
+            );
+
+            int dstW = static_cast<int>(std::lround(texW * scale));
+            int dstH = static_cast<int>(std::lround(texH * scale));
+            int dstX = (viewW - dstW) / 2;
+            int dstY = (viewH - dstH) / 2;
+
+            renderer.Copy(
+                moriste,
+                Rect(0, 0, texW, texH),
+                Rect(dstX, dstY, dstW, dstH)
+            );
+        }
+
+
         renderer.Present();
 
         syncFrame(rate, perf_freq, t1, it);
@@ -1013,6 +1037,10 @@ int GameWindow::runGame() {
         Surface market_surface(DATA_PATH "/assets/mejoras.png");
         Texture market(renderer, market_surface);
 
+        Surface moriste_surface(DATA_PATH "/assets/moriste.png");
+        moriste_surface.SetColorKey(true,
+            SDL_MapRGB(moriste_surface.Get()->format, 255, 242, 0));
+        Texture moriste(renderer, moriste_surface);
 
         renderer.SetLogicalSize(1600, 900);
             
@@ -1061,6 +1089,7 @@ int GameWindow::runGame() {
                       checkered_flag,
                       checkpoint_hint,
                       market,
+                      moriste,
                       srcRect,
                       dstRect,
                       viewW, viewH,

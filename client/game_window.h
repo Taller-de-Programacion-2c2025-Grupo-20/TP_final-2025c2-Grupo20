@@ -108,6 +108,7 @@ private:
                  SDL2pp::Texture& checkered_flag,
                  SDL2pp::Texture& checkpoint_hint,
                  SDL2pp::Texture& market,
+                 SDL2pp::Texture& moriste,
                  SDL2pp::Rect& srcRect,
                  SDL2pp::Rect& dstRect,
                  int viewW, int viewH,

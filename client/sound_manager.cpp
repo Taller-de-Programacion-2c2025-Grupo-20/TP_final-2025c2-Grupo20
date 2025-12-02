@@ -125,7 +125,6 @@ void SoundManager::stopSkid() {
 }
 
 
-// 🟩 NUEVO
 void SoundManager::playCrashPositional(float volumeFactor) {
     if (volumeFactor <= 0.0f) return;
     if (volumeFactor > 1.0f) volumeFactor = 1.0f;
@@ -142,7 +141,6 @@ void SoundManager::playCrashPositional(float volumeFactor) {
 }
 
 
-// 🟩 NUEVO
 void SoundManager::updateOtherSkid(bool anySkidding, float volumeFactor) {
     if (!anySkidding || volumeFactor <= 0.0f) {
         if (otherSkidChannel != -1) {

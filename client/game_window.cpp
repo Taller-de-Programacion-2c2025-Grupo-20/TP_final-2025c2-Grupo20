@@ -800,7 +800,6 @@ void GameWindow::drawGame(Renderer& renderer,
             hp = 0;
         }
 
-        // 🟩 NUEVO
         float listener_x_m = lastListenerX_m;
         float listener_y_m = lastListenerY_m;
         uint8_t my_player_id = client.getMyPlayerId();
@@ -816,10 +815,9 @@ void GameWindow::drawGame(Renderer& renderer,
 
         for (size_t i = 0; i < last_state.players.size(); i++) {
 
-            // NUEVO: referencia local al jugador
-            const auto& player = last_state.players[i];          // NUEVO
-            const auto& st     = player.state;                   // NUEVO
-            uint8_t pid        = player.player_id;               // NUEVO
+            const auto& player = last_state.players[i];      
+            const auto& st     = player.state;                  
+            uint8_t pid        = player.player_id;              
 
             if (have_state && pid == client.getMyPlayerId()) {
                 my_player_index = i;
@@ -839,11 +837,10 @@ void GameWindow::drawGame(Renderer& renderer,
 
                 srcRect.SetX(camX).SetY(camY);
 
-                // NUEVO: actualizar listener en mundo
-                listener_x_m   = pos_x_m;                        // NUEVO
-                listener_y_m   = pos_y_m;                        // NUEVO
-                lastListenerX_m = listener_x_m;                  // NUEVO
-                lastListenerY_m = listener_y_m;                  // NUEVO
+                listener_x_m   = pos_x_m;                        
+                listener_y_m   = pos_y_m;                        
+                lastListenerX_m = listener_x_m;                  
+                lastListenerY_m = listener_y_m;                  
             }
 
             // posición del auto
@@ -867,57 +864,54 @@ void GameWindow::drawGame(Renderer& renderer,
 
             renderer.Copy(sprites, spr, Rect(draw_x, draw_y, spr.GetW(), spr.GetH()));
 
-            // ====== AUDIO POSICIONAL (NUEVO) ======
-            uint8_t currentHp       = player.health;             // NUEVO
-            float   currentSpeedKmh = st.speed * 10.0f;          // NUEVO
+            uint8_t currentHp       = player.health;             
+            float   currentSpeedKmh = st.speed * 10.0f;          
 
-            // CRASH POSICIONAL (NUEVO)
-            auto itHp = lastHealthByPlayer.find(pid);            // NUEVO
+            auto itHp = lastHealthByPlayer.find(pid);            
             if (itHp != lastHealthByPlayer.end() &&
-                currentHp < itHp->second) {                      // NUEVO
+                currentHp < itHp->second) {                      
 
-                float dx = st.x - listener_x_m;                  // NUEVO
-                float dy = st.y - listener_y_m;                  // NUEVO
-                float dist = std::sqrt(dx*dx + dy*dy);           // NUEVO
+                float dx = st.x - listener_x_m;                  
+                float dy = st.y - listener_y_m;                  
+                float dist = std::sqrt(dx*dx + dy*dy);           
 
-                if (dist < MAX_HEAR_DISTANCE_M) {                // NUEVO
-                    float t = dist / MAX_HEAR_DISTANCE_M;        // NUEVO
-                    float volumeFactor = 1.0f - t;               // NUEVO
-                    soundManager.playCrashPositional(volumeFactor); // NUEVO
+                if (dist < MAX_HEAR_DISTANCE_M) {                
+                    float t = dist / MAX_HEAR_DISTANCE_M;        
+                    float volumeFactor = 1.0f - t;               
+                    soundManager.playCrashPositional(volumeFactor); 
                 }
             }
-            lastHealthByPlayer[pid] = currentHp;                 // NUEVO
+            lastHealthByPlayer[pid] = currentHp;              
 
-            // SKID DE OTROS CUANDO FRENAN (NUEVO)
-            float prevSpeedKmh = currentSpeedKmh;                // NUEVO
-            auto itSp = lastSpeedByPlayer.find(pid);            // NUEVO
-            if (itSp != lastSpeedByPlayer.end())                // NUEVO
-                prevSpeedKmh = itSp->second;                    // NUEVO
+            float prevSpeedKmh = currentSpeedKmh;            
+            auto itSp = lastSpeedByPlayer.find(pid);         
+            if (itSp != lastSpeedByPlayer.end())               
+                prevSpeedKmh = itSp->second;                  
 
-            float deltaSpeed = prevSpeedKmh - currentSpeedKmh;   // NUEVO
+            float deltaSpeed = prevSpeedKmh - currentSpeedKmh;   
 
-            if (pid != my_player_id) {                           // NUEVO
+            if (pid != my_player_id) {                          
                 bool isBrakingOther =
                     (currentSpeedKmh > MIN_SKID_SPEED) &&
-                    (deltaSpeed > BRAKE_DECEL_THRESHOLD);        // NUEVO
+                    (deltaSpeed > BRAKE_DECEL_THRESHOLD);      
 
-                if (isBrakingOther) {                            // NUEVO
-                    float dx = st.x - listener_x_m;              // NUEVO
-                    float dy = st.y - listener_y_m;              // NUEVO
-                    float dist = std::sqrt(dx*dx + dy*dy);       // NUEVO
+                if (isBrakingOther) {                         
+                    float dx = st.x - listener_x_m;           
+                    float dy = st.y - listener_y_m;            
+                    float dist = std::sqrt(dx*dx + dy*dy);   
 
-                    if (dist < MAX_HEAR_DISTANCE_M) {            // NUEVO
-                        float t = dist / MAX_HEAR_DISTANCE_M;    // NUEVO
-                        float volumeFactor = 1.0f - t;           // NUEVO
+                    if (dist < MAX_HEAR_DISTANCE_M) {         
+                        float t = dist / MAX_HEAR_DISTANCE_M; 
+                        float volumeFactor = 1.0f - t;       
 
-                        anyOtherSkidAudible = true;              // NUEVO
+                        anyOtherSkidAudible = true;            
                         if (volumeFactor > nearestSkidVolumeFactor)
-                            nearestSkidVolumeFactor = volumeFactor; // NUEVO
+                            nearestSkidVolumeFactor = volumeFactor; 
                     }
                 }
             }
 
-            lastSpeedByPlayer[pid] = currentSpeedKmh;            // NUEVO
+            lastSpeedByPlayer[pid] = currentSpeedKmh;       
         }
 
 

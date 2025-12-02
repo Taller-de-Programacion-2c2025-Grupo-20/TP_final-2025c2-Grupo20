@@ -4,13 +4,9 @@
 #include <string>
 #include <thread>
 
+#include "../common/config.h"
 #include "../common/constants.h"
 #include "../common/queue.h"
-
-const float PIXELS_PER_METER = 16.0f;
-const float RACE_DURATION_SECONDS = MATCH_DURATION_SECONDS - 15.0f;
-
-const int MAX_RACES = 3;
 
 void Gameloop::handleInput(const InputCmd& input) {
     auto it = clients_cars.find(input.player_id);
@@ -53,11 +49,11 @@ void Gameloop::loadWalls() {
                 float width_pixels = obj["width"].as<float>();
                 float height_pixels = obj["height"].as<float>();
 
-                float x_meters = (x_pixels + width_pixels / 2) / PIXELS_PER_METER;
-                float y_meters = (y_pixels + height_pixels / 2) / PIXELS_PER_METER;
+                float x_meters = (x_pixels + width_pixels / 2) / Config::get().PIXELS_PER_METER();
+                float y_meters = (y_pixels + height_pixels / 2) / Config::get().PIXELS_PER_METER();
 
-                float width_meters = (width_pixels / 2) / PIXELS_PER_METER;
-                float height_meters = (height_pixels / 2) / PIXELS_PER_METER;
+                float width_meters = (width_pixels / 2) / Config::get().PIXELS_PER_METER();
+                float height_meters = (height_pixels / 2) / Config::get().PIXELS_PER_METER();
 
                 world_walls.push_back(std::make_unique<Wall>(world, b2Vec2(x_meters, y_meters),
                                                              width_meters, height_meters));
@@ -92,10 +88,10 @@ void Gameloop::loadCheckpoints(int race_number) {
                 float width_pixels = obj["width"].as<float>();
                 float height_pixels = obj["height"].as<float>();
 
-                float x_meters = (x_pixels + width_pixels / 2) / PIXELS_PER_METER;
-                float y_meters = (y_pixels + height_pixels / 2) / PIXELS_PER_METER;
-                float width_meters = (width_pixels / 2) / PIXELS_PER_METER;
-                float height_meters = (height_pixels / 2) / PIXELS_PER_METER;
+                float x_meters = (x_pixels + width_pixels / 2) / Config::get().PIXELS_PER_METER();
+                float y_meters = (y_pixels + height_pixels / 2) / Config::get().PIXELS_PER_METER();
+                float width_meters = (width_pixels / 2) / Config::get().PIXELS_PER_METER();
+                float height_meters = (height_pixels / 2) / Config::get().PIXELS_PER_METER();
 
                 int checkpoint_id = -1;
                 if (obj["properties"]) {
@@ -134,8 +130,8 @@ void Gameloop::loadInitialPos(int race_number) {
                 float width_pixels = obj["width"].as<float>();
                 float height_pixels = obj["height"].as<float>();
 
-                float x_meters = (x_pixels + width_pixels / 2) / PIXELS_PER_METER;
-                float y_meters = (y_pixels + height_pixels / 2) / PIXELS_PER_METER;
+                float x_meters = (x_pixels + width_pixels / 2) / Config::get().PIXELS_PER_METER();
+                float y_meters = (y_pixels + height_pixels / 2) / Config::get().PIXELS_PER_METER();
 
                 cars_inital_pos.emplace_back(x_meters, y_meters);
             }
@@ -246,19 +242,26 @@ void Gameloop::registerFinish(uint8_t player_id, float elapsed_time, float penal
 
 void Gameloop::registerDestroy(uint8_t player_id, float penalty_seconds) {
     not_finished_results.push_back(
-            {player_id, 0, RACE_DURATION_SECONDS + penalty_seconds, false, true, false});
+            {player_id, 0, Config::get().RACE_DURATION_SECONDS() + penalty_seconds, false, true, false});
 }
 
 void Gameloop::registerTimeout() {
     for (auto& car : clients_cars) {
         float penalty = car.second->timePenalty();
         not_finished_results.push_back(
-                {car.first, 0, RACE_DURATION_SECONDS + penalty, false, false, true});
+                {car.first, 0, Config::get().RACE_DURATION_SECONDS() + penalty, false, false, true});
     }
 }
 
 void Gameloop::logRaceResults() const {
     std::cout << "===== Resultados de la carrera =====\n";
+
+    auto it = races_results.find(current_race_number);
+    if (it == races_results.end()) {
+        std::cout << "No hay resultados registrados para la carrera "
+                << current_race_number << "\n";
+        return;
+    }
 
     for (const auto& res : races_results.at(current_race_number)) {
         std::cout << "Jugador " << static_cast<int>(res.player_id) << ": ";
@@ -496,7 +499,7 @@ void Gameloop::run() {
 
     const double rate = 1.0 / 60.0;
 
-    while (should_keep_running() && (current_race_number <= MAX_RACES ) ) {
+    while (should_keep_running() && (current_race_number <= Config::get().MAX_RACES() ) ) {
 
         if (current_race_number > 1) {
             moveToNextRace();

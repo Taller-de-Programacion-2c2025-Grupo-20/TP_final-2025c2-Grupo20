@@ -4,6 +4,7 @@
 
 #include <Box2D/Box2D.h>
 
+#include "../common/config.h"
 #include "../common/constants.h"
 #include "world_entities/entity.h"
 
@@ -12,7 +13,7 @@ void CollisionsListener::handlerCollisionCarAndCar(Car* carA, Car* carB) {
     float delta_speed_A = carA->getBeforeCollisionSpeed() - carA->getSpeed();
     float delta_speed_B = carB->getBeforeCollisionSpeed() - carB->getSpeed();
 
-    if (delta_speed_A < 0.3f && delta_speed_B < 0.3f) //ignoro roces
+    if (delta_speed_A < Config::get().DELTA_SPEED_TOLERANCE() && delta_speed_B < Config::get().DELTA_SPEED_TOLERANCE()) //ignoro roces
         return;
 
     float rawDamageA = 0.0f;
@@ -47,7 +48,7 @@ void CollisionsListener::handlerCollisionCarAndWall(Car* car) {
 
     float delta_speed = last_speed - current_speed;
 
-    if (delta_speed < 0.3f) { //Para cuando rozo con una pared
+    if (delta_speed < Config::get().DELTA_SPEED_TOLERANCE()) { //Para cuando rozo con una pared
         return;
     }
 

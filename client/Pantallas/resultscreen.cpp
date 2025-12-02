@@ -83,3 +83,12 @@ void ResultScreen::setResults(const std::vector<PlayerResultDTO>& results,
 void ResultScreen::on_btnExit_clicked() {
     QApplication::quit();
 }
+
+void ResultScreen::paintEvent(QPaintEvent *) {
+    QPainter p(this);
+    if (!backgroundImage.isNull()) {
+        p.drawPixmap(rect(), backgroundImage);
+    } else {
+        p.fillRect(rect(), Qt::black);
+    }
+}

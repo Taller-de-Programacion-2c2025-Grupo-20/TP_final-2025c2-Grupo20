@@ -6,7 +6,7 @@
 #include <QPainter> 
 #include <vector>
 #include <map>
-#include "../common/dto.h"
+#include "../common/gameState.h"
 
 namespace Ui {
 class ResultScreen;

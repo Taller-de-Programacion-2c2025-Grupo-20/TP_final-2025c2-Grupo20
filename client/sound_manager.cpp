@@ -79,6 +79,13 @@ void SoundManager::playRaceEnd() {
         std::cerr << "Error al reproducir ending: "
                   << Mix_GetError() << std::endl;
     }
+    else{
+        raceEndSoundedPreviously = true;
+    }
+}
+
+bool SoundManager::raceEndSounded() {
+    return raceEndSoundedPreviously;
 }
 
 void SoundManager::stopBackgroundMusic() {

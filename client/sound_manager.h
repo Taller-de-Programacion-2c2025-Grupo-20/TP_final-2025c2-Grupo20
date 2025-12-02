@@ -21,6 +21,7 @@ public:
 
     void playRaceEnd();
     void stopBackgroundMusic();
+    bool raceEndSounded();
 
     // 🟩 NUEVO
     void playCrashPositional(float volumeFactor);
@@ -53,7 +54,7 @@ private:
 
     SDL2pp::Music bgMusic;
     bool bgMusicStarted = false;
-
+    bool raceEndSoundedPreviously = false;
     SDL2pp::Chunk raceEndSound;
 };
 

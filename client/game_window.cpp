@@ -751,6 +751,10 @@ void GameWindow::drawGame(Renderer& renderer,
             soundManager.playRaceEnd();
         }
 
+        if (!me && !soundManager.raceEndSounded()){
+            soundManager.stopSkid();    
+            soundManager.playRaceEnd();
+        }
 
         if (static_cast<int>(last_state.elapsed_time) <= BUY_TIME_SECONDS) {
             drawMarket(renderer, market, viewW, viewH, speed_upgrades, accel_upgrades, health_upgrades);

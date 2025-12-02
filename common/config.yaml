@@ -1,0 +1,8 @@
+gameloop:
+  pixels_per_meter: 16
+  race_duration_seconds: 600.0
+  post_race_transition_seconds: 15
+  max_races: 3
+
+collisions:
+  delta_speed_tolerance: 0.3

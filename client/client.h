@@ -16,7 +16,8 @@ private:
     ClientProtocol protocol;
     //uint8_t my_player_id;
     std::atomic<bool> is_running;
-
+    bool finished_game = false;
+    std::vector<PlayerResultDTO> final_results;
     Queue<InputCmd> input_queue;
     ClientSender sender;
     ClientReceiver receiver;
@@ -38,8 +39,11 @@ public:
     ClientProtocol& getProtocol();
     uint8_t getCarType(int player_id);
     uint8_t getMapId();
-
+    bool hasFinishedGame(){return finished_game;}
+    void setFinishedGame(){finished_game = true;}
     void push_input(const InputCmd& cmd);
+    void setFinalResults(std::vector<PlayerResultDTO> results){final_results = results;}
+    std::vector<PlayerResultDTO> getFinalState(){return final_results;}
     
     Client(const Client&) = delete;
     Client& operator=(const Client&) = delete;

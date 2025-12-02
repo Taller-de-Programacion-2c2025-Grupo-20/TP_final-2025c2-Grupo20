@@ -225,7 +225,7 @@ GameStateDTO Gameloop::getCurrentGameState(const float elapsed_time) {
 
     current_state.elapsed_time = elapsed_time;
 
-    current_state.is_running = 1;
+    current_state.race_finished = 0;
 
     return current_state;
 }
@@ -485,11 +485,12 @@ std::chrono::_V2::steady_clock::time_point Gameloop::keepLoopRate(std::chrono::s
 }
 
 GameStateDTO Gameloop::gameEndedGamestate(){
-    GameStateDTO current_state;
-    current_state.car_count = 0;
-    current_state.elapsed_time = 0;
-    current_state.is_running = 0;
-    return current_state;
+    GameStateDTO final_state; 
+    final_state.race_finished = 1; 
+    final_state.final_results = getFinalResultsDTO();
+    final_state.car_count = clients_acumulated_time.size();
+    final_state.elapsed_time = 0;
+    return final_state;
 }
 
 void Gameloop::run() {
@@ -541,11 +542,17 @@ void Gameloop::run() {
         current_race_number++;
     }
 
-    std::cout << "Gameloop terminado.\n";
+    std::cout << "Gameloop terminado. Enviando resultados finales...\n";
+
+    GameStateDTO final_state = getCurrentGameState(0.0f); 
+    final_state.race_finished = 1; 
+    final_state.final_results = getFinalResultsDTO();
+
+    clients_queues.broadcast(final_state);
     logFinalResults();
 
-    std::cout << "Enviando mensaje de finalizacion de partida a los clientes...\n";
-    clients_queues.broadcast(gameEndedGamestate());
+    std::cout << "Esperando 2 segundos para asegurar entrega de paquetes...\n";
+
 }
 
 void Gameloop::stop() {
@@ -570,4 +577,31 @@ Gameloop::~Gameloop() {
     world_checkpoints.clear();
     world_walls.clear();
 
+}
+
+std::vector<PlayerResultDTO> Gameloop::getFinalResultsDTO() {
+    std::vector<PlayerResultDTO> results_dto;
+
+    // 1. Copiar y Ordenar (Igual que en tu logFinalResults)
+    std::vector<std::pair<uint8_t, float>> sorted(
+        clients_acumulated_time.begin(),
+        clients_acumulated_time.end()
+    );
+
+    std::sort(sorted.begin(), sorted.end(),
+              [](const auto& a, const auto& b) {
+                  return a.second < b.second;
+              });
+
+    // 2. Convertir a DTO
+    int pos = 1;
+    for (const auto& [player_id, total_time] : sorted) {
+        PlayerResultDTO res;
+        res.player_id = player_id;
+        res.total_time = total_time;
+        res.position = pos++;
+        results_dto.push_back(res);
+    }
+
+    return results_dto;
 }

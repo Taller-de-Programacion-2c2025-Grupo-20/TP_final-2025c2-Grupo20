@@ -867,6 +867,30 @@ client/Pantallas/loginscreen.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/taller_client.dir/build.make CMakeFiles/taller_client.dir/client/Pantallas/loginscreen.cpp.s
 .PHONY : client/Pantallas/loginscreen.cpp.s
 
+client/Pantallas/resultscreen.o: client/Pantallas/resultscreen.cpp.o
+.PHONY : client/Pantallas/resultscreen.o
+
+# target to build an object file
+client/Pantallas/resultscreen.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/taller_client.dir/build.make CMakeFiles/taller_client.dir/client/Pantallas/resultscreen.cpp.o
+.PHONY : client/Pantallas/resultscreen.cpp.o
+
+client/Pantallas/resultscreen.i: client/Pantallas/resultscreen.cpp.i
+.PHONY : client/Pantallas/resultscreen.i
+
+# target to preprocess a source file
+client/Pantallas/resultscreen.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/taller_client.dir/build.make CMakeFiles/taller_client.dir/client/Pantallas/resultscreen.cpp.i
+.PHONY : client/Pantallas/resultscreen.cpp.i
+
+client/Pantallas/resultscreen.s: client/Pantallas/resultscreen.cpp.s
+.PHONY : client/Pantallas/resultscreen.s
+
+# target to generate assembly for a file
+client/Pantallas/resultscreen.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/taller_client.dir/build.make CMakeFiles/taller_client.dir/client/Pantallas/resultscreen.cpp.s
+.PHONY : client/Pantallas/resultscreen.cpp.s
+
 client/client.o: client/client.cpp.o
 .PHONY : client/client.o
 
@@ -1727,6 +1751,9 @@ help:
 	@echo "... client/Pantallas/loginscreen.o"
 	@echo "... client/Pantallas/loginscreen.i"
 	@echo "... client/Pantallas/loginscreen.s"
+	@echo "... client/Pantallas/resultscreen.o"
+	@echo "... client/Pantallas/resultscreen.i"
+	@echo "... client/Pantallas/resultscreen.s"
 	@echo "... client/client.o"
 	@echo "... client/client.i"
 	@echo "... client/client.s"

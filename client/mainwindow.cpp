@@ -10,17 +10,21 @@ MainWindow::MainWindow(const std::string& host, const std::string& port, QWidget
       serverPort(QString::fromStdString(port))
 {
     ui->setupUi(this);
-    pantallaLogin = new LoginScreen(this);
-    ui->stackedWidget->addWidget(pantallaLogin);
-    pantallaLobby = new LobbyScreen(this);
-    ui->stackedWidget->addWidget(pantallaLobby);
-    ui->stackedWidget->setCurrentWidget(pantallaLogin);
-    connect(pantallaLogin, &LoginScreen::connectAttempted,
+    loginScreen = new LoginScreen(this);
+    ui->stackedWidget->addWidget(loginScreen);
+    lobbyScreen = new LobbyScreen(this);
+    ui->stackedWidget->addWidget(lobbyScreen);
+
+    resultScreen = new ResultScreen(this);
+    ui->stackedWidget->addWidget(resultScreen);
+
+    ui->stackedWidget->setCurrentWidget(loginScreen);
+    connect(loginScreen, &LoginScreen::connectAttempted,
             this, &MainWindow::onLoginAttempt);
             
-    connect(pantallaLobby, &LobbyScreen::startGame, this, &MainWindow::startGame);
+    connect(lobbyScreen, &LobbyScreen::startGame, this, &MainWindow::on_gameStarted);
 
-    connect(pantallaLobby, &LobbyScreen::serverDisconnected,
+    connect(lobbyScreen, &LobbyScreen::serverDisconnected,
             this, [this]() {
                 this->close();
             });
@@ -32,8 +36,8 @@ MainWindow::~MainWindow() {
 }
 
 void MainWindow::onLoginAttempt(const QString& name) {
-    pantallaLogin->setEnabled(false);
-    pantallaLogin->displayError("Conectando...");
+    loginScreen->setEnabled(false);
+    loginScreen->displayError("Conectando...");
     
     try {
         client = std::make_unique<Client>(serverIp.toStdString().c_str(),
@@ -57,17 +61,27 @@ void MainWindow::onLoginAttempt(const QString& name) {
 }
 
 void MainWindow::handleLoginSuccess() {
-    pantallaLogin->displayError("¡Conectado!");
-    pantallaLobby->setClient(client.get());
-    ui->stackedWidget->setCurrentWidget(pantallaLobby);
+    loginScreen->displayError("¡Conectado!");
+    lobbyScreen->setClient(client.get());
+    ui->stackedWidget->setCurrentWidget(lobbyScreen);
 }
 
 void MainWindow::handleLoginFailed() {
-    pantallaLogin->setEnabled(true);
-    pantallaLogin->displayError("Error: no se pudo autenticar.");
+    loginScreen->setEnabled(true);
+    loginScreen->displayError("Error: no se pudo autenticar.");
     client.reset();
 }
 
 void MainWindow::on_gameStarted() {
-    emit startGame(client.get());
+    std::map<uint8_t, QString> names = lobbyScreen->getPlayerNamesMap();
+    emit startGameSignal(client.get(), names);
+}
+
+void MainWindow::showResults(const std::vector<PlayerResultDTO>& results, 
+                             const std::map<uint8_t, QString>& names, 
+                             uint8_t myId) {
+    
+    resultScreen->setResults(results, names, myId);
+    
+    ui->stackedWidget->setCurrentWidget(resultScreen);
 }

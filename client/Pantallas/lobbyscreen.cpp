@@ -17,9 +17,9 @@ LobbyScreen::LobbyScreen(QWidget *parent) :
     ui(new Ui::LobbyScreen) {
     
     ui->setupUi(this);
-    backgroundLobby.load(":/Pantallas/fondo_lobby.png");
-    backgroundMapSelect.load(":/Pantallas/fondo_select_map.png");
-    backgroundCarSelect.load(":/Pantallas/fondo_garage.png");
+    backgroundLobby.load(LOBBY_FILE);
+    backgroundMapSelect.load(SELECT_MAP_FILE);
+    backgroundCarSelect.load(GARAGE_FILE);
 
     ui->stackedWidget_Lobby->setStyleSheet(BACKGROUND_STYLE);
     ui->page_WaitingRoom->setStyleSheet(BACKGROUND_STYLE);
@@ -374,7 +374,6 @@ void LobbyScreen::handleWaitingRoomState(const LobbyStateDTO& state) {
 
     if (!isFirstUpdate && !wasIHost && amIHost) {
         ui->label_Notification->setText("¡Ahora eres el host!");
-        ui->label_Notification->setStyleSheet("color: hsla(0, 100%, 50%, 1.00); font-family: 'Press Start 2P'; font-weight: bold; font-size: 10pt; background: transparent;");
         ui->label_Notification->show();
         ui->label_Notification->adjustSize();
         
@@ -398,9 +397,10 @@ void LobbyScreen::handleWaitingRoomState(const LobbyStateDTO& state) {
     
     ui->btnGoToMap->setEnabled(true);
     ui->btnGoToCar->setEnabled(true);
-
+    namesCache.clear();
     ui->playerListWidget->clear();
     for (const auto& player : state.players) {
+        namesCache[player.player_id] = QString::fromStdString(player.name);
         CarDisplayInfo info = getCarInfo(player.car_id);
         QString text = QString::fromStdString(player.name) + " (" + info.name + ")";
         ui->playerListWidget->addItem(text);
@@ -466,4 +466,8 @@ CarDisplayInfo LobbyScreen::getCarInfo(int carIndex) {
     }
     
     return {name, rect, stats};
+}
+
+std::map<uint8_t, QString> LobbyScreen::getPlayerNamesMap() const {
+    return this->namesCache;
 }

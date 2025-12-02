@@ -59,6 +59,9 @@ private:
     bool running = false;
     bool backwards = false;
     int  turn_dir = 0;
+
+    GameStateDTO finalState;
+    bool raceFinished = false;
     bool braking = false;
 
     void syncFrame(double rate,
@@ -173,6 +176,8 @@ public:
 
     ~GameWindow() = default;  
     
+    GameStateDTO getFinalState() const { return finalState; }
+    bool wasRaceFinished() const { return raceFinished; }
 };
 
 #endif

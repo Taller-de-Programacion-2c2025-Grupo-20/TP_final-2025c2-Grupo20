@@ -132,8 +132,20 @@ GameStateDTO ClientProtocol::receive_game_state_payload() {
         state_dto.players.push_back(player);
     }
     
-    state_dto.is_running = receiveUint8_t();
+    state_dto.race_finished = receiveUint8_t();
 
+
+    if (state_dto.race_finished == 1) {
+        uint8_t results_count = receiveUint8_t();
+        for (int i = 0; i < results_count; ++i) {
+            
+            PlayerResultDTO player_result;
+            player_result.player_id = receiveUint8_t();
+            player_result.position = receiveUint8_t();
+            player_result.total_time = receiveFloat();
+            state_dto.final_results.push_back(player_result);
+        }
+    }
     return state_dto;
 }
 

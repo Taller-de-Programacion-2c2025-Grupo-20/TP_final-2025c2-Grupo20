@@ -98,7 +98,17 @@ void ServerProtocol::send_game_state(const GameStateDTO& state) {
         
         buffer.push_back(player.checkpoints_passed);
     }
-    buffer.push_back(state.is_running);
+    
+    buffer.push_back(state.race_finished);
+    if (state.race_finished == 1) {
+        buffer.push_back(static_cast<uint8_t>(state.final_results.size()));
+        for (const auto& result : state.final_results) {
+            
+            buffer.push_back(result.player_id);
+            buffer.push_back(result.position);
+            addFloatToBuffer(buffer, result.total_time);
+        }
+    }
 
     skt.sendall(buffer.data(), buffer.size());
 }

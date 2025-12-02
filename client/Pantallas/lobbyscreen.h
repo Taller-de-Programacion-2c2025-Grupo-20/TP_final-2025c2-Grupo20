@@ -30,7 +30,7 @@ public:
     explicit LobbyScreen(QWidget *parent = nullptr);
     ~LobbyScreen();
     void setClient(Client* client);
-
+    std::map<uint8_t, QString> getPlayerNamesMap() const;
 signals:
     void startGame(Client* client);
     void serverDisconnected();   
@@ -73,6 +73,7 @@ private:
     void updateBigMapPreview();
     void updateBigCarPreview();
     CarDisplayInfo getCarInfo(int carIndex);
+    std::map<uint8_t, QString> namesCache;
 };
 
 #endif

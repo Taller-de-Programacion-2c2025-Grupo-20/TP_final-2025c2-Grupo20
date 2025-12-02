@@ -718,8 +718,7 @@ void GameWindow::drawGame(Renderer& renderer, Texture& hud, Texture& background,
                        health_upgrades);
 
             int remaining = BUY_TIME_SECONDS - static_cast<int>(last_state.elapsed_time);
-            // int remaining = static_cast<int>(last_state.elapsed_time) - (MATCH_DURATION_SECONDS -
-            // BUY_TIME_SECONDS);
+
             drawMarketCountdown(renderer, market, remaining, viewW, viewH);
 
             renderer.Present();
@@ -786,7 +785,6 @@ void GameWindow::drawGame(Renderer& renderer, Texture& hud, Texture& background,
                 lastListenerY_m = listener_y_m;
             }
 
-            // posición del auto
             pos_x_m = st.x;
             pos_y_m = st.y;
             angle = st.angle;
@@ -922,7 +920,6 @@ int GameWindow::runGame() {
 
         SDL sdl(SDL_INIT_VIDEO | SDL_INIT_AUDIO);
 
-        // Ventana y renderer
         Window window("SDL2pp demo", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, 1600, 900,
                       SDL_WINDOW_RESIZABLE);
 

@@ -4,6 +4,7 @@
 
 #include <Box2D/Box2D.h>
 
+#include "../common/config.h"
 #include "../common/constants.h"
 #include "world_entities/entity.h"
 
@@ -12,20 +13,20 @@ void CollisionsListener::handlerCollisionCarAndCar(Car* carA, Car* carB) {
     float delta_speed_A = carA->getBeforeCollisionSpeed() - carA->getSpeed();
     float delta_speed_B = carB->getBeforeCollisionSpeed() - carB->getSpeed();
 
-    if (delta_speed_A < 0.3f && delta_speed_B < 0.3f) //ignoro roces
+    if (delta_speed_A < Config::get().DELTA_SPEED_TOLERANCE() && delta_speed_B < Config::get().DELTA_SPEED_TOLERANCE()) //ignoro roces
         return;
 
     float rawDamageA = 0.0f;
     float rawDamageB = 0.0f;
 
     if (delta_speed_A > delta_speed_B){
-        rawDamageA = std::max(0.0f, delta_speed_A * 1.0f);
-        rawDamageB = std::max(0.0f, delta_speed_A * 1.0f * 0.5f);
+        rawDamageA = std::max(0.0f, delta_speed_A * Config::get().DAMAGE_FACTOR());
+        rawDamageB = std::max(0.0f, delta_speed_A * Config::get().DAMAGE_FACTOR() * 0.5f);
     }
 
     if (delta_speed_B > delta_speed_A){
-        rawDamageA = std::max(0.0f, delta_speed_B * 1.0f * 0.5f);
-        rawDamageB = std::max(0.0f, delta_speed_B * 1.0f);
+        rawDamageA = std::max(0.0f, delta_speed_B * Config::get().DAMAGE_FACTOR() * 0.5f);
+        rawDamageB = std::max(0.0f, delta_speed_B * Config::get().DAMAGE_FACTOR());
     }
 
     uint8_t damageA = (uint8_t) std::clamp(rawDamageA, 0.0f, 255.0f);
@@ -47,11 +48,11 @@ void CollisionsListener::handlerCollisionCarAndWall(Car* car) {
 
     float delta_speed = last_speed - current_speed;
 
-    if (delta_speed < 0.3f) { //Para cuando rozo con una pared
+    if (delta_speed < Config::get().DELTA_SPEED_TOLERANCE()) { //Para cuando rozo con una pared
         return;
     }
 
-    float raw_damage = delta_speed * 1.0f;
+    float raw_damage = delta_speed * Config::get().DAMAGE_FACTOR();
 
     uint8_t damage = static_cast<uint8_t>(
         std::clamp(raw_damage, 0.0f, 255.0f)

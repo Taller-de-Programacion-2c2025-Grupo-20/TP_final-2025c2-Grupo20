@@ -321,84 +321,6 @@ void Gameloop::endRace() {
     }
 }
 
-void Gameloop::logFinalResults() const {
-    if (clients_acumulated_time.empty()) {
-        return;
-    }
-
-    // 1) Ordenar jugadores por tiempo acumulado (ya calculado)
-    std::vector<std::pair<uint8_t, float>> sorted(
-        clients_acumulated_time.begin(),
-        clients_acumulated_time.end()
-    );
-
-    std::sort(sorted.begin(), sorted.end(),
-              [](const auto& a, const auto& b) {
-                  return a.second < b.second;
-              });
-
-    std::cout << "===== Clasificacion final =====\n";
-
-    int final_pos = 1;
-
-    // 2) Mostrar info por jugador
-    for (const auto& [player_id, total_time] : sorted) {
-        std::cout << "Jugador " << (int)player_id
-                  << " — Posición final " << final_pos++ << "\n";
-
-        // 3) Mostrar las 3 carreras
-        for (int race = 1; race <= 3; race++) {
-            std::cout << "  Carrera " << race << ": ";
-
-            auto it = races_results.find(race);
-            if (it == races_results.end()) {
-                std::cout << "sin datos\n";
-                continue;
-            }
-
-            const auto& race_vec = it->second;
-
-            // encontrar info del jugador en esta carrera
-            auto rit = std::find_if(race_vec.begin(), race_vec.end(),
-                                    [&](const PlayerRaceInfo& info) {
-                                        return info.player_id == player_id;
-                                    });
-
-            if (rit == race_vec.end()) {
-                std::cout << "no participó\n";
-                continue;
-            }
-
-            const PlayerRaceInfo& r = *rit;
-
-            // 4) Mostrar estado concreto
-            if (r.finished) {
-                std::cout << "terminó en posición "
-                          << (int)r.position
-                          << " con tiempo "
-                          << r.finish_time << "s\n";
-            } else if (r.destroyed) {
-                std::cout << "DESTRUIDO\n";
-            } else if (r.timed_out) {
-                std::cout << "TIMEOUT\n";
-            } else {
-                std::cout << "estado desconocido\n";
-            }
-        }
-
-        std::cout << "  Tiempo total acumulado: "
-                  << total_time << "s\n\n";
-    }
-
-    // 5) Ganador
-    std::cout << "Ganador: jugador "
-              << (int)sorted.front().first << "\n";
-
-    std::cout << "================================\n";
-}
-
-
-
 bool Gameloop::raceEnded(float elapsed_time) {
     if (elapsed_time >= MATCH_DURATION_SECONDS) {
         std::cout << "La partida alcanzó 10 minutos.\n";
@@ -496,6 +418,31 @@ GameStateDTO Gameloop::gameEndedGamestate(){
     return final_state;
 }
 
+std::vector<PlayerResultDTO> Gameloop::getFinalResultsDTO() {
+    std::vector<PlayerResultDTO> results_dto;
+
+    std::vector<std::pair<uint8_t, float>> sorted(
+        clients_acumulated_time.begin(),
+        clients_acumulated_time.end()
+    );
+
+    std::sort(sorted.begin(), sorted.end(),
+              [](const auto& a, const auto& b) {
+                  return a.second < b.second;
+              });
+
+    int pos = 1;
+    for (const auto& [player_id, total_time] : sorted) {
+        PlayerResultDTO res;
+        res.player_id = player_id;
+        res.total_time = total_time;
+        res.position = pos++;
+        results_dto.push_back(res);
+    }
+
+    return results_dto;
+}
+
 void Gameloop::run() {
 
     const double rate = 1.0 / 60.0;
@@ -552,10 +499,6 @@ void Gameloop::run() {
     final_state.final_results = getFinalResultsDTO();
 
     clients_queues.broadcast(final_state);
-    logFinalResults();
-
-    std::cout << "Esperando 2 segundos para asegurar entrega de paquetes...\n";
-
 }
 
 void Gameloop::stop() {
@@ -580,31 +523,4 @@ Gameloop::~Gameloop() {
     world_checkpoints.clear();
     world_walls.clear();
 
-}
-
-std::vector<PlayerResultDTO> Gameloop::getFinalResultsDTO() {
-    std::vector<PlayerResultDTO> results_dto;
-
-    // 1. Copiar y Ordenar (Igual que en tu logFinalResults)
-    std::vector<std::pair<uint8_t, float>> sorted(
-        clients_acumulated_time.begin(),
-        clients_acumulated_time.end()
-    );
-
-    std::sort(sorted.begin(), sorted.end(),
-              [](const auto& a, const auto& b) {
-                  return a.second < b.second;
-              });
-
-    // 2. Convertir a DTO
-    int pos = 1;
-    for (const auto& [player_id, total_time] : sorted) {
-        PlayerResultDTO res;
-        res.player_id = player_id;
-        res.total_time = total_time;
-        res.position = pos++;
-        results_dto.push_back(res);
-    }
-
-    return results_dto;
 }

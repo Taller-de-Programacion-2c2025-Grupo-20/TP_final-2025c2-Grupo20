@@ -617,23 +617,12 @@ void GameWindow::drawGame(Renderer& renderer,
 
         GameStateDTO gs = receiver.pollGameState();
         
-        if (gs.race_finished) {
-          std::cout << "CLIENT: ¡Carrera terminada! Guardando resultados..." << std::endl;
-          
-          this->finalState = gs; // Guardamos los resultados
-          this->raceFinished = true;
-          
-          // Opcional: Sonido de victoria
-          soundManager.playRaceEnd(); 
-          
-          // Esperamos 2 segundos para que el usuario procese lo que pasó
-          SDL_Delay(2000); 
-          
-          // ROMPEMOS EL BUCLE -> runGame termina -> MainWindow toma el control
-          break; 
+        if (gs.is_running == 0) {
+            std::cerr << "CLIENT: servidor desconectado, cerrando ventana SDL...\n";
+            soundManager.stopEngineSound();
+            break;
         }
 
-    // 2. SEGUNDO: Si es un paquete normal de física, validamos que tenga datos.
         if (!gs.players.empty()) {
             last_state = gs;
             have_state = true;

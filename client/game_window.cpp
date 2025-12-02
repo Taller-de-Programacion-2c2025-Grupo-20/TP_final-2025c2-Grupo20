@@ -615,8 +615,9 @@ void GameWindow::drawGame(Renderer& renderer,
         if (receiver.isServerDown()) {
             std::cerr << "CLIENT: servidor desconectado, cerrando ventana SDL...\n";
             soundManager.stopEngineSound();
-            soundManager.stopSkid();   
-            std::cerr << "salio"; 
+            soundManager.stopSkid();
+            soundManager.stopBackgroundMusic();
+            std::cerr << "Musica Detenida.\n"; 
             break;
         }
 
@@ -625,6 +626,9 @@ void GameWindow::drawGame(Renderer& renderer,
         if (gs.is_running == 0) {
             std::cerr << "CLIENT: servidor desconectado, cerrando ventana SDL...\n";
             soundManager.stopEngineSound();
+            soundManager.stopSkid();
+            soundManager.stopBackgroundMusic();
+            std::cerr << "Musica Detenida.\n"; 
             break;
         }
 
@@ -710,6 +714,7 @@ void GameWindow::drawGame(Renderer& renderer,
         if (exit){
             soundManager.stopEngineSound();
             soundManager.stopSkid();    
+            soundManager.stopBackgroundMusic();
             break;
         }
 
@@ -723,8 +728,9 @@ void GameWindow::drawGame(Renderer& renderer,
             syncFrame(rate, perf_freq, t1, it);
             continue; 
         }
-
-        soundManager.updateBackgroundMusic(last_state.elapsed_time);
+        if (me){
+            soundManager.updateBackgroundMusic(last_state.elapsed_time);
+        }
 
         float my_speed_kmh = 0.0f;
         if (me) {
@@ -736,29 +742,33 @@ void GameWindow::drawGame(Renderer& renderer,
         bool health_upgrades = false;
         
         if (me) {
-        if ((me->applied_upgrades).find(UpgradeType::SpeedUpgrade) != (me->applied_upgrades).end()) {
-            speed_upgrades = true;
-            
-        }
-        if ((me->applied_upgrades).find(UpgradeType::AccelerationUpgrade) != (me->applied_upgrades).end()) {
-            accel_upgrades = true;
-            
-        }
-        if ((me->applied_upgrades).find(UpgradeType::HealthUpgrade) != (me->applied_upgrades).end()) {
-            health_upgrades = true;
-        }
+            if ((me->applied_upgrades).find(UpgradeType::SpeedUpgrade) != (me->applied_upgrades).end()) {
+                speed_upgrades = true;
+                
+            }
+            if ((me->applied_upgrades).find(UpgradeType::AccelerationUpgrade) != (me->applied_upgrades).end()) {
+                accel_upgrades = true;
+                
+            }
+            if ((me->applied_upgrades).find(UpgradeType::HealthUpgrade) != (me->applied_upgrades).end()) {
+                health_upgrades = true;
+            }
         }
 
         cp_count = (me ? me->checkpoints_passed : 0);
 
         if (previous_checkpoints_passed > cp_count) {
             previous_checkpoints_passed = 0;
-            soundManager.stopSkid();    
+            soundManager.stopSkid();
+            soundManager.stopEngineSound();
+            soundManager.stopBackgroundMusic(); 
             soundManager.playRaceEnd();
         }
 
         if (!me && !soundManager.raceEndSounded()){
             soundManager.stopSkid();    
+            soundManager.stopBackgroundMusic();
+            soundManager.stopEngineSound();
             soundManager.playRaceEnd();
         }
 
@@ -932,7 +942,7 @@ void GameWindow::drawGame(Renderer& renderer,
 
         hudX += BOX_W + HUD_PAD;
 
-        drawSpeedometer(renderer, hud, my_player_index, last_state, hudX, hudY);
+        drawSpeedometer(renderer, hud, (me ? my_id : -1), last_state, hudX, hudY);
 
         hudX += BOX_W + HUD_PAD;
 

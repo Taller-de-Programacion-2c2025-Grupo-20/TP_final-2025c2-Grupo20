@@ -48,13 +48,11 @@ private:
     ClientReceiver& receiver;
     CarType car_to_use;
     int map_id;
-    // 🟩 NUEVO — Guardia de HP por jugador
+
     std::map<uint8_t, uint8_t> lastHealthByPlayer;
 
-    // 🟩 NUEVO — Guardia de velocidad previa (km/h)
     std::map<uint8_t, float> lastSpeedByPlayer;
 
-    // 🟩 NUEVO — Posición previa del listener (tu auto)
     float lastListenerX_m = 0.0f;
     float lastListenerY_m = 0.0f;
 

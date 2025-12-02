@@ -23,10 +23,7 @@ public:
     void stopBackgroundMusic();
     bool raceEndSounded();
 
-    // 🟩 NUEVO
     void playCrashPositional(float volumeFactor);
-
-    // 🟩 NUEVO
     void updateOtherSkid(bool anySkidding, float volumeFactor);
 
 private:
@@ -46,7 +43,6 @@ private:
     SDL2pp::Chunk skidChunk;
     SDL2pp::Chunk crashChunk;
 
-    // 🟩 NUEVO
     int otherSkidChannel = -1;     // skid de otros jugadores
 
     // Cooldown mínimo entre golpes

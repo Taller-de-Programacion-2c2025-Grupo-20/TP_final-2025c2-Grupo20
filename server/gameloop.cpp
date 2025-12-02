@@ -322,9 +322,9 @@ void Gameloop::endRace() {
 }
 
 void Gameloop::logFinalResults() const {
-    //if (clients_acumulated_time.empty()) {
-    //    return;
-    //}
+    if (clients_acumulated_time.empty()) {
+        return;
+    }
 
     // 1) Ordenar jugadores por tiempo acumulado (ya calculado)
     std::vector<std::pair<uint8_t, float>> sorted(

@@ -100,22 +100,27 @@ void GameWindow::drawCronometer(Renderer& renderer, Texture& hud,
     const Rect& PANEL_TIME  = game_sprites.getTimePanelRect();
     BoxMap timeMap = makeBoxMap(renderer, hud, PANEL_TIME, hudX, hudY);
 
-    int penalty_time = 0;
+    int total = 0;
 
-    if (me->applied_upgrades.count(UpgradeType::HealthUpgrade) > 0) {
-        penalty_time += 5;
+    if (me){
+
+        int penalty_time = 0;
+
+        if (me->applied_upgrades.count(UpgradeType::HealthUpgrade) > 0) {
+            penalty_time += 5;
+        }
+
+        if (me->applied_upgrades.count(UpgradeType::AccelerationUpgrade) > 0) {
+            penalty_time += 10;
+        }
+
+        if (me->applied_upgrades.count(UpgradeType::SpeedUpgrade) > 0) {
+            penalty_time += 15;
+        }
+
+        total = MATCH_DURATION_SECONDS - static_cast<int>(last_state.elapsed_time) - penalty_time;
     }
 
-    if (me->applied_upgrades.count(UpgradeType::AccelerationUpgrade) > 0) {
-        penalty_time += 10;
-    }
-
-    if (me->applied_upgrades.count(UpgradeType::SpeedUpgrade) > 0) {
-        penalty_time += 15;
-    }
-
-
-    int total = MATCH_DURATION_SECONDS - static_cast<int>(last_state.elapsed_time) - penalty_time;
     int mm = (total / 60) % 100;
     int ss = total % 60;
 
@@ -126,14 +131,14 @@ void GameWindow::drawCronometer(Renderer& renderer, Texture& hud,
 }
 
 void GameWindow::drawSpeedometer(Renderer& renderer, Texture& hud,
-                                 int my_player_index, GameStateDTO& last_state,
+                                 const PlayerState* me,
                                  int hudX, int hudY)
 {
-    if (my_player_index < 0 || my_player_index >= (int)last_state.players.size()) {
-        return;
-    }
+    float speed_kmh = 0.0f;
 
-    float speed_kmh = last_state.players[my_player_index].state.speed*10;
+    if (me) {
+        speed_kmh = (me->state.speed)*10;
+    }
 
     const Rect& PANEL_SPEED = game_sprites.getSpeedPanelRect();
     BoxMap spdMap = makeBoxMap(renderer, hud, PANEL_SPEED, hudX, hudY);
@@ -335,7 +340,6 @@ void GameWindow::drawCheckpointHintAroundCar(
 
     float a = std::fmod(angle_world, 2.0f * PI);
     if (a < 0) a += 2.0f * PI;
-
 
     const int frameCount = 8;
     int frameIndex = static_cast<int>(
@@ -611,7 +615,9 @@ void GameWindow::drawGame(Renderer& renderer,
         if (receiver.isServerDown()) {
             std::cerr << "CLIENT: servidor desconectado, cerrando ventana SDL...\n";
             soundManager.stopEngineSound();
-            soundManager.stopSkid();    
+            soundManager.stopSkid();
+            soundManager.stopBackgroundMusic();
+            std::cerr << "Musica Detenida.\n"; 
             break;
         }
 
@@ -620,12 +626,25 @@ void GameWindow::drawGame(Renderer& renderer,
         if (gs.is_running == 0) {
             std::cerr << "CLIENT: servidor desconectado, cerrando ventana SDL...\n";
             soundManager.stopEngineSound();
+            soundManager.stopSkid();
+            soundManager.stopBackgroundMusic();
+            std::cerr << "Musica Detenida.\n"; 
             break;
         }
 
         if (!gs.players.empty()) {
             last_state = gs;
             have_state = true;
+        }
+
+        int my_id = client.getMyPlayerId();
+        const PlayerState* me = nullptr;
+
+        for (const auto& p : last_state.players) {
+            if (p.player_id == my_id) {
+                me = &p;
+                break;
+            }
         }
 
         SDL_Event ev;
@@ -695,6 +714,7 @@ void GameWindow::drawGame(Renderer& renderer,
         if (exit){
             soundManager.stopEngineSound();
             soundManager.stopSkid();    
+            soundManager.stopBackgroundMusic();
             break;
         }
 
@@ -708,17 +728,8 @@ void GameWindow::drawGame(Renderer& renderer,
             syncFrame(rate, perf_freq, t1, it);
             continue; 
         }
-
-        soundManager.updateBackgroundMusic(last_state.elapsed_time);
-
-        int my_id = client.getMyPlayerId();
-        const PlayerState* me = nullptr;
-
-        for (const auto& p : last_state.players) {
-            if (p.player_id == my_id) {
-                me = &p;
-                break;
-            }
+        if (me){
+            soundManager.updateBackgroundMusic(last_state.elapsed_time);
         }
 
         float my_speed_kmh = 0.0f;
@@ -726,31 +737,40 @@ void GameWindow::drawGame(Renderer& renderer,
             my_speed_kmh = me->state.speed * 10.0f;
         }
 
-
         bool speed_upgrades = false;
         bool accel_upgrades = false;
         bool health_upgrades = false;
         
         if (me) {
-        if ((me->applied_upgrades).find(UpgradeType::SpeedUpgrade) != (me->applied_upgrades).end()) {
-            speed_upgrades = true;
+            if ((me->applied_upgrades).find(UpgradeType::SpeedUpgrade) != (me->applied_upgrades).end()) {
+                speed_upgrades = true;
+                
+            }
+            if ((me->applied_upgrades).find(UpgradeType::AccelerationUpgrade) != (me->applied_upgrades).end()) {
+                accel_upgrades = true;
+                
+            }
+            if ((me->applied_upgrades).find(UpgradeType::HealthUpgrade) != (me->applied_upgrades).end()) {
+                health_upgrades = true;
+            }
         }
-        if ((me->applied_upgrades).find(UpgradeType::AccelerationUpgrade) != (me->applied_upgrades).end()) {
-            accel_upgrades = true;
-        }
-        if ((me->applied_upgrades).find(UpgradeType::HealthUpgrade) != (me->applied_upgrades).end()) {
-            health_upgrades = true;
-        }
-        }
-        
+
         cp_count = (me ? me->checkpoints_passed : 0);
 
         if (previous_checkpoints_passed > cp_count) {
             previous_checkpoints_passed = 0;
-            soundManager.stopSkid();    
+            soundManager.stopSkid();
+            soundManager.stopEngineSound();
+            soundManager.stopBackgroundMusic(); 
             soundManager.playRaceEnd();
         }
 
+        if (!me && !soundManager.raceEndSounded()){
+            soundManager.stopSkid();    
+            soundManager.stopBackgroundMusic();
+            soundManager.stopEngineSound();
+            soundManager.playRaceEnd();
+        }
 
         if (static_cast<int>(last_state.elapsed_time) <= BUY_TIME_SECONDS) {
             drawMarket(renderer, market, viewW, viewH, speed_upgrades, accel_upgrades, health_upgrades);
@@ -775,22 +795,35 @@ void GameWindow::drawGame(Renderer& renderer,
                     soundManager.playCrash();
                 }
             hp = new_hp;
-
-            std::cout << "Checkpoint passed: " 
-                      << static_cast<int>(me->checkpoints_passed) << "\n";
+        }
+        else{
+            hp = 0;
         }
 
+        float listener_x_m = lastListenerX_m;
+        float listener_y_m = lastListenerY_m;
+        uint8_t my_player_id = client.getMyPlayerId();
 
-        drawCheckpoint(renderer, checkpoint_flag, checkered_flag, last_state, srcRect, viewW,viewH);
+        bool anyOtherSkidAudible = false;
+        float nearestSkidVolumeFactor = 0.0f;
+
+        const float MAX_HEAR_DISTANCE_M   = 40.0f;
+        const float MIN_SKID_SPEED        = 40.0f;
+        const float BRAKE_DECEL_THRESHOLD = 8.0f;
+
+        drawCheckpoint(renderer, checkpoint_flag, checkered_flag, last_state, srcRect, viewW, viewH);
 
         for (size_t i = 0; i < last_state.players.size(); i++) {
 
-            if (have_state && last_state.players[i].player_id == client.getMyPlayerId()) {
+            const auto& player = last_state.players[i];      
+            const auto& st     = player.state;                  
+            uint8_t pid        = player.player_id;              
+
+            if (have_state && pid == client.getMyPlayerId()) {
                 my_player_index = i;
-                const auto& st = last_state.players[i].state;
                 pos_x_m = st.x;
                 pos_y_m = st.y;
-                angle = st.angle;
+                angle   = st.angle;
                 actual_pos = angle_to_frame(angle);
 
                 const int car_cx_px = static_cast<int>(std::lround(pos_x_m * PPM));
@@ -803,20 +836,24 @@ void GameWindow::drawGame(Renderer& renderer,
                 camY = std::clamp(camY, 0, std::max(0, bgH - viewH));
 
                 srcRect.SetX(camX).SetY(camY);
+
+                listener_x_m   = pos_x_m;                        
+                listener_y_m   = pos_y_m;                        
+                lastListenerX_m = listener_x_m;                  
+                lastListenerY_m = listener_y_m;                  
             }
 
-
-            const auto& st = last_state.players[i].state;
+            // posición del auto
             pos_x_m = st.x;
             pos_y_m = st.y;
-            angle = st.angle;
+            angle   = st.angle;
             actual_pos = angle_to_frame(angle);
 
-            CarType tipo_real = static_cast<CarType>(last_state.players[i].car_type);
+            CarType tipo_real = static_cast<CarType>(player.car_type);
             const Rect& spr = game_sprites.getCarRect(tipo_real, actual_pos);
             const int car_x_px = static_cast<int>(pos_x_m * PPM + 0.5f);
             const int car_y_px = static_cast<int>(pos_y_m * PPM + 0.5f);
-            
+
             const int draw_x = car_x_px - spr.GetW() / 2 - srcRect.GetX();
             const int draw_y = car_y_px - spr.GetH() / 2 - srcRect.GetY();
 
@@ -826,8 +863,59 @@ void GameWindow::drawGame(Renderer& renderer,
             }
 
             renderer.Copy(sprites, spr, Rect(draw_x, draw_y, spr.GetW(), spr.GetH()));
+
+            uint8_t currentHp       = player.health;             
+            float   currentSpeedKmh = st.speed * 10.0f;          
+
+            auto itHp = lastHealthByPlayer.find(pid);            
+            if (itHp != lastHealthByPlayer.end() &&
+                currentHp < itHp->second) {                      
+
+                float dx = st.x - listener_x_m;                  
+                float dy = st.y - listener_y_m;                  
+                float dist = std::sqrt(dx*dx + dy*dy);           
+
+                if (dist < MAX_HEAR_DISTANCE_M) {                
+                    float t = dist / MAX_HEAR_DISTANCE_M;        
+                    float volumeFactor = 1.0f - t;               
+                    soundManager.playCrashPositional(volumeFactor); 
+                }
+            }
+            lastHealthByPlayer[pid] = currentHp;              
+
+            float prevSpeedKmh = currentSpeedKmh;            
+            auto itSp = lastSpeedByPlayer.find(pid);         
+            if (itSp != lastSpeedByPlayer.end())               
+                prevSpeedKmh = itSp->second;                  
+
+            float deltaSpeed = prevSpeedKmh - currentSpeedKmh;   
+
+            if (pid != my_player_id) {                          
+                bool isBrakingOther =
+                    (currentSpeedKmh > MIN_SKID_SPEED) &&
+                    (deltaSpeed > BRAKE_DECEL_THRESHOLD);      
+
+                if (isBrakingOther) {                         
+                    float dx = st.x - listener_x_m;           
+                    float dy = st.y - listener_y_m;            
+                    float dist = std::sqrt(dx*dx + dy*dy);   
+
+                    if (dist < MAX_HEAR_DISTANCE_M) {         
+                        float t = dist / MAX_HEAR_DISTANCE_M; 
+                        float volumeFactor = 1.0f - t;       
+
+                        anyOtherSkidAudible = true;            
+                        if (volumeFactor > nearestSkidVolumeFactor)
+                            nearestSkidVolumeFactor = volumeFactor; 
+                    }
+                }
+            }
+
+            lastSpeedByPlayer[pid] = currentSpeedKmh;       
         }
 
+
+        soundManager.updateOtherSkid(anyOtherSkidAudible, nearestSkidVolumeFactor);
         soundManager.updateEngineSound();
         soundManager.updateSkidSound(braking, my_speed_kmh);
 
@@ -848,7 +936,7 @@ void GameWindow::drawGame(Renderer& renderer,
 
         hudX += BOX_W + HUD_PAD;
 
-        drawSpeedometer(renderer, hud, my_player_index, last_state, hudX, hudY);
+        drawSpeedometer(renderer, hud, me, hudX, hudY);
 
         hudX += BOX_W + HUD_PAD;
 
@@ -880,8 +968,6 @@ void GameWindow::drawGame(Renderer& renderer,
         syncFrame(rate, perf_freq, t1, it);
 
     }
-    soundManager.stopSkid();    
-    soundManager.playRaceEnd();
 }
 
 

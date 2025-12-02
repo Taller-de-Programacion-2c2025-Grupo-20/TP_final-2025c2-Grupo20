@@ -79,6 +79,13 @@ void SoundManager::playRaceEnd() {
         std::cerr << "Error al reproducir ending: "
                   << Mix_GetError() << std::endl;
     }
+    else{
+        raceEndSoundedPreviously = true;
+    }
+}
+
+bool SoundManager::raceEndSounded() {
+    return raceEndSoundedPreviously;
 }
 
 void SoundManager::stopBackgroundMusic() {
@@ -115,4 +122,40 @@ void SoundManager::stopSkid() {
         mixer.HaltChannel(skidChannel);
         skidChannel = -1;
     }
+}
+
+
+void SoundManager::playCrashPositional(float volumeFactor) {
+    if (volumeFactor <= 0.0f) return;
+    if (volumeFactor > 1.0f) volumeFactor = 1.0f;
+
+    Uint32 now = SDL_GetTicks();
+    if (now - lastCrashTicks < CRASH_COOLDOWN_MS) return;
+    lastCrashTicks = now;
+
+    int ch = mixer.PlayChannel(-1, crashChunk, 0);
+    if (ch >= 0) {
+        int vol = static_cast<int>(MIX_MAX_VOLUME * volumeFactor);
+        Mix_Volume(ch, vol);
+    }
+}
+
+
+void SoundManager::updateOtherSkid(bool anySkidding, float volumeFactor) {
+    if (!anySkidding || volumeFactor <= 0.0f) {
+        if (otherSkidChannel != -1) {
+            mixer.HaltChannel(otherSkidChannel);
+            otherSkidChannel = -1;
+        }
+        return;
+    }
+
+    if (volumeFactor > 1.0f) volumeFactor = 1.0f;
+
+    if (otherSkidChannel == -1 || !mixer.IsChannelPlaying(otherSkidChannel)) {
+        otherSkidChannel = mixer.PlayChannel(-1, skidChunk, -1);
+    }
+
+    int vol = static_cast<int>(MIX_MAX_VOLUME * volumeFactor);
+    Mix_Volume(otherSkidChannel, vol);
 }

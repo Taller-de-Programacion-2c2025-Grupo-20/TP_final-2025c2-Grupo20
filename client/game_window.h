@@ -49,6 +49,13 @@ private:
     CarType car_to_use;
     int map_id;
 
+    std::map<uint8_t, uint8_t> lastHealthByPlayer;
+
+    std::map<uint8_t, float> lastSpeedByPlayer;
+
+    float lastListenerX_m = 0.0f;
+    float lastListenerY_m = 0.0f;
+
     bool running = false;
     bool backwards = false;
     int  turn_dir = 0;
@@ -86,8 +93,7 @@ private:
                         GameStateDTO& last_state, const PlayerState* me);
     void drawSpeedometer(SDL2pp::Renderer& renderer,
                          SDL2pp::Texture& hud,
-                         int my_player_index,
-                         GameStateDTO& last_state,
+                         const PlayerState* me,
                          int hudX, int hudY);
     void drawHealthBar(SDL2pp::Renderer& renderer,
                        SDL2pp::Texture& hud,

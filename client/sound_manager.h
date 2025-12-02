@@ -21,6 +21,10 @@ public:
 
     void playRaceEnd();
     void stopBackgroundMusic();
+    bool raceEndSounded();
+
+    void playCrashPositional(float volumeFactor);
+    void updateOtherSkid(bool anySkidding, float volumeFactor);
 
 private:
     SDL2pp::Mixer& mixer;
@@ -39,12 +43,14 @@ private:
     SDL2pp::Chunk skidChunk;
     SDL2pp::Chunk crashChunk;
 
+    int otherSkidChannel = -1;     // skid de otros jugadores
+
     // Cooldown mínimo entre golpes
     static constexpr Uint32 CRASH_COOLDOWN_MS = 250;
 
     SDL2pp::Music bgMusic;
     bool bgMusicStarted = false;
-
+    bool raceEndSoundedPreviously = false;
     SDL2pp::Chunk raceEndSound;
 };
 

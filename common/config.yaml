@@ -8,6 +8,17 @@ collisions:
   delta_speed_tolerance: 0.3
   damage_factor: 0.7
 
+upgrades:
+
+  speed_upgrade: 10.0
+  speed_penalty: 15.0
+
+  acceleration_upgrade: 2.0
+  acceleration_penalty: 10.0
+
+  health_upgrade: 50
+  health_penalty: 5.0
+
 cars:
   VERDE:
     acceleration: 52.0

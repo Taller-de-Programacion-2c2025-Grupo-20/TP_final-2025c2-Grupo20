@@ -88,8 +88,8 @@ void Car::handleInput(InputCmd cmd) {
     if (cmd.key == InputKey::BuySpeedUpgrade){
         auto [it, inserted] = applied_upgrades.insert(UpgradeType::SpeedUpgrade);
         if (inserted){
-            max_speed += 10.0f;
-            next_race_time_penalty += 15.0f;
+            max_speed += Config::get().SPEED_UPGRADE_VALUE();
+            next_race_time_penalty += Config::get().SPEED_PENALTY();
 
             std::cout << "Cliente compro mas velocidad maxima\n";
         }
@@ -98,8 +98,8 @@ void Car::handleInput(InputCmd cmd) {
     if (cmd.key == InputKey::BuyAccelerationUpgrade){
         auto [it, inserted] = applied_upgrades.insert(UpgradeType::AccelerationUpgrade);
         if (inserted) {
-            accelaration += 2.0f;
-            next_race_time_penalty += 10.0f;
+            accelaration += Config::get().ACCELERATION_UPGRADE_VALUE();
+            next_race_time_penalty += Config::get().ACCELERATION_PENALTY();
             
             std::cout << "Cliente compro mas aceleracion\n";
         }
@@ -108,8 +108,8 @@ void Car::handleInput(InputCmd cmd) {
     if (cmd.key == InputKey::BuyHealthUpgrade){
         auto [it, inserted] = applied_upgrades.insert(UpgradeType::HealthUpgrade);
         if (inserted) {
-            car_health += 50;
-            next_race_time_penalty += 5.0f;
+            car_health += Config::get().HEALTH_UPGRADE_VALUE();
+            next_race_time_penalty += Config::get().HEALTH_PENALTY();
 
             std::cout << "Cliente compro mas vida\n";
         }

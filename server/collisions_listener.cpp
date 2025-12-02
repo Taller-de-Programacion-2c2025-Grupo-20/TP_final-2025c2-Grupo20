@@ -20,13 +20,13 @@ void CollisionsListener::handlerCollisionCarAndCar(Car* carA, Car* carB) {
     float rawDamageB = 0.0f;
 
     if (delta_speed_A > delta_speed_B){
-        rawDamageA = std::max(0.0f, delta_speed_A * 1.0f);
-        rawDamageB = std::max(0.0f, delta_speed_A * 1.0f * 0.5f);
+        rawDamageA = std::max(0.0f, delta_speed_A * Config::get().DAMAGE_FACTOR());
+        rawDamageB = std::max(0.0f, delta_speed_A * Config::get().DAMAGE_FACTOR() * 0.5f);
     }
 
     if (delta_speed_B > delta_speed_A){
-        rawDamageA = std::max(0.0f, delta_speed_B * 1.0f * 0.5f);
-        rawDamageB = std::max(0.0f, delta_speed_B * 1.0f);
+        rawDamageA = std::max(0.0f, delta_speed_B * Config::get().DAMAGE_FACTOR() * 0.5f);
+        rawDamageB = std::max(0.0f, delta_speed_B * Config::get().DAMAGE_FACTOR());
     }
 
     uint8_t damageA = (uint8_t) std::clamp(rawDamageA, 0.0f, 255.0f);
@@ -52,7 +52,7 @@ void CollisionsListener::handlerCollisionCarAndWall(Car* car) {
         return;
     }
 
-    float raw_damage = delta_speed * 1.0f;
+    float raw_damage = delta_speed * Config::get().DAMAGE_FACTOR();
 
     uint8_t damage = static_cast<uint8_t>(
         std::clamp(raw_damage, 0.0f, 255.0f)

@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>846</width>
+    <width>800</width>
     <height>600</height>
    </rect>
   </property>
@@ -19,33 +19,12 @@
   <property name="windowTitle">
    <string>Login</string>
   </property>
-  <widget class="QLabel" name="label_Title">
-   <property name="geometry">
-    <rect>
-     <x>300</x>
-     <y>10</y>
-     <width>231</width>
-     <height>41</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">font-family: &quot;Press Start 2P&quot;;
-font-size: 20px;
-color: #FFFFFF;</string>
-   </property>
-   <property name="text">
-    <string>TextLabel</string>
-   </property>
-   <property name="alignment">
-    <set>Qt::AlignCenter</set>
-   </property>
-  </widget>
   <widget class="QLabel" name="label_Outcome">
    <property name="geometry">
     <rect>
-     <x>300</x>
-     <y>50</y>
-     <width>221</width>
+     <x>70</x>
+     <y>70</y>
+     <width>651</width>
      <height>51</height>
     </rect>
    </property>
@@ -64,10 +43,10 @@ color: #FFFFFF;</string>
   <widget class="QTableWidget" name="table_Ranking">
    <property name="geometry">
     <rect>
-     <x>90</x>
-     <y>100</y>
+     <x>70</x>
+     <y>130</y>
      <width>651</width>
-     <height>461</height>
+     <height>380</height>
     </rect>
    </property>
    <property name="styleSheet">
@@ -76,7 +55,7 @@ color: #FFFFFF;</string>
     color: #CCCCCC;
     gridline-color: #333333;
     font-family: &quot;Press Start 2P&quot;;
-    font-size: 10pt;
+    font-size: 10px;
     border: 6px solid #444444;       
     border-radius: 4px;
     selection-background-color: #333333;

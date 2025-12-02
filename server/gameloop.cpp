@@ -10,7 +10,7 @@
 const float PIXELS_PER_METER = 16.0f;
 const float RACE_DURATION_SECONDS = MATCH_DURATION_SECONDS - 15.0f;
 
-const int MAX_RACES = 1;
+const int MAX_RACES = 3;
 
 void Gameloop::handleInput(const InputCmd& input) {
     auto it = clients_cars.find(input.player_id);
@@ -225,7 +225,7 @@ GameStateDTO Gameloop::getCurrentGameState(const float elapsed_time) {
 
     current_state.elapsed_time = elapsed_time;
 
-    current_state.is_running = 1;
+    current_state.race_finished = 0;
 
     return current_state;
 }
@@ -485,11 +485,12 @@ std::chrono::_V2::steady_clock::time_point Gameloop::keepLoopRate(std::chrono::s
 }
 
 GameStateDTO Gameloop::gameEndedGamestate(){
-    GameStateDTO current_state;
-    current_state.car_count = 0;
-    current_state.elapsed_time = 0;
-    current_state.is_running = 0;
-    return current_state;
+    GameStateDTO final_state; 
+    final_state.race_finished = 1; 
+    final_state.final_results = getFinalResultsDTO();
+    final_state.car_count = clients_acumulated_time.size();
+    final_state.elapsed_time = 0;
+    return final_state;
 }
 
 void Gameloop::run() {
@@ -542,17 +543,16 @@ void Gameloop::run() {
     }
 
     std::cout << "Gameloop terminado. Enviando resultados finales...\n";
-    
-    GameStateDTO final_state = getCurrentGameState(0.0f); // Tiempo irrelevante ya
-    final_state.race_finished = true; // BANDERA QUE AVISA AL CLIENTE
+
+    GameStateDTO final_state = getCurrentGameState(0.0f); 
+    final_state.race_finished = 1; 
     final_state.final_results = getFinalResultsDTO();
 
     clients_queues.broadcast(final_state);
-
     logFinalResults();
 
-    std::cout << "Enviando mensaje de finalizacion de partida a los clientes...\n";
-    clients_queues.broadcast(gameEndedGamestate());
+    std::cout << "Esperando 2 segundos para asegurar entrega de paquetes...\n";
+
 }
 
 void Gameloop::stop() {

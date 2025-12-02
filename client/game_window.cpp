@@ -16,6 +16,7 @@ static constexpr float PPM = 16.0f;
 static constexpr float PI  = 3.14159265358979323846f;
 static constexpr int BOX_W = 240;
 static constexpr int BOX_H = 60;
+static constexpr int MAX_CHECKPOINTS = 14;
 
 
 static inline int angle_to_frame(float rad) {
@@ -177,7 +178,7 @@ void GameWindow::drawCheckpoint(
         return;
     }
 
-    if (me->checkpoints_passed == 1){
+    if (me->checkpoints_passed == MAX_CHECKPOINTS){
         flag_to_draw = &checkered_flag;
     }
 
@@ -269,7 +270,7 @@ void GameWindow::drawMinimap(Texture& background, Renderer& renderer, GameStateD
 
                             Texture* flag_to_draw = &checkpoint_flag;
 
-                            if (p.checkpoints_passed == 1){
+                            if (p.checkpoints_passed == MAX_CHECKPOINTS){
                                 flag_to_draw = &checkered_flag;
                             }
 
@@ -614,7 +615,7 @@ void GameWindow::drawGame(Renderer& renderer,
 
         GameStateDTO gs = receiver.pollGameState();
         
-        if (gs.is_running == 0) {
+        if (gs.race_finished == 1) {
             std::cerr << "CLIENT: servidor desconectado, cerrando ventana SDL...\n";
             soundManager.stopEngineSound();
             soundManager.stopSkid();

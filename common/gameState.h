@@ -31,7 +31,6 @@ struct GameStateDTO {
     uint8_t car_count;
     float elapsed_time;
     std::vector<PlayerState> players;
-    bool race_finished = false;
+    uint8_t race_finished= 0;
     std::vector<PlayerResultDTO> final_results;
-    uint8_t is_running;
 };

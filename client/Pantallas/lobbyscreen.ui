@@ -23,7 +23,7 @@
     </rect>
    </property>
    <property name="currentIndex">
-    <number>3</number>
+    <number>0</number>
    </property>
    <widget class="QWidget" name="page_WaitingRoom">
     <widget class="QListWidget" name="playerListWidget">
@@ -239,6 +239,13 @@ QPushButton:pressed {
        <width>191</width>
        <height>20</height>
       </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color: hsla(0, 100%, 50%, 1.00); 
+font-family: 'Press Start 2P'; 
+font-weight: bold; 
+font-size: 10pt; 
+background: transparent;</string>
      </property>
      <property name="text">
       <string/>

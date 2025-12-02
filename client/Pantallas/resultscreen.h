@@ -26,9 +26,6 @@ public:
 protected:
     void paintEvent(QPaintEvent *event) override;
 
-private slots:
-    void on_btnExit_clicked();
-
 signals:
     void returnToLobby(); 
     void closeApplication();

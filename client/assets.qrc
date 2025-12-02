@@ -8,6 +8,7 @@
         <file>Pantallas/fondo_lobby.png</file>
         <file>Pantallas/fondo_select_map.png</file>
         <file>Pantallas/fondo_garage.png</file>
+        <file>Pantallas/fondo_result.png</file>
         <file>data/font/PressStart2P-Regular.ttf</file>
     </qresource>
 </RCC>

@@ -970,7 +970,7 @@ void GameWindow::drawGame(Renderer& renderer,
             int texW = moriste.GetWidth();
             int texH = moriste.GetHeight();
 
-            float maxFrac = 0.6f;
+            float maxFrac = 0.4f;
             float scale = std::min(
                 (viewW * maxFrac) / static_cast<float>(texW),
                 (viewH * maxFrac) / static_cast<float>(texH)

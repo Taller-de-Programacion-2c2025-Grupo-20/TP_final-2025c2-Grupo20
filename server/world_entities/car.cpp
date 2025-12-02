@@ -85,9 +85,9 @@ void Car::handleInput(InputCmd cmd) {
         }
     }
 
-    if (cmd.key == InputKey::BuySpeedUpgrade){
+    if (cmd.key == InputKey::BuySpeedUpgrade) {
         auto [it, inserted] = applied_upgrades.insert(UpgradeType::SpeedUpgrade);
-        if (inserted){
+        if (inserted) {
             max_speed += Config::get().SPEED_UPGRADE_VALUE();
             next_race_time_penalty += Config::get().SPEED_PENALTY();
 
@@ -95,17 +95,17 @@ void Car::handleInput(InputCmd cmd) {
         }
     }
 
-    if (cmd.key == InputKey::BuyAccelerationUpgrade){
+    if (cmd.key == InputKey::BuyAccelerationUpgrade) {
         auto [it, inserted] = applied_upgrades.insert(UpgradeType::AccelerationUpgrade);
         if (inserted) {
             accelaration += Config::get().ACCELERATION_UPGRADE_VALUE();
             next_race_time_penalty += Config::get().ACCELERATION_PENALTY();
-            
+
             std::cout << "Cliente compro mas aceleracion\n";
         }
     }
 
-    if (cmd.key == InputKey::BuyHealthUpgrade){
+    if (cmd.key == InputKey::BuyHealthUpgrade) {
         auto [it, inserted] = applied_upgrades.insert(UpgradeType::HealthUpgrade);
         if (inserted) {
             car_health += Config::get().HEALTH_UPGRADE_VALUE();
@@ -114,7 +114,6 @@ void Car::handleInput(InputCmd cmd) {
             std::cout << "Cliente compro mas vida\n";
         }
     }
-
 }
 
 void Car::updateCarPhysics() {
@@ -153,7 +152,7 @@ const b2Vec2& Car::position() { return car_body->GetPosition(); }
 
 float Car::angle() { return car_body->GetAngle(); }
 
-void Car::recieveDamage(uint8_t damage) {    
+void Car::recieveDamage(uint8_t damage) {
     if ((car_health - damage) <= 0) {
         car_health = 0;
         return;
@@ -172,36 +171,26 @@ float Car::getSpeed() const {
     return car_body->GetLinearVelocity().Length();  // m/s
 }
 
-float Car::getBeforeCollisionSpeed() const {
-    return pre_collision_speed;
-}
+float Car::getBeforeCollisionSpeed() const { return pre_collision_speed; }
 
-CarType Car::getCarType() { 
-    return car_type; 
-}
+CarType Car::getCarType() { return car_type; }
 
-float Car::timePenalty(){
-    return time_penalization;
-}
+float Car::timePenalty() { return time_penalization; }
 
-float Car::nextRaceTimePenalty(){
-    return next_race_time_penalty;
-}
+float Car::nextRaceTimePenalty() { return next_race_time_penalty; }
 
-void Car::storeSpeed(){
-    pre_collision_speed = getSpeed();
-}
+void Car::storeSpeed() { pre_collision_speed = getSpeed(); }
 
-Car::Car(b2World& world, const b2Vec2& initial_position, CarType type, float time_penalty) : 
+Car::Car(b2World& world, const b2Vec2& initial_position, CarType type, float time_penalty):
         car_type(type),
         next_race_time_penalty(0.0),
-        accelerating(false), 
-        braking(false), 
-        turningLeft(false), 
+        accelerating(false),
+        braking(false),
+        turningLeft(false),
         turningRight(false),
-        next_checkpoint_id(0) 
-    
-    {
+        next_checkpoint_id(0)
+
+{
     CarAttributes attributes = Config::get().getCarAttributes(type);
 
     accelaration = attributes.acceleration;
@@ -216,13 +205,13 @@ Car::Car(b2World& world, const b2Vec2& initial_position, CarType type, float tim
     carDef.position.Set(initial_position.x, initial_position.y);
     carDef.angle = 0.f;
     carDef.angularDamping = attributes.angular_damping;
-    carDef.linearDamping = attributes.linear_damping; // rozamiento con el piso
+    carDef.linearDamping = attributes.linear_damping;  // rozamiento con el piso
 
     car_body = world.CreateBody(&carDef);
     car_body->SetUserData(this);
 
     b2PolygonShape car_shape;
-    car_shape.SetAsBox( attributes.width, attributes.height);
+    car_shape.SetAsBox(attributes.width, attributes.height);
 
     b2FixtureDef fixture_definition;
     fixture_definition.shape = &car_shape;
@@ -243,5 +232,4 @@ Car::~Car() {
     }
 
     car_body = nullptr;
-
 }

@@ -1,20 +1,22 @@
 #ifndef CLIENT_HANDLER_H
 #define CLIENT_HANDLER_H
 
-#include <memory>
 #include <atomic>
-#include "../common/socket.h"
-#include "../common/thread.h"
-#include "../common/queue.h"
+#include <memory>
+
 #include "../common/clientCommand.h"
-#include "../common/lobbyCommand.h"
 #include "../common/gameState.h"
+#include "../common/liberror.h"
+#include "../common/lobbyCommand.h"
 #include "../common/lobbyState.h"
 #include "../common/match_list.h"
-#include "server_protocol.h"
-#include "sender.h"
+#include "../common/queue.h"
+#include "../common/socket.h"
+#include "../common/thread.h"
+
 #include "receiver.h"
-#include "../common/liberror.h"
+#include "sender.h"
+#include "server_protocol.h"
 
 class ClientHandler {
 private:
@@ -39,7 +41,7 @@ public:
     std::string get_username() const;
     void set_car_id(uint8_t car_id);
     uint8_t get_car_id() const;
-    
+
     void send_login_ok(uint8_t player_id);
     void send_login_failed();
     void start_in_lobby(Queue<LobbyCommand>& lobby_queue);

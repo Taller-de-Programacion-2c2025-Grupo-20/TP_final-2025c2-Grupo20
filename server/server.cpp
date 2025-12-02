@@ -1,37 +1,37 @@
 #include "server.h"
-#include <iostream>
-#include <utility> 
+
 #include <chrono>
+#include <iostream>
+#include <utility>
+
 #include <sys/socket.h>
+
 #include "../common/constants.h"
 #include "../common/match_list.h"
 
 
-Server::Server(const char* port) :
-    listener(port), 
-    acceptor(listener, new_clients_queue), 
-    is_running(true),
-    new_clients_queue(128),
-    lobby_queue(128),      
-    next_match_id(1)
-{
-}
+Server::Server(const char* port):
+        listener(port),
+        acceptor(listener, new_clients_queue),
+        is_running(true),
+        new_clients_queue(128),
+        lobby_queue(128),
+        next_match_id(1) {}
 
-Server::~Server() {
-}
+Server::~Server() {}
 
 /**
  * @brief Bucle principal del Lobby.
  * Acepta clientes, procesa comandos de lobby y limpia partidas.
  */
 int Server::run() {
-    acceptor.start(); 
+    acceptor.start();
     std::cout << "Servidor (Lobby) corriendo. Presione 'q' para salir." << std::endl;
     input_listener_thread = std::thread([this]() {
         char c;
-        while (std::cin.get(c)) { 
+        while (std::cin.get(c)) {
             if (c == 'q') {
-                this->is_running = false; 
+                this->is_running = false;
                 break;
             }
         }
@@ -48,8 +48,8 @@ int Server::run() {
             std::cerr << "Error en el bucle del Lobby: " << e.what() << std::endl;
         }
     }
-    std::cout << "Señal de 'q' recibida, iniciando apagado..." << std::endl;    
-    stop(); 
+    std::cout << "Señal de 'q' recibida, iniciando apagado..." << std::endl;
+    stop();
     if (input_listener_thread.joinable()) {
         input_listener_thread.join();
     }
@@ -64,7 +64,7 @@ void Server::stop() {
     } catch (const std::exception& e) {
         // ...
     }
-    
+
     acceptor.stop();
     acceptor.join();
 
@@ -72,12 +72,12 @@ void Server::stop() {
     new_clients_queue.close();
 
     std::lock_guard<std::mutex> lock(mtx);
-    for (auto& pair : active_matches) {
+    for (auto& pair: active_matches) {
         pair.second->stop();
     }
     active_matches.clear();
-    
-    for (auto& client : clients_in_lobby) {
+
+    for (auto& client: clients_in_lobby) {
         client->stop();
         client->join();
     }
@@ -90,10 +90,11 @@ void Server::stop() {
 void Server::process_new_clients() {
     std::unique_ptr<ClientHandler> new_client;
     while (new_clients_queue.try_pop(new_client)) {
-        std::cout << "Nuevo cliente (ID: " << (int)new_client->get_id() << ") conectado al lobby." << std::endl;
-        
-        new_client->start_in_lobby(lobby_queue); 
-        
+        std::cout << "Nuevo cliente (ID: " << (int)new_client->get_id() << ") conectado al lobby."
+                  << std::endl;
+
+        new_client->start_in_lobby(lobby_queue);
+
         std::lock_guard<std::mutex> lock(mtx);
         clients_in_lobby.push_back(std::move(new_client));
     }
@@ -105,35 +106,35 @@ void Server::process_new_clients() {
 void Server::process_lobby_commands() {
     LobbyCommand cmd;
     while (lobby_queue.try_pop(cmd)) {
-        
-        Match* match_afectado = nullptr; 
+
+        Match* match_afectado = nullptr;
         {
-            std::lock_guard<std::mutex> lock(mtx); 
+            std::lock_guard<std::mutex> lock(mtx);
             std::cout << "ENTRE A PROCESAR COMANDO: " << (int)cmd.type << std::endl;
-            
+
             switch (cmd.type) {
                 case LobbyCommandType::LOGIN_ATTEMPT:
                     handle_login(cmd);
                     break;
-                
+
                 case LobbyCommandType::CREATE_MATCH:
                     handle_create_match(cmd);
                     break;
-                
+
                 case LobbyCommandType::JOIN_MATCH:
                     handle_join_match(cmd);
                     break;
-                
+
                 case LobbyCommandType::START_GAME:
                     handle_start_game(cmd);
                     break;
 
-                case LobbyCommandType::REFRESH_MATCH_LIST: 
+                case LobbyCommandType::REFRESH_MATCH_LIST:
                     send_match_list(cmd.client_id);
                     break;
 
                 case LobbyCommandType::SELECT_MAP:
-                    match_afectado = handle_select_map(cmd); 
+                    match_afectado = handle_select_map(cmd);
                     break;
 
                 case LobbyCommandType::SELECT_CAR:
@@ -149,26 +150,28 @@ void Server::process_lobby_commands() {
 
 void Server::handle_login(const LobbyCommand& cmd) {
     bool name_taken = false;
-    for (const auto& client : clients_in_lobby) {
+    for (const auto& client: clients_in_lobby) {
         if (!cmd.text_payload.empty() && client->get_username() == cmd.text_payload) {
             name_taken = true;
             break;
         }
     }
 
-    for (auto& client : clients_in_lobby) {
+    for (auto& client: clients_in_lobby) {
         if (client->get_id() == cmd.client_id) {
-            
+
             if (name_taken || cmd.text_payload.empty()) {
-                std::cerr << "Login fallido: nombre " << cmd.text_payload << " ya en uso o inválido." << std::endl;
-                client->send_login_failed(); 
+                std::cerr << "Login fallido: nombre " << cmd.text_payload
+                          << " ya en uso o inválido." << std::endl;
+                client->send_login_failed();
                 return;
             }
 
             client->set_username(cmd.text_payload);
-            client->send_login_ok(cmd.client_id); 
-            
-            std::cout << "Jugador " << (int)cmd.client_id << " se logueó como " << cmd.text_payload << std::endl;
+            client->send_login_ok(cmd.client_id);
+
+            std::cout << "Jugador " << (int)cmd.client_id << " se logueó como " << cmd.text_payload
+                      << std::endl;
             return;
         }
     }
@@ -177,41 +180,42 @@ void Server::handle_login(const LobbyCommand& cmd) {
 void Server::broadcast_match_list() {
     MatchListDTO list_dto;
 
-    for (const auto& pair : active_matches) {
+    for (const auto& pair: active_matches) {
         const auto& match = pair.second;
         if (!match->is_running() && !match->is_full()) {
             MatchInfo match_info;
             match_info.match_id = match->get_id();
             match_info.name = match->get_name();
-            match_info.player_count = match->get_player_count(); 
+            match_info.player_count = match->get_player_count();
             list_dto.matches.push_back(match_info);
         }
     }
 
-    for (auto& client : clients_in_lobby) {
+    for (auto& client: clients_in_lobby) {
         client->send_match_list(list_dto);
     }
 }
 
 void Server::send_match_list(uint8_t client_id) {
     ClientHandler* target_client = nullptr;
-    for (auto& client : clients_in_lobby) {
+    for (auto& client: clients_in_lobby) {
         if (client->get_id() == client_id) {
             target_client = client.get();
             break;
         }
     }
 
-    if (!target_client) return;
+    if (!target_client)
+        return;
 
     MatchListDTO list_dto;
-    for (const auto& pair : active_matches) {
+    for (const auto& pair: active_matches) {
         const auto& match = pair.second;
         if (!match->is_running() && !match->is_full()) {
             MatchInfo match_info;
             match_info.match_id = match->get_id();
             match_info.name = match->get_name();
-            match_info.player_count = match->get_player_count(); 
+            match_info.player_count = match->get_player_count();
             list_dto.matches.push_back(match_info);
         }
     }
@@ -225,40 +229,42 @@ void Server::handle_create_match(const LobbyCommand& cmd) {
     std::unique_ptr<ClientHandler> client;
     clients_in_lobby.remove_if([&client, &cmd](auto& c) {
         if (c->get_id() == cmd.client_id) {
-            client = std::move(c); 
+            client = std::move(c);
             return true;
         }
         return false;
     });
 
-    if (!client) return; 
+    if (!client)
+        return;
 
     uint8_t new_id = next_match_id++;
     std::string match_name = cmd.text_payload;
     if (match_name.empty()) {
         match_name = "Partida " + std::to_string(new_id);
     }
-    
+
     auto new_match = std::make_unique<Match>(new_id, match_name);
     new_match->add_player(std::move(client));
-    
+
     active_matches[new_id] = std::move(new_match);
-    
-    std::cout << "Partida " << (int)new_id << " creada. Total: " << active_matches.size() << std::endl;
-    
+
+    std::cout << "Partida " << (int)new_id << " creada. Total: " << active_matches.size()
+              << std::endl;
+
     active_matches[new_id]->broadcast_waiting_room_state();
 }
 
 void Server::handle_join_match(const LobbyCommand& cmd) {
     auto it = active_matches.find(cmd.id_payload);
     if (it == active_matches.end() || it->second->is_full() || it->second->is_running()) {
-        return; 
+        return;
     }
 
     std::unique_ptr<ClientHandler> client;
     clients_in_lobby.remove_if([&client, &cmd](auto& c) {
         if (c->get_id() == cmd.client_id) {
-            client = std::move(c); 
+            client = std::move(c);
             return true;
         }
         return false;
@@ -271,9 +277,8 @@ void Server::handle_join_match(const LobbyCommand& cmd) {
 }
 
 
-
 void Server::handle_start_game(const LobbyCommand& cmd) {
-    for (auto& pair : active_matches) {
+    for (auto& pair: active_matches) {
         if (pair.second->has_player(cmd.client_id)) {
             std::cout << "Iniciando partida " << (int)pair.first << "..." << std::endl;
             pair.second->start();
@@ -283,21 +288,21 @@ void Server::handle_start_game(const LobbyCommand& cmd) {
 }
 
 Match* Server::handle_select_map(const LobbyCommand& cmd) {
-    for (auto& pair : active_matches) {
+    for (auto& pair: active_matches) {
         if (pair.second->has_player(cmd.client_id)) {
             Match* match = pair.second.get();
             if (match->get_host_id() == cmd.client_id) {
                 match->set_map_id(cmd.id_payload);
-                return match; 
+                return match;
             }
-            return nullptr; 
+            return nullptr;
         }
     }
     return nullptr;
 }
 
 Match* Server::handle_select_car(const LobbyCommand& cmd) {
-    for (auto& pair : active_matches) {
+    for (auto& pair: active_matches) {
         if (pair.second->has_player(cmd.client_id)) {
             Match* match = pair.second.get();
             match->set_player_car(cmd.client_id, cmd.id_payload);
@@ -309,7 +314,7 @@ Match* Server::handle_select_car(const LobbyCommand& cmd) {
 
 void Server::reap_dead_lobby_clients() {
     std::lock_guard<std::mutex> lock(mtx);
-    
+
     clients_in_lobby.remove_if([](const std::unique_ptr<ClientHandler>& client) {
         if (client->is_alive()) {
             return false;
@@ -317,20 +322,20 @@ void Server::reap_dead_lobby_clients() {
 
         std::cout << "Limpiando cliente " << (int)client->get_id() << " del lobby." << std::endl;
         try {
-            client->stop(); 
-            client->join(); 
+            client->stop();
+            client->join();
         } catch (const std::exception& e) {
-            std::cerr << "Error (ignorable) al limpiar cliente " 
-                      << (int)client->get_id() << ": " << e.what() << std::endl;
+            std::cerr << "Error (ignorable) al limpiar cliente " << (int)client->get_id() << ": "
+                      << e.what() << std::endl;
         }
-        return true; 
+        return true;
     });
 }
 
 void Server::cleanup_finished_matches() {
     std::lock_guard<std::mutex> lock(mtx);
     bool match_removed = false;
-    for (auto it = active_matches.begin(); it != active_matches.end(); ) {
+    for (auto it = active_matches.begin(); it != active_matches.end();) {
         if (!it->second->is_running() && it->second->get_player_count() == 0) {
             std::cout << "Limpiando partida terminada " << (int)it->first << std::endl;
             match_removed = true;

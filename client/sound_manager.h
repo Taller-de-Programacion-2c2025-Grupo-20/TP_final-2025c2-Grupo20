@@ -1,10 +1,10 @@
 #ifndef SOUND_MANAGER_H
 #define SOUND_MANAGER_H
 
-#include <SDL2pp/Mixer.hh>
 #include <SDL2pp/Chunk.hh>
-#include <SDL2pp/Music.hh>  
 #include <SDL2pp/Exception.hh>
+#include <SDL2pp/Mixer.hh>
+#include <SDL2pp/Music.hh>
 
 class SoundManager {
 public:
@@ -35,7 +35,7 @@ private:
     int skidChannel = -1;
 
     // Crash control
-    int  crashChannel = -1;
+    int crashChannel = -1;
     Uint32 lastCrashTicks = 0;
 
     // Sonidos
@@ -43,7 +43,7 @@ private:
     SDL2pp::Chunk skidChunk;
     SDL2pp::Chunk crashChunk;
 
-    int otherSkidChannel = -1;     // skid de otros jugadores
+    int otherSkidChannel = -1;  // skid de otros jugadores
 
     // Cooldown mínimo entre golpes
     static constexpr Uint32 CRASH_COOLDOWN_MS = 250;

@@ -1,14 +1,17 @@
 #include "client_protocol.h"
+
 #include <cmath>
 #include <cstring>
-#include <arpa/inet.h>
-#include "../common/constants.h"
-#include "../common/gameState.h"
-#include "../common/match_list.h"
 #include <iostream>
 #include <vector>
 
-ClientProtocol::ClientProtocol(const char* host, const char* port) : skt(host, port) {}
+#include <arpa/inet.h>
+
+#include "../common/constants.h"
+#include "../common/gameState.h"
+#include "../common/match_list.h"
+
+ClientProtocol::ClientProtocol(const char* host, const char* port): skt(host, port) {}
 ClientProtocol::~ClientProtocol() {}
 
 
@@ -49,8 +52,8 @@ void ClientProtocol::send_input(const InputCmd& cmd) {
     buffer.push_back(CMD_ENVIAR_INPUT);
     buffer.push_back(static_cast<uint8_t>(cmd.action));
     buffer.push_back(static_cast<uint8_t>(cmd.key));
-    buffer.push_back(static_cast<uint8_t>(cmd.player_id)); 
-    
+    buffer.push_back(static_cast<uint8_t>(cmd.player_id));
+
     skt.sendall(buffer.data(), buffer.size());
 }
 
@@ -68,17 +71,13 @@ void ClientProtocol::send_select_car(uint8_t car_id) {
     skt.sendall(buffer.data(), buffer.size());
 }
 
-bool ClientProtocol::receive_command_code(uint8_t& code) {
-    return (skt.recvall(&code, 1) > 0);
-}
+bool ClientProtocol::receive_command_code(uint8_t& code) { return (skt.recvall(&code, 1) > 0); }
 
-uint8_t ClientProtocol::receive_login_response_payload() {
-    return receiveUint8_t();
-}
+uint8_t ClientProtocol::receive_login_response_payload() { return receiveUint8_t(); }
 
 LobbyStateDTO ClientProtocol::receive_lobby_state_payload() {
     LobbyStateDTO state;
-    
+
     uint8_t player_count = receiveUint8_t();
     state.host_id = receiveUint8_t();
     state.map_id = receiveUint8_t();
@@ -86,7 +85,7 @@ LobbyStateDTO ClientProtocol::receive_lobby_state_payload() {
     for (int i = 0; i < player_count; ++i) {
         LobbyPlayerInfo player;
         player.player_id = receiveUint8_t();
-        player.name = receiveString(); 
+        player.name = receiveString();
         player.car_id = receiveUint8_t();
         state.players.push_back(player);
     }
@@ -104,14 +103,14 @@ GameStateDTO ClientProtocol::receive_game_state_payload() {
 
     for (int i = 0; i < car_count; ++i) {
         PlayerState player;
-        
+
         skt.recvall(&player.player_id, 1);
-        
+
         player.state.x = receiveFloat();
         player.state.y = receiveFloat();
         player.state.angle = receiveFloat();
         player.state.speed = receiveFloat();
-        
+
         skt.recvall(&player.health, 1);
 
         skt.recvall(&player.car_type, 1);
@@ -128,17 +127,17 @@ GameStateDTO ClientProtocol::receive_game_state_payload() {
         player.next_checkpoint_hint = receiveFloat();
 
         player.checkpoints_passed = receiveUint8_t();
-        
+
         state_dto.players.push_back(player);
     }
-    
+
     state_dto.race_finished = receiveUint8_t();
 
 
     if (state_dto.race_finished == 1) {
         uint8_t results_count = receiveUint8_t();
         for (int i = 0; i < results_count; ++i) {
-            
+
             PlayerResultDTO player_result;
             player_result.player_id = receiveUint8_t();
             player_result.position = receiveUint8_t();
@@ -159,7 +158,7 @@ MatchListDTO ClientProtocol::receive_match_list_payload() {
 
         match.match_id = receiveUint8_t();
         match.player_count = receiveUint8_t();
-        match.name = receiveString(); 
+        match.name = receiveString();
 
         list_dto.matches.push_back(match);
     }
@@ -211,6 +210,6 @@ void ClientProtocol::close() {
 }
 
 void ClientProtocol::send_refresh_match_list() {
-    uint8_t cmd = CMD_REFRESH_MATCH_LIST; 
+    uint8_t cmd = CMD_REFRESH_MATCH_LIST;
     skt.sendall(&cmd, 1);
 }

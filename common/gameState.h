@@ -1,9 +1,11 @@
 #pragma once
-#include <vector>
 #include <set>
+#include <vector>
+
 #include <stdint.h>
-#include "serverState.h"
+
 #include "constants.h"
+#include "serverState.h"
 
 struct PlayerState {
     uint8_t player_id;
@@ -17,7 +19,7 @@ struct PlayerState {
     float next_checkpoint_position_x;
     float next_checkpoint_position_y;
     float next_checkpoint_hint;
-    
+
     uint8_t checkpoints_passed;
 };
 
@@ -31,6 +33,6 @@ struct GameStateDTO {
     uint8_t car_count;
     float elapsed_time;
     std::vector<PlayerState> players;
-    uint8_t race_finished= 0;
+    uint8_t race_finished = 0;
     std::vector<PlayerResultDTO> final_results;
 };

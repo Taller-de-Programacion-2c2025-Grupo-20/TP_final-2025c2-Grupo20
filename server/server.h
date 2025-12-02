@@ -1,34 +1,35 @@
 #ifndef SERVER_H
 #define SERVER_H
 
-#include <map>
+#include <atomic>
 #include <list>
+#include <map>
 #include <memory>
 #include <mutex>
-#include <atomic>
 #include <string>
 #include <thread>
 
-#include "../common/socket.h"
-#include "../common/queue.h"
 #include "../common/lobbyCommand.h"
 #include "../common/lobbyState.h"
+#include "../common/queue.h"
+#include "../common/socket.h"
+
 #include "acceptor.h"
 #include "client_handler.h"
 #include "match.h"
 
 class Server {
 private:
-    Socket listener; 
+    Socket listener;
     Acceptor acceptor;
     std::atomic<bool> is_running;
     std::thread input_listener_thread;
 
-    Queue<std::unique_ptr<ClientHandler>> new_clients_queue;    
+    Queue<std::unique_ptr<ClientHandler>> new_clients_queue;
     Queue<LobbyCommand> lobby_queue;
     LobbyStateDTO current_lobby_state;
 
-    std::mutex mtx; 
+    std::mutex mtx;
     std::list<std::unique_ptr<ClientHandler>> clients_in_lobby;
     std::map<uint8_t, std::unique_ptr<Match>> active_matches;
     uint8_t next_match_id;
@@ -52,7 +53,7 @@ private:
 public:
     Server(const char* port);
     ~Server();
-    
+
     int run();
     void stop();
 
@@ -60,4 +61,4 @@ public:
     Server& operator=(const Server&) = delete;
 };
 
-#endif 
+#endif

@@ -1,10 +1,12 @@
 #ifndef LOBBYSCREEN_H
 #define LOBBYSCREEN_H
 
-#include <QWidget>
 #include <QTimer>
-#include "client.h"
+#include <QWidget>
+
 #include "../common/lobbyState.h"
+
+#include "client.h"
 
 namespace Ui {
 class LobbyScreen;
@@ -23,17 +25,17 @@ struct CarDisplayInfo {
     ClientCarAttributes stats;
 };
 
-class LobbyScreen : public QWidget {
+class LobbyScreen: public QWidget {
     Q_OBJECT
 
 public:
-    explicit LobbyScreen(QWidget *parent = nullptr);
+    explicit LobbyScreen(QWidget* parent = nullptr);
     ~LobbyScreen();
     void setClient(Client* client);
     std::map<uint8_t, QString> getPlayerNamesMap() const;
 signals:
     void startGame(Client* client);
-    void serverDisconnected();   
+    void serverDisconnected();
 
 private slots:
     void updateLobbyState();
@@ -54,13 +56,13 @@ private slots:
     void onCarPrev();
 
 private:
-    Ui::LobbyScreen *ui;
+    Ui::LobbyScreen* ui;
     Client* client = nullptr;
     QTimer* poll_timer;
     QPixmap backgroundLobby;
     QPixmap backgroundMapSelect;
     QPixmap backgroundCarSelect;
-    void paintEvent(QPaintEvent *event) override;
+    void paintEvent(QPaintEvent* event) override;
 
     int currentMapIndex = 0;
     int currentCarIndex = 0;
@@ -69,7 +71,7 @@ private:
 
     bool wasIHost;
     bool isFirstUpdate;
-    
+
     void updateBigMapPreview();
     void updateBigCarPreview();
     CarDisplayInfo getCarInfo(int carIndex);

@@ -1,14 +1,15 @@
 #include "mainwindow.h"
-#include "ui_mainwindow.h"
-#include <stdexcept>
-#include <QDebug>
 
-MainWindow::MainWindow(const std::string& host, const std::string& port, QWidget *parent)
-    : QMainWindow(parent),
-      ui(new Ui::MainWindow),
-      serverIp(QString::fromStdString(host)), 
-      serverPort(QString::fromStdString(port))
-{
+#include <QDebug>
+#include <stdexcept>
+
+#include "ui_mainwindow.h"
+
+MainWindow::MainWindow(const std::string& host, const std::string& port, QWidget* parent):
+        QMainWindow(parent),
+        ui(new Ui::MainWindow),
+        serverIp(QString::fromStdString(host)),
+        serverPort(QString::fromStdString(port)) {
     ui->setupUi(this);
     loginScreen = new LoginScreen(this);
     ui->stackedWidget->addWidget(loginScreen);
@@ -19,42 +20,35 @@ MainWindow::MainWindow(const std::string& host, const std::string& port, QWidget
     ui->stackedWidget->addWidget(resultScreen);
 
     ui->stackedWidget->setCurrentWidget(loginScreen);
-    connect(loginScreen, &LoginScreen::connectAttempted,
-            this, &MainWindow::onLoginAttempt);
-            
+    connect(loginScreen, &LoginScreen::connectAttempted, this, &MainWindow::onLoginAttempt);
+
     connect(lobbyScreen, &LobbyScreen::startGame, this, &MainWindow::on_gameStarted);
 
-    connect(lobbyScreen, &LobbyScreen::serverDisconnected,
-            this, [this]() {
-                this->close();
-            });
-
+    connect(lobbyScreen, &LobbyScreen::serverDisconnected, this, [this]() { this->close(); });
 }
 
-MainWindow::~MainWindow() {
-    delete ui;
-}
+MainWindow::~MainWindow() { delete ui; }
 
 void MainWindow::onLoginAttempt(const QString& name) {
     loginScreen->setEnabled(false);
     loginScreen->displayError("Conectando...");
-    
+
     try {
         client = std::make_unique<Client>(serverIp.toStdString().c_str(),
                                           serverPort.toStdString().c_str());
 
-        connect(&(client->getReceiver()), &ClientReceiver::loginSuccess, 
-                                     this, &MainWindow::handleLoginSuccess);
-        
-        connect(&(client->getReceiver()), &ClientReceiver::loginFailed,
-                                     this, &MainWindow::handleLoginFailed);
-        
-        connect(&(client->getReceiver()), &ClientReceiver::gameStarted,
-                                     this, &MainWindow::on_gameStarted);
+        connect(&(client->getReceiver()), &ClientReceiver::loginSuccess, this,
+                &MainWindow::handleLoginSuccess);
+
+        connect(&(client->getReceiver()), &ClientReceiver::loginFailed, this,
+                &MainWindow::handleLoginFailed);
+
+        connect(&(client->getReceiver()), &ClientReceiver::gameStarted, this,
+                &MainWindow::on_gameStarted);
 
         client->start_threads();
         client->send_login_request(name.toStdString());
-        
+
     } catch (const std::exception& e) {
         handleLoginFailed();
     }
@@ -77,11 +71,10 @@ void MainWindow::on_gameStarted() {
     emit startGameSignal(client.get(), names);
 }
 
-void MainWindow::showResults(const std::vector<PlayerResultDTO>& results, 
-                             const std::map<uint8_t, QString>& names, 
-                             uint8_t myId) {
-    
+void MainWindow::showResults(const std::vector<PlayerResultDTO>& results,
+                             const std::map<uint8_t, QString>& names, uint8_t myId) {
+
     resultScreen->setResults(results, names, myId);
-    
+
     ui->stackedWidget->setCurrentWidget(resultScreen);
 }

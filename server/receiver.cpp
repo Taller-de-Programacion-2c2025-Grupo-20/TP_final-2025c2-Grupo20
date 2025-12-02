@@ -1,14 +1,12 @@
 #include "receiver.h"
-#include "../common/liberror.h"
-#include "../common/constants.h"
+
 #include <iostream>
 
+#include "../common/constants.h"
+#include "../common/liberror.h"
+
 Receiver::Receiver(ServerProtocol& protocol, uint8_t id):
-    protocol(protocol),
-    id(id),
-    gameloop_queue(nullptr),
-    lobby_queue(nullptr) 
-{}
+        protocol(protocol), id(id), gameloop_queue(nullptr), lobby_queue(nullptr) {}
 
 void Receiver::set_lobby_queue(Queue<LobbyCommand>& new_queue) {
     std::lock_guard<std::mutex> lock(mtx);
@@ -24,59 +22,68 @@ void Receiver::run() {
     try {
         while (should_keep_running()) {
             uint8_t command_code = protocol.receiveCommand();
-            if (command_code == 0x0) break; 
+            if (command_code == 0x0)
+                break;
 
-            std::cout << "SERVER DEBUG: Receiver (ID: " << (int)id 
-                      << ") recibió el comando: 0x" << std::hex << (int)command_code 
-                      << std::dec << std::endl;
+            std::cout << "SERVER DEBUG: Receiver (ID: " << (int)id << ") recibió el comando: 0x"
+                      << std::hex << (int)command_code << std::dec << std::endl;
 
             std::lock_guard<std::mutex> lock(mtx);
 
             switch (command_code) {
-                
+
                 case CMD_LOGIN: {
-                    if (!lobby_queue) continue;
+                    if (!lobby_queue)
+                        continue;
                     std::string username = protocol.receive_login_attempt();
                     lobby_queue->push(LobbyCommand(LobbyCommandType::LOGIN_ATTEMPT, id, username));
                     break;
                 }
                 case CMD_CREATE_MATCH: {
-                    std::cout << "SERVER DEBUG: Comando es CMD_CREATE_MATCH. Procesando..." << std::endl;
-                    if (!lobby_queue) continue;
+                    std::cout << "SERVER DEBUG: Comando es CMD_CREATE_MATCH. Procesando..."
+                              << std::endl;
+                    if (!lobby_queue)
+                        continue;
                     std::string match_name = protocol.receive_create_match_payload();
                     lobby_queue->push(LobbyCommand(LobbyCommandType::CREATE_MATCH, id, match_name));
                     break;
                 }
                 case CMD_REFRESH_MATCH_LIST: {
-                    if (!lobby_queue) continue;
+                    if (!lobby_queue)
+                        continue;
                     lobby_queue->push(LobbyCommand(LobbyCommandType::REFRESH_MATCH_LIST, id));
                     break;
                 }
                 case CMD_JOIN_MATCH: {
-                    if (!lobby_queue) continue;
+                    if (!lobby_queue)
+                        continue;
                     uint8_t match_id = protocol.receiveUint8_t();
                     lobby_queue->push(LobbyCommand(LobbyCommandType::JOIN_MATCH, id, match_id));
                     break;
                 }
                 case CMD_START_GAME: {
-                    if (!lobby_queue) continue;
+                    if (!lobby_queue)
+                        continue;
                     lobby_queue->push(LobbyCommand(LobbyCommandType::START_GAME, id));
                     break;
                 }
                 case CMD_SELECT_MAP: {
-                    if (!lobby_queue) continue;
-                    uint8_t map_id = protocol.receiveUint8_t(); 
+                    if (!lobby_queue)
+                        continue;
+                    uint8_t map_id = protocol.receiveUint8_t();
                     lobby_queue->push(LobbyCommand(LobbyCommandType::SELECT_MAP, id, map_id));
                     break;
                 }
                 case CMD_SELECT_CAR: {
-                    if (!lobby_queue) continue;
+                    if (!lobby_queue)
+                        continue;
                     uint8_t car_id = protocol.receiveUint8_t();
                     lobby_queue->push(LobbyCommand(LobbyCommandType::SELECT_CAR, id, car_id));
                     break;
                 }
                 case CMD_ENVIAR_INPUT: {
-                    if (!gameloop_queue) continue;
+                    if (!gameloop_queue)
+                        continue;
                     InputCmd cmd = protocol.receive_input_command();
                     cmd.player_id = this->id;
                     gameloop_queue->push(cmd);
@@ -87,7 +94,6 @@ void Receiver::run() {
                     std::cerr << "Comando desconocido recibido: " << (int)command_code << std::endl;
                     break;
             }
-        
         }
     } catch (const LibError&) {
         // Socket cerrado (probablemente por stop())
@@ -96,5 +102,5 @@ void Receiver::run() {
 
 void Receiver::stop() {
     Thread::stop();
-    //protocol.close();
+    // protocol.close();
 }

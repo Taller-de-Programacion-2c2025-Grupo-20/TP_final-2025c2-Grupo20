@@ -1,20 +1,22 @@
 #ifndef LOGINSCREEN_H
 #define LOGINSCREEN_H
 
-#include <QWidget>
 #include <QPaintEvent>
-#include <QStyleOption>
 #include <QPainter>
+#include <QStyleOption>
+#include <QWidget>
 
-namespace Ui { class LoginScreen; }
+namespace Ui {
+class LoginScreen;
+}
 
-class LoginScreen : public QWidget {
+class LoginScreen: public QWidget {
     Q_OBJECT
 public:
-    explicit LoginScreen(QWidget *parent = nullptr);
+    explicit LoginScreen(QWidget* parent = nullptr);
     ~LoginScreen();
 
-    void displayError(const QString &message);
+    void displayError(const QString& message);
 
 signals:
     void connectAttempted(const QString& name);
@@ -23,8 +25,8 @@ private slots:
     void on_btn_conectar_clicked();
 
 private:
-    Ui::LoginScreen *ui;
-    void paintEvent(QPaintEvent *event) override;
+    Ui::LoginScreen* ui;
+    void paintEvent(QPaintEvent* event) override;
 };
 
-#endif // LOGINSCREEN_H
+#endif  // LOGINSCREEN_H

@@ -13,24 +13,25 @@ void CollisionsListener::handlerCollisionCarAndCar(Car* carA, Car* carB) {
     float delta_speed_A = carA->getBeforeCollisionSpeed() - carA->getSpeed();
     float delta_speed_B = carB->getBeforeCollisionSpeed() - carB->getSpeed();
 
-    if (delta_speed_A < Config::get().DELTA_SPEED_TOLERANCE() && delta_speed_B < Config::get().DELTA_SPEED_TOLERANCE()) //ignoro roces
+    if (delta_speed_A < Config::get().DELTA_SPEED_TOLERANCE() &&
+        delta_speed_B < Config::get().DELTA_SPEED_TOLERANCE())  // ignoro roces
         return;
 
     float rawDamageA = 0.0f;
     float rawDamageB = 0.0f;
 
-    if (delta_speed_A > delta_speed_B){
+    if (delta_speed_A > delta_speed_B) {
         rawDamageA = std::max(0.0f, delta_speed_A * Config::get().DAMAGE_FACTOR());
         rawDamageB = std::max(0.0f, delta_speed_A * Config::get().DAMAGE_FACTOR() * 0.5f);
     }
 
-    if (delta_speed_B > delta_speed_A){
+    if (delta_speed_B > delta_speed_A) {
         rawDamageA = std::max(0.0f, delta_speed_B * Config::get().DAMAGE_FACTOR() * 0.5f);
         rawDamageB = std::max(0.0f, delta_speed_B * Config::get().DAMAGE_FACTOR());
     }
 
-    uint8_t damageA = (uint8_t) std::clamp(rawDamageA, 0.0f, 255.0f);
-    uint8_t damageB = (uint8_t) std::clamp(rawDamageB, 0.0f, 255.0f);
+    uint8_t damageA = (uint8_t)std::clamp(rawDamageA, 0.0f, 255.0f);
+    uint8_t damageB = (uint8_t)std::clamp(rawDamageB, 0.0f, 255.0f);
 
     carA->recieveDamage(damageA);
     carB->recieveDamage(damageB);
@@ -48,15 +49,13 @@ void CollisionsListener::handlerCollisionCarAndWall(Car* car) {
 
     float delta_speed = last_speed - current_speed;
 
-    if (delta_speed < Config::get().DELTA_SPEED_TOLERANCE()) { //Para cuando rozo con una pared
+    if (delta_speed < Config::get().DELTA_SPEED_TOLERANCE()) {  // Para cuando rozo con una pared
         return;
     }
 
     float raw_damage = delta_speed * Config::get().DAMAGE_FACTOR();
 
-    uint8_t damage = static_cast<uint8_t>(
-        std::clamp(raw_damage, 0.0f, 255.0f)
-    );
+    uint8_t damage = static_cast<uint8_t>(std::clamp(raw_damage, 0.0f, 255.0f));
 
     car->recieveDamage(damage);
 
@@ -74,9 +73,7 @@ void CollisionsListener::handlerCollisionCarAndCheckpoint(Car* car, Checkpoint* 
     }
 }
 
-void CollisionsListener::handlerBeforeCollisionCarAndWall(Car* car) {
-    car->storeSpeed();
-}
+void CollisionsListener::handlerBeforeCollisionCarAndWall(Car* car) { car->storeSpeed(); }
 
 void CollisionsListener::handlerBeforeCollisionCarAndCar(Car* carA, Car* carB) {
     carA->storeSpeed();
@@ -107,9 +104,7 @@ void CollisionsListener::BeginContact(b2Contact* contact) {
 
 void CollisionsListener::PostSolve(b2Contact* contact, const b2ContactImpulse* impulse) {
 
-    if (impulse) {
-        
-    }
+    if (impulse) {}
 
     Entity* objectA = reinterpret_cast<Entity*>(contact->GetFixtureA()->GetBody()->GetUserData());
     Entity* objectB = reinterpret_cast<Entity*>(contact->GetFixtureB()->GetBody()->GetUserData());
@@ -137,9 +132,7 @@ void CollisionsListener::PostSolve(b2Contact* contact, const b2ContactImpulse* i
 
 void CollisionsListener::PreSolve(b2Contact* contact, const b2Manifold* oldManifold) {
 
-    if (oldManifold){
-
-    }
+    if (oldManifold) {}
 
     Entity* objectA = reinterpret_cast<Entity*>(contact->GetFixtureA()->GetBody()->GetUserData());
     Entity* objectB = reinterpret_cast<Entity*>(contact->GetFixtureB()->GetBody()->GetUserData());

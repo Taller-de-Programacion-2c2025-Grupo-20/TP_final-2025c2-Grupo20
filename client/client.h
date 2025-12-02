@@ -1,20 +1,23 @@
 #ifndef CLIENT_H
 #define CLIENT_H
 
+#include <atomic>
 #include <cstdint>
 #include <string>
-#include <atomic>
+
 #include <SDL2/SDL.h>
-#include "client_protocol.h"
-#include "client_sender.h"
-#include "client_receiver.h"
-#include "../common/queue.h"
+
 #include "../common/clientCommand.h"
+#include "../common/queue.h"
+
+#include "client_protocol.h"
+#include "client_receiver.h"
+#include "client_sender.h"
 
 class Client {
 private:
     ClientProtocol protocol;
-    //uint8_t my_player_id;
+    // uint8_t my_player_id;
     std::atomic<bool> is_running;
     bool finished_game = false;
     std::vector<PlayerResultDTO> final_results;
@@ -39,12 +42,12 @@ public:
     ClientProtocol& getProtocol();
     uint8_t getCarType(int player_id);
     uint8_t getMapId();
-    bool hasFinishedGame(){return finished_game;}
-    void setFinishedGame(){finished_game = true;}
+    bool hasFinishedGame() { return finished_game; }
+    void setFinishedGame() { finished_game = true; }
     void push_input(const InputCmd& cmd);
-    void setFinalResults(std::vector<PlayerResultDTO> results){final_results = results;}
-    std::vector<PlayerResultDTO> getFinalState(){return final_results;}
-    
+    void setFinalResults(std::vector<PlayerResultDTO> results) { final_results = results; }
+    std::vector<PlayerResultDTO> getFinalState() { return final_results; }
+
     Client(const Client&) = delete;
     Client& operator=(const Client&) = delete;
 };

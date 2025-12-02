@@ -1,8 +1,8 @@
 #ifndef CAR_H
 #define CAR_H
 
-#include <string>
 #include <set>
+#include <string>
 
 #include <Box2D/Box2D.h>
 
@@ -34,7 +34,7 @@ private:
     std::set<UpgradeType> applied_upgrades;
     float time_penalization;
     float next_race_time_penalty;
-    
+
     bool accelerating;
     bool braking;
     bool turningLeft;
@@ -74,7 +74,7 @@ public:
     void incrementNextCheckpointId();
 
     float getSpeed() const;
-    float getBeforeCollisionSpeed() const ;
+    float getBeforeCollisionSpeed() const;
 
     void storeSpeed();
 

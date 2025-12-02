@@ -1,7 +1,8 @@
 #include "client_sender.h"
 
-#include "../common/liberror.h"
 #include <QDebug>
+
+#include "../common/liberror.h"
 
 void ClientSender::run() {
 
@@ -9,9 +10,10 @@ void ClientSender::run() {
         try {
 
             InputCmd response = client_queue.pop();
-            qDebug() << "CLIENT DEBUG 3: 'Sender' sacó un comando de la cola. Key:" << (int)response.key;
+            qDebug() << "CLIENT DEBUG 3: 'Sender' sacó un comando de la cola. Key:"
+                     << (int)response.key;
             switch (response.key) {
-                
+
                 case InputKey::Up:
                 case InputKey::Down:
                 case InputKey::Left:
@@ -26,13 +28,13 @@ void ClientSender::run() {
                     qDebug() << "CLIENT DEBUG 4: Dispatching CreateMatch...";
                     protocol.send_create_match(response.username);
                     break;
-                
+
                 case InputKey::JoinMatch:
                     protocol.send_join_match(response.match_id);
                     break;
 
                 case InputKey::SelectMap:
-                    protocol.send_select_map(response.match_id); 
+                    protocol.send_select_map(response.match_id);
                     break;
 
                 case InputKey::SelectCar:

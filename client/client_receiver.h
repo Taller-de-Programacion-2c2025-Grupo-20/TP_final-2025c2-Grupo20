@@ -1,17 +1,19 @@
 #ifndef CLIENT_RECEIVER_H
 #define CLIENT_RECEIVER_H
 
-#include "../common/thread.h"
-#include "../common/queue.h"
+#include <QObject>
+#include <atomic>
+#include <mutex>
+
 #include "../common/gameState.h"
 #include "../common/lobbyState.h"
 #include "../common/match_list.h"
-#include "client_protocol.h"
-#include <atomic>
-#include <mutex>
-#include <QObject>
+#include "../common/queue.h"
+#include "../common/thread.h"
 
-class ClientReceiver : public QObject, public Thread {
+#include "client_protocol.h"
+
+class ClientReceiver: public QObject, public Thread {
     Q_OBJECT
 
 private:
@@ -23,7 +25,7 @@ private:
     Queue<GameStateDTO> game_state_queue;
     Queue<MatchListDTO> match_list_queue;
     MatchListDTO last_match_list;
-    
+
     GameStateDTO last_game_state;
     LobbyStateDTO last_lobby_state;
     std::mutex mtx;
@@ -32,7 +34,7 @@ private:
 
 public:
     ClientReceiver(ClientProtocol& protocol, QObject* parent = nullptr);
-    
+
     GameStateDTO pollGameState();
     LobbyStateDTO pollLobbyState();
     MatchListDTO pollMatchList();

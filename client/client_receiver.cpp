@@ -1,18 +1,19 @@
 #include "client_receiver.h"
-#include "../common/constants.h"
-#include <stdexcept>
-#include <iostream>
-#include <QDebug>
 
-ClientReceiver::ClientReceiver(ClientProtocol& protocol, QObject* parent) :
-    QObject(parent),
-    protocol(protocol),
-    is_authenticated(false),
-    my_player_id(0),
-    lobby_state_queue(1),
-    game_state_queue(1),
-    server_down(false)
-{}
+#include <QDebug>
+#include <iostream>
+#include <stdexcept>
+
+#include "../common/constants.h"
+
+ClientReceiver::ClientReceiver(ClientProtocol& protocol, QObject* parent):
+        QObject(parent),
+        protocol(protocol),
+        is_authenticated(false),
+        my_player_id(0),
+        lobby_state_queue(1),
+        game_state_queue(1),
+        server_down(false) {}
 
 void ClientReceiver::run() {
     try {
@@ -35,7 +36,7 @@ void ClientReceiver::run() {
                     emit loginFailed();
                     break;
                 }
-                
+
                 case RSP_LOBBY_STATE: {
                     LobbyStateDTO new_state = protocol.receive_lobby_state_payload();
                     LobbyStateDTO dummy;
@@ -44,7 +45,7 @@ void ClientReceiver::run() {
                     break;
                 }
 
-                case RSP_MATCH_LIST: { 
+                case RSP_MATCH_LIST: {
                     MatchListDTO list = protocol.receive_match_list_payload();
                     MatchListDTO dummy;
                     match_list_queue.try_pop(dummy);
@@ -79,9 +80,7 @@ void ClientReceiver::run() {
     }
 }
 
-bool ClientReceiver::isServerDown() const {
-    return server_down.load();
-}
+bool ClientReceiver::isServerDown() const { return server_down.load(); }
 
 GameStateDTO ClientReceiver::pollGameState() {
     GameStateDTO new_state;
@@ -123,7 +122,7 @@ bool ClientReceiver::is_logged_in() const { return is_authenticated; }
 uint8_t ClientReceiver::get_my_id() const { return my_player_id; }
 uint8_t ClientReceiver::get_car_type(int player_id) {
     std::lock_guard<std::mutex> lock(mtx);
-    for (const auto& player : last_game_state.players) {
+    for (const auto& player: last_game_state.players) {
         if (player.player_id == player_id) {
             return static_cast<uint8_t>(player.car_type);
         }

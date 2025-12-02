@@ -1,6 +1,7 @@
 #pragma once
-#include <vector>
 #include <string>
+#include <vector>
+
 #include <stdint.h>
 
 struct MatchInfo {

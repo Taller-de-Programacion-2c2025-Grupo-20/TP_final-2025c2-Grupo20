@@ -75,7 +75,7 @@ public:
             is_not_full.notify_all();
         }
 
-        //val = q.front();
+        // val = q.front();
         val = std::move(q.front());
         q.pop();
 

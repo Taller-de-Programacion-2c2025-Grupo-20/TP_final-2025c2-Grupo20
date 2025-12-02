@@ -8,7 +8,7 @@
  * en la pantalla del lobby.
  */
 struct LobbyPlayerInfo {
-    uint8_t player_id;  
+    uint8_t player_id;
     std::string name;
     uint8_t car_id;
 };

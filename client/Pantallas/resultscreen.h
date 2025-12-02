@@ -1,38 +1,38 @@
 #ifndef RESULTSCREEN_H
 #define RESULTSCREEN_H
 
-#include <QWidget>
+#include <QPainter>
 #include <QPixmap>
-#include <QPainter> 
-#include <vector>
+#include <QWidget>
 #include <map>
+#include <vector>
+
 #include "../common/gameState.h"
 
 namespace Ui {
 class ResultScreen;
 }
 
-class ResultScreen : public QWidget {
+class ResultScreen: public QWidget {
     Q_OBJECT
 
 public:
-    explicit ResultScreen(QWidget *parent = nullptr);
+    explicit ResultScreen(QWidget* parent = nullptr);
     ~ResultScreen();
 
-    void setResults(const std::vector<PlayerResultDTO>& results, 
-                    const std::map<uint8_t, QString>& idToNameMap,
-                    uint8_t myPlayerId);
+    void setResults(const std::vector<PlayerResultDTO>& results,
+                    const std::map<uint8_t, QString>& idToNameMap, uint8_t myPlayerId);
 
 protected:
-    void paintEvent(QPaintEvent *event) override;
+    void paintEvent(QPaintEvent* event) override;
 
 signals:
-    void returnToLobby(); 
+    void returnToLobby();
     void closeApplication();
 
 private:
-    Ui::ResultScreen *ui;
-    QPixmap backgroundImage; 
+    Ui::ResultScreen* ui;
+    QPixmap backgroundImage;
 };
 
-#endif // RESULTSCREEN_H
+#endif  // RESULTSCREEN_H

@@ -6,12 +6,12 @@
 #include <string>
 #include <vector>
 
-#include "../common/constants.h"
-#include "../common/socket.h"
-#include "../common/gameState.h"
 #include "../common/clientCommand.h"
+#include "../common/constants.h"
+#include "../common/gameState.h"
 #include "../common/lobbyState.h"
 #include "../common/match_list.h"
+#include "../common/socket.h"
 
 class ServerProtocol {
 private:

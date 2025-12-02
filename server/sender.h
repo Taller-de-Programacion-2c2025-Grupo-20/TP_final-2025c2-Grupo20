@@ -1,19 +1,21 @@
 #ifndef SENDER_H
 #define SENDER_H
 
-#include <mutex>
 #include <atomic>
+#include <mutex>
+
+#include "../common/gameState.h"
 #include "../common/queue.h"
 #include "../common/thread.h"
-#include "../common/gameState.h"
+
 #include "server_protocol.h"
 
 class Sender: public Thread {
 private:
     ServerProtocol& protocol;
-    
+
     Queue<GameStateDTO>* client_queue;
-    std::mutex mtx; 
+    std::mutex mtx;
 
 public:
     void run() override;

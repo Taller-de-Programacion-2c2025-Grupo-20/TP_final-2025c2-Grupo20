@@ -1,15 +1,17 @@
 #ifndef CLIENT_PROTOCOL_H
 #define CLIENT_PROTOCOL_H
 
+#include <atomic>
 #include <string>
 #include <vector>
+
 #include <stdint.h>
-#include <atomic>
-#include "../common/socket.h"
+
 #include "../common/clientCommand.h"
 #include "../common/gameState.h"
 #include "../common/lobbyState.h"
 #include "../common/match_list.h"
+#include "../common/socket.h"
 
 class ClientProtocol {
 private:
@@ -39,8 +41,8 @@ public:
     LobbyStateDTO receive_lobby_state_payload();
     GameStateDTO receive_game_state_payload();
     MatchListDTO receive_match_list_payload();
-    
-    
+
+
     void close();
 
     ClientProtocol(const ClientProtocol&) = delete;

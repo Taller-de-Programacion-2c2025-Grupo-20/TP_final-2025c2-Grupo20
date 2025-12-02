@@ -5,8 +5,8 @@
 #include <unordered_map>
 
 #include "../common/constants.h"
-#include "../common/queue.h"
 #include "../common/gameState.h"
+#include "../common/queue.h"
 
 struct SenderQueue {
     Queue<GameStateDTO> queue;

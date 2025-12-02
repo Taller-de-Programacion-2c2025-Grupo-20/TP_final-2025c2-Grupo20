@@ -1,15 +1,15 @@
 #include "server_protocol.h"
 
 #include <cstring>
+#include <iostream>
 #include <utility>
 
 #include <arpa/inet.h>
 
 #include "../common/constants.h"
-#include "../common/socket.h"
 #include "../common/gameState.h"
 #include "../common/match_list.h"
-#include <iostream>
+#include "../common/socket.h"
 
 uint8_t ServerProtocol::receiveCommand() {
     uint8_t command;
@@ -49,9 +49,7 @@ std::string ServerProtocol::receiveString() {
     return std::string(buffer.begin(), buffer.end());
 }
 
-std::string ServerProtocol::receive_create_match_payload() {
-    return receiveString();
-}
+std::string ServerProtocol::receive_create_match_payload() { return receiveString(); }
 
 void ServerProtocol::close() {
     skt.shutdown(SHUT_RDWR);
@@ -62,7 +60,7 @@ void ServerProtocol::addFloatToBuffer(std::vector<uint8_t>& buffer, float value)
     uint32_t temp_int;
     std::memcpy(&temp_int, &value, sizeof(float));
     uint32_t network_value = htonl(temp_int);
-    
+
     size_t old_size = buffer.size();
     buffer.resize(old_size + sizeof(uint32_t));
     std::memcpy(buffer.data() + old_size, &network_value, sizeof(uint32_t));
@@ -70,40 +68,40 @@ void ServerProtocol::addFloatToBuffer(std::vector<uint8_t>& buffer, float value)
 
 void ServerProtocol::send_game_state(const GameStateDTO& state) {
     std::vector<uint8_t> buffer;
-    buffer.push_back(EVT_GAME_STATE); 
+    buffer.push_back(EVT_GAME_STATE);
     buffer.push_back(state.car_count);
-    
+
     addFloatToBuffer(buffer, state.elapsed_time);
 
-    for (const auto& player : state.players) {
+    for (const auto& player: state.players) {
         buffer.push_back(player.player_id);
-        
+
         addFloatToBuffer(buffer, player.state.x);
         addFloatToBuffer(buffer, player.state.y);
         addFloatToBuffer(buffer, player.state.angle);
         addFloatToBuffer(buffer, player.state.speed);
-        
+
         buffer.push_back(player.health);
 
         buffer.push_back(static_cast<uint8_t>(player.car_type));
 
         buffer.push_back(static_cast<uint8_t>(player.applied_upgrades.size()));
-        for (const auto& upgrade : player.applied_upgrades) {
+        for (const auto& upgrade: player.applied_upgrades) {
             buffer.push_back(static_cast<uint8_t>(upgrade));
         }
 
         addFloatToBuffer(buffer, player.next_checkpoint_position_x);
         addFloatToBuffer(buffer, player.next_checkpoint_position_y);
         addFloatToBuffer(buffer, player.next_checkpoint_hint);
-        
+
         buffer.push_back(player.checkpoints_passed);
     }
-    
+
     buffer.push_back(state.race_finished);
     if (state.race_finished == 1) {
         buffer.push_back(static_cast<uint8_t>(state.final_results.size()));
-        for (const auto& result : state.final_results) {
-            
+        for (const auto& result: state.final_results) {
+
             buffer.push_back(result.player_id);
             buffer.push_back(result.position);
             addFloatToBuffer(buffer, result.total_time);
@@ -113,18 +111,16 @@ void ServerProtocol::send_game_state(const GameStateDTO& state) {
     skt.sendall(buffer.data(), buffer.size());
 }
 
-std::string ServerProtocol::receive_login_attempt() {
-    return receiveString();
-}
+std::string ServerProtocol::receive_login_attempt() { return receiveString(); }
 
 InputCmd ServerProtocol::receive_input_command() {
     InputCmd cmd;
     uint8_t action, key, id;
-    
+
     skt.recvall(&action, 1);
     skt.recvall(&key, 1);
     skt.recvall(&id, 1);
-    
+
     cmd.action = static_cast<InputAction>(action);
     cmd.key = static_cast<InputKey>(key);
     cmd.player_id = static_cast<u_int8_t>(id);
@@ -134,50 +130,50 @@ InputCmd ServerProtocol::receive_input_command() {
 
 void ServerProtocol::send_login_ok(uint8_t player_id) {
     std::vector<uint8_t> buffer;
-    buffer.push_back(LOGIN_SUCCESS);   // mismo código que espera el cliente
-    buffer.push_back(player_id);   // id asignado al cliente
+    buffer.push_back(LOGIN_SUCCESS);  // mismo código que espera el cliente
+    buffer.push_back(player_id);      // id asignado al cliente
     skt.sendall(buffer.data(), buffer.size());
 }
 
 void ServerProtocol::send_login_failed() {
-    uint8_t cmd = LOGIN_FAILED; 
+    uint8_t cmd = LOGIN_FAILED;
     skt.sendall(&cmd, sizeof(uint8_t));
 }
 
 void ServerProtocol::send_lobby_state(const LobbyStateDTO& state) {
     std::vector<uint8_t> buffer;
-    
+
     buffer.push_back(RSP_LOBBY_STATE);
     buffer.push_back(static_cast<uint8_t>(state.players.size()));
     buffer.push_back(state.host_id);
     buffer.push_back(state.map_id);
 
-    for (const auto& player : state.players) {
+    for (const auto& player: state.players) {
         buffer.push_back(player.player_id);
-        
+
         uint16_t name_len = player.name.length();
-        addUint16_tToBuffer(buffer, name_len); 
+        addUint16_tToBuffer(buffer, name_len);
         buffer.insert(buffer.end(), player.name.begin(), player.name.end());
         buffer.push_back(player.car_id);
     }
-    
+
     skt.sendall(buffer.data(), buffer.size());
 }
 
 void ServerProtocol::send_match_list(const MatchListDTO& list) {
     std::vector<uint8_t> buffer;
-    
+
     buffer.push_back(RSP_MATCH_LIST);
     buffer.push_back(static_cast<uint8_t>(list.matches.size()));
 
-    for (const auto& match : list.matches) {
+    for (const auto& match: list.matches) {
         buffer.push_back(match.match_id);
-        buffer.push_back(match.player_count); 
+        buffer.push_back(match.player_count);
         uint16_t name_len = match.name.length();
-        addUint16_tToBuffer(buffer, name_len); 
+        addUint16_tToBuffer(buffer, name_len);
         buffer.insert(buffer.end(), match.name.begin(), match.name.end());
     }
-    
+
     skt.sendall(buffer.data(), buffer.size());
 }
 

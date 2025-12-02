@@ -2,10 +2,12 @@
 #define RECEIVER_H
 
 #include <mutex>
-#include "../common/queue.h"
-#include "../common/thread.h"
+
 #include "../common/clientCommand.h"
 #include "../common/lobbyCommand.h"
+#include "../common/queue.h"
+#include "../common/thread.h"
+
 #include "server_protocol.h"
 
 class Receiver: public Thread {

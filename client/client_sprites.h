@@ -1,7 +1,9 @@
 #pragma once
-#include <map>
 #include <array>
+#include <map>
+
 #include <SDL2pp/Rect.hh>
+
 #include "../common/constants.h"
 
 class SpritesManager {
@@ -65,7 +67,7 @@ private:
 
     // HUD: dígitos
     static const std::array<SDL2pp::Rect, 10> DIGITS;
-    
+
     // Dígitos del cartel de mejoras
     static const std::array<SDL2pp::Rect, 10> MARKET_DIGITS;
 
@@ -105,5 +107,4 @@ private:
     static const SDL2pp::Rect CHECKPOINT_TENS_SLOT;
     static const SDL2pp::Rect CHECKPOINT_UNITS_SLOT;
     static const std::array<SDL2pp::Rect, 10> CHECKPOINT_DIGITS;
-
 };

@@ -1,16 +1,17 @@
 #include "client.h"
-#include <iostream>
-#include <SDL2/SDL.h>
-#include <QObject>
-#include <QDebug>
 
-Client::Client(const char* hostname, const char* port) : 
-    protocol(hostname, port),
-    is_running(true),
-    input_queue(128),
-    sender(protocol, input_queue),
-    receiver(protocol)
-{}
+#include <QDebug>
+#include <QObject>
+#include <iostream>
+
+#include <SDL2/SDL.h>
+
+Client::Client(const char* hostname, const char* port):
+        protocol(hostname, port),
+        is_running(true),
+        input_queue(128),
+        sender(protocol, input_queue),
+        receiver(protocol) {}
 
 Client::~Client() {
     is_running = false;
@@ -29,29 +30,17 @@ void Client::send_login_request(const std::string& username) {
     protocol.send_login_attempt(username);
 }
 
-void Client::send_refresh_request() {
-    protocol.send_refresh_match_list(); 
-}
+void Client::send_refresh_request() { protocol.send_refresh_match_list(); }
 
-int Client::runGame() {
-    return run_game_loop();
-}
+int Client::runGame() { return run_game_loop(); }
 
-uint8_t Client::getMyPlayerId() const {
-    return receiver.get_my_id();
-}
+uint8_t Client::getMyPlayerId() const { return receiver.get_my_id(); }
 
-uint8_t Client::getCarType(int player_id) {
-    return receiver.get_car_type(player_id);
-}
+uint8_t Client::getCarType(int player_id) { return receiver.get_car_type(player_id); }
 
-uint8_t Client::getMapId() {
-    return receiver.get_map_id();
-}
+uint8_t Client::getMapId() { return receiver.get_map_id(); }
 
-ClientReceiver& Client::getReceiver() {
-    return receiver;
-}
+ClientReceiver& Client::getReceiver() { return receiver; }
 
 ClientProtocol& Client::getProtocol() { return protocol; }
 
@@ -62,7 +51,7 @@ void Client::push_input(const InputCmd& cmd) {
 
 int Client::run_game_loop() {
     std::cout << "¡El juego ha comenzado!" << std::endl;
-    
+
     while (is_running) {
         SDL_Event event;
         while (SDL_PollEvent(&event)) {
@@ -76,10 +65,10 @@ int Client::run_game_loop() {
         GameStateDTO game_state = receiver.pollGameState();
 
         if (!game_state.players.empty()) {
-            for (const auto& player : game_state.players) {
+            for (const auto& player: game_state.players) {
                 if (player.player_id == getMyPlayerId()) {
-                    std::cout << "Game state update. Mi auto está en: " 
-                              << player.state.x << std::endl;
+                    std::cout << "Game state update. Mi auto está en: " << player.state.x
+                              << std::endl;
                     break;
                 }
             }
@@ -95,22 +84,34 @@ void Client::handle_sdl_event(const SDL_Event& event) {
         InputCmd cmd{};
         cmd.player_id = getMyPlayerId();
         cmd.action = (event.type == SDL_KEYDOWN) ? InputAction::Press : InputAction::Release;
-        
+
         switch (event.key.keysym.sym) {
-            case SDLK_UP:    cmd.key = InputKey::Up;    break;
-            case SDLK_DOWN:  cmd.key = InputKey::Down;  break;
-            case SDLK_LEFT:  cmd.key = InputKey::Left;  break;
-            case SDLK_RIGHT: cmd.key = InputKey::Right; break;
+            case SDLK_UP:
+                cmd.key = InputKey::Up;
+                break;
+            case SDLK_DOWN:
+                cmd.key = InputKey::Down;
+                break;
+            case SDLK_LEFT:
+                cmd.key = InputKey::Left;
+                break;
+            case SDLK_RIGHT:
+                cmd.key = InputKey::Right;
+                break;
             case SDLK_q:
-            case SDLK_ESCAPE: cmd.key = InputKey::Quit; break;
-            default:         cmd.key = InputKey::Unknown; break;
+            case SDLK_ESCAPE:
+                cmd.key = InputKey::Quit;
+                break;
+            default:
+                cmd.key = InputKey::Unknown;
+                break;
         }
 
         if (cmd.key == InputKey::Quit && cmd.action == InputAction::Press) {
             is_running = false;
             return;
         }
-        
+
         if (cmd.key != InputKey::Unknown) {
             push_input(cmd);
         }

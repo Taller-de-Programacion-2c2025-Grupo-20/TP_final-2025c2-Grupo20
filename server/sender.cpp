@@ -1,11 +1,10 @@
 #include "sender.h"
-#include "../common/liberror.h"
+
 #include <chrono>
 
-Sender::Sender(ServerProtocol& protocol):
-    protocol(protocol),
-    client_queue(nullptr)
-{}
+#include "../common/liberror.h"
+
+Sender::Sender(ServerProtocol& protocol): protocol(protocol), client_queue(nullptr) {}
 
 void Sender::set_state_queue(Queue<GameStateDTO>& new_queue) {
     std::lock_guard<std::mutex> lock(mtx);
@@ -16,14 +15,14 @@ void Sender::run() {
     try {
         while (should_keep_running()) {
             Queue<GameStateDTO>* current_game_queue = nullptr;
-            
+
             {
                 std::lock_guard<std::mutex> lock(mtx);
                 current_game_queue = this->client_queue;
             }
 
             if (current_game_queue) {
-                GameStateDTO state_to_send = current_game_queue->pop(); 
+                GameStateDTO state_to_send = current_game_queue->pop();
                 protocol.send_game_state(state_to_send);
             } else {
                 std::this_thread::sleep_for(std::chrono::milliseconds(200));

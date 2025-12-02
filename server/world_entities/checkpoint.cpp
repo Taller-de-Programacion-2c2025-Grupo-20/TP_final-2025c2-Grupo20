@@ -35,5 +35,4 @@ Checkpoint::~Checkpoint() {
     }
 
     checkpoint_body = nullptr;
-
 }

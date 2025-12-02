@@ -8,10 +8,6 @@
 
 #include "../common/gameState.h"
 
-#ifndef DATA_PATH
-#define DATA_PATH "../data"
-#endif
-
 using namespace SDL2pp;
 
 static constexpr float PPM = 16.0f;
@@ -928,32 +924,32 @@ int GameWindow::runGame() {
         SDL2pp::Mixer mixer(44100, MIX_DEFAULT_FORMAT, 2, 1024);
         SoundManager soundManager(mixer);
 
-        Surface surface(DATA_PATH "/cars/Mobile - Grand Theft Auto 4 - Miscellaneous - Cars.png");
+        Surface surface(std::string(SDL_DATA_PATH) + "/cars/Mobile - Grand Theft Auto 4 - Miscellaneous - Cars.png");
         surface.SetColorKey(true, SDL_MapRGB(surface.Get()->format, 163, 163, 13));
         Texture sprites(renderer, surface);
 
-        Surface hud_surface(DATA_PATH "/assets/hud.png");
+        Surface hud_surface(std::string(SDL_DATA_PATH) + "/assets/hud.png");
         hud_surface.SetColorKey(true, SDL_MapRGB(hud_surface.Get()->format, 255, 201, 14));
         Texture hud(renderer, hud_surface);
 
-        Surface checkpoints_surface(DATA_PATH "/assets/checkpoint.png");
+        Surface checkpoints_surface(std::string(SDL_DATA_PATH) + "/assets/checkpoint.png");
         checkpoints_surface.SetColorKey(
                 true, SDL_MapRGB(checkpoints_surface.Get()->format, 255, 201, 14));
         Texture checkpoint_flag(renderer, checkpoints_surface);
 
-        Surface checkered_flag_surface(DATA_PATH "/assets/meta.png");
+        Surface checkered_flag_surface(std::string(SDL_DATA_PATH) + "/assets/meta.png");
         checkered_flag_surface.SetColorKey(
                 true, SDL_MapRGB(checkered_flag_surface.Get()->format, 255, 201, 14));
         Texture checkered_flag(renderer, checkered_flag_surface);
 
-        Surface hints_surface(DATA_PATH "/assets/hints.png");
+        Surface hints_surface(std::string(SDL_DATA_PATH) + "/assets/hints.png");
         hints_surface.SetColorKey(true, SDL_MapRGB(hints_surface.Get()->format, 255, 201, 14));
         Texture checkpoint_hint(renderer, hints_surface);
 
-        Surface market_surface(DATA_PATH "/assets/mejoras.png");
+        Surface market_surface(std::string(SDL_DATA_PATH) + "/assets/mejoras.png");
         Texture market(renderer, market_surface);
 
-        Surface moriste_surface(DATA_PATH "/assets/moriste.png");
+        Surface moriste_surface(std::string(SDL_DATA_PATH) + "/assets/moriste.png");
         moriste_surface.SetColorKey(true, SDL_MapRGB(moriste_surface.Get()->format, 255, 242, 0));
         Texture moriste(renderer, moriste_surface);
 
@@ -972,7 +968,7 @@ int GameWindow::runGame() {
             map_to_play = 0;
         }
 
-        Texture background(renderer, DATA_PATH + maps[map_to_play]);
+        Texture background(renderer, std::string(SDL_DATA_PATH) + maps[map_to_play]);
         const int bgW = background.GetWidth();
         const int bgH = background.GetHeight();
 

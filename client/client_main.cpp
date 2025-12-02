@@ -18,7 +18,7 @@ int main(int argc, char* argv[]) {
     std::string port = argv[2];
     QApplication app(argc, argv);
 
-    int id = QFontDatabase::addApplicationFont(FONT_FILE);
+    int id = QFontDatabase::addApplicationFont(QString::fromStdString(FONT_FILE));
     QString family = QFontDatabase::applicationFontFamilies(id).at(0);
 
     Client* client_ptr_for_game = nullptr;

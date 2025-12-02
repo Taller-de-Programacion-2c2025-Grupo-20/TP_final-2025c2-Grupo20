@@ -66,7 +66,7 @@ private:
     }
 
     Config() {
-        YAML::Node config = YAML::LoadFile("../common/config.yaml");
+        YAML::Node config = YAML::LoadFile(std::string(CONFIG_DATA_PATH) + "config.yaml");
 
         // gameloop
         pixels_per_meter = config["gameloop"]["pixels_per_meter"].as<int>();

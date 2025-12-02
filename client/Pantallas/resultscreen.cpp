@@ -7,7 +7,7 @@
 ResultScreen::ResultScreen(QWidget* parent): QWidget(parent), ui(new Ui::ResultScreen) {
     ui->setupUi(this);
 
-    backgroundImage.load(RESULT_FILE);
+    backgroundImage.load(QString::fromStdString(RESULT_FILE));
     ui->table_Ranking->setColumnCount(3);
     ui->table_Ranking->setHorizontalHeaderLabels({"POS", "JUGADOR", "TIEMPO"});
     ui->table_Ranking->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);

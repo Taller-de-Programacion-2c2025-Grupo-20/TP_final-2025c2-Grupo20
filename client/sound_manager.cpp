@@ -4,17 +4,13 @@
 
 #include <SDL2/SDL.h>
 
-#ifndef DATA_PATH
-#define DATA_PATH "../data"
-#endif
-
 SoundManager::SoundManager(SDL2pp::Mixer& mixer):
         mixer(mixer),
-        engineIdle(DATA_PATH "/sounds/1000 RPM.wav"),
-        skidChunk(DATA_PATH "/sounds/skid.wav"),
-        crashChunk(DATA_PATH "/sounds/crash.wav"),
-        bgMusic(DATA_PATH "/sounds/soundtrack.ogg"),
-        raceEndSound(DATA_PATH "/sounds/ending.ogg") {
+        engineIdle(std::string(SDL_DATA_PATH) + "/sounds/1000 RPM.wav"),
+        skidChunk(std::string(SDL_DATA_PATH) + "/sounds/skid.wav"),
+        crashChunk(std::string(SDL_DATA_PATH) + "/sounds/crash.wav"),
+        bgMusic(std::string(SDL_DATA_PATH) + "/sounds/soundtrack.ogg"),
+        raceEndSound(std::string(SDL_DATA_PATH) + "/sounds/ending.ogg") {
     std::cout << "SoundManager cargado.\n";
     mixer.SetMusicVolume(MIX_MAX_VOLUME / 2);
 }

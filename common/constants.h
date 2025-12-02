@@ -43,11 +43,11 @@ inline const char* LIBERTY_CITY_FILE = "liberty_city.png";
 inline const char* VICE_CITY_FILE = "vice_city.png";
 inline const char* SAN_ANDREAS_FILE = "san_andreas.png";
 inline const char* CARS_FILE = "Mobile - Grand Theft Auto 4 - Miscellaneous - Cars.png";
-inline const char* FONT_FILE = ":/data/font/PressStart2P-Regular.ttf";
-inline const char* LOBBY_FILE = ":/Pantallas/fondo_lobby.png";
-inline const char* GARAGE_FILE = ":/Pantallas/fondo_garage.png";
-inline const char* SELECT_MAP_FILE = ":/Pantallas/fondo_select_map.png";
-inline const char* RESULT_FILE = ":/Pantallas/fondo_result.png";
+inline const std::string FONT_FILE = std::string(SDL_DATA_PATH) + "/font/PressStart2P-Regular.ttf";
+inline const std::string LOBBY_FILE = std::string(QT_IMAGES_PATH) + "/fondo_lobby.png";
+inline const std::string GARAGE_FILE = std::string(QT_IMAGES_PATH) + "/fondo_garage.png";
+inline const std::string SELECT_MAP_FILE = std::string(QT_IMAGES_PATH) + "/fondo_select_map.png";
+inline const std::string RESULT_FILE = std::string(QT_IMAGES_PATH) + "/fondo_result.png";
 
 inline const char* VERDE = "Verde";
 inline const char* ROJO = "Rojo";

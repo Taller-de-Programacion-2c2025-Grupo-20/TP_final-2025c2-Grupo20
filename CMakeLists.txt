@@ -22,11 +22,15 @@ if (INSTALL_MODE)
     add_compile_definitions(
         SDL_DATA_PATH=\"/var/tp_taller/SDL_data/\"
         MAPS_DATA_PATH=\"/var/tp_taller/maps_data/\"
+        QT_IMAGES_PATH=\"/var/tp_taller/Pantallas/\"
+        CONFIG_DATA_PATH=\"/etc/tp_taller/config_files/\"
     )
 else()
     add_compile_definitions(
         SDL_DATA_PATH=\"${CMAKE_SOURCE_DIR}/client/data/\"
         MAPS_DATA_PATH=\"${CMAKE_SOURCE_DIR}/server/data/\"
+        QT_IMAGES_PATH=\"${CMAKE_SOURCE_DIR}/client/Pantallas/\"
+        CONFIG_DATA_PATH=\"${CMAKE_SOURCE_DIR}/common/data/\"
     )
 endif()
 

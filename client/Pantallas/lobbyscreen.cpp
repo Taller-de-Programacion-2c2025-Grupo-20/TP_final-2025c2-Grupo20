@@ -18,9 +18,9 @@
 LobbyScreen::LobbyScreen(QWidget* parent): QWidget(parent), ui(new Ui::LobbyScreen) {
 
     ui->setupUi(this);
-    backgroundLobby.load(LOBBY_FILE);
-    backgroundMapSelect.load(SELECT_MAP_FILE);
-    backgroundCarSelect.load(GARAGE_FILE);
+    backgroundLobby.load(QString::fromStdString(LOBBY_FILE));
+    backgroundMapSelect.load(QString::fromStdString(SELECT_MAP_FILE));
+    backgroundCarSelect.load(QString::fromStdString(GARAGE_FILE));
 
     ui->stackedWidget_Lobby->setStyleSheet(BACKGROUND_STYLE);
     ui->page_WaitingRoom->setStyleSheet(BACKGROUND_STYLE);
@@ -299,7 +299,7 @@ void LobbyScreen::updateBigMapPreview() {
     }
 
     ui->label_MapName->setText(mapName);
-    QString fullPath = ":/data/assets/" + filename;
+    QString fullPath = QString::fromStdString(SDL_DATA_PATH) + "/assets/" + filename;
     QPixmap pix(fullPath);
 
     if (!pix.isNull()) {
@@ -315,7 +315,7 @@ void LobbyScreen::updateBigCarPreview() {
         ui->label_CarName->setText(info.name);
     }
 
-    QPixmap spritesheet(":/data/cars/" + QString(CARS_FILE));
+    QPixmap spritesheet(QString::fromStdString(SDL_DATA_PATH) + "/cars/" + QString(CARS_FILE));
     if (!spritesheet.isNull()) {
         QPixmap carSprite = spritesheet.copy(info.spriteRect);
 

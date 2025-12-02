@@ -2,9 +2,11 @@
 #define RESULTSCREEN_H
 
 #include <QWidget>
+#include <QPixmap>
+#include <QPainter> 
 #include <vector>
 #include <map>
-#include "../common/gameState.h"
+#include "../common/dto.h"
 
 namespace Ui {
 class ResultScreen;
@@ -21,11 +23,19 @@ public:
                     const std::map<uint8_t, QString>& idToNameMap,
                     uint8_t myPlayerId);
 
+protected:
+    void paintEvent(QPaintEvent *event) override;
+
 private slots:
     void on_btnExit_clicked();
 
+signals:
+    void returnToLobby(); 
+    void closeApplication();
+
 private:
     Ui::ResultScreen *ui;
+    QPixmap backgroundImage; 
 };
 
 #endif // RESULTSCREEN_H

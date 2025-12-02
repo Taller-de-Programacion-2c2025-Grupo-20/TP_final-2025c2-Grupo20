@@ -22,11 +22,16 @@
   <widget class="QLabel" name="label_Title">
    <property name="geometry">
     <rect>
-     <x>290</x>
-     <y>0</y>
+     <x>300</x>
+     <y>10</y>
      <width>231</width>
-     <height>61</height>
+     <height>41</height>
     </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font-family: &quot;Press Start 2P&quot;;
+font-size: 20px;
+color: #FFFFFF;</string>
    </property>
    <property name="text">
     <string>TextLabel</string>
@@ -38,11 +43,16 @@
   <widget class="QLabel" name="label_Outcome">
    <property name="geometry">
     <rect>
-     <x>290</x>
+     <x>300</x>
      <y>50</y>
-     <width>231</width>
-     <height>61</height>
+     <width>221</width>
+     <height>51</height>
     </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font-family: &quot;Press Start 2P&quot;;
+font-size: 20px;
+color: #FFFFFF;</string>
    </property>
    <property name="text">
     <string>TextLabel</string>
@@ -55,23 +65,58 @@
    <property name="geometry">
     <rect>
      <x>90</x>
-     <y>110</y>
+     <y>100</y>
      <width>651</width>
      <height>461</height>
     </rect>
    </property>
-  </widget>
-  <widget class="QPushButton" name="btn_Exit">
-   <property name="geometry">
-    <rect>
-     <x>370</x>
-     <y>570</y>
-     <width>88</width>
-     <height>26</height>
-    </rect>
+   <property name="styleSheet">
+    <string notr="true">QTableWidget {
+    background-color: rgba(20, 20, 20, 220);
+    color: #CCCCCC;
+    gridline-color: #333333;
+    font-family: &quot;Press Start 2P&quot;;
+    font-size: 10pt;
+    border: 6px solid #444444;       
+    border-radius: 4px;
+    selection-background-color: #333333;
+    selection-color: #FFFFFF;
+    outline: none;
+}
+
+QHeaderView::section {
+    background-color: #000000;
+    color: #EEEEEE;
+    padding: 8px;
+    border: 2px solid #444444;
+    border-bottom: 4px solid #444444;
+    font-family: &quot;Press Start 2P&quot;;
+    font-size: 11pt;
+    font-weight: bold;
+}
+
+QTableWidget::item {
+    padding: 5px;
+    border-bottom: 1px solid #222;
+}
+
+QScrollBar:vertical {
+    border: 2px solid #444444;
+    background: #000000;
+    width: 20px;
+    margin: 0px;
+}
+QScrollBar::handle:vertical {
+    background: #666666;
+    min-height: 20px;
+    border: 2px solid #444444;
+}
+QScrollBar::add-line:vertical, QScrollBar::sub-line:vertical {
+    background: none;
+}</string>
    </property>
-   <property name="text">
-    <string>Salir</string>
+   <property name="selectionMode">
+    <enum>QAbstractItemView::NoSelection</enum>
    </property>
   </widget>
  </widget>

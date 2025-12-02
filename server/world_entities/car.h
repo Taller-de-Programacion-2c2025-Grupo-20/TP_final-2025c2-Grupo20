@@ -46,8 +46,6 @@ private:
 
     b2Body* car_body;
 
-    CarAttributes getCarTypeAttributes(CarType car_type);
-
     b2Vec2 getLateralVelocity();
 
     b2Vec2 getForwardVelocity();

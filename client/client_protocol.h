@@ -25,6 +25,8 @@ private:
 
 public:
     ClientProtocol(const char* hostname, const char* servname);
+    // Para los tests
+    explicit ClientProtocol(Socket&& skt);
     ~ClientProtocol();
 
     void send_login_attempt(const std::string& username);

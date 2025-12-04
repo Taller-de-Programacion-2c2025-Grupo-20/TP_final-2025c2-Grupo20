@@ -12,6 +12,8 @@
 #include "../common/match_list.h"
 
 ClientProtocol::ClientProtocol(const char* host, const char* port): skt(host, port) {}
+// Para los tests
+ClientProtocol::ClientProtocol(Socket&& skt) : skt(std::move(skt)) {}
 ClientProtocol::~ClientProtocol() {}
 
 
